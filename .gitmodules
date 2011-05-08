@@ -1,3 +1,6 @@
 [submodule "tws_c_api"]
 	path = tws_c_api
 	url = git@github.com:GerHobbelt/tws_c_api.git
+[submodule "mongoose"]
+	path = mongoose
+	url = git@github.com:GerHobbelt/mongoose.git
