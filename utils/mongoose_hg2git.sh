@@ -6,18 +6,36 @@
 #
 
 pushd ..
-mkdir mongoose-hg
+if ! test -d mongoose-hg ; then
+	mkdir mongoose-hg
+fi
 cd mongoose-hg
 
 easy_install hg-git
 
-hg clone https://mongoose.googlecode.com/hg/ mongoose
-cd mongoose
+if test -z "$2" -o -z "$1" ; then
+	dst=mongoose
+	hgsrc=https://mongoose.googlecode.com/hg/
+else
+	dst=$2
+	hgsrc=$1
+fi
+cat <<EOT
 
-# copy the config file to edit to tempfile; create an empty file to process when the config file does not exist yet.
-# Done this way so gawk can write the result to the config file location.
-tmpscript=`mktemp`
-cat > ${tmpscript}.awk  <<EOT
+###
+### Importing remote HG repo ${hgsrc} to directory ${dst} ### 
+###
+
+EOT
+
+if ! test -d ${dst} ; then
+	hg clone ${hgsrc} ${dst}
+	cd ${dst}
+
+	# copy the config file to edit to tempfile; create an empty file to process when the config file does not exist yet.
+	# Done this way so gawk can write the result to the config file location.
+	tmpscript=`mktemp`
+	cat > ${tmpscript}.awk  <<EOT
 #
 # edit ~/.hgrc and add :
 #
@@ -57,14 +75,14 @@ END {
 }
 
 EOT
-cat ~/.hgrc > ${tmpscript}.cfg
-gawk -f ${tmpscript}.awk ${tmpscript}.cfg > ~/.hgrc
+	cat ~/.hgrc > ${tmpscript}.cfg
+	gawk -f ${tmpscript}.awk ${tmpscript}.cfg > ~/.hgrc
 
 
-hg bookmark -r default master
+	hg bookmark -r default master
 
 
-cat > ${tmpscript}.awk  <<EOT
+	cat > ${tmpscript}.awk  <<EOT
 #
 # edit: .hg/hgrc and add:
 #
@@ -102,10 +120,13 @@ END	{
 }
 
 EOT
-cat .hg/hgrc > ${tmpscript}.cfg
-gawk -f ${tmpscript}.awk ${tmpscript}.cfg > .hg/hgrc
+	cat .hg/hgrc > ${tmpscript}.cfg
+	gawk -f ${tmpscript}.awk ${tmpscript}.cfg > .hg/hgrc
 
+	cd ..
+fi
 
+cd ${dst}
 hg pull
 hg gexport
 
