@@ -45,17 +45,29 @@
 			<Add library="shell32" />
 			<Add library="pthread" />
 		</Linker>
-		<Unit filename="mongoose\examples\chat.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="mongoose\mongoose.c">
 			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
 		</Unit>
 		<Unit filename="mongoose\mongoose.h" />
 		<Unit filename="mongoose\win32\res.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
 		<Unit filename="mongoose\win32\systray.ico" />
+		<Unit filename="tws_c_api\callbacks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tws_c_api\twsapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tws_c_api\twsapi.h" />
+		<Unit filename="tws_comm_thread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tws_if_main.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />
