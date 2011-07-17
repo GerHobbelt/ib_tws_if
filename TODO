@@ -1,0 +1,20 @@
+
+- process the market scanner XML: use it to fire additional market scanner requests to aumatically collect a 'reasonable' set of stocks with their ticker codes, etc. for further use by the application.
+
+- integrate libxml as a submodule
+
+- integrate pthreads-Win32 as a submodule
+
+- integrate zlib as a submodule
+
+- integrate proprietary / custom logic as a submodule  (or 'plugin')
+
+- integrate hamsterdb as a submodule
+
+- use hamsterdb to store the stock and scanner data bulk
+
+- add web pages and JavaScript graphing (raphaeljs) for viewing the stock data
+
+- integrate raphaeljs as a submodule
+
+- migrate Excel/etc. work & keep/make it portable
