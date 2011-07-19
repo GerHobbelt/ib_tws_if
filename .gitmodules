@@ -4,3 +4,12 @@
 [submodule "mongoose"]
 	path = mongoose
 	url = git@github.com:GerHobbelt/mongoose.git
+[submodule "libxml"]
+	path = libxml
+	url = git@github.com:GerHobbelt/libxml2.git
+[submodule "json"]
+	path = json
+	url = git@github.com:GerHobbelt/ultrajson.git
+[submodule "libiconv"]
+	path = libiconv
+	url = git@github.com:GerHobbelt/libiconv.git
