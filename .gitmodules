@@ -13,3 +13,6 @@
 [submodule "libiconv"]
 	path = libiconv
 	url = git@github.com:GerHobbelt/libiconv.git
+[submodule "pthread-win32"]
+	path = pthread-win32
+	url = git@github.com:GerHobbelt/pthread-win32.git

@@ -57,8 +57,8 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..\..\3rdparty;..\..\include;..\..\..\libxml\include"
-				PreprocessorDefinitions="_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE"
+				AdditionalIncludeDirectories="..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32"
+				PreprocessorDefinitions="HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE"
 				StringPooling="true"
 				ExceptionHandling="2"
 				RuntimeLibrary="2"
@@ -159,8 +159,8 @@
 				FavorSizeOrSpeed="1"
 				EnableFiberSafeOptimizations="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..\..\3rdparty;..\..\include;..\..\..\libxml\include"
-				PreprocessorDefinitions="_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;CODE_ANALYSIS"
+				AdditionalIncludeDirectories="..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32"
+				PreprocessorDefinitions="HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE"
 				StringPooling="true"
 				ExceptionHandling="2"
 				RuntimeLibrary="2"
@@ -262,8 +262,8 @@
 				EnableIntrinsicFunctions="true"
 				FavorSizeOrSpeed="1"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..\..\3rdparty;..\..\include;..\..\..\libxml\include"
-				PreprocessorDefinitions="_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE"
+				AdditionalIncludeDirectories="..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32"
+				PreprocessorDefinitions="HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE"
 				StringPooling="true"
 				ExceptionHandling="2"
 				RuntimeLibrary="2"
@@ -356,8 +356,8 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..\..\3rdparty;..\..\include;..\..\..\libxml\include"
-				PreprocessorDefinitions="_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE"
+				AdditionalIncludeDirectories="..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32"
+				PreprocessorDefinitions="HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE"
 				StringPooling="true"
 				MinimalRebuild="false"
 				ExceptionHandling="2"
@@ -457,8 +457,8 @@
 				Optimization="0"
 				EnableIntrinsicFunctions="true"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..\..\3rdparty;..\..\include;..\..\..\libxml\include"
-				PreprocessorDefinitions="_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE"
+				AdditionalIncludeDirectories="..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32"
+				PreprocessorDefinitions="HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE"
 				StringPooling="true"
 				MinimalRebuild="false"
 				ExceptionHandling="2"
@@ -557,8 +557,8 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				WholeProgramOptimization="true"
-				AdditionalIncludeDirectories="..\..\3rdparty;..\..\include;..\..\..\libxml\include"
-				PreprocessorDefinitions="_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE"
+				AdditionalIncludeDirectories="..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32"
+				PreprocessorDefinitions="HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE"
 				StringPooling="true"
 				MinimalRebuild="false"
 				ExceptionHandling="2"
@@ -645,18 +645,58 @@
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath="..\..\tws_comm_thread.c"
+		<Filter
+			Name="Source Files"
 			>
-		</File>
-		<File
-			RelativePath="..\..\tws_comm_thread.h"
-			>
-		</File>
-		<File
-			RelativePath="..\..\tws_if_main.c"
-			>
-		</File>
+			<File
+				RelativePath="..\..\mongoose_event_handler.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\mongoose_event_handler.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\mongoose_utils.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\mongoose_utils.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tws_api_callbacks.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tws_backend.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tws_comm_thread.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tws_comm_thread.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tws_if_main.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tws_mongoose_porting.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tws_stocklist_loading_thread.c"
+				>
+			</File>
+			<File
+				RelativePath="..\..\tws_stocklist_loading_thread.h"
+				>
+			</File>
+		</Filter>
 	</Files>
 	<Globals>
 	</Globals>
