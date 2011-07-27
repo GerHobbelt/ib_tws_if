@@ -49,15 +49,15 @@ TODO / roadmap:
 #endif
 
 #if defined(DEBUG)
-#define DEBUG_TRACE(x) do { \
-  flockfile(stdout); \
-  printf("*** %lu.%p.%s.%d: ", \
-         (unsigned long) time(NULL), (void *) pthread_self(), \
-         __func__, __LINE__); \
-  printf x; \
-  putchar('\n'); \
-  fflush(stdout); \
-  funlockfile(stdout); \
+#define DEBUG_TRACE(x) do {										\
+	flockfile(stdout);											\
+	printf("*** %lu.%p.%s.%d: ",								\
+		 (unsigned long) time(NULL), (void *) pthread_self(),	\
+		 __func__, __LINE__);									\
+	printf x;													\
+	putchar('\n');												\
+	fflush(stdout);												\
+	funlockfile(stdout);										\
 } while (0)
 #else
 #define DEBUG_TRACE(x)
@@ -158,7 +158,11 @@ static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen)
 {
   struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
 
-  return mg_write(info->conn, buf, buflen);
+	if (info->conn)
+	{
+		return mg_write(info->conn, buf, buflen);
+	}
+	return -1;
 }
 
 static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
@@ -166,6 +170,8 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
   struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
   struct tws_thread_exch *exch = info->tws_cfg->exch;
 
+	if (info->conn)
+	{
   // check whether there's anything available:
   fd_set read_set;
   struct timeval tv;
@@ -176,7 +182,7 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
   tv.tv_sec = info->tws_cfg->backend_poll_period / 1000;
   tv.tv_usec = (info->tws_cfg->backend_poll_period % 1000) * 1000;
 
-  while (mg_get_stop_flag(mg_get_context(info->conn)) == 0) 
+  while (mg_get_stop_flag(mg_get_context(info->conn)) == 0)
   {
     struct timeval tv2 = tv;
 
@@ -186,13 +192,13 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
     // Add listening sockets to the read set
 	mg_FD_SET(mg_get_client_socket(info->conn), &read_set, &max_fd);
 
-    if (select(max_fd + 1, &read_set, NULL, NULL, &tv2) < 0) 
+    if (select(max_fd + 1, &read_set, NULL, NULL, &tv2) < 0)
     {
       break;
-    } 
-    else 
+    }
+    else
     {
-      if (mg_FD_ISSET(mg_get_client_socket(info->conn), &read_set)) 
+      if (mg_FD_ISSET(mg_get_client_socket(info->conn), &read_set))
       {
         /*
         Mongoose mg_read() does NOT fetch any pending data from the TCP/IP stack when the 'content length' isn't set yet.
@@ -244,22 +250,50 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 
   return mg_pull(info->conn, buf, max_bufsize);
   // return mg_read(info->conn, buf, max_bufsize);
+	}
+	return -1;
 }
 
 /* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
 static int tws_flush_func(void *arg)
 {
-  struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
+	//struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
 
   return 0;
 }
+
+/* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
+static int tws_open_func(void *arg)
+{
+	struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
+	struct tws_conn_cfg *tws_cfg = info->tws_cfg;
+	struct mg_context *ctx = info->ctx;
+	struct mg_connection *conn = mg_connect_to_host(ctx, tws_cfg->ip_address, tws_cfg->port, 0);
+
+	if (conn != NULL)
+	{
+		// Disable Nagle - act a la telnet:
+		mg_set_nodelay_mode(mg_get_client_socket(conn), 1);
+	}
+
+	info->conn = conn;
+
+	return (conn ? 0 : NOT_CONNECTED);
+}
+
 
 /* close callback is invoked on error or when tws_disconnect is invoked */
 static int tws_close_func(void *arg)
 {
   struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
 
-  mg_close_connection(info->conn);
+	if (info->conn)
+	{
+		mg_close_connection(info->conn);
+
+		free(info->conn);
+		info->conn = NULL;
+	}
 
   return 0;
 }
@@ -270,32 +304,6 @@ static const char *tws_errcode2str(int errcode)
   const struct twsclient_errmsg *einfo = tws_strerror(errcode);
 
   return einfo->err_msg;
-}
-
-
-
-/* find top percentage gainers (US stocks) with price > 5 and volume > 2M */
-static void scan_market(void *ti)
-{
-    /* illustrate new feature as of version 23 */
-    tr_scanner_subscription_t s;
-
-    tws_req_scanner_parameters(ti);
-
-    memset(&s, 0, sizeof s);
-    s.scan_number_of_rows = -1;
-    s.scan_instrument = "STK";
-    s.scan_location_code = "STK.AEB,STK.SBF";
-    s.scan_code = "MOST_ACTIVE"; // "TOP_PERC_GAIN"; /* see xml returned by tws_req_scanner_parameters for more choices */
-
-    s.scan_above_price = 0.05;
-    s.scan_below_price = s.scan_coupon_rate_above = s.scan_coupon_rate_below = DBL_MAX;
-    s.scan_above_volume = 1000;
-    s.scan_market_cap_above = s.scan_market_cap_below = DBL_MAX;
-    s.scan_moody_rating_above = s.scan_moody_rating_below = s.scan_sp_rating_above = s.scan_sp_rating_below = s.scan_maturity_date_above = s.scan_maturity_date_below = s.scan_exclude_convertible = "";
-    s.scan_scanner_setting_pairs = "";
-    s.scan_stock_type_filter = "";
-    tws_req_scanner_subscription(ti, 1, &s);
 }
 
 
@@ -315,62 +323,58 @@ void tws_worker_thread(struct mg_context *ctx)
   int tws_app_is_down = 0;
 
   // retry connecting to TWS as long as the server itself hasn't been stopped!
-  while (mg_get_stop_flag(ctx) == 0) 
+  while (mg_get_stop_flag(ctx) == 0)
   {
-    struct mg_connection *conn;
-    struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
-    struct my_tws_io_info info = 
-    { 
-      NULL,
-      tws_cfg,
-      NULL
-    };
-    int err;
+		struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
+		struct my_tws_io_info info = {0};
+		int err;
 
-	conn = mg_connect_to_host(ctx, tws_cfg->ip_address, tws_cfg->port, 0);
-    if (conn != NULL)
-    {
-      tws_app_is_down = 0;
+		info.tws_cfg = tws_cfg;
+		info.ctx = ctx;
 
-      // Disable Nagle - act a la telnet:
-      mg_set_nodelay_mode(mg_get_client_socket(conn), 1);
-      
-      info.conn = conn;
-      info.tws_handle = tws_create(&info, tws_transmit_func, tws_receive_func, tws_flush_func, tws_close_func);
-      err = tws_connect(info.tws_handle, tws_cfg->our_id_code);
-      if (err) 
-      {
-        mg_cry(conn, "tws connect returned %s\n", tws_errcode2str(err)); 
-      }
-      else
-      {
+		info.tws_handle = tws_create(&info, tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func);
+		if (info.tws_handle)
+		{
+			err = tws_connect(info.tws_handle, tws_cfg->our_id_code);
+			if (err)
+			{
+				mg_cry4ctx(ctx, "tws connect returned error: %s\n", tws_errcode2str(err));
+
+				if (!tws_app_is_down)
+				{
+					mg_cry4ctx(ctx, "Cannot establish a connection with the TWS application. Retrying every %d seconds...", TWS_CONNECT_RETRY_DELAY);
+					tws_app_is_down++;
+				}
+			}
+			else
+			{
+				// reset the counter as we have a valid/working connection again now:
+				tws_app_is_down = 0;
         // request the valid set of scanner parameters first: this will trigger the requesting of several market scans from the msg receive handler:
         tws_req_scanner_parameters(info.tws_handle);
 
-        while (mg_get_stop_flag(ctx) == 0 && tws_connected(info.tws_handle)) 
+        while (mg_get_stop_flag(ctx) == 0 && tws_connected(info.tws_handle))
         {
+					// process another message: reset the message-internal counter(s):
+					info.row_count = 0;
+
           if (0 != tws_event_process(info.tws_handle))
           {
             break;
           }
         }
-      }
-
-      tws_disconnect(info.tws_handle);
-      tws_destroy(info.tws_handle);
-      free(conn);
-    }
-    else 
-    {
-      if (!tws_app_is_down)
-      {
-        mg_cry4ctx(ctx, "Cannot establish a connection with the TWS application. Retrying in %d seconds...", TWS_CONNECT_RETRY_DELAY);
-        tws_app_is_down++;
-      }
-    }
+				tws_disconnect(info.tws_handle);
+			}
+			tws_destroy(info.tws_handle);
+		}
+		else
+		{
+			mg_cry4ctx(ctx, "FATAL ERROR: memory error in tws_create: aborting thread\n");
+			break;
+		}
 
     // wait N seconds before retrying to connect to TWS:
-    if (mg_get_stop_flag(ctx) == 0) 
+    if (mg_get_stop_flag(ctx) == 0)
     {
       sleep(TWS_CONNECT_RETRY_DELAY);
     }

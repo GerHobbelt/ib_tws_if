@@ -32,7 +32,7 @@
 extern "C" {
 #endif // __cplusplus
 
-	
+
 
 /*
 ===============================================================================
@@ -46,8 +46,8 @@ backend ('middle tier' bla bla bla) request / response queue structures and func
 typedef struct tier2_queue_item tier2_queue_item_t;
 
 /*
-callback which is invoked when the command has been received and has been parsed, 
-i.e. has been popped from the queue and the backend doesn't need the *command* data 
+callback which is invoked when the command has been received and has been parsed,
+i.e. has been popped from the queue and the backend doesn't need the *command* data
 any longer; it WILL continued access to the response data/hooks though!
 
 Use this one to clean up allocation of dynamic resources done in the front-end.
@@ -77,7 +77,7 @@ enum tier2_response_code
 struct tier2_queue_item
 {
   enum tier2_command_code command_code;       // what's the front-end requesting we do?
-  union 
+  union
   {
     void *propagate_ptr;
     // ...
@@ -86,7 +86,7 @@ struct tier2_queue_item
   tier2_command_done_handler *cleanup_after_command; // invoked when front-end MAY clean the command-side related resources it allocated for us
   tier2_response_done_handler *cleanup_after_response; // invoked when the front-end has completed processing the reponse and the backend can release any allocated resources which are related to this request.
 
-  volatile union 
+  volatile union
   {
     enum tier2_response_code code;
     int value;
@@ -143,18 +143,46 @@ void destroy_tws_thread_exch(struct tws_thread_exch **ptr);
 
 
 
+struct scanner_subscription_request_t;
+
 /*
 struct passed around as user parameter for all TWS API callbacks.
 */
 struct my_tws_io_info
 {
 	struct mg_connection *conn;
+	struct mg_context *ctx;
 	struct tws_conn_cfg *tws_cfg;
 	void *tws_handle;
 
 	/* tracking some TWS values here as well: */
-	long next_order_id;
+	int next_order_id;
+
+	/* -- and the working men -- */
+
+	/* scanner subscription request active set and queue: */
+	size_t active_scanner_subscription_count;
+	struct scanner_subscription_request_t *active_scanner_subscriptions[10];
+
+	size_t queued_scanner_subscription_count;
+	size_t queued_scanner_subscription_allocsize;
+	struct scanner_subscription_request_t **scanner_subscription_queue;
+
+	/* keeping track of the current TWS response message's number of items in the TWS response message: */
+	size_t row_count;
 };
+
+
+
+/* --- scanner subscription request queue --- */
+
+
+typedef struct scanner_subscription_request_t
+{
+	int ticker_id;
+	tr_scanner_subscription_t reqdata;
+} scanner_subscription_request_t;
+
 
 
 

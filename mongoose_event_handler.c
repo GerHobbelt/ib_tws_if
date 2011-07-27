@@ -47,42 +47,42 @@ TODO / roadmap:
 
 
 
-void *event_handler(enum mg_event event_id, struct mg_connection *conn, const struct mg_request_info *request_info) 
+void *event_handler(enum mg_event event_id, struct mg_connection *conn, const struct mg_request_info *request_info)
 {
 	void *processed = "yes";
 	struct mg_context *ctx = mg_get_context(conn);
 	struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
 	struct tws_thread_exch *exch = tws_cfg->exch;
 
-	switch (event_id) 
+	switch (event_id)
 	{
 	case MG_NEW_REQUEST:
 #if 0
-		if (!request_info->is_ssl) 
+		if (!request_info->is_ssl)
 		{
       redirect_to_ssl(conn, request_info);
       processed = NULL;
-		} 
-		else if (!is_authorized(conn, request_info)) 
+		}
+		else if (!is_authorized(conn, request_info))
 		{
       redirect_to_login(conn, request_info);
       processed = NULL;
-		} 
-		else if (strcmp(request_info->uri, authorize_url) == 0) 
+		}
+		else if (strcmp(request_info->uri, authorize_url) == 0)
 		{
 			do_authorize(conn, request_info);
-		} 
-		else if (strcmp(request_info->uri, "/ajax/get_messages") == 0) 
+		}
+		else if (strcmp(request_info->uri, "/ajax/get_messages") == 0)
 		{
 			ajax_get_messages(conn, request_info);
-		} 
-		else if (strcmp(request_info->uri, "/ajax/send_message") == 0) 
+		}
+		else if (strcmp(request_info->uri, "/ajax/send_message") == 0)
 		{
 			ajax_send_message(conn, request_info);
-		} 
+		}
     else
 #endif
-    
+
     if (strncmp(request_info->uri, "/tws/", 5) == 0)
     {
       struct timespec poll_time;
@@ -138,7 +138,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn, const st
 
   case MG_EVENT_LOG:
     // dump log to stderr as well:
-    fprintf(stderr, "%s\n", request_info->log_message);
+		fprintf(stderr, "%s: %s\n", request_info->log_severity, request_info->log_message);
     // and let the default file logging do its own magic as well:
 		processed = NULL;
     break;

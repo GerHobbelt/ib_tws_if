@@ -26,12 +26,16 @@
 
 
 
+#define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
+
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif // __cplusplus
 
-	
-	
+
+
 struct tws_thread_exch;  // forward reference: structure which contains all front-end to back-end thread comminucation stuff
 
 

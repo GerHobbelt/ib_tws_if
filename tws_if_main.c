@@ -64,11 +64,11 @@ static void WINCDECL signal_handler(int sig_num) {
 }
 
 static const char *default_options[] = {
-  "document_root", "html",
+  "document_root", "../../../../html",
   "listening_ports", "8081", // ,8082s
   //"ssl_certificate", "ssl_cert.pem",
   "num_threads", "5",
-  "error_log_file", "./tws_ib_if_srv.log",
+  "error_log_file", "../../log/%Y/%m/tws_ib_if_srv-%Y%m%d-IP-%[s]-%[p].log",
 
   // set up our own worker thread which talks to TWS:
 	"tws_ip_address", "127.0.0.1",
@@ -214,7 +214,7 @@ static void process_command_line_arguments(char *argv[], char **options) {
       case 0:
         // empty line!
         continue;
-        
+
       case 2:
         set_option(options, opt, val);
         continue;
@@ -249,9 +249,9 @@ static void start_mongoose(int argc, char *argv[]) {
   char *options[MAX_OPTIONS * 2] = { NULL };
   int i;
   struct mg_user_class_t userdef = {
-    &event_handler, 
-    &tws_cfg, 
-    &option_decode, 
+    &event_handler,
+    &tws_cfg,
+    &option_decode,
     &option_fill,
     &option_get
   };

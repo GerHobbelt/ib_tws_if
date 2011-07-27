@@ -33,6 +33,7 @@
 #include <libxml/HTMLtree.h>
 #include <libxml/tree.h>
 #include <libxml/xpath.h>
+#include <libxml/xpathInternals.h>
 #include <libxml/debugXML.h>
 #include <libxml/xmlerror.h>
 #ifdef LIBXML_XINCLUDE_ENABLED
@@ -67,9 +68,23 @@
 extern "C" {
 #endif // __cplusplus
 
-	
+xmlNodePtr xmlGetParent(xmlNodePtr node);
+
+void xmlXPathContainsAnyOfFunction(xmlXPathParserContextPtr ctxt, int nargs);
 
 
+long tws_mkNextOrderId(struct my_tws_io_info *info);
+void tws_setNextOrderId(struct my_tws_io_info *info, long order_id);
+
+
+void push_tws_req_scanner_subscription(struct my_tws_io_info *info, scanner_subscription_request_t *reqdata);
+size_t pop_tws_req_scanner_subscription(struct my_tws_io_info *info);
+void cancel_tws_scanner_subscription(struct my_tws_io_info *info, int ticker_id);
+int is_active_tws_scanner_subscription(struct my_tws_io_info *info, int ticker_id);
+
+
+void request_range_of_interesting_market_scans(struct my_tws_io_info *info, xmlNodePtr location, xmlXPathObjectPtr usable_scanners);
+void request_contract_details_from_tws(struct my_tws_io_info *info, tr_contract_details_t *cd);
 
 
 

@@ -47,22 +47,22 @@ TODO / roadmap:
 
 
 
-void event_tick_price(void *opaque, int ticker_id, long field, double price, int can_auto_execute)
+void event_tick_price(void *opaque, int ticker_id, tr_tick_type_t field, double price, int can_auto_execute)
 {
-    printf("tick_price: opaque=%p, ticker_id=%d, type=%ld, price=%.2lf, can_auto=%d\n",
-           opaque, ticker_id, field, price, can_auto_execute);
+    printf("tick_price: opaque=%p, ticker_id=%d, type=%d, price=%.2lf, can_auto=%d\n",
+           opaque, ticker_id, (int)field, price, can_auto_execute);
 }
 
-void event_tick_size(void *opaque, int ticker_id, long type, int size)
+void event_tick_size(void *opaque, int ticker_id, tr_tick_type_t type, int size)
 {
-    printf("tick_size: opaque=%p, ticker_id=%d, type=%ld, size=%d\n",
-           opaque, ticker_id, type, size);
+    printf("tick_size: opaque=%p, ticker_id=%d, type=%d, size=%d\n",
+           opaque, ticker_id, (int)type, size);
 }
 
-void event_tick_option_computation(void *opaque, int ticker_id, int type, double implied_vol, double delta, double opt_price, double pv_dividend, double gamma, double vega, double theta, double und_price)
+void event_tick_option_computation(void *opaque, int ticker_id, tr_tick_type_t type, double implied_vol, double delta, double opt_price, double pv_dividend, double gamma, double vega, double theta, double und_price)
 {
     printf("tick option computation: opaque=%p, ticker_id=%d, type=%d, implied_vol=%f, delta=%f, opt_price=%f, pv_dividend=%f, gamma=%f, vega=%f, theta=%f, und_price=%f\n",
-           opaque, ticker_id, type, implied_vol, delta, opt_price, pv_dividend, gamma, vega, theta, und_price);
+           opaque, ticker_id, (int)type, implied_vol, delta, opt_price, pv_dividend, gamma, vega, theta, und_price);
 }
 
 void event_tick_generic(void *opaque, int ticker_id, int type, double value)
@@ -80,22 +80,22 @@ void event_tick_efp(void *opaque, int ticker_id, int tick_type, double basis_poi
     printf("tick_efp: opaque=%p, ticker_id=%d, type=%d, ...\n", opaque, ticker_id, tick_type);
 }
 
-void event_order_status(void *opaque, long order_id, const char status[],
+void event_order_status(void *opaque, int order_id, const char status[],
                         int filled, int remaining, double avg_fill_price, int perm_id,
                         int parent_id, double last_fill_price, int client_id, const char why_held[])
 {
-    printf("order_status: opaque=%p, order_id=%ld, filled=%d remaining %d, avg_fill_price=%lf, last_fill_price=%lf, why_held=%s\n", opaque, order_id, filled, remaining, avg_fill_price, last_fill_price, why_held);
+    printf("order_status: opaque=%p, order_id=%d, filled=%d remaining %d, avg_fill_price=%lf, last_fill_price=%lf, why_held=%s\n", opaque, order_id, filled, remaining, avg_fill_price, last_fill_price, why_held);
 }
 
-void event_open_order(void *opaque, long order_id, const tr_contract_t *contract, const tr_order_t *order, const tr_order_status_t *ostatus)
+void event_open_order(void *opaque, int order_id, const tr_contract_t *contract, const tr_order_t *order, const tr_order_status_t *ostatus)
 {
     /* commission values might be DBL_MAX */
     if(fabs(ostatus->ost_commission - DBL_MAX) < DBL_EPSILON)
         printf("open_order: commission not reported\n");
     else
-        printf("open_order: commission for %ld was %.4lf\n", order_id, ostatus->ost_commission);
+        printf("open_order: commission for %d was %.4lf\n", order_id, ostatus->ost_commission);
 
-    printf("open_order: opaque=%p, order_id=%ld, sym=%s\n", opaque, order_id, contract->c_symbol);
+    printf("open_order: opaque=%p, order_id=%d, sym=%s\n", opaque, order_id, contract->c_symbol);
 }
 
 void event_connection_closed(void *opaque)
@@ -123,7 +123,7 @@ void event_update_account_time(void *opaque, const char time_stamp[])
     printf("update_account_time: opaque=%p, ...\n", opaque);
 }
 
-void event_next_valid_id(void *opaque, long order_id)
+void event_next_valid_id(void *opaque, int order_id)
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
 
@@ -134,29 +134,57 @@ void event_next_valid_id(void *opaque, long order_id)
      * Well behaved human and automatic TWS clients shall increment
      * this order_id atomically and cooperatively
      */
-    info->next_order_id = order_id;
+	tws_setNextOrderId(info, order_id);
 
-    printf("next_valid_id for order placement %ld\n", order_id);
+    printf("next_valid_id for order placement %d\n", order_id);
 }
 
-void event_contract_details(void *opaque, int req_id, const tr_contract_details_t *contract_details)
+void event_contract_details(void *opaque, int req_id, const tr_contract_details_t *cd)
 {
     printf("contract_details: opaque=%p, ...\n", opaque);
+	printf("contract details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d\n",
+		cd->d_summary.c_symbol, cd->d_summary.c_sectype, cd->d_summary.c_expiry, cd->d_summary.c_strike, cd->d_summary.c_right, cd->d_summary.c_exchange, cd->d_summary.c_primary_exch,
+		cd->d_summary.c_currency, cd->d_summary.c_multiplier, cd->d_summary.c_local_symbol, cd->d_market_name, cd->d_trading_class, cd->d_summary.c_conid);
+	printf("contract details: min.tick: %f, coupon: %f, order types: %s, valid exch: %s, cusip: %s, maturity: %s, issue_date: %s, ratings: %s, bond_type: %s, "
+		"coupon_type: %s, notes: %s, long name: %s, industry: %s, category: %s, subcategory: %s, timezone: %s, trading hours: %s, liquid hours: %s, price_magnifier: %d, "
+		"under_conid: %d\n",
+		cd->d_mintick, cd->d_coupon, cd->d_order_types, cd->d_valid_exchanges, cd->d_cusip, cd->d_maturity, cd->d_issue_date, cd->d_ratings, cd->d_bond_type,
+		cd->d_coupon_type, cd->d_notes, cd->d_long_name, cd->d_industry, cd->d_category, cd->d_subcategory, cd->d_timezone_id, cd->d_trading_hours, cd->d_liquid_hours,
+		cd->d_price_magnifier, cd->d_under_conid);
 }
 
-void event_bond_contract_details(void *opaque, int req_id, const tr_contract_details_t *contract_details)
+void event_bond_contract_details(void *opaque, int req_id, const tr_contract_details_t *cd)
 {
     printf("bond_contract_details: opaque=%p, ...\n", opaque);
+	printf("bond contract details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d\n",
+		cd->d_summary.c_symbol, cd->d_summary.c_sectype, cd->d_summary.c_expiry, cd->d_summary.c_strike, cd->d_summary.c_right, cd->d_summary.c_exchange, cd->d_summary.c_primary_exch,
+		cd->d_summary.c_currency, cd->d_summary.c_multiplier, cd->d_summary.c_local_symbol, cd->d_market_name, cd->d_trading_class, cd->d_summary.c_conid);
+	printf("bond contract details: min.tick: %f, coupon: %f, order types: %s, valid exch: %s, cusip: %s, maturity: %s, issue_date: %s, ratings: %s, bond_type: %s, "
+		"coupon_type: %s, notes: %s, long name: %s, industry: %s, category: %s, subcategory: %s, timezone: %s, trading hours: %s, liquid hours: %s, price_magnifier: %d, "
+		"under_conid: %d\n",
+		cd->d_mintick, cd->d_coupon, cd->d_order_types, cd->d_valid_exchanges, cd->d_cusip, cd->d_maturity, cd->d_issue_date, cd->d_ratings, cd->d_bond_type,
+		cd->d_coupon_type, cd->d_notes, cd->d_long_name, cd->d_industry, cd->d_category, cd->d_subcategory, cd->d_timezone_id, cd->d_trading_hours, cd->d_liquid_hours,
+		cd->d_price_magnifier, cd->d_under_conid);
 }
 
-void event_exec_details(void *opaque, long order_id, const tr_contract_t *contract, const tr_execution_t *execution)
+void event_exec_details(void *opaque, int order_id, const tr_contract_t *contract, const tr_execution_t *execution)
 {
     printf("exec_details: opaque=%p, ...\n", opaque);
 }
 
-void event_error(void *opaque, int id, int error_code, const char error_string[])
+void event_error(void *opaque, int ticker_id, int error_code, const char error_string[])
 {
-    printf("error: opaque=%p, error_code=%d, msg=%s\n", opaque, error_code, error_string);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	printf("error: opaque=%p, id=%d, error_code=%d, msg=%s\n", opaque, ticker_id, error_code, error_string);
+
+	/*
+	some scanner subscription requests may trigger error responses, such as 'duplicate subscription'
+	and we need to keep the scanner subscription active list in proper order, so we check whether the related
+	ticker_id is one of our active scanner subscription queue items and when it is, we ditch that one
+	and replace it by another pending scanner subscription request.
+	*/
+	cancel_tws_scanner_subscription(info, ticker_id);
 }
 
 void event_update_mkt_depth(void *opaque, int ticker_id, int position, int operation, int side, double price, int size)
@@ -179,9 +207,9 @@ void event_managed_accounts(void *opaque, const char accounts_list[])
     printf("managed_accounts: opaque=%p, ...\n", opaque);
 }
 
-void event_receive_fa(void *opaque, long fa_data_type, const char cxml[])
+void event_receive_fa(void *opaque, int fa_data_type, const char cxml[])
 {
-    printf("receive_fa: opaque=%p, fa_data_type=%ld, xml='%s'\n", opaque, fa_data_type, cxml);
+    printf("receive_fa: opaque=%p, fa_data_type=%d, xml='%s'\n", opaque, fa_data_type, cxml);
 }
 
 void event_historical_data(void *opaque, int reqid, const char date[], double open, double high, double low, double close, int volume, int bar_count, double wap, int has_gaps)
@@ -189,6 +217,23 @@ void event_historical_data(void *opaque, int reqid, const char date[], double op
     printf("historical: opaque=%p, reqid=%d, date=%s, %.3lf, %.3lf, %.3lf, %.3lf, %d, wap=%.3lf, has_gaps=%d\n", opaque, reqid, date, open, high, low, close, volume, wap, has_gaps);
 }
 
+void event_historical_data_end(void *opaque, int reqid, const char completion_from[], const char completion_to[])
+{
+    printf("historical list end: opaque=%p, reqid=%d, from date=%s, to date=%s\n", opaque, reqid, completion_from, completion_to);
+}
+
+/*
+As TWS limits the number of active scanner requests to 10, we might delegate the processing of this message to a separate thread,
+but that would mean we'd need inter-thread messaging back & forth, at least for the outgoing request messages (to TWS) and
+the scanner reports returning from TWS.
+
+The alternative is to process this message and queue all the scanner subscription requests generated from it in a separate
+queue which is slowly depeleted as scanner reports come in and the code in that handler decides to UNsubscribe a given
+scanner report.
+
+By using the queue the incoming TWS message traffic processing is kept as simple as possible; the scanner subscribe msg queue
+keeps this part essentially a single-thread process.
+*/
 void event_scanner_parameters(void *opaque, const char xml[])
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
@@ -198,17 +243,100 @@ void event_scanner_parameters(void *opaque, const char xml[])
     xmlDocPtr doc;
     const char *URL = "tws://dummy";
 
-#if defined(_DEBUG)
-    mg_cry(info->conn, "INFO: dumping TWS scanner parameters to log file:");
-    mg_cry_raw(info->conn, xml);
-#endif
+	mg_write2log(info->conn, NULL, time(NULL), "info", "INFO: dumping TWS scanner parameters to log file:");
+    mg_write2log_raw(info->conn, NULL, time(NULL), "info", xml);
 
-    rv = 0;
+	printf("scanner_parameters: opaque=%p, xml:(len=%d)\n", opaque, (int)strlen(xml));
 
     doc = xmlReadDoc((const xmlChar *)xml, URL, "UTF-8", XML_PARSE_NOENT | XML_PARSE_NONET | XML_PARSE_NOCDATA);
+
+	if (doc)
+	{
+		xmlXPathObjectPtr usable_locations;
+		xmlXPathContextPtr ctxt = NULL;
+
+		ctxt = xmlXPathNewContext(doc);
+		if (ctxt)
+		{
+			FILE *fp;
+
+			ctxt->node = xmlDocGetRootElement(doc);
+
+		    xmlXPathRegisterFunc(ctxt, (const xmlChar *)"contains-any-of", xmlXPathContainsAnyOfFunction);
+
+			usable_locations = xmlXPathEvalExpression((const xmlChar *)"//LocationTree//Location[not(contains(access, 'restricted')) and not(LocationTree)]", ctxt);
+
+#ifdef LIBXML_DEBUG_ENABLED
+			mg_write2log(info->conn, NULL, time(NULL), "info", "INFO: dumping XPath result to log file:");
+			fp = mg_fopen(mg_get_default_logfile_path(info->conn), "a+");
+
+			if (fp != NULL)
+			{
+				mg_flockfile(fp);
+
+				xmlXPathDebugDumpObject(fp, usable_locations, 0);
+
+				fflush(fp);
+				mg_funlockfile(fp);
+				if (fp != stderr)
+				{
+					fclose(fp);
+				}
+			}
+#endif
+
+			if (usable_locations == NULL)
+			{
+				mg_cry(info->conn, "No usable entries found in the TWS scanner report. IB_TWS_SRV will NOT be collecting any stock data!");
+			}
+			else if (usable_locations->type != XPATH_NODESET)
+			{
+				mg_cry(info->conn, "Unexpected XPath result type %d while searching the TWS scanner report. IB_TWS_SRV will NOT be collecting any stock data!", (int)usable_locations->type);
+			}
+			else if (usable_locations->nodesetval != NULL)
+			{
+				xmlNodeSetPtr nodeset = usable_locations->nodesetval;
+				xmlXPathObjectPtr usable_scanners;
+				int i;
+
+				for (i = 0; i < nodeset->nodeNr; i++)
+				{
+					xmlNodePtr location = nodeset->nodeTab[i];
+					xmlNodePtr child = xmlFirstElementChild(location);
+
+					while (child && xmlStrcmp(child->name, (const xmlChar *)"instruments"))
+					{
+						child = xmlNextElementSibling(child);
+					}
+
+					if (child)
+					{
+					    xmlXPathObjectPtr instruments = xmlXPathNewNodeSetList(xmlXPathNodeSetMerge(NULL, xmlXPathNodeSetCreate(child)));
+						//xmlXPathObjectPtr instruments = xmlXPathNewNodeSet(child);   //<-- b0rks in RegisterVariable below as that one expects to free the specified nodeset using xmlXPathFreeObject()!
+
+						xmlXPathRegisterVariable(ctxt, (const xmlChar *)"loc_instruments", instruments);
+
+						usable_scanners = xmlXPathEvalExpression((const xmlChar *)"//ScanTypeList/ScanType[contains-any-of(instruments, $loc_instruments) and not(starts-with(access, 'restricted')) and not(contains(access, 'disabled'))]", ctxt);
+
+						// fire a couple of useful market scanner report requests for each node
+						request_range_of_interesting_market_scans(info, location, usable_scanners);
+
+						//xmlXPathFreeObject(instruments);
+						//xmlXPathFreeNodeSet();
+						//xmlXPathFreeNodeSetList(instruments);
+					}
+				}
+			}
+
+			xmlXPathFreeObject(usable_locations);
+			xmlXPathFreeContext(ctxt);
+		}
+	}
+
   	xmlFreeDoc(doc);
 
-    // process the XML response using libxml:
+#if 0
+	// process the XML response using libxml:
     xmlResetLastError();
     reader = xmlReaderForDoc((const xmlChar *)xml, URL, "UTF-8", XML_PARSE_NOENT | XML_PARSE_NONET | XML_PARSE_NOCDATA);
 
@@ -224,30 +352,69 @@ void event_scanner_parameters(void *opaque, const char xml[])
     xmlFreeTextReader(reader);
 
   	xmlFreeDoc(doc);
-
-    printf("scanner_parameters: opaque=%p, xml=%s, parse result=%d\n", opaque, xml, rv);
+#endif
 }
 
 void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_details_t *cd, const char distance[], const char benchmark[], const char projection[], const char legs_str[])
 {
-    printf("scanner_data: opaque=%p, ticker_id=%d, rank=%d, distance=%s, benchmark=%s, projection=%s\n",
-           opaque, ticker_id, rank, distance, benchmark, projection);
-    printf("scanner_data details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, currency=%s, local_sym=%s, market_name=%s, trading_class=%s\n", cd->d_summary.s_symbol, cd->d_summary.s_sectype, cd->d_summary.s_expiry, cd->d_summary.s_strike, cd->d_summary.s_right, cd->d_summary.s_exchange, cd->d_summary.s_currency, cd->d_summary.s_local_symbol, cd->d_market_name, cd->d_trading_class);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
 
-    /* it seems that NYSE traded stocks have different market_name and trading_class from NASDAQ */
+	// we CAN receive responses for already cancelled subscriptions, e.g. when an erro report triggered a (pending in the TCP pipeline) subscription cancel request:
+	if (!is_active_tws_scanner_subscription(info, ticker_id))
+	{
+		// only report this fir the first item; no need to keep repeating ourselves.
+		if (rank == 1)
+		{
+			printf("scanner_data: opaque=%p, ticker_id=%d -- *INFO* -- receiving scanner data for a cancelled subscription. The cancel request and this report will probably have crossed along the way.\n",
+				opaque, ticker_id);
+		}
+		return;
+	}
+
+	info->row_count++;
+
+	printf("scanner_data: opaque=%p, ticker_id=%d, rank=%d, distance=%s, benchmark=%s, projection=%s\n",
+           opaque, ticker_id, rank, distance, benchmark, projection);
+	printf("scanner_data details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d\n",
+		cd->d_summary.c_symbol, cd->d_summary.c_sectype, cd->d_summary.c_expiry, cd->d_summary.c_strike, cd->d_summary.c_right, cd->d_summary.c_exchange, cd->d_summary.c_primary_exch,
+		cd->d_summary.c_currency, cd->d_summary.c_multiplier, cd->d_summary.c_local_symbol, cd->d_market_name, cd->d_trading_class, cd->d_summary.c_conid);
+	printf("scanner_data details: min.tick: %f, coupon: %f, order types: %s, valid exch: %s, cusip: %s, maturity: %s, issue_date: %s, ratings: %s, bond_type: %s, "
+		"coupon_type: %s, notes: %s, long name: %s, industry: %s, category: %s, subcategory: %s, timezone: %s, trading hours: %s, liquid hours: %s, price_magnifier: %d, "
+		"under_conid: %d\n",
+		cd->d_mintick, cd->d_coupon, cd->d_order_types, cd->d_valid_exchanges, cd->d_cusip, cd->d_maturity, cd->d_issue_date, cd->d_ratings, cd->d_bond_type,
+		cd->d_coupon_type, cd->d_notes, cd->d_long_name, cd->d_industry, cd->d_category, cd->d_subcategory, cd->d_timezone_id, cd->d_trading_hours, cd->d_liquid_hours,
+		cd->d_price_magnifier, cd->d_under_conid);
+
+	/* it seems that NYSE traded stocks have different market_name and trading_class from NASDAQ */
+
+
+	// now also request the contract details so that we'll receive the extended info for this stock:
+	request_contract_details_from_tws(info, cd);
 }
 
 void event_scanner_data_end(void *opaque, int ticker_id)
 {
-    printf("scanner_data_end: opaque=%p, ticker_id=%d\n", opaque, ticker_id);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	printf("scanner_data_end: opaque=%p, ticker_id=%d\n", opaque, ticker_id);
+
+	// always unsubsubscribe a scanner report when it didn't deliver any rows:
+	if (info->row_count == 0)
+	{
+		cancel_tws_scanner_subscription(info, ticker_id);
+	}
 }
 
 void event_current_time(void *opaque, long time)
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
     struct tws_thread_exch *exch = info->tws_cfg->exch;
+	char tbuf[40];
+	time_t timestamp = (time_t)time;
 
-    printf("current_time: opaque=%p, time=%ld, ...\n", opaque, time);
+	strftime(tbuf, sizeof(tbuf), "[%Y%m%dT%H%M%S] ", gmtime(&timestamp));
+
+    printf("current_time: opaque=%p, time=%ld ~ '%s'\n", opaque, time, tbuf);
 
     /*
     Pass response on to front-end now:
@@ -308,3 +475,4 @@ void event_tick_snapshot_end(void *opaque, int reqid)
 {
     printf("tick_snapshot_end: opaque=%p, reqid=%d\n", opaque, reqid);
 }
+
