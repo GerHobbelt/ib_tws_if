@@ -41,15 +41,15 @@ struct tws_thread_exch;  // forward reference: structure which contains all fron
 
 struct tws_conn_cfg
 {
-  /* configuration parameters: how to connect to TWS */
-	const char *ip_address;
-	int port;
-	int our_id_code;
+    /* configuration parameters: how to connect to TWS */
+    const char *ip_address;
+    int port;
+    int our_id_code;
 
-  long backend_poll_period; // unit: milliseconds
+    long backend_poll_period; // unit: milliseconds
 
-  /* internal communication stuff between mongoose threads and the tws back-end thread goes here: */
-  struct tws_thread_exch *exch;
+    /* internal communication stuff between mongoose threads and the tws back-end thread goes here: */
+    struct tws_thread_exch *exch;
 };
 
 

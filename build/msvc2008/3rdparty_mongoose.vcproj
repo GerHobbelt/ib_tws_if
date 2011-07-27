@@ -484,10 +484,6 @@
 			>
 		</File>
 		<File
-			RelativePath="..\..\mongoose\Makefile.am"
-			>
-		</File>
-		<File
 			RelativePath="..\..\mongoose\mongoose.1"
 			>
 		</File>

@@ -25,18 +25,18 @@
  */
 
 /*
-TODO / roadmap:
-
-- prioritizing outgoing requests, e.g. ORDERs have priority over historical data requests, and requests for recent historical data have priority over requests for older data.
-
-- use a priority queue for the above plus a 'idle time' delay to prevent hammering the TWS machines with historical data requests: only fire those when the interface has been 'quiet' for X seconds
-
-- store/cache historical data; use 'smart' code to request consecutive and _large_ chunks of historical data to be cached: one request, served many times (from local cache)
-
-- async TWS TX/RX: push requests asap, using a 'telnet' TCP setting (you don't want orders to wait for a TCP buffer fill timeout!): single thread/connection connected to TWS,
-  all requests are posted in a 'response queue' (so we know which responses are for whom) upon transmission --> true full duplex communication instead of the standard TWS sample
-  which uses the TCP connection as a half-duplex connect (as it waits for the response to the request before firing another).
-*/
+ * TODO / roadmap:
+ *
+ * - prioritizing outgoing requests, e.g. ORDERs have priority over historical data requests, and requests for recent historical data have priority over requests for older data.
+ *
+ * - use a priority queue for the above plus a 'idle time' delay to prevent hammering the TWS machines with historical data requests: only fire those when the interface has been 'quiet' for X seconds
+ *
+ * - store/cache historical data; use 'smart' code to request consecutive and _large_ chunks of historical data to be cached: one request, served many times (from local cache)
+ *
+ * - async TWS TX/RX: push requests asap, using a 'telnet' TCP setting (you don't want orders to wait for a TCP buffer fill timeout!): single thread/connection connected to TWS,
+ *   all requests are posted in a 'response queue' (so we know which responses are for whom) upon transmission --> true full duplex communication instead of the standard TWS sample
+ *   which uses the TCP connection as a half-duplex connect (as it waits for the response to the request before firing another).
+ */
 
 
 #include "mongoose_utils.h"
@@ -48,20 +48,20 @@ TODO / roadmap:
 
 const char *mg_get_option_ex(const struct mg_context *ctx, const char *name, const char *default_value)
 {
-	const char *v = mg_get_option(ctx, name);
+    const char *v = mg_get_option(ctx, name);
 
-	if (!v)
-		return default_value;
-	return v;
+    if (!v)
+        return default_value;
+    return v;
 }
 
 int mg_get_option_int(const struct mg_context *ctx, const char *name, int default_value)
 {
-	const char *v = mg_get_option(ctx, name);
+    const char *v = mg_get_option(ctx, name);
 
-	if (!v)
-		return default_value;
-	return atol(v);
+    if (!v)
+        return default_value;
+    return atol(v);
 }
 
 
@@ -73,73 +73,55 @@ int mg_get_option_int(const struct mg_context *ctx, const char *name, int defaul
 
 int option_decode(struct mg_context *ctx, const char *name, const char *value)
 {
-  struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
+    struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
 
-  if (0 == strcmp("tws_ip_address", name))
-  {
-    tws_cfg->ip_address = mg_strdup(value);
-    return 1;
-  }
-  else if (0 == strcmp("tws_ip_port", name))
-  {
-    int portno = atoi(value);
-    if (portno > 0) 
+    if (0 == strcmp("tws_ip_address", name))
     {
-      tws_cfg->port = portno;
-      return 1;
+        tws_cfg->ip_address = mg_strdup(value);
+        return 1;
     }
-  } 
-  else if (0 == strcmp("tws_connect_id", name))
-  {
-    int tws_id = atoi(value);
-    if (tws_id > 0)
+    else if (0 == strcmp("tws_ip_port", name))
     {
-      tws_cfg->our_id_code = tws_id;
-      return 1;
+        int portno = atoi(value);
+        if (portno > 0)
+        {
+            tws_cfg->port = portno;
+            return 1;
+        }
     }
-  }
-  else if (0 == strcmp("tws_poll_delay", name))
-  {
-    long poll_period = atol(value);
-    if (poll_period > 0)
+    else if (0 == strcmp("tws_connect_id", name))
     {
-      tws_cfg->backend_poll_period = poll_period;
-      return 1;
+        int tws_id = atoi(value);
+        if (tws_id > 0)
+        {
+            tws_cfg->our_id_code = tws_id;
+            return 1;
+        }
     }
-  }
-  return 0;
+    else if (0 == strcmp("tws_poll_delay", name))
+    {
+        long poll_period = atol(value);
+        if (poll_period > 0)
+        {
+            tws_cfg->backend_poll_period = poll_period;
+            return 1;
+        }
+    }
+    return 0;
 }
 
 
 int option_fill(struct mg_context *ctx)
 {
-  // don't do anything...
-  return 1;
+    // don't do anything...
+    return 1;
 }
 
 const char * option_get(const struct mg_context *ctx, const char *name)
 {
-  // we don't use this one, so keep it a dummy until we do...
-  return NULL;
+    // we don't use this one, so keep it a dummy until we do...
+    return NULL;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
