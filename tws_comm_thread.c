@@ -213,7 +213,7 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 
                 /*
                 When there's no pending incoming data from TWS itself, we'll be running around in this loop while waiting for
-                more data to arrive. Meanwhile, we can process incomign requests from the front-end now:
+                more data to arrive. Meanwhile, we can process incoming requests from the front-end now:
                 */
                 pthread_mutex_lock(&exch->tws_exch_mutex);
                 if (0 != pthread_cond_signal(&exch->tws_tx_signal))

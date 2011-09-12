@@ -48,7 +48,7 @@ typedef struct tier2_queue_item tier2_queue_item_t;
 /*
 callback which is invoked when the command has been received and has been parsed,
 i.e. has been popped from the queue and the backend doesn't need the *command* data
-any longer; it WILL continued access to the response data/hooks though!
+any longer; it WILL continue to access to the response data/hooks though!
 
 Use this one to clean up allocation of dynamic resources done in the front-end.
 */

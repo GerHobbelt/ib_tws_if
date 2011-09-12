@@ -228,7 +228,7 @@ but that would mean we'd need inter-thread messaging back & forth, at least for 
 the scanner reports returning from TWS.
 
 The alternative is to process this message and queue all the scanner subscription requests generated from it in a separate
-queue which is slowly depeleted as scanner reports come in and the code in that handler decides to UNsubscribe a given
+queue which is slowly depleted as scanner reports come in and the code in that handler decides to UNsubscribe a given
 scanner report.
 
 By using the queue the incoming TWS message traffic processing is kept as simple as possible; the scanner subscribe msg queue
@@ -362,7 +362,7 @@ void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_detai
     // we CAN receive responses for already cancelled subscriptions, e.g. when an erro report triggered a (pending in the TCP pipeline) subscription cancel request:
     if (!is_active_tws_scanner_subscription(info, ticker_id))
     {
-        // only report this fir the first item; no need to keep repeating ourselves.
+        // only report this for the first item; no need to keep repeating ourselves.
         if (rank == 1)
         {
             printf("scanner_data: opaque=%p, ticker_id=%d -- *INFO* -- receiving scanner data for a cancelled subscription. The cancel request and this report will probably have crossed along the way.\n",
