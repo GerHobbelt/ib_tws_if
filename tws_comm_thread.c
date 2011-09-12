@@ -214,6 +214,15 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
                 /*
                 When there's no pending incoming data from TWS itself, we'll be running around in this loop while waiting for
                 more data to arrive. Meanwhile, we can process incoming requests from the front-end now:
+
+
+				TODO:
+
+				perform priority WRITES (such as order transmissions) directly from ANOTHER thread so that you NEVER run into the
+				issue of waiting for the select-on-read above while all you want is WRITE.
+
+				This means that you'll have both slow, queued sends and priority direct sends and hence the need for a mutex around
+				certain bits, such as the write/send operation.
                 */
                 pthread_mutex_lock(&exch->tws_exch_mutex);
                 if (0 != pthread_cond_signal(&exch->tws_tx_signal))

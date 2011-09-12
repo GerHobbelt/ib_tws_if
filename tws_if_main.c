@@ -64,7 +64,7 @@ static void WINCDECL signal_handler(int sig_num) {
 }
 
 static const char *default_options[] = {
-    "document_root",         "../../../../html",
+    "document_root",         "../../html",
     "listening_ports",       "8081",                         // "8081,8082s"
     //"ssl_certificate",     "ssl_cert.pem",
     "num_threads",           "5",
@@ -92,7 +92,7 @@ void die(const char *fmt, ...) {
     va_end(ap);
 
 #if defined(_WIN32)
-    MessageBox(NULL, msg, "Error", MB_OK);
+    MessageBoxA(NULL, msg, "Error", MB_OK);
 #else
     fprintf(stderr, "%s\n", msg);
 #endif
@@ -362,7 +362,7 @@ static void show_error(void) {
         NULL, GetLastError(),
         MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
         buf, sizeof(buf), NULL);
-    MessageBox(NULL, buf, "Error", MB_OK);
+    MessageBoxA(NULL, buf, "Error", MB_OK);
 }
 
 static int manage_service(int action) {
