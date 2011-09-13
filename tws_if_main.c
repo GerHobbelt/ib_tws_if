@@ -48,7 +48,7 @@
 #include "mongoose_event_handler.h"
 
 
-#define MAX_OPTIONS 30
+#define MAX_OPTIONS 40
 
 static volatile int exit_flag;
 static char server_name[40];        // Set by init_server_name()
@@ -205,7 +205,7 @@ static void process_command_line_arguments(char *argv[], char **options) {
 
             line_no++;
 
-            // Ignore empty lines and comments
+      		// Ignore empty lines (with optional, ignored, whitespace) and comments
             if (line[0] == '#')
                 continue;
 
@@ -455,9 +455,9 @@ static LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lP
                 service_installed ? "" : "not");
             AppendMenu(hMenu, MF_STRING | MF_GRAYED, ID_SEPARATOR, buf);
             AppendMenu(hMenu, MF_STRING | (service_installed ? MF_GRAYED : 0),
-                ID_INSTALL_SERVICE, "Install");
+                     ID_INSTALL_SERVICE, "Install service");
             AppendMenu(hMenu, MF_STRING | (!service_installed ? MF_GRAYED : 0),
-                ID_REMOVE_SERVICE, "Deinstall");
+                     ID_REMOVE_SERVICE, "Deinstall service");
             AppendMenu(hMenu, MF_SEPARATOR, ID_SEPARATOR, "");
             AppendMenu(hMenu, MF_STRING, ID_EDIT_CONFIG, "Edit config file");
             AppendMenu(hMenu, MF_STRING, ID_QUIT, "Exit");
@@ -513,7 +513,7 @@ int main(int argc, char *argv[]) {
     printf("%s started on port(s) %s with web root [%s]\n",
         server_name, mg_get_option(ctx, "listening_ports"),
         mg_get_option(ctx, "document_root"));
-    while (exit_flag == 0) {
+    while (exit_flag == 0 && !mg_get_stop_flag(ctx)) {
         sleep(1);
     }
     printf("Exiting on signal %d, waiting for all threads to finish...",

@@ -153,7 +153,7 @@ struct my_tws_io_info
     struct mg_connection *conn;
     struct mg_context *ctx;
     struct tws_conn_cfg *tws_cfg;
-    void *tws_handle;
+    tws_instance_t *tws_handle;
 
     /* tracking some TWS values here as well: */
     int next_order_id;
