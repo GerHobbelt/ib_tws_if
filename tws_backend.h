@@ -48,8 +48,15 @@ struct tws_conn_cfg
 
     long backend_poll_period; // unit: milliseconds
 
+	char *database_path;
+
     /* internal communication stuff between mongoose threads and the tws back-end thread goes here: */
     struct tws_thread_exch *exch;
+
+	/*
+	to be filled in by the backend ('tier2/TWS') thread:
+	*/
+    struct my_tws_io_info *tws_thread_info;
 };
 
 

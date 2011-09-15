@@ -68,14 +68,16 @@ static const char *default_options[] = {
     "listening_ports",       "8081",                         // "8081,8082s"
     //"ssl_certificate",     "ssl_cert.pem",
     "num_threads",           "5",
-    "error_log_file",        "../../log/%Y/%m/tws_ib_if_srv-%Y%m%d-IP-%[s]-%[p].log",
+    "error_log_file",        "../../log/%Y/%m/tws_ib_if_srv-%Y%m%d.%H-IP-%[s]-%[p].log",
 
     // set up our own worker thread which talks to TWS:
     "tws_ip_address",        "127.0.0.1",
     "tws_ip_port",           "6789",
     "tws_connect_id",        "7",
 
-    "tws_poll_delay",        "10", // unit: milliseconds
+    "tws_poll_delay",        "10000", // unit: milliseconds
+
+    "database_file",         "../../ib_tws_if.hamsterdb",
 
     NULL
 };
@@ -516,8 +518,8 @@ int main(int argc, char *argv[]) {
     while (exit_flag == 0 && !mg_get_stop_flag(ctx)) {
         sleep(1);
     }
-    printf("Exiting on signal %d, waiting for all threads to finish...",
-        exit_flag);
+    printf("Exiting on signal %d/%d, waiting for all threads to finish...",
+        exit_flag, mg_get_stop_flag(ctx));
     fflush(stdout);
     mg_stop(ctx);
     printf("%s", " done.\n");

@@ -49,64 +49,80 @@
 
 void event_tick_price(void *opaque, int ticker_id, tr_tick_type_t field, double price, int can_auto_execute)
 {
-    printf("tick_price: opaque=%p, ticker_id=%d, type=%d, price=%.2lf, can_auto=%d\n",
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "tick_price: opaque=%p, ticker_id=%d, type=%d, price=%.2lf, can_auto=%d",
         opaque, ticker_id, (int)field, price, can_auto_execute);
 }
 
 void event_tick_size(void *opaque, int ticker_id, tr_tick_type_t type, int size)
 {
-    printf("tick_size: opaque=%p, ticker_id=%d, type=%d, size=%d\n",
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "tick_size: opaque=%p, ticker_id=%d, type=%d, size=%d",
         opaque, ticker_id, (int)type, size);
 }
 
 void event_tick_option_computation(void *opaque, int ticker_id, tr_tick_type_t type, double implied_vol, double delta, double opt_price, double pv_dividend, double gamma, double vega, double theta, double und_price)
 {
-    printf("tick option computation: opaque=%p, ticker_id=%d, type=%d, implied_vol=%f, delta=%f, opt_price=%f, pv_dividend=%f, gamma=%f, vega=%f, theta=%f, und_price=%f\n",
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "tick option computation: opaque=%p, ticker_id=%d, type=%d, implied_vol=%f, delta=%f, opt_price=%f, pv_dividend=%f, gamma=%f, vega=%f, theta=%f, und_price=%f",
         opaque, ticker_id, (int)type, implied_vol, delta, opt_price, pv_dividend, gamma, vega, theta, und_price);
 }
 
 void event_tick_generic(void *opaque, int ticker_id, int type, double value)
 {
-    printf("tick_generic: opaque=%p, ticker_id=%d, type=%d, ...\n", opaque, ticker_id, type);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "tick_generic: opaque=%p, ticker_id=%d, type=%d, ...", opaque, ticker_id, type);
 }
 
 void event_tick_string(void *opaque, int ticker_id, int type, const char value[])
 {
-    printf("tick_string: opaque=%p, ticker_id=%d, type=%d, ...\n", opaque, ticker_id, type);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "tick_string: opaque=%p, ticker_id=%d, type=%d, ...", opaque, ticker_id, type);
 }
 
 void event_tick_efp(void *opaque, int ticker_id, int tick_type, double basis_points, const char formatted_basis_points[], double implied_futures_price, int hold_days, const char future_expiry[], double dividend_impact, double dividends_to_expiry)
 {
-    printf("tick_efp: opaque=%p, ticker_id=%d, type=%d, ...\n", opaque, ticker_id, tick_type);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "tick_efp: opaque=%p, ticker_id=%d, type=%d, ...", opaque, ticker_id, tick_type);
 }
 
 void event_order_status(void *opaque, int order_id, const char status[],
                         int filled, int remaining, double avg_fill_price, int perm_id,
                         int parent_id, double last_fill_price, int client_id, const char why_held[])
 {
-    printf("order_status: opaque=%p, order_id=%d, filled=%d remaining %d, avg_fill_price=%lf, last_fill_price=%lf, why_held=%s\n", opaque, order_id, filled, remaining, avg_fill_price, last_fill_price, why_held);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "order_status: opaque=%p, order_id=%d, filled=%d remaining %d, avg_fill_price=%lf, last_fill_price=%lf, why_held=%s", opaque, order_id, filled, remaining, avg_fill_price, last_fill_price, why_held);
 }
 
 void event_open_order(void *opaque, int order_id, const tr_contract_t *contract, const tr_order_t *order, const tr_order_status_t *ostatus)
 {
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
     /* commission values might be DBL_MAX */
     if(fabs(ostatus->ost_commission - DBL_MAX) < DBL_EPSILON)
-        printf("open_order: commission not reported\n");
+	{
+		mg_log(info->conn, "info", "open_order: commission not reported");
+	}
     else
-        printf("open_order: commission for %d was %.4lf\n", order_id, ostatus->ost_commission);
-
-    printf("open_order: opaque=%p, order_id=%d, sym=%s\n", opaque, order_id, contract->c_symbol);
-}
-
-void event_connection_closed(void *opaque)
-{
-    printf("connection_closed: opaque=%p\n", opaque);
+    {
+		mg_log(info->conn, "info", "open_order: commission for %d was %.4lf", order_id, ostatus->ost_commission);
+	}
+	mg_log(info->conn, "info", "open_order: opaque=%p, order_id=%d, sym=%s", opaque, order_id, contract->c_symbol);
 }
 
 void event_update_account_value(void *opaque, const char key[], const char val[],
                                 const char currency[], const char account_name[])
 {
-    printf("update_account_value: %p, key=%s val=%s, currency=%s, name=%s\n",
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "update_account_value: %p, key=%s val=%s, currency=%s, name=%s",
         opaque, key, val, currency, account_name);
 }
 
@@ -114,13 +130,17 @@ void event_update_portfolio(void *opaque, const tr_contract_t *contract, int pos
                             double mkt_price, double mkt_value, double average_cost,
                             double unrealized_pnl, double realized_pnl, const char account_name[])
 {
-    printf("update_portfolio: %p, sym=%s, position=%d, mkt_price=%.4lf, mkt_value=%.4lf, avg_cost=%.4lf, unrealized_pnl=%.4lf, realized pnl=%.4lf name=%s\n",
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "update_portfolio: %p, sym=%s, position=%d, mkt_price=%.4lf, mkt_value=%.4lf, avg_cost=%.4lf, unrealized_pnl=%.4lf, realized pnl=%.4lf name=%s",
         opaque, contract->c_symbol, position, mkt_price, mkt_value, average_cost, unrealized_pnl, realized_pnl, account_name);
 }
 
 void event_update_account_time(void *opaque, const char time_stamp[])
 {
-    printf("update_account_time: opaque=%p, ...\n", opaque);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "update_account_time: opaque=%p, ...", opaque);
 }
 
 void event_next_valid_id(void *opaque, int order_id)
@@ -136,47 +156,57 @@ void event_next_valid_id(void *opaque, int order_id)
      */
     tws_setNextOrderId(info, order_id);
 
-    printf("next_valid_id for order placement %d\n", order_id);
+	mg_log(info->conn, "info", "next_valid_id for order placement %d", order_id);
 }
 
 void event_contract_details(void *opaque, int req_id, const tr_contract_details_t *cd)
 {
-    printf("contract_details: opaque=%p, ...\n", opaque);
-    printf("contract details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d\n",
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "contract_details: opaque=%p, ...", opaque);
+	mg_log(info->conn, "info", "contract details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d",
         cd->d_summary.c_symbol, cd->d_summary.c_sectype, cd->d_summary.c_expiry, cd->d_summary.c_strike, cd->d_summary.c_right, cd->d_summary.c_exchange, cd->d_summary.c_primary_exch,
         cd->d_summary.c_currency, cd->d_summary.c_multiplier, cd->d_summary.c_local_symbol, cd->d_market_name, cd->d_trading_class, cd->d_summary.c_conid);
-    printf("contract details: min.tick: %f, coupon: %f, order types: %s, valid exch: %s, cusip: %s, maturity: %s, issue_date: %s, ratings: %s, bond_type: %s, "
+	mg_log(info->conn, "info", "contract details: min.tick: %f, coupon: %f, order types: %s, valid exch: %s, cusip: %s, maturity: %s, issue_date: %s, ratings: %s, bond_type: %s, "
         "coupon_type: %s, notes: %s, long name: %s, industry: %s, category: %s, subcategory: %s, timezone: %s, trading hours: %s, liquid hours: %s, price_magnifier: %d, "
-        "under_conid: %d\n",
+        "under_conid: %d",
         cd->d_mintick, cd->d_coupon, cd->d_order_types, cd->d_valid_exchanges, cd->d_cusip, cd->d_maturity, cd->d_issue_date, cd->d_ratings, cd->d_bond_type,
         cd->d_coupon_type, cd->d_notes, cd->d_long_name, cd->d_industry, cd->d_category, cd->d_subcategory, cd->d_timezone_id, cd->d_trading_hours, cd->d_liquid_hours,
         cd->d_price_magnifier, cd->d_under_conid);
+
+	ib_cache_ticker_info(cd);
 }
 
 void event_bond_contract_details(void *opaque, int req_id, const tr_contract_details_t *cd)
 {
-    printf("bond_contract_details: opaque=%p, ...\n", opaque);
-    printf("bond contract details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d\n",
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "bond_contract_details: opaque=%p, ...", opaque);
+	mg_log(info->conn, "info", "bond contract details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d",
         cd->d_summary.c_symbol, cd->d_summary.c_sectype, cd->d_summary.c_expiry, cd->d_summary.c_strike, cd->d_summary.c_right, cd->d_summary.c_exchange, cd->d_summary.c_primary_exch,
         cd->d_summary.c_currency, cd->d_summary.c_multiplier, cd->d_summary.c_local_symbol, cd->d_market_name, cd->d_trading_class, cd->d_summary.c_conid);
-    printf("bond contract details: min.tick: %f, coupon: %f, order types: %s, valid exch: %s, cusip: %s, maturity: %s, issue_date: %s, ratings: %s, bond_type: %s, "
+	mg_log(info->conn, "info", "bond contract details: min.tick: %f, coupon: %f, order types: %s, valid exch: %s, cusip: %s, maturity: %s, issue_date: %s, ratings: %s, bond_type: %s, "
         "coupon_type: %s, notes: %s, long name: %s, industry: %s, category: %s, subcategory: %s, timezone: %s, trading hours: %s, liquid hours: %s, price_magnifier: %d, "
-        "under_conid: %d\n",
+        "under_conid: %d",
         cd->d_mintick, cd->d_coupon, cd->d_order_types, cd->d_valid_exchanges, cd->d_cusip, cd->d_maturity, cd->d_issue_date, cd->d_ratings, cd->d_bond_type,
         cd->d_coupon_type, cd->d_notes, cd->d_long_name, cd->d_industry, cd->d_category, cd->d_subcategory, cd->d_timezone_id, cd->d_trading_hours, cd->d_liquid_hours,
         cd->d_price_magnifier, cd->d_under_conid);
+
+	ib_cache_ticker_info(cd);
 }
 
 void event_exec_details(void *opaque, int order_id, const tr_contract_t *contract, const tr_execution_t *execution)
 {
-    printf("exec_details: opaque=%p, ...\n", opaque);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "exec_details: opaque=%p, ...", opaque);
 }
 
 void event_error(void *opaque, int ticker_id, int error_code, const char error_string[])
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
 
-    printf("error: opaque=%p, id=%d, error_code=%d, msg=%s\n", opaque, ticker_id, error_code, error_string);
+	mg_log(info->conn, "error", "opaque=%p, id=%d, error_code=%d, msg=%s", opaque, ticker_id, error_code, error_string);
 
     /*
     some scanner subscription requests may trigger error responses, such as 'duplicate subscription'
@@ -189,37 +219,51 @@ void event_error(void *opaque, int ticker_id, int error_code, const char error_s
 
 void event_update_mkt_depth(void *opaque, int ticker_id, int position, int operation, int side, double price, int size)
 {
-    printf("update_mkt_depth: opaque=%p, ticker_id=%d, ...\n", opaque, ticker_id);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "update_mkt_depth: opaque=%p, ticker_id=%d, ...", opaque, ticker_id);
 }
 
 void event_update_mkt_depth_l2(void *opaque, int ticker_id, int position, char *market_maker, int operation, int side, double price, int size)
 {
-    printf("update_mkt_depth_l2: opaque=%p, ticker_id=%d, ...\n", opaque, ticker_id);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "update_mkt_depth_l2: opaque=%p, ticker_id=%d, ...", opaque, ticker_id);
 }
 
 void event_update_news_bulletin(void *opaque, int msgid, int msg_type, const char news_msg[], const char origin_exch[])
 {
-    printf("update_news_bulletin: opaque=%p, ...\n", opaque);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "update_news_bulletin: opaque=%p, ...", opaque);
 }
 
 void event_managed_accounts(void *opaque, const char accounts_list[])
 {
-    printf("managed_accounts: opaque=%p, ...\n", opaque);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "managed_accounts: opaque=%p, ...", opaque);
 }
 
 void event_receive_fa(void *opaque, int fa_data_type, const char cxml[])
 {
-    printf("receive_fa: opaque=%p, fa_data_type=%d, xml='%s'\n", opaque, fa_data_type, cxml);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "receive_fa: opaque=%p, fa_data_type=%d, xml='%s'", opaque, fa_data_type, cxml);
 }
 
 void event_historical_data(void *opaque, int reqid, const char date[], double open, double high, double low, double close, int volume, int bar_count, double wap, int has_gaps)
 {
-    printf("historical: opaque=%p, reqid=%d, date=%s, %.3lf, %.3lf, %.3lf, %.3lf, %d, wap=%.3lf, has_gaps=%d\n", opaque, reqid, date, open, high, low, close, volume, wap, has_gaps);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "historical: opaque=%p, reqid=%d, date=%s, %.3lf, %.3lf, %.3lf, %.3lf, %d, wap=%.3lf, has_gaps=%d", opaque, reqid, date, open, high, low, close, volume, wap, has_gaps);
 }
 
 void event_historical_data_end(void *opaque, int reqid, const char completion_from[], const char completion_to[])
 {
-    printf("historical list end: opaque=%p, reqid=%d, from date=%s, to date=%s\n", opaque, reqid, completion_from, completion_to);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "historical list end: opaque=%p, reqid=%d, from date=%s, to date=%s", opaque, reqid, completion_from, completion_to);
 }
 
 /*
@@ -243,10 +287,10 @@ void event_scanner_parameters(void *opaque, const char xml[])
     xmlDocPtr doc;
     const char *URL = "tws://dummy";
 
-    mg_write2log(info->conn, NULL, time(NULL), "info", "INFO: dumping TWS scanner parameters to log file:");
-    mg_write2log_raw(info->conn, NULL, time(NULL), "info", xml);
+    mg_log(info->conn, "info", "INFO: dumping TWS scanner parameters to log file:");
+    mg_log(info->conn, "info", "XML: %s", xml);
 
-    printf("scanner_parameters: opaque=%p, xml:(len=%d)\n", opaque, (int)strlen(xml));
+	mg_log(info->conn, "info", "scanner_parameters: opaque=%p, xml:(len=%d)", opaque, (int)strlen(xml));
 
     doc = xmlReadDoc((const xmlChar *)xml, URL, "UTF-8", XML_PARSE_NOENT | XML_PARSE_NONET | XML_PARSE_NOCDATA);
 
@@ -365,7 +409,7 @@ void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_detai
         // only report this for the first item; no need to keep repeating ourselves.
         if (rank == 1)
         {
-            printf("scanner_data: opaque=%p, ticker_id=%d -- *INFO* -- receiving scanner data for a cancelled subscription. The cancel request and this report will probably have crossed along the way.\n",
+			mg_log(info->conn, "info", "scanner_data: opaque=%p, ticker_id=%d -- *INFO* -- receiving scanner data for a cancelled subscription. The cancel request and this report will probably have crossed along the way.",
                 opaque, ticker_id);
         }
         return;
@@ -373,14 +417,14 @@ void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_detai
 
     info->row_count++;
 
-    printf("scanner_data: opaque=%p, ticker_id=%d, rank=%d, distance=%s, benchmark=%s, projection=%s\n",
+	mg_log(info->conn, "info", "scanner_data: opaque=%p, ticker_id=%d, rank=%d, distance=%s, benchmark=%s, projection=%s",
         opaque, ticker_id, rank, distance, benchmark, projection);
-    printf("scanner_data details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d\n",
+	mg_log(info->conn, "info", "scanner_data details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d",
         cd->d_summary.c_symbol, cd->d_summary.c_sectype, cd->d_summary.c_expiry, cd->d_summary.c_strike, cd->d_summary.c_right, cd->d_summary.c_exchange, cd->d_summary.c_primary_exch,
         cd->d_summary.c_currency, cd->d_summary.c_multiplier, cd->d_summary.c_local_symbol, cd->d_market_name, cd->d_trading_class, cd->d_summary.c_conid);
-    printf("scanner_data details: min.tick: %f, coupon: %f, order types: %s, valid exch: %s, cusip: %s, maturity: %s, issue_date: %s, ratings: %s, bond_type: %s, "
+	mg_log(info->conn, "info", "scanner_data details: min.tick: %f, coupon: %f, order types: %s, valid exch: %s, cusip: %s, maturity: %s, issue_date: %s, ratings: %s, bond_type: %s, "
         "coupon_type: %s, notes: %s, long name: %s, industry: %s, category: %s, subcategory: %s, timezone: %s, trading hours: %s, liquid hours: %s, price_magnifier: %d, "
-        "under_conid: %d\n",
+        "under_conid: %d",
         cd->d_mintick, cd->d_coupon, cd->d_order_types, cd->d_valid_exchanges, cd->d_cusip, cd->d_maturity, cd->d_issue_date, cd->d_ratings, cd->d_bond_type,
         cd->d_coupon_type, cd->d_notes, cd->d_long_name, cd->d_industry, cd->d_category, cd->d_subcategory, cd->d_timezone_id, cd->d_trading_hours, cd->d_liquid_hours,
         cd->d_price_magnifier, cd->d_under_conid);
@@ -396,7 +440,7 @@ void event_scanner_data_end(void *opaque, int ticker_id)
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
 
-    printf("scanner_data_end: opaque=%p, ticker_id=%d\n", opaque, ticker_id);
+	mg_log(info->conn, "info", "scanner_data_end: opaque=%p, ticker_id=%d", opaque, ticker_id);
 
     // always unsubsubscribe a scanner report when it didn't deliver any rows:
     if (info->row_count == 0)
@@ -414,12 +458,13 @@ void event_current_time(void *opaque, long time)
 
     strftime(tbuf, sizeof(tbuf), "[%Y%m%dT%H%M%S] ", gmtime(&timestamp));
 
-    printf("current_time: opaque=%p, time=%ld ~ '%s'\n", opaque, time, tbuf);
+	mg_log(info->conn, "info", "current_time: opaque=%p, time=%ld ~ '%s'", opaque, time, tbuf);
 
     /*
      * Pass response on to front-end now:
      */
-    pthread_mutex_lock(&exch->tws_exch_mutex);
+#if 0
+	pthread_mutex_lock(&exch->tws_exch_mutex);
     if (0 != pthread_cond_signal(&exch->tws_rx_signal))
     {
         pthread_mutex_unlock(&exch->tws_exch_mutex);
@@ -434,45 +479,62 @@ void event_current_time(void *opaque, long time)
 
         pthread_mutex_unlock(&exch->tws_exch_mutex);
     }
+#endif
 }
 
 void event_realtime_bar(void *opaque, int reqid, long time, double open, double high, double low, double close, long volume, double wap, int count)
 {
-    printf("realtime_bar: %p reqid=%d time=%ld, ohlc=%.4lf/%.4lf/%.4lf/%.4lf, vol=%ld, wap=%.4lf, count=%d\n", opaque, reqid, time, open, high, low, close, volume, wap, count);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "realtime_bar: %p reqid=%d time=%ld, ohlc=%.4lf/%.4lf/%.4lf/%.4lf, vol=%ld, wap=%.4lf, count=%d", opaque, reqid, time, open, high, low, close, volume, wap, count);
 }
 
 void event_fundamental_data(void *opaque, int reqid, const char data[])
 {
-    printf("fundamental_data: opaque=%p, reqid=%d, ...\n", opaque, reqid);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "fundamental_data: opaque=%p, reqid=%d, ...", opaque, reqid);
 }
 
 void event_contract_details_end(void *opaque, int reqid)
 {
-    printf("contract_details_end: opaque=%p, ...\n", opaque);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "contract_details_end: opaque=%p, ...", opaque);
 }
 
 void event_open_order_end(void *opaque)
 {
-    printf("open_order_end: opaque=%p\n", opaque);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "open_order_end: opaque=%p", opaque);
 }
 
 void event_delta_neutral_validation(void *opaque, int reqid, under_comp_t *und)
 {
-    printf("delta_neutral_validation: opaque=%p, reqid=%d, ...\n", opaque, reqid);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "delta_neutral_validation: opaque=%p, reqid=%d, ...", opaque, reqid);
 }
 
 void event_acct_download_end(void *opaque, char acct_name[])
 {
-    printf("acct_download_end: opaque=%p, account name='%s'\n", opaque, acct_name);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "acct_download_end: opaque=%p, account name='%s'", opaque, acct_name);
 }
 
 void event_exec_details_end(void *opaque, int reqid)
 {
-    printf("exec_details_end: opaque=%p, reqid=%d\n", opaque, reqid);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "exec_details_end: opaque=%p, reqid=%d", opaque, reqid);
 }
 
 void event_tick_snapshot_end(void *opaque, int reqid)
 {
-    printf("tick_snapshot_end: opaque=%p, reqid=%d\n", opaque, reqid);
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "tick_snapshot_end: opaque=%p, reqid=%d", opaque, reqid);
 }
 

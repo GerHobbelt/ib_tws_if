@@ -85,32 +85,16 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn, const st
 
             if (strncmp(request_info->uri, "/tws/", 5) == 0)
             {
+				tier2_queue_item_t tws_req = {TIER2_REQUEST_TWS_CURRENT_TIME};
                 struct timespec poll_time;
+				int err;
                 poll_time.tv_sec = tws_cfg->backend_poll_period / 1000;
                 poll_time.tv_nsec = (tws_cfg->backend_poll_period % 1000) * 1000000;
 
                 // raw TWS backend requests: decode the request and pass the request to the backend in a serialized fashion; block & wait for the response...
-                pthread_mutex_lock(&exch->tws_exch_mutex);
-
-                // block & wait until we can go and submit the request:
-                while (mg_get_stop_flag(ctx) == 0 && ETIMEOUT == pthread_cond_timedwait(&exch->tws_tx_signal, &exch->tws_exch_mutex, &poll_time))
-                    ;
-
-                // send the request
-                mg_cry(conn, "frontend request handler for url '%s': command count = %d", request_info->uri, exch->command);
-
-                exch->command++;
-
-                // block & wait until we can go and fetch the response:
-                while (mg_get_stop_flag(ctx) == 0 && ETIMEOUT == pthread_cond_timedwait(&exch->tws_rx_signal, &exch->tws_exch_mutex, &poll_time))
-                    ;
-
-                // receive the response
-                mg_cry(conn, "frontend request handler for url '%s': response count = %d", request_info->uri, exch->response);
+				err = tier2_send_request(tws_cfg, &tws_req);
 
                 mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", ctime(&exch->current_time));
-
-                pthread_mutex_unlock(&exch->tws_exch_mutex);
             }
             else
             {

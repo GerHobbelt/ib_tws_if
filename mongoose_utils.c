@@ -107,6 +107,11 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
             return 1;
         }
     }
+	else if (0 == strcmp("database_file", name))
+	{
+		tws_cfg->database_path = mg_strdup(value);
+		return 1;
+	}
     return 0;
 }
 

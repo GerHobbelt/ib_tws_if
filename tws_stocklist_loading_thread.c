@@ -26,6 +26,7 @@
 
 #include "tws_stocklist_loading_thread.h"
 
+#include <ham/hamsterdb.h>
 
 
 
@@ -222,17 +223,8 @@ void request_range_of_interesting_market_scans(struct my_tws_io_info *info, xmlN
             s->reqdata.scan_above_volume = 1000;
             s->reqdata.scan_market_cap_above = s->reqdata.scan_market_cap_below = DBL_MAX;
 
-#if 0
-            tws_req_scanner_subscription(info->tws_handle, tws_mkNextOrderId(info), s);
-
-            xmlFree(s->scan_code);
-            xmlFree(s->scan_instrument);
-            xmlFree(s->scan_location_code);
-            free(s);
-#else
             s->ticker_id = tws_mkNextOrderId(info);
             push_tws_req_scanner_subscription(info, s);
-#endif
         }
     }
 }
@@ -377,22 +369,14 @@ optionally request the full contract details so that we'll receive the extended 
 */
 void request_contract_details_from_tws(struct my_tws_io_info *info, tr_contract_details_t *cd)
 {
-    tr_contract_t contract;
-    int reqid = tws_mkNextOrderId(info);
+	if (!ib_get_ticker_info(cd))
+	{
+		tr_contract_t contract;
+		int reqid = tws_mkNextOrderId(info);
 
-#if 0
-    tws_init_contract(info->tws_handle, &contract);
-    contract.c_conid = cd->d_summary.c_conid;
-    //contract.c_currency = cd->d_summary.c_currency;
-    contract.c_exchange = cd->d_summary.c_exchange;
-    //contract.c_include_expired = 1;
-    contract.c_primary_exch = cd->d_summary.c_primary_exch;
-    contract.c_symbol = cd->d_summary.c_symbol;
-    contract.c_sectype = cd->d_summary.c_sectype;
-#else
-    contract = cd->d_summary;
-#endif
+	    contract = cd->d_summary;
 
-    tws_req_contract_details(info->tws_handle, reqid, &contract);
+	    tws_req_contract_details(info->tws_handle, reqid, &contract);
+	}
 }
 
