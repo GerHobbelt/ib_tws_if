@@ -37,6 +37,13 @@ aysabtu		= https://aysabtu-certchain.googlecode.com/hg/
 martinlamb-ssl	= https://martinlamb-ssl-options.googlecode.com/hg/
 martinlamb-desc	= https://martinlamb-ssl-descriptive-errors.googlecode.com/hg/
 jabinyan	= https://jabinyan-range-put.googlecode.com/hg/
+timma666	= https://timma666-mg-get-cookie-fix.googlecode.com/hg/
+rickard-cgi	= https://rickard-fixes.googlecode.com/hg/
+colinleitner	= https://colinleitner-dav.googlecode.com/hg/
+mevdschee90	= https://mevdschee-issue-90.googlecode.com/hg/
+lenniaraki	= https://lenniearaki-mp4.googlecode.com/hg/
+ken-threads	= https://ken-threads-ondemand.googlecode.com/hg/
+tekert		= https://tekert-keepalive-fix.googlecode.com/hg/
 
 
 EOT
