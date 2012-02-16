@@ -49,6 +49,7 @@
 
 
 #define MAX_OPTIONS 40
+#define MAX_CONF_FILE_LINE_SIZE (8 * 1024)
 
 static volatile int exit_flag;
 static char server_name[40];        // Set by init_server_name()
@@ -168,7 +169,7 @@ static void set_option(char **options, const char *name, const char *value) {
 }
 
 static void process_command_line_arguments(char *argv[], char **options) {
-    char line[512], opt[512], val[512], *p;
+  char line[MAX_CONF_FILE_LINE_SIZE], opt[sizeof(line)], val[sizeof(line)], *p;
     FILE *fp = NULL;
     size_t i;
     int line_no = 0;
@@ -433,7 +434,7 @@ static LRESULT CALLBACK WindowProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lP
         case ID_QUIT:
             mg_stop(ctx);
             Shell_NotifyIcon(NIM_DELETE, &TrayIcon);
-            PostQuitMessage(0);
+          PostQuitMessage(EXIT_SUCCESS);
             break;
         case ID_EDIT_CONFIG:
             edit_config_file(ctx);
@@ -506,7 +507,9 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR cmdline, int show) {
         TranslateMessage(&msg);
         DispatchMessage(&msg);
     }
-    return 0;
+
+  // return the WM_QUIT value:
+  return msg.wParam;
 }
 #else
 int main(int argc, char *argv[]) {

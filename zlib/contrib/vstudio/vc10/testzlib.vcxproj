@@ -1,0 +1,640 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Itanium">
+      <Configuration>Debug</Configuration>
+      <Platform>Itanium</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseWithoutAsm|Itanium">
+      <Configuration>ReleaseWithoutAsm</Configuration>
+      <Platform>Itanium</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseWithoutAsm|Win32">
+      <Configuration>ReleaseWithoutAsm</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseWithoutAsm|x64">
+      <Configuration>ReleaseWithoutAsm</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Itanium">
+      <Configuration>Release</Configuration>
+      <Platform>Itanium</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C75828E5-873A-4125-ABDC-5DA5DFC98FA8}</ProjectGuid>
+    <RootNamespace>testzlib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30128.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)bin/$(Platform)_MSVC2010.$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)obj/$(ProjectName)_$(Platform)_MSVC2010.$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">$(SolutionDir)bin/$(Platform)_MSVC2010.$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">$(SolutionDir)obj/$(ProjectName)_$(Platform)_MSVC2010.$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)bin/$(Platform)_MSVC2010.$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)obj/$(ProjectName)_$(Platform)_MSVC2010.$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)bin/$(Platform)_MSVC2010.$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)obj/$(ProjectName)_$(Platform)_MSVC2010.$(Configuration)\</IntDir>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">$(SolutionDir)bin/$(Platform)_MSVC2010.$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">$(SolutionDir)obj/$(ProjectName)_$(Platform)_MSVC2010.$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">$(SolutionDir)bin/$(Platform)_MSVC2010.$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">$(SolutionDir)obj/$(ProjectName)_$(Platform)_MSVC2010.$(Configuration)\</IntDir>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">$(SolutionDir)bin/$(Platform)_MSVC2010.$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">$(SolutionDir)obj/$(ProjectName)_$(Platform)_MSVC2010.$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)bin/$(Platform)_MSVC2010.$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)obj/$(ProjectName)_$(Platform)_MSVC2010.$(Configuration)\</IntDir>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">$(SolutionDir)bin/$(Platform)_MSVC2010.$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">$(SolutionDir)obj/$(ProjectName)_$(Platform)_MSVC2010.$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">false</GenerateManifest>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ASMV;ASMINF;WIN32;ZLIB_WINAPI;_DEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)testzlib.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;ZLIB_WINAPI;NDEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ASMV;ASMINF;WIN32;ZLIB_WINAPI;NDEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ASMV;ASMINF;WIN32;ZLIB_WINAPI;_DEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">
+    <Midl>
+      <TargetEnvironment>Itanium</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_WINAPI;_DEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AssemblerOutput>AssemblyAndSourceCode</AssemblerOutput>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)testzlib.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineIA64</TargetMachine>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;ZLIB_WINAPI;NDEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">
+    <Midl>
+      <TargetEnvironment>Itanium</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_WINAPI;NDEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineIA64</TargetMachine>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ASMV;ASMINF;WIN32;ZLIB_WINAPI;NDEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">
+    <Midl>
+      <TargetEnvironment>Itanium</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ZLIB_WINAPI;NDEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_WARNINGS;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(ProjectName).exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineIA64</TargetMachine>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\adler32.c" />
+    <ClCompile Include="..\..\..\compress.c" />
+    <ClCompile Include="..\..\..\crc32.c" />
+    <ClCompile Include="..\..\..\deflate.c" />
+    <ClCompile Include="..\..\..\infback.c" />
+    <ClCompile Include="..\..\masmx64\inffas8664.c">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\..\inffast.c" />
+    <ClCompile Include="..\..\..\inflate.c" />
+    <ClCompile Include="..\..\..\inftrees.c" />
+    <ClCompile Include="..\..\testzlib\testzlib.c" />
+    <ClCompile Include="..\..\..\trees.c" />
+    <ClCompile Include="..\..\..\uncompr.c" />
+    <ClCompile Include="..\..\..\zutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\masmx64\bld_ml64.bat" />
+    <CustomBuild Include="..\..\masmx64\gvmat64.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">true</ExcludedFromBuild>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\masmx64\inffasx64.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">true</ExcludedFromBuild>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(ProjectDir)..\..\masmx64\
+bld_ml64.bat</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)..\..\masmx64\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running assembler to produce: masmx64\%(Filename).obj</Message>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <None Include="..\..\masmx64\readme.txt" />
+    <None Include="..\..\masmx86\bld_ml32.bat" />
+    <CustomBuild Include="..\..\masmx86\inffas32.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">true</ExcludedFromBuild>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <CustomBuild Include="..\..\masmx86\match686.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">true</ExcludedFromBuild>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">cd $(ProjectDir)..\..\masmx86\
+bld_ml32.bat</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Itanium'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Itanium'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|x64'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Running assembler to produce: masmx86\%(Filename).obj</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)..\..\masmx86\%(Filename).obj</Outputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseWithoutAsm|Itanium'">true</ExcludedFromBuild>
+    </CustomBuild>
+    <None Include="..\..\masmx86\readme.txt" />
+    <None Include="zlibvc.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

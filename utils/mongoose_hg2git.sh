@@ -11,7 +11,7 @@ if ! test -d mongoose-hg ; then
 fi
 cd mongoose-hg
 
-easy_install hg-git
+#easy_install hg-git
 
 if test -z "$2" -o -z "$1" ; then
 	dst=mongoose

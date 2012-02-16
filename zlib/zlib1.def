@@ -1,0 +1,66 @@
+EXPORTS
+    _dist_code @1 DATA
+    _length_code @2 DATA
+    _tr_align @3
+    _tr_flush_block @4
+    _tr_init @5
+    _tr_stored_block @6
+    _tr_tally @7
+    adler32 @8
+    compress @9
+    compress2 @10
+    compressBound @11
+    crc32 @12
+    deflate @13
+    deflateBound @14
+    deflateCopy @15
+    deflateEnd @16
+    deflateInit2_ @17
+    deflateInit_ @18
+    deflateParams @19
+    deflatePrime @20
+    deflateReset @21
+    deflateSetDictionary @22
+    deflate_copyright @23 DATA
+    get_crc_table @24
+    gzclearerr @25
+    gzclose @26
+    gzdopen @27
+    gzeof @28
+    gzerror @29
+    gzflush @30
+    gzgetc @31
+    gzgets @32
+    gzopen @33
+    gzprintf @34
+    gzputc @35
+    gzputs @36
+    gzread @37
+    gzrewind @38
+    gzseek @39
+    gzsetparams @40
+    gztell @41
+    gzungetc @42
+    gzwrite @43
+    inflate @44
+    inflateBack @45
+    inflateBackEnd @46
+    inflateBackInit_ @47
+    inflateCopy @48
+    inflateEnd @49
+    inflateInit2_ @50
+    inflateInit_ @51
+    inflateReset @52
+    inflateSetDictionary @53
+    inflateSync @54
+    inflateSyncPoint @55
+    inflate_copyright @56 DATA
+    inflate_fast @57
+    inflate_table @58
+    uncompress @59
+    zError @60
+    z_errmsg @61 DATA
+    zcalloc @62
+    zcfree @63
+    zlibCompileFlags @64
+    zlibVersion @65
