@@ -24,22 +24,6 @@
  * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
  */
 
-/*
- * TODO / roadmap:
- *
- * - prioritizing outgoing requests, e.g. ORDERs have priority over historical data requests, and requests for recent historical data have priority over requests for older data.
- *
- * - use a priority queue for the above plus a 'idle time' delay to prevent hammering the TWS machines with historical data requests: only fire those when the interface has been 'quiet' for X seconds
- *
- * - store/cache historical data; use 'smart' code to request consecutive and _large_ chunks of historical data to be cached: one request, served many times (from local cache)
- *
- * - async TWS TX/RX: push requests asap, using a 'telnet' TCP setting (you don't want orders to wait for a TCP buffer fill timeout!): single thread/connection connected to TWS,
- *   all requests are posted in a 'response queue' (so we know which responses are for whom) upon transmission --> true full duplex communication instead of the standard TWS sample
- *   which uses the TCP connection as a half-duplex connect (as it waits for the response to the request before firing another).
- *
- * - as you can be (almost) certain that a single TWS backend connect is handled in a single thread/task at the backend, it is opportune to have two connections open to TWS:
- *   one for scanner/historical/misc. data and one for real-time data. This should ensure that the real-time ticker data arrives ASAP at our location.
- */
 
 
 #include "tws_comm_thread.h"
