@@ -36,6 +36,9 @@
  * - async TWS TX/RX: push requests asap, using a 'telnet' TCP setting (you don't want orders to wait for a TCP buffer fill timeout!): single thread/connection connected to TWS,
  *   all requests are posted in a 'response queue' (so we know which responses are for whom) upon transmission --> true full duplex communication instead of the standard TWS sample
  *   which uses the TCP connection as a half-duplex connect (as it waits for the response to the request before firing another).
+ *
+ * - as you can be (almost) certain that a single TWS backend connect is handled in a single thread/task at the backend, it is opportune to have two connections open to TWS:
+ *   one for scanner/historical/misc. data and one for real-time data. This should ensure that the real-time ticker data arrives ASAP at our location.
  */
 
 
