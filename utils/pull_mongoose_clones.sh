@@ -44,6 +44,10 @@ mevdschee90	= https://mevdschee-issue-90.googlecode.com/hg/
 lenniaraki	= https://lenniearaki-mp4.googlecode.com/hg/
 ken-threads	= https://ken-threads-ondemand.googlecode.com/hg/
 tekert		= https://tekert-keepalive-fix.googlecode.com/hg/
+bel2125         = https://code.google.com/r/bel2125-mongoose/
+visionofarun    = https://code.google.com/r/visionofarun-mongoose/
+jmikhail-memfix = https://code.google.com/r/jmikhail-memfix/
+
 
 
 EOT
