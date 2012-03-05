@@ -2,6 +2,7 @@
 #ifndef IB_DATABASE_IO_H
 #define IB_DATABASE_IO_H
 
+
 #include <ham/hamsterdb.h>
 #include <tws_c_api/twsapi.h>
 
@@ -12,6 +13,7 @@ extern "C" {
 
 
 struct my_tws_io_info;
+
 
 
 // identifiers for each of the databases we keep around:

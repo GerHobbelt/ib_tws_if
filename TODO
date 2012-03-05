@@ -13,8 +13,8 @@
 
 - use hamsterdb to store the stock and scanner data bulk
 
-- add web pages and JavaScript graphing (raphaeljs) for viewing the stock data
+- add web pages and JavaScript graphing (d3.js/cube) for viewing the stock data
 
-- integrate raphaeljs as a submodule
+- integrate d3.js as a submodule
 
 - migrate Excel/etc. work & keep/make it portable

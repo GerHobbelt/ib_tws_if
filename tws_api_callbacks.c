@@ -389,7 +389,7 @@ void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_detai
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
 
-    // we CAN receive responses for already cancelled subscriptions, e.g. when an erro report triggered a (pending in the TCP pipeline) subscription cancel request:
+    // we CAN receive responses for already canceled subscriptions, e.g. when an error report triggered a (pending in the TCP pipeline) subscription cancel request:
     if (!is_active_tws_scanner_subscription(info, ticker_id))
     {
         // only report this for the first item; no need to keep repeating ourselves.
@@ -523,4 +523,22 @@ void event_tick_snapshot_end(void *opaque, int reqid)
 
 	mg_log(info->conn, "info", "tick_snapshot_end: opaque=%p, reqid=%d", opaque, reqid);
 }
+
+void event_market_data_type(void *opaque, int reqid, market_data_type_t data_type)
+{
+	struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "market_data_type: opaque=%p, reqid=%d, data_type=%d\n", opaque, reqid, (int)data_type);
+}
+
+void event_commission_report(void *opaque, tr_commission_report_t *report)
+{
+	struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "commission_report: opaque=%p, ...\n", opaque);
+	mg_log(info->conn, "info", "          cr_exec_id=[%s], cr_currency=[%s], cr_commission=%f, cr_realized_pnl=%f, cr_yield=%f, cr_yield_redemption_date=%d (%08X) (YYYYMMDD format)\n",
+		report->cr_exec_id, report->cr_currency, report->cr_commission, report->cr_realized_pnl, report->cr_yield, 
+		report->cr_yield_redemption_date, report->cr_yield_redemption_date);
+}
+
 
