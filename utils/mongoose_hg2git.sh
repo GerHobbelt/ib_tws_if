@@ -6,16 +6,26 @@
 #
 
 pushd ..
+
 if ! test -d mongoose-hg ; then
 	mkdir mongoose-hg
 fi
 cd mongoose-hg
+d=$(pwd)
+
+# store hg clones in /tmp as that's the only guaranteed UNIX-y storage; mongoose has a nasty '/' filename in the repo!
+cd /tmp
+if ! test -d mongoose-hg-tmp ; then
+	mkdir mongoose-hg-tmp
+fi
+cd mongoose-hg-tmp
+
 
 #easy_install hg-git
 
 if test -z "$2" -o -z "$1" ; then
 	dst=mongoose
-	hgsrc=https://mongoose.googlecode.com/hg/
+	hgsrc=https://code.google.com/p/mongoose/
 else
 	dst=$2
 	hgsrc=$1
@@ -34,7 +44,7 @@ if ! test -d ${dst} ; then
 
 	# copy the config file to edit to tempfile; create an empty file to process when the config file does not exist yet.
 	# Done this way so gawk can write the result to the config file location.
-	tmpscript=`mktemp`
+	tmpscript=$(mktemp)
 	cat > ${tmpscript}.awk  <<EOT
 #
 # edit ~/.hgrc and add :
@@ -129,6 +139,13 @@ fi
 cd ${dst}
 hg pull
 hg gexport
+
+# and copy everything over to permanent (network?) storage
+if ! test -d ${dst} ; then
+	mkdir ${d}/${dst}
+fi
+rsync -rLkEt --delete --ignore-errors --force ./ ${d}/${dst}
+
 
 popd
 

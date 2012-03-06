@@ -12,7 +12,7 @@ cat > ${tmpar} <<EOT
 # empty lines and lines starting with a # dash are ignored.
 #
 				
-mongoose    	= https://mongoose.googlecode.com/hg/
+mongoose    	= https://code.google.com/p/mongoose/
 lrabinovich 	= https://lrabinovich-bind-to-zero-port.googlecode.com/hg/ 
 rtems		= https://dufault-rtems-support.googlecode.com/hg/
 teamYASSL	= https://teamyassl-conf.googlecode.com/hg/
