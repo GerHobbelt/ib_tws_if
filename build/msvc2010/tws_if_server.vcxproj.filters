@@ -44,6 +44,9 @@
     <ClCompile Include="..\..\tws_database_io.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\fake_hamsterdb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\mongoose_event_handler.h">

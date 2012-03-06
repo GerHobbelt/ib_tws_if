@@ -457,6 +457,7 @@
     <None Include="..\..\TODO" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\fake_hamsterdb.c" />
     <ClCompile Include="..\..\mongoose_event_handler.c" />
     <ClCompile Include="..\..\mongoose_utils.c" />
     <ClCompile Include="..\..\tws_api_callbacks.c" />
@@ -475,9 +476,6 @@
     <ClInclude Include="..\..\tws_stocklist_loading_thread.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\hamsterdb\win32\msvc2010\hamsterDB_dll.vcxproj">
-      <Project>{b82d2df8-f8b2-4331-86d0-508bbd806507}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\..\libxml\win32.msvc2010\libxml_dll.vcxproj">
       <Project>{218f950c-eb90-4023-a016-e9af52c4aae9}</Project>
     </ProjectReference>

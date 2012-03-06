@@ -114,6 +114,10 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn, const st
         processed = NULL;
         break;
 
+	case MG_HTTP_ERROR:
+        processed = NULL;
+		break;
+
     default:
         processed = NULL;
         break;

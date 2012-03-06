@@ -226,8 +226,14 @@ static int tws_open_func(void *arg)
 
     if (conn != NULL)
     {
+		struct socket *sock = mg_get_client_socket(conn);
+
         // Disable Nagle - act a la telnet:
-        mg_set_nodelay_mode(mg_get_client_socket(conn), 1);
+        mg_set_nodelay_mode(sock, 1);
+
+		// enable keepalive + rx/tx timeouts:
+		mg_set_socket_keepalive(sock, 1);
+		mg_set_socket_timeout(sock, 10);
     }
 
     info->conn = conn;
