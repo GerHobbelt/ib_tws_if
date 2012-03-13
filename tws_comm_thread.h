@@ -334,7 +334,7 @@ Use this one to clean up allocation of dynamic resources done in the front-end.
 typedef int tier2_command_done_handler(tier2_queue_item_t *cmd);
 /*
 And this one can be invoked by the front-end to have the back-end clean up its own resources
-related to the reponse, as the front-end will invoke this one when it's completed processing
+related to the response, as the front-end will invoke this one when it's completed processing
 and accessing the response data contained in the tier2_queue_item.
 */
 typedef int tier2_response_done_handler(tier2_queue_item_t **cmd);
@@ -378,7 +378,7 @@ enum tier2_command_code
 	TIER2_REQUEST_TWS_GLOBAL_CANCEL,
 	TIER2_TWS_REQUEST_REALTIME_BARS,
 	TIER2_CANCEL_TWS_REALTIME_BARS,
-	/* auxilliary routines */
+	/* auxiliary routines */
 	TIER2_REQUEST_TWS_SERVER_VERSION,
 	TIER2_REQUEST_TWS_CONNECTION_TIME,
 };

@@ -91,6 +91,10 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn, const st
             }
             break;
 
+	case MG_REQUEST_COMPLETE:
+		processed = NULL;
+		break;
+
     case MG_EXIT0:
         // threads have already shut down; discard our custom mutexes, etc.:
         destroy_tws_thread_exch(&tws_cfg->exch);

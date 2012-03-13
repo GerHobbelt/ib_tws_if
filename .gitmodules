@@ -19,3 +19,6 @@
 [submodule "hamsterdb"]
 	path = hamsterdb
 	url = git@github.com:GerHobbelt/hamsterdb.git
+[submodule "libtre"]
+	path = libtre
+	url = git@github.com:GerHobbelt/libtre.git
