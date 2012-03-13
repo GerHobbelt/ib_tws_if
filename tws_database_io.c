@@ -27,6 +27,8 @@ int ib_open_databases(struct my_tws_io_info *info)
 
 	ham_env_new(&dbi->env);
 
+	return 0;
+
 	err = ham_env_open_ex(dbi->env, db_filename, 0, NULL);
 	if (err == HAM_FILE_NOT_FOUND)
 	{
