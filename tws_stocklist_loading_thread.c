@@ -278,7 +278,7 @@ void push_tws_req_scanner_subscription(struct my_tws_io_info *info, scanner_subs
 
 
 /*
-when there's a free slot in TWS, pop a scanner subscriptiuon request off the stack and send it to TWS
+when there's a free slot in TWS, pop a scanner subscription request off the stack and send it to TWS
 
 Return the number of queued requests still waiting in the queue after this call.
 */
@@ -300,7 +300,7 @@ size_t pop_tws_req_scanner_subscription(struct my_tws_io_info *info)
 /*
 send a CANCEL REQUEST to TWS for the given scanner subscription
 
-When the subscription request is cancelled, we also check whether there's another subscription
+When the subscription request is canceled, we also check whether there's another subscription
 request pending in the queue and submit that one immediately afterwards.
 */
 void cancel_tws_scanner_subscription(struct my_tws_io_info *info, int ticker_id)
