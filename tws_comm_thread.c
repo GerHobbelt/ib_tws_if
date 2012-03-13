@@ -1478,7 +1478,7 @@ void tws_worker_thread(struct mg_context *ctx)
             err = tws_connect(info.tws_handle, tws_cfg->our_id_code);
             if (err)
             {
-                mg_cry4ctx(ctx, "tws connect returned error: %s\n", tws_errcode2str(err));
+                mg_cry4ctx(ctx, "tws connect returned error: %s", tws_errcode2str(err));
 
                 if (!tws_app_is_down)
                 {
