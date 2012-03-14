@@ -24,6 +24,8 @@
 
 #include "tws_mongoose_porting.h"
 
+#include <tws_c_api/twsapi.h>
+
 
 
 #define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
@@ -57,9 +59,25 @@ struct tws_conn_cfg
 
 
 
+#ifdef __cplusplus
 
 
+static __inline void tws_copy(char *dst, const char *src)
+{
+	tws_strcpy(dst, src);
+}
+static __inline void tws_copy(double &dst, double src)
+{
+	if (src != DBL_MAX)
+		dst = src;
+}
+static __inline void tws_copy(int &dst, int src)
+{
+	if (src != INT_MAX)
+		dst = src;
+}
 
+#endif
 
 
 #endif // TWS_BACKEND_GENERIC_HEADER_INCLUDED

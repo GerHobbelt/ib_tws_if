@@ -21,8 +21,9 @@
 
 #include "system-includes.h"
 
-#include "tws_database_io.h"
-#include "tws_comm_thread.h"
+#include <ham/hamsterdb.h>
+//#include "tws_database_io.h"
+//#include "tws_comm_thread.h"
 
 #define FAKE_THE_HAMSTER			01
 

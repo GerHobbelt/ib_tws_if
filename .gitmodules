@@ -22,3 +22,9 @@
 [submodule "libtre"]
 	path = libtre
 	url = git@github.com:GerHobbelt/libtre.git
+[submodule "html/js/d3"]
+	path = html/js/d3
+	url = git@github.com:GerHobbelt/d3.git
+[submodule "upskirt"]
+	path = upskirt
+	url = git@github.com:GerHobbelt/upskirt.git

@@ -632,7 +632,7 @@ void destroy_tws_thread_exch(struct tws_thread_exch **ptr);
 
 
 
-struct scanner_subscription_request_t;
+class scanner_subscription_request_t;
 
 /*
 struct passed around as user parameter for all TWS API callbacks.
@@ -651,11 +651,11 @@ struct my_tws_io_info
 
     /* scanner subscription request active set and queue: */
     size_t active_scanner_subscription_count;
-    struct scanner_subscription_request_t *active_scanner_subscriptions[10];
+    scanner_subscription_request_t *active_scanner_subscriptions[10];
 
     size_t queued_scanner_subscription_count;
     size_t queued_scanner_subscription_allocsize;
-    struct scanner_subscription_request_t **scanner_subscription_queue;
+    scanner_subscription_request_t **scanner_subscription_queue;
 
     /* keeping track of the current TWS response message's number of items in the TWS response message: */
     size_t row_count;
@@ -669,11 +669,110 @@ struct my_tws_io_info
 /* --- scanner subscription request queue --- */
 
 
-typedef struct scanner_subscription_request_t
+class scanner_subscription_request_t
 {
+protected:
     int ticker_id;
-    tr_scanner_subscription_t reqdata;
-} scanner_subscription_request_t;
+
+    char  *instrument;
+    char  *location_code;
+    char  *scan_code;
+
+    double above_price;
+    int above_volume;
+
+public:
+	scanner_subscription_request_t() :
+		ticker_id(0), 
+		instrument(NULL), location_code(NULL), scan_code(NULL),
+		above_price(DBL_MAX), above_volume(INT_MAX)
+	{
+	}
+
+	~scanner_subscription_request_t()
+	{
+		free(instrument);
+		free(location_code);
+		free(scan_code);
+	}
+
+public:
+    int set_ticker_id(int id)
+	{
+		ticker_id = id;
+		return id;
+	}
+    int get_ticker_id(void) const
+	{
+		return ticker_id;
+	}
+
+    const char *set_instrument(const char *val)
+	{
+		free(instrument);
+		instrument = strdup(val);
+		return instrument;
+	}
+    const char *get_instrument(void) const
+	{
+		return instrument;
+	}
+    const char *set_location_code(const char *val)
+	{
+		free(location_code);
+		location_code = strdup(val);
+		return location_code;
+	}
+    const char *get_location_code(void) const 
+	{
+		return location_code;
+	}
+    const char *set_scan_code(const char *val)
+	{
+		free(scan_code);
+		scan_code = strdup(val);
+		return scan_code;
+	}
+    const char *get_scan_code(void) const
+	{
+		return scan_code;
+	}
+
+    double set_above_price(double val)
+	{
+		above_price = val;
+		return val;
+	}
+    double get_above_price(void) const
+	{
+		return above_price;
+	}
+    int set_above_volume(int val)
+	{
+		above_volume = val;
+		return val;
+	}
+    int get_above_volume(void) const
+	{
+		return above_volume;
+	}
+
+public:
+	int send_request(tws_instance_t *tws_handle)
+	{
+		tr_scanner_subscription_t s;
+		tws_init_scanner_subscription(tws_handle, &s);
+		tws_copy(s.scan_code, this->scan_code);
+		tws_copy(s.scan_instrument, this->instrument);
+		tws_copy(s.scan_location_code, this->location_code);
+		tws_copy(s.scan_above_price, above_price);
+		tws_copy(s.scan_above_volume, above_volume);
+
+        int rv = tws_req_scanner_subscription(tws_handle, ticker_id, &s);
+		tws_destroy_scanner_subscription(tws_handle, &s);
+		return rv;
+	}
+};
 
 
 
