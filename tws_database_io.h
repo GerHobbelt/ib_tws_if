@@ -7,9 +7,6 @@
 #include <tws_c_api/twsapi.h>
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif // __cplusplus
 
 
 struct my_tws_io_info;
@@ -49,9 +46,5 @@ int ib_get_ticker_info(tr_contract_details_t *cd);
 int ib_store_scanner_parameters_xml(struct my_tws_io_info *info, const char *xml);
 
 
-
-#ifdef __cplusplus
-}
-#endif // __cplusplus
 
 #endif

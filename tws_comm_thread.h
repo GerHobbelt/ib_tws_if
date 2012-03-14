@@ -32,10 +32,6 @@
 
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif // __cplusplus
-
 
 /*
 ===============================================================================
@@ -687,9 +683,5 @@ typedef struct scanner_subscription_request_t
 
 void tws_worker_thread(struct mg_context *ctx);
 
-
-#ifdef __cplusplus
-}
-#endif // __cplusplus
 
 #endif // TWS_COMM_THREAD_HEADER_INCLUDED

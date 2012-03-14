@@ -22,58 +22,15 @@
 #ifndef TWS_MONGOOSE_PORTING_HEADER_INCLUDED
 #define TWS_MONGOOSE_PORTING_HEADER_INCLUDED
 
-
-#if defined(_WIN32)
-#define _CRT_SECURE_NO_WARNINGS  // Disable deprecation warning in VS2005
-#else
-#define _XOPEN_SOURCE 600  // For PATH_MAX on linux
-#endif
-
-#include <sys/stat.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <string.h>
-#include <errno.h>
-#include <limits.h>
-#include <stddef.h>
-#include <stdarg.h>
-
+#include <mongoose/mongoose_sys_porting.h>
 
 #ifdef _WIN32
-
-#include <windows.h>
 #include <winsvc.h>
-
-#if defined(_MSC_VER)
-
-#define PATH_MAX MAX_PATH
-#define S_ISDIR(x) ((x) & _S_IFDIR)
-
-#endif // _MSC_VER
-
-#define DIRSEP '\\'
-#define snprintf _snprintf
-#define vsnprintf _vsnprintf
-#define sleep(x) Sleep((x) * 1000)
-#define WINCDECL __cdecl
-
-#else
-
-#include <sys/wait.h>
-#include <unistd.h>
-
-#define DIRSEP '/'
-#define WINCDECL
-
 #endif // _WIN32
 
 #include <assert.h>
-#include <time.h>
 #include <float.h>
 #include <math.h>
-
-#include <pthread.h>
 
 #include <mongoose/mongoose.h>
 #include <mongoose/mongoose_ex.h>
@@ -83,11 +40,6 @@
 #pragma warning(disable: 4100)  // shut up MSVC about 'unreferenced formal parameter'
 #endif
 
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif // __cplusplus
 
 
 
@@ -107,9 +59,5 @@ log a message and terminate the application
 */
 void die(const char *fmt, ...);
 
-
-#ifdef __cplusplus
-}
-#endif // __cplusplus
 
 #endif // TWS_MONGOOSE_PORTING_HEADER_INCLUDED

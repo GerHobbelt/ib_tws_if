@@ -19,47 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef TWS_BACKEND_GENERIC_HEADER_INCLUDED
-#define TWS_BACKEND_GENERIC_HEADER_INCLUDED
+#ifndef IBSRV_SYSTEM_INCLUDES_WRAPPER_H
+#define IBSRV_SYSTEM_INCLUDES_WRAPPER_H
 
+/*
+make sure we load system headers etc FIRST as windows.h and a few others have the 
+very irritating idiosyncracy of loading winsock.h which clashes fataly with
+winsock2.h -- and we want the latter to make it through where we need anything
+'socky'.
+*/
 #include "tws_mongoose_porting.h"
 
+#ifdef _WIN32
+#include <winsvc.h>
+#endif // _WIN32
+
+#include <assert.h>
+#include <float.h>
+#include <math.h>
+
+#if defined(_MSC_VER)
+#pragma warning(disable: 4100)  // shut up MSVC about 'unreferenced formal parameter'
+#endif
 
 
-#define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
-
-
-
-
-
-struct tws_thread_exch;  // forward reference: structure which contains all front-end to back-end thread comminucation stuff
-
-
-struct tws_conn_cfg
-{
-    /* configuration parameters: how to connect to TWS */
-    const char *ip_address;
-    int port;
-    int our_id_code;
-
-    long backend_poll_period; // unit: milliseconds
-
-	char *database_path;
-
-    /* internal communication stuff between mongoose threads and the tws back-end thread goes here: */
-    struct tws_thread_exch *exch;
-
-	/*
-	to be filled in by the backend ('tier2/TWS') thread:
-	*/
-    struct my_tws_io_info *tws_thread_info;
-};
-
-
-
-
-
-
-
-
-#endif // TWS_BACKEND_GENERIC_HEADER_INCLUDED
+#endif // IBSRV_SYSTEM_INCLUDES_WRAPPER_H

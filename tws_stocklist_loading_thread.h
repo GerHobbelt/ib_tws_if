@@ -64,10 +64,6 @@
 
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif // __cplusplus
-
 xmlNodePtr xmlGetParent(xmlNodePtr node);
 
 void xmlXPathContainsAnyOfFunction(xmlXPathParserContextPtr ctxt, int nargs);
@@ -87,9 +83,5 @@ void request_range_of_interesting_market_scans(struct my_tws_io_info *info, xmlN
 void request_contract_details_from_tws(struct my_tws_io_info *info, tr_contract_details_t *cd);
 
 
-
-#ifdef __cplusplus
-}
-#endif // __cplusplus
 
 #endif // TWS_STOCKLIST_LOAD_THREAD_HEADER_INCLUDED

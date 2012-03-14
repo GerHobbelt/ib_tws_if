@@ -32,29 +32,6 @@
 #include "tws_database_io.h"
 
 
-#if defined(_MSC_VER)
-#define flockfile(x) (void) 0
-#define funlockfile(x) (void) 0
-#endif
-
-#if defined(DEBUG)
-#define DEBUG_TRACE(x) do {                                     \
-    flockfile(stdout);                                          \
-    printf("*** %lu.%p.%s.%d: ",                                \
-    (unsigned long) time(NULL), (void *) pthread_self(),        \
-    __func__, __LINE__);                                        \
-    printf x;                                                   \
-    putchar('\n');                                              \
-    fflush(stdout);                                             \
-    funlockfile(stdout);                                        \
-} while (0)
-#else
-#define DEBUG_TRACE(x)
-#endif // DEBUG
-
-
-
-
 
 
 

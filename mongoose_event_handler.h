@@ -26,9 +26,6 @@
 
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif // __cplusplus
 
 
 /*
@@ -36,12 +33,9 @@ extern "C" {
 
 mongoose front-end and back-end event handler callback
 */
-void *event_handler(enum mg_event event_id, struct mg_connection *conn, const struct mg_request_info *request_info);
+extern "C" void *event_handler(enum mg_event event_id, struct mg_connection *conn, const struct mg_request_info *request_info);
 
 
 
-#ifdef __cplusplus
-}
-#endif // __cplusplus
 
 #endif // MONGOOSE_EVENT_HANDLER_HEADER_INCLUDED

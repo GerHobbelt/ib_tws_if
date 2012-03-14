@@ -458,19 +458,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\fake_hamsterdb.c" />
-    <ClCompile Include="..\..\mongoose_event_handler.c" />
-    <ClCompile Include="..\..\mongoose_utils.c" />
-    <ClCompile Include="..\..\support-code.c" />
-    <ClCompile Include="..\..\tws_api_callbacks.c" />
-    <ClCompile Include="..\..\tws_comm_thread.c" />
-    <ClCompile Include="..\..\tws_database_io.c" />
-    <ClCompile Include="..\..\tws_if_main.c" />
-    <ClCompile Include="..\..\tws_stocklist_loading_thread.c" />
+    <ClCompile Include="..\..\mongoose_event_handler.cpp" />
+    <ClCompile Include="..\..\mongoose_utils.cpp" />
+    <ClCompile Include="..\..\support-code.cpp" />
+    <ClCompile Include="..\..\tws_api_callbacks.cpp" />
+    <ClCompile Include="..\..\tws_comm_thread.cpp" />
+    <ClCompile Include="..\..\tws_database_io.cpp" />
+    <ClCompile Include="..\..\tws_if_main.cpp" />
+    <ClCompile Include="..\..\tws_stocklist_loading_thread.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\mongoose_event_handler.h" />
     <ClInclude Include="..\..\mongoose_utils.h" />
     <ClInclude Include="..\..\support-code.h" />
+    <ClInclude Include="..\..\system-includes.h" />
     <ClInclude Include="..\..\tws_backend.h" />
     <ClInclude Include="..\..\tws_comm_thread.h" />
     <ClInclude Include="..\..\tws_database_io.h" />

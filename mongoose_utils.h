@@ -26,11 +26,6 @@
 
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif // __cplusplus
-
-
 
 /*
 ===============================================================================
@@ -39,16 +34,10 @@ custom handlers (callbacks) for extending the mongoose command line / config fil
 
 ===============================================================================
 */
-int option_decode(struct mg_context *ctx, const char *name, const char *value);
-int option_fill(struct mg_context *ctx);
-const char * option_get(const struct mg_context *ctx, const char *name);
+extern "C" int option_decode(struct mg_context *ctx, const char *name, const char *value);
+extern "C" int option_fill(struct mg_context *ctx);
+extern "C" const char * option_get(const struct mg_context *ctx, const char *name);
 
 
-
-
-
-#ifdef __cplusplus
-}
-#endif // __cplusplus
 
 #endif // MONGOOSE_UTILS_HEADER_INCLUDED
