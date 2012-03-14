@@ -24,9 +24,9 @@
  * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
  */
 
+#include "system-includes.h"
 
 #include "tws_comm_thread.h"
-
 #include "tws_stocklist_loading_thread.h"
 
 
@@ -57,21 +57,21 @@ void event_tick_option_computation(void *opaque, int ticker_id, tr_tick_type_t t
         opaque, ticker_id, (int)type, implied_vol, delta, opt_price, pv_dividend, gamma, vega, theta, und_price);
 }
 
-void event_tick_generic(void *opaque, int ticker_id, int type, double value)
+void event_tick_generic(void *opaque, int ticker_id, tr_tick_type_t type, double value)
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "tick_generic: opaque=%p, ticker_id=%d, type=%d, ...", opaque, ticker_id, type);
 }
 
-void event_tick_string(void *opaque, int ticker_id, int type, const char value[])
+void event_tick_string(void *opaque, int ticker_id, tr_tick_type_t type, const char value[])
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "tick_string: opaque=%p, ticker_id=%d, type=%d, ...", opaque, ticker_id, type);
 }
 
-void event_tick_efp(void *opaque, int ticker_id, int tick_type, double basis_points, const char formatted_basis_points[], double implied_futures_price, int hold_days, const char future_expiry[], double dividend_impact, double dividends_to_expiry)
+void event_tick_efp(void *opaque, int ticker_id, tr_tick_type_t tick_type, double basis_points, const char formatted_basis_points[], double implied_futures_price, int hold_days, const char future_expiry[], double dividend_impact, double dividends_to_expiry)
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
 

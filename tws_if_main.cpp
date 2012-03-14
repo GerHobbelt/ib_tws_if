@@ -25,8 +25,7 @@
  * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
  */
 
-
-
+#include "system-includes.h"
 
 #include "tws_backend.h"
 #include "mongoose_utils.h"
@@ -265,7 +264,7 @@ static void start_mongoose(int argc, char *argv[]) {
     signal(SIGINT, signal_handler);
 
     /* Start Mongoose */
-    ctx = mg_start(&userdef, options);
+    ctx = mg_start(&userdef, (const char **)options);
     for (i = 0; options[i] != NULL; i++) {
         free(options[i]);
     }

@@ -24,9 +24,9 @@
  * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
  */
 
-#include "tws_stocklist_loading_thread.h"
+#include "system-includes.h"
 
-#include <ham/hamsterdb.h>
+#include "tws_stocklist_loading_thread.h"
 
 
 
@@ -149,7 +149,7 @@ void request_range_of_interesting_market_scans(struct my_tws_io_info *info, xmlN
         for (i = 0; i < nodeset->nodeNr; i++)
         {
             xmlNodePtr node = nodeset->nodeTab[i];
-            scanner_subscription_request_t *s = calloc(1, sizeof(*s));
+            scanner_subscription_request_t *s = (scanner_subscription_request_t *)calloc(1, sizeof(*s));
             xmlNodePtr child;
             xmlChar *val;
 
@@ -253,7 +253,7 @@ void push_tws_req_scanner_subscription(struct my_tws_io_info *info, scanner_subs
         if (!info->scanner_subscription_queue)
         {
             info->queued_scanner_subscription_allocsize = 8;
-            info->scanner_subscription_queue = calloc(info->queued_scanner_subscription_allocsize, sizeof(info->scanner_subscription_queue[0]));
+            info->scanner_subscription_queue = (scanner_subscription_request_t **)calloc(info->queued_scanner_subscription_allocsize, sizeof(info->scanner_subscription_queue[0]));
             if (!info->scanner_subscription_queue)
                 return;
             assert(info->queued_scanner_subscription_count == 0);
@@ -262,7 +262,7 @@ void push_tws_req_scanner_subscription(struct my_tws_io_info *info, scanner_subs
         {
             size_t oldsize = info->queued_scanner_subscription_allocsize;
             info->queued_scanner_subscription_allocsize += 16;
-            info->scanner_subscription_queue = realloc(info->scanner_subscription_queue, info->queued_scanner_subscription_allocsize * sizeof(info->scanner_subscription_queue[0]));
+            info->scanner_subscription_queue = (scanner_subscription_request_t **)realloc(info->scanner_subscription_queue, info->queued_scanner_subscription_allocsize * sizeof(info->scanner_subscription_queue[0]));
             if (!info->scanner_subscription_queue)
                 return;
             memset(&info->scanner_subscription_queue[oldsize], 0, (info->queued_scanner_subscription_allocsize - oldsize) * sizeof(info->scanner_subscription_queue[0]));

@@ -23,27 +23,7 @@
 #ifndef ION_SUPPORT_CODE_H__
 #define ION_SUPPORT_CODE_H__
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
-#include <string.h>
-#include <errno.h>
-#include <ctype.h>
-#include <limits.h>
-#include <assert.h>
-#if defined(_MSC_VER)
-#define _WIN32_WINNT 0x0601 // Win7
-#include <io.h>
-#include <windows.h>
-#else
-#include <unistd.h>
-#endif
-
-#ifndef PATH_MAX            
-#define PATH_MAX            1024
-#endif
-
-#define PATH_MAXSIZE		(PATH_MAX + 2)
+#define PATH_MAXSIZE		(2 * PATH_MAX + 2)
 
 
 

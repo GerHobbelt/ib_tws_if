@@ -22,6 +22,10 @@
 #ifndef IBSRV_SYSTEM_INCLUDES_WRAPPER_H
 #define IBSRV_SYSTEM_INCLUDES_WRAPPER_H
 
+#ifndef _WIN32_WINNT
+#define _WIN32_WINNT 0x0601 // Win7
+#endif
+
 /*
 make sure we load system headers etc FIRST as windows.h and a few others have the 
 very irritating idiosyncracy of loading winsock.h which clashes fataly with
@@ -37,6 +41,25 @@ winsock2.h -- and we want the latter to make it through where we need anything
 #include <assert.h>
 #include <float.h>
 #include <math.h>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <string.h>
+#include <errno.h>
+#include <ctype.h>
+#include <limits.h>
+#if defined(_MSC_VER)
+#include <io.h>
+#include <windows.h>
+#else
+#include <unistd.h>
+#endif
+
+#ifndef PATH_MAX            
+#define PATH_MAX            1024
+#endif
+
 
 #if defined(_MSC_VER)
 #pragma warning(disable: 4100)  // shut up MSVC about 'unreferenced formal parameter'

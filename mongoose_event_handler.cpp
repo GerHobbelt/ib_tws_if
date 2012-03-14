@@ -24,7 +24,7 @@
  * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
  */
 
-
+#include "system-includes.h"
 
 #include "mongoose_event_handler.h"
 
