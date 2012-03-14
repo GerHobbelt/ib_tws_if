@@ -32,7 +32,7 @@ static __inline char D(char dirsep)
 static __inline char *strnmov_D(char *dst, const char *src, size_t dstlen)
 {
 	dstlen--;
-	while (dstlen > 0)
+	while (dstlen > 0 && *src)
 	{
 		*dst++ = D(*src++);
 		dstlen--;
