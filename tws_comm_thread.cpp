@@ -1508,7 +1508,8 @@ void tws_worker_thread(struct mg_context *ctx)
 					Meanwhile, we also process queued requests from the front-end at a 1:1 mix ratio vs. incoming messages from TWS/IB:
 					*/
 					process_one_queued_tier2_request(&info);
-                }
+					pop_tws_req_scanner_subscription(&info);
+				}
             }
         }
         else
