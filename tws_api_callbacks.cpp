@@ -403,8 +403,6 @@ void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_detai
         return;
     }
 
-    info->row_count++;
-
 	mg_log(info->conn, "info", "scanner_data: opaque=%p, ticker_id=%d, rank=%d, distance=%s, benchmark=%s, projection=%s",
         opaque, ticker_id, rank, distance, benchmark, projection);
 	mg_log(info->conn, "info", "scanner_data details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d",
@@ -424,17 +422,24 @@ void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_detai
     request_contract_details_from_tws(info, cd);
 }
 
-void event_scanner_data_end(void *opaque, int ticker_id)
+void event_scanner_data_start(void *opaque, int ticker_id, int num_elements)
+{
+    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+
+	mg_log(info->conn, "info", "scanner_data_start: opaque=%p, ticker_id=%d", opaque, ticker_id);
+
+    // always unsubsubscribe a scanner report when it won't deliver any rows:
+    if (num_elements == 0)
+    {
+        cancel_tws_scanner_subscription(info, ticker_id);
+    }
+}
+
+void event_scanner_data_end(void *opaque, int ticker_id, int num_elements)
 {
     struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "scanner_data_end: opaque=%p, ticker_id=%d", opaque, ticker_id);
-
-    // always unsubsubscribe a scanner report when it didn't deliver any rows:
-    if (info->row_count == 0)
-    {
-        cancel_tws_scanner_subscription(info, ticker_id);
-    }
 }
 
 void event_current_time(void *opaque, long time)

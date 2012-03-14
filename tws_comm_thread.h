@@ -651,14 +651,11 @@ struct my_tws_io_info
 
     /* scanner subscription request active set and queue: */
     size_t active_scanner_subscription_count;
-    scanner_subscription_request_t *active_scanner_subscriptions[10];
+    scanner_subscription_request_t *active_scanner_subscriptions[10 /* limit imposed by TWS/IB */];
 
     size_t queued_scanner_subscription_count;
     size_t queued_scanner_subscription_allocsize;
     scanner_subscription_request_t **scanner_subscription_queue;
-
-    /* keeping track of the current TWS response message's number of items in the TWS response message: */
-    size_t row_count;
 
 	/* -- the databases which keep track of things for us -- */
 	struct my_databases_info dbi;
@@ -758,18 +755,18 @@ public:
 	}
 
 public:
-	int send_request(tws_instance_t *tws_handle)
+	int send_request(struct my_tws_io_info *info)
 	{
 		tr_scanner_subscription_t s;
-		tws_init_scanner_subscription(tws_handle, &s);
+		tws_init_scanner_subscription(info->tws_handle, &s);
 		tws_copy(s.scan_code, this->scan_code);
 		tws_copy(s.scan_instrument, this->instrument);
 		tws_copy(s.scan_location_code, this->location_code);
 		tws_copy(s.scan_above_price, above_price);
 		tws_copy(s.scan_above_volume, above_volume);
 
-        int rv = tws_req_scanner_subscription(tws_handle, ticker_id, &s);
-		tws_destroy_scanner_subscription(tws_handle, &s);
+        int rv = tws_req_scanner_subscription(info->tws_handle, ticker_id, &s);
+		tws_destroy_scanner_subscription(info->tws_handle, &s);
 		return rv;
 	}
 };

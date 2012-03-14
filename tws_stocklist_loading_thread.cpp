@@ -285,7 +285,7 @@ size_t pop_tws_req_scanner_subscription(struct my_tws_io_info *info)
         scanner_subscription_request_t *reqdata = info->scanner_subscription_queue[--info->queued_scanner_subscription_count];
         info->active_scanner_subscriptions[info->active_scanner_subscription_count++] = reqdata;
 
-		reqdata->send_request(info->tws_handle);
+		reqdata->send_request(info);
     }
     return info->queued_scanner_subscription_count;
 }
@@ -293,9 +293,6 @@ size_t pop_tws_req_scanner_subscription(struct my_tws_io_info *info)
 
 /*
 send a CANCEL REQUEST to TWS for the given scanner subscription
-
-When the subscription request is canceled, we also check whether there's another subscription
-request pending in the queue and submit that one immediately afterwards.
 */
 void cancel_tws_scanner_subscription(struct my_tws_io_info *info, int ticker_id)
 {
@@ -316,13 +313,9 @@ void cancel_tws_scanner_subscription(struct my_tws_io_info *info, int ticker_id)
                 memmove(&info->active_scanner_subscriptions[i], &info->active_scanner_subscriptions[i + 1], (info->active_scanner_subscription_count - i - 1) * sizeof(info->active_scanner_subscriptions[0]));
             }
             info->active_scanner_subscription_count--;
-
-            pop_tws_req_scanner_subscription(info);
             return;
         }
     }
-
-    // when the given ticker_id is not in the active request set, we do NOT go and look in the queued set!
 }
 
 

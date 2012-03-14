@@ -1496,9 +1496,7 @@ void tws_worker_thread(struct mg_context *ctx)
 
                 while (mg_get_stop_flag(ctx) == 0 && tws_connected(info.tws_handle))
                 {
-                    // process another message: reset the message-internal counter(s):
-                    info.row_count = 0;
-
+                    // process another message
                     if (0 != tws_event_process(info.tws_handle))
                     {
                         break;
