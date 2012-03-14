@@ -19,6 +19,7 @@
       <Filter>unused</Filter>
     </ClCompile>
     <ClCompile Include="..\..\tws_c_api\twsapi.c" />
+    <ClCompile Include="..\..\tws_c_api\twsapi-debug.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\tws_c_api\MANIFEST">
@@ -87,5 +88,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\tws_c_api\twsapi.h" />
+    <ClInclude Include="..\..\tws_c_api\twsapi-debug.h" />
   </ItemGroup>
 </Project>

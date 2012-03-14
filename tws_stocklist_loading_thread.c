@@ -237,6 +237,9 @@ when there's a free slot in TWS, send the scanner subscription request to TWS, o
 */
 void push_tws_req_scanner_subscription(struct my_tws_io_info *info, scanner_subscription_request_t *reqdata)
 {
+	mg_log(info->conn, "info", "REQUEST scanner subscription: code [%s], instrument [%s], location [%s]", 
+			reqdata->reqdata.scan_code, reqdata->reqdata.scan_instrument, reqdata->reqdata.scan_location_code);
+
     if (info->active_scanner_subscription_count < ARRAY_SIZE(info->active_scanner_subscriptions))
     {
         // there's room for one more active subscription: transmit it!

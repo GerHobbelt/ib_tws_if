@@ -278,6 +278,8 @@ void event_scanner_parameters(void *opaque, const char xml[])
 
 	mg_log(info->conn, "info", "scanner_parameters: opaque=%p, xml:(len=%d)", opaque, (int)strlen(xml));
 
+	ib_store_scanner_parameters_xml(info, xml);
+
     doc = xmlReadDoc((const xmlChar *)xml, URL, "UTF-8", XML_PARSE_NOENT | XML_PARSE_NONET | XML_PARSE_NOCDATA);
 
     if (doc)

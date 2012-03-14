@@ -1,6 +1,7 @@
 
 #include "tws_database_io.h"
 #include "tws_comm_thread.h"
+#include "support-code.h"
 
 
 // where to start numbering for the database 'names':
@@ -97,5 +98,26 @@ int ib_cache_ticker_info(const tr_contract_details_t *cd)
 
 int ib_get_ticker_info(tr_contract_details_t *cd)
 {
+	return 0;
+}
+
+
+
+
+
+int ib_store_scanner_parameters_xml(struct my_tws_io_info *info, const char *xml)
+{
+	// TODO: store this in the DB_MISC_BLOBS database table
+
+	const char *db_filename = info->tws_cfg->database_path;
+	char fname[PATH_MAXSIZE];
+	char *dst;
+
+	dst = concat_path(fname, PATH_MAXSIZE, db_filename, "/../scanner-parameters.xml", NULL);
+	if (dst)
+	{
+		writefile(dst, xml, strlen(xml), 0);
+	}
+
 	return 0;
 }

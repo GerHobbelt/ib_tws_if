@@ -25,6 +25,7 @@
 #include "tws_backend.h"
 
 #include <tws_c_api/twsapi.h>
+#include <tws_c_api/twsapi-debug.h>
 
 #include "tws_database_io.h"
 
@@ -577,7 +578,7 @@ struct tier2_queue_item
 	unsigned int exec_time_interval;
 
     tier2_command_done_handler *cleanup_after_command; // invoked when front-end MAY clean the command-side related resources it allocated for us
-    tier2_response_done_handler *cleanup_after_response; // invoked when the front-end has completed processing the reponse and the backend can release any allocated resources which are related to this request.
+    tier2_response_done_handler *cleanup_after_response; // invoked when the front-end has completed processing the response and the backend can release any allocated resources which are related to this request.
 
     enum tier2_request_state request_state; // 0: pending, 1: success/done; < 0: error; > 1: warning/notification
     union

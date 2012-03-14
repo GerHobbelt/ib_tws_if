@@ -67,6 +67,18 @@
 static void process_one_queued_tier2_request(struct my_tws_io_info *info);
 
 
+/*
+replace TWSAPI debug printf call.
+*/
+void tws_debug_printf(void *opaque, const char *fmt, ...)
+{
+	struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+	va_list ap;
+
+	va_start(ap, fmt);
+	mg_vlog((info ? info->conn : NULL), "debug", fmt, ap);
+	va_end(ap);
+}
 
 
 void init_tws_thread_exch(struct tws_thread_exch **ptr_ref)

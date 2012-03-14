@@ -23,6 +23,8 @@ typedef enum
 	DB_STOCK_DETAILS = 1, 
 	// the index which maps ticker strings to contract ID:
 	DB_INDEX_TICKER_2_STOCK_ID,
+	// stores misc. blobs of data
+	DB_MISC_BLOBS,
 
 	// and 1 higher than the highest index we'll ever address:
 	DB_MAX
@@ -43,6 +45,8 @@ const char *ib_strerror(int errcode);
 
 int ib_cache_ticker_info(const tr_contract_details_t *cd);
 int ib_get_ticker_info(tr_contract_details_t *cd);
+
+int ib_store_scanner_parameters_xml(struct my_tws_io_info *info, const char *xml);
 
 
 

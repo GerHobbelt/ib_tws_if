@@ -47,6 +47,9 @@
     <ClCompile Include="..\..\fake_hamsterdb.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\support-code.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\mongoose_event_handler.h">
@@ -68,6 +71,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\tws_database_io.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\support-code.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
