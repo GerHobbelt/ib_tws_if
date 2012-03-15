@@ -35,7 +35,7 @@
 
 void event_tick_price(void *opaque, int ticker_id, tr_tick_type_t field, double price, int can_auto_execute)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "tick_price: opaque=%p, ticker_id=%d, type=%d, price=%.2lf, can_auto=%d",
         opaque, ticker_id, (int)field, price, can_auto_execute);
@@ -43,7 +43,7 @@ void event_tick_price(void *opaque, int ticker_id, tr_tick_type_t field, double 
 
 void event_tick_size(void *opaque, int ticker_id, tr_tick_type_t type, int size)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "tick_size: opaque=%p, ticker_id=%d, type=%d, size=%d",
         opaque, ticker_id, (int)type, size);
@@ -51,7 +51,7 @@ void event_tick_size(void *opaque, int ticker_id, tr_tick_type_t type, int size)
 
 void event_tick_option_computation(void *opaque, int ticker_id, tr_tick_type_t type, double implied_vol, double delta, double opt_price, double pv_dividend, double gamma, double vega, double theta, double und_price)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "tick option computation: opaque=%p, ticker_id=%d, type=%d, implied_vol=%f, delta=%f, opt_price=%f, pv_dividend=%f, gamma=%f, vega=%f, theta=%f, und_price=%f",
         opaque, ticker_id, (int)type, implied_vol, delta, opt_price, pv_dividend, gamma, vega, theta, und_price);
@@ -59,21 +59,21 @@ void event_tick_option_computation(void *opaque, int ticker_id, tr_tick_type_t t
 
 void event_tick_generic(void *opaque, int ticker_id, tr_tick_type_t type, double value)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "tick_generic: opaque=%p, ticker_id=%d, type=%d, ...", opaque, ticker_id, type);
 }
 
 void event_tick_string(void *opaque, int ticker_id, tr_tick_type_t type, const char value[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "tick_string: opaque=%p, ticker_id=%d, type=%d, ...", opaque, ticker_id, type);
 }
 
 void event_tick_efp(void *opaque, int ticker_id, tr_tick_type_t tick_type, double basis_points, const char formatted_basis_points[], double implied_futures_price, int hold_days, const char future_expiry[], double dividend_impact, double dividends_to_expiry)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "tick_efp: opaque=%p, ticker_id=%d, type=%d, ...", opaque, ticker_id, tick_type);
 }
@@ -82,14 +82,14 @@ void event_order_status(void *opaque, int order_id, const char status[],
                         int filled, int remaining, double avg_fill_price, int perm_id,
                         int parent_id, double last_fill_price, int client_id, const char why_held[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "order_status: opaque=%p, order_id=%d, filled=%d remaining %d, avg_fill_price=%lf, last_fill_price=%lf, why_held=%s", opaque, order_id, filled, remaining, avg_fill_price, last_fill_price, why_held);
 }
 
 void event_open_order(void *opaque, int order_id, const tr_contract_t *contract, const tr_order_t *order, const tr_order_status_t *ostatus)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
     /* commission values might be DBL_MAX */
     if(fabs(ostatus->ost_commission - DBL_MAX) < DBL_EPSILON)
@@ -106,7 +106,7 @@ void event_open_order(void *opaque, int order_id, const tr_contract_t *contract,
 void event_update_account_value(void *opaque, const char key[], const char val[],
                                 const char currency[], const char account_name[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "update_account_value: %p, key=%s val=%s, currency=%s, name=%s",
         opaque, key, val, currency, account_name);
@@ -116,7 +116,7 @@ void event_update_portfolio(void *opaque, const tr_contract_t *contract, int pos
                             double mkt_price, double mkt_value, double average_cost,
                             double unrealized_pnl, double realized_pnl, const char account_name[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "update_portfolio: %p, sym=%s, position=%d, mkt_price=%.4lf, mkt_value=%.4lf, avg_cost=%.4lf, unrealized_pnl=%.4lf, realized pnl=%.4lf name=%s",
         opaque, contract->c_symbol, position, mkt_price, mkt_value, average_cost, unrealized_pnl, realized_pnl, account_name);
@@ -124,14 +124,14 @@ void event_update_portfolio(void *opaque, const tr_contract_t *contract, int pos
 
 void event_update_account_time(void *opaque, const char time_stamp[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "update_account_time: opaque=%p, ...", opaque);
 }
 
 void event_next_valid_id(void *opaque, int order_id)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
     /* invoked once at connection establishment
      * the scope of this variable is not program wide, instance wide,
@@ -147,7 +147,7 @@ void event_next_valid_id(void *opaque, int order_id)
 
 void event_contract_details(void *opaque, int req_id, const tr_contract_details_t *cd)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "contract_details: opaque=%p, ...", opaque);
 	mg_log(info->conn, "info", "contract details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d",
@@ -165,7 +165,7 @@ void event_contract_details(void *opaque, int req_id, const tr_contract_details_
 
 void event_bond_contract_details(void *opaque, int req_id, const tr_contract_details_t *cd)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "bond_contract_details: opaque=%p, ...", opaque);
 	mg_log(info->conn, "info", "bond contract details: sym=%s, sectype=%s, expiry=%s, strike=%.3lf, right=%s, exch=%s, primary exch=%s, currency=%s, multiplier=%s, local_sym=%s, market_name=%s, trading_class=%s, conid=%d",
@@ -183,14 +183,14 @@ void event_bond_contract_details(void *opaque, int req_id, const tr_contract_det
 
 void event_exec_details(void *opaque, int order_id, const tr_contract_t *contract, const tr_execution_t *execution)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "exec_details: opaque=%p, ...", opaque);
 }
 
 void event_error(void *opaque, int ticker_id, int error_code, const char error_string[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "error", "opaque=%p, id=%d, error_code=%d, msg=%s", opaque, ticker_id, error_code, error_string);
 
@@ -200,54 +200,62 @@ void event_error(void *opaque, int ticker_id, int error_code, const char error_s
     ticker_id is one of our active scanner subscription queue items and when it is, we ditch that one
     and replace it by another pending scanner subscription request.
     */
-    cancel_tws_scanner_subscription(info, ticker_id);
+	if (ticker_id >= 0 
+		&& error_code != INFO_HISTORICAL_MARKET_DATA_SERVICE_QUERY
+			/* generally that would be 'N times received' or 'no items received', 
+			   where the latter is handled in the scanner_data_start handler */ 
+		&& error_code != FAIL_NO_SCANNER_SUBSCRIPTION_FOUND
+	   )
+	{
+		cancel_tws_scanner_subscription(info, ticker_id);
+	}
 }
 
 void event_update_mkt_depth(void *opaque, int ticker_id, int position, int operation, int side, double price, int size)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "update_mkt_depth: opaque=%p, ticker_id=%d, ...", opaque, ticker_id);
 }
 
 void event_update_mkt_depth_l2(void *opaque, int ticker_id, int position, char *market_maker, int operation, int side, double price, int size)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "update_mkt_depth_l2: opaque=%p, ticker_id=%d, ...", opaque, ticker_id);
 }
 
 void event_update_news_bulletin(void *opaque, int msgid, int msg_type, const char news_msg[], const char origin_exch[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "update_news_bulletin: opaque=%p, ...", opaque);
 }
 
 void event_managed_accounts(void *opaque, const char accounts_list[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "managed_accounts: opaque=%p, ...", opaque);
 }
 
 void event_receive_fa(void *opaque, int fa_data_type, const char cxml[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "receive_fa: opaque=%p, fa_data_type=%d, xml='%s'", opaque, fa_data_type, cxml);
 }
 
 void event_historical_data(void *opaque, int reqid, const char date[], double open, double high, double low, double close, int volume, int bar_count, double wap, int has_gaps)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "historical: opaque=%p, reqid=%d, date=%s, %.3lf, %.3lf, %.3lf, %.3lf, %d, wap=%.3lf, has_gaps=%d", opaque, reqid, date, open, high, low, close, volume, wap, has_gaps);
 }
 
 void event_historical_data_end(void *opaque, int reqid, const char completion_from[], const char completion_to[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "historical list end: opaque=%p, reqid=%d, from date=%s, to date=%s", opaque, reqid, completion_from, completion_to);
 }
@@ -266,7 +274,7 @@ keeps this part essentially a single-thread process.
 */
 void event_scanner_parameters(void *opaque, const char xml[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
     int rv;
     xmlTextReaderPtr reader;
     xmlNodePtr tree;
@@ -389,10 +397,10 @@ void event_scanner_parameters(void *opaque, const char xml[])
 
 void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_details_t *cd, const char distance[], const char benchmark[], const char projection[], const char legs_str[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
     // we CAN receive responses for already canceled subscriptions, e.g. when an error report triggered a (pending in the TCP pipeline) subscription cancel request:
-    if (!is_active_tws_scanner_subscription(info, ticker_id))
+	if (!is_active_tws_scanner_subscription(info, ticker_id))
     {
         // only report this for the first item; no need to keep repeating ourselves.
         if (rank == 1)
@@ -424,9 +432,16 @@ void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_detai
 
 void event_scanner_data_start(void *opaque, int ticker_id, int num_elements)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
-	mg_log(info->conn, "info", "scanner_data_start: opaque=%p, ticker_id=%d", opaque, ticker_id);
+	mg_log(info->conn, "info", "scanner_data_start: opaque=%p, ticker_id=%d, num_elements=%d", opaque, ticker_id, num_elements);
+
+	scanner_subscription_request *ss = get_active_tws_scanner_subscription(info, ticker_id);
+    if (ss)
+    {
+		mg_log(info->conn, "info", "scanner_data_start: request: instrument=%s, location_code=%s, scan_code=%s, above_price=%f, above_volume=%d",
+			ss->get_instrument(), ss->get_location_code(), ss->get_scan_code(), ss->get_above_price(), ss->get_above_volume());
+	}
 
     // always unsubsubscribe a scanner report when it won't deliver any rows:
     if (num_elements == 0)
@@ -437,15 +452,15 @@ void event_scanner_data_start(void *opaque, int ticker_id, int num_elements)
 
 void event_scanner_data_end(void *opaque, int ticker_id, int num_elements)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
-	mg_log(info->conn, "info", "scanner_data_end: opaque=%p, ticker_id=%d", opaque, ticker_id);
+	mg_log(info->conn, "info", "scanner_data_end: opaque=%p, ticker_id=%d, num_elements=%d", opaque, ticker_id, num_elements);
 }
 
 void event_current_time(void *opaque, long time)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
-    struct tws_thread_exch *exch = info->tws_cfg->exch;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
+    tws_thread_exch *exch = info->tws_cfg->exch;
     char tbuf[40];
     time_t timestamp = (time_t)time;
 
@@ -477,70 +492,70 @@ void event_current_time(void *opaque, long time)
 
 void event_realtime_bar(void *opaque, int reqid, long time, double open, double high, double low, double close, long volume, double wap, int count)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "realtime_bar: %p reqid=%d time=%ld, ohlc=%.4lf/%.4lf/%.4lf/%.4lf, vol=%ld, wap=%.4lf, count=%d", opaque, reqid, time, open, high, low, close, volume, wap, count);
 }
 
 void event_fundamental_data(void *opaque, int reqid, const char data[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "fundamental_data: opaque=%p, reqid=%d, ...", opaque, reqid);
 }
 
 void event_contract_details_end(void *opaque, int reqid)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "contract_details_end: opaque=%p, ...", opaque);
 }
 
 void event_open_order_end(void *opaque)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "open_order_end: opaque=%p", opaque);
 }
 
 void event_delta_neutral_validation(void *opaque, int reqid, under_comp_t *und)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "delta_neutral_validation: opaque=%p, reqid=%d, ...", opaque, reqid);
 }
 
 void event_acct_download_end(void *opaque, char acct_name[])
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "acct_download_end: opaque=%p, account name='%s'", opaque, acct_name);
 }
 
 void event_exec_details_end(void *opaque, int reqid)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "exec_details_end: opaque=%p, reqid=%d", opaque, reqid);
 }
 
 void event_tick_snapshot_end(void *opaque, int reqid)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+    my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "tick_snapshot_end: opaque=%p, reqid=%d", opaque, reqid);
 }
 
 void event_market_data_type(void *opaque, int reqid, market_data_type_t data_type)
 {
-	struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+	my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "market_data_type: opaque=%p, reqid=%d, data_type=%d\n", opaque, reqid, (int)data_type);
 }
 
 void event_commission_report(void *opaque, tr_commission_report_t *report)
 {
-	struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+	my_tws_io_info *info = (my_tws_io_info *)opaque;
 
 	mg_log(info->conn, "info", "commission_report: opaque=%p, ...\n", opaque);
 	mg_log(info->conn, "info", "          cr_exec_id=[%s], cr_currency=[%s], cr_commission=%f, cr_realized_pnl=%f, cr_yield=%f, cr_yield_redemption_date=%d (%08X) (YYYYMMDD format)\n",

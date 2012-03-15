@@ -41,7 +41,7 @@
 
 
 
-static void process_one_queued_tier2_request(struct my_tws_io_info *info);
+static void process_one_queued_tier2_request(my_tws_io_info *info);
 
 
 /*
@@ -49,74 +49,16 @@ replace TWSAPI debug printf call.
 */
 void tws_debug_printf(void *opaque, const char *fmt, ...)
 {
-	struct my_tws_io_info *info = (struct my_tws_io_info *)opaque;
+	my_tws_io_info *info = (my_tws_io_info *)opaque;
 	va_list ap;
 
 	va_start(ap, fmt);
-	mg_vlog((info ? info->conn : NULL), "debug", fmt, ap);
+	//mg_vlog((info ? info->conn : NULL), "debug", fmt, ap);
 	va_end(ap);
 }
 
 
-void init_tws_thread_exch(struct tws_thread_exch **ptr_ref)
-{
-    struct tws_thread_exch *ptr = (struct tws_thread_exch *)calloc(1, sizeof(*ptr));
 
-    pthread_mutex_init(&ptr->tws_queue_mutex, NULL);
-    pthread_mutex_init(&ptr->tws_ib_send_mutex, NULL);
-    pthread_mutex_init(&ptr->tws_rx_mutex, NULL);
-    pthread_cond_init(&ptr->tws_rx_signal, NULL);
-    pthread_mutex_init(&ptr->tws_tx_mutex, NULL);
-    pthread_cond_init(&ptr->tws_tx_signal, NULL);
-
-    // set up the queue:
-    ptr->work_queue_size = 16;
-    ptr->work_queue_fill = 0;
-    ptr->work_queue_poppos = 0;
-    ptr->work_queue_diane = 0;
-    ptr->work_queue = (tier2_queue_item_t *)calloc(ptr->work_queue_size, sizeof(ptr->work_queue[0]));
-
-    // init libxml, which is used to process the XML messages coming from TWS on various occassions:
-    xmlInitParser();
-    // xmlRegisterInputCallbacks(xmlTWSmatch, xmlTWSopen, xmlTWSread, xmlTWSclose);
-
-    *ptr_ref = ptr;
-}
-
-void destroy_tws_thread_exch(struct tws_thread_exch **ptr_ref)
-{
-    if (*ptr_ref)
-    {
-        struct tws_thread_exch *ptr = *ptr_ref;
-        size_t i;
-
-        pthread_cond_destroy(&ptr->tws_rx_signal);
-        pthread_cond_destroy(&ptr->tws_tx_signal);
-        pthread_mutex_destroy(&ptr->tws_rx_mutex);
-        pthread_mutex_destroy(&ptr->tws_tx_mutex);
-        pthread_mutex_destroy(&ptr->tws_ib_send_mutex);
-        pthread_mutex_destroy(&ptr->tws_queue_mutex);
-
-        // TODO: signal all pending requests as ABORTED:
-        for (i = 0; i < ptr->work_queue_size; i++)
-        {
-            tier2_queue_item_t *elem = ptr->work_queue + i;
-
-			elem->request_state = TIER2_ABORTED;
-			elem->exec_repeat_count = -1;
-
-            // TODO: wait for the front-ends to recognize this change of affairs.
-        }
-
-        free(ptr->work_queue);
-        free(ptr);
-
-        xmlCleanupParser();
-        xmlMemoryDump();
-
-        *ptr_ref = NULL;
-    }
-}
 
 
 
@@ -128,7 +70,7 @@ void destroy_tws_thread_exch(struct tws_thread_exch **ptr_ref)
 
 static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
+    my_tws_io_info *info = (my_tws_io_info *)arg;
 
     if (info->conn)
     {
@@ -139,8 +81,8 @@ static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen)
 
 static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
-    struct tws_thread_exch *exch = info->tws_cfg->exch;
+    my_tws_io_info *info = (my_tws_io_info *)arg;
+    tws_thread_exch *exch = info->tws_cfg->exch;
 
     if (info->conn)
     {
@@ -200,7 +142,7 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 /* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
 static int tws_flush_func(void *arg)
 {
-    //struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
+    //my_tws_io_info *info = (my_tws_io_info *)arg;
 
     return 0;
 }
@@ -208,7 +150,7 @@ static int tws_flush_func(void *arg)
 /* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
 static int tws_open_func(void *arg)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
+    my_tws_io_info *info = (my_tws_io_info *)arg;
     struct tws_conn_cfg *tws_cfg = info->tws_cfg;
     struct mg_context *ctx = info->ctx;
     struct mg_connection *conn = mg_connect_to_host(ctx, tws_cfg->ip_address, tws_cfg->port, 0);
@@ -234,7 +176,7 @@ static int tws_open_func(void *arg)
 /* close callback is invoked on error or when tws_disconnect is invoked */
 static int tws_close_func(void *arg)
 {
-    struct my_tws_io_info *info = (struct my_tws_io_info *)arg;
+    my_tws_io_info *info = (my_tws_io_info *)arg;
 
     if (info->conn)
     {
@@ -969,52 +911,48 @@ trser_commission_report_t *serialize_tws_commission_report(const tr_commission_r
 
 
 
-static int queue_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item_t *cmd)
+
+
+
+
+
+
+
+
+int scanner_subscription_request::send_request(my_tws_io_info *info)
 {
-	struct tws_thread_exch *exch = tws_cfg->exch;
-	struct tier2_queue_item *item;
-	int i;
+	tr_scanner_subscription_t s;
+	tws_init_scanner_subscription(info->tws_handle, &s);
+	tws_copy(s.scan_code, scan_code);
+	tws_copy(s.scan_instrument, instrument);
+	tws_copy(s.scan_location_code, location_code);
+	tws_copy(s.scan_above_price, above_price);
+	tws_copy(s.scan_above_volume, above_volume);
 
-	for (i = (exch->work_queue_diane + 1) % exch->work_queue_size; 
-		 i != exch->work_queue_diane; 
-		 i = (i + 1) % exch->work_queue_size)
-	{
-		item = exch->work_queue + i;
-		if (item->exec_repeat_count < 0
-			|| (item->exec_repeat_count == 0
-				&& item->request_state <= TIER2_MUST_EXEC_COMMAND))
-		{
-			goto got_a_hit;
-		}
-	}
-
-	// when we get here it means the queue is full: enlarge the queue!
-	i = exch->work_queue_size;
-	exch->work_queue_size++;
-	exch->work_queue = (tier2_queue_item_t *)realloc(exch->work_queue, exch->work_queue_size * sizeof(exch->work_queue[0]));
-	item = exch->work_queue + i;
-
-got_a_hit:
-	exch->work_queue_diane = i; // (i + 1) % exch->work_queue_size;
-
-	// make sure the exec count is at least 1:
-	*item = *cmd;
-	if (item->exec_repeat_count <= 0)
-	{
-		item->exec_repeat_count = 1;
-	}
-	exch->work_queue_fill++;
-	item->request_state = TIER2_MUST_EXEC_COMMAND;
-
-	return i;
+    int rv = tws_req_scanner_subscription(info->tws_handle, ticker_id, &s);
+	tws_destroy_scanner_subscription(info->tws_handle, &s);
+	return rv;
 }
 
 
 
-int tier2_send_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item_t *cmd)
+
+
+
+
+
+
+
+
+
+
+
+
+
+int tier2_send_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item *cmd)
 {
-	struct tws_thread_exch *exch = tws_cfg->exch;
-	struct my_tws_io_info *info = tws_cfg->tws_thread_info;
+	tws_thread_exch *exch = tws_cfg->exch;
+	my_tws_io_info *info = tws_cfg->tws_thread_info;
 
 	assert(info);
 	assert(exch);
@@ -1268,85 +1206,7 @@ int tier2_send_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item_t *c
 	return 0;
 }
 
-int tier2_abort_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item_t *cmd)
-{
-	struct tws_thread_exch *exch = tws_cfg->exch;
-	int i = cmd - exch->work_queue;
-	struct tier2_queue_item *item;
 
-	if (i < 0 || i >= exch->work_queue_size)
-	{
-		assert(0);
-		return -1;
-	}
-
-	item = exch->work_queue + i;
-	item->exec_repeat_count = -1;
-	item->request_state = TIER2_ABORTED;
-
-	return 0;
-}
-
-
-
-/*
-Check which queued request has become active (round robin!) and 
-copy the queue entry to the referenced location. Return 0 when there is no
-pending entry, 1 if there is.
-*/
-int tier2_pop_request(struct tws_conn_cfg *tws_cfg, tier2_queue_item_t *dst)
-{
-	time_t timestamp = time(NULL);
-	struct tws_thread_exch *exch = tws_cfg->exch;
-	int i;
-
-	for (i = (exch->work_queue_poppos + 1) % exch->work_queue_size; 
-		 i != exch->work_queue_poppos; 
-		 i = (i + 1) % exch->work_queue_size)
-	{
-		struct tier2_queue_item *item = exch->work_queue + i;
-		if (item->exec_repeat_count > 0
-			&& (!item->activation_time 
-				|| item->activation_time >= timestamp))
-		{
-			// round robin polling of the queue:
-			exch->work_queue_poppos = (exch->work_queue_poppos + 1) % exch->work_queue_size;
-
-			// update the periodical when it's a repeat performance request:
-			if (--item->exec_repeat_count > 0)
-			{
-				item->activation_time += item->exec_time_interval;
-
-				// and cope with the situation where the original request had an activation timestamp of zero or pickup was much delayed
-				if (item->activation_time < timestamp)
-				{
-					item->activation_time = timestamp + item->exec_time_interval;
-				}
-			}
-			else
-			{
-				assert(exch->work_queue_fill > 0);
-				exch->work_queue_fill--;
-			}
-			//item->request_state = TIER2_NO_RESPONSE_YET;
-
-			*dst = *item;
-			return 1;
-		}
-	}
-	return 0;
-}
-
-
-
-// utility calls:
-unsigned int tier2_queue_depth(struct tws_conn_cfg *tws_cfg)
-{
-	const struct tws_thread_exch *exch = tws_cfg->exch;
-	unsigned int rv;
-	rv = exch->work_queue_fill;
-	return rv;
-}
 
 
 
@@ -1354,10 +1214,10 @@ unsigned int tier2_queue_depth(struct tws_conn_cfg *tws_cfg)
 Check whether there are any queued requests which are 'activated' and if there
 are, process one.
 */
-static void process_one_queued_tier2_request(struct my_tws_io_info *info)
+static void process_one_queued_tier2_request(my_tws_io_info *info)
 {
 	struct tws_conn_cfg *tws_cfg = info->tws_cfg;
-	tier2_queue_item_t cmd;
+	tier2_queue_item cmd;
 	
 	if (tier2_pop_request(tws_cfg, &cmd) > 0)
 	{
@@ -1451,8 +1311,8 @@ void tws_worker_thread(struct mg_context *ctx)
     while (mg_get_stop_flag(ctx) == 0)
     {
         struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
-		struct tws_thread_exch *exch = tws_cfg->exch;
-        struct my_tws_io_info info = {0};
+		tws_thread_exch *exch = tws_cfg->exch;
+        my_tws_io_info info = {0};
         int err;
 		int abortus_provocatus = 0;
 
@@ -1506,7 +1366,7 @@ void tws_worker_thread(struct mg_context *ctx)
 					Meanwhile, we also process queued requests from the front-end at a 1:1 mix ratio vs. incoming messages from TWS/IB:
 					*/
 					process_one_queued_tier2_request(&info);
-					pop_tws_req_scanner_subscription(&info);
+					//pop_tws_req_scanner_subscription(&info);
 				}
             }
         }

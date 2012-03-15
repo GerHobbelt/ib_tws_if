@@ -55,11 +55,11 @@ xmlNodePtr xmlFindChildWithName(xmlNodePtr parent, const xmlChar *tag_name)
 }
 
 
-long tws_mkNextOrderId(struct my_tws_io_info *info)
+long tws_mkNextOrderId(my_tws_io_info *info)
 {
     return info->next_order_id++;
 }
-void tws_setNextOrderId(struct my_tws_io_info *info, long order_id)
+void tws_setNextOrderId(my_tws_io_info *info, long order_id)
 {
     info->next_order_id = order_id;
 }
@@ -137,7 +137,7 @@ void xmlXPathContainsAnyOfFunction(xmlXPathParserContextPtr ctxt, int nargs)
 
 
 
-void request_range_of_interesting_market_scans(struct my_tws_io_info *info, xmlNodePtr location, xmlXPathObjectPtr usable_scanners)
+void request_range_of_interesting_market_scans(my_tws_io_info *info, xmlNodePtr location, xmlXPathObjectPtr usable_scanners)
 {
     xmlNodeSetPtr nodeset;
     int i;
@@ -149,7 +149,7 @@ void request_range_of_interesting_market_scans(struct my_tws_io_info *info, xmlN
         for (i = 0; i < nodeset->nodeNr; i++)
         {
             xmlNodePtr node = nodeset->nodeTab[i];
-            scanner_subscription_request_t *s = new scanner_subscription_request_t();
+            scanner_subscription_request *s = new scanner_subscription_request();
             xmlNodePtr child;
             xmlChar *val;
 
@@ -236,7 +236,7 @@ void request_range_of_interesting_market_scans(struct my_tws_io_info *info, xmlN
 /*
 when there's a free slot in TWS, send the scanner subscription request to TWS, otherwise push it on a stack.
 */
-void push_tws_req_scanner_subscription(struct my_tws_io_info *info, scanner_subscription_request_t *reqdata)
+void push_tws_req_scanner_subscription(my_tws_io_info *info, scanner_subscription_request *reqdata)
 {
 	mg_log(info->conn, "info", "REQUEST scanner subscription: code [%s], instrument [%s], location [%s]", 
 			reqdata->get_scan_code(), reqdata->get_instrument(), reqdata->get_location_code());
@@ -245,7 +245,7 @@ void push_tws_req_scanner_subscription(struct my_tws_io_info *info, scanner_subs
     if (!info->scanner_subscription_queue)
     {
         info->queued_scanner_subscription_allocsize = 8;
-        info->scanner_subscription_queue = (scanner_subscription_request_t **)calloc(info->queued_scanner_subscription_allocsize, sizeof(info->scanner_subscription_queue[0]));
+        info->scanner_subscription_queue = (scanner_subscription_request **)calloc(info->queued_scanner_subscription_allocsize, sizeof(info->scanner_subscription_queue[0]));
         if (!info->scanner_subscription_queue)
             return;
         assert(info->queued_scanner_subscription_count == 0);
@@ -254,7 +254,7 @@ void push_tws_req_scanner_subscription(struct my_tws_io_info *info, scanner_subs
     {
         size_t oldsize = info->queued_scanner_subscription_allocsize;
         info->queued_scanner_subscription_allocsize += 16;
-        info->scanner_subscription_queue = (scanner_subscription_request_t **)realloc(info->scanner_subscription_queue, info->queued_scanner_subscription_allocsize * sizeof(info->scanner_subscription_queue[0]));
+        info->scanner_subscription_queue = (scanner_subscription_request **)realloc(info->scanner_subscription_queue, info->queued_scanner_subscription_allocsize * sizeof(info->scanner_subscription_queue[0]));
         if (!info->scanner_subscription_queue)
             return;
         memset(&info->scanner_subscription_queue[oldsize], 0, (info->queued_scanner_subscription_allocsize - oldsize) * sizeof(info->scanner_subscription_queue[0]));
@@ -276,13 +276,13 @@ when there's a free slot in TWS, pop a scanner subscription request off the stac
 
 Return the number of queued requests still waiting in the queue after this call.
 */
-size_t pop_tws_req_scanner_subscription(struct my_tws_io_info *info)
+size_t pop_tws_req_scanner_subscription(my_tws_io_info *info)
 {
     if (info->active_scanner_subscription_count < ARRAY_SIZE(info->active_scanner_subscriptions)
         && info->queued_scanner_subscription_count > 0)
     {
         // there's room for one more active subscription: pop it and transmit it!
-        scanner_subscription_request_t *reqdata = info->scanner_subscription_queue[--info->queued_scanner_subscription_count];
+        scanner_subscription_request *reqdata = info->scanner_subscription_queue[--info->queued_scanner_subscription_count];
         info->active_scanner_subscriptions[info->active_scanner_subscription_count++] = reqdata;
 
 		reqdata->send_request(info);
@@ -294,13 +294,13 @@ size_t pop_tws_req_scanner_subscription(struct my_tws_io_info *info)
 /*
 send a CANCEL REQUEST to TWS for the given scanner subscription
 */
-void cancel_tws_scanner_subscription(struct my_tws_io_info *info, int ticker_id)
+void cancel_tws_scanner_subscription(my_tws_io_info *info, int ticker_id)
 {
     size_t i;
 
     for (i = 0; i < info->active_scanner_subscription_count; i++)
     {
-        scanner_subscription_request_t *item = info->active_scanner_subscriptions[i];
+        scanner_subscription_request *item = info->active_scanner_subscriptions[i];
 
         if (item->get_ticker_id() == ticker_id)
         {
@@ -319,25 +319,37 @@ void cancel_tws_scanner_subscription(struct my_tws_io_info *info, int ticker_id)
 }
 
 
+
 /*
-return !0 when the given ticker_id represents an active subscription.
+return reference to scanner subscription request when the given ticker_id represents an active subscription.
 */
-int is_active_tws_scanner_subscription(struct my_tws_io_info *info, int ticker_id)
+scanner_subscription_request *get_active_tws_scanner_subscription(my_tws_io_info *info, int ticker_id)
 {
     size_t i;
 
     for (i = 0; i < info->active_scanner_subscription_count; i++)
     {
-        scanner_subscription_request_t *item = info->active_scanner_subscriptions[i];
+        scanner_subscription_request *item = info->active_scanner_subscriptions[i];
 
         if (item->get_ticker_id() == ticker_id)
         {
-            return !0;
+            return item;
         }
     }
 
-    return 0;
+    return NULL;
 }
+
+/*
+return !0 when the given ticker_id represents an active subscription.
+*/
+int is_active_tws_scanner_subscription(my_tws_io_info *info, int ticker_id)
+{
+	return !!get_active_tws_scanner_subscription(info, ticker_id);
+}
+
+
+
 
 
 
@@ -351,7 +363,7 @@ optionally request the full contract details so that we'll receive the extended 
 
 'optional' because we only do this when we don't have the desired info yet in our own caches.
 */
-void request_contract_details_from_tws(struct my_tws_io_info *info, tr_contract_details_t *cd)
+void request_contract_details_from_tws(my_tws_io_info *info, tr_contract_details_t *cd)
 {
 	if (!ib_get_ticker_info(cd))
 	{

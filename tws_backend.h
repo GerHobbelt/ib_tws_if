@@ -34,7 +34,8 @@
 
 
 
-struct tws_thread_exch;  // forward reference: structure which contains all front-end to back-end thread comminucation stuff
+class tws_thread_exch;  // forward reference: structure which contains all front-end to back-end thread comminucation stuff
+class my_tws_io_info;
 
 
 struct tws_conn_cfg
@@ -49,17 +50,14 @@ struct tws_conn_cfg
 	char *database_path;
 
     /* internal communication stuff between mongoose threads and the tws back-end thread goes here: */
-    struct tws_thread_exch *exch;
+    tws_thread_exch *exch;
 
 	/*
 	to be filled in by the backend ('tier2/TWS') thread:
 	*/
-    struct my_tws_io_info *tws_thread_info;
+    my_tws_io_info *tws_thread_info;
 };
 
-
-
-#ifdef __cplusplus
 
 
 static __inline void tws_copy(char *dst, const char *src)
@@ -76,8 +74,6 @@ static __inline void tws_copy(int &dst, int src)
 	if (src != INT_MAX)
 		dst = src;
 }
-
-#endif
 
 
 #endif // TWS_BACKEND_GENERIC_HEADER_INCLUDED

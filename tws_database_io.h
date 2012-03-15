@@ -9,7 +9,7 @@
 
 
 
-struct my_tws_io_info;
+class my_tws_io_info;
 
 
 
@@ -35,15 +35,15 @@ struct my_databases_info
 };
 
 
-int ib_open_databases(struct my_tws_io_info *info);
-int ib_close_databases(struct my_tws_io_info *info);
+int ib_open_databases(my_tws_io_info *info);
+int ib_close_databases(my_tws_io_info *info);
 const char *ib_strerror(int errcode);
 
 
 int ib_cache_ticker_info(const tr_contract_details_t *cd);
 int ib_get_ticker_info(tr_contract_details_t *cd);
 
-int ib_store_scanner_parameters_xml(struct my_tws_io_info *info, const char *xml);
+int ib_store_scanner_parameters_xml(my_tws_io_info *info, const char *xml);
 
 
 

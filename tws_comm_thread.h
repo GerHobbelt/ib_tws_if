@@ -359,24 +359,6 @@ backend ('middle tier' bla bla bla) request / response queue structures and func
 ===============================================================================
 */
 
-// forward reference:
-typedef struct tier2_queue_item tier2_queue_item_t;
-
-/*
-callback which is invoked when the command has been received and has been parsed,
-i.e. has been popped from the queue and the backend doesn't need the *command* data
-any longer; it WILL continue to access to the response data/hooks though!
-
-Use this one to clean up allocation of dynamic resources done in the front-end.
-*/
-typedef int tier2_command_done_handler(tier2_queue_item_t *cmd);
-/*
-And this one can be invoked by the front-end to have the back-end clean up its own resources
-related to the response, as the front-end will invoke this one when it's completed processing
-and accessing the response data contained in the tier2_queue_item.
-*/
-typedef int tier2_response_done_handler(tier2_queue_item_t **cmd);
-
 enum tier2_command_code
 {
     TIER2_NO_COMMAND = 0,
@@ -426,27 +408,140 @@ enum tier2_request_state
 {
     TIER2_ABORTED = -1,
     TIER2_MUST_EXEC_COMMAND = 0,
-    TIER2_NO_RESPONSE_YET = 1,
-    TIER2_RESPONSE_READY = 2,
+    TIER2_RESPONSE_PENDING,
+    TIER2_RESPONSE_READY,
+    TIER2_RESPONSE_PROCESSED
+};
+
+// forward reference:
+class tier2_queue_item;
+class my_tws_io_info;
+
+/*
+callback which is invoked when the command state changes.
+*/
+typedef int tier2_command_state_change_handler(tier2_queue_item *cmd);
+
+/*
+callback which is invoked when the queued command is destroyed.
+*/
+typedef int tier2_command_cleanup_handler(tier2_queue_item *cmd);
+
+
+
+class scanner_subscription_request
+{
+protected:
+    int ticker_id;
+
+    char  *instrument;
+    char  *location_code;
+    char  *scan_code;
+
+    double above_price;
+    int above_volume;
+
+public:
+	scanner_subscription_request() :
+		ticker_id(0), 
+		instrument(NULL), location_code(NULL), scan_code(NULL),
+		above_price(DBL_MAX), above_volume(INT_MAX)
+	{
+	}
+
+	~scanner_subscription_request()
+	{
+		free(instrument);
+		free(location_code);
+		free(scan_code);
+	}
+
+public:
+    int set_ticker_id(int id)
+	{
+		ticker_id = id;
+		return id;
+	}
+    int get_ticker_id(void) const
+	{
+		return ticker_id;
+	}
+
+    const char *set_instrument(const char *val)
+	{
+		free(instrument);
+		instrument = strdup(val);
+		return instrument;
+	}
+    const char *get_instrument(void) const
+	{
+		return instrument;
+	}
+    const char *set_location_code(const char *val)
+	{
+		free(location_code);
+		location_code = strdup(val);
+		return location_code;
+	}
+    const char *get_location_code(void) const 
+	{
+		return location_code;
+	}
+    const char *set_scan_code(const char *val)
+	{
+		free(scan_code);
+		scan_code = strdup(val);
+		return scan_code;
+	}
+    const char *get_scan_code(void) const
+	{
+		return scan_code;
+	}
+
+    double set_above_price(double val)
+	{
+		above_price = val;
+		return val;
+	}
+    double get_above_price(void) const
+	{
+		return above_price;
+	}
+    int set_above_volume(int val)
+	{
+		above_volume = val;
+		return val;
+	}
+    int get_above_volume(void) const
+	{
+		return above_volume;
+	}
+
+public:
+	int send_request(my_tws_io_info *info);
 };
 
 
-struct tier2_queue_item
-{
-    enum tier2_command_code command_code;       // what's the front-end requesting we do?
-    void *propagate_ptr;
-    union
-    {
-        struct
-		{
-			int ticker_id;
-			tr_scanner_subscription_t *s;
-		} scanner_subscription;
 
+
+
+
+
+class tier2_queue_item
+{
+public:
+    tier2_command_code command_code;       // what's the front-end requesting we do?
+
+	int priority;							// higher is more important
+
+	union
+    {
 		// for various cancelations:
 		int ticker_id;
 		int order_id;
 		int reqid;
+
+        scanner_subscription_request *scanner_subscription;
 
 		struct
 		{
@@ -570,75 +665,374 @@ struct tier2_queue_item
 	// The moment this request should become 'active', i.e. should be executed
 	time_t activation_time;
 	// and the number of times this command should be executed at the given interval (seconds)
-	int exec_repeat_count;
+	int exec_run_count;
 	unsigned int exec_time_interval;
 
-    tier2_command_done_handler *cleanup_after_command; // invoked when front-end MAY clean the command-side related resources it allocated for us
-    tier2_response_done_handler *cleanup_after_response; // invoked when the front-end has completed processing the response and the backend can release any allocated resources which are related to this request.
+	// The last time this request has been sent
+	time_t last_transmit_time;
+	// The last time a response for this request has been received
+	time_t last_response_time;
 
     enum tier2_request_state request_state; // 0: pending, 1: success/done; < 0: error; > 1: warning/notification
-    union
-    {
-        void *propagate_ptr;
-        // ...
-    } response_params;
+
+    void *propagate_ptr;
+
+	tier2_command_state_change_handler *state_change_cb; 
+	tier2_command_cleanup_handler *cleanup_cb; 
+
+public:
+	tier2_queue_item(tier2_command_code cmd, 
+			time_t activate = 0, 
+			int run_count = 1,
+			int interval = 3600,
+			void *propagate = NULL,
+			tier2_command_state_change_handler *state_cb = NULL,
+			tier2_command_cleanup_handler *end_cb = NULL,
+			int prio = 0) :
+		command_code(cmd),
+		//command_params(0),
+		activation_time(activate),
+		exec_run_count(run_count),
+		exec_time_interval(interval),
+		last_transmit_time(0),
+		last_response_time(0),
+		request_state(TIER2_MUST_EXEC_COMMAND),
+		propagate_ptr(propagate),
+		state_change_cb(state_cb),
+		cleanup_cb(end_cb),
+		priority(prio)
+	{
+	}
+
+	~tier2_queue_item()
+	{
+	}
 };
-
-// front-end invoked queue calls:
-int tier2_send_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item_t *cmd);
-int tier2_abort_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item_t *cmd);
-
-// back-end invoked queue calls:
-int tier2_pop_request(struct tws_conn_cfg *tws_cfg, tier2_queue_item_t *dst);
-int tier2_send_response(struct tws_conn_cfg *tws_cfg, const tier2_queue_item_t *cmd, const tier2_queue_item_t *response);
-
-// utility calls:
-unsigned int tier2_queue_depth(struct tws_conn_cfg *tws_cfg);
-
 
 
 
 
 
 /* internal communication stuff between mongoose threads and the tws back-end thread goes here: */
-struct tws_thread_exch
+class tws_thread_exch
 {
+public:
     pthread_mutex_t tws_queue_mutex;    // mutex used to protect the queue itself
-    pthread_mutex_t tws_ib_send_mutex;  // mutex used to protect message transmission to TWS/IB
     pthread_mutex_t tws_tx_mutex;		// mutex related to the TX condition in here
     pthread_cond_t tws_tx_signal;       // signalled when a TX request is pending (should be processed by the tws 'back-end' thread.
     pthread_mutex_t tws_rx_mutex;		// mutex related to the RX condition in here
     pthread_cond_t tws_rx_signal;       // signalled when a RX response is pending (should be processed by the related TX-invoking 'front-end' mongoose thread.
 
-    int command;
-    int response;
-    time_t current_time;
+    tier2_queue_item **work_queue;
 
-    tier2_queue_item_t *work_queue;
     size_t work_queue_size;           // allocated size
     size_t work_queue_fill;           // number of requests pending in the queue
     size_t work_queue_poppos;         // the position of the queue 'head' for popping
     size_t work_queue_diane;          // the position of the queue 'head' for pushing
+
+public:
+	tws_thread_exch(size_t initial_size = 16)
+	{
+		pthread_mutex_init(&tws_queue_mutex, NULL);
+		pthread_mutex_init(&tws_rx_mutex, NULL);
+		pthread_cond_init(&tws_rx_signal, NULL);
+		pthread_mutex_init(&tws_tx_mutex, NULL);
+		pthread_cond_init(&tws_tx_signal, NULL);
+
+		// set up the queue:
+		if (initial_size < 8)
+			initial_size = 8;
+		work_queue_size = initial_size;
+		work_queue_fill = 0;
+		work_queue_poppos = 0;
+		work_queue_diane = 0;
+
+		work_queue = (tier2_queue_item **)calloc(work_queue_size, sizeof(work_queue[0]));
+	}
+
+	~tws_thread_exch() 
+	{
+		if (work_queue_size)
+		{
+			size_t i;
+
+			// TODO: signal all pending requests as ABORTED:
+			for (i = 0; i < work_queue_size; i++)
+			{
+				tier2_queue_item *elem = work_queue[i];
+
+				if (elem)
+				{
+					elem->request_state = TIER2_ABORTED;
+					elem->exec_run_count = -1;
+
+					// TODO: wait for the front-ends to recognize this change of affairs.
+
+				}
+			}
+
+			pthread_cond_destroy(&tws_rx_signal);
+			pthread_cond_destroy(&tws_tx_signal);
+			pthread_mutex_destroy(&tws_rx_mutex);
+			pthread_mutex_destroy(&tws_tx_mutex);
+			pthread_mutex_destroy(&tws_queue_mutex);
+
+			free(work_queue);
+			work_queue = NULL;
+			work_queue_size = 0;
+		}
+	}
+
+protected:
+	int grow(void)
+	{
+		size_t new_size = work_queue_size * 2;
+
+		work_queue = (tier2_queue_item **)realloc(work_queue, new_size * sizeof(work_queue[0]));
+		if (!work_queue)
+			return -1;
+
+		memset(work_queue + work_queue_size, 0, (new_size - work_queue_size) * sizeof(work_queue[0]));
+		work_queue_size = new_size;
+		return 0;
+	}
+
+public:
+	int push(tier2_queue_item *cmd)
+	{
+		int rv = pthread_mutex_lock(&tws_queue_mutex);
+
+		if (!rv)
+		{
+			if (work_queue_fill == work_queue_size)
+			{
+				rv = grow();
+			}
+		}
+
+		if (!rv) 
+		{
+			size_t i;
+
+			for (i = (work_queue_diane + 1) % work_queue_size; 
+					i != work_queue_diane; 
+					i = (i + 1) % work_queue_size)
+			{
+				if (!work_queue[i])
+					break;
+			}
+
+			work_queue_diane = i; // (i + 1) % exch->work_queue_size;
+
+			// make sure the exec count is at least 1:
+			work_queue[i] = cmd;
+			if (cmd->exec_run_count <= 0)
+			{
+				cmd->exec_run_count = 1;
+			}
+			work_queue_fill++;
+			cmd->request_state = TIER2_MUST_EXEC_COMMAND;
+
+			rv = pthread_mutex_unlock(&tws_queue_mutex);
+		}
+
+		return rv;
+	}
+
+	int abort(tier2_queue_item *cmd)
+	{
+		int rv = pthread_mutex_lock(&tws_queue_mutex);
+
+		if (!rv)
+		{
+			size_t i;
+
+			rv = -1;
+			for (i = (work_queue_poppos + 1) % work_queue_size; 
+					i != work_queue_poppos; 
+					i = (i + 1) % work_queue_size)
+			{
+				if (work_queue[i] == cmd)
+				{
+					cmd->exec_run_count = -1;
+					cmd->request_state = TIER2_ABORTED;
+
+					rv = 0;
+					break;
+				}
+			}
+
+			int rv2 = pthread_mutex_unlock(&tws_queue_mutex);
+			if (!rv) rv = rv2;
+		}
+		return rv;
+	}
+
+	/*
+	Check which queued request has become active (round robin!) and 
+	copy the queue entry to the referenced location. 
+	
+	Return NULL when there is no pending entry.
+	*/
+	tier2_queue_item *fetch(void)
+	{
+		time_t timestamp = time(NULL);
+		int rv = pthread_mutex_lock(&tws_queue_mutex);
+		tier2_queue_item *result = NULL;
+
+		if (!rv)
+		{
+			size_t i;
+
+			for (i = (work_queue_poppos + 1) % work_queue_size; 
+				 i != work_queue_poppos; 
+				 i = (i + 1) % work_queue_size)
+			{
+				tier2_queue_item *item = work_queue[i];
+				if (item
+					&& item->exec_run_count > 0
+					&& (item->activation_time == 0
+						|| item->activation_time >= timestamp))
+				{
+					// round robin polling of the queue:
+					work_queue_poppos = i;
+
+					// update the periodical when it's a repeat performance request:
+					if (--item->exec_run_count > 0)
+					{
+						item->activation_time += item->exec_time_interval;
+
+						// and cope with the situation where the original request had an activation timestamp of zero or pickup was much delayed
+						if (item->activation_time < timestamp)
+						{
+							item->activation_time = timestamp + item->exec_time_interval;
+						}
+					}
+
+					result = item;
+					break;
+				}
+			}
+
+			(void)pthread_mutex_unlock(&tws_queue_mutex);
+		}
+		return result;
+	}
+
+	int update(tier2_queue_item *&cmd)
+	{
+		int rv = pthread_mutex_lock(&tws_queue_mutex);
+
+		if (!rv)
+		{
+			size_t i;
+			bool end_it = false;
+
+			rv = -1;
+			for (i = (work_queue_poppos + 1) % work_queue_size; 
+					i != work_queue_poppos; 
+					i = (i + 1) % work_queue_size)
+			{
+				if (work_queue[i] == cmd)
+				{
+					if (cmd->request_state == TIER2_ABORTED
+						|| (cmd->request_state == TIER2_RESPONSE_PROCESSED
+							&& cmd->exec_run_count <= 0))
+					{
+						work_queue[i] = NULL;
+						work_queue_fill--;
+						end_it = true;
+					}
+					rv = 0;
+					break;
+				}
+			}
+			(void)pthread_mutex_unlock(&tws_queue_mutex);
+
+			if (!rv && cmd->state_change_cb)
+			{
+				rv = cmd->state_change_cb(cmd);
+			}
+			if (!rv && end_it)
+			{
+				delete cmd;
+				cmd = NULL;
+			}
+		}
+		return rv;
+	}
+
+	int cleanup(tier2_queue_item *&cmd)
+	{
+		int rv = pthread_mutex_lock(&tws_queue_mutex);
+
+		if (!rv)
+		{
+			size_t i;
+
+			rv = -1;
+			for (i = (work_queue_poppos + 1) % work_queue_size; 
+					i != work_queue_poppos; 
+					i = (i + 1) % work_queue_size)
+			{
+				if (work_queue[i] == cmd)
+				{
+					work_queue[i] = NULL;
+					work_queue_fill--;
+
+					rv = 0;
+					break;
+				}
+			}
+			(void)pthread_mutex_lock(&tws_queue_mutex);
+
+			if (!rv && cmd->cleanup_cb)
+			{
+				rv = cmd->cleanup_cb(cmd);
+			}
+			if (!rv)
+			{
+				delete cmd;
+				cmd = NULL;
+			}
+		}
+		return rv;
+	}
+
+	// utility calls:
+	size_t get_queue_depth(void)
+	{
+		int rv = pthread_mutex_lock(&tws_queue_mutex);
+		size_t result = UINT_MAX;
+
+		if (!rv)
+		{
+			result = work_queue_fill;
+			rv = pthread_mutex_unlock(&tws_queue_mutex);
+		}
+		return result;
+	}
 };
 
 
 
 
 
-void init_tws_thread_exch(struct tws_thread_exch **ptr);
-void destroy_tws_thread_exch(struct tws_thread_exch **ptr);
+void init_tws_thread_exch(tws_thread_exch **ptr);
+void destroy_tws_thread_exch(tws_thread_exch **ptr);
 
 
 
 
 
-class scanner_subscription_request_t;
+class scanner_subscription_request;
 
 /*
 struct passed around as user parameter for all TWS API callbacks.
 */
-struct my_tws_io_info
+class my_tws_io_info
 {
+public:
     struct mg_connection *conn;
     struct mg_context *ctx;
     struct tws_conn_cfg *tws_cfg;
@@ -651,128 +1045,11 @@ struct my_tws_io_info
 
     /* scanner subscription request active set and queue: */
     size_t active_scanner_subscription_count;
-    scanner_subscription_request_t *active_scanner_subscriptions[10 /* limit imposed by TWS/IB */];
-
-    size_t queued_scanner_subscription_count;
-    size_t queued_scanner_subscription_allocsize;
-    scanner_subscription_request_t **scanner_subscription_queue;
+    scanner_subscription_request *active_scanner_subscriptions[10 /* limit imposed by TWS/IB */];
 
 	/* -- the databases which keep track of things for us -- */
 	struct my_databases_info dbi;
 };
-
-
-
-/* --- scanner subscription request queue --- */
-
-
-class scanner_subscription_request_t
-{
-protected:
-    int ticker_id;
-
-    char  *instrument;
-    char  *location_code;
-    char  *scan_code;
-
-    double above_price;
-    int above_volume;
-
-public:
-	scanner_subscription_request_t() :
-		ticker_id(0), 
-		instrument(NULL), location_code(NULL), scan_code(NULL),
-		above_price(DBL_MAX), above_volume(INT_MAX)
-	{
-	}
-
-	~scanner_subscription_request_t()
-	{
-		free(instrument);
-		free(location_code);
-		free(scan_code);
-	}
-
-public:
-    int set_ticker_id(int id)
-	{
-		ticker_id = id;
-		return id;
-	}
-    int get_ticker_id(void) const
-	{
-		return ticker_id;
-	}
-
-    const char *set_instrument(const char *val)
-	{
-		free(instrument);
-		instrument = strdup(val);
-		return instrument;
-	}
-    const char *get_instrument(void) const
-	{
-		return instrument;
-	}
-    const char *set_location_code(const char *val)
-	{
-		free(location_code);
-		location_code = strdup(val);
-		return location_code;
-	}
-    const char *get_location_code(void) const 
-	{
-		return location_code;
-	}
-    const char *set_scan_code(const char *val)
-	{
-		free(scan_code);
-		scan_code = strdup(val);
-		return scan_code;
-	}
-    const char *get_scan_code(void) const
-	{
-		return scan_code;
-	}
-
-    double set_above_price(double val)
-	{
-		above_price = val;
-		return val;
-	}
-    double get_above_price(void) const
-	{
-		return above_price;
-	}
-    int set_above_volume(int val)
-	{
-		above_volume = val;
-		return val;
-	}
-    int get_above_volume(void) const
-	{
-		return above_volume;
-	}
-
-public:
-	int send_request(struct my_tws_io_info *info)
-	{
-		tr_scanner_subscription_t s;
-		tws_init_scanner_subscription(info->tws_handle, &s);
-		tws_copy(s.scan_code, this->scan_code);
-		tws_copy(s.scan_instrument, this->instrument);
-		tws_copy(s.scan_location_code, this->location_code);
-		tws_copy(s.scan_above_price, above_price);
-		tws_copy(s.scan_above_volume, above_volume);
-
-        int rv = tws_req_scanner_subscription(info->tws_handle, ticker_id, &s);
-		tws_destroy_scanner_subscription(info->tws_handle, &s);
-		return rv;
-	}
-};
-
-
-
 
 
 
