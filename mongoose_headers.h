@@ -19,25 +19,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef MONGOOSE_UTILS_HEADER_INCLUDED
-#define MONGOOSE_UTILS_HEADER_INCLUDED
+#ifndef MONGOOSE_LIB_DEFS_HEADER_INCLUDED
+#define MONGOOSE_LIB_DEFS_HEADER_INCLUDED
 
-#include "mongoose_headers.h"
+#include "system-includes.h"
 
-
-
-
-/*
-===============================================================================
-
-custom handlers (callbacks) for extending the mongoose command line / config file configurable parameter processing so we can detect and process our own parameters through the regular mongoose approach:
-
-===============================================================================
-*/
-extern "C" int option_decode(struct mg_context *ctx, const char *name, const char *value);
-extern "C" int option_fill(struct mg_context *ctx);
-extern "C" const char * option_get(const struct mg_context *ctx, const char *name);
+#include <mongoose/mongoose.h>
+#include <mongoose/mongoose_ex.h>
 
 
-
-#endif // MONGOOSE_UTILS_HEADER_INCLUDED
+#endif // MONGOOSE_LIB_DEFS_HEADER_INCLUDED

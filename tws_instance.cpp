@@ -19,25 +19,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef MONGOOSE_UTILS_HEADER_INCLUDED
-#define MONGOOSE_UTILS_HEADER_INCLUDED
-
-#include "mongoose_headers.h"
-
-
-
-
 /*
-===============================================================================
+ * Mongoose-based server app which interfaces with a TWS station and displays data in HTML form,
+ * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
+ */
 
-custom handlers (callbacks) for extending the mongoose command line / config file configurable parameter processing so we can detect and process our own parameters through the regular mongoose approach:
-
-===============================================================================
-*/
-extern "C" int option_decode(struct mg_context *ctx, const char *name, const char *value);
-extern "C" int option_fill(struct mg_context *ctx);
-extern "C" const char * option_get(const struct mg_context *ctx, const char *name);
+#include "tws_instance.h"
 
 
-
-#endif // MONGOOSE_UTILS_HEADER_INCLUDED

@@ -19,14 +19,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-/*
- * Mongoose-based server app which interfaces with a TWS station and displays data in HTML form,
- * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
- */
-
-#include "system-includes.h"
-
-#include "tws_stocklist_loading_thread.h"
+#include "tws_stocklist_loading.h"
 
 
 
@@ -241,27 +234,11 @@ void push_tws_req_scanner_subscription(my_tws_io_info *info, scanner_subscriptio
 	mg_log(info->conn, "info", "REQUEST scanner subscription: code [%s], instrument [%s], location [%s]", 
 			reqdata->get_scan_code(), reqdata->get_instrument(), reqdata->get_location_code());
 
-    // queue the request until TWS has a slot available for it!
-    if (!info->scanner_subscription_queue)
-    {
-        info->queued_scanner_subscription_allocsize = 8;
-        info->scanner_subscription_queue = (scanner_subscription_request **)calloc(info->queued_scanner_subscription_allocsize, sizeof(info->scanner_subscription_queue[0]));
-        if (!info->scanner_subscription_queue)
-            return;
-        assert(info->queued_scanner_subscription_count == 0);
-    }
-    else if (info->queued_scanner_subscription_count == info->queued_scanner_subscription_allocsize)
-    {
-        size_t oldsize = info->queued_scanner_subscription_allocsize;
-        info->queued_scanner_subscription_allocsize += 16;
-        info->scanner_subscription_queue = (scanner_subscription_request **)realloc(info->scanner_subscription_queue, info->queued_scanner_subscription_allocsize * sizeof(info->scanner_subscription_queue[0]));
-        if (!info->scanner_subscription_queue)
-            return;
-        memset(&info->scanner_subscription_queue[oldsize], 0, (info->queued_scanner_subscription_allocsize - oldsize) * sizeof(info->scanner_subscription_queue[0]));
-    }
-    assert(info->queued_scanner_subscription_count < info->queued_scanner_subscription_allocsize);
 
-    // push in FIFO: push at the bottom, pop off the top.
+	
+	
+	
+	// push in FIFO: push at the bottom, pop off the top.
     if (info->queued_scanner_subscription_count > 0)
     {
         memmove(&info->scanner_subscription_queue[1], &info->scanner_subscription_queue[0], info->queued_scanner_subscription_count * sizeof(info->scanner_subscription_queue[0]));

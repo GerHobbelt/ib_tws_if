@@ -19,15 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-/*
- * Mongoose-based server app which interfaces with a TWS station and displays data in HTML form,
- * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
- */
-
 #include "system-includes.h"
 
 #include "tws_comm_thread.h"
-#include "tws_stocklist_loading_thread.h"
+#include "tws_stocklist_loading.h"
 
 
 

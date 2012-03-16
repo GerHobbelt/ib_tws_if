@@ -19,41 +19,65 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef TWS_BACKEND_GENERIC_HEADER_INCLUDED
-#define TWS_BACKEND_GENERIC_HEADER_INCLUDED
+#ifndef TWS_REQ_RESP_BASE_MSG_HEADER_INCLUDED
+#define TWS_REQ_RESP_BASE_MSG_HEADER_INCLUDED
 
-#include "mongoose_headers.h"
+#include "tier2_message.h"
 
+#if !defined(TWS_DEFINITIONS)
+#define TWS_DEFINITIONS              1 /* enums only */
+#endif
 #include <tws_c_api/twsapi.h>
 
 
 
-#define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
+typedef tws::tr_origin_t tws_origin_t;
+typedef tws::tr_oca_type_t tws_oca_type_t;
+typedef tws::tr_auction_strategy_t tws_auction_strategy_t;
+typedef tws::market_data_type_t tws_market_data_type_t;
+typedef tws::tr_tick_type_t tws_tick_type_t;
+typedef tws::tr_comboleg_type_t tws_comboleg_type_t;
+
+
+// forward references:
+class ib_instance;
 
 
 
-
-
-class tws_thread_exch;  // forward reference: structure which contains all front-end to back-end thread comminucation stuff
-class my_tws_io_info;
-
-
-
-
-static __inline void tws_copy(char *dst, const char *src)
+class tws_reqresp_message: public tier2_message
 {
-	tws_strcpy(dst, src);
-}
-static __inline void tws_copy(double &dst, double src)
-{
-	if (src != DBL_MAX)
-		dst = src;
-}
-static __inline void tws_copy(int &dst, int src)
-{
-	if (src != INT_MAX)
-		dst = src;
-}
+protected:
+	ib_instance *tws_instance;
+	int tickerID;
+
+public:
+	tws_reqresp_message(ib_instance *tws, int ticker_id) :
+	  tws_instance(tws),
+		  tickerID(ticker_id)
+	  {
+	  }
+protected:
+	virtual ~tws_reqresp_message()
+	{
+	}
+
+public:
+	virtual int ticker_id(void) const
+	{
+		return tickerID;
+	}
+
+	virtual bool equal(const tier2_message &alt) const;
+	virtual bool equal(const tws_reqresp_message &alt) const;
+	virtual bool matches(int id) const
+	{
+		return id == tickerID;
+	}
+};
 
 
-#endif // TWS_BACKEND_GENERIC_HEADER_INCLUDED
+
+
+
+
+#endif // TWS_REQ_RESP_BASE_MSG_HEADER_INCLUDED

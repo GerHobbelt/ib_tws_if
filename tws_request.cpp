@@ -19,45 +19,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef TWS_MONGOOSE_PORTING_HEADER_INCLUDED
-#define TWS_MONGOOSE_PORTING_HEADER_INCLUDED
-
-#include <mongoose/mongoose_sys_porting.h>
-
-#ifdef _WIN32
-#include <winsvc.h>
-#endif // _WIN32
-
-#include <assert.h>
-#include <float.h>
-#include <math.h>
-
-#include <mongoose/mongoose.h>
-#include <mongoose/mongoose_ex.h>
-
-
-#if defined(_MSC_VER)
-#pragma warning(disable: 4100)  // shut up MSVC about 'unreferenced formal parameter'
-#endif
-
-
-
-
-
-
-
 /*
-===============================================================================
+ * Mongoose-based server app which interfaces with a TWS station and displays data in HTML form,
+ * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
+ */
 
---- utility functions ---
+#include <tws_c_api/twsapi.h>
+#include <tws_c_api/twsapi-debug.h>
 
-===============================================================================
-*/
-
-/*
-log a message and terminate the application
-*/
-void die(const char *fmt, ...);
+#include "tws_request.h"
 
 
-#endif // TWS_MONGOOSE_PORTING_HEADER_INCLUDED
+

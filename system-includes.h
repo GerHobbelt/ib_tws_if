@@ -32,7 +32,8 @@ very irritating idiosyncracy of loading winsock.h which clashes fataly with
 winsock2.h -- and we want the latter to make it through where we need anything
 'socky'.
 */
-#include "tws_mongoose_porting.h"
+#include <mongoose/mongoose_sys_porting.h>
+
 
 #ifdef _WIN32
 #include <winsvc.h>
@@ -58,6 +59,15 @@ winsock2.h -- and we want the latter to make it through where we need anything
 
 #ifndef PATH_MAX            
 #define PATH_MAX            1024
+#endif
+
+#ifdef __cplusplus
+// blow away a couple of colliding mongoose porting defines:
+#undef write
+#undef read
+
+#include <vector>
+#include <string>
 #endif
 
 

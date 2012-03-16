@@ -458,25 +458,41 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\fake_hamsterdb.c" />
+    <ClCompile Include="..\..\message_queue.cpp" />
     <ClCompile Include="..\..\mongoose_event_handler.cpp" />
     <ClCompile Include="..\..\mongoose_utils.cpp" />
     <ClCompile Include="..\..\support-code.cpp" />
+    <ClCompile Include="..\..\tier2_message.cpp" />
+    <ClCompile Include="..\..\tier2_message_queue.cpp" />
     <ClCompile Include="..\..\tws_api_callbacks.cpp" />
     <ClCompile Include="..\..\tws_comm_thread.cpp" />
     <ClCompile Include="..\..\tws_database_io.cpp" />
+    <ClCompile Include="..\..\tws_data_structures.cpp" />
     <ClCompile Include="..\..\tws_if_main.cpp" />
-    <ClCompile Include="..\..\tws_stocklist_loading_thread.cpp" />
+    <ClCompile Include="..\..\tws_instance.cpp" />
+    <ClCompile Include="..\..\tws_request.cpp" />
+    <ClCompile Include="..\..\tws_response.cpp" />
+    <ClCompile Include="..\..\tws_stocklist_loading.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\blurb.h" />
+    <ClInclude Include="..\..\message_queue.h" />
     <ClInclude Include="..\..\mongoose_event_handler.h" />
     <ClInclude Include="..\..\mongoose_utils.h" />
     <ClInclude Include="..\..\support-code.h" />
     <ClInclude Include="..\..\system-includes.h" />
+    <ClInclude Include="..\..\tier2_message.h" />
+    <ClInclude Include="..\..\tier2_message_queue.h" />
     <ClInclude Include="..\..\tws_backend.h" />
     <ClInclude Include="..\..\tws_comm_thread.h" />
     <ClInclude Include="..\..\tws_database_io.h" />
-    <ClInclude Include="..\..\tws_mongoose_porting.h" />
-    <ClInclude Include="..\..\tws_stocklist_loading_thread.h" />
+    <ClInclude Include="..\..\tws_data_structures.h" />
+    <ClInclude Include="..\..\tws_instance.h" />
+    <ClInclude Include="..\..\mongoose_headers.h" />
+    <ClInclude Include="..\..\tws_message_base.h" />
+    <ClInclude Include="..\..\tws_request.h" />
+    <ClInclude Include="..\..\tws_response.h" />
+    <ClInclude Include="..\..\tws_stocklist_loading.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\libxml\win32.msvc2010\libxml_dll.vcxproj">

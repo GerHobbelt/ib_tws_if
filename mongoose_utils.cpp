@@ -93,6 +93,15 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
             return 1;
         }
     }
+    else if (0 == strcmp("tws_reconnect_delay", name))
+    {
+        long reconnect_delay = atol(value);
+        if (reconnect_delay > 0)
+        {
+            tws_cfg->backend_reconnect_delay = reconnect_delay;
+            return 1;
+        }
+    }
 	else if (0 == strcmp("database_file", name))
 	{
 		tws_cfg->database_path = mg_strdup(value);
@@ -113,6 +122,9 @@ const char * option_get(const struct mg_context *ctx, const char *name)
     // we don't use this one, so keep it a dummy until we do...
     return NULL;
 }
+
+
+
 
 
 

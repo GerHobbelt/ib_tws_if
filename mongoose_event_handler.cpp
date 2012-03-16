@@ -24,14 +24,9 @@
  * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
  */
 
-#include "system-includes.h"
-
 #include "mongoose_event_handler.h"
-
-#include "tws_backend.h"
-#include "tws_comm_thread.h"
-#include "tws_stocklist_loading_thread.h"
-
+#include "tws_request.h"
+#include "tws_instance.h"
 
 
 
@@ -40,57 +35,32 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn, const st
     void *processed = "yes";
     struct mg_context *ctx = mg_get_context(conn);
     struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
-    tws_thread_exch *exch = tws_cfg->exch;
 
     switch (event_id)
     {
     case MG_NEW_REQUEST:
+        if (strncmp(request_info->uri, "/tws/", 5) == 0)
+        {
+			ib_req_current_time *tws_req = new ib_req_current_time(NULL);
+            struct timespec poll_time;
+			int err;
+            poll_time.tv_sec = tws_cfg->backend_poll_period / 1000;
+            poll_time.tv_nsec = (tws_cfg->backend_poll_period % 1000) * 1000000;
+
+            // raw TWS backend requests: decode the request and pass the request to the backend in a serialized fashion; block & wait for the response...
+			err = tws_cfg->push(tws_req);
+
 #if 0
-        if (!request_info->is_ssl)
-        {
-            redirect_to_ssl(conn, request_info);
-            processed = NULL;
-        }
-        else if (!is_authorized(conn, request_info))
-        {
-            redirect_to_login(conn, request_info);
-            processed = NULL;
-        }
-        else if (strcmp(request_info->uri, authorize_url) == 0)
-        {
-            do_authorize(conn, request_info);
-        }
-        else if (strcmp(request_info->uri, "/ajax/get_messages") == 0)
-        {
-            ajax_get_messages(conn, request_info);
-        }
-        else if (strcmp(request_info->uri, "/ajax/send_message") == 0)
-        {
-            ajax_send_message(conn, request_info);
-        }
-        else
+			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", ctime(&tws_req->current_time));
 #endif
-
-            if (strncmp(request_info->uri, "/tws/", 5) == 0)
-            {
-				tier2_queue_item *tws_req = new tier2_queue_item(TIER2_REQUEST_TWS_CURRENT_TIME);
-                struct timespec poll_time;
-				int err;
-                poll_time.tv_sec = tws_cfg->backend_poll_period / 1000;
-                poll_time.tv_nsec = (tws_cfg->backend_poll_period % 1000) * 1000000;
-
-                // raw TWS backend requests: decode the request and pass the request to the backend in a serialized fashion; block & wait for the response...
-				err = tws_cfg->exch->push(tws_req);
-
-                mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", ctime(&tws_req->current_time));
-            }
-            else
-            {
-                // No suitable handler found, mark as not processed. Mongoose will
-                // try to serve the request.
-                processed = NULL;
-            }
-            break;
+		}
+        else
+        {
+            // No suitable handler found, mark as not processed. Mongoose will
+            // try to serve the request.
+            processed = NULL;
+        }
+        break;
 
 	case MG_REQUEST_COMPLETE:
 		processed = NULL;

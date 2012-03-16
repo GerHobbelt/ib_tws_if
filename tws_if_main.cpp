@@ -61,6 +61,7 @@ static const char *default_options[] = {
     "tws_connect_id",        "7",
 
     "tws_poll_delay",        "10", // unit: milliseconds
+    "tws_reconnect_delay",   "10000", // unit: milliseconds
 
     "database_file",         "../../ib_tws_if.hamsterdb",
 
