@@ -18,3 +18,13 @@
 - integrate d3.js as a submodule
 
 - migrate Excel/etc. work & keep/make it portable
+
+
+----
+
+tech notes:
+
+- we might use the socketpairs as a bidir queue by pushing the addresses to messages in the socket: no more need for
+  queue mutexes as the pusher relinquishes control while the receiver will obtain it by reading the pointer from the
+  socket. PROBLEM: how can we safely discard messages originating from terminated/crashed threads? (This is also
+  an issue for a 'regular' queue...)

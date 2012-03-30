@@ -40,20 +40,6 @@ class my_tws_io_info;
 
 
 
-static __inline void tws_copy(char *dst, const char *src)
-{
-	tws_strcpy(dst, src);
-}
-static __inline void tws_copy(double &dst, double src)
-{
-	if (src != DBL_MAX)
-		dst = src;
-}
-static __inline void tws_copy(int &dst, int src)
-{
-	if (src != INT_MAX)
-		dst = src;
-}
 
 
 #endif // TWS_BACKEND_GENERIC_HEADER_INCLUDED

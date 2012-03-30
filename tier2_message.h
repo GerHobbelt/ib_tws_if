@@ -128,6 +128,10 @@ public:
 
 public:
 	virtual int transmit(my_tws_io_info *info) = 0;
+	/* invoke this method to cancel a long-running (repetitive) request. */
+	virtual int cancel_request(my_tws_io_info *info) = 0;
+	/* this method is invoked by the backend when a matching response message is received: */
+	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
 
 	virtual int store(my_tws_io_info *info) = 0;
 	virtual int load(my_tws_io_info *info) = 0;

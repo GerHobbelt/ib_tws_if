@@ -69,8 +69,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -91,8 +89,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -113,8 +109,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -135,8 +129,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -157,8 +149,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -179,8 +169,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -201,8 +189,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -223,8 +209,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -245,8 +229,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -267,8 +249,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -289,8 +269,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -311,8 +289,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -333,8 +309,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -355,8 +329,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -377,8 +349,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -399,8 +369,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -421,8 +389,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -443,8 +409,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -465,8 +429,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -487,8 +449,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -509,8 +469,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -531,8 +489,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -553,8 +509,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -575,8 +529,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -587,7 +539,7 @@ public:
 class ib_resp_historical_data: public tws_response_message
 {
 public:
-	ib_resp_historical_data(ib_instance *tws, int reqid, const char date[], double open, double high, double low, double close, int volume, int bar_count, double wap, int has_gaps) :
+	ib_resp_historical_data(ib_instance *tws, int reqid, const char date[], double open, double high, double low, double close, long int volume, int bar_count, double wap, int has_gaps) :
 	  tws_response_message(tws, -1)
 	  {
 	  }
@@ -597,8 +549,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -619,8 +569,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -641,8 +589,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -663,8 +609,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -685,8 +629,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -707,8 +649,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -729,8 +669,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -741,7 +679,7 @@ public:
 class ib_resp_realtime_bar: public tws_response_message
 {
 public:
-	ib_resp_realtime_bar(ib_instance *tws, int reqid, long time, double open, double high, double low, double close, long volume, double wap, int count) :
+	ib_resp_realtime_bar(ib_instance *tws, int reqid, long time, double open, double high, double low, double close, long int volume, double wap, int count) :
 	  tws_response_message(tws, -1)
 	  {
 	  }
@@ -751,8 +689,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -773,8 +709,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -795,8 +729,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -817,8 +749,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -839,8 +769,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -861,8 +789,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 
@@ -883,8 +809,6 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
-
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
 

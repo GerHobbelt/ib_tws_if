@@ -96,8 +96,13 @@ enum tier2_request_state
 };
 
 // forward reference:
+namespace tws
+{
+	typedef struct tws_instance tws_instance_t;
+}
 class tier2_queue_item;
 class my_tws_io_info;
+
 
 /*
 callback which is invoked when the command state changes.
@@ -223,7 +228,7 @@ public:
 
 	union
     {
-		// for various cancelations:
+		// for various cancellations:
 		int ticker_id;
 		int order_id;
 		int reqid;
@@ -233,14 +238,14 @@ public:
 		struct
 		{
 			int reqid;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			const char *report_type;
 		} fundamental_data;
 
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			const char *generic_tick_list;
 			int snapshot;
 		} market_data;
@@ -248,7 +253,7 @@ public:
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			const char *end_date_time;
 			const char *duration_str;
 			const char *bar_size_setting;
@@ -260,7 +265,7 @@ public:
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			int exercise_action;
 			int exercise_quantity;
 			const char *account;
@@ -270,8 +275,8 @@ public:
 		struct
 		{
 			int id;
-			tr_contract_t *contract;
-			tr_order_t *order;
+			ib_contract *contract;
+			ib_order *order;
 		} order;
 
 		struct
@@ -283,7 +288,7 @@ public:
 		struct
 		{
 			int reqid;
-			tr_exec_filter_t *filter;
+			ib_exec_filter *filter;
 		} req_executions;
 
 		// for tws_req_ids:
@@ -292,13 +297,13 @@ public:
 		struct
 		{
 			int reqid;
-			tr_contract_t *contract;
+			ib_contract *contract;
 		} contract_details;
 
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			int num_rows;
 		} market_depth;
 
@@ -323,7 +328,7 @@ public:
 		struct
 		{
 			int reqid;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			double option_price;
 			double under_price;
 		} implied_vola;
@@ -331,7 +336,7 @@ public:
 		struct
 		{
 			int reqid;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			double volatility;
 			double under_price;
 		} option_price;
@@ -339,13 +344,13 @@ public:
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			int bar_size;
 			const char *what_to_show;
 			int use_Rth;
 		} rt_bars;
 
-		market_data_type_t market_data_type;
+		tws::market_data_type_t market_data_type;
 
     } command_params;
 
@@ -368,7 +373,7 @@ public:
 	tier2_command_cleanup_handler *cleanup_cb; 
 
 public:
-	tier2_queue_item(tier2_command_code cmd, 
+	tier2_request(tier2_command_code cmd, 
 			time_t activate = 0, 
 			int run_count = 1,
 			int interval = 3600,
@@ -391,7 +396,7 @@ public:
 	{
 	}
 
-	~tier2_queue_item()
+	~tier2_request()
 	{
 	}
 };
@@ -645,7 +650,7 @@ int tier2_send_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item *cmd
 		pthread_mutex_unlock(&exch->tws_tx_mutex);
 		break;
 
-	/* auxilliary routines */
+	/* auxiliary routines */
 
 	case TIER2_REQUEST_TWS_SERVER_VERSION:
 		tws_server_version(info->tws_handle);
@@ -673,7 +678,7 @@ public:
 
 	union
     {
-		// for various cancelations:
+		// for various cancellations:
 		int ticker_id;
 		int order_id;
 		int reqid;
@@ -683,14 +688,14 @@ public:
 		struct
 		{
 			int reqid;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			const char *report_type;
 		} fundamental_data;
 
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			const char *generic_tick_list;
 			int snapshot;
 		} market_data;
@@ -698,7 +703,7 @@ public:
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			const char *end_date_time;
 			const char *duration_str;
 			const char *bar_size_setting;
@@ -710,7 +715,7 @@ public:
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			int exercise_action;
 			int exercise_quantity;
 			const char *account;
@@ -720,7 +725,7 @@ public:
 		struct
 		{
 			int id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			tr_order_t *order;
 		} order;
 
@@ -742,13 +747,13 @@ public:
 		struct
 		{
 			int reqid;
-			tr_contract_t *contract;
+			ib_contract *contract;
 		} contract_details;
 
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			int num_rows;
 		} market_depth;
 
@@ -773,7 +778,7 @@ public:
 		struct
 		{
 			int reqid;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			double option_price;
 			double under_price;
 		} implied_vola;
@@ -781,7 +786,7 @@ public:
 		struct
 		{
 			int reqid;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			double volatility;
 			double under_price;
 		} option_price;
@@ -789,7 +794,7 @@ public:
 		struct
 		{
 			int ticker_id;
-			tr_contract_t *contract;
+			ib_contract *contract;
 			int bar_size;
 			const char *what_to_show;
 			int use_Rth;
@@ -1164,7 +1169,7 @@ public:
     struct mg_connection *conn;
     struct mg_context *ctx;
     struct tws_conn_cfg *tws_cfg;
-    tws_instance_t *tws_handle;
+    tws::tws_instance_t *tws_handle;
 
     /* tracking some TWS values here as well: */
     int next_order_id;

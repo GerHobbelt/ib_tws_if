@@ -116,6 +116,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "retest.2010", "..\..\libtre
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mongoose_authentication_sample", "3rdparty_mongoose_authentication_sample.vcxproj", "{1D5ED2C5-9BF1-02D6-68AB-A9ED2243CE70}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tws_decode_msg_util", "tws_decode_msg_util.vcxproj", "{03BF2E43-6874-1F22-BF47-EC82C63B10C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Itanium = Debug|Itanium
@@ -814,6 +816,20 @@ Global
 		{1D5ED2C5-9BF1-02D6-68AB-A9ED2243CE70}.Release|Win32.Build.0 = Release|Win32
 		{1D5ED2C5-9BF1-02D6-68AB-A9ED2243CE70}.Release|x64.ActiveCfg = Release|x64
 		{1D5ED2C5-9BF1-02D6-68AB-A9ED2243CE70}.Release|x64.Build.0 = Release|x64
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Debug|Itanium.Build.0 = Debug|Itanium
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|x64
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Debug|Win32.Build.0 = Debug|Win32
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Debug|x64.ActiveCfg = Debug|x64
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Debug|x64.Build.0 = Debug|x64
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Release|Itanium.ActiveCfg = Release|Itanium
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Release|Itanium.Build.0 = Release|Itanium
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|x64
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Release|Win32.ActiveCfg = Release|Win32
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Release|Win32.Build.0 = Release|Win32
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Release|x64.ActiveCfg = Release|x64
+		{03BF2E43-6874-1F22-BF47-EC82C63B10C5}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

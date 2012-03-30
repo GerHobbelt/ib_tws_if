@@ -277,6 +277,19 @@ typedef optional_value<tws_short_sale_slot_type_t>	o_short_sale_slot_type_t;
 
 
 
+/*
+visitor template:
+
+defines the callback which will process the TWS data passed to it.
+*/
+template <typename T> class tws_data_transmitter
+{
+	virtual int transmit_data(T *record);
+};
+
+
+
+
 struct tws::under_comp;
 
 class ib_under_comp 
@@ -317,6 +330,8 @@ typedef optional_value<ib_under_comp>	o_ib_under_comp_t;
 
 
 struct tws::tr_contract;
+typedef tws_data_transmitter<tws::tr_contract> tws_contract_transmitter;
+
 
 class ib_contract 
 {
@@ -348,7 +363,7 @@ public:
 	virtual ~ib_contract();
 
 public:
-	tws::tr_contract *to_tws(void) const;     /* free() the returned pointer when done! */
+	int to_tws(tws_contract_transmitter &visitor);    
 };
 
 
@@ -426,6 +441,7 @@ public:
 	
 
 struct tws::tr_order;
+typedef tws_data_transmitter<tws::tr_order> tws_order_transmitter;
 
 class ib_order 
 {
@@ -517,9 +533,9 @@ public:
     o_bool_t     o_continuous_update;                    /* For Volatility orders only: if true, price will be continuously recalculated after order submission */
     o_bool_t     o_whatif;                               /* if true, the order will not be submitted, but margin info will be returned */
     o_bool_t     o_not_held;
-	o_bool_t     o_opt_out_smart_routing;				/* SMART routing only: */
-    o_bool_t     o_scale_auto_reset;						/* For SCALE orders only */
-    o_bool_t     o_scale_random_percent;					/* For SCALE orders only */
+	o_bool_t     o_opt_out_smart_routing;				 /* SMART routing only: */
+    o_bool_t     o_scale_auto_reset;					 /* For SCALE orders only */
+    o_bool_t     o_scale_random_percent;				 /* For SCALE orders only */
 
 public:
 	ib_order();
@@ -527,7 +543,7 @@ public:
 	virtual ~ib_order();
 
 public:
-	tws::tr_order *to_tws(void) const;			/* free() the returned pointer when done! */
+	int to_tws(tws_order_transmitter &visitor);			
 };
 
 
@@ -585,6 +601,7 @@ public:
 	
 
 struct tws::tr_exec_filter;
+typedef tws_data_transmitter<tws::tr_exec_filter> tws_exec_filter_transmitter; 
 
 class ib_exec_filter 
 {
@@ -603,12 +620,14 @@ public:
 	virtual ~ib_exec_filter();
 
 public:
-	void to_tws(tws::tr_exec_filter &dst) const;
+	int to_tws(tws_exec_filter_transmitter &visitor);
 };
 	
 
 
 struct tws::tr_scanner_subscription;
+typedef tws_data_transmitter<tws::tr_scanner_subscription> tws_scanner_subscription_transmitter;
+
 
 class ib_scanner_subscription 
 {
@@ -641,7 +660,7 @@ public:
 	virtual ~ib_scanner_subscription();
 
 public:
-	void to_tws(tws::tr_scanner_subscription &dst) const;
+	int to_tws(tws_scanner_subscription_transmitter &visitor);
 };
 
 

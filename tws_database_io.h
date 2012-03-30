@@ -4,7 +4,8 @@
 
 
 #include <ham/hamsterdb.h>
-#include <tws_c_api/twsapi.h>
+
+#include "tws_data_structures.h"
 
 
 
@@ -40,8 +41,8 @@ int ib_close_databases(my_tws_io_info *info);
 const char *ib_strerror(int errcode);
 
 
-int ib_cache_ticker_info(const tr_contract_details_t *cd);
-int ib_get_ticker_info(tr_contract_details_t *cd);
+int ib_cache_ticker_info(const ib_contract_details &cd);
+int ib_get_ticker_info(ib_contract_details &cd);
 
 int ib_store_scanner_parameters_xml(my_tws_io_info *info, const char *xml);
 
