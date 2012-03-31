@@ -27,6 +27,15 @@
 #include "tws_response.h"
 
 
+#define DECLARE_TWS_FORWARD_REFERENCE(t)						\
+	namespace tws												\
+	{ 															\
+		extern "C"												\
+		{														\
+			t;													\
+		}														\
+	}
+
 
 
 enum tws_order_type_t
@@ -290,7 +299,7 @@ template <typename T> class tws_data_transmitter
 
 
 
-struct tws::under_comp;
+DECLARE_TWS_FORWARD_REFERENCE(struct under_comp);
 
 class ib_under_comp 
 {
@@ -305,7 +314,7 @@ public:
 	virtual ~ib_under_comp();
 };
 
-struct tws::tr_comboleg;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_comboleg);
 
 class ib_comboleg 
 {
@@ -329,7 +338,7 @@ typedef optional_value<ib_under_comp>	o_ib_under_comp_t;
 
 
 
-struct tws::tr_contract;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_contract);
 typedef tws_data_transmitter<tws::tr_contract> tws_contract_transmitter;
 
 
@@ -367,7 +376,7 @@ public:
 };
 
 
-struct tws::tr_contract_details;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_contract_details);
 
 class ib_contract_details 
 {
@@ -411,7 +420,7 @@ public:
 };
 	
 
-struct tws::tr_tag_value;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_tag_value);
 
 class ib_tag_value 
 {
@@ -426,7 +435,7 @@ public:
 };
 	
 
-struct tws::tr_order_combo_leg;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_order_combo_leg);
 
 class ib_order_combo_leg
 {
@@ -440,7 +449,7 @@ public:
 };
 	
 
-struct tws::tr_order;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_order);
 typedef tws_data_transmitter<tws::tr_order> tws_order_transmitter;
 
 class ib_order 
@@ -548,7 +557,7 @@ public:
 
 
 
-struct tws::tr_order_status;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_order_status);
 
 /*
 OrderState
@@ -573,7 +582,7 @@ public:
 };
 	
 
-struct tws::tr_execution;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_execution);
 
 class ib_execution 
 {
@@ -600,7 +609,7 @@ public:
 };
 	
 
-struct tws::tr_exec_filter;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_exec_filter);
 typedef tws_data_transmitter<tws::tr_exec_filter> tws_exec_filter_transmitter; 
 
 class ib_exec_filter 
@@ -625,7 +634,7 @@ public:
 	
 
 
-struct tws::tr_scanner_subscription;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_scanner_subscription);
 typedef tws_data_transmitter<tws::tr_scanner_subscription> tws_scanner_subscription_transmitter;
 
 
@@ -665,7 +674,7 @@ public:
 
 
 
-struct tws::tr_commission_report;
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_commission_report);
 
 class ib_commission_report
 {

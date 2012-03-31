@@ -31,7 +31,7 @@
 
 
 
-#define TWS_CONNECT_RETRY_DELAY     10 // unit: seconds
+#define TWS_CONNECT_RETRY_DELAY     10000 // unit: milliseconds
 
 
 
@@ -1139,7 +1139,7 @@ fail_dramatically:
         // wait N seconds before retrying to connect to TWS:
         if (mg_get_stop_flag(ctx) == 0)
         {
-            sleep(TWS_CONNECT_RETRY_DELAY);
+            mg_sleep(TWS_CONNECT_RETRY_DELAY);
         }
     }
 

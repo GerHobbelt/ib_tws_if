@@ -27,9 +27,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>tws_if_srv</ProjectName>
-    <ProjectGuid>{C570A535-C0DD-42EE-A904-1E519B67017E}</ProjectGuid>
-    <RootNamespace>tws_if_srv</RootNamespace>
+    <ProjectName>mongoose_service</ProjectName>
+    <RootNamespace>mongoose</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,8 +145,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\mongoose;..\..\pthread-win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MONGOOSE_AS_SERVICE;HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -172,7 +171,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(IntDir)$(TargetFileName).map</MapFileName>
       <MapExports>true</MapExports>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -202,8 +201,8 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\mongoose;..\..\pthread-win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MONGOOSE_AS_SERVICE;HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -228,7 +227,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(IntDir)$(TargetFileName).map</MapFileName>
       <MapExports>true</MapExports>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -258,8 +257,8 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\mongoose;..\..\pthread-win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MONGOOSE_AS_SERVICE;HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -283,7 +282,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(IntDir)$(TargetFileName).map</MapFileName>
       <MapExports>true</MapExports>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <TargetMachine>MachineIA64</TargetMachine>
@@ -305,8 +304,8 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\mongoose;..\..\pthread-win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MONGOOSE_AS_SERVICE;HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -333,7 +332,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(IntDir)$(TargetFileName).map</MapFileName>
       <MapExports>true</MapExports>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -360,8 +359,8 @@
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\mongoose;..\..\pthread-win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MONGOOSE_AS_SERVICE;HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -388,7 +387,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(IntDir)$(TargetFileName).map</MapFileName>
       <MapExports>true</MapExports>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
@@ -414,8 +413,8 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\mongoose;..\..\pthread-win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>MONGOOSE_AS_SERVICE;HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -441,7 +440,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <MapFileName>$(IntDir)$(TargetFileName).map</MapFileName>
       <MapExports>true</MapExports>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <TargetMachine>MachineIA64</TargetMachine>
@@ -451,55 +450,6 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\..\.gitmodules" />
-    <None Include="..\..\server\Makefile.am" />
-    <None Include="..\..\README.md" />
-    <None Include="..\..\TODO" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\fake_hamsterdb.c" />
-    <ClCompile Include="..\..\interthread_comm.cpp" />
-    <ClCompile Include="..\..\message_queue.cpp" />
-    <ClCompile Include="..\..\mongoose_event_handler.cpp" />
-    <ClCompile Include="..\..\mongoose_utils.cpp" />
-    <ClCompile Include="..\..\support-code.cpp" />
-    <ClCompile Include="..\..\tier2_message.cpp" />
-    <ClCompile Include="..\..\tier2_message_queue.cpp" />
-    <ClCompile Include="..\..\tws_api_callbacks.cpp" />
-    <ClCompile Include="..\..\tws_comm_thread.cpp" />
-    <ClCompile Include="..\..\tws_database_io.cpp" />
-    <ClCompile Include="..\..\tws_data_structures.cpp" />
-    <ClCompile Include="..\..\tws_if_main.cpp" />
-    <ClCompile Include="..\..\tws_instance.cpp" />
-    <ClCompile Include="..\..\tws_request.cpp" />
-    <ClCompile Include="..\..\tws_response.cpp" />
-    <ClCompile Include="..\..\tws_stocklist_loading.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\blurb.h" />
-    <ClInclude Include="..\..\interthread_comm.h" />
-    <ClInclude Include="..\..\message_queue.h" />
-    <ClInclude Include="..\..\mongoose_event_handler.h" />
-    <ClInclude Include="..\..\mongoose_utils.h" />
-    <ClInclude Include="..\..\support-code.h" />
-    <ClInclude Include="..\..\system-includes.h" />
-    <ClInclude Include="..\..\tier2_message.h" />
-    <ClInclude Include="..\..\tier2_message_queue.h" />
-    <ClInclude Include="..\..\tws_backend.h" />
-    <ClInclude Include="..\..\tws_comm_thread.h" />
-    <ClInclude Include="..\..\tws_database_io.h" />
-    <ClInclude Include="..\..\tws_data_structures.h" />
-    <ClInclude Include="..\..\tws_instance.h" />
-    <ClInclude Include="..\..\mongoose_headers.h" />
-    <ClInclude Include="..\..\tws_message_base.h" />
-    <ClInclude Include="..\..\tws_request.h" />
-    <ClInclude Include="..\..\tws_response.h" />
-    <ClInclude Include="..\..\tws_stocklist_loading.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\libxml\win32.msvc2010\libxml_dll.vcxproj">
-      <Project>{218f950c-eb90-4023-a016-e9af52c4aae9}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\..\pthread-win32\pthread.2010.vcxproj">
       <Project>{5d459ba0-5eeb-47d3-a1c4-6b55c8d37ec0}</Project>
     </ProjectReference>
@@ -507,10 +457,13 @@
       <Project>{fc4eff85-2c41-4ed6-a13e-eb98409de435}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="3rdparty_tws_c_api_lib.vcxproj">
-      <Project>{7ca3cfb9-ce10-41c8-9bcc-2061ad259f71}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\mongoose\LICENSE" />
+    <None Include="..\..\mongoose\mongoose.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\mongoose\main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

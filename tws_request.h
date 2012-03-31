@@ -1021,7 +1021,7 @@ public:
 
 
 /* 
-auxilliary message: fetches server version and connection time datums 
+auxiliary message: fetches server version and connection time datums 
 
 int    tws_server_version(ib_instance *tws);
 
@@ -1031,7 +1031,7 @@ class ib_fetch_tws_info: public tws_reqresp_message
 {
 public:
 	ib_fetch_tws_info(ib_instance *tws) :
-	  tws_request_message(tws, -1)
+	  tws_reqresp_message(tws, -1)
 	  {
 	  }
 protected:
@@ -1047,7 +1047,6 @@ public:
 };
 
 
-#endif
 
 
 

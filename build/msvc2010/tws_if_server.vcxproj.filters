@@ -110,6 +110,9 @@
     <ClCompile Include="..\..\tws_stocklist_loading.cpp">
       <Filter>Backend / Tier2\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\interthread_comm.cpp">
+      <Filter>Glue\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\blurb.h">
@@ -164,6 +167,9 @@
       <Filter>Glue\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\message_queue.h">
+      <Filter>Glue\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interthread_comm.h">
       <Filter>Glue\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

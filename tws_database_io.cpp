@@ -92,14 +92,14 @@ const char *ib_strerror(int errcode)
 
 
 
-int ib_cache_ticker_info(const tr_contract_details_t *cd)
+int ib_cache_ticker_info(const ib_contract_details *cd)
 {
 	ham_key_t key;
 
 	return 0;
 }
 
-int ib_get_ticker_info(tr_contract_details_t *cd)
+int ib_get_ticker_info(ib_contract_details *cd)
 {
 	return 0;
 }
