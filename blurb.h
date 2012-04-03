@@ -5097,3 +5097,1038 @@ public:
 
 
 void tws_worker_thread(struct mg_context *ctx);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+static __inline ham_u16_t strcost(const char *src)
+{
+	if (src)
+	{
+		return (ham_u16_t)strlen(src) + 1;
+	}
+	return 0;
+}
+
+static __inline void strserialize(char *dst, const char *src)
+{
+	if (src)
+	{
+		strcpy(dst, src);
+	}
+}
+
+static ham_u16_t serialize_tws_contract_summary_phase1(trser_contract_summary_t *dst, ham_u16_t str_index, const tr_contract_t *src)
+{
+	int i;
+
+	// serialize strings as offsets into 'tmp/dst' while determining the total bytes required for the real output:
+	dst->has_c_undercomp = (src->c_undercomp != NULL);
+	if (dst->has_c_undercomp)
+	{
+		under_comp_t *u = src->c_undercomp;
+
+		dst->c_undercomp.u_conid = u->u_conid;
+		dst->c_undercomp.u_delta = u->u_delta;
+		dst->c_undercomp.u_price = u->u_price;
+	}
+	dst->c_strike = src->c_strike;
+
+	dst->c_symbol = str_index;
+	str_index += strcost(src->c_symbol);
+	dst->c_sectype = str_index;
+	str_index += strcost(src->c_sectype);
+	dst->c_exchange = str_index;
+	str_index += strcost(src->c_exchange);
+	dst->c_primary_exch = str_index;
+	str_index += strcost(src->c_primary_exch);
+	dst->c_expiry = str_index;
+	str_index += strcost(src->c_expiry);
+	dst->c_currency = str_index;
+	str_index += strcost(src->c_currency);
+	dst->c_right = str_index;
+	str_index += strcost(src->c_right);
+	dst->c_local_symbol = str_index;
+	str_index += strcost(src->c_local_symbol);
+	dst->c_multiplier = str_index;
+	str_index += strcost(src->c_multiplier);
+	dst->c_combolegs_descrip = str_index;
+	str_index += strcost(src->c_combolegs_descrip);
+	dst->c_secid_type = str_index;
+	str_index += strcost(src->c_secid_type);
+	dst->c_secid = str_index;
+	str_index += strcost(src->c_secid);
+
+	dst->c_num_combolegs = src->c_num_combolegs;
+	assert(src->c_num_combolegs <= ARRAY_SIZE(dst->c_comboleg));
+
+	for (i = src->c_num_combolegs - 1; i >= 0; i--)
+	{
+		tr_comboleg_t *cls = src->c_comboleg + i;
+		trser_comboleg_t *cld = dst->c_comboleg + i;
+
+		cld->co_action = str_index;
+		str_index += strcost(cls->co_action);
+		cld->co_exchange = str_index;
+		str_index += strcost(cls->co_exchange);
+		cld->co_designated_location = str_index;
+		str_index += strcost(cls->co_designated_location);
+
+		cld->co_open_close = cls->co_open_close;
+		cld->co_conid = cls->co_conid;
+		cld->co_ratio = cls->co_ratio;
+		cld->co_short_sale_slot = cls->co_short_sale_slot;
+		cld->co_exempt_code = cls->co_exempt_code;
+	}
+
+	dst->c_conid = src->c_conid;
+	dst->c_include_expired = src->c_include_expired;
+
+	return str_index;
+}
+
+static void serialize_tws_contract_summary_phase2(char *dst_data, trser_contract_summary_t *dst, const tr_contract_t *src)
+{
+	int i;
+
+	assert(src->c_num_combolegs <= ARRAY_SIZE(dst->c_comboleg));
+
+	strserialize(dst_data + dst->c_symbol, src->c_symbol);
+	strserialize(dst_data + dst->c_sectype, src->c_sectype);
+	strserialize(dst_data + dst->c_exchange, src->c_exchange);
+	strserialize(dst_data + dst->c_primary_exch, src->c_primary_exch);
+	strserialize(dst_data + dst->c_expiry, src->c_expiry);
+	strserialize(dst_data + dst->c_currency, src->c_currency);
+	strserialize(dst_data + dst->c_right, src->c_right);
+	strserialize(dst_data + dst->c_local_symbol, src->c_local_symbol);
+	strserialize(dst_data + dst->c_multiplier, src->c_multiplier);
+	strserialize(dst_data + dst->c_combolegs_descrip, src->c_combolegs_descrip);
+	strserialize(dst_data + dst->c_secid_type, src->c_secid_type);
+	strserialize(dst_data + dst->c_secid, src->c_secid);
+
+	for (i = src->c_num_combolegs - 1; i >= 0; i--)
+	{
+		tr_comboleg_t *cls = src->c_comboleg + i;
+		trser_comboleg_t *cld = dst->c_comboleg + i;
+
+		strserialize(dst_data + cld->co_action, cls->co_action);
+		strserialize(dst_data + cld->co_exchange, cls->co_exchange);
+		strserialize(dst_data + cld->co_designated_location, cls->co_designated_location);
+	}
+}
+
+trser_contract_t *serialize_tws_contract(const tr_contract_t *src)
+{
+	trser_contract_t *dst;
+	trser_contract_summary_t tmp = {0};
+	size_t cost = sizeof(*dst);
+	ham_u16_t str_index;
+
+	// serialize strings as offsets into 'tmp' while determining the total bytes required for the real output:
+	if (src->c_num_combolegs > ARRAY_SIZE(tmp.c_comboleg))
+		return NULL;
+
+	str_index = serialize_tws_contract_summary_phase1(&tmp, 0, src);
+
+	cost += str_index;
+	dst = (trser_contract_t *)malloc(cost);
+	if (!dst)
+		return NULL;
+
+	dst->c_contract = tmp;
+	dst->struct_size = cost;
+
+	serialize_tws_contract_summary_phase2(dst->data, &tmp, src);
+
+	return dst;
+}
+
+trser_contract_details_t *serialize_tws_contract_details(const tr_contract_details_t *src)
+{
+	trser_contract_details_t *dst;
+	trser_contract_details_t tmp = {0};
+	size_t cost = sizeof(*dst);
+	ham_u16_t str_index;
+
+	tmp.d_mintick = src->d_mintick;
+	tmp.d_coupon = src->d_coupon;
+
+	if (src->d_summary.c_num_combolegs > ARRAY_SIZE(tmp.d_summary.c_comboleg))
+		return NULL;
+
+	str_index = serialize_tws_contract_summary_phase1(&tmp.d_summary, 0, &src->d_summary);
+
+	tmp.d_market_name = str_index;
+	str_index += strcost(src->d_market_name);
+	tmp.d_trading_class = str_index;
+	str_index += strcost(src->d_trading_class);
+	tmp.d_order_types = str_index;
+	str_index += strcost(src->d_order_types);
+	tmp.d_valid_exchanges = str_index;
+	str_index += strcost(src->d_valid_exchanges);
+	tmp.d_cusip = str_index;
+	str_index += strcost(src->d_cusip);
+	tmp.d_maturity = str_index;
+	str_index += strcost(src->d_maturity);
+	tmp.d_issue_date = str_index;
+	str_index += strcost(src->d_issue_date);
+	tmp.d_ratings = str_index;
+	str_index += strcost(src->d_ratings);
+	tmp.d_bond_type = str_index;
+	str_index += strcost(src->d_bond_type);
+	tmp.d_coupon_type = str_index;
+	str_index += strcost(src->d_coupon_type);
+	tmp.d_desc_append = str_index;
+	str_index += strcost(src->d_desc_append);
+	tmp.d_next_option_date = str_index;
+	str_index += strcost(src->d_next_option_date);
+	tmp.d_next_option_type = str_index;
+	str_index += strcost(src->d_next_option_type);
+	tmp.d_notes = str_index;
+	str_index += strcost(src->d_notes);
+	tmp.d_long_name = str_index;
+	str_index += strcost(src->d_long_name);
+	tmp.d_contract_month = str_index;
+	str_index += strcost(src->d_contract_month);
+	tmp.d_industry = str_index;
+	str_index += strcost(src->d_industry);
+	tmp.d_category = str_index;
+	str_index += strcost(src->d_category);
+	tmp.d_subcategory = str_index;
+	str_index += strcost(src->d_subcategory);
+	tmp.d_timezone_id = str_index;
+	str_index += strcost(src->d_timezone_id);
+	tmp.d_trading_hours = str_index;
+	str_index += strcost(src->d_trading_hours);
+	tmp.d_liquid_hours = str_index;
+	str_index += strcost(src->d_liquid_hours);
+
+	tmp.d_price_magnifier = src->d_price_magnifier;
+	tmp.d_under_conid = src->d_under_conid;
+	tmp.d_convertible = src->d_convertible;
+	tmp.d_callable = src->d_callable;
+	tmp.d_putable = src->d_putable;
+	tmp.d_next_option_partial = src->d_next_option_partial;
+
+
+
+	cost += str_index;
+	dst = (trser_contract_details_t *)malloc(cost);
+	if (!dst)
+		return NULL;
+
+	*dst = tmp;
+	dst->struct_size = cost;
+
+	serialize_tws_contract_summary_phase2(dst->data, &tmp.d_summary, &src->d_summary);
+
+	strserialize(dst->data + tmp.d_market_name, src->d_market_name);
+	strserialize(dst->data + tmp.d_trading_class, src->d_trading_class);
+	strserialize(dst->data + tmp.d_order_types, src->d_order_types);
+	strserialize(dst->data + tmp.d_valid_exchanges, src->d_valid_exchanges);
+	strserialize(dst->data + tmp.d_cusip, src->d_cusip);
+	strserialize(dst->data + tmp.d_maturity, src->d_maturity);
+	strserialize(dst->data + tmp.d_issue_date, src->d_issue_date);
+	strserialize(dst->data + tmp.d_ratings, src->d_ratings);
+	strserialize(dst->data + tmp.d_bond_type, src->d_bond_type);
+	strserialize(dst->data + tmp.d_coupon_type, src->d_coupon_type);
+	strserialize(dst->data + tmp.d_desc_append, src->d_desc_append);
+	strserialize(dst->data + tmp.d_next_option_date, src->d_next_option_date);
+	strserialize(dst->data + tmp.d_next_option_type, src->d_next_option_type);
+	strserialize(dst->data + tmp.d_notes, src->d_notes);
+	strserialize(dst->data + tmp.d_long_name, src->d_long_name);
+	strserialize(dst->data + tmp.d_contract_month, src->d_contract_month);
+	strserialize(dst->data + tmp.d_industry, src->d_industry);
+	strserialize(dst->data + tmp.d_category, src->d_category);
+	strserialize(dst->data + tmp.d_subcategory, src->d_subcategory);
+	strserialize(dst->data + tmp.d_timezone_id, src->d_timezone_id);
+	strserialize(dst->data + tmp.d_trading_hours, src->d_trading_hours);
+	strserialize(dst->data + tmp.d_liquid_hours, src->d_liquid_hours);
+
+
+	return dst;
+}
+
+trser_order_t *serialize_tws_order(const tr_order_t *src)
+{
+	trser_order_t *dst;
+	trser_order_t tmp = {0};
+	size_t cost = sizeof(*dst);
+	ham_u16_t str_index = 0;
+	int i;
+
+	tmp.o_discretionary_amt = src->o_discretionary_amt;
+	tmp.o_lmt_price = src->o_lmt_price;
+	tmp.o_aux_price = src->o_aux_price;
+	tmp.o_percent_offset = src->o_percent_offset;
+	tmp.o_nbbo_price_cap = src->o_nbbo_price_cap;
+	tmp.o_starting_price = src->o_starting_price;
+	tmp.o_stock_ref_price = src->o_stock_ref_price;
+	tmp.o_delta = src->o_delta;
+	tmp.o_stock_range_lower = src->o_stock_range_lower;
+	tmp.o_stock_range_upper = src->o_stock_range_upper;
+	tmp.o_volatility = src->o_volatility;
+	tmp.o_delta_neutral_aux_price = src->o_delta_neutral_aux_price;
+	tmp.o_trail_stop_price = src->o_trail_stop_price;
+	tmp.o_trailing_percent = src->o_trailing_percent;
+	tmp.o_basis_points = src->o_basis_points;
+	tmp.o_scale_price_increment = src->o_scale_price_increment;
+	tmp.o_scale_price_adjust_value = src->o_scale_price_adjust_value;
+	tmp.o_scale_profit_offset = src->o_scale_profit_offset;
+
+	tmp.o_algo_strategy = str_index;
+	str_index += strcost(src->o_algo_strategy);
+	tmp.o_good_after_time = str_index;
+	str_index += strcost(src->o_good_after_time);
+	tmp.o_good_till_date = str_index;
+	str_index += strcost(src->o_good_till_date);
+	tmp.o_fagroup = str_index;
+	str_index += strcost(src->o_fagroup);
+	tmp.o_famethod = str_index;
+	str_index += strcost(src->o_famethod);
+	tmp.o_fapercentage = str_index;
+	str_index += strcost(src->o_fapercentage);
+	tmp.o_faprofile = str_index;
+	str_index += strcost(src->o_faprofile);
+	tmp.o_action = str_index;
+	str_index += strcost(src->o_action);
+	tmp.o_order_type = str_index;
+	str_index += strcost(src->o_order_type);
+	tmp.o_tif = str_index;
+	str_index += strcost(src->o_tif);
+	tmp.o_oca_group = str_index;
+	str_index += strcost(src->o_oca_group);
+	tmp.o_account = str_index;
+	str_index += strcost(src->o_account);
+	tmp.o_open_close = str_index;
+	str_index += strcost(src->o_open_close);
+	tmp.o_orderref = str_index;
+	str_index += strcost(src->o_orderref);
+	tmp.o_designated_location = str_index;
+	str_index += strcost(src->o_designated_location);
+	tmp.o_rule80a = str_index;
+	str_index += strcost(src->o_rule80a);
+	tmp.o_settling_firm = str_index;
+	str_index += strcost(src->o_settling_firm);
+	tmp.o_delta_neutral_order_type = str_index;
+	str_index += strcost(src->o_delta_neutral_order_type);
+	tmp.o_clearing_account = str_index;
+	str_index += strcost(src->o_clearing_account);
+	tmp.o_clearing_intent = str_index;
+	str_index += strcost(src->o_clearing_intent);
+	tmp.o_hedge_type = str_index;
+	str_index += strcost(src->o_hedge_type);
+	tmp.o_hedge_param = str_index;
+	str_index += strcost(src->o_hedge_param);
+	tmp.o_delta_neutral_settling_firm = str_index;
+	str_index += strcost(src->o_delta_neutral_settling_firm);
+	tmp.o_delta_neutral_clearing_account = str_index;
+	str_index += strcost(src->o_delta_neutral_clearing_account);
+	tmp.o_delta_neutral_clearing_intent = str_index;
+	str_index += strcost(src->o_delta_neutral_clearing_intent);
+
+	if (src->o_algo_params_count > ARRAY_SIZE(tmp.o_algo_params))
+		return NULL;
+	tmp.o_algo_params_count = src->o_algo_params_count;
+	for (i = tmp.o_algo_params_count - 1; i >= 0; i--)
+	{
+		trser_tag_value_t *d = tmp.o_algo_params + i;
+		tr_tag_value_t *s = src->o_algo_params + i;
+
+		d->t_tag = str_index;
+		str_index += strcost(s->t_tag);
+		d->t_val = str_index;
+		str_index += strcost(s->t_val);
+	}
+
+	if (src->o_smart_combo_routing_params_count > ARRAY_SIZE(tmp.o_smart_combo_routing_params))
+		return NULL;
+	tmp.o_smart_combo_routing_params_count = src->o_smart_combo_routing_params_count;
+	for (i = tmp.o_smart_combo_routing_params_count - 1; i >= 0; i--)
+	{
+		trser_tag_value_t *d = tmp.o_smart_combo_routing_params + i;
+		tr_tag_value_t *s = src->o_smart_combo_routing_params + i;
+
+		d->t_tag = str_index;
+		str_index += strcost(s->t_tag);
+		d->t_val = str_index;
+		str_index += strcost(s->t_val);
+	}
+
+	if (src->o_combo_legs_count > ARRAY_SIZE(tmp.o_combo_legs))
+		return NULL;
+	tmp.o_combo_legs_count = src->o_combo_legs_count;
+	for (i = tmp.o_combo_legs_count - 1; i >= 0; i--)
+	{
+		trser_order_comboleg_t *d = tmp.o_combo_legs + i;
+		tr_order_combo_leg_t *s = src->o_combo_legs + i;
+
+		d->cl_price = s->cl_price;
+	}
+
+	tmp.o_orderid = src->o_orderid;
+	tmp.o_total_quantity = src->o_total_quantity;
+	tmp.o_origin = src->o_origin;
+	tmp.o_clientid = src->o_clientid;
+	tmp.o_permid = src->o_permid;
+	tmp.o_parentid = src->o_parentid;
+	tmp.o_display_size = src->o_display_size;
+	tmp.o_trigger_method = src->o_trigger_method;
+	tmp.o_min_qty = src->o_min_qty;
+	tmp.o_volatility_type = src->o_volatility_type;
+	tmp.o_reference_price_type = src->o_reference_price_type;
+	tmp.o_basis_points_type = src->o_basis_points_type;
+	tmp.o_scale_subs_level_size = src->o_scale_subs_level_size;
+	tmp.o_scale_init_level_size = src->o_scale_init_level_size;
+	tmp.o_scale_price_adjust_interval = src->o_scale_price_adjust_interval;
+	tmp.o_scale_init_position = src->o_scale_init_position;
+	tmp.o_scale_init_fill_qty = src->o_scale_init_fill_qty;
+	tmp.o_exempt_code = src->o_exempt_code;
+	tmp.o_delta_neutral_con_id = src->o_delta_neutral_con_id;
+	tmp.o_oca_type = src->o_oca_type;
+	tmp.o_auction_strategy = src->o_auction_strategy;
+	tmp.o_short_sale_slot = src->o_short_sale_slot;
+	tmp.o_override_percentage_constraints = src->o_override_percentage_constraints;
+	tmp.o_firm_quote_only = src->o_firm_quote_only;
+	tmp.o_etrade_only = src->o_etrade_only;
+	tmp.o_all_or_none = src->o_all_or_none;
+	tmp.o_outside_rth = src->o_outside_rth;
+	tmp.o_hidden = src->o_hidden;
+	tmp.o_transmit = src->o_transmit;
+	tmp.o_block_order = src->o_block_order;
+	tmp.o_sweep_to_fill = src->o_sweep_to_fill;
+	tmp.o_continuous_update = src->o_continuous_update;
+	tmp.o_whatif = src->o_whatif;
+	tmp.o_not_held = src->o_not_held;
+	tmp.o_opt_out_smart_routing = src->o_opt_out_smart_routing;
+	tmp.o_scale_auto_reset = src->o_scale_auto_reset;
+	tmp.o_scale_random_percent = src->o_scale_random_percent;
+
+
+	cost += str_index;
+	dst = (trser_order_t *)malloc(cost);
+	if (!dst)
+		return NULL;
+
+	*dst = tmp;
+	dst->struct_size = cost;
+
+	strserialize(dst->data + tmp.o_algo_strategy, src->o_algo_strategy);
+	strserialize(dst->data + tmp.o_good_after_time, src->o_good_after_time);
+	strserialize(dst->data + tmp.o_good_till_date, src->o_good_till_date);
+	strserialize(dst->data + tmp.o_fagroup, src->o_fagroup);
+	strserialize(dst->data + tmp.o_famethod, src->o_famethod);
+	strserialize(dst->data + tmp.o_fapercentage, src->o_fapercentage);
+	strserialize(dst->data + tmp.o_faprofile, src->o_faprofile);
+	strserialize(dst->data + tmp.o_action, src->o_action);
+	strserialize(dst->data + tmp.o_order_type, src->o_order_type);
+	strserialize(dst->data + tmp.o_tif, src->o_tif);
+	strserialize(dst->data + tmp.o_oca_group, src->o_oca_group);
+	strserialize(dst->data + tmp.o_account, src->o_account);
+	strserialize(dst->data + tmp.o_open_close, src->o_open_close);
+	strserialize(dst->data + tmp.o_orderref, src->o_orderref);
+	strserialize(dst->data + tmp.o_designated_location, src->o_designated_location);
+	strserialize(dst->data + tmp.o_rule80a, src->o_rule80a);
+	strserialize(dst->data + tmp.o_settling_firm, src->o_settling_firm);
+	strserialize(dst->data + tmp.o_delta_neutral_order_type, src->o_delta_neutral_order_type);
+	strserialize(dst->data + tmp.o_clearing_account, src->o_clearing_account);
+	strserialize(dst->data + tmp.o_clearing_intent, src->o_clearing_intent);
+	strserialize(dst->data + tmp.o_hedge_type, src->o_hedge_type);
+	strserialize(dst->data + tmp.o_hedge_param, src->o_hedge_param);
+	strserialize(dst->data + tmp.o_delta_neutral_settling_firm, src->o_delta_neutral_settling_firm);
+	strserialize(dst->data + tmp.o_delta_neutral_clearing_account, src->o_delta_neutral_clearing_account);
+	strserialize(dst->data + tmp.o_delta_neutral_clearing_intent, src->o_delta_neutral_clearing_intent);
+
+	for (i = tmp.o_algo_params_count - 1; i >= 0; i--)
+	{
+		trser_tag_value_t *d = tmp.o_algo_params + i;
+		tr_tag_value_t *s = src->o_algo_params + i;
+
+		strserialize(dst->data + d->t_tag, s->t_tag);
+		strserialize(dst->data + d->t_val, s->t_val);
+	}
+
+	for (i = tmp.o_smart_combo_routing_params_count - 1; i >= 0; i--)
+	{
+		trser_tag_value_t *d = tmp.o_smart_combo_routing_params + i;
+		tr_tag_value_t *s = src->o_smart_combo_routing_params + i;
+
+		strserialize(dst->data + d->t_tag, s->t_tag);
+		strserialize(dst->data + d->t_val, s->t_val);
+	}
+
+	return dst;
+}
+
+trser_order_status_t *serialize_tws_order_status(const tr_order_status_t *src)
+{
+	trser_order_status_t *dst;
+	trser_order_status_t tmp = {0};
+	size_t cost = sizeof(*dst);
+	ham_u16_t str_index = 0;
+
+	tmp.ost_commission = src->ost_commission;
+	tmp.ost_min_commission = src->ost_min_commission;
+	tmp.ost_max_commission = src->ost_max_commission;
+
+	tmp.ost_status = str_index;
+	str_index += strcost(src->ost_status);
+	tmp.ost_init_margin = str_index;
+	str_index += strcost(src->ost_init_margin);
+	tmp.ost_maint_margin = str_index;
+	str_index += strcost(src->ost_maint_margin);
+	tmp.ost_equity_with_loan = str_index;
+	str_index += strcost(src->ost_equity_with_loan);
+	tmp.ost_commission_currency = str_index;
+	str_index += strcost(src->ost_commission_currency);
+	tmp.ost_warning_text = str_index;
+	str_index += strcost(src->ost_warning_text);
+
+
+
+	cost += str_index;
+	dst = (trser_order_status_t *)malloc(cost);
+	if (!dst)
+		return NULL;
+
+	*dst = tmp;
+	dst->struct_size = cost;
+
+	strserialize(dst->data + tmp.ost_status, src->ost_status);
+	strserialize(dst->data + tmp.ost_init_margin, src->ost_init_margin);
+	strserialize(dst->data + tmp.ost_maint_margin, src->ost_maint_margin);
+	strserialize(dst->data + tmp.ost_equity_with_loan, src->ost_equity_with_loan);
+	strserialize(dst->data + tmp.ost_commission_currency, src->ost_commission_currency);
+	strserialize(dst->data + tmp.ost_warning_text, src->ost_warning_text);
+
+	return dst;
+}
+
+trser_execution_t *serialize_tws_execution(const tr_execution_t *src)
+{
+	trser_execution_t *dst;
+	trser_execution_t tmp = {0};
+	size_t cost = sizeof(*dst);
+	ham_u16_t str_index = 0;
+
+	tmp.e_price = src->e_price;
+	tmp.e_avg_price = src->e_avg_price;
+
+	tmp.e_execid = str_index;
+	str_index += strcost(src->e_execid);
+	tmp.e_time = str_index;
+	str_index += strcost(src->e_time);
+	tmp.e_acct_number = str_index;
+	str_index += strcost(src->e_acct_number);
+	tmp.e_exchange = str_index;
+	str_index += strcost(src->e_exchange);
+	tmp.e_side = str_index;
+	str_index += strcost(src->e_side);
+	tmp.e_orderref = str_index;
+	str_index += strcost(src->e_orderref);
+
+	tmp.e_shares = src->e_shares;
+	tmp.e_permid = src->e_permid;
+	tmp.e_clientid = src->e_clientid;
+	tmp.e_liquidation = src->e_liquidation;
+	tmp.e_orderid = src->e_orderid;
+	tmp.e_cum_qty = src->e_cum_qty;
+
+
+
+	cost += str_index;
+	dst = (trser_execution_t *)malloc(cost);
+	if (!dst)
+		return NULL;
+
+	*dst = tmp;
+	dst->struct_size = cost;
+
+	strserialize(dst->data + tmp.e_execid, src->e_execid);
+	strserialize(dst->data + tmp.e_time, src->e_time);
+	strserialize(dst->data + tmp.e_acct_number, src->e_acct_number);
+	strserialize(dst->data + tmp.e_exchange, src->e_exchange);
+	strserialize(dst->data + tmp.e_side, src->e_side);
+	strserialize(dst->data + tmp.e_orderref, src->e_orderref);
+
+	return dst;
+}
+
+trser_exec_filter_t *serialize_tws_exec_filter(const tr_exec_filter_t *src)
+{
+	trser_exec_filter_t *dst;
+	trser_exec_filter_t tmp = {0};
+	size_t cost = sizeof(*dst);
+	ham_u16_t str_index = 0;
+
+	tmp.f_acctcode = str_index;
+	str_index += strcost(src->f_acctcode);
+	tmp.f_time = str_index;
+	str_index += strcost(src->f_time);
+	tmp.f_symbol = str_index;
+	str_index += strcost(src->f_symbol);
+	tmp.f_sectype = str_index;
+	str_index += strcost(src->f_sectype);
+	tmp.f_exchange = str_index;
+	str_index += strcost(src->f_exchange);
+	tmp.f_side = str_index;
+	str_index += strcost(src->f_side);
+
+	tmp.f_clientid = src->f_clientid;
+
+
+
+	cost += str_index;
+	dst = (trser_exec_filter_t *)malloc(cost);
+	if (!dst)
+		return NULL;
+
+	*dst = tmp;
+	dst->struct_size = cost;
+
+	strserialize(dst->data + tmp.f_acctcode, src->f_acctcode);
+	strserialize(dst->data + tmp.f_time, src->f_time);
+	strserialize(dst->data + tmp.f_symbol, src->f_symbol);
+	strserialize(dst->data + tmp.f_sectype, src->f_sectype);
+	strserialize(dst->data + tmp.f_exchange, src->f_exchange);
+	strserialize(dst->data + tmp.f_side, src->f_side);
+
+	return dst;
+}
+
+trser_scanner_subscription_t *serialize_tws_scanner_subscription(const tr_scanner_subscription_t *src)
+{
+	trser_scanner_subscription_t *dst;
+	trser_scanner_subscription_t tmp = {0};
+	size_t cost = sizeof(*dst);
+	ham_u16_t str_index = 0;
+
+	tmp.scan_above_price = src->scan_above_price;
+	tmp.scan_below_price = src->scan_below_price;
+	tmp.scan_coupon_rate_above = src->scan_coupon_rate_above;
+	tmp.scan_coupon_rate_below = src->scan_coupon_rate_below;
+	tmp.scan_market_cap_above = src->scan_market_cap_above;
+	tmp.scan_market_cap_below = src->scan_market_cap_below;
+
+	tmp.scan_exclude_convertible = str_index;
+	str_index += strcost(src->scan_exclude_convertible);
+	tmp.scan_instrument = str_index;
+	str_index += strcost(src->scan_instrument);
+	tmp.scan_location_code = str_index;
+	str_index += strcost(src->scan_location_code);
+	tmp.scan_maturity_date_above = str_index;
+	str_index += strcost(src->scan_maturity_date_above);
+	tmp.scan_maturity_date_below = str_index;
+	str_index += strcost(src->scan_maturity_date_below);
+	tmp.scan_moody_rating_above = str_index;
+	str_index += strcost(src->scan_moody_rating_above);
+	tmp.scan_moody_rating_below = str_index;
+	str_index += strcost(src->scan_moody_rating_below);
+	tmp.scan_code = str_index;
+	str_index += strcost(src->scan_code);
+	tmp.scan_sp_rating_above = str_index;
+	str_index += strcost(src->scan_sp_rating_above);
+	tmp.scan_sp_rating_below = str_index;
+	str_index += strcost(src->scan_sp_rating_below);
+	tmp.scan_scanner_setting_pairs = str_index;
+	str_index += strcost(src->scan_scanner_setting_pairs);
+	tmp.scan_stock_type_filter = str_index;
+	str_index += strcost(src->scan_stock_type_filter);
+
+	tmp.scan_above_volume = src->scan_above_volume;
+	tmp.scan_number_of_rows = src->scan_number_of_rows;
+	tmp.scan_average_option_volume_above = src->scan_average_option_volume_above;
+
+
+
+	cost += str_index;
+	dst = (trser_scanner_subscription_t *)malloc(cost);
+	if (!dst)
+		return NULL;
+
+	*dst = tmp;
+	dst->struct_size = cost;
+
+	strserialize(dst->data + tmp.scan_exclude_convertible, src->scan_exclude_convertible);
+	strserialize(dst->data + tmp.scan_instrument, src->scan_instrument);
+	strserialize(dst->data + tmp.scan_location_code, src->scan_location_code);
+	strserialize(dst->data + tmp.scan_maturity_date_above, src->scan_maturity_date_above);
+	strserialize(dst->data + tmp.scan_maturity_date_below, src->scan_maturity_date_below);
+	strserialize(dst->data + tmp.scan_moody_rating_above, src->scan_moody_rating_above);
+	strserialize(dst->data + tmp.scan_moody_rating_below, src->scan_moody_rating_below);
+	strserialize(dst->data + tmp.scan_code, src->scan_code);
+	strserialize(dst->data + tmp.scan_sp_rating_above, src->scan_sp_rating_above);
+	strserialize(dst->data + tmp.scan_sp_rating_below, src->scan_sp_rating_below);
+	strserialize(dst->data + tmp.scan_scanner_setting_pairs, src->scan_scanner_setting_pairs);
+	strserialize(dst->data + tmp.scan_stock_type_filter, src->scan_stock_type_filter);
+
+	return dst;
+}
+
+
+
+
+trser_commission_report_t *serialize_tws_commission_report(const tr_commission_report_t *src)
+{
+	trser_commission_report_t *dst;
+	trser_commission_report_t tmp = {0};
+	size_t cost = sizeof(*dst);
+	ham_u16_t str_index = 0;
+
+	tmp.cr_exec_id = str_index;
+	str_index += strcost(src->cr_exec_id);
+	tmp.cr_currency = str_index;
+	str_index += strcost(src->cr_currency);
+
+	tmp.cr_commission = src->cr_commission;
+	tmp.cr_realized_pnl = src->cr_realized_pnl;
+	tmp.cr_yield = src->cr_yield;
+	tmp.cr_yield_redemption_date = src->cr_yield_redemption_date;
+
+
+
+	cost += str_index;
+	dst = (trser_commission_report_t *)malloc(cost);
+	if (!dst)
+		return NULL;
+
+	*dst = tmp;
+	dst->struct_size = cost;
+
+	strserialize(dst->data + tmp.cr_exec_id, src->cr_exec_id);
+	strserialize(dst->data + tmp.cr_currency, src->cr_currency);
+
+	return dst;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+static __inline void tws_copy(char *dst, const char *src)
+{
+	tws_strcpy(dst, src);
+}
+static __inline void tws_copy(double &dst, double src)
+{
+	if (src != DBL_MAX)
+		dst = src;
+}
+static __inline void tws_copy(int &dst, int src)
+{
+	if (src != INT_MAX)
+		dst = src;
+}
+
+
+
+
+int scanner_subscription_request::send_request(my_tws_io_info *info)
+{
+	tr_scanner_subscription_t s;
+	tws_init_scanner_subscription(info->tws_handle, &s);
+	tws_copy(s.scan_code, scan_code);
+	tws_copy(s.scan_instrument, instrument);
+	tws_copy(s.scan_location_code, location_code);
+	tws_copy(s.scan_above_price, above_price);
+	tws_copy(s.scan_above_volume, above_volume);
+
+	int rv = tws_req_scanner_subscription(info->tws_handle, ticker_id, &s);
+	tws_destroy_scanner_subscription(info->tws_handle, &s);
+	return rv;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#if 0
+pthread_mutex_lock(&exch->tws_exch_mutex);
+
+// block & wait until we can go and submit the request:
+while (mg_get_stop_flag(ctx) == 0 && ETIMEOUT == pthread_cond_timedwait(&exch->tws_tx_signal, &exch->tws_exch_mutex, &poll_time))
+	;
+
+// send the request
+mg_cry(conn, "frontend request handler for url '%s': command count = %d", request_info->uri, exch->command);
+
+exch->command++;
+
+
+while (mg_get_stop_flag(ctx) == 0 && ETIMEOUT == pthread_cond_timedwait(&exch->tws_rx_signal, &exch->tws_exch_mutex, &poll_time))
+	;
+
+// receive the response
+mg_cry(conn, "frontend request handler for url '%s': response count = %d", request_info->uri, exch->response);
+
+
+
+
+
+
+
+
+
+
+
+pthread_mutex_lock(&exch->tws_exch_mutex);
+if (0 != pthread_cond_signal(&exch->tws_tx_signal))
+{
+	pthread_mutex_unlock(&exch->tws_exch_mutex);
+}
+else
+{
+	int cmd;
+
+	// process incoming TX command/request from one of the front-end threads:
+	if (exch->command != 0)
+	{
+		mg_cry(info->conn, "backend recv waiter: command count = %d", exch->command);
+	}
+
+	// copy command to local storage???
+	cmd = (exch->command == 1);
+
+	pthread_mutex_unlock(&exch->tws_exch_mutex);
+
+	// fire command at TWS itself:
+	if (cmd)
+	{
+		tws_req_current_time(info->tws_handle);
+
+		pthread_mutex_lock(&exch->tws_exch_mutex);
+		exch->command--;
+		pthread_mutex_unlock(&exch->tws_exch_mutex);
+	}
+}
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+when there's a free slot in TWS, send the scanner subscription request to TWS, otherwise push it on a stack.
+*/
+void push_tws_req_scanner_subscription(my_tws_io_info *info, scanner_subscription_request *reqdata)
+{
+	mg_log(info->conn, "info", "REQUEST scanner subscription: code [%s], instrument [%s], location [%s]", 
+		reqdata->get_scan_code(), reqdata->get_instrument(), reqdata->get_location_code());
+
+
+
+
+
+	// push in FIFO: push at the bottom, pop off the top.
+	if (info->queued_scanner_subscription_count > 0)
+	{
+		memmove(&info->scanner_subscription_queue[1], &info->scanner_subscription_queue[0], info->queued_scanner_subscription_count * sizeof(info->scanner_subscription_queue[0]));
+	}
+	info->scanner_subscription_queue[0] = reqdata;
+	info->queued_scanner_subscription_count++;
+}
+
+
+/*
+when there's a free slot in TWS, pop a scanner subscription request off the stack and send it to TWS
+
+Return the number of queued requests still waiting in the queue after this call.
+*/
+size_t pop_tws_req_scanner_subscription(my_tws_io_info *info)
+{
+	if (info->active_scanner_subscription_count < ARRAY_SIZE(info->active_scanner_subscriptions)
+		&& info->queued_scanner_subscription_count > 0)
+	{
+		// there's room for one more active subscription: pop it and transmit it!
+		scanner_subscription_request *reqdata = info->scanner_subscription_queue[--info->queued_scanner_subscription_count];
+		info->active_scanner_subscriptions[info->active_scanner_subscription_count++] = reqdata;
+
+		reqdata->send_request(info);
+	}
+	return info->queued_scanner_subscription_count;
+}
+
+
+/*
+send a CANCEL REQUEST to TWS for the given scanner subscription
+*/
+void cancel_tws_scanner_subscription(my_tws_io_info *info, int ticker_id)
+{
+	size_t i;
+
+	for (i = 0; i < info->active_scanner_subscription_count; i++)
+	{
+		scanner_subscription_request *item = info->active_scanner_subscriptions[i];
+
+		if (item->get_ticker_id() == ticker_id)
+		{
+			tws_cancel_scanner_subscription(info->tws_handle, ticker_id);
+
+			delete item;
+
+			if (i != info->active_scanner_subscription_count)
+			{
+				memmove(&info->active_scanner_subscriptions[i], &info->active_scanner_subscriptions[i + 1], (info->active_scanner_subscription_count - i - 1) * sizeof(info->active_scanner_subscriptions[0]));
+			}
+			info->active_scanner_subscription_count--;
+			return;
+		}
+	}
+}
+
+
+
+/*
+return reference to scanner subscription request when the given ticker_id represents an active subscription.
+*/
+scanner_subscription_request *get_active_tws_scanner_subscription(my_tws_io_info *info, int ticker_id)
+{
+	size_t i;
+
+	for (i = 0; i < info->active_scanner_subscription_count; i++)
+	{
+		scanner_subscription_request *item = info->active_scanner_subscriptions[i];
+
+		if (item->get_ticker_id() == ticker_id)
+		{
+			return item;
+		}
+	}
+
+	return NULL;
+}
+
+/*
+return !0 when the given ticker_id represents an active subscription.
+*/
+int is_active_tws_scanner_subscription(my_tws_io_info *info, int ticker_id)
+{
+	return !!get_active_tws_scanner_subscription(info, ticker_id);
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+optionally request the full contract details so that we'll receive the extended info for this stock.
+
+'optional' because we only do this when we don't have the desired info yet in our own caches.
+*/
+void request_contract_details_from_tws(my_tws_io_info *info, tr_contract_details_t *cd)
+{
+	if (!ib_get_ticker_info(cd))
+	{
+		tr_contract_t contract;
+		int reqid = tws_mkNextOrderId(info);
+
+		contract = cd->d_summary;
+
+		tws_req_contract_details(info->tws_handle, reqid, &contract);
+	}
+}
+
+
+

@@ -90,9 +90,9 @@ public:
 	Invoke this method to cancel a long-running (repetitive) request or...
 	Abort the mission:  http://www.menagea3.net/strips-ma3/coop_lungeuhil%EF%BC%9F%EF%BC%9F
 	*/
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -116,9 +116,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -142,9 +142,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -168,9 +168,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -194,9 +194,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -220,9 +220,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -246,9 +246,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -272,9 +272,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -298,9 +298,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -324,9 +324,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -350,9 +350,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -376,9 +376,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -402,9 +402,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -428,9 +428,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -454,9 +454,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -480,9 +480,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -506,9 +506,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -532,9 +532,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -558,9 +558,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -584,9 +584,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -610,9 +610,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -636,9 +636,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -662,9 +662,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -688,9 +688,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -714,9 +714,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -740,9 +740,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -766,9 +766,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -792,9 +792,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -818,9 +818,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -844,9 +844,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -870,9 +870,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -896,9 +896,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -922,9 +922,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -948,9 +948,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -974,9 +974,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);
@@ -1000,9 +1000,9 @@ protected:
 public:
 	virtual int transmit(my_tws_io_info *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info) = 0;
+	virtual int cancel_request(my_tws_io_info *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
+	virtual int process_response(my_tws_io_info *info, tier2_message &response);
 
 	virtual int store(my_tws_io_info *info);
 	virtual int load(my_tws_io_info *info);

@@ -42,7 +42,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     case MG_NEW_REQUEST:
         if (strncmp(ri->uri, "/tws/", 5) == 0)
         {
-			ib_req_current_time *tws_req = new ib_req_current_time(NULL);
+			ib_req_current_time *tws_req = new ib_req_current_time((NULL);
             struct timespec poll_time;
 			int err;
             poll_time.tv_sec = tws_cfg->backend_poll_period / 1000;

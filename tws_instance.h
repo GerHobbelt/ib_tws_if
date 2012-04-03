@@ -118,8 +118,8 @@ public:
 class ib_instance
 {
 protected:
+	struct tws_conn_cfg tws_cfg;
     struct mg_connection *conn;
-    struct tws_conn_cfg *tws_cfg;
     tws_instance_t *tws_handle;
 
     /* tracking some TWS values here as well: */
@@ -207,7 +207,8 @@ protected:
 
 public:
 	ib_instance() :
-		conn(NULL), tws_handle(NULL), tws_cfg(NULL), next_order_id(0),
+		conn(NULL), tws_handle(NULL), 
+		next_order_id(0),
 		req_scanner_parameters_active_set(),
 		req_scanner_subscription_active_set(10 /* limit imposed by TWS/IB */),
 		req_mkt_data_active_set(),
