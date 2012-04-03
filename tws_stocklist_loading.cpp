@@ -23,8 +23,48 @@
 
 
 
+//#include <libxml/xmlmemory.h>
+#include <libxml/parser.h>
+//#include <libxml/parserInternals.h>
+#include <libxml/HTMLparser.h>
+#include <libxml/HTMLtree.h>
+#include <libxml/tree.h>
+#include <libxml/xpath.h>
+#include <libxml/xpathInternals.h>
+#include <libxml/debugXML.h>
+#include <libxml/xmlerror.h>
+#ifdef LIBXML_XINCLUDE_ENABLED
+#include <libxml/xinclude.h>
+#endif
+#ifdef LIBXML_CATALOG_ENABLED
+#include <libxml/catalog.h>
+#endif
+#include <libxml/globals.h>
+#include <libxml/xmlreader.h>
+#ifdef LIBXML_SCHEMATRON_ENABLED
+#include <libxml/schematron.h>
+#endif
+#ifdef LIBXML_SCHEMAS_ENABLED
+#include <libxml/relaxng.h>
+#include <libxml/xmlschemas.h>
+#endif
+#ifdef LIBXML_PATTERN_ENABLED
+#include <libxml/pattern.h>
+#endif
+#ifdef LIBXML_C14N_ENABLED
+#include <libxml/c14n.h>
+#endif
+#ifdef LIBXML_OUTPUT_ENABLED
+#include <libxml/xmlsave.h>
+#endif
 
-xmlNodePtr xmlGetParent(xmlNodePtr node)
+
+
+
+
+
+
+static xmlNodePtr xmlGetParent(xmlNodePtr node)
 {
     if (node && node->parent)
     {
@@ -33,7 +73,7 @@ xmlNodePtr xmlGetParent(xmlNodePtr node)
     return NULL;
 }
 
-xmlNodePtr xmlFindChildWithName(xmlNodePtr parent, const xmlChar *tag_name)
+static xmlNodePtr xmlFindChildWithName(xmlNodePtr parent, const xmlChar *tag_name)
 {
     xmlNodePtr child;
 
@@ -69,7 +109,7 @@ void tws_setNextOrderId(my_tws_io_info *info, long order_id)
  * The contains function returns true if the first argument string
  * contains any of the second argument node value strings, and otherwise returns false.
  */
-void xmlXPathContainsAnyOfFunction(xmlXPathParserContextPtr ctxt, int nargs)
+static void xmlXPathContainsAnyOfFunction(xmlXPathParserContextPtr ctxt, int nargs)
 {
     xmlXPathObjectPtr item, set;
     int rv = 0;
@@ -221,6 +261,147 @@ void request_range_of_interesting_market_scans(my_tws_io_info *info, xmlNodePtr 
             push_tws_req_scanner_subscription(info, s);
         }
     }
+}
+
+
+
+
+
+
+
+/*
+As TWS limits the number of active scanner requests to 10, we might delegate the processing of this message to a separate thread,
+but that would mean we'd need inter-thread messaging back & forth, at least for the outgoing request messages (to TWS) and
+the scanner reports returning from TWS.
+
+The alternative is to process this message and queue all the scanner subscription requests generated from it in a separate
+queue which is slowly depleted as scanner reports come in and the code in that handler decides to UNsubscribe a given
+scanner report.
+
+By using the queue the incoming TWS message traffic processing is kept as simple as possible; the scanner subscribe msg queue
+keeps this part essentially a single-thread process.
+*/
+void process_event_scanner_parameters(void *opaque, const char xml[])
+{
+	my_tws_io_info *info = (my_tws_io_info *)opaque;
+	int rv;
+	xmlTextReaderPtr reader;
+	xmlNodePtr tree;
+	xmlDocPtr doc;
+	const char *URL = "tws://dummy";
+
+	mg_log(info->conn, "info", "INFO: dumping TWS scanner parameters to log file:");
+	mg_log(info->conn, "info", "XML: %s", xml);
+
+	mg_log(info->conn, "info", "scanner_parameters: opaque=%p, xml:(len=%d)", opaque, (int)strlen(xml));
+
+	ib_store_scanner_parameters_xml(info, xml);
+
+	doc = xmlReadDoc((const xmlChar *)xml, URL, "UTF-8", XML_PARSE_NOENT | XML_PARSE_NONET | XML_PARSE_NOCDATA);
+
+	if (doc)
+	{
+		xmlXPathObjectPtr usable_locations;
+		xmlXPathContextPtr ctxt = NULL;
+
+		ctxt = xmlXPathNewContext(doc);
+		if (ctxt)
+		{
+			FILE *fp;
+
+			ctxt->node = xmlDocGetRootElement(doc);
+
+			xmlXPathRegisterFunc(ctxt, (const xmlChar *)"contains-any-of", xmlXPathContainsAnyOfFunction);
+
+			usable_locations = xmlXPathEvalExpression((const xmlChar *)"//LocationTree//Location[not(contains(access, 'restricted')) and not(LocationTree)]", ctxt);
+
+#ifdef LIBXML_DEBUG_ENABLED
+			mg_write2log(info->conn, NULL, time(NULL), "info", "INFO: dumping XPath result to log file:");
+			fp = mg_fopen(mg_get_default_logfile_path(info->conn), "a+");
+
+			if (fp != NULL)
+			{
+				mg_flockfile(fp);
+
+				xmlXPathDebugDumpObject(fp, usable_locations, 0);
+
+				fflush(fp);
+				mg_funlockfile(fp);
+				if (fp != stderr)
+				{
+					fclose(fp);
+				}
+			}
+#endif
+
+			if (usable_locations == NULL)
+			{
+				mg_cry(info->conn, "No usable entries found in the TWS scanner report. IB_TWS_SRV will NOT be collecting any stock data!");
+			}
+			else if (usable_locations->type != XPATH_NODESET)
+			{
+				mg_cry(info->conn, "Unexpected XPath result type %d while searching the TWS scanner report. IB_TWS_SRV will NOT be collecting any stock data!", (int)usable_locations->type);
+			}
+			else if (usable_locations->nodesetval != NULL)
+			{
+				xmlNodeSetPtr nodeset = usable_locations->nodesetval;
+				xmlXPathObjectPtr usable_scanners;
+				int i;
+
+				for (i = 0; i < nodeset->nodeNr; i++)
+				{
+					xmlNodePtr location = nodeset->nodeTab[i];
+					xmlNodePtr child = xmlFirstElementChild(location);
+
+					while (child && xmlStrcmp(child->name, (const xmlChar *)"instruments"))
+					{
+						child = xmlNextElementSibling(child);
+					}
+
+					if (child)
+					{
+						xmlXPathObjectPtr instruments = xmlXPathNewNodeSetList(xmlXPathNodeSetMerge(NULL, xmlXPathNodeSetCreate(child)));
+						//xmlXPathObjectPtr instruments = xmlXPathNewNodeSet(child);   //<-- b0rks in RegisterVariable below as that one expects to free the specified nodeset using xmlXPathFreeObject()!
+
+						xmlXPathRegisterVariable(ctxt, (const xmlChar *)"loc_instruments", instruments);
+
+						usable_scanners = xmlXPathEvalExpression((const xmlChar *)"//ScanTypeList/ScanType[contains-any-of(instruments, $loc_instruments) and not(starts-with(access, 'restricted')) and not(contains(access, 'disabled'))]", ctxt);
+
+						// fire a couple of useful market scanner report requests for each node
+						request_range_of_interesting_market_scans(info, location, usable_scanners);
+
+						//xmlXPathFreeObject(instruments);
+						//xmlXPathFreeNodeSet();
+						//xmlXPathFreeNodeSetList(instruments);
+					}
+				}
+			}
+
+			xmlXPathFreeObject(usable_locations);
+			xmlXPathFreeContext(ctxt);
+		}
+	}
+
+	xmlFreeDoc(doc);
+
+#if 0
+	// process the XML response using libxml:
+	xmlResetLastError();
+	reader = xmlReaderForDoc((const xmlChar *)xml, URL, "UTF-8", XML_PARSE_NOENT | XML_PARSE_NONET | XML_PARSE_NOCDATA);
+
+	rv = xmlTextReaderRead(reader);
+
+	// signal the xmlreader to 'preserve' all XML nodes in there; we'll free them when their time is due...
+	doc = xmlTextReaderCurrentDoc(reader);
+
+	tree = xmlTextReaderExpand(reader);
+
+	doc = xmlTextReaderCurrentDoc(reader);
+
+	xmlFreeTextReader(reader);
+
+	xmlFreeDoc(doc);
+#endif
 }
 
 

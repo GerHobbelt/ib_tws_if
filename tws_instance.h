@@ -33,7 +33,6 @@ at any time.
 
 // forward reference:
 class my_tws_io_info;
-class scanner_subscription_request;
 struct tws_instance;
 typedef struct tws_instance tws_instance_t;
 
@@ -49,13 +48,10 @@ struct tws_conn_cfg
     long backend_poll_period; // unit: milliseconds
 	long backend_reconnect_delay; // unit: milliseconds
 
-	char *database_path;
-
 public:
 	tws_conn_cfg() :
 		ip_address(NULL), port(0), our_id_code(0),
-		backend_poll_period(0), backend_reconnect_delay(0),
-		database_path(NULL)
+		backend_poll_period(0), backend_reconnect_delay(0)
 	{
 	}
 	~tws_conn_cfg()

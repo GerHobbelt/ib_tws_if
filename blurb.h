@@ -1383,8 +1383,6 @@ static int tws_close_func(void *arg)
     if (info->conn)
     {
         mg_close_connection(info->conn);
-
-        free(info->conn);
         info->conn = NULL;
     }
 

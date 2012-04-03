@@ -113,6 +113,9 @@
     <ClCompile Include="..\..\interthread_comm.cpp">
       <Filter>Glue\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\tier2_message_requester.cpp">
+      <Filter>Glue\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\blurb.h">
@@ -170,6 +173,9 @@
       <Filter>Glue\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\interthread_comm.h">
+      <Filter>Glue\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tier2_message_requester.h">
       <Filter>Glue\Header Files</Filter>
     </ClInclude>
   </ItemGroup>

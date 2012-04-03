@@ -24,15 +24,11 @@
 
 #include "system-includes.h"
 
-
-// forward reference:
-class my_tws_io_info;
+#include "tier2_message_requester.h"
 
 
 
-
-
-class tier2_message;
+// forward references:
 class tier2_message_state_change_handler;
 
 
@@ -58,17 +54,47 @@ protected:
 	request_state_t previous_state;
 	request_state_t now_state;
 
+	typedef unsigned int unique_id_t;
+	unique_id_t unique_msgID;
+
+	tier2_message_requester *requester;
+
 public:
-	tier2_message(request_state_t s = MSG_INITIALIZED) :
+	tier2_message(tier2_message_requester *issuer = NULL, request_state_t s = MSG_INITIALIZED) :
+		requester(issuer),
 		now_state(s),
 		previous_state(INIT4PREV)
 	{
+		unique_msgID = obtain_next_unique_msgID();
 	}
+
 protected:
 	virtual ~tier2_message()
 	{
 		// state(DESTRUCTION); -- can't do that here as derived classes will already have destructed themselves! Hence protected destructor!
+		release_unique_msgID();
 	}
+
+protected:
+	int obtain_next_unique_msgID(void);
+	void release_unique_msgID(void);
+
+public:
+	tier2_message_requester *get_requester(void) const
+	{
+		return requester;
+	}
+
+	unique_id_t get_uniq_msg_id(void) const
+	{
+		return unique_msgID;
+	}
+
+	bool matches(unique_id_t id) const
+	{
+		return id == unique_msgID;
+	}
+
 public:
 	virtual void destroy(void)
 	{
@@ -128,7 +154,10 @@ public:
 
 public:
 	virtual int transmit(my_tws_io_info *info) = 0;
-	/* invoke this method to cancel a long-running (repetitive) request. */
+	/* 
+	Invoke this method to cancel a long-running (repetitive) request or...
+	Abort the mission:  http://www.menagea3.net/strips-ma3/coop_lungeuhil%EF%BC%9F%EF%BC%9F
+	*/
 	virtual int cancel_request(my_tws_io_info *info) = 0;
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;

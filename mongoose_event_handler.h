@@ -33,7 +33,7 @@
 
 mongoose front-end and back-end event handler callback
 */
-extern "C" void *event_handler(enum mg_event event_id, struct mg_connection *conn, const struct mg_request_info *request_info);
+extern "C" void *event_handler(enum mg_event event_id, struct mg_connection *conn);
 
 
 

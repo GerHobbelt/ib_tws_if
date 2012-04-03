@@ -57,8 +57,8 @@ public:
 class tws_request_message: public tws_reqresp_message
 {
 public:
-	tws_request_message(ib_instance *tws, int ticker_id) :
-		tws_reqresp_message(tws, ticker_id)
+	tws_request_message(tier2_message_requester *tws) :
+		tws_reqresp_message(tws)
 	{
 	}
 protected:
@@ -75,10 +75,10 @@ protected:
 class ib_req_scanner_parameters: public tws_request_message
 {
 public:
-	ib_req_scanner_parameters(ib_instance *tws) :
-	  tws_request_message(tws, -1)
-	  {
-	  }
+	ib_req_scanner_parameters(tier2_message_requester *tws) :
+		tws_request_message(tws)
+	{
+	}
 protected:
 	virtual ~ib_req_scanner_parameters()
 	{
@@ -86,7 +86,10 @@ protected:
 
 public:
 	virtual int transmit(my_tws_io_info *info);
-	/* invoke this method to cancel a long-running (repetitive) request. */
+	/* 
+	Invoke this method to cancel a long-running (repetitive) request or...
+	Abort the mission:  http://www.menagea3.net/strips-ma3/coop_lungeuhil%EF%BC%9F%EF%BC%9F
+	*/
 	virtual int cancel_request(my_tws_io_info *info) = 0;
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(my_tws_io_info *info, tier2_message &response) = 0;
@@ -101,8 +104,8 @@ public:
 class ib_req_scanner_subscription: public tws_request_message
 {
 public:
-	ib_req_scanner_subscription(ib_instance *tws, int ticker_id, ib_scanner_subscription *subscription) :
-	  tws_request_message(tws, ticker_id)
+	ib_req_scanner_subscription(tier2_message_requester *tws, int ticker_id, ib_scanner_subscription *subscription) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -127,8 +130,8 @@ public:
 class ib_cancel_scanner_subscription: public tws_request_message
 {
 public:
-	ib_cancel_scanner_subscription(ib_instance *tws, int ticker_id) :
-	  tws_request_message(tws, ticker_id)
+	ib_cancel_scanner_subscription(tier2_message_requester *tws, int ticker_id) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -153,8 +156,8 @@ public:
 class ib_req_mkt_data: public tws_request_message
 {
 public:
-	ib_req_mkt_data(ib_instance *tws, int ticker_id, ib_contract *contract, const ib_ticker_list *generic_tick_list, int snapshot) :
-	  tws_request_message(tws, ticker_id)
+	ib_req_mkt_data(tier2_message_requester *tws, int ticker_id, ib_contract *contract, const ib_ticker_list *generic_tick_list, int snapshot) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -179,8 +182,8 @@ public:
 class ib_req_historical_data: public tws_request_message
 {
 public:
-	ib_req_historical_data(ib_instance *tws, int ticker_id, ib_contract *contract, time_t end_date_time, double duration, const char bar_size_setting[], const char what_to_show[], int use_rth, int format_date) :
-	  tws_request_message(tws, ticker_id)
+	ib_req_historical_data(tier2_message_requester *tws, int ticker_id, ib_contract *contract, time_t end_date_time, double duration, const char bar_size_setting[], const char what_to_show[], int use_rth, int format_date) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -205,8 +208,8 @@ public:
 class ib_cancel_historical_data: public tws_request_message
 {
 public:
-	ib_cancel_historical_data(ib_instance *tws, int ticker_id) :
-	  tws_request_message(tws, ticker_id)
+	ib_cancel_historical_data(tier2_message_requester *tws, int ticker_id) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -231,8 +234,8 @@ public:
 class ib_cancel_mkt_data: public tws_request_message
 {
 public:
-	ib_cancel_mkt_data(ib_instance *tws, int ticker_id) :
-	  tws_request_message(tws, ticker_id)
+	ib_cancel_mkt_data(tier2_message_requester *tws, int ticker_id) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -257,8 +260,8 @@ public:
 class ib_exercise_options: public tws_request_message
 {
 public:
-	ib_exercise_options(ib_instance *tws, int ticker_id, ib_contract *contract, int exercise_action, int exercise_quantity, const char account[], int exc_override) :
-	  tws_request_message(tws, ticker_id)
+	ib_exercise_options(tier2_message_requester *tws, int ticker_id, ib_contract *contract, int exercise_action, int exercise_quantity, const char account[], int exc_override) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -283,8 +286,8 @@ public:
 class ib_place_order: public tws_request_message
 {
 public:
-	ib_place_order(ib_instance *tws, int order_id, ib_contract *contract, ib_order *order) :
-	  tws_request_message(tws, -1)
+	ib_place_order(tier2_message_requester *tws, int order_id, ib_contract *contract, ib_order *order) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -309,8 +312,8 @@ public:
 class ib_cancel_order: public tws_request_message
 {
 public:
-	ib_cancel_order(ib_instance *tws, int order_id) :
-	  tws_request_message(tws, -1)
+	ib_cancel_order(tier2_message_requester *tws, int order_id) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -335,8 +338,8 @@ public:
 class ib_req_open_orders: public tws_request_message
 {
 public:
-	ib_req_open_orders(ib_instance *tws) :
-	  tws_request_message(tws, -1)
+	ib_req_open_orders(tier2_message_requester *tws) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -361,8 +364,8 @@ public:
 class ib_req_account_updates: public tws_request_message
 {
 public:
-	ib_req_account_updates(ib_instance *tws, int subscribe, const char acct_code[]) :
-	  tws_request_message(tws, -1)
+	ib_req_account_updates(tier2_message_requester *tws, int subscribe, const char acct_code[]) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -387,8 +390,8 @@ public:
 class ib_req_executions: public tws_request_message
 {
 public:
-	ib_req_executions(ib_instance *tws, int reqid, ib_exec_filter *filter) :
-	  tws_request_message(tws, -1)
+	ib_req_executions(tier2_message_requester *tws, int reqid, ib_exec_filter *filter) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -413,8 +416,8 @@ public:
 class ib_req_ids: public tws_request_message
 {
 public:
-	ib_req_ids(ib_instance *tws, int num_ids) :
-	  tws_request_message(tws, -1)
+	ib_req_ids(tier2_message_requester *tws, int num_ids) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -439,8 +442,8 @@ public:
 class ib_req_contract_details: public tws_request_message
 {
 public:
-	ib_req_contract_details(ib_instance *tws, int reqid, ib_contract *contract) :
-	  tws_request_message(tws, -1)
+	ib_req_contract_details(tier2_message_requester *tws, int reqid, ib_contract *contract) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -465,8 +468,8 @@ public:
 class ib_req_mkt_depth: public tws_request_message
 {
 public:
-	ib_req_mkt_depth(ib_instance *tws, int ticker_id, ib_contract *contract, int num_rows) :
-	  tws_request_message(tws, ticker_id)
+	ib_req_mkt_depth(tier2_message_requester *tws, int ticker_id, ib_contract *contract, int num_rows) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -491,8 +494,8 @@ public:
 class ib_cancel_mkt_depth: public tws_request_message
 {
 public:
-	ib_cancel_mkt_depth(ib_instance *tws, int ticker_id) :
-	  tws_request_message(tws, ticker_id)
+	ib_cancel_mkt_depth(tier2_message_requester *tws, int ticker_id) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -517,8 +520,8 @@ public:
 class ib_req_news_bulletins: public tws_request_message
 {
 public:
-	ib_req_news_bulletins(ib_instance *tws, int all_msgs) :
-	  tws_request_message(tws, -1)
+	ib_req_news_bulletins(tier2_message_requester *tws, int all_msgs) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -543,8 +546,8 @@ public:
 class ib_cancel_news_bulletins: public tws_request_message
 {
 public:
-	ib_cancel_news_bulletins(ib_instance *tws) :
-	  tws_request_message(tws, -1)
+	ib_cancel_news_bulletins(tier2_message_requester *tws) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -569,8 +572,8 @@ public:
 class ib_set_server_log_level: public tws_request_message
 {
 public:
-	ib_set_server_log_level(ib_instance *tws, int level) :
-	  tws_request_message(tws, -1)
+	ib_set_server_log_level(tier2_message_requester *tws, int level) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -595,8 +598,8 @@ public:
 class ib_req_auto_open_orders: public tws_request_message
 {
 public:
-	ib_req_auto_open_orders(ib_instance *tws, int auto_bind) :
-	  tws_request_message(tws, -1)
+	ib_req_auto_open_orders(tier2_message_requester *tws, int auto_bind) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -621,8 +624,8 @@ public:
 class ib_req_all_open_orders: public tws_request_message
 {
 public:
-	ib_req_all_open_orders(ib_instance *tws) :
-	  tws_request_message(tws, -1)
+	ib_req_all_open_orders(tier2_message_requester *tws) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -647,8 +650,8 @@ public:
 class ib_req_managed_accts: public tws_request_message
 {
 public:
-	ib_req_managed_accts(ib_instance *tws) :
-	  tws_request_message(tws, -1)
+	ib_req_managed_accts(tier2_message_requester *tws) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -673,8 +676,8 @@ public:
 class ib_request_fa: public tws_request_message
 {
 public:
-	ib_request_fa(ib_instance *tws, int fa_data_type) :
-	  tws_request_message(tws, -1)
+	ib_request_fa(tier2_message_requester *tws, int fa_data_type) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -699,8 +702,8 @@ public:
 class ib_replace_fa: public tws_request_message
 {
 public:
-	ib_replace_fa(ib_instance *tws, int fa_data_type, const char cxml[]) :
-	  tws_request_message(tws, -1)
+	ib_replace_fa(tier2_message_requester *tws, int fa_data_type, const char cxml[]) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -725,8 +728,8 @@ public:
 class ib_req_current_time: public tws_request_message
 {
 public:
-	ib_req_current_time(ib_instance *tws) :
-	  tws_request_message(tws, -1)
+	ib_req_current_time(tier2_message_requester *tws) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -751,8 +754,8 @@ public:
 class ib_req_fundamental_data: public tws_request_message
 {
 public:
-	ib_req_fundamental_data(ib_instance *tws, int reqid, ib_contract *contract, const char report_type[]) :
-	  tws_request_message(tws, -1)
+	ib_req_fundamental_data(tier2_message_requester *tws, int reqid, ib_contract *contract, const char report_type[]) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -777,8 +780,8 @@ public:
 class ib_cancel_fundamental_data: public tws_request_message
 {
 public:
-	ib_cancel_fundamental_data(ib_instance *tws, int reqid) :
-	  tws_request_message(tws, -1)
+	ib_cancel_fundamental_data(tier2_message_requester *tws, int reqid) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -803,8 +806,8 @@ public:
 class ib_calculate_implied_volatility: public tws_request_message
 {
 public:
-	ib_calculate_implied_volatility(ib_instance *tws, int reqid, ib_contract *contract, double option_price, double under_price) :
-	  tws_request_message(tws, -1)
+	ib_calculate_implied_volatility(tier2_message_requester *tws, int reqid, ib_contract *contract, double option_price, double under_price) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -829,8 +832,8 @@ public:
 class ib_cancel_calculate_implied_volatility: public tws_request_message
 {
 public:
-	ib_cancel_calculate_implied_volatility(ib_instance *tws, int reqid) :
-	  tws_request_message(tws, -1)
+	ib_cancel_calculate_implied_volatility(tier2_message_requester *tws, int reqid) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -855,8 +858,8 @@ public:
 class ib_calculate_option_price: public tws_request_message
 {
 public:
-	ib_calculate_option_price(ib_instance *tws, int reqid, ib_contract *contract, double volatility, double under_price) :
-	  tws_request_message(tws, -1)
+	ib_calculate_option_price(tier2_message_requester *tws, int reqid, ib_contract *contract, double volatility, double under_price) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -881,8 +884,8 @@ public:
 class ib_cancel_calculate_option_price: public tws_request_message
 {
 public:
-	ib_cancel_calculate_option_price(ib_instance *tws, int reqid) :
-	  tws_request_message(tws, -1)
+	ib_cancel_calculate_option_price(tier2_message_requester *tws, int reqid) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -907,8 +910,8 @@ public:
 class ib_req_global_cancel: public tws_request_message
 {
 public:
-	ib_req_global_cancel(ib_instance *tws) :
-	  tws_request_message(tws, -1)
+	ib_req_global_cancel(tier2_message_requester *tws) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -933,8 +936,8 @@ public:
 class ib_req_market_data_type: public tws_request_message
 {
 public:
-	ib_req_market_data_type(ib_instance *tws, tws_market_data_type_t market_data_type) :
-	  tws_request_message(tws, -1)
+	ib_req_market_data_type(tier2_message_requester *tws, tws_market_data_type_t market_data_type) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -959,8 +962,8 @@ public:
 class ib_request_realtime_bars: public tws_request_message
 {
 public:
-	ib_request_realtime_bars(ib_instance *tws, int ticker_id, ib_contract *c, int bar_size, const char what_to_show[], int use_rth) :
-	  tws_request_message(tws, ticker_id)
+	ib_request_realtime_bars(tier2_message_requester *tws, int ticker_id, ib_contract *c, int bar_size, const char what_to_show[], int use_rth) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -985,8 +988,8 @@ public:
 class ib_cancel_realtime_bars: public tws_request_message
 {
 public:
-	ib_cancel_realtime_bars(ib_instance *tws, int ticker_id) :
-	  tws_request_message(tws, ticker_id)
+	ib_cancel_realtime_bars(tier2_message_requester *tws, int ticker_id) :
+	  tws_request_message(tws)
 	  {
 	  }
 protected:
@@ -1023,15 +1026,15 @@ public:
 /* 
 auxiliary message: fetches server version and connection time datums 
 
-int    tws_server_version(ib_instance *tws);
+int    tws_server_version(tier2_message_requester *tws);
 
-const char *tws_connection_time(ib_instance *tws);
+const char *tws_connection_time(tier2_message_requester *tws);
 */
 class ib_fetch_tws_info: public tws_reqresp_message
 {
 public:
-	ib_fetch_tws_info(ib_instance *tws) :
-	  tws_reqresp_message(tws, -1)
+	ib_fetch_tws_info(tier2_message_requester *tws) :
+	  tws_reqresp_message(tws)
 	  {
 	  }
 protected:

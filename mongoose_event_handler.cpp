@@ -30,16 +30,17 @@
 
 
 
-void *event_handler(enum mg_event event_id, struct mg_connection *conn, const struct mg_request_info *request_info)
+void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 {
     void *processed = "yes";
     struct mg_context *ctx = mg_get_context(conn);
     struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
+	const struct mg_request_info *ri = mg_get_request_info(conn);
 
     switch (event_id)
     {
     case MG_NEW_REQUEST:
-        if (strncmp(request_info->uri, "/tws/", 5) == 0)
+        if (strncmp(ri->uri, "/tws/", 5) == 0)
         {
 			ib_req_current_time *tws_req = new ib_req_current_time(NULL);
             struct timespec poll_time;
@@ -76,7 +77,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn, const st
         break;
 
     case MG_INIT0:
-		// init libxml, which is used to process the XML messages coming from TWS on various occassions:
+		// init libxml, which is used to process the XML messages coming from TWS on various occasions:
 		xmlInitParser();
 		// xmlRegisterInputCallbacks(xmlTWSmatch, xmlTWSopen, xmlTWSread, xmlTWSclose);
 
@@ -92,7 +93,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn, const st
 
     case MG_EVENT_LOG:
         // dump log to stderr as well:
-        fprintf(stderr, "%s: %s\n", request_info->log_severity, request_info->log_message);
+        fprintf(stderr, "%s: %s\n", ri->log_severity, ri->log_message);
         // and let the default file logging do its own magic as well:
         processed = NULL;
         break;

@@ -26,47 +26,6 @@
 #include "tws_comm_thread.h"
 
 
-//#include <libxml/xmlmemory.h>
-#include <libxml/parser.h>
-//#include <libxml/parserInternals.h>
-#include <libxml/HTMLparser.h>
-#include <libxml/HTMLtree.h>
-#include <libxml/tree.h>
-#include <libxml/xpath.h>
-#include <libxml/xpathInternals.h>
-#include <libxml/debugXML.h>
-#include <libxml/xmlerror.h>
-#ifdef LIBXML_XINCLUDE_ENABLED
-#include <libxml/xinclude.h>
-#endif
-#ifdef LIBXML_CATALOG_ENABLED
-#include <libxml/catalog.h>
-#endif
-#include <libxml/globals.h>
-#include <libxml/xmlreader.h>
-#ifdef LIBXML_SCHEMATRON_ENABLED
-#include <libxml/schematron.h>
-#endif
-#ifdef LIBXML_SCHEMAS_ENABLED
-#include <libxml/relaxng.h>
-#include <libxml/xmlschemas.h>
-#endif
-#ifdef LIBXML_PATTERN_ENABLED
-#include <libxml/pattern.h>
-#endif
-#ifdef LIBXML_C14N_ENABLED
-#include <libxml/c14n.h>
-#endif
-#ifdef LIBXML_OUTPUT_ENABLED
-#include <libxml/xmlsave.h>
-#endif
-
-
-
-
-xmlNodePtr xmlGetParent(xmlNodePtr node);
-
-void xmlXPathContainsAnyOfFunction(xmlXPathParserContextPtr ctxt, int nargs);
 
 
 long tws_mkNextOrderId(my_tws_io_info *info);

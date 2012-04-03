@@ -39,40 +39,24 @@ typedef tws::tr_tick_type_t tws_tick_type_t;
 typedef tws::tr_comboleg_type_t tws_comboleg_type_t;
 
 
-// forward references:
-class ib_instance;
 
 
 
 class tws_reqresp_message: public tier2_message
 {
-protected:
-	ib_instance *tws_instance;
-	int tickerID;
-
 public:
-	tws_reqresp_message(ib_instance *tws, int ticker_id) :
-	  tws_instance(tws),
-		  tickerID(ticker_id)
-	  {
-	  }
+	tws_reqresp_message(tier2_message_requester *req) :
+		tier2_message(req)
+	{
+	}
 protected:
 	virtual ~tws_reqresp_message()
 	{
 	}
 
 public:
-	virtual int ticker_id(void) const
-	{
-		return tickerID;
-	}
-
 	virtual bool equal(const tier2_message &alt) const;
 	virtual bool equal(const tws_reqresp_message &alt) const;
-	virtual bool matches(int id) const
-	{
-		return id == tickerID;
-	}
 };
 
 
