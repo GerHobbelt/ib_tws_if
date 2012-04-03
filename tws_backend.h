@@ -34,7 +34,7 @@
 
 
 
-class tws_thread_exch;  // forward reference: structure which contains all front-end to back-end thread comminucation stuff
+class tws_thread_exch;  // forward reference: structure which contains all front-end to back-end thread communication stuff
 class my_tws_io_info;
 
 

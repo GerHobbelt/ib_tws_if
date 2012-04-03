@@ -125,6 +125,9 @@ protected:
     /* tracking some TWS values here as well: */
     int next_order_id;
 
+	/* the connection pairs used to communicate between front-end threads and tier2/TWS threads: */
+	//hash_map
+
     /* -- and the working men -- */
 
 	/* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
