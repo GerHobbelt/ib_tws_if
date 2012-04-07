@@ -28,6 +28,9 @@
 
 #include "mongoose_utils.h"
 #include "tws_backend.h"
+#include "tws_instance.h"
+#include "tws_database_io.h"
+#include "app_manager.h"
 
 
 
@@ -59,11 +62,12 @@ int mg_get_option_int(const struct mg_context *ctx, const char *name, int defaul
 
 int option_decode(struct mg_context *ctx, const char *name, const char *value)
 {
-    struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
+	app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
+    struct tws_conn_cfg &tws_cfg = mgr->get_tws_ib_connection_config();
 
     if (0 == strcmp("tws_ip_address", name))
     {
-        tws_cfg->ip_address = mg_strdup(value);
+        tws_cfg.ip_address = mg_strdup(value);
         return 1;
     }
     else if (0 == strcmp("tws_ip_port", name))
@@ -71,7 +75,7 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         int portno = atoi(value);
         if (portno > 0)
         {
-            tws_cfg->port = portno;
+            tws_cfg.port = portno;
             return 1;
         }
     }
@@ -80,7 +84,7 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         int tws_id = atoi(value);
         if (tws_id > 0)
         {
-            tws_cfg->our_id_code = tws_id;
+            tws_cfg.our_id_code = tws_id;
             return 1;
         }
     }
@@ -89,7 +93,7 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         long poll_period = atol(value);
         if (poll_period > 0)
         {
-            tws_cfg->backend_poll_period = poll_period;
+            tws_cfg.backend_poll_period = poll_period;
             return 1;
         }
     }
@@ -98,13 +102,13 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         long reconnect_delay = atol(value);
         if (reconnect_delay > 0)
         {
-            tws_cfg->backend_reconnect_delay = reconnect_delay;
+            tws_cfg.backend_reconnect_delay = reconnect_delay;
             return 1;
         }
     }
 	else if (0 == strcmp("database_file", name))
 	{
-		tws_cfg->database_path = mg_strdup(value);
+		mgr->get_db_manager()->set_database_path(value);
 		return 1;
 	}
     return 0;

@@ -28,7 +28,7 @@
 
 
 // forward reference:
-class my_tws_io_info;
+class app_manager;
 class tier2_queue_item_visitor;
 
 
@@ -164,8 +164,15 @@ public:
 
 
 /* 
-internal communication stuff between mongoose threads 
-and the tws back-end thread goes here: 
+Each thread keeps its own queue of incoming/pending messages. 
+
+This also serves as part of a 'scheduler' for messages which 
+represent a 'scheduled', i.e. recurring operation.
+
+The cross-border travel of messages is regulated through the 
+socketpairs which represent the allowed message paths in this
+application. The socketpairs are managed/tracked elsewhere; we
+are merely the queue bit here...
 */
 class tier2_message_queue: public tier2_queue_item_visitor
 {
@@ -173,8 +180,6 @@ protected:
 	typedef std::vector<tier2_queue_item *> work_queue_t;
 
 protected:
-    pthread_mutex_t queue_mutex;    // mutex used to protect the queue itself
-
     work_queue_t work_queue;
 
     size_t poppos;         // the position of the queue 'head' for popping
@@ -183,7 +188,6 @@ public:
 	tier2_message_queue() :
 		poppos(0)
 	{
-		pthread_mutex_init(&queue_mutex, NULL);
 	}
 
 	virtual ~tier2_message_queue() 
@@ -196,10 +200,7 @@ public:
 			i->abort();
 
 			// TODO: wait for the front-ends to recognize this change of affairs.
-
 		}
-
-		pthread_mutex_destroy(&queue_mutex);
 
 		work_queue.clear();
 		poppos = 0;
@@ -214,44 +215,27 @@ public:
 	// invoked when queue item is destroyed:
 	virtual void on_item_destroy(tier2_queue_item &msg)
 	{
-		int rv = pthread_mutex_lock(&queue_mutex);
-
-		if (!rv)
+		for (work_queue_t::iterator i = work_queue.begin();
+			i != work_queue.end(); 
+			i++)
 		{
-			for (work_queue_t::iterator i = work_queue.begin();
-				i != work_queue.end(); 
-				i++)
+			tier2_queue_item *e = *i;
+
+			if (e == &msg)
 			{
-				tier2_queue_item *e = *i;
-
-				if (e == &msg)
-				{
-					msg.unregister_handler(this);
-					work_queue.erase(i);
-				}
+				msg.unregister_handler(this);
+				work_queue.erase(i);
 			}
-
-			int rv2 = pthread_mutex_unlock(&queue_mutex);
-			if (!rv) rv = rv2;
 		}
 	}
 
 public:
-	int push(tier2_queue_item *cmd)
+	void push(tier2_queue_item *cmd)
 	{
 		cmd->message()->state(tier2_message::EXEC_COMMAND);
 
-		int rv = pthread_mutex_lock(&queue_mutex);
-
-		if (!rv) 
-		{
-			cmd->register_handler(this);
-			work_queue.push_back(cmd);
-
-			rv = pthread_mutex_unlock(&queue_mutex);
-		}
-
-		return rv;
+		cmd->register_handler(this);
+		work_queue.push_back(cmd);
 	}
 
 	/*
@@ -263,34 +247,27 @@ public:
 	tier2_queue_item *fetch(void)
 	{
 		time_t timestamp = time(NULL);
-		int rv = pthread_mutex_lock(&queue_mutex);
 		tier2_queue_item *result = NULL;
+		size_t i;
+		size_t candidate = 0;
+		size_t work_queue_size = work_queue.size();
 
-		if (!rv)
+		for (i = (poppos + 1) % work_queue_size; ; i = (i + 1) % work_queue_size)
 		{
-			size_t i;
-			size_t candidate = 0;
-			size_t work_queue_size = work_queue.size();
-
-			for (i = (poppos + 1) % work_queue_size; ; i = (i + 1) % work_queue_size)
+			tier2_queue_item *item = work_queue[i];
+			if (item->is_eligible_for_exec(result, timestamp))
 			{
-				tier2_queue_item *item = work_queue[i];
-				if (item->is_eligible_for_exec(result, timestamp))
-				{
-					// round robin polling of the queue:
-					candidate = i;
-				}
-				if (i == poppos)
-					break;
+				// round robin polling of the queue:
+				candidate = i;
 			}
-			poppos = candidate;
+			if (i == poppos)
+				break;
+		}
+		poppos = candidate;
 
-			(void)pthread_mutex_unlock(&queue_mutex);
-
-			if (result)
-			{
-				result->calc_next_invocation(timestamp);
-			}
+		if (result)
+		{
+			result->calc_next_invocation(timestamp);
 		}
 		return result;
 	}
@@ -298,14 +275,8 @@ public:
 	// utility calls:
 	size_t get_queue_depth(void)
 	{
-		int rv = pthread_mutex_lock(&queue_mutex);
-		size_t result = UINT_MAX;
+		size_t result = work_queue.size();
 
-		if (!rv)
-		{
-			result = work_queue.size();
-			rv = pthread_mutex_unlock(&queue_mutex);
-		}
 		return result;
 	}
 };

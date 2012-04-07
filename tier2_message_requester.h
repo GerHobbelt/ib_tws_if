@@ -26,7 +26,7 @@
 
 
 // forward reference:
-class my_tws_io_info;
+class app_manager;
 struct mg_connection;
 
 
@@ -53,7 +53,7 @@ protected:
 	/* 
 		optional: issuer-specified sequence ID; need only be unique for 
 		this particular client/thread combo.
-		*/
+	*/
 	int sequence_id;
 
 public:
@@ -107,10 +107,10 @@ protected:
 	// the bits that make up the 'unique ID':
 	requester_id *unique_id;
 	// additional information attributes:
-	my_tws_io_info *information;
+	app_manager *information;
 
 public:
-	tier2_message_requester(requester_id *id, my_tws_io_info *info) :
+	tier2_message_requester(requester_id *id, app_manager *info) :
 		unique_id(id), information(info)
 	{
 	}
@@ -123,10 +123,12 @@ public:
 	{
 		return unique_id;
 	}
-	my_tws_io_info *get_info(void) const
+	app_manager *get_info(void) const
 	{
 		return information;
 	}
+
+	virtual int process_one_queued_tier2_request(app_manager *mgr, fd_set *read_set, fd_set *except_set, int max_fd);
 };
 
 

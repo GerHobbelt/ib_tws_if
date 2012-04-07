@@ -26,7 +26,7 @@
 
 #include "mongoose_event_handler.h"
 #include "tws_request.h"
-#include "tws_instance.h"
+#include "app_manager.h"
 
 
 
@@ -34,7 +34,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 {
     void *processed = "yes";
     struct mg_context *ctx = mg_get_context(conn);
-    struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
+    app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
 	const struct mg_request_info *ri = mg_get_request_info(conn);
 
     switch (event_id)
@@ -42,14 +42,14 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     case MG_NEW_REQUEST:
         if (strncmp(ri->uri, "/tws/", 5) == 0)
         {
-			ib_req_current_time *tws_req = new ib_req_current_time((NULL);
+			ib_req_current_time *tws_req = new ib_req_current_time(mgr->get_requester(conn));
             struct timespec poll_time;
 			int err;
-            poll_time.tv_sec = tws_cfg->backend_poll_period / 1000;
-            poll_time.tv_nsec = (tws_cfg->backend_poll_period % 1000) * 1000000;
+            poll_time.tv_sec = mgr->get_tws_ib_connection_config().backend_poll_period / 1000;
+            poll_time.tv_nsec = (mgr->get_tws_ib_connection_config().backend_poll_period % 1000) * 1000000;
 
-            // raw TWS backend requests: decode the request and pass the request to the backend in a serialized fashion; block & wait for the response...
-			err = tws_cfg->push(tws_req);
+            // pass the request to the backend; block & wait for the response...
+			err = mgr->tws_cfg->push(tws_req);
 
 #if 0
 			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", ctime(&tws_req->current_time));
@@ -82,7 +82,6 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 		// xmlRegisterInputCallbacks(xmlTWSmatch, xmlTWSopen, xmlTWSread, xmlTWSclose);
 
         // set up the 'front-end to back-end communication serialization' mutexes:
-        tws_cfg->exch = new tws_thread_exch();
 
         // kickstart the TWS backend thread now:
         if (mg_start_thread(ctx, (mg_thread_func_t) tws_worker_thread, ctx) != 0) {

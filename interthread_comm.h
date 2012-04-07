@@ -22,6 +22,97 @@
 #ifndef INTERTHREAD_COMMUNICATIONS_HEADER_INCLUDED
 #define INTERTHREAD_COMMUNICATIONS_HEADER_INCLUDED
 
+struct mg_connection;
+class tier2_message;
+class tier2_queue_item;
+
+
+
+/*
+A wrapper for the socketpair used for passing messages to & from the
+thread to a (predetermined) destination thread.
+*/
+class interthread_communicator
+{
+protected:
+	// the socket pair:
+	struct mg_connection *outgoing;
+	struct mg_connection *incoming;
+
+	interthread_communicator *slave;
+
+public:
+	/*
+		each inter-thread connection is master-slave.
+	*/
+	interthread_communicator(struct mg_connection *conns[2]) :
+		outgoing(conns[0]),
+		incoming(conns[1]),
+		slave(0)
+	{
+	}
+protected:
+	interthread_communicator(struct mg_connection *out, struct mg_connection *in) :
+		outgoing(out),
+		incoming(in),
+		slave(0)
+	{
+	}
+public:
+	virtual ~interthread_communicator()
+	{
+	}
+
+public:
+	int send(tier2_queue_item *message);
+	tier2_queue_item *receive(void);
+
+	// and these are used with select() to make threads notice they're being invoked:
+	void fd_set(struct fd_set *set, int *max_fd);
+	int fd_isset(struct fd_set *set);
+
+	// and a helper which provides us with the connected slave instance:
+	interthread_communicator *get_slave(void)
+	{
+		if (!slave)
+		{
+			slave = new interthread_communicator(incoming, outgoing);
+		}
+		return slave;
+	}
+};
+
+
+
+
+/*
+Carries the 'globals' relevant for a particular front-end thread, 
+such as:
+ - the socketpair to use for message passing to/from the backend
+ - the thread-specific connection
+ - ...
+*/
+class frontend_info_manager
+{
+protected:
+	struct mg_connection *thread_conn;
+
+	// the socket pair:
+	interthread_communicator *comm;
+
+public:
+	frontend_info_manager(struct mg_connection *conn);
+	virtual ~frontend_info_manager();
+
+public:
+	int send(tier2_message *message);
+	tier2_message *receive(void);
+
+	// and these are used with select() to make threads notice they're being invoked:
+	void fd_set(struct fd_set *set, int *max_fd);
+	int fd_isset(struct fd_set *set);
+};
+
 
 
 

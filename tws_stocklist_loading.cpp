@@ -21,6 +21,9 @@
 
 #include "tws_stocklist_loading.h"
 
+#include "app_manager.h"
+#include "tws_database_io.h"
+#include "tws_request.h"
 
 
 //#include <libxml/xmlmemory.h>
@@ -88,13 +91,13 @@ static xmlNodePtr xmlFindChildWithName(xmlNodePtr parent, const xmlChar *tag_nam
 }
 
 
-long tws_mkNextOrderId(my_tws_io_info *info)
+long tws_mkNextOrderId(app_manager *mgr)
 {
-    return info->next_order_id++;
+    return mgr->next_order_id++;
 }
-void tws_setNextOrderId(my_tws_io_info *info, long order_id)
+void tws_setNextOrderId(app_manager *mgr, long order_id)
 {
-    info->next_order_id = order_id;
+    mgr->next_order_id = order_id;
 }
 
 
@@ -170,7 +173,7 @@ static void xmlXPathContainsAnyOfFunction(xmlXPathParserContextPtr ctxt, int nar
 
 
 
-void request_range_of_interesting_market_scans(my_tws_io_info *info, xmlNodePtr location, xmlXPathObjectPtr usable_scanners)
+void request_range_of_interesting_market_scans(app_manager *mgr, xmlNodePtr location, xmlXPathObjectPtr usable_scanners)
 {
     xmlNodeSetPtr nodeset;
     int i;
@@ -182,7 +185,7 @@ void request_range_of_interesting_market_scans(my_tws_io_info *info, xmlNodePtr 
         for (i = 0; i < nodeset->nodeNr; i++)
         {
             xmlNodePtr node = nodeset->nodeTab[i];
-            scanner_subscription_request *s = new scanner_subscription_request();
+            ib_req_scanner_subscription *s = new ib_req_scanner_subscription(mgr);
             xmlNodePtr child;
             xmlChar *val;
 
@@ -257,8 +260,8 @@ void request_range_of_interesting_market_scans(my_tws_io_info *info, xmlNodePtr 
             s->set_above_price(0.05);
             s->set_above_volume(1000);
 
-            s->set_ticker_id(tws_mkNextOrderId(info));
-            push_tws_req_scanner_subscription(info, s);
+            s->set_ticker_id(tws_mkNextOrderId(mgr));
+            push_tws_req_scanner_subscription(mgr, s);
         }
     }
 }
@@ -283,19 +286,19 @@ keeps this part essentially a single-thread process.
 */
 void process_event_scanner_parameters(void *opaque, const char xml[])
 {
-	my_tws_io_info *info = (my_tws_io_info *)opaque;
+	app_manager *mgr = (app_manager *)opaque;
 	int rv;
 	xmlTextReaderPtr reader;
 	xmlNodePtr tree;
 	xmlDocPtr doc;
 	const char *URL = "tws://dummy";
 
-	mg_log(info->conn, "info", "INFO: dumping TWS scanner parameters to log file:");
-	mg_log(info->conn, "info", "XML: %s", xml);
+	mg_log(mgr->get_tws_ib_connection(), "info", "INFO: dumping TWS scanner parameters to log file:");
+	mg_log(mgr->get_tws_ib_connection(), "info", "XML: %s", xml);
 
-	mg_log(info->conn, "info", "scanner_parameters: opaque=%p, xml:(len=%d)", opaque, (int)strlen(xml));
+	mg_log(mgr->get_tws_ib_connection(), "info", "scanner_parameters: opaque=%p, xml:(len=%d)", opaque, (int)strlen(xml));
 
-	ib_store_scanner_parameters_xml(info, xml);
+	mgr->get_db_manager()->ib_store_scanner_parameters_xml(xml);
 
 	doc = xmlReadDoc((const xmlChar *)xml, URL, "UTF-8", XML_PARSE_NOENT | XML_PARSE_NONET | XML_PARSE_NOCDATA);
 
@@ -316,8 +319,8 @@ void process_event_scanner_parameters(void *opaque, const char xml[])
 			usable_locations = xmlXPathEvalExpression((const xmlChar *)"//LocationTree//Location[not(contains(access, 'restricted')) and not(LocationTree)]", ctxt);
 
 #ifdef LIBXML_DEBUG_ENABLED
-			mg_write2log(info->conn, NULL, time(NULL), "info", "INFO: dumping XPath result to log file:");
-			fp = mg_fopen(mg_get_default_logfile_path(info->conn), "a+");
+			mg_write2log(mgr->get_tws_ib_connection(), NULL, time(NULL), "info", "INFO: dumping XPath result to log file:");
+			fp = mg_fopen(mg_get_default_logfile_path(mgr->get_tws_ib_connection()), "a+");
 
 			if (fp != NULL)
 			{
@@ -336,11 +339,11 @@ void process_event_scanner_parameters(void *opaque, const char xml[])
 
 			if (usable_locations == NULL)
 			{
-				mg_cry(info->conn, "No usable entries found in the TWS scanner report. IB_TWS_SRV will NOT be collecting any stock data!");
+				mg_cry(mgr->get_tws_ib_connection(), "No usable entries found in the TWS scanner report. IB_TWS_SRV will NOT be collecting any stock data!");
 			}
 			else if (usable_locations->type != XPATH_NODESET)
 			{
-				mg_cry(info->conn, "Unexpected XPath result type %d while searching the TWS scanner report. IB_TWS_SRV will NOT be collecting any stock data!", (int)usable_locations->type);
+				mg_cry(mgr->get_tws_ib_connection(), "Unexpected XPath result type %d while searching the TWS scanner report. IB_TWS_SRV will NOT be collecting any stock data!", (int)usable_locations->type);
 			}
 			else if (usable_locations->nodesetval != NULL)
 			{
@@ -368,7 +371,7 @@ void process_event_scanner_parameters(void *opaque, const char xml[])
 						usable_scanners = xmlXPathEvalExpression((const xmlChar *)"//ScanTypeList/ScanType[contains-any-of(instruments, $loc_instruments) and not(starts-with(access, 'restricted')) and not(contains(access, 'disabled'))]", ctxt);
 
 						// fire a couple of useful market scanner report requests for each node
-						request_range_of_interesting_market_scans(info, location, usable_scanners);
+						request_range_of_interesting_market_scans(mgr, location, usable_scanners);
 
 						//xmlXPathFreeObject(instruments);
 						//xmlXPathFreeNodeSet();

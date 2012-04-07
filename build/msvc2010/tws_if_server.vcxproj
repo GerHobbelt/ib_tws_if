@@ -467,9 +467,10 @@
     <ClCompile Include="..\..\tier2_message_queue.cpp" />
     <ClCompile Include="..\..\tier2_message_requester.cpp" />
     <ClCompile Include="..\..\tws_api_callbacks.cpp" />
-    <ClCompile Include="..\..\tws_comm_thread.cpp" />
+    <ClCompile Include="..\..\tws_input_output.cpp" />
     <ClCompile Include="..\..\tws_database_io.cpp" />
     <ClCompile Include="..\..\tws_data_structures.cpp" />
+    <ClCompile Include="..\..\tws_debug_printf.cpp" />
     <ClCompile Include="..\..\tws_if_main.cpp" />
     <ClCompile Include="..\..\tws_instance.cpp" />
     <ClCompile Include="..\..\tws_request.cpp" />
@@ -477,6 +478,7 @@
     <ClCompile Include="..\..\tws_stocklist_loading.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\app_manager.h" />
     <ClInclude Include="..\..\blurb.h" />
     <ClInclude Include="..\..\interthread_comm.h" />
     <ClInclude Include="..\..\message_queue.h" />
@@ -488,7 +490,6 @@
     <ClInclude Include="..\..\tier2_message_queue.h" />
     <ClInclude Include="..\..\tier2_message_requester.h" />
     <ClInclude Include="..\..\tws_backend.h" />
-    <ClInclude Include="..\..\tws_comm_thread.h" />
     <ClInclude Include="..\..\tws_database_io.h" />
     <ClInclude Include="..\..\tws_data_structures.h" />
     <ClInclude Include="..\..\tws_instance.h" />
@@ -497,6 +498,7 @@
     <ClInclude Include="..\..\tws_request.h" />
     <ClInclude Include="..\..\tws_response.h" />
     <ClInclude Include="..\..\tws_stocklist_loading.h" />
+    <ClInclude Include="..\..\unique_id_manager.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\libxml\win32.msvc2010\libxml_dll.vcxproj">

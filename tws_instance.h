@@ -23,7 +23,7 @@
 #define TWS_INSTANCE_CPP_HEADER_INCLUDED
 
 /*
-The 'ib_instance' ensures that only one thread can send/receive to/from this TWS instance/connection
+The 'ib_instance' represents that single (back-end) thread which can send/receive to/from this TWS instance/connection
 at any time.
 */
 
@@ -32,7 +32,7 @@ at any time.
 
 
 // forward reference:
-class my_tws_io_info;
+class app_manager;
 struct tws_instance;
 typedef struct tws_instance tws_instance_t;
 

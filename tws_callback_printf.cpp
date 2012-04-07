@@ -19,9 +19,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef TWS_COMM_THREAD_HEADER_INCLUDED
-#define TWS_COMM_THREAD_HEADER_INCLUDED
+/*
+ * Mongoose-based server app which interfaces with a TWS station and displays data in HTML form,
+ * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
+ */
+
+#include "app_manager.h"
+
+#include <tws_c_api/twsapi-debug.h>
+#include <mongoose/mongoose_ex.h>
 
 
 
-#endif // TWS_COMM_THREAD_HEADER_INCLUDED
+
+
+/*
+replace TWSAPI debug printf call.
+*/
+void tws_cb_printf(void *opaque, int indent_level, const char *fmt, ...)
+{
+	app_manager *info = (app_manager *)opaque;	
+	va_list ap;
+
+	va_start(ap, fmt);
+	mg_vlog(info->get_backend_connection(), "info", fmt, ap);
+	va_end(ap);
+}

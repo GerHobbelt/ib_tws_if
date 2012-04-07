@@ -10,7 +10,7 @@
 
 
 
-class my_tws_io_info;
+class app_manager;
 
 
 
@@ -29,23 +29,40 @@ typedef enum
 } ib_db_indentifier_t;
 
 
-struct my_databases_info
+
+struct database_cfg 
 {
-	ham_env_t *env;
-	ham_db_t *db[DB_MAX];
+	const char *database_path;
 };
 
 
-int ib_open_databases(my_tws_io_info *info);
-int ib_close_databases(my_tws_io_info *info);
-const char *ib_strerror(int errcode);
+class db_manager
+{
+protected:
+	struct database_cfg cfg;
+	app_manager *mgr;
 
+	ham_env_t *env;
+	ham_db_t *db[DB_MAX];
 
-int ib_cache_ticker_info(const ib_contract_details &cd);
-int ib_get_ticker_info(ib_contract_details &cd);
+public:
+	db_manager(app_manager *info);
+	virtual ~db_manager();
 
-int ib_store_scanner_parameters_xml(my_tws_io_info *info, const char *xml);
+public:
+	const struct database_cfg &get_db_cfg(void);
+	void set_database_path(const char *path);
 
+	int ib_open_databases(void);
+	int ib_close_databases(void);
+	const char *ib_strerror(int errcode);
+
+public:
+	int ib_cache_ticker_info(const ib_contract_details &cd);
+	int ib_get_ticker_info(ib_contract_details &cd);
+
+	int ib_store_scanner_parameters_xml(const char *xml);
+};
 
 
 #endif

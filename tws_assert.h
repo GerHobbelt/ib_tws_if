@@ -19,27 +19,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef TWS_BACKEND_GENERIC_HEADER_INCLUDED
-#define TWS_BACKEND_GENERIC_HEADER_INCLUDED
-
-#include "mongoose_headers.h"
-
-#include <tws_c_api/twsapi.h>
+#ifndef TWS_SERVER_ASSERTIONS_DEBUG_HEADER_INCLUDED
+#define TWS_SERVER_ASSERTIONS_DEBUG_HEADER_INCLUDED
 
 
+#define TWS_ASSERT(expr)												\
+	if (expr) { __tws_fail_assert(#expr, __FILE__, __LINE__) }
 
-#define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
+void __tws_fail_assert(const char *expr_str, const char *file, int line);
 
 
 
-
-
-class tws_thread_exch;  // forward reference: structure which contains all front-end to back-end thread communication stuff
-class app_manager;
-
-
-
-
-
-
-#endif // TWS_BACKEND_GENERIC_HEADER_INCLUDED
+#endif // TWS_SERVER_ASSERTIONS_DEBUG_HEADER_INCLUDED

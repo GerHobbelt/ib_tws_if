@@ -19,7 +19,8 @@
       <Filter>unused</Filter>
     </ClCompile>
     <ClCompile Include="..\..\tws_c_api\twsapi.c" />
-    <ClCompile Include="..\..\tws_c_api\twsapi-debug.c" />
+    <ClCompile Include="..\..\tws_c_api\twsapi-debug-printf.c" />
+    <ClCompile Include="..\..\tws_c_api\twsapi-callback-printf.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\tws_c_api\MANIFEST">

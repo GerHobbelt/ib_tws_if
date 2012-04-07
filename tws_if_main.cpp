@@ -31,7 +31,7 @@
 #include "tws_backend.h"
 #include "mongoose_utils.h"
 #include "mongoose_event_handler.h"
-#include "tws_instance.h"
+#include "app_manager.h"
 
 
 #define MAX_OPTIONS 40
@@ -70,7 +70,7 @@ static const char *default_options[] = {
     NULL
 };
 
-static struct tws_conn_cfg tws_cfg;
+static app_manager mgr;
 
 
 void die(const char *fmt, ...) {
@@ -240,7 +240,7 @@ static void start_mongoose(int argc, char *argv[]) {
     int i;
     struct mg_user_class_t userdef = {
         &event_handler,
-        &tws_cfg,
+        &mgr,
         &option_decode,
         &option_fill,
         &option_get

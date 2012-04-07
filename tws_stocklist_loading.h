@@ -23,24 +23,24 @@
 #define TWS_STOCKLIST_LOAD_THREAD_HEADER_INCLUDED
 
 #include "tws_backend.h"
-#include "tws_comm_thread.h"
+#include "app_manager.h"
 
 
 
 
-long tws_mkNextOrderId(my_tws_io_info *info);
-void tws_setNextOrderId(my_tws_io_info *info, long order_id);
+long tws_mkNextOrderId(app_manager *info);
+void tws_setNextOrderId(app_manager *info, long order_id);
 
 
-void push_tws_req_scanner_subscription(my_tws_io_info *info, scanner_subscription_request *reqdata);
-size_t pop_tws_req_scanner_subscription(my_tws_io_info *info);
-void cancel_tws_scanner_subscription(my_tws_io_info *info, int ticker_id);
-int is_active_tws_scanner_subscription(my_tws_io_info *info, int ticker_id);
-scanner_subscription_request *get_active_tws_scanner_subscription(my_tws_io_info *info, int ticker_id);
+void push_tws_req_scanner_subscription(app_manager *info, scanner_subscription_request *reqdata);
+size_t pop_tws_req_scanner_subscription(app_manager *info);
+void cancel_tws_scanner_subscription(app_manager *info, int ticker_id);
+int is_active_tws_scanner_subscription(app_manager *info, int ticker_id);
+scanner_subscription_request *get_active_tws_scanner_subscription(app_manager *info, int ticker_id);
 
 
-void request_range_of_interesting_market_scans(my_tws_io_info *info, xmlNodePtr location, xmlXPathObjectPtr usable_scanners);
-void request_contract_details_from_tws(my_tws_io_info *info, tr_contract_details_t *cd);
+void request_range_of_interesting_market_scans(app_manager *info, xmlNodePtr location, xmlXPathObjectPtr usable_scanners);
+void request_contract_details_from_tws(app_manager *info, tr_contract_details_t *cd);
 
 
 

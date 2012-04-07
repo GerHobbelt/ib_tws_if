@@ -332,7 +332,8 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="..\..\tws_c_api\twsapi-debug.c" />
+    <ClCompile Include="..\..\tws_c_api\twsapi-callback-printf.c" />
+    <ClCompile Include="..\..\tws_c_api\twsapi-debug-printf.c" />
     <ClCompile Include="..\..\tws_c_api\twsapi.c" />
   </ItemGroup>
   <ItemGroup>

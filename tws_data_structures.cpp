@@ -1087,7 +1087,7 @@ ib_under_comp::ib_under_comp() :
 {
 }
 
-ib_under_comp::ib_under_comp(tws::under_comp &s)
+ib_under_comp::ib_under_comp(const tws::under_comp &s)
 {
 	u_price = s.u_price;
 	u_delta = s.u_delta;
@@ -1110,7 +1110,7 @@ ib_comboleg::ib_comboleg() :
     co_exempt_code(0)
 {
 }
-ib_comboleg::ib_comboleg(tws::tr_comboleg &s)
+ib_comboleg::ib_comboleg(const tws::tr_comboleg &s)
 {
     co_action = from_tws(s.co_action, ACTION_UNKNOWN);
     co_exchange = s.co_exchange;
@@ -1131,7 +1131,7 @@ ib_comboleg::~ib_comboleg()
 ib_contract::ib_contract()
 {
 }
-ib_contract::ib_contract(tws::tr_contract &s)
+ib_contract::ib_contract(const tws::tr_contract &s)
 {
 	if (s.c_undercomp)
 	    c_undercomp = *s.c_undercomp;
@@ -1198,7 +1198,7 @@ ib_contract_details::ib_contract_details() :
     d_next_option_partial(false)
 {
 }
-ib_contract_details::ib_contract_details(tws::tr_contract_details &s)
+ib_contract_details::ib_contract_details(const tws::tr_contract_details &s)
 {
     d_mintick = s.d_mintick;
     d_coupon = s.d_coupon;
@@ -1245,7 +1245,7 @@ ib_contract_details::~ib_contract_details()
 ib_tag_value::ib_tag_value()
 {
 }
-ib_tag_value::ib_tag_value(tws::tr_tag_value &s)
+ib_tag_value::ib_tag_value(const tws::tr_tag_value &s)
 {
 	t_tag = s.t_tag;
 	t_val = s.t_val;
@@ -1263,7 +1263,7 @@ ib_order_combo_leg::ib_order_combo_leg() :
 	cl_price(0)
 {
 }
-ib_order_combo_leg::ib_order_combo_leg(tws::tr_order_combo_leg &s)
+ib_order_combo_leg::ib_order_combo_leg(const tws::tr_order_combo_leg &s)
 {
 	cl_price = s.cl_price;
 }
@@ -1279,7 +1279,7 @@ ib_order_combo_leg::~ib_order_combo_leg()
 ib_order::ib_order()
 {
 }
-ib_order::ib_order(tws::tr_order &s)
+ib_order::ib_order(const tws::tr_order &s)
 {
     if (s.o_discretionary_amt)
 		o_discretionary_amt = s.o_discretionary_amt;
@@ -1473,7 +1473,7 @@ ib_order_status::ib_order_status() :
     ost_max_commission(0)
 {
 }
-ib_order_status::ib_order_status(tws::tr_order_status &s)
+ib_order_status::ib_order_status(const tws::tr_order_status &s)
 {
 	ost_commission = s.ost_commission;
 	ost_min_commission = s.ost_min_commission;
@@ -1506,7 +1506,7 @@ ib_execution::ib_execution() :
     e_cum_qty(0)
 {
 }
-ib_execution::ib_execution(tws::tr_execution &s)
+ib_execution::ib_execution(const tws::tr_execution &s)
 {
 	e_price = s.e_price;
 	e_avg_price = s.e_avg_price;
@@ -1537,7 +1537,7 @@ ib_execution::~ib_execution()
 ib_exec_filter::ib_exec_filter()
 {
 }
-ib_exec_filter::ib_exec_filter(tws::tr_exec_filter &s)
+ib_exec_filter::ib_exec_filter(const tws::tr_exec_filter &s)
 {
     if (s.f_acctcode)
 		f_acctcode = s.f_acctcode;
@@ -1568,7 +1568,7 @@ ib_exec_filter::~ib_exec_filter()
 ib_scanner_subscription::ib_scanner_subscription()
 {
 }
-ib_scanner_subscription::ib_scanner_subscription(tws::tr_scanner_subscription &s)
+ib_scanner_subscription::ib_scanner_subscription(const tws::tr_scanner_subscription &s)
 {
     if (s.scan_above_price)
 		scan_above_price = s.scan_above_price;
@@ -1632,7 +1632,7 @@ ib_commission_report::ib_commission_report() :
     cr_yield_redemption_date(0)
 {
 }
-ib_commission_report::ib_commission_report(tws::tr_commission_report &s)
+ib_commission_report::ib_commission_report(const tws::tr_commission_report &s)
 {
     cr_exec_id = s.cr_exec_id;
     cr_currency = s.cr_currency;

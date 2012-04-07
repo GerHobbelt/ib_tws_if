@@ -22,10 +22,12 @@
 #include "system-includes.h"
 
 #include <tws_c_api/twsapi.h>
+#include <tws_c_api/twsapi-debug.h>
 
 #include "tws_request.h"
 #include "tws_response.h"
-
+#include "tws_data_structures.h"
+#include "app_manager.h"
 
 
 
@@ -36,20 +38,6 @@ using namespace tws;
 /*
 helper functions:
 */
-
-
-
-void tws_cb_printf(void *opaque, int indent_level, const char *fmt, ...)
-{
-    my_tws_io_info *info = (my_tws_io_info *)opaque;
-	va_list ap;
-
-	va_start(ap, fmt);
-	mg_vlog(info->conn, "info", fmt, ap);
-	va_end(ap);
-}
-
-
 
 void tws_cb_print_under_comp(void *opaque, int indent_level, under_comp_t *und)
 {
@@ -193,48 +181,93 @@ event handlers:
 
 void event_tick_price(void *opaque, int ticker_id, tr_tick_type_t field, double price, int can_auto_execute)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "tick_price: opaque=%p, ticker_id=%d, type=%d (%s), price=%g, can_auto=%d\n",
            opaque, ticker_id, (int)field, tick_type_name(field), price, can_auto_execute);
+
+	ib_resp_tick_price *msg = new ib_resp_tick_price(tws, ticker_id, field, price, can_auto_execute);
+	mgr->process_response_message(msg);
 }
 
 void event_tick_size(void *opaque, int ticker_id, tr_tick_type_t type, int size)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "tick_size: opaque=%p, ticker_id=%d, type=%d (%s), size=%d\n",
            opaque, ticker_id, (int)type, tick_type_name(type), size);
+
+	ib_resp_tick_size *msg = new ib_resp_tick_size(tws, ticker_id, type, size);
+	mgr->process_response_message(msg);
 }
 
 void event_tick_option_computation(void *opaque, int ticker_id, tr_tick_type_t type, double implied_vol, double delta, double opt_price, double pv_dividend, double gamma, double vega, double theta, double und_price)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "tick option computation: opaque=%p, ticker_id=%d, type=%d (%s), implied_vol=%g, delta=%g, opt_price=%g, pv_dividend=%g, gamma=%g, vega=%g, theta=%g, und_price=%g\n",
            opaque, ticker_id, (int)type, tick_type_name(type), implied_vol, delta, opt_price, pv_dividend, gamma, vega, theta, und_price);
+
+	ib_resp_tick_option_computation *msg = new ib_resp_tick_option_computation(tws, ticker_id, type, implied_vol, delta, opt_price, pv_dividend, gamma, vega, theta, und_price);
+	mgr->process_response_message(msg);
 }
 
 void event_tick_generic(void *opaque, int ticker_id, tr_tick_type_t type, double value)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "tick_generic: opaque=%p, ticker_id=%d, type=%d (%s), value=%g\n", opaque, ticker_id, type, tick_type_name(type), value);
+
+	ib_resp_tick_generic *msg = new ib_resp_tick_generic(tws, ticker_id, type, value);
+	mgr->process_response_message(msg);
 }
 
 void event_tick_string(void *opaque, int ticker_id, tr_tick_type_t type, const char value[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "tick_string: opaque=%p, ticker_id=%d, type=%d (%s), value=[%s]\n", opaque, ticker_id, type, tick_type_name(type), value);
+
+	ib_resp_tick_string *msg = new ib_resp_tick_string(tws, ticker_id, type, value);
+	mgr->process_response_message(msg);
 }
 
 void event_tick_efp(void *opaque, int ticker_id, tr_tick_type_t tick_type, double basis_points, const char formatted_basis_points[], double implied_futures_price, int hold_days, const char future_expiry[], double dividend_impact, double dividends_to_expiry)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "tick_efp: opaque=%p, ticker_id=%d, type=%d (%s), basis_points=%g, formatted_basis_points=[%s], implied_futures_price=%g, hold_days=%d, future_expiry=[%s], dividend_impact=%g, dividends_to_expiry=%g\n",
 		opaque, ticker_id, tick_type, tick_type_name(tick_type), basis_points, formatted_basis_points, implied_futures_price, hold_days, future_expiry, dividend_impact, dividends_to_expiry);
+
+	ib_resp_tick_efp *msg = new ib_resp_tick_efp(tws, ticker_id, tick_type, basis_points, formatted_basis_points, implied_futures_price, hold_days, future_expiry, dividend_impact, dividends_to_expiry);
+	mgr->process_response_message(msg);
 }
 
 void event_order_status(void *opaque, int order_id, const char status[],
                         int filled, int remaining, double avg_fill_price, int perm_id,
                         int parent_id, double last_fill_price, int client_id, const char why_held[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "order_status: opaque=%p, order_id=%d, status=[%s], filled=%d, remaining %d, avg_fill_price=%g, last_fill_price=%g, perm_id=%d, parent_id=%d, client_id=%d, why_held=[%s]\n",
 		opaque, order_id, status, filled, remaining, avg_fill_price, last_fill_price, perm_id, parent_id, client_id, why_held);
+
+	ib_resp_order_status *msg = new ib_resp_order_status(tws, order_id, status, filled, remaining, avg_fill_price, perm_id, parent_id, last_fill_price, client_id, why_held);
+	mgr->process_response_message(msg);
 }
 
 void event_open_order(void *opaque, int order_id, const tr_contract_t *contract, const tr_order_t *order, const tr_order_status_t *ostatus)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     /* commission values might be DBL_MAX */
     if(fabs(ostatus->ost_commission - DBL_MAX) < DBL_EPSILON)
         tws_cb_printf(opaque, 0, "open_order: opaque=%p, commission not reported\n", opaque);
@@ -245,34 +278,61 @@ void event_open_order(void *opaque, int order_id, const tr_contract_t *contract,
 	tws_cb_print_contract(opaque, 1, contract);
 	tws_cb_print_order(opaque, order);
 	tws_cb_print_order_status(opaque, ostatus);
+
+	ib_contract ib_c(*contract);
+	ib_order ib_o(*order);
+	ib_order_status ib_ostat(*ostatus);
+	ib_resp_open_order *msg = new ib_resp_open_order(tws, order_id, &ib_c, &ib_o, &ib_ostat);
+	mgr->process_response_message(msg);
 }
 
 void event_update_account_value(void *opaque, const char key[], const char val[],
                                 const char currency[], const char account_name[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "update_account_value: %p, key=[%s] val=[%s], currency=[%s], name=[%s]\n",
            opaque, key, val, currency, account_name);
+
+	ib_resp_update_account_value *msg = new ib_resp_update_account_value(tws, key, val, currency, account_name);
+	mgr->process_response_message(msg);
 }
 
 void event_update_portfolio(void *opaque, const tr_contract_t *contract, int position,
                             double mkt_price, double mkt_value, double average_cost,
                             double unrealized_pnl, double realized_pnl, const char account_name[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "update_portfolio: %p, sym=%s, position=%d, mkt_price=%.4g, mkt_value=%.4g, avg_cost=%.4g, unrealized_pnl=%.4g, realized_pnl=%.4g account_name=%s\n",
            opaque, contract->c_symbol, position, mkt_price, mkt_value, average_cost, unrealized_pnl, realized_pnl, account_name);
 	tws_cb_print_contract(opaque, 1, contract);
+
+	ib_contract ib_c(*contract);
+	ib_resp_update_portfolio *msg = new ib_resp_update_portfolio(tws, &ib_c, position, mkt_price, mkt_value, average_cost, unrealized_pnl, realized_pnl, account_name);
+	mgr->process_response_message(msg);
 }
 
 void event_update_account_time(void *opaque, const char time_stamp[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "update_account_time: opaque=%p, time_stamp=[%s]\n", opaque, time_stamp);
+
+	ib_resp_update_account_time *msg = new ib_resp_update_account_time(tws, time_stamp);
+	mgr->process_response_message(msg);
 }
 
 void event_next_valid_id(void *opaque, int order_id)
 {
-    my_tws_io_info *info = (my_tws_io_info *)opaque;
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
 
-    /* invoked once at connection establishment
+#if 0
+	/* invoked once at connection establishment
      * the scope of this variable is not program wide, instance wide,
      * or even system wide. It has the same scope as the TWS account itself.
      * It appears to be persistent across TWS restarts.
@@ -280,39 +340,71 @@ void event_next_valid_id(void *opaque, int order_id)
      * this order_id atomically and cooperatively
      */
     tws_setNextOrderId(info, order_id);
+#endif
 
     tws_cb_printf(opaque, 0, "next_valid_id for order placement %d (opaque=%p)\n", order_id, opaque);
+
+	ib_resp_next_valid_id *msg = new ib_resp_next_valid_id(tws, order_id);
+	mgr->process_response_message(msg);
 }
 
 void event_contract_details(void *opaque, int req_id, const tr_contract_details_t *cd)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "contract_details: opaque=%p, req_id=%d, ...\n", opaque, req_id);
 	tws_cb_print_contract_details(opaque, cd);
 
+#if 0
 	ib_cache_ticker_info(cd);
+#endif
+
+	ib_contract_details ib_cd(*cd);
+	ib_resp_contract_details *msg = new ib_resp_contract_details(tws, req_id, &ib_cd);
+	mgr->process_response_message(msg);
 }
 
 void event_bond_contract_details(void *opaque, int req_id, const tr_contract_details_t *cd)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "bond_contract_details: opaque=%p, req_id=%d, ...\n", opaque, req_id);
 	tws_cb_print_contract_details(opaque, cd);
 
+#if 0
 	ib_cache_ticker_info(cd);
+#endif
+
+	ib_contract_details ib_cd(*cd);
+	ib_resp_bond_contract_details *msg = new ib_resp_bond_contract_details(tws, req_id, &ib_cd);
+	mgr->process_response_message(msg);
 }
 
 void event_exec_details(void *opaque, int order_id, const tr_contract_t *contract, const tr_execution_t *execution)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "exec_details: opaque=%p, order_id=%d, ...\n", opaque, order_id);
 	tws_cb_print_contract(opaque, 1, contract);
 	tws_cb_print_execution(opaque, execution);
+
+	ib_contract ib_c(*contract);
+	ib_execution ib_exec(*execution);
+	ib_resp_exec_details *msg = new ib_resp_exec_details(tws, order_id, &ib_c, &ib_exec);
+	mgr->process_response_message(msg);
 }
 
 void event_error(void *opaque, int ticker_id, int error_code, const char error_string[])
 {
-    my_tws_io_info *info = (my_tws_io_info *)opaque;
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
 
     tws_cb_printf(opaque, 0, "error: opaque=%p, ticker_id=%d, error_code=%d, msg='%s'\n", opaque, ticker_id, error_code, error_string);
 
+#if 0
     /*
     some scanner subscription requests may trigger error responses, such as 'duplicate subscription'
     and we need to keep the scanner subscription active list in proper order, so we check whether the related
@@ -328,46 +420,92 @@ void event_error(void *opaque, int ticker_id, int error_code, const char error_s
 	{
 		cancel_tws_scanner_subscription(info, ticker_id);
 	}
+#endif
+
+	ib_resp_error *msg = new ib_resp_error(tws, ticker_id, error_code, error_string);
+	mgr->process_response_message(msg);
 }
 
 void event_update_mkt_depth(void *opaque, int ticker_id, int position, int operation, int side, double price, int size)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "update_mkt_depth: opaque=%p, ticker_id=%d, posaition=%d, operation=%d, size=%d, price=%g, size=%d\n",
 		opaque, ticker_id, position, operation, side, price, size);
+
+	ib_resp_update_mkt_depth *msg = new ib_resp_update_mkt_depth(tws, ticker_id, position, operation, side, price, size);
+	mgr->process_response_message(msg);
 }
 
 void event_update_mkt_depth_l2(void *opaque, int ticker_id, int position, char *market_maker, int operation, int side, double price, int size)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "update_mkt_depth_l2: opaque=%p, ticker_id=%d, position=%d, market_maker=[%s], operation=%d, side=%d, price=%g, size=%d\n",
 		opaque, ticker_id, position, market_maker, operation, side, price, size);
+
+	ib_resp_update_mkt_depth_l2 *msg = new ib_resp_update_mkt_depth_l2(tws, ticker_id, position, market_maker, operation, side, price, size);
+	mgr->process_response_message(msg);
 }
 
 void event_update_news_bulletin(void *opaque, int msgid, int msg_type, const char news_msg[], const char origin_exch[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "update_news_bulletin: opaque=%p, msg_id=%d, msg_type=%d, msg=[%s], origin_exchange=[%d]\n",
 		opaque, msgid, msg_type, news_msg, origin_exch);
+
+	ib_resp_update_news_bulletin *msg = new ib_resp_update_news_bulletin(tws, msgid, msg_type, news_msg, origin_exch);
+	mgr->process_response_message(msg);
 }
 
 void event_managed_accounts(void *opaque, const char accounts_list[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "managed_accounts: opaque=%p, accounts_list=[%s]\n",
 		opaque, accounts_list);
+
+	ib_resp_managed_accounts *msg = new ib_resp_managed_accounts(tws, accounts_list);
+	mgr->process_response_message(msg);
 }
 
 void event_receive_fa(void *opaque, tr_fa_msg_type_t fa_data_type, const char cxml[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "receive_fa: opaque=%p, fa_data_type=%d (%s), xml='%s'\n", opaque, (int)fa_data_type, fa_msg_type_name(fa_data_type), cxml);
+
+	ib_resp_receive_fa *msg = new ib_resp_receive_fa(tws, fa_data_type, cxml);
+	mgr->process_response_message(msg);
 }
 
 void event_historical_data(void *opaque, int reqid, const char date[], double open, double high, double low, double close, long int volume, int bar_count, double wap, int has_gaps)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "historical: opaque=%p, reqid=%d, date=%s, ohlc=%.4g/%.4g/%.4g/%.4g, volume=%ld, bar_count=%d, wap=%.4g, has_gaps=%d\n",
 		opaque, reqid, date, open, high, low, close, volume, bar_count, wap, has_gaps);
+
+	ib_resp_historical_data *msg = new ib_resp_historical_data(tws, reqid, date, open, high, low, close, volume, bar_count, wap, has_gaps);
+	mgr->process_response_message(msg);
 }
 
 void event_historical_data_end(void *opaque, int reqid, const char completion_from[], const char completion_to[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "historical list end: opaque=%p, reqid=%d, from date=[%s], to date=[%s]\n", opaque, reqid, completion_from, completion_to);
+
+	ib_resp_historical_data_end *msg = new ib_resp_historical_data_end(tws, reqid, completion_from, completion_to);
+	mgr->process_response_message(msg);
 }
 
 /*
@@ -384,48 +522,65 @@ keeps this part essentially a single-thread process.
 */
 void event_scanner_parameters(void *opaque, const char xml[])
 {
-	my_tws_io_info *info = (my_tws_io_info *)opaque;
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
 
+#if 0
 	process_event_scanner_parameters(info, xml);
+#endif
+
+	ib_resp_scanner_parameters *msg = new ib_resp_scanner_parameters(tws, xml);
+	mgr->process_response_message(msg);
 }
 
 void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_details_t *cd, const char distance[], const char benchmark[], const char projection[], const char legs_str[])
 {
-    my_tws_io_info *info = (my_tws_io_info *)opaque;
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
 
+#if 0
     // we CAN receive responses for already canceled subscriptions, e.g. when an error report triggered a (pending in the TCP pipeline) subscription cancel request:
 	if (!is_active_tws_scanner_subscription(info, ticker_id))
     {
         // only report this for the first item; no need to keep repeating ourselves.
         if (rank == 1)
         {
-			mg_log(info->conn, "info", "scanner_data: opaque=%p, ticker_id=%d -- *INFO* -- receiving scanner data for a cancelled subscription. The cancel request and this report will probably have crossed along the way.",
+			mg_log(mgr->get_tws_ib_connection(), "info", "scanner_data: opaque=%p, ticker_id=%d -- *INFO* -- receiving scanner data for a cancelled subscription. The cancel request and this report will probably have crossed along the way.",
                 opaque, ticker_id);
         }
         return;
     }
+#endif
 
     tws_cb_printf(opaque, 0, "scanner_data: opaque=%p, ticker_id=%d, rank=%d, distance=[%s], benchmark=[%s], projection=[%s], legs_str=[%s]\n",
            opaque, ticker_id, rank, distance, benchmark, projection, legs_str);
 	tws_cb_print_contract_details(opaque, cd);
 
+#if 0
     /* it seems that NYSE traded stocks have different market_name and trading_class from NASDAQ */
 
 
     // now also request the contract details so that we'll receive the extended info for this stock:
     request_contract_details_from_tws(info, cd);
+#endif
+
+	ib_contract_details ib_cd(*cd);
+	ib_resp_scanner_data *msg = new ib_resp_scanner_data(tws, ticker_id, rank, &ib_cd, distance, benchmark, projection, legs_str);
+	mgr->process_response_message(msg);
 }
 
 void event_scanner_data_start(void *opaque, int ticker_id, int num_elements)
 {
-    my_tws_io_info *info = (my_tws_io_info *)opaque;
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
 
     tws_cb_printf(opaque, 0, "scanner_data_start: opaque=%p, ticker_id=%d, num_elements=%d\n", opaque, ticker_id, num_elements);
 
+#if 0
 	scanner_subscription_request *ss = get_active_tws_scanner_subscription(info, ticker_id);
     if (ss)
     {
-		mg_log(info->conn, "info", "scanner_data_start: request: instrument=%s, location_code=%s, scan_code=%s, above_price=%f, above_volume=%d",
+		mg_log(mgr->get_tws_ib_connection(), "info", "scanner_data_start: request: instrument=%s, location_code=%s, scan_code=%s, above_price=%f, above_volume=%d",
 			ss->get_instrument(), ss->get_location_code(), ss->get_scan_code(), ss->get_above_price(), ss->get_above_volume());
 	}
 
@@ -434,17 +589,28 @@ void event_scanner_data_start(void *opaque, int ticker_id, int num_elements)
     {
         cancel_tws_scanner_subscription(info, ticker_id);
     }
+#endif
+
+	ib_resp_scanner_data_start *msg = new ib_resp_scanner_data_start(tws, ticker_id, num_elements);
+	mgr->process_response_message(msg);
 }
 
 void event_scanner_data_end(void *opaque, int ticker_id, int num_elements)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "scanner_data_end: opaque=%p, ticker_id=%d, num_elements=%d\n", opaque, ticker_id, num_elements);
+
+	ib_resp_scanner_data_end *msg = new ib_resp_scanner_data_end(tws, ticker_id, num_elements);
+	mgr->process_response_message(msg);
 }
 
 void event_current_time(void *opaque, long time)
 {
-    my_tws_io_info *info = (my_tws_io_info *)opaque;
-    tws_thread_exch *exch = info->tws_cfg->exch;
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     char tbuf[40];
     time_t timestamp = (time_t)time;
 
@@ -452,78 +618,122 @@ void event_current_time(void *opaque, long time)
 
     tws_cb_printf(opaque, 0, "current_time: opaque=%p, time=%ld ~ '%s'\n", opaque, time, tbuf);
 
-    /*
-     * Pass response on to front-end now:
-     */
-#if 0
-	pthread_mutex_lock(&exch->tws_exch_mutex);
-    if (0 != pthread_cond_signal(&exch->tws_rx_signal))
-    {
-        pthread_mutex_unlock(&exch->tws_exch_mutex);
-    }
-    else
-    {
-        // process incoming TX command/request from one of the front-end threads:
-        mg_cry(info->conn, "backend CURRENT TIME message handler: response count = %d", exch->response);
-
-        exch->response++;
-        exch->current_time = time;
-
-        pthread_mutex_unlock(&exch->tws_exch_mutex);
-    }
-#endif
+	ib_resp_current_time *msg = new ib_resp_current_time(tws, time);
+	mgr->process_response_message(msg);
 }
 
 void event_realtime_bar(void *opaque, int reqid, long time, double open, double high, double low, double close, long int volume, double wap, int count)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "realtime_bar: opaque=%p, reqid=%d, time=%ld, ohlc=%.4g/%.4g/%.4g/%.4g, vol=%ld, wap=%.4g, count=%d\n", opaque, reqid, time, open, high, low, close, volume, wap, count);
+
+	ib_resp_realtime_bar *msg = new ib_resp_realtime_bar(tws, reqid, time, open, high, low, close, volume, wap, count);
+	mgr->process_response_message(msg);
 }
 
 void event_fundamental_data(void *opaque, int reqid, const char data[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "fundamental_data: opaque=%p, reqid=%d, data=[%s]\n", opaque, reqid, data);
+
+	ib_resp_fundamental_data *msg = new ib_resp_fundamental_data(tws, reqid, data);
+	mgr->process_response_message(msg);
 }
 
 void event_contract_details_end(void *opaque, int reqid)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "contract_details_end: opaque=%p, reqid=%d\n", opaque, reqid);
+
+	ib_resp_contract_details_end *msg = new ib_resp_contract_details_end(tws, reqid);
+	mgr->process_response_message(msg);
 }
 
 void event_open_order_end(void *opaque)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "open_order_end: opaque=%p\n", opaque);
+
+	ib_resp_open_order_end *msg = new ib_resp_open_order_end(tws);
+	mgr->process_response_message(msg);
 }
 
 void event_delta_neutral_validation(void *opaque, int reqid, under_comp_t *und)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "delta_neutral_validation: opaque=%p, reqid=%d, ...\n", opaque, reqid);
     tws_cb_print_under_comp(opaque, 1, und);
+
+	ib_under_comp ib_und(*und);
+	ib_resp_delta_neutral_validation *msg = new ib_resp_delta_neutral_validation(tws, reqid, &ib_und);
+	mgr->process_response_message(msg);
 }
 
 void event_acct_download_end(void *opaque, char acct_name[])
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "acct_download_end: opaque=%p, account name=[%s]\n", opaque, acct_name);
+
+	ib_resp_acct_download_end *msg = new ib_resp_acct_download_end(tws, acct_name);
+	mgr->process_response_message(msg);
 }
 
 void event_exec_details_end(void *opaque, int reqid)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "exec_details_end: opaque=%p, reqid=%d\n", opaque, reqid);
+
+	ib_resp_exec_details_end *msg = new ib_resp_exec_details_end(tws, reqid);
+	mgr->process_response_message(msg);
 }
 
 void event_tick_snapshot_end(void *opaque, int reqid)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
     tws_cb_printf(opaque, 0, "tick_snapshot_end: opaque=%p, reqid=%d\n", opaque, reqid);
+
+	ib_resp_tick_snapshot_end *msg = new ib_resp_tick_snapshot_end(tws, reqid);
+	mgr->process_response_message(msg);
 }
 
 void event_market_data_type(void *opaque, int reqid, market_data_type_t data_type)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
 	tws_cb_printf(opaque, 0, "market_data_type: opaque=%p, reqid=%d, data_type=%d (%s)\n", opaque, reqid, (int)data_type, market_data_type_name(data_type));
+
+	ib_resp_market_data_type *msg = new ib_resp_market_data_type(tws, reqid, data_type);
+	mgr->process_response_message(msg);
 }
 
 void event_commission_report(void *opaque, tr_commission_report_t *report)
 {
+	app_manager *mgr = (app_manager *)opaque;
+	tier2_message_requester *tws = mgr->get_ib_tws_manager();
+
 	tws_cb_printf(opaque, 0, "commission_report: opaque=%p, ...\n", opaque);
 	tws_cb_print_commission_report(opaque, report);
+
+	ib_commission_report ib_report(*report);
+	ib_resp_commission_report *msg = new ib_resp_commission_report(tws, &ib_report);
+	mgr->process_response_message(msg);
 }
 
 

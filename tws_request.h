@@ -85,17 +85,17 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* 
 	Invoke this method to cancel a long-running (repetitive) request or...
 	Abort the mission:  http://www.menagea3.net/strips-ma3/coop_lungeuhil%EF%BC%9F%EF%BC%9F
 	*/
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -114,14 +114,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -140,14 +140,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -166,14 +166,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -192,14 +192,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -218,14 +218,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -244,14 +244,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -270,14 +270,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -296,14 +296,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -322,14 +322,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -348,14 +348,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -374,14 +374,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -400,14 +400,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -426,14 +426,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -452,14 +452,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -478,14 +478,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -504,14 +504,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -530,14 +530,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -556,14 +556,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -582,14 +582,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -608,14 +608,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -634,14 +634,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -660,14 +660,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -686,14 +686,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -712,14 +712,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -738,14 +738,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -764,14 +764,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -790,14 +790,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -816,14 +816,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -842,14 +842,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -868,14 +868,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -894,14 +894,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -920,14 +920,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -946,14 +946,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -972,14 +972,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -998,14 +998,14 @@ protected:
 	}
 
 public:
-	virtual int transmit(my_tws_io_info *info);
+	virtual int transmit(app_manager *info);
 	/* invoke this method to cancel a long-running (repetitive) request. */
-	virtual int cancel_request(my_tws_io_info *info);
+	virtual int cancel_request(app_manager *info);
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(my_tws_io_info *info, tier2_message &response);
+	virtual int process_response(app_manager *info, tier2_message &response);
 
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -1043,8 +1043,8 @@ protected:
 	}
 
 public:
-	virtual int store(my_tws_io_info *info);
-	virtual int load(my_tws_io_info *info);
+	virtual int store(app_manager *info);
+	virtual int load(app_manager *info);
 
 	virtual bool equal(const tier2_message &alt) const;
 };

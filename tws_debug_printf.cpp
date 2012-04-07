@@ -19,27 +19,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef TWS_BACKEND_GENERIC_HEADER_INCLUDED
-#define TWS_BACKEND_GENERIC_HEADER_INCLUDED
+/*
+ * Mongoose-based server app which interfaces with a TWS station and displays data in HTML form,
+ * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
+ */
 
-#include "mongoose_headers.h"
+#include "app_manager.h"
 
-#include <tws_c_api/twsapi.h>
-
-
-
-#define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
-
-
-
-
-
-class tws_thread_exch;  // forward reference: structure which contains all front-end to back-end thread communication stuff
-class app_manager;
+#include <tws_c_api/twsapi-debug.h>
+#include <mongoose/mongoose_ex.h>
 
 
 
 
 
+/*
+replace TWSAPI debug printf call.
+*/
+void tws_debug_printf(void *opaque, const char *fmt, ...)
+{
+	app_manager *mgr = (app_manager *)opaque;
+	va_list ap;
 
-#endif // TWS_BACKEND_GENERIC_HEADER_INCLUDED
+	va_start(ap, fmt);
+	mg_vlog((mgr ? mgr->get_tws_ib_connection() : NULL), "debug", fmt, ap);
+	va_end(ap);
+}
+
+

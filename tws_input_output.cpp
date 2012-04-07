@@ -24,8 +24,11 @@
  * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
  */
 
-#include "tws_comm_thread.h"
+#include <tws_c_api/twsapi.h>
 
+#include "app_manager.h"
+
+#include <mongoose/mongoose_ex.h>
 
 
 
@@ -38,75 +41,56 @@
 
 
 
-/*
-replace TWSAPI debug printf call.
-*/
-void tws_debug_printf(void *opaque, const char *fmt, ...)
-{
-	my_tws_io_info *info = (my_tws_io_info *)opaque;
-	va_list ap;
-
-	va_start(ap, fmt);
-	//mg_vlog((info ? info->conn : NULL), "debug", fmt, ap);
-	va_end(ap);
-}
-
-
-
-
-
-
-
-
-
-
 
 
 static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen)
 {
-    my_tws_io_info *info = (my_tws_io_info *)arg;
+    app_manager *mgr = (app_manager *)arg;
+	mg_connection *conn = mgr->get_tws_ib_connection();
 
-    if (info->conn)
+    if (conn)
     {
-        return mg_write(info->conn, buf, buflen);
+        return mg_write(conn, buf, buflen);
     }
     return -1;
 }
 
 static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 {
-    my_tws_io_info *info = (my_tws_io_info *)arg;
-    tws_thread_exch *exch = info->tws_cfg->exch;
+    app_manager *mgr = (app_manager *)arg;
+	mg_connection *conn = mgr->get_tws_ib_connection();
+	tier2_message_requester *reqr = mgr->get_requester(conn);
 
-    if (info->conn)
+    if (conn && reqr)
     {
         // check whether there's anything available:
-        fd_set read_set;
+        fd_set read_set, except_set;
         struct timeval tv;
         int max_fd;
 
-        assert(exch != NULL);
+        tv.tv_sec = mgr->get_tws_ib_connection_config().backend_poll_period / 1000;
+        tv.tv_usec = (mgr->get_tws_ib_connection_config().backend_poll_period % 1000) * 1000;
 
-        tv.tv_sec = info->tws_cfg->backend_poll_period / 1000;
-        tv.tv_usec = (info->tws_cfg->backend_poll_period % 1000) * 1000;
-
-        while (mg_get_stop_flag(mg_get_context(info->conn)) == 0)
+        while (mg_get_stop_flag(mg_get_context(conn)) == 0)
         {
             struct timeval tv2 = tv;
+			int rv;
 
             FD_ZERO(&read_set);
+			FD_ZERO(&except_set);
             max_fd = -1;
 
             // Add listening sockets to the read set
-            mg_FD_SET(mg_get_client_socket(info->conn), &read_set, &max_fd);
+            mg_FD_SET(mg_get_client_socket(conn), &read_set, &max_fd);
+			mgr->fd_set_4_interthread_messaging(reqr, &read_set, &except_set, &max_fd);
 
-            if (select(max_fd + 1, &read_set, NULL, NULL, &tv2) < 0)
+            if (select(max_fd + 1, &read_set, NULL, &except_set, &tv2) < 0)
             {
                 break;
             }
             else
             {
-                if (mg_FD_ISSET(mg_get_client_socket(info->conn), &read_set))
+                if (mg_FD_ISSET(mg_get_client_socket(conn), &read_set))
                 {
                     /*
                     Mongoose mg_read() does NOT fetch any pending data from the TCP/IP stack when the 'content length' isn't set yet.
@@ -123,19 +107,28 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
                 When there's no pending incoming data from TWS itself, we'll be running around in this loop while waiting for
                 more data to arrive. Meanwhile, we can process queued requests from the front-end now:
                 */
-				process_one_queued_tier2_request(info);
+				rv = reqr->process_one_queued_tier2_request(mgr, &read_set, &except_set, max_fd);
+				if (rv < 0)
+				{
+					// signal a fatal failure:
+					max_bufsize = 0;
+					break;
+				}
             }
         }
 
-        return mg_pull(info->conn, buf, max_bufsize);
+		if (max_bufsize)
+		{
+			return mg_pull(conn, buf, max_bufsize);
+		}
     }
     return -1;
 }
-8
+
 /* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
 static int tws_flush_func(void *arg)
 {
-    //my_tws_io_info *info = (my_tws_io_info *)arg;
+    //app_manager *info = (app_manager *)arg;
 
     return 0;
 }
@@ -143,10 +136,10 @@ static int tws_flush_func(void *arg)
 /* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
 static int tws_open_func(void *arg)
 {
-    my_tws_io_info *info = (my_tws_io_info *)arg;
-    struct tws_conn_cfg *tws_cfg = info->tws_cfg;
-    struct mg_context *ctx = info->ctx;
-    struct mg_connection *conn = mg_connect_to_host(ctx, tws_cfg->ip_address, tws_cfg->port, 0);
+    app_manager *mgr = (app_manager *)arg;
+    struct tws_conn_cfg &tws_cfg = mgr->get_tws_ib_connection_config();
+    struct mg_context *ctx = mgr->get_tws_ib_context();
+    struct mg_connection *conn = mg_connect_to_host(ctx, tws_cfg.ip_address, tws_cfg.port, 0);
 
     if (conn != NULL)
     {
@@ -160,21 +153,23 @@ static int tws_open_func(void *arg)
 		mg_set_socket_timeout(sock, 10);
     }
 
-    info->conn = conn;
+    mgr->set_tws_ib_connection(conn);
 
-    return (conn ? 0 : NOT_CONNECTED);
+    return (conn ? 0 : (int)twsclient_error_codes::NOT_CONNECTED);
 }
 
 
 /* close callback is invoked on error or when tws_disconnect is invoked */
 static int tws_close_func(void *arg)
 {
-    my_tws_io_info *info = (my_tws_io_info *)arg;
+    app_manager *mgr = (app_manager *)arg;
+	mg_connection *conn = mgr->get_tws_ib_connection();
 
-    if (info->conn)
+    if (conn)
     {
-        mg_close_connection(info->conn);
-        info->conn = NULL;
+        mg_close_connection(conn);
+        conn = NULL;
+		mgr->set_tws_ib_connection(conn);
     }
 
     return 0;
@@ -211,9 +206,9 @@ static const char *tws_errcode2str(int errcode)
 Check whether there are any queued requests which are 'activated' and if there
 are, process one.
 */
-static void process_one_queued_tier2_request(my_tws_io_info *info)
+static void process_one_queued_tier2_request(app_manager *info)
 {
-	struct tws_conn_cfg *tws_cfg = info->tws_cfg;
+	struct tws_conn_cfg *tws_cfg = mgr->tws_cfg;
 	tier2_queue_item cmd;
 	
 	if (tier2_pop_request(tws_cfg, &cmd) > 0)
@@ -241,22 +236,15 @@ request when their response has arrived.
 void tws_worker_thread(struct mg_context *ctx)
 {
     int tws_app_is_down = 0;
+	app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
 
     // retry connecting to TWS as long as the server itself hasn't been stopped!
     while (mg_get_stop_flag(ctx) == 0)
     {
-        struct tws_conn_cfg *tws_cfg = (struct tws_conn_cfg *)mg_get_user_data(ctx)->user_data;
-		tws_thread_exch *exch = tws_cfg->exch;
-        my_tws_io_info info = {0};
         int err;
 		int abortus_provocatus = 0;
 
-		tws_cfg->tws_thread_info = &info;
-
-        info.tws_cfg = tws_cfg;
-        info.ctx = ctx;
-
-		info.tws_handle = tws_create(&info, tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func);
+		info.tws_handle = tws_create(mgr, tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func);
         if (info.tws_handle)
         {
             err = tws_connect(info.tws_handle, tws_cfg->our_id_code);
@@ -285,9 +273,7 @@ void tws_worker_thread(struct mg_context *ctx)
 				}
 
                 // request the valid set of scanner parameters first: this will trigger the requesting of several market scans from the msg receive handler:
-				pthread_mutex_lock(&exch->tws_tx_mutex);
-                tws_req_scanner_parameters(info.tws_handle);
-				pthread_mutex_unlock(&exch->tws_tx_mutex);
+				ib_req_scanner_parameters scan = new ib_req_scanner_parameters(mgr->get_requester(NULL));
 
                 while (mg_get_stop_flag(ctx) == 0 && tws_connected(info.tws_handle))
                 {
