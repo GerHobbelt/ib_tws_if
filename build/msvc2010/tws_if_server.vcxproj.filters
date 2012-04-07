@@ -7,9 +7,6 @@
     <Filter Include="Header Files">
       <UniqueIdentifier>{6bf280cb-907c-473a-92b9-3c3adac41c49}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{211e9cd3-8a18-4661-8843-fe640099980c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="TWS I/F layer">
       <UniqueIdentifier>{7e0eb1d8-79bf-4848-ad06-0af04e7c54fd}</UniqueIdentifier>
     </Filter>

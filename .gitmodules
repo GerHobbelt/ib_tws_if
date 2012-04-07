@@ -28,3 +28,6 @@
 [submodule "upskirt"]
 	path = upskirt
 	url = git@github.com:GerHobbelt/upskirt.git
+[submodule "html/js/cube"]
+	path = html/js/cube
+	url = git@github.com:GerHobbelt/cube.git
