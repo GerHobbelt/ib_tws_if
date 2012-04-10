@@ -242,6 +242,9 @@ public:
 
 public:
 	virtual int init();
+
+	void set_next_order_id(int id);
+	int get_next_order_id(void);
 };
 
 

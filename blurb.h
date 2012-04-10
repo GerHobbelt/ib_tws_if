@@ -37,10 +37,10 @@ class app_manager;
 class tier2_message
 {
 public:
-	virtual int transmit(app_manager *info) = 0;
+	virtual int transmit(app_manager *mgr) = 0;
 
-	virtual int store(app_manager *info) = 0;
-	virtual int load(app_manager *info) = 0;
+	virtual int store(app_manager *mgr) = 0;
+	virtual int load(app_manager *mgr) = 0;
 };
 
 
@@ -165,7 +165,7 @@ public:
 	}
 
 public:
-	int send_request(app_manager *info);
+	int send_request(app_manager *mgr);
 };
 
 
@@ -369,7 +369,7 @@ public:
 int tier2_send_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item *cmd)
 {
 	tws_thread_exch *exch = tws_cfg->exch;
-	app_manager *info = tws_cfg->tws_thread_info;
+	app_manager *mgr = tws_cfg->tws_thread_info;
 
 	assert(info);
 	assert(exch);
@@ -1244,7 +1244,7 @@ void tws_worker_thread(struct mg_context *ctx);
 
 
 
-static void process_one_queued_tier2_request(app_manager *info);
+static void process_one_queued_tier2_request(app_manager *mgr);
 
 
 /*
@@ -1252,7 +1252,7 @@ replace TWSAPI debug printf call.
 */
 void tws_debug_printf(void *opaque, const char *fmt, ...)
 {
-	app_manager *info = (app_manager *)opaque;
+	app_manager *mgr = (app_manager *)opaque;
 	va_list ap;
 
 	va_start(ap, fmt);
@@ -1273,7 +1273,7 @@ void tws_debug_printf(void *opaque, const char *fmt, ...)
 
 static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen)
 {
-    app_manager *info = (app_manager *)arg;
+    app_manager *mgr = (app_manager *)arg;
 
     if (info->conn)
     {
@@ -1284,7 +1284,7 @@ static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen)
 
 static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 {
-    app_manager *info = (app_manager *)arg;
+    app_manager *mgr = (app_manager *)arg;
     tws_thread_exch *exch = info->tws_cfg->exch;
 
     if (info->conn)
@@ -1344,7 +1344,7 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 /* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
 static int tws_flush_func(void *arg)
 {
-    //app_manager *info = (app_manager *)arg;
+    //app_manager *mgr = (app_manager *)arg;
 
     return 0;
 }
@@ -1352,7 +1352,7 @@ static int tws_flush_func(void *arg)
 /* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
 static int tws_open_func(void *arg)
 {
-    app_manager *info = (app_manager *)arg;
+    app_manager *mgr = (app_manager *)arg;
     struct tws_conn_cfg *tws_cfg = info->tws_cfg;
     struct mg_context *ctx = info->ctx;
     struct mg_connection *conn = mg_connect_to_host(ctx, tws_cfg->ip_address, tws_cfg->port, 0);
@@ -1378,7 +1378,7 @@ static int tws_open_func(void *arg)
 /* close callback is invoked on error or when tws_disconnect is invoked */
 static int tws_close_func(void *arg)
 {
-    app_manager *info = (app_manager *)arg;
+    app_manager *mgr = (app_manager *)arg;
 
     if (info->conn)
     {
@@ -2119,7 +2119,7 @@ trser_commission_report_t *serialize_tws_commission_report(const tr_commission_r
 
 
 
-int scanner_subscription_request::send_request(app_manager *info)
+int scanner_subscription_request::send_request(app_manager *mgr)
 {
 	tr_scanner_subscription_t s;
 	tws_init_scanner_subscription(info->tws_handle, &s);
@@ -2155,7 +2155,7 @@ int scanner_subscription_request::send_request(app_manager *info)
 Check whether there are any queued requests which are 'activated' and if there
 are, process one.
 */
-static void process_one_queued_tier2_request(app_manager *info)
+static void process_one_queued_tier2_request(app_manager *mgr)
 {
 	struct tws_conn_cfg *tws_cfg = info->tws_cfg;
 	tier2_queue_item cmd;
@@ -2917,7 +2917,7 @@ public:
 	}
 
 public:
-	int send_request(app_manager *info);
+	int send_request(app_manager *mgr);
 };
 
 
@@ -3121,7 +3121,7 @@ public:
 int tier2_send_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item *cmd)
 {
 	tws_thread_exch *exch = tws_cfg->exch;
-	app_manager *info = tws_cfg->tws_thread_info;
+	app_manager *mgr = tws_cfg->tws_thread_info;
 
 	assert(info);
 	assert(exch);
@@ -4115,7 +4115,7 @@ public:
 	}
 
 public:
-	int send_request(app_manager *info);
+	int send_request(app_manager *mgr);
 };
 
 
@@ -4319,7 +4319,7 @@ public:
 int tier2_send_request(struct tws_conn_cfg *tws_cfg, const tier2_queue_item *cmd)
 {
 	tws_thread_exch *exch = tws_cfg->exch;
-	app_manager *info = tws_cfg->tws_thread_info;
+	app_manager *mgr = tws_cfg->tws_thread_info;
 
 	assert(info);
 	assert(exch);
@@ -5855,7 +5855,7 @@ static __inline void tws_copy(int &dst, int src)
 
 
 
-int scanner_subscription_request::send_request(app_manager *info)
+int scanner_subscription_request::send_request(app_manager *mgr)
 {
 	tr_scanner_subscription_t s;
 	tws_init_scanner_subscription(info->tws_handle, &s);
@@ -6006,7 +6006,7 @@ else
 /*
 when there's a free slot in TWS, send the scanner subscription request to TWS, otherwise push it on a stack.
 */
-void push_tws_req_scanner_subscription(app_manager *info, scanner_subscription_request *reqdata)
+void push_tws_req_scanner_subscription(app_manager *mgr, scanner_subscription_request *reqdata)
 {
 	mg_log(info->conn, "info", "REQUEST scanner subscription: code [%s], instrument [%s], location [%s]", 
 		reqdata->get_scan_code(), reqdata->get_instrument(), reqdata->get_location_code());
@@ -6030,7 +6030,7 @@ when there's a free slot in TWS, pop a scanner subscription request off the stac
 
 Return the number of queued requests still waiting in the queue after this call.
 */
-size_t pop_tws_req_scanner_subscription(app_manager *info)
+size_t pop_tws_req_scanner_subscription(app_manager *mgr)
 {
 	if (info->active_scanner_subscription_count < ARRAY_SIZE(info->active_scanner_subscriptions)
 		&& info->queued_scanner_subscription_count > 0)
@@ -6048,7 +6048,7 @@ size_t pop_tws_req_scanner_subscription(app_manager *info)
 /*
 send a CANCEL REQUEST to TWS for the given scanner subscription
 */
-void cancel_tws_scanner_subscription(app_manager *info, int ticker_id)
+void cancel_tws_scanner_subscription(app_manager *mgr, int ticker_id)
 {
 	size_t i;
 
@@ -6077,7 +6077,7 @@ void cancel_tws_scanner_subscription(app_manager *info, int ticker_id)
 /*
 return reference to scanner subscription request when the given ticker_id represents an active subscription.
 */
-scanner_subscription_request *get_active_tws_scanner_subscription(app_manager *info, int ticker_id)
+scanner_subscription_request *get_active_tws_scanner_subscription(app_manager *mgr, int ticker_id)
 {
 	size_t i;
 
@@ -6097,7 +6097,7 @@ scanner_subscription_request *get_active_tws_scanner_subscription(app_manager *i
 /*
 return !0 when the given ticker_id represents an active subscription.
 */
-int is_active_tws_scanner_subscription(app_manager *info, int ticker_id)
+int is_active_tws_scanner_subscription(app_manager *mgr, int ticker_id)
 {
 	return !!get_active_tws_scanner_subscription(info, ticker_id);
 }
@@ -6117,16 +6117,16 @@ optionally request the full contract details so that we'll receive the extended 
 
 'optional' because we only do this when we don't have the desired info yet in our own caches.
 */
-void request_contract_details_from_tws(app_manager *info, tr_contract_details_t *cd)
+void request_contract_details_from_tws(app_manager *mgr, tr_contract_details_t *cd)
 {
 	if (!ib_get_ticker_info(cd))
 	{
 		tr_contract_t contract;
-		int reqid = tws_mkNextOrderId(info);
+		int reqid = mgr->get_next_order_id();
 
 		contract = cd->d_summary;
 
-		tws_req_contract_details(info->tws_handle, reqid, &contract);
+		tws_req_contract_details(mgr->tws_handle, reqid, &contract);
 	}
 }
 

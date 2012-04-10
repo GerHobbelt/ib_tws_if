@@ -107,11 +107,11 @@ protected:
 	// the bits that make up the 'unique ID':
 	requester_id *unique_id;
 	// additional information attributes:
-	app_manager *information;
+	app_manager *manager;
 
 public:
-	tier2_message_requester(requester_id *id, app_manager *info) :
-		unique_id(id), information(info)
+	tier2_message_requester(requester_id *id, app_manager *mgr) :
+		unique_id(id), manager(mgr)
 	{
 	}
 	virtual ~tier2_message_requester()
@@ -123,9 +123,9 @@ public:
 	{
 		return unique_id;
 	}
-	app_manager *get_info(void) const
+	app_manager *get_appmanager(void) const
 	{
-		return information;
+		return manager;
 	}
 
 	virtual int process_one_queued_tier2_request(app_manager *mgr, fd_set *read_set, fd_set *except_set, int max_fd);

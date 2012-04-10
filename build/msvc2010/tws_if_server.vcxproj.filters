@@ -116,6 +116,9 @@
     <ClCompile Include="..\..\tws_input_output.cpp">
       <Filter>Backend / Tier2\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\app_manager.cpp">
+      <Filter>Backend / Tier2\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\blurb.h">

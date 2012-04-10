@@ -28,6 +28,8 @@
 #include "tws_request.h"
 #include "app_manager.h"
 
+#include <libxml/parser.h>
+
 
 
 void *event_handler(enum mg_event event_id, struct mg_connection *conn)
@@ -49,7 +51,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
             poll_time.tv_nsec = (mgr->get_tws_ib_connection_config().backend_poll_period % 1000) * 1000000;
 
             // pass the request to the backend; block & wait for the response...
-			err = mgr->tws_cfg->push(tws_req);
+			err = tws_req->transmit_and_wait_for_response(mgr);
 
 #if 0
 			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", ctime(&tws_req->current_time));
@@ -69,9 +71,6 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 
     case MG_EXIT0:
         // threads have already shut down; discard our custom mutexes, etc.:
-        delete tws_cfg->exch;
-		tws_cfg->exch = NULL;
-
 		xmlCleanupParser();
         xmlMemoryDump();
         break;

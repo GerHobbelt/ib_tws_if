@@ -153,17 +153,20 @@ public:
 	virtual void unregister_handler(tier2_message_state_change_handler *handler);
 
 public:
-	virtual int transmit(app_manager *info);
+	virtual int transmit(app_manager *mgr);
+	/* this method is invoked by the back-end when a matching response message is received: */
+	virtual int process_response(app_manager *mgr, tier2_message &received_response);
+
+	virtual int transmit_and_wait_for_response(app_manager *mgr);
+
 	/* 
 	Invoke this method to cancel a long-running (repetitive) request or...
 	Abort the mission:  http://www.menagea3.net/strips-ma3/coop_lungeuhil%EF%BC%9F%EF%BC%9F
 	*/
-	virtual int cancel_request(app_manager *info);
-	/* this method is invoked by the back-end when a matching response message is received: */
-	virtual int process_response(app_manager *info, tier2_message &response);
+	virtual int cancel_request(app_manager *mgr);
 
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };

@@ -339,7 +339,7 @@ void event_next_valid_id(void *opaque, int order_id)
      * Well behaved human and automatic TWS clients shall increment
      * this order_id atomically and cooperatively
      */
-    tws_setNextOrderId(info, order_id);
+    mgr->setNextOrderId(order_id);
 #endif
 
     tws_cb_printf(opaque, 0, "next_valid_id for order placement %d (opaque=%p)\n", order_id, opaque);

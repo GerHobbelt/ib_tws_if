@@ -457,6 +457,7 @@
     <None Include="..\..\TODO" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\app_manager.cpp" />
     <ClCompile Include="..\..\fake_hamsterdb.c" />
     <ClCompile Include="..\..\interthread_comm.cpp" />
     <ClCompile Include="..\..\message_queue.cpp" />

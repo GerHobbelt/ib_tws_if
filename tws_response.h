@@ -69,8 +69,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -89,8 +89,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -109,8 +109,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -129,8 +129,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -149,8 +149,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -169,8 +169,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -189,8 +189,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -209,8 +209,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -229,8 +229,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -249,8 +249,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -269,8 +269,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -289,8 +289,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -309,8 +309,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -329,8 +329,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -349,8 +349,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -369,8 +369,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -389,8 +389,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -409,8 +409,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -429,8 +429,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -449,8 +449,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -469,8 +469,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -489,8 +489,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -509,8 +509,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -529,8 +529,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -549,8 +549,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -569,8 +569,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -589,8 +589,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -609,8 +609,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -629,8 +629,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -649,8 +649,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -669,8 +669,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -689,8 +689,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -709,8 +709,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -729,8 +729,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -749,8 +749,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -769,8 +769,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -789,8 +789,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };
@@ -809,8 +809,8 @@ protected:
 	}
 
 public:
-	virtual int store(app_manager *info);
-	virtual int load(app_manager *info);
+	virtual int store(app_manager *mgr);
+	virtual int load(app_manager *mgr);
 
 	virtual bool equal(const tier2_message &alt) const;
 };

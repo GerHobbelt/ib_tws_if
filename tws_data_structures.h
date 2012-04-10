@@ -278,7 +278,54 @@ public:
 typedef optional_value<double>			o_double_t;
 typedef optional_value<int>				o_int_t;
 typedef optional_value<bool>			o_bool_t;
-typedef optional_value<string>			o_string_t;
+class o_string_t : public optional_value<string>			
+{
+public:
+	o_string_t(const char *v)
+	{
+		is_valid = true;
+		stored_value = v;
+	}
+	o_string_t(const unsigned char *v)
+	{
+		is_valid = true;
+		stored_value = (const char *)v;
+	}
+	o_string_t()
+	{
+		is_valid = false;
+	}
+	o_string_t(string &v)
+	{
+		is_valid = true;
+		stored_value = v;
+	}
+	~o_string_t()
+	{
+	}
+
+public:
+	const char *set(const char *v)
+	{
+		is_valid = true;
+		stored_value = v;
+		return v;
+	}
+	string value(const char *default_value)
+	{
+		if (is_valid)
+			return stored_value;
+		else
+			return default_value;
+	}
+
+	o_string_t &operator =(const char *v)
+	{
+		is_valid = true;
+		stored_value = v;
+		return *this;
+	}
+};
 typedef optional_value<tws_origin_t>				o_origin_t;
 typedef optional_value<tws_oca_type_t>				o_oca_type_t;
 typedef optional_value<tws_auction_strategy_t>		o_auction_strategy_t;

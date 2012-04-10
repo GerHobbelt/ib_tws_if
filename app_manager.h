@@ -69,7 +69,20 @@ public:
 	db_manager *get_db_manager(void);
 
 	void process_response_message(tier2_message *response);
+
+	int get_new_ticker_id(void);
+	int get_new_order_id(void);
+
+	int init_tws_api();
+	int init_databases();
+	int is_tws_connected();
+	int process_tws_event();
+
 };
+
+
+
+void tws_worker_thread(struct mg_context *ctx);
 
 
 #endif // APPLICATION_MANAGER_HEADER_INCLUDED

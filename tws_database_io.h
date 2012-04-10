@@ -46,7 +46,7 @@ protected:
 	ham_db_t *db[DB_MAX];
 
 public:
-	db_manager(app_manager *info);
+	db_manager(app_manager *mgr);
 	virtual ~db_manager();
 
 public:
