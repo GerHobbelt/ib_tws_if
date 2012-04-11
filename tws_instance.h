@@ -23,7 +23,7 @@
 #define TWS_INSTANCE_CPP_HEADER_INCLUDED
 
 /*
-The 'ib_instance' represents that single (back-end) thread which can send/receive to/from this TWS instance/connection
+The 'ib_tws_manager' represents that single (back-end) thread which can send/receive to/from this TWS instance/connection
 at any time.
 */
 
@@ -34,7 +34,10 @@ at any time.
 // forward reference:
 class app_manager;
 struct tws_instance;
-typedef struct tws_instance tws_instance_t;
+namespace tws
+{
+	typedef struct tws_instance tws_instance_t;
+}
 
 
 
@@ -115,12 +118,13 @@ public:
 
 
 
-class ib_instance
+class ib_tws_manager
 {
 protected:
 	struct tws_conn_cfg tws_cfg;
     struct mg_connection *conn;
-    tws_instance_t *tws_handle;
+    tws::tws_instance_t *tws_handle;
+	app_manager *app_mgr;
 
     /* tracking some TWS values here as well: */
     int next_order_id;
@@ -206,7 +210,8 @@ protected:
 	tws_req_active_msg_set<ib_request_realtime_bars *> request_realtime_bars_active_set;
 
 public:
-	ib_instance() :
+	ib_tws_manager(app_manager *mgr) :
+		app_mgr(mgr),
 		conn(NULL), tws_handle(NULL), 
 		next_order_id(0),
 		req_scanner_parameters_active_set(),
@@ -236,7 +241,7 @@ public:
 		request_realtime_bars_active_set()
 	{
 	}
-	virtual ~ib_instance()
+	virtual ~ib_tws_manager()
 	{
 	}
 
@@ -245,6 +250,16 @@ public:
 
 	void set_next_order_id(int id);
 	int get_next_order_id(void);
+
+	int get_next_ticker_id(void);
+
+	int init_tws_api(void);
+	int exit_tws_api(void);
+
+	int is_tws_connected(void);
+	int process_tws_event(void);
+
+	const char *strerror(int errcode);
 };
 
 

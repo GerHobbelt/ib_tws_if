@@ -65,6 +65,9 @@
 
 
 
+#if 0
+
+
 
 
 static xmlNodePtr xmlGetParent(xmlNodePtr node)
@@ -252,8 +255,8 @@ void request_range_of_interesting_market_scans(app_manager *mgr, xmlNodePtr loca
             s->scan_above_price = 0.05;
             s->scan_above_volume = 1000;
 
-			ib_req_scanner_subscription *reqss_msg = new ib_req_scanner_subscription(mgr, mgr->get_new_ticker_id(), s);
-			reqss_msg->transmit(mgr);
+			ib_req_scanner_subscription *reqss_msg = new ib_req_scanner_subscription(mgr, NULL, ibm->get_next_ticker_id(), s);
+			reqss_msg->transmit();
         }
     }
 }
@@ -401,3 +404,7 @@ void process_event_scanner_parameters(void *opaque, const char xml[])
 
 
 
+
+
+
+#endif

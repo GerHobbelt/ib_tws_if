@@ -127,10 +127,30 @@ public:
 	{
 		return manager;
 	}
-
-	virtual int process_one_queued_tier2_request(app_manager *mgr, fd_set *read_set, fd_set *except_set, int max_fd);
 };
 
+
+
+
+
+/*
+  A receiver is always a SENDER/REQUESTER as well, as a receiver must be able
+  to send the response back to the original requester.
+*/
+class tier2_message_receiver: public tier2_message_requester
+{
+public:
+	tier2_message_receiver(requester_id *id, app_manager *mgr) :
+		tier2_message_requester(id, mgr)
+	{
+	}
+	virtual ~tier2_message_receiver()
+	{
+	}
+
+public:
+	virtual int process_one_queued_tier2_request(app_manager *mgr, fd_set *read_set, fd_set *except_set, int max_fd);
+};
 
 
 

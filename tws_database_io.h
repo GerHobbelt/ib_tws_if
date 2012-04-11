@@ -53,9 +53,9 @@ public:
 	const struct database_cfg &get_db_cfg(void);
 	void set_database_path(const char *path);
 
-	int ib_open_databases(void);
-	int ib_close_databases(void);
-	const char *ib_strerror(int errcode);
+	int open_databases(void);
+	int close_databases(void);
+	const char *strerror(int errcode);
 
 public:
 	int ib_cache_ticker_info(const ib_contract_details &cd);

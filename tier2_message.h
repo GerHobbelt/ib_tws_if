@@ -58,10 +58,12 @@ protected:
 	unique_id_t unique_msgID;
 
 	tier2_message_requester *requester;
+	tier2_message_receiver *receiver;
 
 public:
-	tier2_message(tier2_message_requester *issuer = NULL, request_state_t s = MSG_INITIALIZED) :
-		requester(issuer),
+	tier2_message(tier2_message_requester *from = NULL, tier2_message_receiver *to = NULL, request_state_t s = MSG_INITIALIZED) :
+		requester(from),
+		receiver(to),
 		now_state(s),
 		previous_state(INIT4PREV)
 	{
@@ -83,6 +85,11 @@ public:
 	tier2_message_requester *get_requester(void) const
 	{
 		return requester;
+	}
+
+	tier2_message_requester *get_receiver(void) const
+	{
+		return receiver;
 	}
 
 	unique_id_t get_uniq_msg_id(void) const
@@ -153,9 +160,9 @@ public:
 	virtual void unregister_handler(tier2_message_state_change_handler *handler);
 
 public:
-	virtual int transmit(app_manager *mgr);
+	virtual int transmit(void);
 	/* this method is invoked by the back-end when a matching response message is received: */
-	virtual int process_response(app_manager *mgr, tier2_message &received_response);
+	virtual int process_response(tier2_message &received_response);
 
 	virtual int transmit_and_wait_for_response(app_manager *mgr);
 
@@ -163,10 +170,10 @@ public:
 	Invoke this method to cancel a long-running (repetitive) request or...
 	Abort the mission:  http://www.menagea3.net/strips-ma3/coop_lungeuhil%EF%BC%9F%EF%BC%9F
 	*/
-	virtual int cancel_request(app_manager *mgr);
+	virtual int cancel_request(void);
 
-	virtual int store(app_manager *mgr);
-	virtual int load(app_manager *mgr);
+	virtual int store(void);
+	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
 };

@@ -15,7 +15,7 @@
 
 
 
-int db_manager::ib_open_databases(void)
+int db_manager::open_databases(void)
 {
 	int i;
 	int err = 0;
@@ -28,7 +28,7 @@ int db_manager::ib_open_databases(void)
 		{0, 0}
 	};
 
-	(void)ib_close_databases();
+	(void)close_databases();
 
 	ham_env_new(&env);
 
@@ -58,7 +58,7 @@ int db_manager::ib_open_databases(void)
 	return 0;
 }
 
-int db_manager::ib_close_databases(void)
+int db_manager::close_databases(void)
 {
 	int err = 0;
 
@@ -84,7 +84,7 @@ int db_manager::ib_close_databases(void)
 	return err;
 }
 
-const char *db_manager::ib_strerror(int errcode)
+const char *db_manager::strerror(int errcode)
 {
 	return ham_strerror(errcode);
 }

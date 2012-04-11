@@ -27,6 +27,7 @@
 #include <tws_c_api/twsapi.h>
 
 #include "app_manager.h"
+#include "tws_database_io.h"
 
 #include <mongoose/mongoose_ex.h>
 
@@ -59,9 +60,9 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 {
     app_manager *mgr = (app_manager *)arg;
 	mg_connection *conn = mgr->get_tws_ib_connection();
-	tier2_message_requester *reqr = mgr->get_requester(conn);
+	tier2_message_receiver *recvr = mgr->get_receiver(conn);
 
-    if (conn && reqr)
+    if (conn && recvr)
     {
         // check whether there's anything available:
         fd_set read_set, except_set;
@@ -82,7 +83,7 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 
             // Add listening sockets to the read set
             mg_FD_SET(mg_get_client_socket(conn), &read_set, &max_fd);
-			mgr->fd_set_4_interthread_messaging(reqr, &read_set, &except_set, &max_fd);
+			mgr->fd_set_4_interthread_messaging(recvr, &read_set, &except_set, &max_fd);
 
             if (select(max_fd + 1, &read_set, NULL, &except_set, &tv2) < 0)
             {
@@ -107,7 +108,7 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
                 When there's no pending incoming data from TWS itself, we'll be running around in this loop while waiting for
                 more data to arrive. Meanwhile, we can process queued requests from the front-end now:
                 */
-				rv = reqr->process_one_queued_tier2_request(mgr, &read_set, &except_set, max_fd);
+				rv = recvr->process_one_queued_tier2_request(mgr, &read_set, &except_set, max_fd);
 				if (rv < 0)
 				{
 					// signal a fatal failure:
@@ -176,11 +177,25 @@ static int tws_close_func(void *arg)
 }
 
 
-static const char *tws_errcode2str(int errcode)
+const char *ib_tws_manager::strerror(int errcode)
 {
-    const struct tws::twsclient_errmsg *einfo = tws::tws_strerror(errcode);
+	if (errcode >= 0)
+	{
+		const struct tws::twsclient_errmsg *einfo = tws::tws_strerror(errcode);
 
-    return einfo->err_msg;
+		return einfo->err_msg;
+	}
+	else
+	{
+		switch (errcode)
+		{
+		case -1:
+			return "TWS API fatal initialization failure";
+
+		default:
+			return "Unidentified TWS API / MANAGER failure";
+		}
+	}
 }
 
 
@@ -215,6 +230,8 @@ void tws_worker_thread(struct mg_context *ctx)
 {
     int tws_app_is_down = 0;
 	app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
+	db_manager *dbm = mgr->get_db_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 
     // retry connecting to TWS as long as the server itself hasn't been stopped!
     while (mg_get_stop_flag(ctx) == 0)
@@ -222,12 +239,12 @@ void tws_worker_thread(struct mg_context *ctx)
         int err;
 		int abortus_provocatus = 0;
 
-		err = mgr->init_tws_api();
+		err = ibm->init_tws_api();
 		if (err >= 0)
 		{
             if (err)
             {
-                mg_cry4ctx(ctx, "tws connect returned error: %s", tws_errcode2str(err));
+                mg_cry4ctx(ctx, "tws connect returned error: %s", ibm->strerror(err));
 
                 if (!tws_app_is_down)
                 {
@@ -240,21 +257,22 @@ void tws_worker_thread(struct mg_context *ctx)
                 // reset the counter as we have a valid/working connection again now:
                 tws_app_is_down = 0;
 
-				err = mgr->init_databases();
+				err = dbm->open_databases();
 				if (err)
 				{
-					mg_cry4ctx(ctx, "FATAL ERROR: Cannot access the database: %d (%s)\n", err, ib_strerror(err));
+					mg_cry4ctx(ctx, "FATAL ERROR: Cannot access the database: %d (%s)\n", err, dbm->strerror(err));
 					abortus_provocatus = 1;
 					goto fail_dramatically;
 				}
 
                 // request the valid set of scanner parameters first: this will trigger the requesting of several market scans from the msg receive handler:
-				ib_req_scanner_parameters scan = new ib_req_scanner_parameters(mgr->get_requester(ctx));
+				ib_req_scanner_parameters *scan = new ib_req_scanner_parameters(mgr->get_requester(ctx), NULL);
+				err = scan->transmit();
 
-                while (mg_get_stop_flag(ctx) == 0 && mgr->is_tws_connected())
+                while (mg_get_stop_flag(ctx) == 0 && ibm->is_tws_connected())
                 {
                     // process another message
-                    if (0 != mgr->process_tws_event())
+                    if (0 != ibm->process_tws_event())
                     {
                         break;
                     }
@@ -273,9 +291,8 @@ void tws_worker_thread(struct mg_context *ctx)
         }
 
 fail_dramatically:
-        tws_disconnect(mgr->tws_handle);
-		ib_close_databases(&mgr);
-        tws_destroy(mgr->tws_handle);
+		err = ibm->exit_tws_api();
+		err = dbm->close_databases();
 
 		if (abortus_provocatus)
 		{
@@ -305,12 +322,14 @@ fail_dramatically:
 
 
 
-int app_manager::init_tws_api()
+int ib_tws_manager::init_tws_api(void)
 {
-	mgr->tws_handle = tws_create(mgr, tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func);
-	if (mgr->tws_handle)
+	int err = 0;
+
+	tws_handle = tws::tws_create(this, tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func);
+	if (tws_handle)
 	{
-		err = tws_connect(mgr->tws_handle, tws_cfg->our_id_code);
+		err = tws::tws_connect(tws_handle, tws_cfg.our_id_code);
 	}
 	else
 	{
@@ -321,22 +340,23 @@ int app_manager::init_tws_api()
 
 
 
-int app_manager::init_databases()
-{
-	// make sure the databases have been opened and are ready to receive data:
-	int err = ib_open_databases(&mgr);
 
-	return err;
-}
-
-int app_manager::is_tws_connected()
+int ib_tws_manager::is_tws_connected()
 {
-	return tws_connected(tws_handle);
+	return tws::tws_connected(tws_handle);
 }
 
 
-int app_manager::process_tws_event()
+int ib_tws_manager::process_tws_event()
 {
-	tws_event_process(tws_handle);
+	tws::tws_event_process(tws_handle);
 }
+
+
+int ib_tws_manager::exit_tws_api()
+{
+	tws::tws_disconnect(tws_handle);
+	tws::tws_destroy(tws_handle);
+}
+
 

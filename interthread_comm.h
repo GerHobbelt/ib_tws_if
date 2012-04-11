@@ -70,16 +70,6 @@ public:
 	// and these are used with select() to make threads notice they're being invoked:
 	void fd_set(struct fd_set *set, int *max_fd);
 	int fd_isset(struct fd_set *set);
-
-	// and a helper which provides us with the connected slave instance:
-	interthread_communicator *get_slave(void)
-	{
-		if (!slave)
-		{
-			slave = new interthread_communicator(incoming, outgoing);
-		}
-		return slave;
-	}
 };
 
 

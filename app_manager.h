@@ -25,7 +25,7 @@
 #include "tws_instance.h"
 
 class tier2_message;
-class ib_instance;
+class ib_tws_manager;
 class db_manager;
 
 
@@ -34,7 +34,7 @@ class db_manager;
 class app_manager
 {
 protected:
-	ib_instance *ib_tws;
+	ib_tws_manager *ib_tws;
 	db_manager *dbi;
 
 public:
@@ -55,29 +55,24 @@ public:
 	tier2_message_requester *get_requester(struct mg_context *ctx, int optional_id = 0);
 	tier2_message_requester *get_requester(struct mg_connection *conn);
 
-	tier2_message_requester *get_ib_tws_manager(void);
+	tier2_message_receiver *get_receiver(struct mg_context *ctx, int optional_id = 0);
+	tier2_message_receiver *get_receiver(struct mg_connection *conn);
+
+	tier2_message_receiver *get_ib_tws_receiver(void);
 
 	// helper function: produce the IB/TWS app connection. (Used by the TWS backend communication thread / TWS API callbacks)
 	struct mg_connection *get_tws_ib_connection(void);
 	struct mg_context *get_tws_ib_context(void);
 	struct tws_conn_cfg &get_tws_ib_connection_config(void);
     const struct database_cfg &get_db_config(void);
-	void fd_set_4_interthread_messaging(tier2_message_requester *requester, fd_set *read_set, fd_set *exception_set, int *max_fd);
+	void fd_set_4_interthread_messaging(tier2_message_receiver *receiver, fd_set *read_set, fd_set *exception_set, int *max_fd);
 
 	void set_tws_ib_connection(struct mg_connection *conn);
 
 	db_manager *get_db_manager(void);
+	ib_tws_manager *get_ib_tws_manager(void);
 
 	void process_response_message(tier2_message *response);
-
-	int get_new_ticker_id(void);
-	int get_new_order_id(void);
-
-	int init_tws_api();
-	int init_databases();
-	int is_tws_connected();
-	int process_tws_event();
-
 };
 
 
