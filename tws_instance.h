@@ -122,7 +122,8 @@ class ib_tws_manager
 {
 protected:
 	struct tws_conn_cfg tws_cfg;
-    struct mg_connection *conn;
+    struct mg_connection *tws_conn;
+    struct mg_context *tws_ctx;
     tws::tws_instance_t *tws_handle;
 	app_manager *app_mgr;
 
@@ -210,44 +211,10 @@ protected:
 	tws_req_active_msg_set<ib_request_realtime_bars *> request_realtime_bars_active_set;
 
 public:
-	ib_tws_manager(app_manager *mgr) :
-		app_mgr(mgr),
-		conn(NULL), tws_handle(NULL), 
-		next_order_id(0),
-		req_scanner_parameters_active_set(),
-		req_scanner_subscription_active_set(10 /* limit imposed by TWS/IB */),
-		req_mkt_data_active_set(),
-		req_historical_data_active_set(),
-		exercise_options_active_set(),
-		place_order_active_set(),
-		req_open_orders_active_set(),
-		req_account_updates_active_set(),
-		req_executions_active_set(),
-		req_ids_active_set(),
-		req_contract_details_active_set(),
-		req_mkt_depth_active_set(),
-		req_news_bulletins_active_set(),
-		set_server_log_level_active_set(),
-		req_auto_open_orders_active_set(),
-		req_all_open_orders_active_set(),
-		req_managed_accts_active_set(),
-		request_fa_active_set(),
-		replace_fa_active_set(),
-		req_current_time_active_set(),
-		req_fundamental_data_active_set(),
-		calculate_implied_volatility_active_set(),
-		calculate_option_price_active_set(),
-		req_market_data_type_active_set(),
-		request_realtime_bars_active_set()
-	{
-	}
-	virtual ~ib_tws_manager()
-	{
-	}
+	ib_tws_manager(app_manager *mgr);
+	virtual ~ib_tws_manager();
 
 public:
-	virtual int init();
-
 	void set_next_order_id(int id);
 	int get_next_order_id(void);
 
@@ -264,6 +231,38 @@ public:
 	struct tws_conn_cfg &get_config(void)
 	{
 		return tws_cfg;
+	}
+
+	tier2_message_receiver *get_receiver(void);
+
+	app_manager *get_app_manager(void) const
+	{
+		return app_mgr;
+	}
+
+	// helper function: produce the IB/TWS app connection. (Used by the TWS backend communication thread / TWS API callbacks)
+	struct mg_connection *get_connection(void)
+	{
+		return tws_conn;
+	}
+	struct mg_context *get_context(void)
+	{
+		return tws_ctx;
+	}
+	struct tws_conn_cfg &get_tws_ib_connection_config(void)
+	{
+		return tws_cfg;
+	}
+
+	void set_connection(struct mg_connection *conn)
+	{
+		//assert(conn);
+		tws_conn = conn;
+	}
+	void set_context(struct mg_context *ctx)
+	{
+		assert(ctx);
+		tws_ctx = ctx;
 	}
 };
 

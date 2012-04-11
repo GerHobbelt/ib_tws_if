@@ -47,7 +47,8 @@
 static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen)
 {
     app_manager *mgr = (app_manager *)arg;
-	mg_connection *conn = mgr->get_tws_ib_connection();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	mg_connection *conn = ibm->get_connection();
 
     if (conn)
     {
@@ -59,7 +60,8 @@ static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen)
 static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 {
     app_manager *mgr = (app_manager *)arg;
-	mg_connection *conn = mgr->get_tws_ib_connection();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	mg_connection *conn = ibm->get_connection();
 	tier2_message_receiver *recvr = mgr->get_receiver(conn);
 
     if (conn && recvr)
@@ -68,9 +70,10 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
         fd_set read_set, except_set;
         struct timeval tv;
         int max_fd;
+	    struct tws_conn_cfg &tws_cfg = ibm->get_config();
 
-        tv.tv_sec = mgr->get_tws_ib_connection_config().backend_poll_period / 1000;
-        tv.tv_usec = (mgr->get_tws_ib_connection_config().backend_poll_period % 1000) * 1000;
+        tv.tv_sec = tws_cfg.backend_poll_period / 1000;
+        tv.tv_usec = (tws_cfg.backend_poll_period % 1000) * 1000;
 
         while (mg_get_stop_flag(mg_get_context(conn)) == 0)
         {
@@ -83,10 +86,12 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 
             // Add listening sockets to the read set
             mg_FD_SET(mg_get_client_socket(conn), &read_set, &max_fd);
-			mgr->fd_set_4_interthread_messaging(recvr, &read_set, &except_set, &max_fd);
+			recvr->prepare_fd_sets_for_reception(&read_set, &except_set, max_fd);
 
             if (select(max_fd + 1, &read_set, NULL, &except_set, &tv2) < 0)
             {
+				// signal a fatal failure:
+				max_bufsize = 0;
                 break;
             }
             else
@@ -108,7 +113,7 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
                 When there's no pending incoming data from TWS itself, we'll be running around in this loop while waiting for
                 more data to arrive. Meanwhile, we can process queued requests from the front-end now:
                 */
-				rv = recvr->process_one_queued_tier2_request(mgr, &read_set, &except_set, max_fd);
+				rv = recvr->process_one_queued_tier2_request(&read_set, &except_set, max_fd);
 				if (rv < 0)
 				{
 					// signal a fatal failure:
@@ -138,8 +143,9 @@ static int tws_flush_func(void *arg)
 static int tws_open_func(void *arg)
 {
     app_manager *mgr = (app_manager *)arg;
-    struct tws_conn_cfg &tws_cfg = mgr->get_tws_ib_connection_config();
-    struct mg_context *ctx = mgr->get_tws_ib_context();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct tws_conn_cfg &tws_cfg = ibm->get_config();
+    struct mg_context *ctx = ibm->get_context();
     struct mg_connection *conn = mg_connect_to_host(ctx, tws_cfg.ip_address, tws_cfg.port, 0);
 
     if (conn != NULL)
@@ -154,7 +160,7 @@ static int tws_open_func(void *arg)
 		mg_set_socket_timeout(sock, 10);
     }
 
-    mgr->set_tws_ib_connection(conn);
+    ibm->set_connection(conn);
 
     return (conn ? 0 : (int)tws::NOT_CONNECTED);
 }
@@ -164,13 +170,14 @@ static int tws_open_func(void *arg)
 static int tws_close_func(void *arg)
 {
     app_manager *mgr = (app_manager *)arg;
-	mg_connection *conn = mgr->get_tws_ib_connection();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	mg_connection *conn = ibm->get_connection();
 
     if (conn)
     {
         mg_close_connection(conn);
-        conn = NULL;
-		mgr->set_tws_ib_connection(conn);
+		conn = NULL;
+		ibm->set_connection(conn);
     }
 
     return 0;
@@ -230,9 +237,11 @@ void tws_worker_thread(struct mg_context *ctx)
 {
     int tws_app_is_down = 0;
 	app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
-	db_manager *dbm = mgr->get_db_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	db_manager *dbm = mgr->get_db_manager();
 
+	ibm->set_context(ctx);
+	
     // retry connecting to TWS as long as the server itself hasn't been stopped!
     while (mg_get_stop_flag(ctx) == 0)
     {
@@ -248,7 +257,7 @@ void tws_worker_thread(struct mg_context *ctx)
 
                 if (!tws_app_is_down)
                 {
-                    mg_cry4ctx(ctx, "Cannot establish a connection with the TWS application. Retrying every %d seconds...", TWS_CONNECT_RETRY_DELAY);
+                    mg_cry4ctx(ctx, "Cannot establish a connection with the TWS application. Retrying every %d seconds...", TWS_CONNECT_RETRY_DELAY / 1000);
                     tws_app_is_down++;
                 }
             }
@@ -326,7 +335,7 @@ int ib_tws_manager::init_tws_api(void)
 {
 	int err = 0;
 
-	tws_handle = tws::tws_create(this, tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func);
+	tws_handle = tws::tws_create(get_app_manager(), tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func);
 	if (tws_handle)
 	{
 		err = tws::tws_connect(tws_handle, tws_cfg.our_id_code);

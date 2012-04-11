@@ -39,10 +39,11 @@ replace TWSAPI debug printf call.
 void tws_debug_printf(void *opaque, const char *fmt, ...)
 {
 	app_manager *mgr = (app_manager *)opaque;
+	ib_tws_manager *ibm = (mgr ? mgr->get_ib_tws_manager() : NULL);
 	va_list ap;
 
 	va_start(ap, fmt);
-	mg_vlog((mgr ? mgr->get_tws_ib_connection() : NULL), "debug", fmt, ap);
+	mg_vlog((ibm ? ibm->get_connection() : NULL), "debug", fmt, ap);
 	va_end(ap);
 }
 
@@ -184,22 +185,22 @@ de grote opvangbak van ellende
 
 
 
-class tier2_message_requester * app_manager::get_requester(struct mg_connection *)
+tier2_message_requester * app_manager::get_requester(mg_connection *)
 {
 	return 0;
 }
 
-bool tws_reqresp_message::equal(class tier2_message const &)const 
+bool tws_reqresp_message::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-bool tws_reqresp_message::equal(class tws_reqresp_message const &)const 
+bool tws_reqresp_message::equal(tws_reqresp_message const &)const 
 {
 	return 0;
 }
 
-bool ib_req_current_time::equal(class tier2_message const &)const 
+bool ib_req_current_time::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -214,7 +215,7 @@ int ib_req_current_time::store(void)
 	return 0;
 }
 
-int ib_req_current_time::process_response(class tier2_message &)
+int ib_req_current_time::process_response(tier2_message &)
 {
 	return 0;
 }
@@ -229,7 +230,7 @@ int ib_req_current_time::transmit(void)
 	return 0;
 }
 
-bool tier2_message::equal(class tier2_message const &)const 
+bool tier2_message::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -249,12 +250,12 @@ int tier2_message::cancel_request(void)
 	return 0;
 }
 
-int tier2_message::transmit_and_wait_for_response(class app_manager *)
+int tier2_message::transmit_and_wait_for_response(app_manager *)
 {
 	return 0;
 }
 
-int tier2_message::process_response(class tier2_message &)
+int tier2_message::process_response(tier2_message &)
 {
 	return 0;
 }
@@ -274,7 +275,7 @@ int tier2_message::obtain_next_unique_msgID(void)
 	return 0;
 }
 
-bool ib_resp_acct_download_end::equal(class tier2_message const &)const 
+bool ib_resp_acct_download_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -289,7 +290,7 @@ int ib_resp_acct_download_end::store(void)
 	return 0;
 }
 
-bool ib_resp_tick_generic::equal(class tier2_message const &)const 
+bool ib_resp_tick_generic::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -304,7 +305,7 @@ int ib_resp_tick_generic::store(void)
 	return 0;
 }
 
-bool ib_resp_current_time::equal(class tier2_message const &)const 
+bool ib_resp_current_time::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -319,7 +320,7 @@ int ib_resp_current_time::store(void)
 	return 0;
 }
 
-bool ib_resp_next_valid_id::equal(class tier2_message const &)const 
+bool ib_resp_next_valid_id::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -334,7 +335,7 @@ int ib_resp_next_valid_id::store(void)
 	return 0;
 }
 
-bool ib_resp_contract_details_end::equal(class tier2_message const &)const 
+bool ib_resp_contract_details_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -349,7 +350,7 @@ int ib_resp_contract_details_end::store(void)
 	return 0;
 }
 
-bool ib_resp_update_account_time::equal(class tier2_message const &)const 
+bool ib_resp_update_account_time::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -364,7 +365,7 @@ int ib_resp_update_account_time::store(void)
 	return 0;
 }
 
-bool ib_resp_tick_snapshot_end::equal(class tier2_message const &)const 
+bool ib_resp_tick_snapshot_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -379,7 +380,7 @@ int ib_resp_tick_snapshot_end::store(void)
 	return 0;
 }
 
-bool ib_resp_open_order_end::equal(class tier2_message const &)const 
+bool ib_resp_open_order_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -394,7 +395,7 @@ int ib_resp_open_order_end::store(void)
 	return 0;
 }
 
-bool ib_resp_market_data_type::equal(class tier2_message const &)const 
+bool ib_resp_market_data_type::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -409,7 +410,7 @@ int ib_resp_market_data_type::store(void)
 	return 0;
 }
 
-bool ib_resp_receive_fa::equal(class tier2_message const &)const 
+bool ib_resp_receive_fa::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -424,7 +425,7 @@ int ib_resp_receive_fa::store(void)
 	return 0;
 }
 
-bool ib_resp_tick_size::equal(class tier2_message const &)const 
+bool ib_resp_tick_size::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -439,7 +440,7 @@ int ib_resp_tick_size::store(void)
 	return 0;
 }
 
-bool ib_resp_exec_details::equal(class tier2_message const &)const 
+bool ib_resp_exec_details::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -454,7 +455,7 @@ int ib_resp_exec_details::store(void)
 	return 0;
 }
 
-bool ib_resp_historical_data::equal(class tier2_message const &)const 
+bool ib_resp_historical_data::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -469,17 +470,12 @@ int ib_resp_historical_data::store(void)
 	return 0;
 }
 
-void app_manager::process_response_message(class tier2_message *)
+void app_manager::process_response_message(tier2_message *)
 {
 	return;
 }
 
-class tier2_message_receiver * app_manager::get_ib_tws_receiver(void)
-{
-	return 0;
-}
-
-bool ib_resp_exec_details_end::equal(class tier2_message const &)const 
+bool ib_resp_exec_details_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -494,7 +490,7 @@ int ib_resp_exec_details_end::store(void)
 	return 0;
 }
 
-bool ib_resp_update_mkt_depth_l2::equal(class tier2_message const &)const 
+bool ib_resp_update_mkt_depth_l2::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -509,7 +505,7 @@ int ib_resp_update_mkt_depth_l2::store(void)
 	return 0;
 }
 
-bool ib_resp_order_status::equal(class tier2_message const &)const 
+bool ib_resp_order_status::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -524,7 +520,7 @@ int ib_resp_order_status::store(void)
 	return 0;
 }
 
-bool ib_resp_error::equal(class tier2_message const &)const 
+bool ib_resp_error::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -539,7 +535,7 @@ int ib_resp_error::store(void)
 	return 0;
 }
 
-bool ib_resp_contract_details::equal(class tier2_message const &)const 
+bool ib_resp_contract_details::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -554,7 +550,7 @@ int ib_resp_contract_details::store(void)
 	return 0;
 }
 
-bool ib_resp_commission_report::equal(class tier2_message const &)const 
+bool ib_resp_commission_report::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -569,7 +565,7 @@ int ib_resp_commission_report::store(void)
 	return 0;
 }
 
-bool ib_resp_scanner_data_start::equal(class tier2_message const &)const 
+bool ib_resp_scanner_data_start::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -584,7 +580,7 @@ int ib_resp_scanner_data_start::store(void)
 	return 0;
 }
 
-bool ib_resp_bond_contract_details::equal(class tier2_message const &)const 
+bool ib_resp_bond_contract_details::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -599,7 +595,7 @@ int ib_resp_bond_contract_details::store(void)
 	return 0;
 }
 
-bool ib_resp_tick_option_computation::equal(class tier2_message const &)const 
+bool ib_resp_tick_option_computation::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -614,7 +610,7 @@ int ib_resp_tick_option_computation::store(void)
 	return 0;
 }
 
-bool ib_resp_tick_price::equal(class tier2_message const &)const 
+bool ib_resp_tick_price::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -629,7 +625,7 @@ int ib_resp_tick_price::store(void)
 	return 0;
 }
 
-bool ib_resp_scanner_data_end::equal(class tier2_message const &)const 
+bool ib_resp_scanner_data_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -644,7 +640,7 @@ int ib_resp_scanner_data_end::store(void)
 	return 0;
 }
 
-bool ib_resp_fundamental_data::equal(class tier2_message const &)const 
+bool ib_resp_fundamental_data::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -659,7 +655,7 @@ int ib_resp_fundamental_data::store(void)
 	return 0;
 }
 
-bool ib_resp_delta_neutral_validation::equal(class tier2_message const &)const 
+bool ib_resp_delta_neutral_validation::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -674,7 +670,7 @@ int ib_resp_delta_neutral_validation::store(void)
 	return 0;
 }
 
-bool ib_resp_update_mkt_depth::equal(class tier2_message const &)const 
+bool ib_resp_update_mkt_depth::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -689,7 +685,7 @@ int ib_resp_update_mkt_depth::store(void)
 	return 0;
 }
 
-bool ib_resp_update_news_bulletin::equal(class tier2_message const &)const 
+bool ib_resp_update_news_bulletin::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -704,7 +700,7 @@ int ib_resp_update_news_bulletin::store(void)
 	return 0;
 }
 
-bool ib_resp_update_account_value::equal(class tier2_message const &)const 
+bool ib_resp_update_account_value::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -719,7 +715,7 @@ int ib_resp_update_account_value::store(void)
 	return 0;
 }
 
-bool ib_resp_update_portfolio::equal(class tier2_message const &)const 
+bool ib_resp_update_portfolio::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -734,7 +730,7 @@ int ib_resp_update_portfolio::store(void)
 	return 0;
 }
 
-bool ib_resp_tick_efp::equal(class tier2_message const &)const 
+bool ib_resp_tick_efp::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -749,7 +745,7 @@ int ib_resp_tick_efp::store(void)
 	return 0;
 }
 
-bool ib_resp_historical_data_end::equal(class tier2_message const &)const 
+bool ib_resp_historical_data_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -764,7 +760,7 @@ int ib_resp_historical_data_end::store(void)
 	return 0;
 }
 
-bool ib_resp_scanner_data::equal(class tier2_message const &)const 
+bool ib_resp_scanner_data::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -779,7 +775,7 @@ int ib_resp_scanner_data::store(void)
 	return 0;
 }
 
-bool ib_resp_realtime_bar::equal(class tier2_message const &)const 
+bool ib_resp_realtime_bar::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -794,7 +790,7 @@ int ib_resp_realtime_bar::store(void)
 	return 0;
 }
 
-bool ib_resp_scanner_parameters::equal(class tier2_message const &)const 
+bool ib_resp_scanner_parameters::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -809,7 +805,7 @@ int ib_resp_scanner_parameters::store(void)
 	return 0;
 }
 
-bool ib_resp_tick_string::equal(class tier2_message const &)const 
+bool ib_resp_tick_string::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -824,7 +820,7 @@ int ib_resp_tick_string::store(void)
 	return 0;
 }
 
-bool ib_resp_managed_accounts::equal(class tier2_message const &)const 
+bool ib_resp_managed_accounts::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -839,7 +835,7 @@ int ib_resp_managed_accounts::store(void)
 	return 0;
 }
 
-bool ib_resp_open_order::equal(class tier2_message const &)const 
+bool ib_resp_open_order::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -854,37 +850,17 @@ int ib_resp_open_order::store(void)
 	return 0;
 }
 
-void app_manager::set_tws_ib_connection(struct mg_connection *)
-{
-	return;
-}
-
-void app_manager::fd_set_4_interthread_messaging(class tier2_message_receiver *,struct fd_set *,struct fd_set *,int *)
-{
-	return;
-}
-
-struct mg_context * app_manager::get_tws_ib_context(void)
+tier2_message_receiver * app_manager::get_receiver(mg_connection *)
 {
 	return 0;
 }
 
-struct mg_connection * app_manager::get_tws_ib_connection(void)
+tier2_message_requester * app_manager::get_requester(mg_context *,int)
 {
 	return 0;
 }
 
-class tier2_message_receiver * app_manager::get_receiver(struct mg_connection *)
-{
-	return 0;
-}
-
-class tier2_message_requester * app_manager::get_requester(struct mg_context *,int)
-{
-	return 0;
-}
-
-bool ib_req_scanner_parameters::equal(class tier2_message const &)const 
+bool ib_req_scanner_parameters::equal(tier2_message const &)const 
 {
 	return 0;
 }
@@ -899,7 +875,7 @@ int ib_req_scanner_parameters::store(void)
 	return 0;
 }
 
-int ib_req_scanner_parameters::process_response(class tier2_message &)
+int ib_req_scanner_parameters::process_response(tier2_message &)
 {
 	return 0;
 }
@@ -914,6 +890,10 @@ int ib_req_scanner_parameters::transmit(void)
 	return 0;
 }
 
+tier2_message_receiver *ib_tws_manager::get_receiver(void)
+{
+	return 0;
+}
 
 
 

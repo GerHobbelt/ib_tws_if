@@ -27,3 +27,38 @@
 #include "tws_instance.h"
 
 
+ib_tws_manager::ib_tws_manager(app_manager *mgr) :
+	app_mgr(mgr),
+	tws_conn(NULL), tws_ctx(NULL), tws_handle(NULL), 
+	next_order_id(0),
+	req_scanner_parameters_active_set(),
+	req_scanner_subscription_active_set(10 /* limit imposed by TWS/IB */),
+	req_mkt_data_active_set(),
+	req_historical_data_active_set(),
+	exercise_options_active_set(),
+	place_order_active_set(),
+	req_open_orders_active_set(),
+	req_account_updates_active_set(),
+	req_executions_active_set(),
+	req_ids_active_set(),
+	req_contract_details_active_set(),
+	req_mkt_depth_active_set(),
+	req_news_bulletins_active_set(),
+	set_server_log_level_active_set(),
+	req_auto_open_orders_active_set(),
+	req_all_open_orders_active_set(),
+	req_managed_accts_active_set(),
+	request_fa_active_set(),
+	replace_fa_active_set(),
+	req_current_time_active_set(),
+	req_fundamental_data_active_set(),
+	calculate_implied_volatility_active_set(),
+	calculate_option_price_active_set(),
+	req_market_data_type_active_set(),
+	request_realtime_bars_active_set()
+{
+}
+
+ib_tws_manager::~ib_tws_manager()
+{
+}

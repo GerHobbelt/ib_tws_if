@@ -136,3 +136,14 @@ int db_manager::ib_store_scanner_parameters_xml(const char *xml)
 
 
 
+db_manager::db_manager(app_manager *mgr) :
+	app_mgr(mgr),
+	env(NULL)
+{
+	memset(db, 0, sizeof(db));
+}
+
+db_manager::~db_manager(void)
+{
+}
+

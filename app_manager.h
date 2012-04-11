@@ -52,22 +52,16 @@ public:
 	int register_backend_thread(struct mg_context *ctx, int optional_id = 0);
 	int unregister_backend_thread(struct mg_context *ctx, int optional_id = 0);
 
+	int register_communication_path(tier2_message_requester *requester, tier2_message_receiver *receiver);
+
 	tier2_message_requester *get_requester(struct mg_context *ctx, int optional_id = 0);
 	tier2_message_requester *get_requester(struct mg_connection *conn);
 
 	tier2_message_receiver *get_receiver(struct mg_context *ctx, int optional_id = 0);
 	tier2_message_receiver *get_receiver(struct mg_connection *conn);
 
-	tier2_message_receiver *get_ib_tws_receiver(void);
-
-	// helper function: produce the IB/TWS app connection. (Used by the TWS backend communication thread / TWS API callbacks)
-	struct mg_connection *get_tws_ib_connection(void);
-	struct mg_context *get_tws_ib_context(void);
 	struct tws_conn_cfg &get_tws_ib_connection_config(void);
     const struct database_cfg &get_db_config(void);
-	void fd_set_4_interthread_messaging(tier2_message_receiver *receiver, fd_set *read_set, fd_set *exception_set, int *max_fd);
-
-	void set_tws_ib_connection(struct mg_connection *conn);
 
 	db_manager *get_db_manager(void);
 	ib_tws_manager *get_ib_tws_manager(void);

@@ -64,12 +64,8 @@ public:
 	}
 
 public:
-	int send(tier2_queue_item *message);
-	tier2_queue_item *receive(void);
-
-	// and these are used with select() to make threads notice they're being invoked:
-	void fd_set(struct fd_set *set, int *max_fd);
-	int fd_isset(struct fd_set *set);
+	virtual int prepare_fd_sets_for_reception(struct fd_set *read_set, struct fd_set *except_set, int &max_fd);
+	virtual int is_message_pending(fd_set *read_set, fd_set *except_set, int max_fd);
 };
 
 

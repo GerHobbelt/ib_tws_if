@@ -26,6 +26,11 @@
 
 #include "tier2_message.h"
 
+#include "app_manager.h"
+#include "tier2_message_requester.h"
+
+
+
 
 tier2_message::state_change tier2_message::handle_state_change(tier2_message::request_state_t new_state)
 {
@@ -88,3 +93,39 @@ void tier2_message::unregister_handler(tier2_message_state_change_handler *handl
 		}
 	}
 }
+
+
+
+
+
+
+// set up the defaults; perform any necessary registration with the app_manager, etc...
+void tier2_message::resolve_requester_and_receiver_issues(void)
+{
+	assert(requester || receiver);
+
+	/*
+	Default: receiver == requester.
+	*/
+	if (!receiver)
+	{
+		assert(typeid(*requester) == typeid(tier2_message_receiver));
+		receiver = dynamic_cast<tier2_message_receiver *>(requester);
+		assert(receiver);
+	}
+	if (!requester)
+	{
+		requester = receiver;
+	}
+
+	/*
+	Register the communication path with the app_manager so it can help all receivers to track their incoming message paths.
+
+	Do not register the path to the node itself as that's non-functional.
+	*/
+	if (requester != receiver)
+	{
+		receiver->register_sender(requester);
+	}
+}
+

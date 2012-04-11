@@ -27,6 +27,7 @@
 
 // forward reference:
 class app_manager;
+class interthread_communicator;
 struct mg_connection;
 
 
@@ -123,7 +124,7 @@ public:
 	{
 		return unique_id;
 	}
-	app_manager *get_appmanager(void) const
+	app_manager *get_app_manager(void) const
 	{
 		return manager;
 	}
@@ -139,6 +140,17 @@ public:
 */
 class tier2_message_receiver: public tier2_message_requester
 {
+protected:
+	struct sender_info
+	{
+		tier2_message_requester *sender;
+		interthread_communicator *link;
+	};
+
+	typedef std::vector<struct sender_info> sender_set_t;
+
+	sender_set_t senders;
+
 public:
 	tier2_message_receiver(requester_id *id, app_manager *mgr) :
 		tier2_message_requester(id, mgr)
@@ -149,7 +161,11 @@ public:
 	}
 
 public:
-	virtual int process_one_queued_tier2_request(app_manager *mgr, fd_set *read_set, fd_set *except_set, int max_fd);
+	virtual void register_sender(tier2_message_requester *sender);
+	virtual interthread_communicator *get_interthread_communicator(tier2_message_requester *sender);
+
+	virtual int prepare_fd_sets_for_reception(fd_set *read_set, fd_set *except_set, int &max_fd);
+	virtual int process_one_queued_tier2_request(fd_set *read_set, fd_set *except_set, int max_fd);
 };
 
 

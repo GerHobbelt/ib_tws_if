@@ -40,7 +40,7 @@ class db_manager
 {
 protected:
 	struct database_cfg cfg;
-	app_manager *mgr;
+	app_manager *app_mgr;
 
 	ham_env_t *env;
 	ham_db_t *db[DB_MAX];
@@ -50,7 +50,6 @@ public:
 	virtual ~db_manager();
 
 public:
-	const struct database_cfg &get_db_cfg(void);
 	void set_database_path(const char *path);
 
 	int open_databases(void);
@@ -66,6 +65,10 @@ public:
 	const struct database_cfg &get_config(void)
 	{
 		return cfg;
+	}
+	app_manager *get_app_manager(void) const
+	{
+		return app_mgr;
 	}
 };
 

@@ -68,6 +68,8 @@ public:
 		previous_state(INIT4PREV)
 	{
 		unique_msgID = obtain_next_unique_msgID();
+
+		resolve_requester_and_receiver_issues();
 	}
 
 protected:
@@ -96,6 +98,9 @@ public:
 	{
 		return unique_msgID;
 	}
+
+	// set up the defaults; perform any necessary registration with the app_manager, etc...
+	virtual void resolve_requester_and_receiver_issues(void);
 
 	bool matches(unique_id_t id) const
 	{
