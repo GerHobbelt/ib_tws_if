@@ -27,12 +27,14 @@ const struct database_cfg &app_manager::get_db_config(void)
 db_manager *app_manager::get_db_manager(void)
 {
 	// TODO: create dbi when it's not alive yet
+	assert(dbi);
 	return dbi;
 }
 
 class ib_tws_manager *app_manager::get_ib_tws_manager(void)
 {
 	// TODO: create ib_tws when it's not alive yet
+	assert(ib_tws);
 	return ib_tws;
 }
 
