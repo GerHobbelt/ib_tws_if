@@ -96,7 +96,7 @@ enum tws_order_type_t
 /*
 scanner scan codes:
 */
-enum tws_scanner_type_t 
+enum tws_scanner_type_t
 {
 	SCANNER_BOND_CUSIP_AZ                           ,
 	SCANNER_BOND_CUSIP_ZA                           ,
@@ -205,7 +205,7 @@ enum tws_action_code_t
 };
 
 
-enum tws_short_sale_slot_type_t 
+enum tws_short_sale_slot_type_t
 {
 	SSS_UNKNOWN = 0,
 	SSS_CLEARING_BROKER = 1,
@@ -278,7 +278,7 @@ public:
 typedef optional_value<double>			o_double_t;
 typedef optional_value<int>				o_int_t;
 typedef optional_value<bool>			o_bool_t;
-class o_string_t : public optional_value<string>			
+class o_string_t : public optional_value<string>
 {
 public:
 	o_string_t(const char *v)
@@ -348,7 +348,7 @@ template <typename T> class tws_data_transmitter
 
 DECLARE_TWS_FORWARD_REFERENCE(struct under_comp);
 
-class ib_under_comp 
+class ib_under_comp
 {
 public:
     double u_price;
@@ -363,7 +363,7 @@ public:
 
 DECLARE_TWS_FORWARD_REFERENCE(struct tr_comboleg);
 
-class ib_comboleg 
+class ib_comboleg
 {
 public:
     tws_action_code_t co_action;						/* BUY/SELL/SSHORT/SSHORTX */
@@ -389,7 +389,7 @@ DECLARE_TWS_FORWARD_REFERENCE(struct tr_contract);
 typedef tws_data_transmitter<tws::tr_contract> tws_contract_transmitter;
 
 
-class ib_contract 
+class ib_contract
 {
 public:
     o_ib_under_comp_t c_undercomp;                      /* delta neutral */
@@ -419,17 +419,35 @@ public:
 	virtual ~ib_contract();
 
 public:
-	int to_tws(tws_contract_transmitter &visitor);    
+	int to_tws(tws_contract_transmitter &visitor);
 };
+
+
+DECLARE_TWS_FORWARD_REFERENCE(struct tr_tag_value);
+
+class ib_tag_value
+{
+public:
+    string t_tag;
+    string t_val;
+
+public:
+	ib_tag_value();
+	ib_tag_value(const tws::tr_tag_value &t);
+	virtual ~ib_tag_value();
+};
+
+typedef std::vector<ib_tag_value> ib_tag_value_collection_t;
 
 
 DECLARE_TWS_FORWARD_REFERENCE(struct tr_contract_details);
 
-class ib_contract_details 
+class ib_contract_details
 {
 public:
     double                     d_mintick;
     double                     d_coupon;                /* for bonds */
+	double                     d_ev_multiplier;
     ib_contract                d_summary;
     string                     d_market_name;
     string                     d_trading_class;
@@ -453,11 +471,15 @@ public:
     string                     d_timezone_id;
     string                     d_trading_hours;
     string                     d_liquid_hours;
+	string                     d_ev_rule;
+
+	ib_tag_value_collection_t  d_sec_id_list;
+
     int                        d_price_magnifier;
     int                        d_under_conid;
-    bool					   d_convertible;        /* for bonds */
-    bool                       d_callable;           /* for bonds */
-    bool                       d_putable;            /* for bonds */
+    bool					   d_convertible;         /* for bonds */
+    bool                       d_callable;            /* for bonds */
+    bool                       d_putable;             /* for bonds */
     bool                       d_next_option_partial; /* for bonds */
 
 public:
@@ -465,22 +487,7 @@ public:
 	ib_contract_details(const tws::tr_contract_details &cd);
 	virtual ~ib_contract_details();
 };
-	
 
-DECLARE_TWS_FORWARD_REFERENCE(struct tr_tag_value);
-
-class ib_tag_value 
-{
-public:
-    string t_tag;
-    string t_val;
-
-public:
-	ib_tag_value();
-	ib_tag_value(const tws::tr_tag_value &t);
-	virtual ~ib_tag_value();
-};
-	
 
 DECLARE_TWS_FORWARD_REFERENCE(struct tr_order_combo_leg);
 
@@ -494,12 +501,12 @@ public:
 	ib_order_combo_leg(const tws::tr_order_combo_leg &cl);
 	virtual ~ib_order_combo_leg();
 };
-	
+
 
 DECLARE_TWS_FORWARD_REFERENCE(struct tr_order);
 typedef tws_data_transmitter<tws::tr_order> tws_order_transmitter;
 
-class ib_order 
+class ib_order
 {
 public:
     o_double_t   o_discretionary_amt;                       /* SMART routing only: amount you are willing to pay above your specified limit price */
@@ -545,8 +552,6 @@ public:
     o_string_t   o_delta_neutral_settling_firm;				/* For Volatility orders only: */
     o_string_t   o_delta_neutral_clearing_account;			/* For Volatility orders only: */
     o_string_t   o_delta_neutral_clearing_intent;			/* For Volatility orders only: */
-
-	typedef std::vector<ib_tag_value> ib_tag_value_collection_t;
 
     ib_tag_value_collection_t o_algo_params;                      /* 'm_algoParams': array of length o_algo_params_count, API user responsible for alloc/free */
 	ib_tag_value_collection_t o_smart_combo_routing_params;		/* Smart combo routing params: 'm_smartComboRoutingParams': array of length o_smart_combo_routing_params, API user responsible for alloc/free */
@@ -599,7 +604,7 @@ public:
 	virtual ~ib_order();
 
 public:
-	int to_tws(tws_order_transmitter &visitor);			
+	int to_tws(tws_order_transmitter &visitor);
 };
 
 
@@ -609,7 +614,7 @@ DECLARE_TWS_FORWARD_REFERENCE(struct tr_order_status);
 /*
 OrderState
 */
-class ib_order_status 
+class ib_order_status
 {
 public:
     double ost_commission;
@@ -627,21 +632,23 @@ public:
 	ib_order_status(const tws::tr_order_status &o);
 	virtual ~ib_order_status();
 };
-	
+
 
 DECLARE_TWS_FORWARD_REFERENCE(struct tr_execution);
 
-class ib_execution 
+class ib_execution
 {
 public:
     double e_price;
     double e_avg_price;
+	double e_ev_multiplier;
     string e_execid;
     string e_time;
     string e_acct_number;
     string e_exchange;
     string e_side;
 	string e_orderref;
+	string e_ev_rule;
     int    e_shares;
     int    e_permid;
     int    e_clientid;
@@ -654,12 +661,12 @@ public:
 	ib_execution(const tws::tr_execution &e);
 	virtual ~ib_execution();
 };
-	
+
 
 DECLARE_TWS_FORWARD_REFERENCE(struct tr_exec_filter);
-typedef tws_data_transmitter<tws::tr_exec_filter> tws_exec_filter_transmitter; 
+typedef tws_data_transmitter<tws::tr_exec_filter> tws_exec_filter_transmitter;
 
-class ib_exec_filter 
+class ib_exec_filter
 {
 public:
     o_string_t f_acctcode;
@@ -678,14 +685,14 @@ public:
 public:
 	int to_tws(tws_exec_filter_transmitter &visitor);
 };
-	
+
 
 
 DECLARE_TWS_FORWARD_REFERENCE(struct tr_scanner_subscription);
 typedef tws_data_transmitter<tws::tr_scanner_subscription> tws_scanner_subscription_transmitter;
 
 
-class ib_scanner_subscription 
+class ib_scanner_subscription
 {
 public:
     o_double_t scan_above_price;
@@ -738,7 +745,7 @@ public:
 	ib_commission_report(const tws::tr_commission_report &s);
 	virtual ~ib_commission_report();
 };
-	
+
 
 
 

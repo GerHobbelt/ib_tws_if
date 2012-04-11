@@ -1190,6 +1190,7 @@ ib_contract::~ib_contract()
 ib_contract_details::ib_contract_details() :
     d_mintick(0),
     d_coupon(0),
+	d_ev_multiplier(0),
     d_price_magnifier(0),
     d_under_conid(0),
     d_convertible(false),
@@ -1202,6 +1203,7 @@ ib_contract_details::ib_contract_details(const tws::tr_contract_details &s)
 {
     d_mintick = s.d_mintick;
     d_coupon = s.d_coupon;
+	d_ev_multiplier = s.d_ev_multiplier;
     d_summary = s.d_summary;
     d_market_name = s.d_market_name;
     d_trading_class = s.d_trading_class;
@@ -1225,12 +1227,21 @@ ib_contract_details::ib_contract_details(const tws::tr_contract_details &s)
     d_timezone_id = s.d_timezone_id;
     d_trading_hours = s.d_trading_hours;
     d_liquid_hours = s.d_liquid_hours;
+    d_ev_rule = s.d_ev_rule;
     d_price_magnifier = s.d_price_magnifier;
     d_under_conid = s.d_under_conid;
     d_convertible = s.d_convertible;
     d_callable = s.d_callable;
     d_putable = s.d_putable;
     d_next_option_partial = s.d_next_option_partial;
+
+	if (s.d_sec_id_list && s.d_sec_id_list_count > 0)
+	{
+		for (int i = 0; i < s.d_sec_id_list_count; i++)
+		{
+			d_sec_id_list.push_back(s.d_sec_id_list[i]);
+		}
+	}
 }
 ib_contract_details::~ib_contract_details()
 {
@@ -1498,6 +1509,7 @@ ib_order_status::~ib_order_status()
 ib_execution::ib_execution() :
     e_price(0),
     e_avg_price(0),
+    e_ev_multiplier(0),
     e_shares(0),
     e_permid(0),
     e_clientid(0),
@@ -1510,6 +1522,7 @@ ib_execution::ib_execution(const tws::tr_execution &s)
 {
 	e_price = s.e_price;
 	e_avg_price = s.e_avg_price;
+	e_ev_multiplier = s.e_ev_multiplier;
 	
 	e_execid = s.e_execid;
 	e_time = s.e_time;
@@ -1517,6 +1530,7 @@ ib_execution::ib_execution(const tws::tr_execution &s)
 	e_exchange = s.e_exchange;
 	e_side = s.e_side;
 	e_orderref = s.e_orderref;
+	e_ev_rule = s.e_ev_rule;
 
 	e_shares = s.e_shares;
 	e_permid = s.e_permid;

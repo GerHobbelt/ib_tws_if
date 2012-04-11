@@ -107,10 +107,11 @@ void tws_cb_print_contract_details(void *opaque, const tr_contract_details_t *cd
 	tws_cb_print_contract(opaque, 2, &cd->d_summary);
     tws_cb_printf(opaque, 2, "min.tick: %g, coupon: %g, order types: [%s], valid exch: [%s], cusip: [%s], maturity: [%s], issue_date: [%s], ratings: [%s], bond_type: [%s], "
 		"coupon_type: [%s], notes: [%s], long name: [%s], industry: [%s], category: [%s], subcategory: [%s], timezone: [%s], trading hours: [%s], liquid hours: [%s], price_magnifier: %d, "
-        "under_conid: %d\n",
+        "under_conid: %d, ev_multiplier: %g, ev_rule: [%s]\n",
         cd->d_mintick, cd->d_coupon, cd->d_order_types, cd->d_valid_exchanges, cd->d_cusip, cd->d_maturity, cd->d_issue_date, cd->d_ratings, cd->d_bond_type,
         cd->d_coupon_type, cd->d_notes, cd->d_long_name, cd->d_industry, cd->d_category, cd->d_subcategory, cd->d_timezone_id, cd->d_trading_hours, cd->d_liquid_hours,
-        cd->d_price_magnifier, cd->d_under_conid);
+        cd->d_price_magnifier, cd->d_under_conid, cd->d_ev_multiplier, cd->d_ev_rule);
+	tws_cb_print_tag_value_set(opaque, 2, cd->d_sec_id_list_count, cd->d_sec_id_list);
 }
 
 void tws_cb_print_order(void *opaque, const tr_order_t *order)
