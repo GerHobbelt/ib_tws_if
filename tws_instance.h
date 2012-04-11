@@ -260,6 +260,11 @@ public:
 	int process_tws_event(void);
 
 	const char *strerror(int errcode);
+
+	struct tws_conn_cfg &get_config(void)
+	{
+		return tws_cfg;
+	}
 };
 
 

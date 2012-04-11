@@ -62,6 +62,11 @@ public:
 	int ib_get_ticker_info(ib_contract_details &cd);
 
 	int ib_store_scanner_parameters_xml(const char *xml);
+
+	const struct database_cfg &get_config(void)
+	{
+		return cfg;
+	}
 };
 
 

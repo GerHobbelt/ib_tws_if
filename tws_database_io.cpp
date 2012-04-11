@@ -129,3 +129,10 @@ int db_manager::ib_store_scanner_parameters_xml(const char *xml)
 
 	return 0;
 }
+
+
+
+
+
+
+

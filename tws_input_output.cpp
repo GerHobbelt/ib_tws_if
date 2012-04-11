@@ -349,7 +349,7 @@ int ib_tws_manager::is_tws_connected()
 
 int ib_tws_manager::process_tws_event()
 {
-	tws::tws_event_process(tws_handle);
+	return tws::tws_event_process(tws_handle);
 }
 
 
@@ -357,6 +357,7 @@ int ib_tws_manager::exit_tws_api()
 {
 	tws::tws_disconnect(tws_handle);
 	tws::tws_destroy(tws_handle);
+	return 0;
 }
 
 
