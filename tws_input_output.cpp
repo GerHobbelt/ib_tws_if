@@ -158,6 +158,8 @@ static int tws_open_func(void *arg)
 		// enable keepalive + rx/tx timeouts:
 		mg_set_socket_keepalive(sock, 1);
 		mg_set_socket_timeout(sock, 10);
+
+		mgr->register_backend_thread(conn);
     }
 
     ibm->set_connection(conn);
@@ -241,6 +243,7 @@ void tws_worker_thread(struct mg_context *ctx)
 	db_manager *dbm = mgr->get_db_manager();
 
 	ibm->set_context(ctx);
+	mgr->register_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD);
 	
     // retry connecting to TWS as long as the server itself hasn't been stopped!
     while (mg_get_stop_flag(ctx) == 0)
@@ -315,6 +318,8 @@ fail_dramatically:
             mg_sleep(TWS_CONNECT_RETRY_DELAY);
         }
     }
+
+	mgr->unregister_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD);
 
     mg_signal_mgr_this_thread_is_done(ctx);
 

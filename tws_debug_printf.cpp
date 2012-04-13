@@ -185,11 +185,6 @@ de grote opvangbak van ellende
 
 
 
-tier2_message_requester * app_manager::get_requester(mg_connection *)
-{
-	return 0;
-}
-
 bool tws_reqresp_message::equal(tier2_message const &)const 
 {
 	return 0;
@@ -850,16 +845,6 @@ int ib_resp_open_order::store(void)
 	return 0;
 }
 
-tier2_message_receiver * app_manager::get_receiver(mg_connection *)
-{
-	return 0;
-}
-
-tier2_message_requester * app_manager::get_requester(mg_context *,int)
-{
-	return 0;
-}
-
 bool ib_req_scanner_parameters::equal(tier2_message const &)const 
 {
 	return 0;
@@ -890,11 +875,26 @@ int ib_req_scanner_parameters::transmit(void)
 	return 0;
 }
 
-tier2_message_receiver *ib_tws_manager::get_receiver(void)
+requester_id::requester_id(mg_connection *thread, mg_connection *client, int seq_id) :
+	client_connection(client),
+	calling_thread_id(thread),
+	sequence_id(seq_id)
+{
+}
+
+requester_id::~requester_id()
+{
+}
+
+int requester_id::hash(void) const
 {
 	return 0;
 }
 
+int requester_id::get_next_sequence_value(requester_id *optional_id)
+{
+	return 0;
+}
 
 
 

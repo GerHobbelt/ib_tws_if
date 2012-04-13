@@ -117,7 +117,7 @@
       <Filter>Backend / Tier2\Sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\app_manager.cpp">
-      <Filter>Backend / Tier2\Sources</Filter>
+      <Filter>FrontEnd\Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

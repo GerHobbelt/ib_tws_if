@@ -27,7 +27,8 @@
 class tier2_message;
 class ib_tws_manager;
 class db_manager;
-
+class sender_receiver_store;
+class sender_receiver_links;
 
 
 
@@ -37,27 +38,35 @@ protected:
 	ib_tws_manager *ib_tws;
 	db_manager *dbi;
 
+	sender_receiver_store *sr_store;
+	sender_receiver_links *sr_links;
+
 public:
-	app_manager()
+	enum optional_requester_id_t
 	{
-	}
-	virtual ~app_manager()
-	{
-	}
+		UNDEFINED = 0,
+		IB_TWS_API_CONNECTION_THREAD,
+	};
+
+public:
+	app_manager();
+	virtual ~app_manager();
 
 public:
 	int register_frontend_thread(struct mg_connection *conn);
 	int unregister_frontend_thread(struct mg_connection *conn);
 
-	int register_backend_thread(struct mg_context *ctx, int optional_id = 0);
-	int unregister_backend_thread(struct mg_context *ctx, int optional_id = 0);
+	int register_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	int unregister_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	int register_backend_thread(struct mg_connection *conn);
+	int unregister_backend_thread(struct mg_connection *conn);
 
 	int register_communication_path(tier2_message_requester *requester, tier2_message_receiver *receiver);
 
-	tier2_message_requester *get_requester(struct mg_context *ctx, int optional_id = 0);
+	tier2_message_requester *get_requester(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
 	tier2_message_requester *get_requester(struct mg_connection *conn);
 
-	tier2_message_receiver *get_receiver(struct mg_context *ctx, int optional_id = 0);
+	tier2_message_receiver *get_receiver(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
 	tier2_message_receiver *get_receiver(struct mg_connection *conn);
 
 	struct tws_conn_cfg &get_tws_ib_connection_config(void);

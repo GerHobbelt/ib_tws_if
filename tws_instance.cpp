@@ -26,6 +26,13 @@
 
 #include "tws_instance.h"
 
+#include "app_manager.h"
+#include "tier2_message_requester.h"
+
+#include <mongoose/mongoose_ex.h>
+
+
+
 
 ib_tws_manager::ib_tws_manager(app_manager *mgr) :
 	app_mgr(mgr),
@@ -61,4 +68,18 @@ ib_tws_manager::ib_tws_manager(app_manager *mgr) :
 
 ib_tws_manager::~ib_tws_manager()
 {
+}
+
+
+
+
+tier2_message_receiver *ib_tws_manager::get_receiver(void)
+{
+	app_manager *mgr = get_app_manager();
+	mg_context *ctx = get_context();
+	mg_connection *conn = get_connection();
+
+	tier2_message_receiver *rv = mgr->get_receiver(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD);
+	assert(rv);
+	return rv;
 }
