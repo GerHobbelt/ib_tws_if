@@ -215,16 +215,6 @@ int ib_req_current_time::process_response(tier2_message &)
 	return 0;
 }
 
-int ib_req_current_time::cancel_request(void)
-{
-	return 0;
-}
-
-int ib_req_current_time::transmit(void)
-{
-	return 0;
-}
-
 bool tier2_message::equal(tier2_message const &)const 
 {
 	return 0;
@@ -236,36 +226,6 @@ int tier2_message::load(void)
 }
 
 int tier2_message::store(void)
-{
-	return 0;
-}
-
-int tier2_message::cancel_request(void)
-{
-	return 0;
-}
-
-int tier2_message::transmit_and_wait_for_response(app_manager *)
-{
-	return 0;
-}
-
-int tier2_message::process_response(tier2_message &)
-{
-	return 0;
-}
-
-int tier2_message::transmit(void)
-{
-	return 0;
-}
-
-void tier2_message::release_unique_msgID(void)
-{
-	return;
-}
-
-int tier2_message::obtain_next_unique_msgID(void)
 {
 	return 0;
 }
@@ -861,16 +821,6 @@ int ib_req_scanner_parameters::store(void)
 }
 
 int ib_req_scanner_parameters::process_response(tier2_message &)
-{
-	return 0;
-}
-
-int ib_req_scanner_parameters::cancel_request(void)
-{
-	return 0;
-}
-
-int ib_req_scanner_parameters::transmit(void)
 {
 	return 0;
 }

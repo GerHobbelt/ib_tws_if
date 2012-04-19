@@ -27,7 +27,9 @@
 #include "tier2_message.h"
 
 #include "app_manager.h"
-#include "tier2_message_requester.h"
+#include "tier2_message_processor.h"
+#include "interthread_comm.h"
+#include "app_manager.h"
 
 
 
@@ -109,8 +111,8 @@ void tier2_message::resolve_requester_and_receiver_issues(void)
 	*/
 	if (!receiver)
 	{
-		assert(typeid(*requester) == typeid(tier2_message_receiver));
-		receiver = dynamic_cast<tier2_message_receiver *>(requester);
+		assert(typeid(*requester) == typeid(tier2_message_processor));
+		receiver = requester;
 		assert(receiver);
 	}
 	if (!requester)
@@ -118,14 +120,275 @@ void tier2_message::resolve_requester_and_receiver_issues(void)
 		requester = receiver;
 	}
 
+	if (!owner)
+	{
+		current_owner(requester);
+	}
+
 	/*
 	Register the communication path with the app_manager so it can help all receivers to track their incoming message paths.
 
-	Do not register the path to the node itself as that's non-functional.
+	Ignore the 'loopback' path to the node itself.
 	*/
-	if (requester != receiver)
+	receiver->register_sender(requester);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+tier2_message::tier2_message(tier2_message_processor *from, tier2_message_processor *to, request_state_t s) :
+	requester(from),
+	receiver(to),
+	now_state(s),
+	previous_state(INIT4PREV),
+	owner(NULL)
+{
+	unique_msgID = obtain_next_unique_msgID();
+
+	resolve_requester_and_receiver_issues();
+}
+
+tier2_message::~tier2_message()
+{
+	// state(DESTRUCTION); -- can't do that here as derived classes will already have destructed themselves! Hence protected destructor!
+	
+	owner = NULL;
+	current_owner(owner);
+
+	release_unique_msgID();
+}
+
+void tier2_message::destroy(void)
+{
+	// this way, the state change will make it through /just before/ the destructor sequence is executed!
+	state(DESTRUCTION);
+
+	delete this;
+}
+
+tier2_message::request_state_t tier2_message::state(request_state_t new_state)
+{
+	for (int i = 2; i > 0 && new_state != now_state; i--)
 	{
-		receiver->register_sender(requester);
+		tier2_message::state_change rv = handle_state_change(new_state);
+		switch (rv)
+		{
+		default:
+		case ERROR_OCCURRED:
+			previous_state = now_state;
+			now_state = new_state = FAILED;
+			break;
+
+		case DONT_CHANGE:
+			new_state = now_state;
+			break;
+
+		case PROCEED:
+			previous_state = now_state;
+			now_state = new_state;
+			break;
+		}
+
+		interthread_communicator *comm = NULL;
+		int err = 0;
+
+		switch (new_state)
+		{
+		case EXEC_COMMAND:
+			// send message to receiver ~ handler
+			if (owner != receiver)
+			{
+				comm = receiver->get_interthread_communicator(owner, receiver);
+
+				// push message across the pond:
+				err = comm->post_message(this);
+			}
+			else
+			{
+				// transmit message to 'beyond / outside world':
+				err = send_to_final_destination();
+			}
+			break;
+
+		case WAIT_FOR_RESPONSE:
+		case RESPONSE_PENDING:
+			// send message to receiver ~ handler
+			if (owner != receiver)
+			{
+				assert(!"Should not get here");
+
+				comm = receiver->get_interthread_communicator(owner, receiver);
+
+				// push message across the pond:
+				err = comm->post_message(this);
+			}
+			break;
+
+		default:
+			// return message to requester
+			if (owner != requester)
+			{
+				comm = requester->get_interthread_communicator(owner, requester);
+
+				// push message across the pond:
+				err = comm->post_message(this);
+			}
+			break;
+		}
+
+		if (err != 0)
+		{
+			new_state = FAILED;
+			continue;
+		}
+		break;
 	}
+
+	return new_state;
+}
+
+
+
+tier2_message_processor *tier2_message::current_owner(tier2_message_processor *new_owner)
+{
+	if (owner != new_owner)
+	{
+		if (owner)
+		{
+			owner->release(this);
+		}
+		if (new_owner)
+		{
+			new_owner->own(this);
+		}
+	}
+
+	owner = new_owner;
+	return owner;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+int tier2_message::cancel_request(tier2_message_processor *transmitter)
+{
+	// create a CANCEL message:
+	cancel_message *cancel = new cancel_message(transmitter, this);
+
+	// push message across the pond:
+	cancel->state(EXEC_COMMAND);
+
+	return 0;
+}
+
+
+int tier2_message::wait_for_response(void)
+{
+	interthread_communicator *comm = receiver->get_interthread_communicator(requester, receiver);
+
+	while (this->state() < RESPONSE_COMPLETE)
+	{
+		tier2_message *msg = comm->pop_one_message();
+
+		// if the popped message is our response (and not some book-keeping sort of thing), we know we're done.
+
+		if (!msg)
+		{
+			return -1;
+		}
+	}
+	
+	return 0;
+}
+
+int tier2_message::process_response(tier2_message &)
+{
+	return 0;
+}
+
+int tier2_message::send_to_final_destination(void)
+{
+	assert(!"Should never get here");
+	return 0;
+}
+
+void tier2_message::release_unique_msgID(void)
+{
+	return;
+}
+
+int tier2_message::obtain_next_unique_msgID(void)
+{
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int cancel_message::send_to_final_destination(void)
+{
+	assert(refd_msg);
+	assert(owner == receiver);
+
+	/*
+	prevent race condition where original msg already got sent back to the requester while a cancel request (this one) was still pending in the receiver queue:
+
+	--> check if referenced message is still owned by our owner/its target.
+
+	When it isn't, the target is either 'in limbo' or already completely processed and destroyed. We're trying to prevent illegal memory access core dumps due to the
+	latter, while we decided not to bother treating the former as a special case: when the target IS 'in limo', it means the target message has probably already
+	completed and is returning to the requester; meanwhile it ALSO means that the target's STATE isn't anymore what we think it is and that clashes a wee bit
+	with the expectation when the CANCEL was fired.
+	Hence we let the coder/user live with this scenario: when the target comes out of limbo again, the CANCEL requester can fire another cancel request if they like.
+	*/
+	if (receiver->does_own(refd_msg))
+	{
+		tier2_message::request_state_t rv = refd_msg->state(tier2_message::ABORTED);
+
+		return rv == tier2_message::ABORTED;
+	}
+	return -1;
 }
 

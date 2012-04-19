@@ -233,11 +233,16 @@ public:
 		return tws_cfg;
 	}
 
-	tier2_message_receiver *get_receiver(void);
+	tier2_message_processor *get_receiver(void);
 
 	app_manager *get_app_manager(void) const
 	{
 		return app_mgr;
+	}
+
+	tws::tws_instance_t *get_tws_instance(void)
+	{
+		return tws_handle;
 	}
 
 	// helper function: produce the IB/TWS app connection. (Used by the TWS backend communication thread / TWS API callbacks)
@@ -264,6 +269,7 @@ public:
 		assert(ctx);
 		tws_ctx = ctx;
 	}
+
 };
 
 

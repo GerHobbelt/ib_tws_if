@@ -62,7 +62,7 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
     app_manager *mgr = (app_manager *)arg;
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 	mg_connection *conn = ibm->get_connection();
-	tier2_message_receiver *recvr = mgr->get_receiver(conn);
+	tier2_message_processor *recvr = mgr->get_receiver(conn);
 
     if (conn && recvr)
     {
@@ -279,7 +279,7 @@ void tws_worker_thread(struct mg_context *ctx)
 
                 // request the valid set of scanner parameters first: this will trigger the requesting of several market scans from the msg receive handler:
 				ib_req_scanner_parameters *scan = new ib_req_scanner_parameters(mgr->get_requester(ctx), NULL);
-				err = scan->transmit();
+				err = scan->state(tier2_message::EXEC_COMMAND);
 
                 while (mg_get_stop_flag(ctx) == 0 && ibm->is_tws_connected())
                 {

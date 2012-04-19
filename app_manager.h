@@ -61,13 +61,13 @@ public:
 	int register_backend_thread(struct mg_connection *conn);
 	int unregister_backend_thread(struct mg_connection *conn);
 
-	int register_communication_path(tier2_message_requester *requester, tier2_message_receiver *receiver);
+	int register_communication_path(tier2_message_processor *requester, tier2_message_processor *receiver);
 
-	tier2_message_requester *get_requester(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
-	tier2_message_requester *get_requester(struct mg_connection *conn);
+	tier2_message_processor *get_requester(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	tier2_message_processor *get_requester(struct mg_connection *conn);
 
-	tier2_message_receiver *get_receiver(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
-	tier2_message_receiver *get_receiver(struct mg_connection *conn);
+	tier2_message_processor *get_receiver(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	tier2_message_processor *get_receiver(struct mg_connection *conn);
 
 	struct tws_conn_cfg &get_tws_ib_connection_config(void);
     const struct database_cfg &get_db_config(void);

@@ -37,7 +37,7 @@ class app_manager;
 class tier2_message
 {
 public:
-	virtual int transmit(void) = 0;
+	virtual int transmit(tier2_message_processor *transmitter) = 0;
 
 	virtual int store(void) = 0;
 	virtual int load(void) = 0;

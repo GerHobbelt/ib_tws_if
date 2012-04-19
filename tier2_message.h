@@ -24,8 +24,33 @@
 
 #include "system-includes.h"
 
-#include "tier2_message_requester.h"
+#include "tier2_message_processor.h"
 
+
+/*
+Messages are sent between threads (and sometimes a message is sent from a thread to itself).
+
+Rules:
+
+- messages are ALWAYS returned to their requester for destruction ~ the one who created the message is the one who must destroy it at the end.
+
+- the above applies under ALL circumstances, i.e. also when message processing failed or was canceled: that's what state() is for.
+
+- There's always one owner of a message, UNLESS a message is being transferred to another thread, in which case the message has NO OWNER: it is 'in limbo'.
+
+
+Considerations:
+
+We might have gone and made the effort to track 'in limbo' messages in order to clean them up / recover them when the interconnect they're 'in limbo' on fails
+for whatever reason (IP stack hickup, threads crashing, ...) but any message that REMAINS in limbo for a significant amount of time is
+
+a) a clear indication that something is very rotten indeed and the application/server should have power-cycled already
+
+b) adding this 'tracking in limbo messages' feature would imply adding locks around this common/shared code, while using the socketpair()s' point is 
+   precisely the opposite, i.e. the intent that we WON'T need any interthread locks around our message traffic code at all, for the purposes of maximum
+   scalability.
+
+*/
 
 
 // forward references:
@@ -38,16 +63,16 @@ class tier2_message
 public:
 	enum request_state_t
 	{
-		INIT4PREV = INT_MIN,		// special state so state change handler always sees a state change when we want it to
-		DESTRUCTION = -3,			// just before the destructor is invoked: last call!
-		FAILED = -2,				// when an error occurred
-		ABORTED = -1,
-		MSG_INITIALIZED = 0,		// start value
-		EXEC_COMMAND,				// before the message is processed
-		WAIT_FOR_RESPONSE,			// once the message is processed and a response is expected
-		RESPONSE_PENDING,	        // when a response is constructed of multiple messages itself: we're still waiting for a few more...
-		RESPONSE_COMPLETE,			// The entire response has been collected (requester must still process it though)
-		TASK_COMPLETED,				// The message (and optional response) has been completely processed
+		INIT4PREV = INT_MIN,		// T: special state so state change handler always sees a state change when we want it to
+		DESTRUCTION = -3,			// T: just before the destructor is invoked: last call!
+		FAILED = -2,				// T: when an error occurred
+		ABORTED = -1,				// T: when the request has been canceled
+		MSG_INITIALIZED = 0,		// T: start value
+		EXEC_COMMAND,				// R: before the message is processed
+		WAIT_FOR_RESPONSE,			// R: once the message is processed and a response is expected
+		RESPONSE_PENDING,	        // R: when a response is constructed of multiple messages itself: we're still waiting for a few more...
+		RESPONSE_COMPLETE,			// T: The entire response has been collected (requester must still process it though)
+		TASK_COMPLETED,				// T: The message (and optional response) has been completely processed
 	};
 
 protected:
@@ -57,41 +82,35 @@ protected:
 	typedef unsigned int unique_id_t;
 	unique_id_t unique_msgID;
 
-	tier2_message_requester *requester;
-	tier2_message_receiver *receiver;
+	tier2_message_processor *requester;
+	tier2_message_processor *receiver;
+	tier2_message_processor *owner;
 
 public:
-	tier2_message(tier2_message_requester *from = NULL, tier2_message_receiver *to = NULL, request_state_t s = MSG_INITIALIZED) :
-		requester(from),
-		receiver(to),
-		now_state(s),
-		previous_state(INIT4PREV)
-	{
-		unique_msgID = obtain_next_unique_msgID();
-
-		resolve_requester_and_receiver_issues();
-	}
+	tier2_message(tier2_message_processor *from = NULL, tier2_message_processor *to = NULL, request_state_t s = MSG_INITIALIZED);
 
 protected:
-	virtual ~tier2_message()
-	{
-		// state(DESTRUCTION); -- can't do that here as derived classes will already have destructed themselves! Hence protected destructor!
-		release_unique_msgID();
-	}
+	virtual ~tier2_message();
 
 protected:
 	int obtain_next_unique_msgID(void);
 	void release_unique_msgID(void);
 
 public:
-	tier2_message_requester *get_requester(void) const
+	tier2_message_processor *get_requester(void) const
 	{
 		return requester;
 	}
 
-	tier2_message_requester *get_receiver(void) const
+	tier2_message_processor *get_receiver(void) const
 	{
 		return receiver;
+	}
+
+	tier2_message_processor *current_owner(tier2_message_processor *new_owner);
+	tier2_message_processor *current_owner(void) const
+	{
+		return owner;
 	}
 
 	unique_id_t get_uniq_msg_id(void) const
@@ -108,13 +127,7 @@ public:
 	}
 
 public:
-	virtual void destroy(void)
-	{
-		// this way, the state change will make it through /just before/ the destructor sequence is executed!
-		state(DESTRUCTION);
-
-		delete this;
-	}
+	virtual void destroy(void);
 
 public:
 	enum state_change
@@ -124,30 +137,7 @@ public:
 		PROCEED = 1
 	};
 
-	request_state_t state(request_state_t new_state)
-	{
-		if (new_state != now_state)
-		{
-			state_change rv = handle_state_change(new_state);
-			switch (rv)
-			{
-			default:
-			case ERROR_OCCURRED:
-				new_state = FAILED;
-				break;
-
-			case DONT_CHANGE:
-				new_state = now_state;
-				break;
-
-			case PROCEED:
-				break;
-			}
-			previous_state = now_state;
-			now_state = new_state;
-		}
-		return now_state;
-	}
+	request_state_t state(request_state_t new_state);
 	request_state_t state(void) const
 	{
 		return now_state;
@@ -164,18 +154,20 @@ public:
 	virtual void register_handler(tier2_message_state_change_handler *handler);
 	virtual void unregister_handler(tier2_message_state_change_handler *handler);
 
+protected:
+	virtual int send_to_final_destination(void);
+
 public:
-	virtual int transmit(void);
 	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response(tier2_message &received_response);
 
-	virtual int transmit_and_wait_for_response(app_manager *mgr);
+	virtual int wait_for_response(void);
 
 	/* 
 	Invoke this method to cancel a long-running (repetitive) request or...
 	Abort the mission:  http://www.menagea3.net/strips-ma3/coop_lungeuhil%EF%BC%9F%EF%BC%9F
 	*/
-	virtual int cancel_request(void);
+	virtual int cancel_request(tier2_message_processor *transmitter);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -194,6 +186,79 @@ class tier2_message_state_change_handler
 {
 public:
 	virtual tier2_message::state_change process(tier2_message &msg, tier2_message::request_state_t new_state) = 0;
+};
+
+
+
+
+
+
+
+class cancel_message: public tier2_message
+{
+protected:
+	tier2_message *refd_msg;
+
+public:
+	cancel_message(tier2_message_processor *from, tier2_message *referenced_msg) :
+	  tier2_message(from, referenced_msg->get_receiver()),
+		  refd_msg(referenced_msg)
+	  {
+	  }
+protected:
+	virtual ~cancel_message()
+	{
+	}
+
+protected:
+	virtual int send_to_final_destination(void);
+
+};
+
+
+
+
+
+
+
+class schedule_message: public tier2_message
+{
+protected:
+	tier2_message *refd_msg;
+
+	int priority;							// higher is more important
+
+	// The moment this request should become 'active', i.e. should be executed
+	time_t activation_time;
+	// and the number of times this command should be executed at the given interval (seconds)
+	int exec_run_count;
+	unsigned int exec_time_interval;
+
+	// The last time this request has been sent
+	time_t last_transmit_time;
+	// The last time a response for this request has been received
+	time_t last_response_time;
+
+public:
+	schedule_message(tier2_message_processor *from, tier2_message *referenced_msg, time_t activate = 0, int run_count = 1, int interval = 3600, int prio = 0) :
+		tier2_message(from, referenced_msg->get_receiver()),
+		refd_msg(referenced_msg),
+		activation_time(activate),
+		exec_run_count(run_count <= 0 ? 1 : run_count), // make sure the message is run at least once
+		exec_time_interval(interval),
+		last_transmit_time(0),
+		last_response_time(0),
+		priority(prio)
+	  {
+	  }
+protected:
+	virtual ~schedule_message()
+	{
+	}
+
+protected:
+	virtual int send_to_final_destination(void);
+
 };
 
 

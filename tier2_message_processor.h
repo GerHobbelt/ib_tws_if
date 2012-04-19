@@ -19,13 +19,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef TIER2_MESSAGE_REQUESTER_HEADER_INCLUDED
-#define TIER2_MESSAGE_REQUESTER_HEADER_INCLUDED
+#ifndef tier2_message_processor_HEADER_INCLUDED
+#define tier2_message_processor_HEADER_INCLUDED
 
 #include "system-includes.h"
 
 
 // forward reference:
+class tier2_message;
 class app_manager;
 class interthread_communicator;
 struct mg_connection;
@@ -101,8 +102,11 @@ This class has a function similar to a 'passport/Ausweis'
 as it not only acts as a unique identifier but also carries
 all 'requester' related info that's relevant for the message(s)
 it is referenced by.
+
+  A processor is always a SENDER/REQUESTER as well, as a processor must be able
+  to send the response back to the original requesting processor.
 */
-class tier2_message_requester
+class tier2_message_processor
 {
 protected:
 	// the bits that make up the 'unique ID':
@@ -110,12 +114,20 @@ protected:
 	// additional information attributes:
 	app_manager *manager;
 
+	virtual void register_interthread_connection(interthread_communicator *info);
+
+	typedef std::vector<interthread_communicator *> sender_set_t;
+	sender_set_t senders;
+
+	typedef std::list<tier2_message *> msg_set_t;
+	msg_set_t pending_msgs;
+
 public:
-	tier2_message_requester(requester_id *id, app_manager *mgr) :
+	tier2_message_processor(requester_id *id, app_manager *mgr) :
 		unique_id(id), manager(mgr)
 	{
 	}
-	virtual ~tier2_message_requester()
+	virtual ~tier2_message_processor()
 	{
 	}
 
@@ -128,47 +140,23 @@ public:
 	{
 		return manager;
 	}
-};
-
-
-
-
-
-/*
-  A receiver is always a SENDER/REQUESTER as well, as a receiver must be able
-  to send the response back to the original requester.
-*/
-class tier2_message_receiver: public tier2_message_requester
-{
-protected:
-	struct sender_info
-	{
-		tier2_message_requester *sender;
-		interthread_communicator *link;
-	};
-
-	typedef std::vector<struct sender_info> sender_set_t;
-
-	sender_set_t senders;
 
 public:
-	tier2_message_receiver(requester_id *id, app_manager *mgr) :
-		tier2_message_requester(id, mgr)
-	{
-	}
-	virtual ~tier2_message_receiver()
-	{
-	}
-
-public:
-	virtual void register_sender(tier2_message_requester *sender);
-	virtual interthread_communicator *get_interthread_communicator(tier2_message_requester *sender);
+	virtual void register_sender(tier2_message_processor *sender);
+	virtual interthread_communicator *get_interthread_communicator(tier2_message_processor *from, tier2_message_processor *to);
 
 	virtual int prepare_fd_sets_for_reception(fd_set *read_set, fd_set *except_set, int &max_fd);
 	virtual int process_one_queued_tier2_request(fd_set *read_set, fd_set *except_set, int max_fd);
+
+	virtual int own(tier2_message *msg);
+	virtual int release(tier2_message *msg);
+	virtual bool does_own(tier2_message *msg) const;
 };
 
 
 
 
-#endif // TIER2_MESSAGE_REQUESTER_HEADER_INCLUDED
+
+
+
+#endif // tier2_message_processor_HEADER_INCLUDED

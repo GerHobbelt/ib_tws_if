@@ -22,6 +22,9 @@
 #ifndef INTERTHREAD_COMMUNICATIONS_HEADER_INCLUDED
 #define INTERTHREAD_COMMUNICATIONS_HEADER_INCLUDED
 
+#include "tier2_message_processor.h"
+
+
 struct mg_connection;
 class tier2_message;
 class tier2_queue_item;
@@ -39,33 +42,59 @@ protected:
 	struct mg_connection *outgoing;
 	struct mg_connection *incoming;
 
-	interthread_communicator *slave;
+	tier2_message_processor *sender;
+	tier2_message_processor *receipient;
 
 public:
-	/*
-		each inter-thread connection is master-slave.
-	*/
-	interthread_communicator(struct mg_connection *conns[2]) :
+	interthread_communicator(tier2_message_processor *requester, tier2_message_processor *receiver, struct mg_connection *conns[2]) :
 		outgoing(conns[0]),
 		incoming(conns[1]),
-		slave(0)
+		sender(requester),
+		receipient(receiver)
 	{
 	}
-protected:
-	interthread_communicator(struct mg_connection *out, struct mg_connection *in) :
-		outgoing(out),
-		incoming(in),
-		slave(0)
-	{
-	}
-public:
 	virtual ~interthread_communicator()
 	{
 	}
 
 public:
+	enum msg_pending_mode_t
+	{
+	NO_MSG = 0,
+	CONNECTION_DROPPED = -1,				// connection has been dropped or other fatality:
+	MSG_PENDING = 1,						// fetch message from socket ~ queue
+	MSG_CANCELED = 2,						// the referenced message is to be canceled
+	};
+
 	virtual int prepare_fd_sets_for_reception(struct fd_set *read_set, struct fd_set *except_set, int &max_fd);
-	virtual int is_message_pending(fd_set *read_set, fd_set *except_set, int max_fd);
+	virtual msg_pending_mode_t is_message_pending(fd_set *read_set, fd_set *except_set, int max_fd);
+	virtual int post_message(tier2_message *msg);
+	virtual tier2_message *pop_one_message(msg_pending_mode_t *mode_ref = 0);
+
+	bool has_sender(tier2_message_processor *messager) const
+	{
+		return messager == sender;
+	}
+	bool has_receiver(tier2_message_processor *messager) const
+	{
+		return messager == receipient;
+	}
+	bool matches(tier2_message_processor *from, tier2_message_processor *to) const 
+	{
+		return from == sender && to == receipient;
+	}
+	bool matches(interthread_communicator *c) const
+	{
+		return c->sender == sender && c->receipient == receipient;
+	}
+	tier2_message_processor *receiver(void) const
+	{
+		return receipient;
+	}
+	tier2_message_processor *transmitter(void) const
+	{
+		return sender;
+	}
 };
 
 

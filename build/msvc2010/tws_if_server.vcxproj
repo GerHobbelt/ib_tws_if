@@ -466,7 +466,7 @@
     <ClCompile Include="..\..\support-code.cpp" />
     <ClCompile Include="..\..\tier2_message.cpp" />
     <ClCompile Include="..\..\tier2_message_queue.cpp" />
-    <ClCompile Include="..\..\tier2_message_requester.cpp" />
+    <ClCompile Include="..\..\tier2_message_processor.cpp" />
     <ClCompile Include="..\..\tws_api_callbacks.cpp" />
     <ClCompile Include="..\..\tws_input_output.cpp" />
     <ClCompile Include="..\..\tws_database_io.cpp" />
@@ -489,7 +489,7 @@
     <ClInclude Include="..\..\system-includes.h" />
     <ClInclude Include="..\..\tier2_message.h" />
     <ClInclude Include="..\..\tier2_message_queue.h" />
-    <ClInclude Include="..\..\tier2_message_requester.h" />
+    <ClInclude Include="..\..\tier2_message_processor.h" />
     <ClInclude Include="..\..\tws_backend.h" />
     <ClInclude Include="..\..\tws_database_io.h" />
     <ClInclude Include="..\..\tws_data_structures.h" />

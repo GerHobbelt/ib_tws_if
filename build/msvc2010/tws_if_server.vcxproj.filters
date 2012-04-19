@@ -107,9 +107,6 @@
     <ClCompile Include="..\..\interthread_comm.cpp">
       <Filter>Glue\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\tier2_message_requester.cpp">
-      <Filter>Glue\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\tws_debug_printf.cpp">
       <Filter>Backend / Tier2\Sources</Filter>
     </ClCompile>
@@ -118,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="..\..\app_manager.cpp">
       <Filter>FrontEnd\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tier2_message_processor.cpp">
+      <Filter>Glue\Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -175,14 +175,14 @@
     <ClInclude Include="..\..\interthread_comm.h">
       <Filter>Glue\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\tier2_message_requester.h">
-      <Filter>Glue\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\app_manager.h">
       <Filter>FrontEnd\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\unique_id_manager.h">
       <Filter>FrontEnd\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tier2_message_processor.h">
+      <Filter>Glue\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

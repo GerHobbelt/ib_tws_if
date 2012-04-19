@@ -51,7 +51,7 @@ protected:
 	typedef std::map<sendrecvr_connkey, int, sendrecvr_connkey_less> conn_index_t;
 	typedef std::pair<sendrecvr_connkey, int> conn_index_pair_t;
 	conn_index_t conn_index;
-	typedef std::vector<tier2_message_receiver *> recvr_set_t;
+	typedef std::vector<tier2_message_processor *> recvr_set_t;
 	recvr_set_t receiver_set;
 
 public:
@@ -63,7 +63,7 @@ public:
 	}
 
 public:
-	tier2_message_receiver *find(sendrecvr_ctxkey &key)
+	tier2_message_processor *find(sendrecvr_ctxkey &key)
 	{
 		ctx_index_t::const_iterator idx = ctx_index.find(key);
 		if (idx != ctx_index.end())
@@ -74,7 +74,7 @@ public:
 		return NULL;
 	}
 
-	tier2_message_receiver *find(sendrecvr_connkey &key)
+	tier2_message_processor *find(sendrecvr_connkey &key)
 	{
 		conn_index_t::const_iterator idx = conn_index.find(key);
 		if (idx != conn_index.end())
@@ -85,7 +85,7 @@ public:
 		return NULL;
 	}
 
-	int store(sendrecvr_ctxkey &key, tier2_message_receiver *value)
+	int store(sendrecvr_ctxkey &key, tier2_message_processor *value)
 	{
 		receiver_set.push_back(value);
 		int idx = receiver_set.size() - 1;
@@ -94,7 +94,7 @@ public:
 		return 0;
 	}
 
-	int store(sendrecvr_connkey &key, tier2_message_receiver *value)
+	int store(sendrecvr_connkey &key, tier2_message_processor *value)
 	{
 		receiver_set.push_back(value);
 		int idx = receiver_set.size() - 1;
@@ -249,10 +249,10 @@ app_manager::~app_manager()
 int app_manager::register_frontend_thread(struct mg_connection *conn)
 {
 	sendrecvr_connkey k = { conn };
-	tier2_message_receiver *rv = sr_store->find(k);
+	tier2_message_processor *rv = sr_store->find(k);
 	if (!rv)
 	{
-		rv = new tier2_message_receiver(new requester_id(NULL, conn, 0), this);
+		rv = new tier2_message_processor(new requester_id(NULL, conn, 0), this);
 		sr_store->store(k, rv);
 	}
 	return 0;
@@ -267,10 +267,10 @@ int app_manager::unregister_frontend_thread(struct mg_connection *conn)
 int app_manager::register_backend_thread(struct mg_connection *conn)
 {
 	sendrecvr_connkey k = { conn };
-	tier2_message_receiver *rv = sr_store->find(k);
+	tier2_message_processor *rv = sr_store->find(k);
 	if (!rv)
 	{
-		rv = new tier2_message_receiver(new requester_id(NULL, conn, 0), this);
+		rv = new tier2_message_processor(new requester_id(NULL, conn, 0), this);
 		sr_store->store(k, rv);
 	}
 	return 0;
@@ -285,10 +285,10 @@ int app_manager::unregister_backend_thread(struct mg_connection *conn)
 int app_manager::register_backend_thread(struct mg_context *ctx, app_manager::optional_requester_id_t optional_id)
 {
 	sendrecvr_ctxkey k = { ctx, optional_id };
-	tier2_message_receiver *rv = sr_store->find(k);
+	tier2_message_processor *rv = sr_store->find(k);
 	if (!rv)
 	{
-		rv = new tier2_message_receiver(new requester_id(NULL, NULL, 0), this);
+		rv = new tier2_message_processor(new requester_id(NULL, NULL, 0), this);
 		sr_store->store(k, rv);
 	}
 	return 0;
@@ -300,32 +300,32 @@ int app_manager::unregister_backend_thread(struct mg_context *ctx, app_manager::
 	return 0;
 }
 
-int app_manager::register_communication_path(tier2_message_requester *requester, tier2_message_receiver *receiver)
+int app_manager::register_communication_path(tier2_message_processor *requester, tier2_message_processor *receiver)
 {
 	return 0;
 }
 
-tier2_message_requester *app_manager::get_requester(struct mg_context *ctx, app_manager::optional_requester_id_t optional_id)
+tier2_message_processor *app_manager::get_requester(struct mg_context *ctx, app_manager::optional_requester_id_t optional_id)
 {
 	return get_receiver(ctx, optional_id);
 }
 
-tier2_message_requester *app_manager::get_requester(struct mg_connection *conn)
+tier2_message_processor *app_manager::get_requester(struct mg_connection *conn)
 {
 	return get_receiver(conn);
 }
 
-tier2_message_receiver *app_manager::get_receiver(struct mg_context *ctx, app_manager::optional_requester_id_t optional_id)
+tier2_message_processor *app_manager::get_receiver(struct mg_context *ctx, app_manager::optional_requester_id_t optional_id)
 {
 	sendrecvr_ctxkey k = { ctx, optional_id };
-	tier2_message_receiver *rv = sr_store->find(k);
+	tier2_message_processor *rv = sr_store->find(k);
 	return rv;
 }
 
-tier2_message_receiver *app_manager::get_receiver(struct mg_connection *conn)
+tier2_message_processor *app_manager::get_receiver(struct mg_connection *conn)
 {
 	sendrecvr_connkey k = { conn };
-	tier2_message_receiver *rv = sr_store->find(k);
+	tier2_message_processor *rv = sr_store->find(k);
 	return rv;
 }
 

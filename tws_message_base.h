@@ -45,7 +45,7 @@ typedef tws::tr_comboleg_type_t tws_comboleg_type_t;
 class tws_reqresp_message: public tier2_message
 {
 public:
-	tws_reqresp_message(tier2_message_requester *from, tier2_message_receiver *to = NULL) :
+	tws_reqresp_message(tier2_message_processor *from, tier2_message_processor *to = NULL) :
 		tier2_message(from, to)
 	{
 	}
