@@ -74,8 +74,6 @@ public:
 
 	db_manager *get_db_manager(void);
 	ib_tws_manager *get_ib_tws_manager(void);
-
-	void process_response_message(tier2_message *response);
 };
 
 

@@ -195,22 +195,22 @@ bool tws_reqresp_message::equal(tws_reqresp_message const &)const
 	return 0;
 }
 
-bool ib_req_current_time::equal(tier2_message const &)const 
+bool ib_msg_req_current_time::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_req_current_time::load(void)
+int ib_msg_req_current_time::load(void)
 {
 	return 0;
 }
 
-int ib_req_current_time::store(void)
+int ib_msg_req_current_time::store(void)
 {
 	return 0;
 }
 
-int ib_req_current_time::process_response(tier2_message &)
+int ib_msg_req_current_time::process_response(tier2_message &)
 {
 	return 0;
 }
@@ -230,597 +230,592 @@ int tier2_message::store(void)
 	return 0;
 }
 
-bool ib_resp_acct_download_end::equal(tier2_message const &)const 
+bool ib_msg_resp_acct_download_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_acct_download_end::load(void)
+int ib_msg_resp_acct_download_end::load(void)
 {
 	return 0;
 }
 
-int ib_resp_acct_download_end::store(void)
+int ib_msg_resp_acct_download_end::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_tick_generic::equal(tier2_message const &)const 
+bool ib_msg_resp_tick_generic::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_tick_generic::load(void)
+int ib_msg_resp_tick_generic::load(void)
 {
 	return 0;
 }
 
-int ib_resp_tick_generic::store(void)
+int ib_msg_resp_tick_generic::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_current_time::equal(tier2_message const &)const 
+bool ib_msg_resp_current_time::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_current_time::load(void)
+int ib_msg_resp_current_time::load(void)
 {
 	return 0;
 }
 
-int ib_resp_current_time::store(void)
+int ib_msg_resp_current_time::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_next_valid_id::equal(tier2_message const &)const 
+bool ib_msg_resp_next_valid_id::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_next_valid_id::load(void)
+int ib_msg_resp_next_valid_id::load(void)
 {
 	return 0;
 }
 
-int ib_resp_next_valid_id::store(void)
+int ib_msg_resp_next_valid_id::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_contract_details_end::equal(tier2_message const &)const 
+bool ib_msg_resp_contract_details_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_contract_details_end::load(void)
+int ib_msg_resp_contract_details_end::load(void)
 {
 	return 0;
 }
 
-int ib_resp_contract_details_end::store(void)
+int ib_msg_resp_contract_details_end::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_update_account_time::equal(tier2_message const &)const 
+bool ib_msg_resp_update_account_time::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_update_account_time::load(void)
+int ib_msg_resp_update_account_time::load(void)
 {
 	return 0;
 }
 
-int ib_resp_update_account_time::store(void)
+int ib_msg_resp_update_account_time::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_tick_snapshot_end::equal(tier2_message const &)const 
+bool ib_msg_resp_tick_snapshot_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_tick_snapshot_end::load(void)
+int ib_msg_resp_tick_snapshot_end::load(void)
 {
 	return 0;
 }
 
-int ib_resp_tick_snapshot_end::store(void)
+int ib_msg_resp_tick_snapshot_end::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_open_order_end::equal(tier2_message const &)const 
+bool ib_msg_resp_open_order_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_open_order_end::load(void)
+int ib_msg_resp_open_order_end::load(void)
 {
 	return 0;
 }
 
-int ib_resp_open_order_end::store(void)
+int ib_msg_resp_open_order_end::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_market_data_type::equal(tier2_message const &)const 
+bool ib_msg_resp_market_data_type::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_market_data_type::load(void)
+int ib_msg_resp_market_data_type::load(void)
 {
 	return 0;
 }
 
-int ib_resp_market_data_type::store(void)
+int ib_msg_resp_market_data_type::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_receive_fa::equal(tier2_message const &)const 
+bool ib_msg_resp_receive_fa::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_receive_fa::load(void)
+int ib_msg_resp_receive_fa::load(void)
 {
 	return 0;
 }
 
-int ib_resp_receive_fa::store(void)
+int ib_msg_resp_receive_fa::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_tick_size::equal(tier2_message const &)const 
+bool ib_msg_resp_tick_size::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_tick_size::load(void)
+int ib_msg_resp_tick_size::load(void)
 {
 	return 0;
 }
 
-int ib_resp_tick_size::store(void)
+int ib_msg_resp_tick_size::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_exec_details::equal(tier2_message const &)const 
+bool ib_msg_resp_exec_details::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_exec_details::load(void)
+int ib_msg_resp_exec_details::load(void)
 {
 	return 0;
 }
 
-int ib_resp_exec_details::store(void)
+int ib_msg_resp_exec_details::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_historical_data::equal(tier2_message const &)const 
+bool ib_msg_resp_historical_data::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_historical_data::load(void)
+int ib_msg_resp_historical_data::load(void)
 {
 	return 0;
 }
 
-int ib_resp_historical_data::store(void)
+int ib_msg_resp_historical_data::store(void)
 {
 	return 0;
 }
 
-void app_manager::process_response_message(tier2_message *)
+bool ib_msg_resp_exec_details_end::equal(tier2_message const &)const 
 {
-	return;
-}
-
-bool ib_resp_exec_details_end::equal(tier2_message const &)const 
-{
 	return 0;
 }
 
-int ib_resp_exec_details_end::load(void)
+int ib_msg_resp_exec_details_end::load(void)
 {
 	return 0;
 }
 
-int ib_resp_exec_details_end::store(void)
+int ib_msg_resp_exec_details_end::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_update_mkt_depth_l2::equal(tier2_message const &)const 
+bool ib_msg_resp_update_mkt_depth_l2::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_update_mkt_depth_l2::load(void)
+int ib_msg_resp_update_mkt_depth_l2::load(void)
 {
 	return 0;
 }
 
-int ib_resp_update_mkt_depth_l2::store(void)
+int ib_msg_resp_update_mkt_depth_l2::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_order_status::equal(tier2_message const &)const 
+bool ib_msg_resp_order_status::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_order_status::load(void)
+int ib_msg_resp_order_status::load(void)
 {
 	return 0;
 }
 
-int ib_resp_order_status::store(void)
+int ib_msg_resp_order_status::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_error::equal(tier2_message const &)const 
+bool ib_msg_resp_error::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_error::load(void)
+int ib_msg_resp_error::load(void)
 {
 	return 0;
 }
 
-int ib_resp_error::store(void)
+int ib_msg_resp_error::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_contract_details::equal(tier2_message const &)const 
+bool ib_msg_resp_contract_details::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_contract_details::load(void)
+int ib_msg_resp_contract_details::load(void)
 {
 	return 0;
 }
 
-int ib_resp_contract_details::store(void)
+int ib_msg_resp_contract_details::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_commission_report::equal(tier2_message const &)const 
+bool ib_msg_resp_commission_report::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_commission_report::load(void)
+int ib_msg_resp_commission_report::load(void)
 {
 	return 0;
 }
 
-int ib_resp_commission_report::store(void)
+int ib_msg_resp_commission_report::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_scanner_data_start::equal(tier2_message const &)const 
+bool ib_msg_resp_scanner_data_start::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_scanner_data_start::load(void)
+int ib_msg_resp_scanner_data_start::load(void)
 {
 	return 0;
 }
 
-int ib_resp_scanner_data_start::store(void)
+int ib_msg_resp_scanner_data_start::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_bond_contract_details::equal(tier2_message const &)const 
+bool ib_msg_resp_bond_contract_details::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_bond_contract_details::load(void)
+int ib_msg_resp_bond_contract_details::load(void)
 {
 	return 0;
 }
 
-int ib_resp_bond_contract_details::store(void)
+int ib_msg_resp_bond_contract_details::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_tick_option_computation::equal(tier2_message const &)const 
+bool ib_msg_resp_tick_option_computation::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_tick_option_computation::load(void)
+int ib_msg_resp_tick_option_computation::load(void)
 {
 	return 0;
 }
 
-int ib_resp_tick_option_computation::store(void)
+int ib_msg_resp_tick_option_computation::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_tick_price::equal(tier2_message const &)const 
+bool ib_msg_resp_tick_price::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_tick_price::load(void)
+int ib_msg_resp_tick_price::load(void)
 {
 	return 0;
 }
 
-int ib_resp_tick_price::store(void)
+int ib_msg_resp_tick_price::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_scanner_data_end::equal(tier2_message const &)const 
+bool ib_msg_resp_scanner_data_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_scanner_data_end::load(void)
+int ib_msg_resp_scanner_data_end::load(void)
 {
 	return 0;
 }
 
-int ib_resp_scanner_data_end::store(void)
+int ib_msg_resp_scanner_data_end::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_fundamental_data::equal(tier2_message const &)const 
+bool ib_msg_resp_fundamental_data::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_fundamental_data::load(void)
+int ib_msg_resp_fundamental_data::load(void)
 {
 	return 0;
 }
 
-int ib_resp_fundamental_data::store(void)
+int ib_msg_resp_fundamental_data::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_delta_neutral_validation::equal(tier2_message const &)const 
+bool ib_msg_resp_delta_neutral_validation::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_delta_neutral_validation::load(void)
+int ib_msg_resp_delta_neutral_validation::load(void)
 {
 	return 0;
 }
 
-int ib_resp_delta_neutral_validation::store(void)
+int ib_msg_resp_delta_neutral_validation::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_update_mkt_depth::equal(tier2_message const &)const 
+bool ib_msg_resp_update_mkt_depth::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_update_mkt_depth::load(void)
+int ib_msg_resp_update_mkt_depth::load(void)
 {
 	return 0;
 }
 
-int ib_resp_update_mkt_depth::store(void)
+int ib_msg_resp_update_mkt_depth::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_update_news_bulletin::equal(tier2_message const &)const 
+bool ib_msg_resp_update_news_bulletin::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_update_news_bulletin::load(void)
+int ib_msg_resp_update_news_bulletin::load(void)
 {
 	return 0;
 }
 
-int ib_resp_update_news_bulletin::store(void)
+int ib_msg_resp_update_news_bulletin::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_update_account_value::equal(tier2_message const &)const 
+bool ib_msg_resp_update_account_value::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_update_account_value::load(void)
+int ib_msg_resp_update_account_value::load(void)
 {
 	return 0;
 }
 
-int ib_resp_update_account_value::store(void)
+int ib_msg_resp_update_account_value::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_update_portfolio::equal(tier2_message const &)const 
+bool ib_msg_resp_update_portfolio::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_update_portfolio::load(void)
+int ib_msg_resp_update_portfolio::load(void)
 {
 	return 0;
 }
 
-int ib_resp_update_portfolio::store(void)
+int ib_msg_resp_update_portfolio::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_tick_efp::equal(tier2_message const &)const 
+bool ib_msg_resp_tick_efp::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_tick_efp::load(void)
+int ib_msg_resp_tick_efp::load(void)
 {
 	return 0;
 }
 
-int ib_resp_tick_efp::store(void)
+int ib_msg_resp_tick_efp::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_historical_data_end::equal(tier2_message const &)const 
+bool ib_msg_resp_historical_data_end::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_historical_data_end::load(void)
+int ib_msg_resp_historical_data_end::load(void)
 {
 	return 0;
 }
 
-int ib_resp_historical_data_end::store(void)
+int ib_msg_resp_historical_data_end::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_scanner_data::equal(tier2_message const &)const 
+bool ib_msg_resp_scanner_data::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_scanner_data::load(void)
+int ib_msg_resp_scanner_data::load(void)
 {
 	return 0;
 }
 
-int ib_resp_scanner_data::store(void)
+int ib_msg_resp_scanner_data::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_realtime_bar::equal(tier2_message const &)const 
+bool ib_msg_resp_realtime_bar::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_realtime_bar::load(void)
+int ib_msg_resp_realtime_bar::load(void)
 {
 	return 0;
 }
 
-int ib_resp_realtime_bar::store(void)
+int ib_msg_resp_realtime_bar::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_scanner_parameters::equal(tier2_message const &)const 
+bool ib_msg_resp_scanner_parameters::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_scanner_parameters::load(void)
+int ib_msg_resp_scanner_parameters::load(void)
 {
 	return 0;
 }
 
-int ib_resp_scanner_parameters::store(void)
+int ib_msg_resp_scanner_parameters::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_tick_string::equal(tier2_message const &)const 
+bool ib_msg_resp_tick_string::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_tick_string::load(void)
+int ib_msg_resp_tick_string::load(void)
 {
 	return 0;
 }
 
-int ib_resp_tick_string::store(void)
+int ib_msg_resp_tick_string::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_managed_accounts::equal(tier2_message const &)const 
+bool ib_msg_resp_managed_accounts::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_managed_accounts::load(void)
+int ib_msg_resp_managed_accounts::load(void)
 {
 	return 0;
 }
 
-int ib_resp_managed_accounts::store(void)
+int ib_msg_resp_managed_accounts::store(void)
 {
 	return 0;
 }
 
-bool ib_resp_open_order::equal(tier2_message const &)const 
+bool ib_msg_resp_open_order::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_resp_open_order::load(void)
+int ib_msg_resp_open_order::load(void)
 {
 	return 0;
 }
 
-int ib_resp_open_order::store(void)
+int ib_msg_resp_open_order::store(void)
 {
 	return 0;
 }
 
-bool ib_req_scanner_parameters::equal(tier2_message const &)const 
+bool ib_msg_req_scanner_parameters::equal(tier2_message const &)const 
 {
 	return 0;
 }
 
-int ib_req_scanner_parameters::load(void)
+int ib_msg_req_scanner_parameters::load(void)
 {
 	return 0;
 }
 
-int ib_req_scanner_parameters::store(void)
+int ib_msg_req_scanner_parameters::store(void)
 {
 	return 0;
 }
 
-int ib_req_scanner_parameters::process_response(tier2_message &)
+int ib_msg_req_scanner_parameters::process_response(tier2_message &)
 {
 	return 0;
 }

@@ -278,7 +278,7 @@ void tws_worker_thread(struct mg_context *ctx)
 				}
 
                 // request the valid set of scanner parameters first: this will trigger the requesting of several market scans from the msg receive handler:
-				ib_req_scanner_parameters *scan = new ib_req_scanner_parameters(mgr->get_requester(ctx), NULL);
+				ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(mgr->get_requester(ctx), NULL);
 				err = scan->state(tier2_message::EXEC_COMMAND);
 
                 while (mg_get_stop_flag(ctx) == 0 && ibm->is_tws_connected())
@@ -344,6 +344,10 @@ int ib_tws_manager::init_tws_api(void)
 	if (tws_handle)
 	{
 		err = tws::tws_connect(tws_handle, tws_cfg.our_id_code);
+		if (err && fake_ib_tws_connection)
+		{
+			err = 0;
+		}
 	}
 	else
 	{
