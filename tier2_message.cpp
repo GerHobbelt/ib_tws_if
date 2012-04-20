@@ -244,7 +244,8 @@ tier2_message::request_state_t tier2_message::state(request_state_t new_state)
 			break;
 		}
 
-		if (err != 0)
+		// changing to FAILED state is only useful when we're still in charge here, otherwise it's only cause to collisions!
+		if (err != 0 && owner)
 		{
 			new_state = FAILED;
 			continue;

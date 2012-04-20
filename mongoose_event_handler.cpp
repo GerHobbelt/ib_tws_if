@@ -44,7 +44,9 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     case MG_NEW_REQUEST:
         if (strncmp(ri->uri, "/tws/", 5) == 0)
         {
-			ib_msg_req_current_time *tws_req = new ib_msg_req_current_time(mgr->get_requester(conn), NULL);
+			assert(mgr->get_requester(conn));
+			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
+			ib_msg_req_current_time *tws_req = new ib_msg_req_current_time(mgr->get_requester(conn), mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
             struct timespec poll_time;
 			int err;
             poll_time.tv_sec = mgr->get_tws_ib_connection_config().backend_poll_period / 1000;
@@ -89,6 +91,16 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
             processed = NULL;
         }
         break;
+
+	case MG_INIT_CLIENT_CONN:  // Mongoose has opened a connection to a client.
+		mgr->register_frontend_thread(conn);
+		processed = NULL;
+		break;
+
+	case MG_EXIT_CLIENT_CONN:  // Mongoose is going to close the client connection.
+		mgr->unregister_frontend_thread(conn);
+		processed = NULL;
+		break;
 
     case MG_EVENT_LOG:
         // dump log to stderr as well:

@@ -65,10 +65,19 @@ receiver/sender threads' state and/or interconnection is untrustworthy.
 
 int interthread_communicator::post_message(tier2_message *msg)
 {
+	tier2_message_processor *prev_owner = msg->current_owner();
+	assert(prev_owner == sender);
+
 	msg->current_owner(NULL); // put message 'in limbo'
 
 	int rv = mg_write(incoming, &msg, sizeof(msg));
 
+	rv = (rv > 0 ? rv != sizeof(msg) : rv);
+	if (rv)
+	{
+		// failed to pass the buck; re-take ownership
+		msg->current_owner(prev_owner);
+	}
 	return rv;
 }
 
