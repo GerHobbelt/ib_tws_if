@@ -33,7 +33,6 @@ at any time.
 
 // forward reference:
 class app_manager;
-struct tws_instance;
 namespace tws
 {
 	typedef struct tws_instance tws_instance_t;
@@ -274,14 +273,18 @@ public:
 
 class ib_tws_manager
 {
+public:
+	bool fake_ib_tws_connection;
+	struct mg_connection *fake_conn[2];
+
+	void fake_ib_tws_server(int mode);
+
 protected:
 	struct tws_conn_cfg tws_cfg;
     struct mg_connection *tws_conn;
     struct mg_context *tws_ctx;
     tws::tws_instance_t *tws_handle;
 	app_manager *app_mgr;
-
-	bool fake_ib_tws_connection;
 
     /* tracking some TWS values here as well: */
     int next_order_id;

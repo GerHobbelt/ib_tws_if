@@ -119,6 +119,9 @@
     <ClCompile Include="..\..\tier2_message_processor.cpp">
       <Filter>Glue\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\tws_fake_server.cpp">
+      <Filter>TWS I/F layer\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\blurb.h">

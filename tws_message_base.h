@@ -24,22 +24,6 @@
 
 #include "tier2_message.h"
 
-#if !defined(TWS_DEFINITIONS)
-#define TWS_DEFINITIONS              1 /* enums only */
-#endif
-#include <tws_c_api/twsapi.h>
-
-
-
-typedef tws::tr_origin_t tws_origin_t;
-typedef tws::tr_oca_type_t tws_oca_type_t;
-typedef tws::tr_auction_strategy_t tws_auction_strategy_t;
-typedef tws::market_data_type_t tws_market_data_type_t;
-typedef tws::tr_tick_type_t tws_tick_type_t;
-typedef tws::tr_comboleg_type_t tws_comboleg_type_t;
-
-
-
 
 
 class tws_reqresp_message: public tier2_message

@@ -26,6 +26,8 @@
 
 #include <tws_c_api/twsapi.h>
 
+#include "system-includes.h"
+
 #include "tws_data_structures.h"
 #include "mongoose_headers.h"
 
@@ -1663,3 +1665,63 @@ ib_commission_report::~ib_commission_report()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ib_date_t::operator class ib_string_t(void)
+{
+	return "";
+}
+
+ib_contract::operator struct tws::tr_contract(void)
+{
+	struct tws::tr_contract c;
+
+	c.c_num_combolegs = this->c_comboleg.size();
+
+	return c;
+}
+
+ib_exec_filter::operator struct tws::tr_exec_filter(void)
+{
+	struct tws::tr_exec_filter e;
+
+	e.f_acctcode = const_cast<char *>(this->f_acctcode.value().c_str());
+
+	return e;
+}
+
+ib_scanner_subscription::operator struct tws::tr_scanner_subscription(void)
+{
+	struct tws::tr_scanner_subscription s;
+
+	s.scan_above_price = this->scan_above_price;
+
+	return s;
+}
+
+ib_order::operator struct tws::tr_order(void)
+{
+	struct tws::tr_order o;
+
+	o.o_account = const_cast<char *>(this->o_account.value().c_str());
+
+	return o;
+}

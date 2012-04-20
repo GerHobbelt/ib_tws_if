@@ -26,6 +26,8 @@
 
 #include <tws_c_api/twsapi.h>
 
+#include "system-includes.h"
+
 #include "tws_instance.h"
 
 #include "app_manager.h"
@@ -69,6 +71,8 @@ ib_tws_manager::ib_tws_manager(app_manager *mgr) :
 	req_market_data_type_active_set(),
 	request_realtime_bars_active_set()
 {
+	fake_conn[0] = NULL;
+	fake_conn[1] = NULL;
 }
 
 ib_tws_manager::~ib_tws_manager()
@@ -101,252 +105,252 @@ tier2_message_processor *ib_tws_manager::get_receiver(void)
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
 int ib_tws_manager::tx_request_scanner_parameters(ib_msg_req_scanner_parameters *req_msg)
 {
-	int rv = tws::tws_req_scanner_parameters(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_tws_manager::tx_request_scanner_subscription(ib_msg_req_scanner_subscription *req_msg)
 {
-	int rv = tws::tws_req_scanner_subscription(get_tws_instance(), req_msg->ticker_id, req_msg->subscription);
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_tws_manager::tx_cancel_scanner_subscription(ib_msg_cancel_scanner_subscription *req_msg)
 {
-	int rv = tws::tws_cancel_scanner_subscription(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_MKT_DATA to IB/TWS */
 int ib_tws_manager::tx_request_mkt_data(ib_msg_req_mkt_data *req_msg)
 {
-	int rv = tws::tws_req_mkt_data(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_HISTORICAL_DATA to IB/TWS */
 int ib_tws_manager::tx_request_historical_data(ib_msg_req_historical_data *req_msg)
 {
-	int rv = tws::tws_req_historical_data(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_HISTORICAL_DATA to IB/TWS */
 int ib_tws_manager::tx_cancel_historical_data(ib_msg_cancel_historical_data *req_msg)
 {
-	int rv = tws::tws_cancel_historical_data(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_MKT_DATA to IB/TWS */
 int ib_tws_manager::tx_cancel_mkt_data(ib_msg_cancel_mkt_data *req_msg)
 {
-	int rv = tws::tws_cancel_mkt_data(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message EXERCISE_OPTIONS to IB/TWS */
 int ib_tws_manager::tx_exercise_options(ib_msg_exercise_options *req_msg)
 {
-	int rv = tws::tws_exercise_options(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message PLACE_ORDER to IB/TWS */
 int ib_tws_manager::tx_place_order(ib_msg_place_order *req_msg)
 {
-	int rv = tws::tws_place_order(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_ORDER to IB/TWS */
 int ib_tws_manager::tx_cancel_order(ib_msg_cancel_order *req_msg)
 {
-	int rv = tws::tws_cancel_order(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_OPEN_ORDERS to IB/TWS */
 int ib_tws_manager::tx_request_open_orders(ib_msg_req_open_orders *req_msg)
 {
-	int rv = tws::tws_req_open_orders(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_ACCOUNT_DATA to IB/TWS */
 int ib_tws_manager::tx_request_account_updates(ib_msg_req_account_updates *req_msg)
 {
-	int rv = tws::tws_req_account_updates(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_EXECUTIONS to IB/TWS */
 int ib_tws_manager::tx_request_executions(ib_msg_req_executions *req_msg)
 {
-	int rv = tws::tws_req_executions(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_IDS to IB/TWS */
 int ib_tws_manager::tx_request_ids(ib_msg_req_ids *req_msg)
 {
-	int rv = tws::tws_req_ids(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_CONTRACT_DATA to IB/TWS */
 int ib_tws_manager::tx_request_contract_details(ib_msg_req_contract_details *req_msg)
 {
-	int rv = tws::tws_req_contract_details(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_MKT_DEPTH to IB/TWS */
 int ib_tws_manager::tx_request_mkt_depth(ib_msg_req_mkt_depth *req_msg)
 {
-	int rv = tws::tws_req_mkt_depth(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_MKT_DEPTH to IB/TWS */
 int ib_tws_manager::tx_cancel_mkt_depth(ib_msg_cancel_mkt_depth *req_msg)
 {
-	int rv = tws::tws_cancel_mkt_depth(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_NEWS_BULLETINS to IB/TWS */
 int ib_tws_manager::tx_request_news_bulletins(ib_msg_req_news_bulletins *req_msg)
 {
-	int rv = tws::tws_req_news_bulletins(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_NEWS_BULLETINS to IB/TWS */
 int ib_tws_manager::tx_cancel_news_bulletins(ib_msg_cancel_news_bulletins *req_msg)
 {
-	int rv = tws::tws_cancel_news_bulletins(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message SET_SERVER_LOGLEVEL to IB/TWS */
 int ib_tws_manager::tx_set_server_log_level(ib_msg_set_server_log_level *req_msg)
 {
-	int rv = tws::tws_set_server_log_level(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_AUTO_OPEN_ORDERS to IB/TWS */
 int ib_tws_manager::tx_request_auto_open_orders(ib_msg_req_auto_open_orders *req_msg)
 {
-	int rv = tws::tws_req_auto_open_orders(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_ALL_OPEN_ORDERS to IB/TWS */
 int ib_tws_manager::tx_request_all_open_orders(ib_msg_req_all_open_orders *req_msg)
 {
-	int rv = tws::tws_req_all_open_orders(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_MANAGED_ACCTS to IB/TWS */
 int ib_tws_manager::tx_request_managed_accts(ib_msg_req_managed_accts *req_msg)
 {
-	int rv = tws::tws_req_managed_accts(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_FA to IB/TWS */
 int ib_tws_manager::tx_request_fa(ib_msg_request_fa *req_msg)
 {
-	int rv = tws::tws_request_fa(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REPLACE_FA to IB/TWS */
 int ib_tws_manager::tx_replace_fa(ib_msg_replace_fa *req_msg)
 {
-	int rv = tws::tws_replace_fa(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_CURRENT_TIME to IB/TWS */
 int ib_tws_manager::tx_request_current_time(ib_msg_req_current_time *req_msg)
 {
-	int rv = tws::tws_req_current_time(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
 int ib_tws_manager::tx_request_fundamental_data(ib_msg_req_fundamental_data *req_msg)
 {
-	int rv = tws::tws_req_fundamental_data(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_FUNDAMENTAL_DATA to IB/TWS */
 int ib_tws_manager::tx_cancel_fundamental_data(ib_msg_cancel_fundamental_data *req_msg)
 {
-	int rv = tws::tws_cancel_fundamental_data(get_tws_instance(), req_msg->reqid);
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_tws_manager::tx_calculate_implied_volatility(ib_msg_calculate_implied_volatility *req_msg)
 {
-	int rv = tws::tws_calculate_implied_volatility(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_tws_manager::tx_cancel_calculate_implied_volatility(ib_msg_cancel_calculate_implied_volatility *req_msg)
 {
-	int rv = tws::tws_cancel_calculate_implied_volatility(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
 int ib_tws_manager::tx_calculate_option_price(ib_msg_calculate_option_price *req_msg)
 {
-	int rv = tws::tws_calculate_option_price(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_CALC_OPTION_PRICE to IB/TWS */
 int ib_tws_manager::tx_cancel_calculate_option_price(ib_msg_cancel_calculate_option_price *req_msg)
 {
-	int rv = tws::tws_cancel_calculate_option_price(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_GLOBAL_CANCEL to IB/TWS */
 int ib_tws_manager::tx_request_global_cancel(ib_msg_req_global_cancel *req_msg)
 {
-	int rv = tws::tws_req_global_cancel(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_MARKET_DATA_TYPE to IB/TWS */
 int ib_tws_manager::tx_request_market_data_type(ib_msg_req_market_data_type *req_msg)
 {
-	int rv = tws::tws_req_market_data_type(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message REQ_REAL_TIME_BARS to IB/TWS */
 int ib_tws_manager::tx_request_realtime_bars(ib_msg_request_realtime_bars *req_msg)
 {
-	int rv = tws::tws_request_realtime_bars(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }
 /* sends message CANCEL_REAL_TIME_BARS to IB/TWS */
 int ib_tws_manager::tx_cancel_realtime_bars(ib_msg_cancel_realtime_bars *req_msg)
 {
-	int rv = tws::tws_cancel_realtime_bars(get_tws_instance());
+	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
 }

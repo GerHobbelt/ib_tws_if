@@ -87,6 +87,10 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
             // Add listening sockets to the read set
             mg_FD_SET(mg_get_client_socket(conn), &read_set, &max_fd);
 			recvr->prepare_fd_sets_for_reception(&read_set, &except_set, max_fd);
+			if (ibm->fake_ib_tws_connection)
+			{
+				ibm->fake_ib_tws_server(1);
+			}
 
             if (select(max_fd + 1, &read_set, NULL, &except_set, &tv2) < 0)
             {
@@ -134,7 +138,14 @@ static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
 /* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
 static int tws_flush_func(void *arg)
 {
-    //app_manager *mgr = (app_manager *)arg;
+	app_manager *mgr = (app_manager *)arg;
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	if (ibm->fake_ib_tws_connection)
+	{
+		// fetch data from fake socket[1] and push a response back:
+		ibm->fake_ib_tws_server(0);
+	}
 
     return 0;
 }
@@ -147,6 +158,16 @@ static int tws_open_func(void *arg)
     struct tws_conn_cfg &tws_cfg = ibm->get_config();
     struct mg_context *ctx = ibm->get_context();
     struct mg_connection *conn = mg_connect_to_host(ctx, tws_cfg.ip_address, tws_cfg.port, 0);
+
+	if (conn == NULL && ibm->fake_ib_tws_connection)
+	{
+		int rv = mg_socketpair(ibm->fake_conn, ctx);
+
+		if (!rv)
+		{
+			conn = ibm->fake_conn[0];
+		}
+	}
 
     if (conn != NULL)
     {
@@ -344,10 +365,6 @@ int ib_tws_manager::init_tws_api(void)
 	if (tws_handle)
 	{
 		err = tws::tws_connect(tws_handle, tws_cfg.our_id_code);
-		if (err && fake_ib_tws_connection)
-		{
-			err = 0;
-		}
 	}
 	else
 	{

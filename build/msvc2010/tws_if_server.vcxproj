@@ -468,6 +468,7 @@
     <ClCompile Include="..\..\tier2_message_queue.cpp" />
     <ClCompile Include="..\..\tier2_message_processor.cpp" />
     <ClCompile Include="..\..\tws_api_callbacks.cpp" />
+    <ClCompile Include="..\..\tws_fake_server.cpp" />
     <ClCompile Include="..\..\tws_input_output.cpp" />
     <ClCompile Include="..\..\tws_database_io.cpp" />
     <ClCompile Include="..\..\tws_data_structures.cpp" />

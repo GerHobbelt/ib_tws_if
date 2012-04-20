@@ -23,18 +23,10 @@
 #define TWS_RESPONSE_MSG_HEADER_INCLUDED
 
 #include "tws_message_base.h"
+#include "tws_data_structures.h"
 
 
 
-// forward references
-class ib_contract;
-class ib_order;
-
-class ib_commission_report;
-class ib_execution;
-class ib_order_status;
-class ib_under_comp;
-class ib_contract_details;
 
 
 
