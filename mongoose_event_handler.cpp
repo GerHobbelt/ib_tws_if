@@ -30,6 +30,74 @@
 
 #include <libxml/parser.h>
 
+#include "upskirt/src/markdown.h"
+#include "upskirt/html/html.h"
+
+
+using namespace upskirt;
+
+
+int striendswith(const char *haystack, const char *needle)
+{
+	int hl = (int)strlen(haystack);
+	int nl = (int)strlen(needle);
+
+	return hl >= nl && 0 == mg_strcasecmp(haystack + hl - nl, needle);
+}
+
+int serve_a_markdown_page(struct mg_connection *conn)
+{
+#define SD_READ_UNIT 1024
+#define SD_OUTPUT_UNIT 64
+
+	const struct mg_request_info *ri = mg_get_request_info(conn);
+
+	struct sd_buf *ib, *ob;
+	int ret;
+	unsigned int enabled_extensions = MKDEXT_TABLES | MKDEXT_FENCED_CODE | MKDEXT_EMAIL_FRIENDLY;
+	unsigned int render_flags = 0; // HTML_SKIP_HTML | HTML_SKIP_STYLE | HTML_HARD_WRAP;
+
+	struct sd_callbacks callbacks;
+	struct html_renderopt options;
+	struct sd_markdown *markdown;
+
+	/* opening the file */
+	FILE *in = fopen(ri->uri, "r");
+	if (!in) 
+	{
+		// 404!	fprintf(stderr,"Unable to open input file \"%s\": %s\n", argv[1], strerror(errno));
+		return -1;
+	}
+
+	/* reading everything */
+	ib = sd_bufnew(SD_READ_UNIT);
+	sd_bufgrow(ib, SD_READ_UNIT);
+	while ((ret = fread(ib->data + ib->size, 1, ib->asize - ib->size, in)) > 0) 
+	{
+		ib->size += ret;
+		sd_bufgrow(ib, ib->size + SD_READ_UNIT);
+	}
+	fclose(in);
+
+	/* performing markdown parsing */
+	ob = sd_bufnew(SD_OUTPUT_UNIT);
+
+	sdhtml_renderer(&callbacks, &options, render_flags);
+	markdown = sd_markdown_new(enabled_extensions, 16, &callbacks, &options);
+	sd_markdown_render(ob, ib->data, ib->size, markdown);
+	sd_markdown_free(markdown);
+
+	/* writing the result to stdout */
+	ret = fwrite(ob->data, 1, ob->size, stdout);
+
+	// TODO: feed rendered output to mongoose; set appropriate headers 'n all...
+
+	/* cleanup */
+	sd_bufrelease(ib);
+	sd_bufrelease(ob);
+
+	return ret;
+}
 
 
 void *event_handler(enum mg_event event_id, struct mg_connection *conn)
@@ -42,7 +110,12 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     switch (event_id)
     {
     case MG_NEW_REQUEST:
-        if (strncmp(ri->uri, "/tws/", 5) == 0)
+		if (striendswith(ri->uri, ".md"))
+		{
+			if (serve_a_markdown_page(conn))
+				processed = NULL;
+		}
+        else if (strncmp(ri->uri, "/tws/", 5) == 0)
         {
 			assert(mgr->get_requester(conn));
 			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
