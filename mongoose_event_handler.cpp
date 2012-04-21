@@ -110,7 +110,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     switch (event_id)
     {
     case MG_NEW_REQUEST:
-		if (striendswith(ri->uri, ".md"))
+		if (striendswith(ri->phys_path, ".md"))
 		{
 			if (serve_a_markdown_page(conn))
 				processed = NULL;
