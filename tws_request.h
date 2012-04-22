@@ -120,7 +120,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -153,7 +153,7 @@ protected:
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -182,7 +182,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -217,7 +217,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -256,7 +256,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -285,7 +285,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -314,7 +314,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -351,7 +351,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -386,7 +386,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -419,7 +419,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -448,7 +448,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -482,7 +482,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -516,7 +516,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -549,7 +549,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -583,7 +583,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -617,7 +617,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -646,7 +646,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -679,7 +679,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -708,7 +708,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -741,7 +741,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -774,7 +774,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -803,7 +803,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -832,7 +832,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -865,7 +865,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -899,7 +899,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -928,7 +928,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -963,7 +963,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -996,7 +996,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -1032,7 +1032,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -1065,7 +1065,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -1101,7 +1101,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -1134,7 +1134,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -1163,7 +1163,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -1196,7 +1196,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -1232,7 +1232,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -1262,7 +1262,7 @@ friend class ib_tws_manager;
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);
@@ -1312,7 +1312,7 @@ protected:
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
-	virtual int process_response(tier2_message &response);
+	virtual int process_response(tier2_message *response);
 
 	virtual int store(void);
 	virtual int load(void);

@@ -319,7 +319,7 @@ int tier2_message::wait_for_response(void)
 	return 0;
 }
 
-int tier2_message::process_response(tier2_message &)
+int tier2_message::process_response(tier2_message *)
 {
 	return 0;
 }

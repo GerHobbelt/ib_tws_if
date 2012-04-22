@@ -173,7 +173,7 @@ class ib_msg_resp_scanner_data;
 class ib_msg_resp_scanner_data_end;
 /* fired by: SCANNER_DATA (once, before any invocations of event_scanner_data()) */
 class ib_msg_resp_scanner_data_start;
-/* fired by: CURRENT_TIME */
+/* fired by: CURRENT_TIME -- in response to REQ_CURRENT_TIME */
 class ib_msg_resp_current_time;
 /* fired by: REAL_TIME_BARS */
 class ib_msg_resp_realtime_bar;
@@ -564,7 +564,7 @@ public:
 	int process_response_message(ib_msg_resp_scanner_data_end *resp_msg);
 	/* fired by: SCANNER_DATA (once, before any invocations of event_scanner_data()) */
 	int process_response_message(ib_msg_resp_scanner_data_start *resp_msg);
-	/* fired by: CURRENT_TIME */
+	/* fired by: CURRENT_TIME -- in response to REQ_CURRENT_TIME */
 	int process_response_message(ib_msg_resp_current_time *resp_msg);
 	/* fired by: REAL_TIME_BARS */
 	int process_response_message(ib_msg_resp_realtime_bar *resp_msg);

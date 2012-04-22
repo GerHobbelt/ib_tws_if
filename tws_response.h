@@ -647,7 +647,7 @@ public:
 	virtual bool equal(const tier2_message &alt) const;
 };
 
-/* fired by: CURRENT_TIME */
+/* fired by: CURRENT_TIME -- in response to REQ_CURRENT_TIME */
 class ib_msg_resp_current_time: public tws_response_message
 {
 public:

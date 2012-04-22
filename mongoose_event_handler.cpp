@@ -110,7 +110,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     switch (event_id)
     {
     case MG_NEW_REQUEST:
-		if (striendswith(ri->phys_path, ".md"))
+		if (mg_match_prefix("**.md$", 6, ri->phys_path) > 0)
 		{
 			if (serve_a_markdown_page(conn))
 				processed = NULL;

@@ -159,7 +159,7 @@ protected:
 
 public:
 	/* this method is invoked by the back-end when a matching response message is received: */
-	virtual int process_response(tier2_message &received_response);
+	virtual int process_response(tier2_message *received_response);
 
 	virtual int wait_for_response(void);
 

@@ -280,6 +280,9 @@ int ib_tws_manager::tx_replace_fa(ib_msg_replace_fa *req_msg)
 /* sends message REQ_CURRENT_TIME to IB/TWS */
 int ib_tws_manager::tx_request_current_time(ib_msg_req_current_time *req_msg)
 {
+	// add request to the queue:
+	req_current_time_active_set.push_back(req_msg);
+
 	int rv = req_msg->tx(get_tws_instance());
 
 	return rv;
@@ -519,9 +522,21 @@ int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data_start *res
 {
 	return 0;
 }
-/* fired by: CURRENT_TIME */
+/* fired by: CURRENT_TIME -- in response to REQ_CURRENT_TIME */
 int ib_tws_manager::process_response_message(ib_msg_resp_current_time *resp_msg)
 {
+	/*
+	walk through the set of req_current_time_active_set requests and send 
+	the current response to each of 'em, thus discarding any subsequent 
+	time responses.
+	*/
+	tws_req_active_msg_set<ib_msg_req_current_time *>::iterator i;
+	for (i = req_current_time_active_set.begin(); i < req_current_time_active_set.end(); i++)
+	{
+		ib_msg_req_current_time *req = *i;
+
+		req->process_response(resp_msg);
+	}
 	return 0;
 }
 /* fired by: REAL_TIME_BARS */
