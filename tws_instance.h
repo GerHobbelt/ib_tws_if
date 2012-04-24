@@ -28,6 +28,7 @@ at any time.
 */
 
 #include "tws_request.h"
+#include "tws_response.h"
 #include "tier2_message_queue.h"
 
 
@@ -217,12 +218,16 @@ public:
 
 
 
-template <typename /* tws_request_message* */ T> class tws_req_active_msg_set: public std::vector<T>
+template <typename /* tws_request_message* */ T> class tws_req_active_msg_set
 {
 protected:
 	int max_active_limit;
 
-	typedef std::vector<T>::iterator iter_t;
+	typedef std::vector<T> store_t;
+	typedef typename store_t::iterator iter_t;
+	typedef typename store_t::const_iterator const_iter_t;
+
+	store_t store;
 
 public:
 	tws_req_active_msg_set(int max_allowed = INT_MAX) :
@@ -231,7 +236,7 @@ public:
 	}
 	virtual ~tws_req_active_msg_set()
 	{
-		for (iter_t i = this->begin(); i != this->end(); i++)
+		for (iter_t i = store.begin(); i != store.end(); i++)
 		{
 			T elem = *i;
 			elem->destroy();
@@ -241,7 +246,7 @@ public:
 public:
 	T find(int unique_id) const
 	{
-		for (iter_t i = this->begin(); i != this->end(); i++)
+		for (iter_t i = store.begin(); i != store.end(); i++)
 		{
 			T elem = *i;
 			if (elem->matches(unique_id))
@@ -250,20 +255,32 @@ public:
 		return 0;
 	}
 
-	// return false when the item could not be pushed due to limitations
+	int process_response_message(tws_response_message *resp_msg);
+
+	// return false when the item cannot be immediately activated due to limitations
 	bool push(T msg)
 	{
-		if (this->size() < max_active_limit)
+		store.push_back(msg);
+		return !are_limits_reached();
+	}
+
+	bool remove(T msg)
+	{
+		for (iter_t i = store.begin(); i != store.end(); i++)
 		{
-			this->push_back(msg);
-			return true;
+			T elem = *i;
+			if (elem == msg)
+			{
+				store.erase(i);
+				return true;
+			}
 		}
 		return false;
 	}
 
 	bool are_limits_reached(void) const
 	{
-		return this->size() >= max_active_limit;
+		return int(store.size()) >= max_active_limit;
 	}
 };
 

@@ -1685,9 +1685,20 @@ ib_commission_report::~ib_commission_report()
 
 
 
-ib_date_t::operator class ib_string_t(void)
+ib_date_t::operator ib_string_t(void)
 {
-	return "";
+	char buf[40];
+
+	strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", gmtime(&t));
+	
+	return buf;
+}
+
+ib_date_t &ib_date_t::operator =(char const *ts)
+{
+	t = mg_parse_date_string(ts);
+
+	return *this;
 }
 
 ib_contract::operator struct tws::tr_contract(void)

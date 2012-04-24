@@ -214,11 +214,64 @@ tier2_message::request_state_t tier2_message::state(request_state_t new_state)
 			else
 			{
 				// transmit message to 'beyond / outside world':
-				err = send_to_final_destination();
+				err = f_exec_command();
 			}
 			break;
 
-		case WAIT_FOR_RESPONSE:
+		case WAIT_FOR_TRANSMIT:
+			// queue message at receiver for forwarding transmission to 'abroad'
+			if (owner != receiver)
+			{
+				assert(!"Should not get here");
+
+				comm = receiver->get_interthread_communicator(owner, receiver);
+
+				// push message across the pond:
+				err = comm->post_message(this);
+			}
+			else
+			{
+				// transmit message to 'beyond / outside world':
+				err = f_wait_for_transmit();
+			}
+			break;
+
+		case COMMENCE_TRANSMIT:
+			// at receiver: forward message to 'abroad'
+			if (owner != receiver)
+			{
+				assert(!"Should not get here");
+
+				comm = receiver->get_interthread_communicator(owner, receiver);
+
+				// push message across the pond:
+				err = comm->post_message(this);
+			}
+			else
+			{
+				// transmit message to 'beyond / outside world':
+				err = f_commence_transmit();
+			}
+			break;
+
+		case READY_TO_RECEIVE_RESPONSE:
+			// at receiver: wait for reception of corresponding response(s) from 'abroad'
+			if (owner != receiver)
+			{
+				assert(!"Should not get here");
+
+				comm = receiver->get_interthread_communicator(owner, receiver);
+
+				// push message across the pond:
+				err = comm->post_message(this);
+			}
+			else
+			{
+				// transmit message to 'beyond / outside world':
+				err = f_ready_to_receive_response();
+			}
+			break;
+
 		case RESPONSE_PENDING:
 			// send message to receiver ~ handler
 			if (owner != receiver)
@@ -324,7 +377,7 @@ int tier2_message::process_response(tier2_message *)
 	return 0;
 }
 
-int tier2_message::send_to_final_destination(void)
+int tier2_message::f_exec_command(void)
 {
 	assert(!"Should never get here");
 	return 0;
@@ -368,7 +421,7 @@ int tier2_message::obtain_next_unique_msgID(void)
 
 
 
-int cancel_message::send_to_final_destination(void)
+int cancel_message::f_exec_command(void)
 {
 	assert(refd_msg);
 	assert(owner == receiver);
@@ -379,16 +432,24 @@ int cancel_message::send_to_final_destination(void)
 	--> check if referenced message is still owned by our owner/its target.
 
 	When it isn't, the target is either 'in limbo' or already completely processed and destroyed. We're trying to prevent illegal memory access core dumps due to the
-	latter, while we decided not to bother treating the former as a special case: when the target IS 'in limo', it means the target message has probably already
+	latter, while we decided not to bother treating the former as a special case: when the target IS 'in limbo', it means the target message has probably already
 	completed and is returning to the requester; meanwhile it ALSO means that the target's STATE isn't anymore what we think it is and that clashes a wee bit
 	with the expectation when the CANCEL was fired.
-	Hence we let the coder/user live with this scenario: when the target comes out of limbo again, the CANCEL requester can fire another cancel request if they like.
+
+	The way out of this conundrum about the 'in limbo' ambiguity (has the targeted message arrived yet or has it already left again?) is to have a non-applicable 
+	cancel request remain 'active' until the incoming (receive) queue of the targeted processor is empty: when that happens we are certain that the targeted
+	message has truly already left again as it has been sent to this processor before we ('the cancel request') got sent there, so it should have popped up in
+	the queue a little while after we arrived, at the very latest.
 	*/
 	if (receiver->does_own(refd_msg))
 	{
 		tier2_message::request_state_t rv = refd_msg->state(tier2_message::ABORTED);
 
 		return rv == tier2_message::ABORTED;
+	}
+	else
+	{
+		// TODO: push cancel message in the active cancel set for the receiver/processor.
 	}
 	return -1;
 }

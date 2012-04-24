@@ -272,6 +272,7 @@ public:
 
 public:
 	operator ib_string_t();
+	ib_date_t &operator =(const char *timestamp);
 };
 
 

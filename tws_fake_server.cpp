@@ -76,7 +76,64 @@ static int respond_with(struct mg_connection *conn, const char *elem)
 	int rv = mg_write(conn, elem, len + 1);
 	return rv;
 }
+static int respond_with(struct mg_connection *conn, int elem)
+{
+	char buf[40];
+	mg_snprintf(conn, buf, sizeof(buf), "%d", elem);
+	int len = strlen(buf);
+	int rv = mg_write(conn, buf, len + 1);
+	return rv;
+}
+static int respond_with(struct mg_connection *conn, double elem)
+{
+	char buf[40];
+	mg_snprintf(conn, buf, sizeof(buf), "%g", elem);
+	int len = strlen(buf);
+	int rv = mg_write(conn, buf, len + 1);
+	return rv;
+}
+static int respond_with(struct mg_connection *conn, time_t elem)
+{
+	char buf[60];
+	strncpy(buf, asctime(gmtime(&elem)), sizeof(buf));
+	buf[59] = 0;
+	int len = strlen(buf);
+	int rv = mg_write(conn, buf, len + 1);
+	return rv;
+}
 
+static int respond_with_file(struct mg_connection *conn, ib_tws_manager *ibm, const char *uri)
+{
+	FILE *in;
+	char buf[2048];
+	char path[PATH_MAX];
+	struct mg_context *ctx = mg_get_context(conn);
+	struct mg_request_info *info = mg_get_request_info(conn);
+	int rv = 0;
+
+	mg_snprintf(conn, path, sizeof(path), "%s/%s", mg_get_option(ctx, "document_root"), uri);
+
+	in = fopen(path, "rb");
+	if (in)
+	{
+		while (!feof(in))
+		{
+			int len = fread(buf, 1, sizeof(buf), in);
+			if (len > 0)
+			{
+				rv += mg_write(conn, buf, len);
+			}
+			else
+			{
+				break;
+			}
+		}
+		fclose(in);
+	}
+	buf[0] = 0;
+	rv += mg_write(conn, buf, 1);
+	return rv;
+}
 
 
 
@@ -157,11 +214,8 @@ void ib_tws_manager::fake_ib_tws_server(int mode)
 							in_server_negotiation = true;
 
 							/* send back server version and timestamp */
-							char svrver[14];
-							respond_with(conn, itoa(666, svrver, 10));
-
-							time_t ts = time(NULL);
-							respond_with(conn, asctime(gmtime(&ts)));
+							respond_with(conn, 666);
+							respond_with(conn, time(NULL));
 						}
 						else if (eom && in_server_negotiation)
 						{
@@ -243,6 +297,9 @@ void ib_tws_manager::fake_ib_tws_server(int mode)
 								break;
 
 							case tws::REQ_SCANNER_PARAMETERS :
+								respond_with(conn, tws::SCANNER_PARAMETERS);
+								respond_with(conn, 1);
+								respond_with_file(conn, this, "faking_it/scanner-parameters.xml");
 								break;
 
 							case tws::CANCEL_HISTORICAL_DATA :

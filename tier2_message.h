@@ -68,8 +68,10 @@ public:
 		FAILED = -2,				// T: when an error occurred
 		ABORTED = -1,				// T: when the request has been canceled
 		MSG_INITIALIZED = 0,		// T: start value
-		EXEC_COMMAND,				// R: before the message is processed
-		WAIT_FOR_RESPONSE,			// R: once the message is processed and a response is expected
+		EXEC_COMMAND,				// R: before the message is processed, i.e. send the message off to the designated processor (task)
+		WAIT_FOR_TRANSMIT,          // R: message has been received by the 'processor'/'end node' and is waiting for clearance to be transmitted / executed
+		COMMENCE_TRANSMIT,          // R: message is been processed / transmitted to entity outside this application
+		READY_TO_RECEIVE_RESPONSE,	// R: once the message is processed and a response is expected
 		RESPONSE_PENDING,	        // R: when a response is constructed of multiple messages itself: we're still waiting for a few more...
 		RESPONSE_COMPLETE,			// T: The entire response has been collected (requester must still process it though)
 		TASK_COMPLETED,				// T: The message (and optional response) has been completely processed
@@ -155,8 +157,21 @@ public:
 	virtual void unregister_handler(tier2_message_state_change_handler *handler);
 
 protected:
-	virtual int send_to_final_destination(void);
-
+	// before the message is processed, i.e. send the message off to the designated processor (task)
+	virtual int f_exec_command(void); 
+	// message has been received by the 'processor'/'end node' and is waiting for clearance to be transmitted / executed
+	virtual int f_wait_for_transmit(void);
+	// message is been processed / transmitted to entity outside this application
+	virtual int f_commence_transmit(void);
+	// once the message is processed and a response is expected
+	virtual int f_ready_to_receive_response(void);
+	// when a response is constructed of multiple messages itself: we're still waiting for a few more...
+	virtual int f_response_pending(void);
+	// The entire response has been collected (requester must still process it though)
+	virtual int f_response_complete(void);
+	// The message (and optional response) has been completely processed
+	virtual int f_task_completed(void);
+	
 public:
 	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response(tier2_message *received_response);
@@ -211,7 +226,7 @@ protected:
 	}
 
 protected:
-	virtual int send_to_final_destination(void);
+	virtual int f_exec_command(void);
 
 };
 
@@ -257,7 +272,7 @@ protected:
 	}
 
 protected:
-	virtual int send_to_final_destination(void);
+	virtual int f_exec_command(void);
 
 };
 

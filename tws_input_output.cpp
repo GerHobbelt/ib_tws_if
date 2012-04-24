@@ -165,7 +165,14 @@ static int tws_open_func(void *arg)
 
 		if (!rv)
 		{
+			int tcpbuflen = 1 * 1024 * 1024;
+
 			conn = ibm->fake_conn[0];
+			
+			mg_setsockopt(mg_get_client_socket(ibm->fake_conn[0]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+			mg_setsockopt(mg_get_client_socket(ibm->fake_conn[0]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+			mg_setsockopt(mg_get_client_socket(ibm->fake_conn[1]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+			mg_setsockopt(mg_get_client_socket(ibm->fake_conn[1]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
 		}
 	}
 
