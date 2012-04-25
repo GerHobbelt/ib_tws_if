@@ -412,6 +412,30 @@ int tier2_message::obtain_next_unique_msgID(void)
 
 
 
+int tier2_message::f_task_completed(void)
+{
+	return 0;
+}
+int tier2_message::f_response_complete(void)
+{
+	return 0;
+}
+int tier2_message::f_response_pending(void)
+{
+	return 0;
+}
+int tier2_message::f_ready_to_receive_response(void)
+{
+	return 0;
+}
+int tier2_message::f_commence_transmit(void)
+{
+	return 0;
+}
+int tier2_message::f_wait_for_transmit(void)
+{
+	return 0;
+}
 
 
 
