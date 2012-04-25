@@ -31,3 +31,6 @@
 [submodule "html/js/cube"]
 	path = html/js/cube
 	url = git@github.com:GerHobbelt/cube.git
+[submodule "utils/wsclean"]
+	path = utils/wsclean
+	url = git@github.com:GerHobbelt/whitespace-cleaner.git
