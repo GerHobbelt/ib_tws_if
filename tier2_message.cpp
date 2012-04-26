@@ -380,6 +380,7 @@ int tier2_message::process_response(tier2_message *)
 int tier2_message::f_exec_command(void)
 {
 	assert(!"Should never get here");
+	typeid(tier2_message);
 	return 0;
 }
 
@@ -388,7 +389,7 @@ void tier2_message::release_unique_msgID(void)
 	return;
 }
 
-int tier2_message::obtain_next_unique_msgID(void)
+unique_id_t tier2_message::obtain_next_unique_msgID(void)
 {
 	return 0;
 }

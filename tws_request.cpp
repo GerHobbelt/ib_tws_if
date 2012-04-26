@@ -645,3 +645,10 @@ ib_ticker_list::operator class ib_string_t(void)
 	return "";
 }
 
+
+
+bool tws_request_message::response_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	/* Assume NO by default */
+	return false;
+}

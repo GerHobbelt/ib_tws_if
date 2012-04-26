@@ -69,6 +69,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
+	
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 
 };
 

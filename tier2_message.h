@@ -25,6 +25,7 @@
 #include "system-includes.h"
 
 #include "tier2_message_processor.h"
+#include "unique_type_id.h"
 
 
 /*
@@ -81,12 +82,15 @@ protected:
 	request_state_t previous_state;
 	request_state_t now_state;
 
-	typedef unsigned int unique_id_t;
 	unique_id_t unique_msgID;
 
 	tier2_message_processor *requester;
 	tier2_message_processor *receiver;
 	tier2_message_processor *owner;
+
+protected:
+	typedef std::vector<unique_id_t> unique_id_list_t;
+	unique_id_list_t acceptable_responses;
 
 public:
 	tier2_message(tier2_message_processor *from = NULL, tier2_message_processor *to = NULL, request_state_t s = MSG_INITIALIZED);
@@ -95,7 +99,7 @@ protected:
 	virtual ~tier2_message();
 
 protected:
-	int obtain_next_unique_msgID(void);
+	unique_id_t obtain_next_unique_msgID(void);
 	void release_unique_msgID(void);
 
 public:
@@ -115,17 +119,28 @@ public:
 		return owner;
 	}
 
+	// set up the defaults; perform any necessary registration with the app_manager, etc...
+	virtual void resolve_requester_and_receiver_issues(void);
+
 	unique_id_t get_uniq_msg_id(void) const
 	{
 		return unique_msgID;
 	}
 
-	// set up the defaults; perform any necessary registration with the app_manager, etc...
-	virtual void resolve_requester_and_receiver_issues(void);
-
-	bool matches(unique_id_t id) const
+	virtual bool matches(unique_id_t id) const
 	{
 		return id == unique_msgID;
+	}
+
+	virtual bool matches(tier2_message *msg) const
+	{
+		return msg == this;
+	}
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const
+	{
+		/* accept NO responses by default */
+		return false;
 	}
 
 public:
@@ -264,8 +279,8 @@ public:
 		last_transmit_time(0),
 		last_response_time(0),
 		priority(prio)
-	  {
-	  }
+	{
+	}
 protected:
 	virtual ~schedule_message()
 	{

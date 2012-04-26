@@ -478,6 +478,7 @@
     <ClCompile Include="..\..\tws_request.cpp" />
     <ClCompile Include="..\..\tws_response.cpp" />
     <ClCompile Include="..\..\tws_stocklist_loading.cpp" />
+    <ClCompile Include="..\..\unique_type_id.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\app_manager.h" />
@@ -501,6 +502,7 @@
     <ClInclude Include="..\..\tws_response.h" />
     <ClInclude Include="..\..\tws_stocklist_loading.h" />
     <ClInclude Include="..\..\unique_id_manager.h" />
+    <ClInclude Include="..\..\unique_type_id.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\libxml\win32.msvc2010\libxml_dll.vcxproj">

@@ -254,6 +254,16 @@ public:
 		}
 		return 0;
 	}
+	T find(tws_response_message *resp_msg) const
+	{
+		for (iter_t i = store.begin(); i != store.end(); i++)
+		{
+			T elem = *i;
+			if (elem->response_is_meant_for_us(resp_msg))
+				return T;
+		}
+		return 0;
+	}
 
 	int process_response_message(tws_response_message *resp_msg);
 
