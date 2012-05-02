@@ -36,7 +36,7 @@ namespace tws
 
 
 
-// TODO: include mboff parameter...
+// TODO: include mdoff parameter...
 class ib_ticker_list : std::vector<int>
 {
 public:
@@ -71,8 +71,22 @@ protected:
 	}
 
 protected:
-	virtual int f_exec_command(void);
+	// before the message is processed, i.e. send the message off to the designated processor (task)
+	virtual int f_exec_command(void); 
+	// message has been received by the 'processor'/'end node' and is waiting for clearance to be transmitted / executed
+	virtual int f_wait_for_transmit(void);
+	// message is been processed / transmitted to entity outside this application
+	virtual int f_commence_transmit(void);
+	// once the message is processed and a response is expected
+	virtual int f_ready_to_receive_response(void);
+	// when a response is constructed of multiple messages itself: we're still waiting for a few more...
+	virtual int f_response_pending(void);
+	// The entire response has been collected (requester must still process it though)
+	virtual int f_response_complete(void);
+	// The message (and optional response) has been completely processed
+	virtual int f_task_completed(void);
 	
+public:
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 
 };
@@ -121,6 +135,7 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
+	virtual int f_commence_transmit(void);
 
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
@@ -143,12 +158,12 @@ class ib_msg_req_scanner_subscription: public tws_request_w_ticker_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_scanner_subscription subscription;
+	ib_scanner_subscription m_subscription;
 
 public:
 	ib_msg_req_scanner_subscription(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id, ib_scanner_subscription &_subscription) :
 		tws_request_w_ticker_message(from, to, _ticker_id),
-		subscription(_subscription)
+		m_subscription(_subscription)
 	{
 	}
 protected:
@@ -158,6 +173,7 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
+	virtual int f_commence_transmit(void);
 
 	friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
@@ -191,7 +207,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -231,7 +248,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -275,7 +293,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -309,7 +328,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -343,7 +363,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -385,7 +406,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -425,7 +447,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -463,7 +486,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -497,7 +521,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -536,7 +561,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -575,7 +601,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -613,7 +640,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -652,7 +680,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -691,7 +720,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -725,7 +755,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -763,7 +794,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -797,7 +829,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -835,7 +868,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -873,7 +907,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -907,7 +942,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -941,7 +977,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -979,7 +1016,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1018,7 +1056,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1052,7 +1091,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1092,7 +1132,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+		virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1130,7 +1171,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1171,7 +1213,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1209,7 +1252,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1250,7 +1294,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1288,7 +1333,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1322,7 +1368,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1360,7 +1407,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1401,7 +1449,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1436,7 +1485,8 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
-	
+	virtual int f_commence_transmit(void);
+
 friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
@@ -1494,6 +1544,7 @@ protected:
 
 protected:
 	virtual int f_exec_command(void);
+	virtual int f_commence_transmit(void);
 
 public:
 	/* this method is invoked by the backend when a matching response message is received: */

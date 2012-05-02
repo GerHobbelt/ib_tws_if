@@ -20,5 +20,21 @@
     <None Include="..\..\mongoose\mongoose.1">
       <Filter>Misc Files</Filter>
     </None>
+    <None Include="..\..\mongoose\win32\favicon.ico">
+      <Filter>Sources</Filter>
+    </None>
+    <None Include="..\..\mongoose\win32\systray.ico">
+      <Filter>Sources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\mongoose\win32\res.rc">
+      <Filter>Sources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\mongoose\win32\resource.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

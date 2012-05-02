@@ -703,11 +703,14 @@ class ib_msg_resp_scanner_parameters: public tws_response_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
+protected:
+	ib_string_t m_xml;
+
 public:
 	ib_msg_resp_scanner_parameters(tier2_message_processor *from, tier2_message_processor *to, const char xml[]) :
-	  tws_response_message(from, to)
-	  {
-	  }
+		tws_response_message(from, to), m_xml(xml)
+	{
+	}
 protected:
 	virtual ~ib_msg_resp_scanner_parameters()
 	{

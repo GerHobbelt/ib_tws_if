@@ -551,10 +551,6 @@ void event_scanner_parameters(void *opaque, const char xml[])
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 	tier2_message_processor *tws = ibm->get_receiver();
 
-#if 0
-	process_event_scanner_parameters(info, xml);
-#endif
-
 	ib_msg_resp_scanner_parameters *msg = new ib_msg_resp_scanner_parameters(tws, NULL, xml);
 	ibm->process_response_message(msg);
 }

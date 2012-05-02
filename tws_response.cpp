@@ -443,18 +443,6 @@ int ib_msg_resp_tick_string::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_resp_scanner_parameters::process_response(class tier2_message *resp_msg)
-{
-	assert(resp_msg == NULL);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
-
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_parameters");
-
-	return 0;
-}
-
 int ib_msg_resp_current_time::process_response(class tier2_message *resp_msg)
 {
 	assert(resp_msg == NULL);

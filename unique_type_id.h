@@ -48,6 +48,19 @@ public:
 	{
 		return ++prev_id;
 	}
+	virtual unique_id_t reset_unique_id(unique_id_t new_start_value)
+	{
+		prev_id = new_start_value;
+		return prev_id;
+	}
+	virtual unique_id_t update_unique_id(unique_id_t new_start_value)
+	{
+		if (prev_id < new_start_value)
+		{
+			prev_id = new_start_value;
+		}
+		return prev_id;
+	}
 };
 
 
@@ -56,11 +69,15 @@ public:
 
 #define UNIQUE_TYPE_ID_CLASSDEF()								\
 public:															\
-	virtual bool type_matches(const tier2_message *msg);		\
-	static unique_id_t get_type_id(void);						\
+	virtual bool type_matches(const tier2_message *msg) const;	\
+	virtual unique_id_t get_type_id(void) const;				\
+	static bool type_matches_class(const tier2_message *msg);	\
+	static unique_id_t get_type_id(unique_id_t *bogus);			\
 private:														\
 	static unique_id_t m_type_id
 
+
+#if 0
 
 #define UNIQUE_TYPE_ID_CLASSIMPL(class, manager)				\
 bool class::type_matches(const tier2_message *msg)				\
@@ -80,6 +97,8 @@ unique_id_t class::get_type_id(void)							\
 	will be set up as soon as anyone invokes get_type_id() 		\
  */																\
 unique_id_t class::m_type_id = manager.obtain_unique_id()
+
+#endif
 
 
 

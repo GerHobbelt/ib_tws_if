@@ -245,6 +245,10 @@ public:
 	{
 		return c_str();
 	}
+	operator const unsigned char *()
+	{
+		return (const unsigned char *)c_str();
+	}
 };
 typedef int ib_int_t;
 typedef bool ib_bool_t;

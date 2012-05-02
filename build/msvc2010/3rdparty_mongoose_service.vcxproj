@@ -461,9 +461,17 @@
   <ItemGroup>
     <None Include="..\..\mongoose\LICENSE" />
     <None Include="..\..\mongoose\mongoose.1" />
+    <None Include="..\..\mongoose\win32\favicon.ico" />
+    <None Include="..\..\mongoose\win32\systray.ico" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\mongoose\main.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\mongoose\win32\res.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\mongoose\win32\resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

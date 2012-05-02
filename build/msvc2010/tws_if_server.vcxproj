@@ -452,6 +452,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="..\..\.gitmodules" />
+    <None Include="..\..\mongoose\win32\favicon.ico" />
+    <None Include="..\..\mongoose\win32\systray.ico" />
     <None Include="..\..\server\Makefile.am" />
     <None Include="..\..\README.md" />
     <None Include="..\..\TODO" />
@@ -482,9 +484,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\app_manager.h" />
-    <ClInclude Include="..\..\blurb.h" />
     <ClInclude Include="..\..\interthread_comm.h" />
     <ClInclude Include="..\..\message_queue.h" />
+    <ClInclude Include="..\..\mongoose\win32\resource.h" />
     <ClInclude Include="..\..\mongoose_event_handler.h" />
     <ClInclude Include="..\..\mongoose_utils.h" />
     <ClInclude Include="..\..\support-code.h" />
@@ -525,6 +527,9 @@
       <Project>{7ca3cfb9-ce10-41c8-9bcc-2061ad259f71}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\mongoose\win32\res.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

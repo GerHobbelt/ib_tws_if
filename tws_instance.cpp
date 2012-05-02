@@ -105,18 +105,28 @@ tier2_message_processor *ib_tws_manager::get_receiver(void)
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
 int ib_tws_manager::tx_request_scanner_parameters(ib_msg_req_scanner_parameters *req_msg)
 {
-	req_scanner_parameters_active_set.push(req_msg);
-
-	int rv = req_msg->tx(get_tws_instance());
-
-	return rv;
+	if (req_scanner_parameters_active_set.push(req_msg))
+	{
+		req_msg->state(tier2_message::COMMENCE_TRANSMIT);
+	}
+	else
+	{
+		req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+	}
+	return 0;
 }
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_tws_manager::tx_request_scanner_subscription(ib_msg_req_scanner_subscription *req_msg)
 {
-	int rv = req_msg->tx(get_tws_instance());
-
-	return rv;
+	if (req_scanner_subscription_active_set.push(req_msg))
+	{
+		req_msg->state(tier2_message::COMMENCE_TRANSMIT);
+	}
+	else
+	{
+		req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+	}
+	return 0;
 }
 /* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_tws_manager::tx_cancel_scanner_subscription(ib_msg_cancel_scanner_subscription *req_msg)

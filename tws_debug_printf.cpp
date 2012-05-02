@@ -831,6 +831,20 @@ int requester_id::get_next_sequence_value(requester_id *optional_id)
 	return 0;
 }
 
+bool ib_msg_req_scanner_subscription::equal(class tier2_message const &msg) const 
+{
+	return false;
+}
+
+int ib_msg_req_scanner_subscription::load(void)
+{
+	return 0;
+}
+
+int ib_msg_req_scanner_subscription::store(void)
+{
+	return 0;
+}
 
 
 
