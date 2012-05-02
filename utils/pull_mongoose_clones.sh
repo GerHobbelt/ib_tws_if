@@ -12,41 +12,42 @@ cat > ${tmpar} <<EOT
 # empty lines and lines starting with a # dash are ignored.
 #
 				
-mongoose    	= https://code.google.com/p/mongoose/
-lrabinovich 	= https://lrabinovich-bind-to-zero-port.googlecode.com/hg/ 
-rtems		= https://dufault-rtems-support.googlecode.com/hg/
-teamYASSL	= https://teamyassl-conf.googlecode.com/hg/
-andyrahn-async	= https://andyrahn-async.googlecode.com/hg/
-andyrahn-dyn	= https://andyrahn-dynamic-client.googlecode.com/hg/
-martinblais	= https://martinblais-fixes.googlecode.com/hg/
-zhenglei	= https://zhenglei-cond-wait-fix.googlecode.com/hg/
-ken-threads 	= https://ken-threads-ondemand.googlecode.com/hg/
-mattjhealy	= https://mattjhealy-mongoose.googlecode.com/hg/
-goodtaste	= https://goodtaste-uncompletedhttpbody.googlecode.com/hg/
-gjhurlbu	= https://gjhurlbu-custom-memory-mongoose.googlecode.com/hg/
-mkovak		= https://mkovax-1.googlecode.com/hg/
-markw-thread	= https://markw-thread-data.googlecode.com/hg/
-arnoudvdC	= https://arnoutvandecappelle-multiplereads.googlecode.com/hg/
-amoltambe	= https://amoltambe-m.googlecode.com/hg/
-bencollins	= https://collinsben-mg.googlecode.com/hg/
-ericscouten2	= https://ericscouten-mongoose2.googlecode.com/hg/
-ericscouten	= https://ericscouten-mongoose.googlecode.com/hg/
-martinlamb	= https://martinlamb-no-dl.googlecode.com/hg/
-klevernet	= https://hackerklevernet-mongoose-fixes.googlecode.com/hg/
-aysabtu		= https://aysabtu-certchain.googlecode.com/hg/
-martinlamb-ssl	= https://martinlamb-ssl-options.googlecode.com/hg/
-martinlamb-desc	= https://martinlamb-ssl-descriptive-errors.googlecode.com/hg/
-jabinyan	= https://jabinyan-range-put.googlecode.com/hg/
-timma666	= https://timma666-mg-get-cookie-fix.googlecode.com/hg/
-rickard-cgi	= https://rickard-fixes.googlecode.com/hg/
-colinleitner	= https://colinleitner-dav.googlecode.com/hg/
-mevdschee90	= https://mevdschee-issue-90.googlecode.com/hg/
-lenniaraki	= https://lenniearaki-mp4.googlecode.com/hg/
-ken-threads	= https://ken-threads-ondemand.googlecode.com/hg/
-tekert		= https://tekert-keepalive-fix.googlecode.com/hg/
-bel2125         = https://code.google.com/r/bel2125-mongoose/
-visionofarun    = https://code.google.com/r/visionofarun-mongoose/
-jmikhail-memfix = https://code.google.com/r/jmikhail-memfix/
+mongoose    	= mongoose
+mongoose-wiki  	= wiki.mongoose
+lrabinovich 	= lrabinovich-bind-to-zero-port 
+rtems		= dufault-rtems-support
+teamYASSL	= teamyassl-conf
+andyrahn-async	= andyrahn-async
+andyrahn-dyn	= andyrahn-dynamic-client
+martinblais	= martinblais-fixes
+zhenglei	= zhenglei-cond-wait-fix
+ken-threads 	= ken-threads-ondemand
+mattjhealy	= mattjhealy-mongoose
+goodtaste	= goodtaste-uncompletedhttpbody
+gjhurlbu	= gjhurlbu-custom-memory-mongoose
+mkovak		= mkovax-1
+markw-thread	= markw-thread-data
+arnoudvdC	= arnoutvandecappelle-multiplereads
+amoltambe	= amoltambe-m
+bencollins	= collinsben-mg
+ericscouten2	= ericscouten-mongoose2
+ericscouten	= ericscouten-mongoose
+martinlamb	= martinlamb-no-dl
+klevernet	= hackerklevernet-mongoose-fixes
+aysabtu		= aysabtu-certchain
+martinlamb-ssl	= martinlamb-ssl-options
+martinlamb-desc	= martinlamb-ssl-descriptive-errors
+jabinyan	= jabinyan-range-put
+timma666	= timma666-mg-get-cookie-fix
+rickard-cgi	= rickard-fixes
+colinleitner	= colinleitner-dav
+mevdschee90	= mevdschee-issue-90
+lenniaraki	= lenniearaki-mp4
+ken-threads	= ken-threads-ondemand
+tekert		= tekert-keepalive-fix
+bel2125         = bel2125-mongoose
+visionofarun    = visionofarun-mongoose
+jmikhail-memfix = jmikhail-memfix
 
 
 

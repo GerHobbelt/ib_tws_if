@@ -36,6 +36,7 @@ namespace tws
 
 
 
+// TODO: include mboff parameter...
 class ib_ticker_list : std::vector<int>
 {
 public:
@@ -57,6 +58,8 @@ public:
 
 class tws_request_message: public tws_reqresp_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	tws_request_message(tier2_message_processor *from, tier2_message_processor *to = NULL) :
 		tws_reqresp_message(from, to)
@@ -104,6 +107,8 @@ protected:
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
 class ib_msg_req_scanner_parameters: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_req_scanner_parameters(tier2_message_processor *from, tier2_message_processor *to) :
 		tws_request_message(from, to)
@@ -128,11 +133,15 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 class ib_msg_req_scanner_subscription: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	ib_scanner_subscription subscription;
 
@@ -161,11 +170,15 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
 /* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
 class ib_msg_cancel_scanner_subscription: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_cancel_scanner_subscription(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id) :
 		tws_request_w_ticker_message(from, to, _ticker_id)
@@ -190,11 +203,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_MKT_DATA to IB/TWS */
 class ib_msg_req_mkt_data: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	ib_contract contract;
 	ib_ticker_list generic_tick_list;
@@ -225,11 +243,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_HISTORICAL_DATA to IB/TWS */
 class ib_msg_req_historical_data: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	ib_contract contract;
 	ib_date_t end_date_time;
@@ -264,11 +287,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message CANCEL_HISTORICAL_DATA to IB/TWS */
 class ib_msg_cancel_historical_data: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_cancel_historical_data(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id) :
 	    tws_request_w_ticker_message(from, to, _ticker_id)
@@ -293,11 +321,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message CANCEL_MKT_DATA to IB/TWS */
 class ib_msg_cancel_mkt_data: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_cancel_mkt_data(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id) :
 	    tws_request_w_ticker_message(from, to, _ticker_id)
@@ -322,11 +355,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message EXERCISE_OPTIONS to IB/TWS */
 class ib_msg_exercise_options: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	ib_contract contract;
 	int exercise_action;
@@ -359,11 +397,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message PLACE_ORDER to IB/TWS */
 class ib_msg_place_order: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int order_id;
 	ib_contract contract;
@@ -394,11 +437,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message CANCEL_ORDER to IB/TWS */
 class ib_msg_cancel_order: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int order_id;
 
@@ -427,11 +475,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_OPEN_ORDERS to IB/TWS */
 class ib_msg_req_open_orders: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_req_open_orders(tier2_message_processor *from, tier2_message_processor *to) :
 	    tws_request_message(from, to)
@@ -456,11 +509,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_ACCOUNT_DATA to IB/TWS */
 class ib_msg_req_account_updates: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int subscribe;
 	ib_string_t acct_code;
@@ -490,11 +548,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_EXECUTIONS to IB/TWS */
 class ib_msg_req_executions: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int reqid;
 	ib_exec_filter filter;
@@ -524,11 +587,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_IDS to IB/TWS */
 class ib_msg_req_ids: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int num_ids;
 
@@ -557,11 +625,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_CONTRACT_DATA to IB/TWS */
 class ib_msg_req_contract_details: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int reqid;
 	ib_contract contract;
@@ -591,11 +664,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_MKT_DEPTH to IB/TWS */
 class ib_msg_req_mkt_depth: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	ib_contract contract;
 	int num_rows;
@@ -625,11 +703,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message CANCEL_MKT_DEPTH to IB/TWS */
 class ib_msg_cancel_mkt_depth: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_cancel_mkt_depth(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id) :
 	    tws_request_w_ticker_message(from, to, _ticker_id)
@@ -654,11 +737,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_NEWS_BULLETINS to IB/TWS */
 class ib_msg_req_news_bulletins: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int all_msgs;
 
@@ -687,11 +775,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message CANCEL_NEWS_BULLETINS to IB/TWS */
 class ib_msg_cancel_news_bulletins: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_cancel_news_bulletins(tier2_message_processor *from, tier2_message_processor *to) :
 	    tws_request_message(from, to)
@@ -716,11 +809,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message SET_SERVER_LOGLEVEL to IB/TWS */
 class ib_msg_set_server_log_level: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int level;
 
@@ -749,11 +847,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_AUTO_OPEN_ORDERS to IB/TWS */
 class ib_msg_req_auto_open_orders: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int auto_bind;
 
@@ -782,11 +885,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_ALL_OPEN_ORDERS to IB/TWS */
 class ib_msg_req_all_open_orders: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_req_all_open_orders(tier2_message_processor *from, tier2_message_processor *to) :
 	    tws_request_message(from, to)
@@ -811,11 +919,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_MANAGED_ACCTS to IB/TWS */
 class ib_msg_req_managed_accts: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_req_managed_accts(tier2_message_processor *from, tier2_message_processor *to) :
 	    tws_request_message(from, to)
@@ -840,11 +953,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_FA to IB/TWS */
 class ib_msg_request_fa: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int fa_data_type;
 
@@ -873,11 +991,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REPLACE_FA to IB/TWS */
 class ib_msg_replace_fa: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int fa_data_type;
 	ib_string_t cxml;
@@ -907,11 +1030,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_CURRENT_TIME to IB/TWS */
 class ib_msg_req_current_time: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_req_current_time(tier2_message_processor *from, tier2_message_processor *to) :
 	    tws_request_message(from, to)
@@ -936,11 +1064,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
 class ib_msg_req_fundamental_data: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int reqid;
 	ib_contract contract;
@@ -971,11 +1104,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message CANCEL_FUNDAMENTAL_DATA to IB/TWS */
 class ib_msg_cancel_fundamental_data: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int reqid;
 
@@ -1004,11 +1142,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
 class ib_msg_calculate_implied_volatility: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int reqid;
 	ib_contract contract;
@@ -1040,11 +1183,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message CANCEL_CALC_IMPLIED_VOLAT to IB/TWS */
 class ib_msg_cancel_calculate_implied_volatility: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int reqid;
 
@@ -1073,11 +1221,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
 class ib_msg_calculate_option_price: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int reqid;
 	ib_contract contract;
@@ -1109,11 +1262,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message CANCEL_CALC_OPTION_PRICE to IB/TWS */
 class ib_msg_cancel_calculate_option_price: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int reqid;
 
@@ -1142,11 +1300,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_GLOBAL_CANCEL to IB/TWS */
 class ib_msg_req_global_cancel: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_req_global_cancel(tier2_message_processor *from, tier2_message_processor *to) :
 	    tws_request_message(from, to)
@@ -1171,11 +1334,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_MARKET_DATA_TYPE to IB/TWS */
 class ib_msg_req_market_data_type: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	tws_market_data_type_t market_data_type;
 
@@ -1204,11 +1372,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message REQ_REAL_TIME_BARS to IB/TWS */
 class ib_msg_request_realtime_bars: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	ib_contract contract;
 	int bar_size;
@@ -1240,11 +1413,16 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 /* sends message CANCEL_REAL_TIME_BARS to IB/TWS */
 class ib_msg_cancel_realtime_bars: public tws_request_w_ticker_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	ib_msg_cancel_realtime_bars(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id) :
 	    tws_request_w_ticker_message(from, to, _ticker_id)
@@ -1270,7 +1448,10 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 
 
@@ -1294,6 +1475,8 @@ const char *tws_connection_time();
 */
 class ib_msg_fetch_tws_info: public tws_request_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	int server_version;
 	ib_date_t connect_timestamp;
@@ -1320,7 +1503,10 @@ public:
 	virtual int load(void);
 
 	virtual bool equal(const tier2_message &alt) const;
+
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
+
 
 
 

@@ -21,4 +21,4 @@
 
 #include "unique_type_id.h"
 
-unique_id_t unique_type_id::prev_id = 0;
+

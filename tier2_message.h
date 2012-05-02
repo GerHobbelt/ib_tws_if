@@ -58,9 +58,13 @@ b) adding this 'tracking in limbo messages' feature would imply adding locks aro
 class tier2_message_state_change_handler;
 
 
+extern unique_type_id_manager tier2_msg_typeid_mgr;
+
 
 class tier2_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 public:
 	enum request_state_t
 	{
@@ -226,6 +230,8 @@ public:
 
 class cancel_message: public tier2_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	tier2_message *refd_msg;
 
@@ -253,6 +259,8 @@ protected:
 
 class schedule_message: public tier2_message
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	tier2_message *refd_msg;
 

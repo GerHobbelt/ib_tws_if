@@ -35,6 +35,8 @@ class tier2_queue_item_visitor;
 
 class tier2_queue_item: public tier2_message_state_change_handler
 {
+	UNIQUE_TYPE_ID_CLASSDEF();
+
 protected:
 	tier2_message *request;
 

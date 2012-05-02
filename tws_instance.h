@@ -256,11 +256,11 @@ public:
 	}
 	T find(tws_response_message *resp_msg) const
 	{
-		for (iter_t i = store.begin(); i != store.end(); i++)
+		for (const_iter_t i = store.begin(); i != store.end(); i++)
 		{
 			T elem = *i;
 			if (elem->response_is_meant_for_us(resp_msg))
-				return T;
+				return elem;
 		}
 		return 0;
 	}

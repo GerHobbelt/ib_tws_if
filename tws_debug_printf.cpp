@@ -210,11 +210,6 @@ int ib_msg_req_current_time::store(void)
 	return 0;
 }
 
-int ib_msg_req_current_time::process_response(tier2_message *)
-{
-	return 0;
-}
-
 bool tier2_message::equal(tier2_message const &)const 
 {
 	return 0;
@@ -811,11 +806,6 @@ int ib_msg_req_scanner_parameters::load(void)
 }
 
 int ib_msg_req_scanner_parameters::store(void)
-{
-	return 0;
-}
-
-int ib_msg_req_scanner_parameters::process_response(tier2_message *)
 {
 	return 0;
 }

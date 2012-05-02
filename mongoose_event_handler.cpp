@@ -29,74 +29,149 @@
 #include "app_manager.h"
 
 #include <libxml/parser.h>
-
-#include "upskirt/src/markdown.h"
-#include "upskirt/html/html.h"
+#include <tre/regex.h>
+#include <upskirt/src/markdown.h>
+#include <upskirt/html/html.h>
 
 
 using namespace upskirt;
 
 
-int striendswith(const char *haystack, const char *needle)
-{
-	int hl = (int)strlen(haystack);
-	int nl = (int)strlen(needle);
-
-	return hl >= nl && 0 == mg_strcasecmp(haystack + hl - nl, needle);
-}
 
 int serve_a_markdown_page(struct mg_connection *conn)
 {
 #define SD_READ_UNIT 1024
 #define SD_OUTPUT_UNIT 64
 
-	const struct mg_request_info *ri = mg_get_request_info(conn);
+	struct mg_request_info *ri = mg_get_request_info(conn);
 
-	struct sd_buf *ib, *ob;
-	int ret;
-	unsigned int enabled_extensions = MKDEXT_TABLES | MKDEXT_FENCED_CODE | MKDEXT_EMAIL_FRIENDLY;
-	unsigned int render_flags = 0; // HTML_SKIP_HTML | HTML_SKIP_STYLE | HTML_HARD_WRAP;
+	struct mgstat st;
 
-	struct sd_callbacks callbacks;
-	struct html_renderopt options;
-	struct sd_markdown *markdown;
-
-	/* opening the file */
-	FILE *in = fopen(ri->uri, "r");
-	if (!in) 
+	assert(ri->phys_path);
+	if (0 == mg_stat(ri->phys_path, &st) && !st.is_directory)
 	{
-		// 404!	fprintf(stderr,"Unable to open input file \"%s\": %s\n", argv[1], strerror(errno));
+		struct sd_buf *ib, *ob;
+		int ret;
+		unsigned int enabled_extensions = MKDEXT_TABLES | MKDEXT_FENCED_CODE | MKDEXT_EMAIL_FRIENDLY;
+		unsigned int render_flags = 0; // HTML_SKIP_HTML | HTML_SKIP_STYLE | HTML_HARD_WRAP;
+
+		struct sd_callbacks callbacks;
+		struct html_renderopt options;
+		struct sd_markdown *markdown;
+
+		/* opening the file */
+		FILE *in = fopen(ri->phys_path, "r");
+		if (!in)
+		{
+			mg_send_http_error(conn, 404, NULL, "Unable to open input file: [%s] %s", ri->uri, mg_strerror(errno));
+			return -1;
+		}
+
+		/* reading everything */
+		ib = sd_bufnew(SD_READ_UNIT);
+		if (SD_BUF_OK != sd_bufgrow(ib, (size_t)st.size))
+		{
+			mg_send_http_error(conn, 500, NULL, "Out of memory while loading Markdown input file: [%s]", ri->uri);
+			fclose(in);
+			sd_bufrelease(ib);
+			return -1;
+		}
+		ret = fread(ib->data, 1, ib->asize, in);
+		if (ret > 0) 
+		{
+			ib->size += ret;
+			fclose(in);
+		}
+		else
+		{
+			mg_send_http_error(conn, 500, NULL, "Cannot read from input file: [%s] %s", ri->uri, mg_strerror(errno));
+			fclose(in);
+			sd_bufrelease(ib);
+			return -1;
+		}
+
+		/* performing markdown parsing */
+		ob = sd_bufnew(SD_OUTPUT_UNIT);
+
+		sdhtml_renderer(&callbacks, &options, render_flags);
+		markdown = sd_markdown_new(enabled_extensions, 16, &callbacks, &options);
+		if (!markdown)
+		{
+			mg_send_http_error(conn, 500, NULL, "Out of memory while processing Markdown input file: [%s]", ri->uri);
+			sd_bufrelease(ib);
+			sd_bufrelease(ob);
+			return -1;
+		}
+		sd_markdown_render(ob, ib->data, ib->size, markdown);
+		sd_markdown_free(markdown);
+
+		/* write the appropriate headers */
+		char date[64], lm[64], etag[64], range[64];
+		time_t curtime = time(NULL);
+		const char *hdr;
+		int64_t cl, r1, r2;
+		int n;
+
+		ri->status_code = 200;
+		range[0] = '\0';
+
+		cl = ob->size;
+
+#if 0
+		// If Range: header specified, act accordingly
+		r1 = r2 = 0;
+		hdr = mg_get_header(conn, "Range");
+		if (hdr != NULL && (n = parse_range_header(hdr, &r1, &r2)) > 0) {
+			conn->request_info.status_code = 206;
+			(void) fseeko(fp, (off_t) r1, SEEK_SET);
+			cl = n == 2 ? r2 - r1 + 1: cl - r1;
+			(void) mg_snprintf(conn, range, sizeof(range),
+				"Content-Range: bytes "
+				"%" INT64_FMT "-%"
+				INT64_FMT "/%" INT64_FMT "\r\n",
+				r1, r1 + cl - 1, stp->size);
+		}
+#endif
+
+		// Prepare Etag, Date, Last-Modified headers. Must be in UTC, according to
+		// http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3
+		mg_gmt_time_string(date, sizeof(date), &curtime);
+		mg_gmt_time_string(lm, sizeof(lm), &st.mtime);
+		(void) mg_snprintf(conn, etag, sizeof(etag), "%lx.%lx", (unsigned long) st.mtime, (unsigned long) st.size);
+
+		(void) mg_printf(conn,
+			"HTTP/1.1 %d %s\r\n"
+			"Date: %s\r\n"
+			"Last-Modified: %s\r\n"
+			"Etag: \"%s\"\r\n"
+			"Content-Type: text/html\r\n"
+			"Content-Length: %" INT64_FMT "\r\n"
+			"Connection: %s\r\n"
+			// "Accept-Ranges: bytes\r\n"
+			// "%s\r\n"
+			, ri->status_code, mg_get_response_code_text(ri->status_code)
+			, date, lm, etag
+			, cl
+			, mg_suggest_connection_header(conn)
+			// , range
+			);
+
+		ret = (int)cl;
+		if (strcmp(ri->request_method, "HEAD") != 0) {
+			ret = mg_send_data(conn, ob->data, (size_t)cl);
+		}
+
+		/* cleanup */
+		sd_bufrelease(ib);
+		sd_bufrelease(ob);
+
+		return ret;
+	}
+	else
+	{
+		mg_send_http_error(conn, 404, NULL, "File not found: [%s]", ri->uri);
 		return -1;
 	}
-
-	/* reading everything */
-	ib = sd_bufnew(SD_READ_UNIT);
-	sd_bufgrow(ib, SD_READ_UNIT);
-	while ((ret = fread(ib->data + ib->size, 1, ib->asize - ib->size, in)) > 0) 
-	{
-		ib->size += ret;
-		sd_bufgrow(ib, ib->size + SD_READ_UNIT);
-	}
-	fclose(in);
-
-	/* performing markdown parsing */
-	ob = sd_bufnew(SD_OUTPUT_UNIT);
-
-	sdhtml_renderer(&callbacks, &options, render_flags);
-	markdown = sd_markdown_new(enabled_extensions, 16, &callbacks, &options);
-	sd_markdown_render(ob, ib->data, ib->size, markdown);
-	sd_markdown_free(markdown);
-
-	/* writing the result to stdout */
-	ret = fwrite(ob->data, 1, ob->size, stdout);
-
-	// TODO: feed rendered output to mongoose; set appropriate headers 'n all...
-
-	/* cleanup */
-	sd_bufrelease(ib);
-	sd_bufrelease(ob);
-
-	return ret;
 }
 
 
@@ -110,12 +185,15 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     switch (event_id)
     {
     case MG_NEW_REQUEST:
+		// process gists a la bl.ocks.org, with a few twists:
+
+		// process Markdown files
 		if (mg_match_prefix("**.md$", 6, ri->phys_path) > 0)
 		{
-			if (serve_a_markdown_page(conn))
-				processed = NULL;
+			serve_a_markdown_page(conn);
+			break;
 		}
-        else if (strncmp(ri->uri, "/tws/", 5) == 0)
+        if (strncmp(ri->uri, "/tws/", 5) == 0)
         {
 			assert(mgr->get_requester(conn));
 			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
@@ -132,13 +210,11 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 #if 0
 			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", ctime(&tws_req->current_time));
 #endif
+			break;
 		}
-        else
-        {
-            // No suitable handler found, mark as not processed. Mongoose will
-            // try to serve the request.
-            processed = NULL;
-        }
+        // No suitable handler found, mark as not processed. Mongoose will
+        // try to serve the request.
+        processed = NULL;
         break;
 
 	case MG_REQUEST_COMPLETE:

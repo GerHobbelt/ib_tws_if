@@ -594,116 +594,259 @@ int ib_tws_manager::process_response_message(ib_msg_resp_commission_report *resp
 
 template<> int tws_req_active_msg_set<class ib_msg_req_executions *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_executions");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_open_orders *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_open_orders");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_ids *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_ids");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_historical_data *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_historical_data");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_managed_accts *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_managed_accts");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_place_order *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_place_order");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_calculate_option_price *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_calculate_option_price");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_mkt_depth *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_mkt_depth");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_auto_open_orders *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_auto_open_orders");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_all_open_orders *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_all_open_orders");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_request_realtime_bars *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_request_realtime_bars");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_fundamental_data *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_fundamental_data");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_news_bulletins *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_news_bulletins");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_scanner_parameters *>::process_response_message(class tws_response_message *resp_msg)
 {
-	return 0;
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_parameters");
+
+	ib_msg_req_scanner_parameters *req = find(resp_msg);
+
+	if (req)
+		return req->process_response(resp_msg);
+	return -1;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_mkt_data *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_mkt_data");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_account_updates *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_account_updates");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_request_fa *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_request_fa");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_contract_details *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_contract_details");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_scanner_subscription *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_subscription");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_current_time *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_current_time");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_req_market_data_type *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_req_market_data_type");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_replace_fa *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_replace_fa");
+
 	return 0;
 }
 
 template<> int tws_req_active_msg_set<class ib_msg_calculate_implied_volatility *>::process_response_message(class tws_response_message *resp_msg)
 {
+	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	mg_cry(conn, "process response message for %s?", "ib_msg_calculate_implied_volatility");
+
 	return 0;
 }
+
 

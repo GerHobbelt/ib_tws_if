@@ -29,7 +29,15 @@
 #include "app_manager.h"
 #include "tier2_message_processor.h"
 #include "interthread_comm.h"
-#include "app_manager.h"
+
+#include <mongoose/mongoose_ex.h>
+
+
+
+
+
+
+unique_type_id_manager tier2_msg_typeid_mgr(0);
 
 
 
@@ -372,8 +380,9 @@ int tier2_message::wait_for_response(void)
 	return 0;
 }
 
-int tier2_message::process_response(tier2_message *)
+int tier2_message::process_response(tier2_message *resp_msg)
 {
+	assert(!"Should never get here!");
 	return 0;
 }
 
@@ -478,4 +487,15 @@ int cancel_message::f_exec_command(void)
 	}
 	return -1;
 }
+
+
+
+
+
+
+
+
+
+
+
 

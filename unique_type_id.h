@@ -29,42 +29,57 @@
 typedef unsigned int unique_id_t;
 
 
-class unique_type_id
+class unique_type_id_manager
 {
-protected:
-	unique_id_t id_nr;
-
 private:
-	static unique_id_t prev_id;
+	unique_id_t prev_id;
 
 public:
-	unique_type_id()
+	unique_type_id_manager(unique_id_t start_id = 0)
+		: prev_id(start_id - 1)
 	{
-		id_nr = get_next_id();
 	}
-	virtual ~unique_type_id()
+	virtual ~unique_type_id_manager()
 	{
 	}
 
-protected:
-	unique_id_t get_next_id(void)
+public:
+	virtual unique_id_t obtain_unique_id(void)
 	{
 		return ++prev_id;
-	}
-
-public:
-	unique_id_t id(void) const
-	{
-		return id_nr;
-	}
-	operator unsigned int(void) const
-	{
-		return (unsigned int)(id_nr);
 	}
 };
 
 
 
+
+
+#define UNIQUE_TYPE_ID_CLASSDEF()								\
+public:															\
+	virtual bool type_matches(const tier2_message *msg);		\
+	static unique_id_t get_type_id(void);						\
+private:														\
+	static unique_id_t m_type_id
+
+
+#define UNIQUE_TYPE_ID_CLASSIMPL(class, manager)				\
+bool class::type_matches(const tier2_message *msg)				\
+{																\
+	return msg->get_type_id() == get_type_id();					\
+}																\
+unique_id_t class::get_type_id(void)							\
+{																\
+	if (!m_type_id)												\
+	{															\
+		m_type_id = manager.obtain_unique_id();					\
+	}															\
+	return m_type_id;											\
+}																\
+/* 																\
+	uninitialized; 												\
+	will be set up as soon as anyone invokes get_type_id() 		\
+ */																\
+unique_id_t class::m_type_id = manager.obtain_unique_id()
 
 
 
