@@ -1130,11 +1130,13 @@ ib_comboleg::~ib_comboleg()
 
 
 
-ib_contract::ib_contract()
+ib_contract::ib_contract() : m_tws_data(NULL)
 {
 }
 ib_contract::ib_contract(const tws::tr_contract &s)
 {
+	m_tws_data = NULL;
+
 	if (s.c_undercomp)
 	    c_undercomp = *s.c_undercomp;
 
@@ -1184,8 +1186,160 @@ ib_contract::~ib_contract()
 {
 }
 
+tws::tr_contract *ib_contract::to_tws(void) const
+{
+	return m_tws_data;
+}
 
+void ib_contract::prep_for_tws(tws::tws_instance_t *tws)
+{
+	if (!m_tws_data)
+	{
+		m_tws_data = new struct tws::tr_contract();
+		if (!m_tws_data)
+			return;
+	}
+	else
+	{
+		struct tws::tr_contract &dst = *m_tws_data;
 
+		if (dst.c_undercomp)
+		{
+			delete dst.c_undercomp;
+		}
+		dst.c_undercomp = NULL;
+
+		if (dst.c_comboleg)
+		{
+			for (int i = 0; i < dst.c_num_combolegs; i++)
+			{
+				tws::tr_comboleg_t &cl = dst.c_comboleg[i];
+
+				tws::tws_destroy_tr_comboleg(tws, &cl);
+			}
+			delete[] dst.c_comboleg;
+		}
+		dst.c_comboleg = NULL;
+		dst.c_num_combolegs = 0;
+	}
+
+	struct tws::tr_contract &dst = *m_tws_data;
+
+	tws::tws_init_contract(tws, m_tws_data);
+
+	if (c_undercomp.valid())
+	{
+		ib_under_comp v = c_undercomp;
+		dst.c_undercomp = new tws::under_comp_t();
+		if (!dst.c_undercomp)
+		{
+			cleanup_after_tws(tws);
+			return;
+		}
+		dst.c_undercomp->u_conid = v.u_conid;                       
+		dst.c_undercomp->u_delta = v.u_delta;                       
+		dst.c_undercomp->u_price = v.u_price;                       
+	}
+
+	if (c_strike.valid())
+		dst.c_strike = c_strike;                         
+
+	if (c_symbol.valid())
+		tws_strcpy(dst.c_symbol, c_symbol);                          
+	if (c_sectype.valid())
+		tws_strcpy(dst.c_sectype, c_sectype);                         
+	if (c_exchange.valid())
+		tws_strcpy(dst.c_exchange, c_exchange);
+	if (c_primary_exch.valid())
+		tws_strcpy(dst.c_primary_exch, c_primary_exch);                    
+	if (c_expiry.valid())
+		tws_strcpy(dst.c_expiry, c_expiry);                          
+	if (c_currency.valid())
+		tws_strcpy(dst.c_currency, c_currency);                        
+	if (c_right.valid())
+		tws_strcpy(dst.c_right, c_right);                           
+	if (c_local_symbol.valid())
+		tws_strcpy(dst.c_local_symbol, c_local_symbol);                    
+	if (c_multiplier.valid())
+		tws_strcpy(dst.c_multiplier, c_multiplier);
+	if (c_combolegs_descrip.valid())
+		tws_strcpy(dst.c_combolegs_descrip, c_combolegs_descrip);               
+	if (c_secid_type.valid())
+		tws_strcpy(dst.c_secid_type, c_secid_type);                      
+	if (c_secid.valid())
+		tws_strcpy(dst.c_secid, c_secid);
+
+	dst.c_comboleg = NULL;                      
+	dst.c_num_combolegs = (int)c_comboleg.size();
+	if (dst.c_num_combolegs)
+	{
+		dst.c_comboleg = new tws::tr_comboleg_t[dst.c_num_combolegs];
+		if (!dst.c_comboleg)
+		{
+			cleanup_after_tws(tws);
+			return;
+		}
+		for (int i = 0; i < dst.c_num_combolegs; i++)
+		{
+			tws::tr_comboleg_t &cl = dst.c_comboleg[i];
+			ib_comboleg &srcleg = c_comboleg[i];
+
+			tws::tws_init_tr_comboleg(tws, &cl);
+			if (srcleg.co_action.valid())
+				tws_strcpy(cl.co_action, ::to_tws(srcleg.co_action));                                    
+			if (srcleg.co_exchange)
+				tws_strcpy(cl.co_exchange, srcleg.co_exchange);
+			if (srcleg.co_designated_location)
+				tws_strcpy(cl.co_designated_location, srcleg.co_designated_location);                       
+
+			if (srcleg.co_conid)
+				cl.co_conid = srcleg.co_conid;
+			if (srcleg.co_ratio)
+				cl.co_ratio = srcleg.co_ratio;
+			if (srcleg.co_open_close)
+				cl.co_open_close = srcleg.co_open_close;
+			if (srcleg.co_short_sale_slot)
+				cl.co_short_sale_slot = srcleg.co_short_sale_slot;                          
+			if (srcleg.co_exempt_code)
+				cl.co_exempt_code = srcleg.co_exempt_code;                              
+		}
+	}
+
+	if (c_conid.valid())
+		dst.c_conid = c_conid;                          
+
+	if (c_include_expired.valid())
+		dst.c_include_expired = c_include_expired;                
+}
+
+void ib_contract::cleanup_after_tws(tws::tws_instance_t *tws)
+{
+	if (!m_tws_data)
+		return;
+
+	struct tws::tr_contract &dst = *m_tws_data;
+
+	if (dst.c_undercomp)
+	{
+		delete dst.c_undercomp;
+	}
+
+	if (dst.c_comboleg)
+	{
+		for (int i = 0; i < dst.c_num_combolegs; i++)
+		{
+			tws::tr_comboleg_t &cl = dst.c_comboleg[i];
+
+			tws::tws_destroy_tr_comboleg(tws, &cl);
+		}
+		delete[] dst.c_comboleg;
+	}
+
+	tws::tws_destroy_contract(tws, m_tws_data);
+
+	delete m_tws_data;
+	m_tws_data = NULL;
+}
 
 
 
@@ -1289,11 +1443,13 @@ ib_order_combo_leg::~ib_order_combo_leg()
 
 
 
-ib_order::ib_order()
+ib_order::ib_order() : m_tws_data(NULL)
 {
 }
 ib_order::ib_order(const tws::tr_order &s)
 {
+	m_tws_data = NULL;
+
     if (s.o_discretionary_amt)
 		o_discretionary_amt = s.o_discretionary_amt;
     if (s.o_lmt_price)
@@ -1475,6 +1631,342 @@ ib_order::~ib_order()
 {
 }
 
+tws::tr_order *ib_order::to_tws(void) const
+{
+	return m_tws_data;
+}
+
+void ib_order::prep_for_tws(tws::tws_instance_t *tws)
+{
+	if (!m_tws_data)
+	{
+		m_tws_data = new struct tws::tr_order();
+		if (!m_tws_data)
+			return;
+	}
+	else
+	{
+		struct tws::tr_order &dst = *m_tws_data;
+
+		if (dst.o_algo_params)
+		{
+			for (int i = 0; i < dst.o_algo_params_count; i++)
+			{
+				tws::tr_tag_value_t &d = dst.o_algo_params[i];
+
+				tws::tws_destroy_tag_value(tws, &d);
+			}
+			delete[] dst.o_algo_params;
+		}
+		dst.o_algo_params = NULL;
+		dst.o_algo_params_count = 0;
+
+		if (dst.o_smart_combo_routing_params)
+		{
+			for (int i = 0; i < dst.o_smart_combo_routing_params_count; i++)
+			{
+				tws::tr_tag_value_t &d = dst.o_smart_combo_routing_params[i];
+
+				tws::tws_destroy_tag_value(tws, &d);
+			}
+			delete[] dst.o_smart_combo_routing_params;
+		}
+		dst.o_smart_combo_routing_params = NULL;
+		dst.o_smart_combo_routing_params_count = 0;
+
+		if (dst.o_combo_legs)
+		{
+			for (int i = 0; i < dst.o_combo_legs_count; i++)
+			{
+				tws::tr_order_combo_leg_t &d = dst.o_combo_legs[i];
+
+				tws::tws_destroy_order_combo_leg(tws, &d);
+			}
+			delete[] dst.o_combo_legs;
+		}
+		dst.o_combo_legs = NULL;
+		dst.o_combo_legs_count = 0;
+	}
+
+	struct tws::tr_order &dst = *m_tws_data;
+
+	tws::tws_init_order(tws, m_tws_data);
+
+	if (o_discretionary_amt.valid())
+		dst.o_discretionary_amt = o_discretionary_amt;                       
+	if (o_lmt_price.valid())
+		dst.o_lmt_price = o_lmt_price;                               
+	if (o_aux_price.valid())
+		dst.o_aux_price = o_aux_price;                               
+	if (o_percent_offset.valid())
+		dst.o_percent_offset = o_percent_offset;                          
+	if (o_nbbo_price_cap.valid())
+		dst.o_nbbo_price_cap = o_nbbo_price_cap;                          
+	if (o_starting_price.valid())
+		dst.o_starting_price = o_starting_price;                          
+	if (o_stock_ref_price.valid())
+		dst.o_stock_ref_price = o_stock_ref_price;                         
+	if (o_delta.valid())
+		dst.o_delta = o_delta;                                   
+	if (o_stock_range_lower.valid())
+		dst.o_stock_range_lower = o_stock_range_lower;                       
+	if (o_stock_range_upper.valid())
+		dst.o_stock_range_upper = o_stock_range_upper;                       
+	if (o_volatility.valid())
+		dst.o_volatility = o_volatility;                              
+	if (o_delta_neutral_aux_price.valid())
+		dst.o_delta_neutral_aux_price = o_delta_neutral_aux_price;
+	if (o_trail_stop_price.valid())
+		dst.o_trail_stop_price = o_trail_stop_price;                        
+	if (o_trailing_percent.valid())
+		dst.o_trailing_percent = o_trailing_percent;
+	if (o_basis_points.valid())
+		dst.o_basis_points = o_basis_points;
+	if (o_scale_price_increment.valid())
+		dst.o_scale_price_increment = o_scale_price_increment;					
+	if (o_scale_price_adjust_value.valid())
+		dst.o_scale_price_adjust_value = o_scale_price_adjust_value;				
+	if (o_scale_profit_offset.valid())
+		dst.o_scale_profit_offset = o_scale_profit_offset;						
+
+	if (o_algo_strategy.valid())
+		tws_strcpy(dst.o_algo_strategy, o_algo_strategy);
+	if (o_good_after_time.valid())
+		tws_strcpy(dst.o_good_after_time, o_good_after_time);                         
+	if (o_good_till_date.valid())
+		tws_strcpy(dst.o_good_till_date, o_good_till_date);                          
+	if (o_fagroup.valid())
+		tws_strcpy(dst.o_fagroup, o_fagroup);                                 
+	if (o_famethod.valid())
+		tws_strcpy(dst.o_famethod, o_famethod);                                
+	if (o_fapercentage.valid())
+		tws_strcpy(dst.o_fapercentage, o_fapercentage);                            
+	if (o_faprofile.valid())
+		tws_strcpy(dst.o_faprofile, o_faprofile);                               
+	if (o_action.valid())
+		tws_strcpy(dst.o_action, o_action);                                  
+	if (o_order_type.valid())
+		tws_strcpy(dst.o_order_type, o_order_type);                              
+	if (o_tif.valid())
+		tws_strcpy(dst.o_tif, o_tif);                                     
+	if (o_oca_group.valid())
+		tws_strcpy(dst.o_oca_group, o_oca_group);                               
+	if (o_account.valid())
+		tws_strcpy(dst.o_account, o_account);                                 
+	if (o_open_close.valid())
+		tws_strcpy(dst.o_open_close, o_open_close);                              
+	if (o_orderref.valid())
+		tws_strcpy(dst.o_orderref, o_orderref);                                
+	if (o_designated_location.valid())
+		tws_strcpy(dst.o_designated_location, o_designated_location);                     
+	if (o_rule80a.valid())
+		tws_strcpy(dst.o_rule80a, o_rule80a);                                 
+	if (o_settling_firm.valid())
+		tws_strcpy(dst.o_settling_firm, o_settling_firm);
+	if (o_delta_neutral_order_type.valid())
+		tws_strcpy(dst.o_delta_neutral_order_type, o_delta_neutral_order_type);
+	if (o_clearing_account.valid())
+		tws_strcpy(dst.o_clearing_account, o_clearing_account);                        
+	if (o_clearing_intent.valid())
+		tws_strcpy(dst.o_clearing_intent, o_clearing_intent);                         
+	if (o_hedge_type.valid())
+		tws_strcpy(dst.o_hedge_type, o_hedge_type);								
+	if (o_hedge_param.valid())
+		tws_strcpy(dst.o_hedge_param, o_hedge_param);								
+	if (o_delta_neutral_settling_firm.valid())
+		tws_strcpy(dst.o_delta_neutral_settling_firm, o_delta_neutral_settling_firm);				
+	if (o_delta_neutral_clearing_account.valid())
+		tws_strcpy(dst.o_delta_neutral_clearing_account, o_delta_neutral_clearing_account);			
+	if (o_delta_neutral_clearing_intent.valid())
+		tws_strcpy(dst.o_delta_neutral_clearing_intent, o_delta_neutral_clearing_intent);			
+
+	dst.o_algo_params_count = o_algo_params.size();
+	if (dst.o_algo_params_count)
+	{
+		dst.o_algo_params = new tws::tr_tag_value_t[dst.o_algo_params_count];
+		if (!dst.o_algo_params)
+		{
+			cleanup_after_tws(tws);
+			return;
+		}
+		for (int i = 0; i < dst.o_algo_params_count; i++)
+		{
+			tws::tr_tag_value_t &d = dst.o_algo_params[i];
+			ib_tag_value &s = o_algo_params[i];
+
+			tws::tws_init_tag_value(tws, &d);
+
+			tws_strcpy(d.t_tag, s.t_tag);
+			tws_strcpy(d.t_val, s.t_val);
+		}
+	}
+	dst.o_smart_combo_routing_params_count = o_smart_combo_routing_params.size();
+	if (dst.o_smart_combo_routing_params_count)
+	{
+		dst.o_smart_combo_routing_params = new tws::tr_tag_value_t[dst.o_smart_combo_routing_params_count];
+		if (!dst.o_smart_combo_routing_params)
+		{
+			cleanup_after_tws(tws);
+			return;
+		}
+		for (int i = 0; i < dst.o_smart_combo_routing_params_count; i++)
+		{
+			tws::tr_tag_value_t &d = dst.o_smart_combo_routing_params[i];
+			ib_tag_value &s = o_smart_combo_routing_params[i];
+
+			tws::tws_init_tag_value(tws, &d);
+
+			tws_strcpy(d.t_tag, s.t_tag);
+			tws_strcpy(d.t_val, s.t_val);
+		}
+	}
+	dst.o_combo_legs_count = o_combo_legs.size();
+	if (dst.o_combo_legs_count)
+	{
+		dst.o_combo_legs = new tws::tr_order_combo_leg_t[dst.o_combo_legs_count];
+		if (!dst.o_combo_legs)
+		{
+			cleanup_after_tws(tws);
+			return;
+		}
+		for (int i = 0; i < dst.o_combo_legs_count; i++)
+		{
+			tws::tr_order_combo_leg_t &d = dst.o_combo_legs[i];
+			ib_order_combo_leg &s = o_combo_legs[i];
+
+			tws::tws_init_order_combo_leg(tws, &d);
+
+			d.cl_price = s.cl_price;
+		}
+	}
+
+	if (o_orderid.valid())
+		dst.o_orderid = o_orderid;                                 
+	if (o_total_quantity.valid())
+		dst.o_total_quantity = o_total_quantity;                          
+	if (o_origin.valid())
+		dst.o_origin = o_origin;                               
+	if (o_clientid.valid())
+		dst.o_clientid = o_clientid;                                
+	if (o_permid.valid())
+		dst.o_permid = o_permid;                                  
+	if (o_parentid.valid())
+		dst.o_parentid = o_parentid;                                
+	if (o_display_size.valid())
+		dst.o_display_size = o_display_size;                            
+	if (o_trigger_method.valid())
+		dst.o_trigger_method = o_trigger_method;                          
+	if (o_min_qty.valid())
+		dst.o_min_qty = o_min_qty;                                 
+	if (o_volatility_type.valid())
+		dst.o_volatility_type = o_volatility_type;                         
+	if (o_reference_price_type.valid())
+		dst.o_reference_price_type = o_reference_price_type;                    
+	if (o_basis_points_type.valid())
+		dst.o_basis_points_type = o_basis_points_type;
+	if (o_scale_subs_level_size.valid())
+		dst.o_scale_subs_level_size = o_scale_subs_level_size;					
+	if (o_scale_init_level_size.valid())
+		dst.o_scale_init_level_size = o_scale_init_level_size;					
+	if (o_scale_price_adjust_interval.valid())
+		dst.o_scale_price_adjust_interval = o_scale_price_adjust_interval;				
+	if (o_scale_init_position.valid())
+		dst.o_scale_init_position = o_scale_init_position;						
+	if (o_scale_init_fill_qty.valid())
+		dst.o_scale_init_fill_qty = o_scale_init_fill_qty;						
+	if (o_exempt_code.valid())
+		dst.o_exempt_code = o_exempt_code;                             
+	if (o_delta_neutral_con_id.valid())
+		dst.o_delta_neutral_con_id = o_delta_neutral_con_id;					
+
+	if (o_oca_type.valid())
+		dst.o_oca_type = o_oca_type;                           
+	if (o_auction_strategy.valid())
+		dst.o_auction_strategy = o_auction_strategy;           
+
+	if (o_short_sale_slot.valid())
+		dst.o_short_sale_slot = o_short_sale_slot;                      
+	if (o_override_percentage_constraints.valid())
+		dst.o_override_percentage_constraints = o_override_percentage_constraints;      
+	if (o_firm_quote_only.valid())
+		dst.o_firm_quote_only = o_firm_quote_only;                      
+	if (o_etrade_only.valid())
+		dst.o_etrade_only = o_etrade_only;
+	if (o_all_or_none.valid())
+		dst.o_all_or_none = o_all_or_none;                          
+	if (o_outside_rth.valid())
+		dst.o_outside_rth = o_outside_rth;                          
+	if (o_hidden.valid())
+		dst.o_hidden = o_hidden;                               
+	if (o_transmit.valid())
+		dst.o_transmit = o_transmit;                             
+	if (o_block_order.valid())
+		dst.o_block_order = o_block_order;                          
+	if (o_sweep_to_fill.valid())
+		dst.o_sweep_to_fill = o_sweep_to_fill;                        
+	if (o_continuous_update.valid())
+		dst.o_continuous_update = o_continuous_update;                    
+	if (o_whatif.valid())
+		dst.o_whatif = o_whatif;                               
+	if (o_not_held.valid())
+		dst.o_not_held = o_not_held;
+	if (o_opt_out_smart_routing.valid())
+		dst.o_opt_out_smart_routing = o_opt_out_smart_routing;				
+	if (o_scale_auto_reset.valid())
+		dst.o_scale_auto_reset = o_scale_auto_reset;						
+	if (o_scale_random_percent.valid())
+		dst.o_scale_random_percent = o_scale_random_percent;					
+}
+
+void ib_order::cleanup_after_tws(tws::tws_instance_t *tws)
+{
+	if (!m_tws_data)
+		return;
+
+	struct tws::tr_order &dst = *m_tws_data;
+
+	if (dst.o_algo_params)
+	{
+		for (int i = 0; i < dst.o_algo_params_count; i++)
+		{
+			tws::tr_tag_value_t &d = dst.o_algo_params[i];
+
+			tws::tws_destroy_tag_value(tws, &d);
+		}
+		delete[] dst.o_algo_params;
+	}
+
+	if (dst.o_smart_combo_routing_params)
+	{
+		for (int i = 0; i < dst.o_smart_combo_routing_params_count; i++)
+		{
+			tws::tr_tag_value_t &d = dst.o_smart_combo_routing_params[i];
+
+			tws::tws_destroy_tag_value(tws, &d);
+		}
+		delete[] dst.o_smart_combo_routing_params;
+	}
+
+	if (dst.o_combo_legs)
+	{
+		for (int i = 0; i < dst.o_combo_legs_count; i++)
+		{
+			tws::tr_order_combo_leg_t &d = dst.o_combo_legs[i];
+
+			tws::tws_destroy_order_combo_leg(tws, &d);
+		}
+		delete[] dst.o_combo_legs;
+	}
+
+	tws::tws_destroy_order(tws, m_tws_data);
+
+	delete m_tws_data;
+	m_tws_data = NULL;
+}
+
+
+
+
 
 
 
@@ -1550,11 +2042,13 @@ ib_execution::~ib_execution()
 
 
 
-ib_exec_filter::ib_exec_filter()
+ib_exec_filter::ib_exec_filter() : m_tws_data(NULL)
 {
 }
 ib_exec_filter::ib_exec_filter(const tws::tr_exec_filter &s)
 {
+	m_tws_data = NULL;
+
     if (s.f_acctcode)
 		f_acctcode = s.f_acctcode;
     if (s.f_time)
@@ -1575,17 +2069,63 @@ ib_exec_filter::~ib_exec_filter()
 {
 }
 
+tws::tr_exec_filter *ib_exec_filter::to_tws(void) const
+{
+	return m_tws_data;
+}
+
+void ib_exec_filter::prep_for_tws(tws::tws_instance_t *tws)
+{
+	if (!m_tws_data)
+	{
+		m_tws_data = new struct tws::tr_exec_filter();
+		if (!m_tws_data)
+			return;
+	}
+
+	struct tws::tr_exec_filter &dst = *m_tws_data;
+
+	tws::tws_init_exec_filter(tws, m_tws_data);
+
+	if (f_acctcode.valid())
+		tws_strcpy(dst.f_acctcode, f_acctcode);
+	if (f_time.valid())
+		tws_strcpy(dst.f_time, f_time);
+	if (f_symbol.valid())
+		tws_strcpy(dst.f_symbol, f_symbol);
+	if (f_sectype.valid())
+		tws_strcpy(dst.f_sectype, f_sectype);
+	if (f_exchange.valid())
+		tws_strcpy(dst.f_exchange, f_exchange);
+	if (f_side.valid())
+		tws_strcpy(dst.f_side, f_side);
+
+	if (f_clientid.valid())
+		dst.f_clientid = f_clientid;
+}
+
+void ib_exec_filter::cleanup_after_tws(tws::tws_instance_t *tws)
+{
+	if (!m_tws_data)
+		return;
+
+	tws::tws_destroy_exec_filter(tws, m_tws_data);
+
+	delete m_tws_data;
+	m_tws_data = NULL;
+}
 
 
 
 
 
-
-ib_scanner_subscription::ib_scanner_subscription()
+ib_scanner_subscription::ib_scanner_subscription() : m_tws_data(NULL)
 {
 }
 ib_scanner_subscription::ib_scanner_subscription(const tws::tr_scanner_subscription &s)
 {
+	m_tws_data = NULL;
+
     if (s.scan_above_price)
 		scan_above_price = s.scan_above_price;
     if (s.scan_below_price)
@@ -1633,6 +2173,81 @@ ib_scanner_subscription::ib_scanner_subscription(const tws::tr_scanner_subscript
 }
 ib_scanner_subscription::~ib_scanner_subscription()
 {
+}
+
+tws::tr_scanner_subscription *ib_scanner_subscription::to_tws(void) const
+{
+	return m_tws_data;
+}
+
+void ib_scanner_subscription::prep_for_tws(tws::tws_instance_t *tws)
+{
+	if (!m_tws_data)
+	{
+		m_tws_data = new struct tws::tr_scanner_subscription();
+		if (!m_tws_data)
+			return;
+	}
+
+	struct tws::tr_scanner_subscription &dst = *m_tws_data;
+
+	tws::tws_init_scanner_subscription(tws, m_tws_data);
+
+	if (scan_above_price.valid())
+		dst.scan_above_price = scan_above_price;
+	if (scan_below_price.valid())
+		dst.scan_below_price = scan_below_price;
+	if (scan_coupon_rate_above.valid())
+		dst.scan_coupon_rate_above = scan_coupon_rate_above;
+	if (scan_coupon_rate_below.valid())
+		dst.scan_coupon_rate_below = scan_coupon_rate_below;
+	if (scan_market_cap_above.valid())
+		dst.scan_market_cap_above = scan_market_cap_above;
+	if (scan_market_cap_below.valid())
+		dst.scan_market_cap_below = scan_market_cap_below;
+
+	if (scan_exclude_convertible.valid())
+		tws_strcpy(dst.scan_exclude_convertible, scan_exclude_convertible);
+	if (scan_instrument.valid())
+		tws_strcpy(dst.scan_instrument, scan_instrument);
+	if (scan_location_code.valid())
+		tws_strcpy(dst.scan_location_code, scan_location_code);
+	if (scan_maturity_date_above.valid())
+		tws_strcpy(dst.scan_maturity_date_above, scan_maturity_date_above);
+	if (scan_maturity_date_below.valid())
+		tws_strcpy(dst.scan_maturity_date_below, scan_maturity_date_below);
+	if (scan_moody_rating_above.valid())
+		tws_strcpy(dst.scan_moody_rating_above, scan_moody_rating_above);
+	if (scan_moody_rating_below.valid())
+		tws_strcpy(dst.scan_moody_rating_below, scan_moody_rating_below);
+	if (scan_code.valid())
+		tws_strcpy(dst.scan_code, scan_code);
+	if (scan_sp_rating_above.valid())
+		tws_strcpy(dst.scan_sp_rating_above, scan_sp_rating_above);
+	if (scan_sp_rating_below.valid())
+		tws_strcpy(dst.scan_sp_rating_below, scan_sp_rating_below);
+	if (scan_scanner_setting_pairs.valid())
+		tws_strcpy(dst.scan_scanner_setting_pairs, scan_scanner_setting_pairs);
+	if (scan_stock_type_filter.valid())
+		tws_strcpy(dst.scan_stock_type_filter, scan_stock_type_filter);
+
+	if (scan_above_volume.valid())
+		dst.scan_above_volume = scan_above_volume;
+	if (scan_number_of_rows.valid())
+		dst.scan_number_of_rows = scan_number_of_rows;
+	if (scan_average_option_volume_above.valid())
+		dst.scan_average_option_volume_above = scan_average_option_volume_above;
+}
+
+void ib_scanner_subscription::cleanup_after_tws(tws::tws_instance_t *tws)
+{
+	if (!m_tws_data)
+		return;
+
+	tws::tws_destroy_scanner_subscription(tws, m_tws_data);
+
+	delete m_tws_data;
+	m_tws_data = NULL;
 }
 
 
@@ -1701,38 +2316,3 @@ ib_date_t &ib_date_t::operator =(char const *ts)
 	return *this;
 }
 
-ib_contract::operator struct tws::tr_contract(void)
-{
-	struct tws::tr_contract c;
-
-	c.c_num_combolegs = this->c_comboleg.size();
-
-	return c;
-}
-
-ib_exec_filter::operator struct tws::tr_exec_filter(void)
-{
-	struct tws::tr_exec_filter e;
-
-	e.f_acctcode = const_cast<char *>(this->f_acctcode.value().c_str());
-
-	return e;
-}
-
-ib_scanner_subscription::operator struct tws::tr_scanner_subscription(void)
-{
-	struct tws::tr_scanner_subscription s;
-
-	s.scan_above_price = this->scan_above_price;
-
-	return s;
-}
-
-ib_order::operator struct tws::tr_order(void)
-{
-	struct tws::tr_order o;
-
-	o.o_account = const_cast<char *>(this->o_account.value().c_str());
-
-	return o;
-}

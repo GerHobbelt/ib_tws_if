@@ -36,9 +36,17 @@ namespace tws
 
 
 
-// TODO: include mdoff parameter...
-class ib_ticker_list : std::vector<int>
+class ib_ticker_list
 {
+public:
+	/*
+	  mdoff blocks regular market data so that only specified generic ticks are received. 
+	  In response to a '233,mdoff' request, pure RTVolume data will be returned without 
+	  any additional records.
+	*/
+	ib_bool_t t_mdoff;
+	ib_int_list_t t_list;
+
 public:
 	ib_ticker_list()
 	{
@@ -1001,10 +1009,10 @@ class ib_msg_request_fa: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int fa_data_type;
+	tws_fa_msg_type_t fa_data_type;
 
 public:
-	ib_msg_request_fa(tier2_message_processor *from, tier2_message_processor *to, int _fa_data_type) :
+	ib_msg_request_fa(tier2_message_processor *from, tier2_message_processor *to, tws_fa_msg_type_t _fa_data_type) :
 	    tws_request_message(from, to),
 		fa_data_type(_fa_data_type)
 	{
@@ -1040,11 +1048,11 @@ class ib_msg_replace_fa: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int fa_data_type;
+	tws_fa_msg_type_t fa_data_type;
 	ib_string_t cxml;
 
 public:
-	ib_msg_replace_fa(tier2_message_processor *from, tier2_message_processor *to, int _fa_data_type, const char *_cxml) :
+	ib_msg_replace_fa(tier2_message_processor *from, tier2_message_processor *to, tws_fa_msg_type_t _fa_data_type, const char *_cxml) :
 	    tws_request_message(from, to),
 		fa_data_type(_fa_data_type), cxml(_cxml)
 	{

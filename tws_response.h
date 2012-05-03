@@ -628,11 +628,16 @@ class ib_msg_resp_receive_fa: public tws_response_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
+protected:
+	tws_fa_msg_type_t fa_data_type;
+	ib_string_t cxml;
+
 public:
-	ib_msg_resp_receive_fa(tier2_message_processor *from, tier2_message_processor *to, int fa_data_type, const char cxml[]) :
-	  tws_response_message(from, to)
-	  {
-	  }
+	ib_msg_resp_receive_fa(tier2_message_processor *from, tier2_message_processor *to, tws_fa_msg_type_t _fa_data_type, const char *_cxml) :
+		tws_response_message(from, to),
+		fa_data_type(_fa_data_type), cxml(_cxml)
+	{
+	}
 protected:
 	virtual ~ib_msg_resp_receive_fa()
 	{

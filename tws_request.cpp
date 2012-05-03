@@ -686,7 +686,11 @@ int ib_msg_req_scanner_parameters::tx(tws::tws_instance_t *tws)
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_msg_req_scanner_subscription::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_req_scanner_subscription(tws, ticker_id, &tws::tr_scanner_subscription_t(m_subscription));
+	int rv;
+
+	m_subscription.prep_for_tws(tws);
+	rv = tws::tws_req_scanner_subscription(tws, ticker_id, m_subscription.to_tws());
+	m_subscription.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -704,8 +708,10 @@ int ib_msg_cancel_scanner_subscription::tx(tws::tws_instance_t *tws)
 /* sends message REQ_MKT_DATA to IB/TWS */
 int ib_msg_req_mkt_data::tx(tws::tws_instance_t *tws)
 {
+	contract.prep_for_tws(tws);
 	// http://stackoverflow.com/questions/584824/guaranteed-lifetime-of-temporary-in-c
-	int rv = tws::tws_req_mkt_data(tws, ticker_id, &tws::tr_contract_t(contract), ib_string_t(generic_tick_list), snapshot);
+	int rv = tws::tws_req_mkt_data(tws, ticker_id, contract.to_tws(), ib_string_t(generic_tick_list), snapshot);
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -714,8 +720,10 @@ int ib_msg_req_mkt_data::tx(tws::tws_instance_t *tws)
 /* sends message REQ_HISTORICAL_DATA to IB/TWS */
 int ib_msg_req_historical_data::tx(tws::tws_instance_t *tws)
 {
+	contract.prep_for_tws(tws);
 	// http://stackoverflow.com/questions/584824/guaranteed-lifetime-of-temporary-in-c
-	int rv = tws::tws_req_historical_data(tws, ticker_id, &tws::tr_contract_t(contract), ib_string_t(end_date_time), duration, bar_size_setting, what_to_show, use_rth, format_date);
+	int rv = tws::tws_req_historical_data(tws, ticker_id, contract.to_tws(), ib_string_t(end_date_time), duration, bar_size_setting, what_to_show, use_rth, format_date);
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -742,7 +750,9 @@ int ib_msg_cancel_mkt_data::tx(tws::tws_instance_t *tws)
 /* sends message EXERCISE_OPTIONS to IB/TWS */
 int ib_msg_exercise_options::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_exercise_options(tws, ticker_id, &tws::tr_contract_t(contract), exercise_action, exercise_quantity, account, exc_override);
+	contract.prep_for_tws(tws);
+	int rv = tws::tws_exercise_options(tws, ticker_id, contract.to_tws(), exercise_action, exercise_quantity, account, exc_override);
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -751,7 +761,11 @@ int ib_msg_exercise_options::tx(tws::tws_instance_t *tws)
 /* sends message PLACE_ORDER to IB/TWS */
 int ib_msg_place_order::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_place_order(tws, order_id, &tws::tr_contract_t(contract), &tws::tr_order_t(order));
+	contract.prep_for_tws(tws);
+	order.prep_for_tws(tws);
+	int rv = tws::tws_place_order(tws, order_id, contract.to_tws(), order.to_tws());
+	order.cleanup_after_tws(tws);
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -787,7 +801,9 @@ int ib_msg_req_account_updates::tx(tws::tws_instance_t *tws)
 /* sends message REQ_EXECUTIONS to IB/TWS */
 int ib_msg_req_executions::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_req_executions(tws, reqid, &tws::tr_exec_filter_t(filter));
+	filter.prep_for_tws(tws);
+	int rv = tws::tws_req_executions(tws, reqid, filter.to_tws());
+	filter.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -805,7 +821,9 @@ int ib_msg_req_ids::tx(tws::tws_instance_t *tws)
 /* sends message REQ_CONTRACT_DATA to IB/TWS */
 int ib_msg_req_contract_details::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_req_contract_details(tws, reqid, &tws::tr_contract_t(contract));
+	contract.prep_for_tws(tws);
+	int rv = tws::tws_req_contract_details(tws, reqid, contract.to_tws());
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -814,7 +832,9 @@ int ib_msg_req_contract_details::tx(tws::tws_instance_t *tws)
 /* sends message REQ_MKT_DEPTH to IB/TWS */
 int ib_msg_req_mkt_depth::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_req_mkt_depth(tws, ticker_id, &tws::tr_contract_t(contract), num_rows);
+	contract.prep_for_tws(tws);
+	int rv = tws::tws_req_mkt_depth(tws, ticker_id, contract.to_tws(), num_rows);
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -913,7 +933,9 @@ int ib_msg_req_current_time::tx(tws::tws_instance_t *tws)
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
 int ib_msg_req_fundamental_data::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_req_fundamental_data(tws, reqid, &tws::tr_contract_t(contract), report_type);
+	contract.prep_for_tws(tws);
+	int rv = tws::tws_req_fundamental_data(tws, reqid, contract.to_tws(), report_type);
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -931,7 +953,9 @@ int ib_msg_cancel_fundamental_data::tx(tws::tws_instance_t *tws)
 /* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_msg_calculate_implied_volatility::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_calculate_implied_volatility(tws, reqid, &tws::tr_contract_t(contract), option_price, under_price);
+	contract.prep_for_tws(tws);
+	int rv = tws::tws_calculate_implied_volatility(tws, reqid, contract.to_tws(), option_price, under_price);
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -949,7 +973,9 @@ int ib_msg_cancel_calculate_implied_volatility::tx(tws::tws_instance_t *tws)
 /* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
 int ib_msg_calculate_option_price::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_calculate_option_price(tws, reqid, &tws::tr_contract_t(contract), volatility, under_price);
+	contract.prep_for_tws(tws);
+	int rv = tws::tws_calculate_option_price(tws, reqid, contract.to_tws(), volatility, under_price);
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -985,7 +1011,9 @@ int ib_msg_req_market_data_type::tx(tws::tws_instance_t *tws)
 /* sends message REQ_REAL_TIME_BARS to IB/TWS */
 int ib_msg_request_realtime_bars::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_request_realtime_bars(tws, ticker_id, &tws::tr_contract_t(contract), bar_size, what_to_show, use_rth);
+	contract.prep_for_tws(tws);
+	int rv = tws::tws_request_realtime_bars(tws, ticker_id, contract.to_tws(), bar_size, what_to_show, use_rth);
+	contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -1011,7 +1039,22 @@ int ib_msg_cancel_realtime_bars::tx(tws::tws_instance_t *tws)
 
 ib_ticker_list::operator class ib_string_t(void)
 {
-	return "";
+	ib_string_t s;
+	int i;
+
+	for (i = 0; i < t_list.size(); i++)
+	{
+		char buf[5*(sizeof t_list[i])/2 + 2 + 1];
+
+		sprintf(buf, ",%d", t_list[i]);
+		if (s.length() == 0)
+			s = buf + 1;
+		else
+			s.append(buf);
+	}
+	if (t_mdoff)
+		s.append(",mdoff" + (s.length() == 0));
+	return s;
 }
 
 

@@ -36,7 +36,11 @@ typedef tws::tr_auction_strategy_t tws_auction_strategy_t;
 typedef tws::market_data_type_t tws_market_data_type_t;
 typedef tws::tr_tick_type_t tws_tick_type_t;
 typedef tws::tr_comboleg_type_t tws_comboleg_type_t;
-
+typedef tws::tr_fa_msg_type_t tws_fa_msg_type_t;
+namespace tws
+{
+	typedef struct tws_instance tws_instance_t;
+}
 
 
 
@@ -278,6 +282,7 @@ public:
 	operator ib_string_t();
 	ib_date_t &operator =(const char *timestamp);
 };
+typedef std::vector<int> ib_int_list_t;
 
 
 
@@ -286,16 +291,19 @@ public:
 template <typename T> class optional_value
 {
 protected:
-    T stored_value;
-    bool is_valid;
+    T m_stored_value;
+    bool m_is_valid;
 
 public:
-    optional_value() : is_valid(false)
+    optional_value() : m_is_valid(false)
     {
     }
-    optional_value(T &v) : stored_value(v), is_valid(true)
+    optional_value(T &v) : m_stored_value(v), m_is_valid(true)
     {
     }
+	optional_value(T v) : m_stored_value(v), m_is_valid(true)
+	{
+	}
     ~optional_value()
     {
     }
@@ -303,24 +311,24 @@ public:
 public:
     void clear(void)
     {
-        is_valid = false;
+        m_is_valid = false;
     }
     T set(T v)
     {
-        is_valid = true;
-        stored_value = v;
+        m_is_valid = true;
+        m_stored_value = v;
         return v;
     }
     bool valid(void) const
     {
-        return is_valid;
+        return m_is_valid;
     }
-    T value(T default_value = T(0))
+    T value(T usr_default_value = T())
     {
-        if (is_valid)
-            return stored_value;
+        if (m_is_valid)
+            return m_stored_value;
         else
-            return default_value;
+            return usr_default_value;
     }
 	operator T()
 	{
@@ -329,14 +337,14 @@ public:
 
     optional_value<T> &operator =(T v)
     {
-        is_valid = true;
-        stored_value = v;
+        m_is_valid = true;
+        m_stored_value = v;
         return *this;
     }
     optional_value<T> &operator =(const optional_value<T> &v)
     {
-        is_valid = v.is_valid;
-        stored_value = v.stored_value;
+        m_is_valid = v.m_is_valid;
+        m_stored_value = v.m_stored_value;
         return *this;
     }
 };
@@ -351,22 +359,22 @@ class o_string_t : public optional_value<std::string>
 public:
     o_string_t(const char *v)
     {
-        is_valid = true;
-        stored_value = v;
+        m_is_valid = true;
+        m_stored_value = v;
     }
     o_string_t(const unsigned char *v)
     {
-        is_valid = true;
-        stored_value = (const char *)v;
+        m_is_valid = true;
+        m_stored_value = (const char *)v;
     }
     o_string_t()
     {
-        is_valid = false;
+        m_is_valid = false;
     }
     o_string_t(std::string &v)
     {
-        is_valid = true;
-        stored_value = v;
+        m_is_valid = true;
+        m_stored_value = v;
     }
     ~o_string_t()
     {
@@ -375,29 +383,38 @@ public:
 public:
     const char *set(const char *v)
     {
-        is_valid = true;
-        stored_value = v;
+        m_is_valid = true;
+        m_stored_value = v;
         return v;
     }
     std::string value(const char *default_value = "") const
     {
-        if (is_valid)
-            return stored_value;
+        if (m_is_valid)
+            return m_stored_value;
         else
             return default_value;
     }
 
     o_string_t &operator =(const char *v)
     {
-        is_valid = true;
-        stored_value = v;
+        m_is_valid = true;
+        m_stored_value = v;
         return *this;
     }
+	operator const char *()
+	{
+		return value().c_str();
+	}
 };
 typedef optional_value<tws_origin_t>				o_origin_t;
 typedef optional_value<tws_oca_type_t>				o_oca_type_t;
 typedef optional_value<tws_auction_strategy_t>		o_auction_strategy_t;
 typedef optional_value<tws_short_sale_slot_type_t>	o_short_sale_slot_type_t;
+typedef optional_value<tws_action_code_t>			o_action_code_t;
+typedef optional_value<tws_comboleg_type_t>			o_comboleg_type_t;
+typedef optional_value<tws_short_sale_slot_type_t>	o_short_sale_slot_type_t;
+
+
 
 
 
@@ -425,14 +442,14 @@ DECLARE_TWS_FORWARD_REFERENCE(struct tr_comboleg);
 class ib_comboleg
 {
 public:
-    tws_action_code_t			co_action;					/* BUY/SELL/SSHORT/SSHORTX */
-    ib_string_t					co_exchange;
-    ib_string_t					co_designated_location;     /* set to "" if unused, as usual */
-    ib_int_t					co_conid;
-    ib_int_t					co_ratio;
-    tws_comboleg_type_t			co_open_close;
-    tws_short_sale_slot_type_t	co_short_sale_slot;			/* 1 = clearing broker, 2 = third party */
-    ib_int_t					co_exempt_code;             /* set to -1 if you do not use it */
+    o_action_code_t				co_action;					/* BUY/SELL/SSHORT/SSHORTX */
+    o_string_t					co_exchange;
+    o_string_t					co_designated_location;     /* set to "" if unused, as usual */
+    o_int_t						co_conid;
+    o_int_t						co_ratio;
+    o_comboleg_type_t			co_open_close;
+    o_short_sale_slot_type_t	co_short_sale_slot;			/* 1 = clearing broker, 2 = third party */
+    o_int_t						co_exempt_code;             /* set to -1 if you do not use it */
 
 public:
     ib_comboleg();
@@ -476,8 +493,13 @@ public:
     ib_contract(const tws::tr_contract &c);
     virtual ~ib_contract();
 
+protected:
+	tws::tr_contract *m_tws_data;
+
 public:
-	operator tws::tr_contract();
+	void prep_for_tws(tws::tws_instance_t *tws);
+	void cleanup_after_tws(tws::tws_instance_t *tws);
+	tws::tr_contract *to_tws(void) const;
 };
 
 
@@ -660,8 +682,13 @@ public:
     ib_order(const tws::tr_order &o);
     virtual ~ib_order();
 
+protected:
+	tws::tr_order *m_tws_data;
+
 public:
-    operator tws::tr_order();
+	void prep_for_tws(tws::tws_instance_t *tws);
+	void cleanup_after_tws(tws::tws_instance_t *tws);
+	tws::tr_order *to_tws(void) const;
 };
 
 
@@ -738,8 +765,13 @@ public:
     ib_exec_filter(const tws::tr_exec_filter &f);
     virtual ~ib_exec_filter();
 
+protected:
+	tws::tr_exec_filter *m_tws_data;
+
 public:
-    operator tws::tr_exec_filter();
+	void prep_for_tws(tws::tws_instance_t *tws);
+	void cleanup_after_tws(tws::tws_instance_t *tws);
+	tws::tr_exec_filter *to_tws(void) const;
 };
 
 
@@ -777,8 +809,13 @@ public:
     ib_scanner_subscription(const tws::tr_scanner_subscription &s);
     virtual ~ib_scanner_subscription();
 
+protected:
+	tws::tr_scanner_subscription *m_tws_data;
+
 public:
-    operator tws::tr_scanner_subscription();
+	void prep_for_tws(tws::tws_instance_t *tws);
+	void cleanup_after_tws(tws::tws_instance_t *tws);
+	tws::tr_scanner_subscription *to_tws(void) const;
 };
 
 
