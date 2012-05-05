@@ -34,3 +34,6 @@
 [submodule "utils/wsclean"]
 	path = utils/wsclean
 	url = git@github.com:GerHobbelt/whitespace-cleaner.git
+[submodule "html/dive_into_html5"]
+	path = html/dive_into_html5
+	url = git@github.com:GerHobbelt/diveintohtml5.git
