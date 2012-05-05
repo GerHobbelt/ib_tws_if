@@ -16,3 +16,14 @@ build/msvc2010/ipch/
 *.suo
 *.sdf
 *.opensdf
+html/contact/images/_vti_cnf
+html/contact/_vti_cnf
+html/dev/_vti_cnf
+html/faking_it/_vti_cnf
+html/images/_vti_cnf
+html/overview/images/_vti_cnf
+html/overview/_vti_cnf
+html/styles/_vti_cnf
+html/trading/_vti_cnf
+html/_vti_cnf
+html/_vti_pvt
