@@ -236,7 +236,7 @@ class ib_string_t : public std::string
 {
 public:
 	ib_string_t(const char *s) :
-		std::string(s)
+		std::string(s ? s : "")
 	{
 	}
 	ib_string_t() :
@@ -323,12 +323,13 @@ public:
     {
         return m_is_valid;
     }
-    T value(T usr_default_value = T())
+    T &value(T usr_default_value = T())
     {
-        if (m_is_valid)
-            return m_stored_value;
-        else
-            return usr_default_value;
+        if (!m_is_valid)
+		{
+            m_stored_value = usr_default_value;
+		}
+        return m_stored_value;
     }
 	operator T()
 	{
@@ -387,12 +388,13 @@ public:
         m_stored_value = v;
         return v;
     }
-    std::string value(const char *default_value = "") const
+    std::string &value(const char *default_value = "")
     {
-        if (m_is_valid)
-            return m_stored_value;
-        else
-            return default_value;
+        if (!m_is_valid)
+		{
+            m_stored_value = default_value;
+		}
+        return m_stored_value;
     }
 
     o_string_t &operator =(const char *v)

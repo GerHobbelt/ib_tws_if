@@ -94,7 +94,10 @@ void tws_cb_print_combolegs(void *opaque, int indent_level, int count, tr_combol
 void tws_cb_print_contract(void *opaque, int indent_level, const tr_contract_t *contract)
 {
     tws_cb_printf(opaque, indent_level, "CONTRACT: delta neutral:\n");
-	tws_cb_print_under_comp(opaque, indent_level + 1, contract->c_undercomp);
+	if (contract->c_undercomp)
+	{
+		tws_cb_print_under_comp(opaque, indent_level + 1, contract->c_undercomp);
+	}
     tws_cb_printf(opaque, indent_level + 1, "strike=%g, symbol=[%s], sectype=[%s], exchange=[%s], primary_exch=[%s], expiry=[%s], currency=[%s], right=[%s], local_symbol=[%s], multiplier=[%s], combolegs_descrip=[%s], secid_type=[%s], secid=[%s], conid=%d, include_expired=%d\n",
 		contract->c_strike, contract->c_symbol, contract->c_sectype, contract->c_exchange, contract->c_primary_exch, contract->c_expiry, contract->c_currency, contract->c_right, contract->c_local_symbol, contract->c_multiplier,
 		contract->c_combolegs_descrip, contract->c_secid_type, contract->c_secid, contract->c_conid, contract->c_include_expired);
