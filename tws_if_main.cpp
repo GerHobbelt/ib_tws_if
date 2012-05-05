@@ -415,7 +415,7 @@ static void *event_callback(enum mg_event event, struct mg_connection *conn) {
 	file_found = (0 == mg_stat(request_info->phys_path, &st) && !st.is_directory);
 	if (file_found) {
 	  // are we looking for HTML output of MarkDown file?
-      if (mg_match_prefix("**.md$", -1, request_info->phys_path) > 0) {
+      if (mg_match_prefix("**.md$|**.wiki$", -1, request_info->phys_path) > 0) {
 		serve_a_markdown_page(conn, &st, (event == MG_SSI_INCLUDE_REQUEST));
 		return "";
 	  }
