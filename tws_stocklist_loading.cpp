@@ -328,7 +328,7 @@ int ib_msg_resp_scanner_parameters::process_response(class tier2_message *resp_m
 
 #ifdef LIBXML_DEBUG_ENABLED
 			mg_write2log(conn, NULL, time(NULL), "info", "INFO: dumping XPath result to log file:");
-			fp = mg_fopen(mg_get_default_logfile_path(conn), "a+");
+			fp = mg_fopen(mg_get_default_error_logfile_path(conn), "a+");
 
 			if (fp != NULL)
 			{
@@ -340,7 +340,7 @@ int ib_msg_resp_scanner_parameters::process_response(class tier2_message *resp_m
 				mg_funlockfile(fp);
 				if (fp != stderr)
 				{
-					fclose(fp);
+					mg_fclose(fp);
 				}
 			}
 #endif

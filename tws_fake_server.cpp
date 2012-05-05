@@ -113,7 +113,7 @@ static int respond_with_file(struct mg_connection *conn, ib_tws_manager *ibm, co
 
 	mg_snprintf(conn, path, sizeof(path), "%s/%s", mg_get_option(ctx, "document_root"), uri);
 
-	in = fopen(path, "rb");
+	in = mg_fopen(path, "rb");
 	if (in)
 	{
 		while (!feof(in))
@@ -128,7 +128,7 @@ static int respond_with_file(struct mg_connection *conn, ib_tws_manager *ibm, co
 				break;
 			}
 		}
-		fclose(in);
+		mg_fclose(in);
 	}
 	buf[0] = 0;
 	rv += mg_write(conn, buf, 1);

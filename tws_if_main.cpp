@@ -232,7 +232,7 @@ static void process_command_line_arguments(char *argv[], char **options) {
             }
         }
 
-        (void) fclose(fp);
+        (void) mg_fclose(fp);
     }
 
     // Now handle command line flags. They override config file / default settings.
@@ -291,7 +291,7 @@ int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, i
 
 	assert(ri->phys_path);
 	/* opening the file */
-	in = fopen(ri->phys_path, "r");
+	in = mg_fopen(ri->phys_path, "r");
 	if (!in)
 	{
 		return report_markdown_failure(conn, is_inline_production, 404, "Unable to open input file: [%s] %s", ri->uri, mg_strerror(errno));
@@ -301,7 +301,7 @@ int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, i
 	ib = sd_bufnew(SD_READ_UNIT);
 	if (SD_BUF_OK != sd_bufgrow(ib, (size_t)st->size))
 	{
-		fclose(in);
+		mg_fclose(in);
 		sd_bufrelease(ib);
 		return report_markdown_failure(conn, is_inline_production, 500, "Out of memory while loading Markdown input file: [%s]", ri->uri);
 	}
@@ -309,11 +309,11 @@ int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, i
 	if (ret > 0) 
 	{
 		ib->size += ret;
-		fclose(in);
+		mg_fclose(in);
 	}
 	else
 	{
-		fclose(in);
+		mg_fclose(in);
 		sd_bufrelease(ib);
 		return report_markdown_failure(conn, is_inline_production, 500, "Cannot read from input file: [%s] %s", ri->uri, mg_strerror(errno));
 	}
@@ -546,8 +546,8 @@ static void edit_config_file(const struct mg_context *ctx) {
     char cmd[200];
 
     // Create config file if it is not present yet
-    if ((fp = fopen(config_file, "r")) != NULL) {
-        fclose(fp);
+    if ((fp = mg_fopen(config_file, "r")) != NULL) {
+        mg_fclose(fp);
     } else if ((fp = fopen(config_file, "a+")) != NULL) {
         fprintf(fp,
             "# Mongoose web server configuration file.\n"
@@ -559,7 +559,7 @@ static void edit_config_file(const struct mg_context *ctx) {
             value = mg_get_option(ctx, names[i + 1]);
             fprintf(fp, "# %s %s\n", names[i + 1], *value ? value : "<value>");
         }
-        fclose(fp);
+        mg_fclose(fp);
     }
 
     snprintf(cmd, sizeof(cmd), "notepad.exe %s", config_file);
