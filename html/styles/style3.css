@@ -120,6 +120,10 @@ html>body #navigation {
 	background-color: #776644;
 	color: #FFFFFF;
 }
+#column_right ul {
+	margin-left: 1em;
+	padding-left: 0px;
+}
 /* Styles for Left Column */
 h1 {
 	font-size: xx-large;

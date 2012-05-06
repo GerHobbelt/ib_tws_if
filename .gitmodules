@@ -37,3 +37,6 @@
 [submodule "html/dive_into_html5"]
 	path = html/dive_into_html5
 	url = git@github.com:GerHobbelt/diveintohtml5.git
+[submodule "html/dive_into_html5.original"]
+	path = html/dive_into_html5.original
+	url = git@github.com:GerHobbelt/diveintohtml5-original-sensibilities.git

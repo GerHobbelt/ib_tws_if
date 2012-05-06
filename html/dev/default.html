@@ -1,6 +1,5 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html>
 
 <!-- #BeginTemplate "../master.dwt" -->
 
@@ -8,13 +7,6 @@
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <!-- #BeginEditable "doctitle" -->
 <title>Links</title>
-<style type="text/css">
-
-
-.auto-style1 {
-	color: #112233;
-}
-</style>
 <!-- #EndEditable -->
 <link href="../styles/style3.css" media="screen" rel="stylesheet" title="CSS" type="text/css" />
 </head>
@@ -44,49 +36,102 @@
 		<!-- Begin Left Column -->
 		<div id="column_left">
 			<!-- #BeginEditable "content" -->
-			<h2>Development Info</h2>
+			<h2>Technical Core Design Considerations</h2>
 			<ul>
-				<li class="auto-style1">
-				<p><a href="https://github.com/GerHobbelt/tws_c_api">IB/TWS API - C 
-				library (github)</a></li>
-				<li>
-				<p><a href="http://d3js.org/">D3.js by Mike Bostock</a> (<a href="https://github.com/GerHobbelt/d3">github</a>)
-				<p>				The graphical toolkit used in the frontend.</li>
-				<li><p>Mongoose web server
-				<p>Curabitur lobortis. 
-				<ul>
-					<li><a href="../mongoose/MongooseManual.html">Man Page</a></li>
-					<li><a href="../mongoose/Features.html">Features</a></li>
-					<li><a href="../mongoose/WindowsUsage.html">Windows Usage</a></li>
-					<li><a href="../mongoose/ConfigurationProblems.html">
-					Configuration Problems</a></li>
-					<li><a href="../mongoose/UsefulResources.html">Useful 
-					Resources</a></li>
-					<li><a href="../mongoose/WritingWebApplications.html">Writing 
-					Web Applications</a></li>
-					<li><a href="../mongoose/BuildOnAndroid.html">Build on 
-					Android</a></li>
-				</ul>
-				</li>
-				<li>
-				<p><a href="#">Hypertext Link</a>
-				<p>Praesent rhoncus porttitor wisi. Duis quis erat. Curabitur lobortis. 
-				Cras nunc. Aliquam erat volutpat. </li>
-				<li>
-				<p><a href="#">Hypertext Link</a>
-				<p>Curabitur lobortis. Praesent rhoncus porttitor wisi. Duis quis erat.</li>
+				<li>The machine should be reachable from various places, 
+				including those where you cannot, may not or would not (for 
+				security reasons) install your own software bundle. Hence the 
+				entire machinery is web based: all you should need is a modern 
+				browser.</li>
+				<li>The machine will run certain processes 24/7 or at least 
+				during and around stock market opening hours, without permanent 
+				human supervision and/or direction. For reasons of performance 
+				assurance and security, these processes should run server-side.</li>
+				<li>Algorithms are expected to mutate continuously. This means 
+				that the machine must provide means to allow for Rapid 
+				Development, including algorithm scripting and testing.</li>
+				<li>Ideally, the machine should be able to run 'what if' 
+				scenario tests and other types of algorithm tests alongside 
+				regular trading. This may best be solved by having two servers 
+				operational: one for trading and another for testing, in order 
+				to keep the different concerns separate. (After all, algorithms 
+				may employ tuning operations that run the entire test range 
+				gamut; this and other factors of sooftware development strongly 
+				suggest using separate machines. To keep transfer costs as low 
+				as possible, multiple nodes should therefor be able to share the 
+				'live data': <em>One Feed For All</em>. </li>
 			</ul>
-			<h3>Miscelleneous</h3>
+			<h2>Functional Core Design Considerations</h2>
 			<ul>
-				<li><a href="../dive_into_html5">D<span class="auto-style1">ive 
-				Into HTML5</span></a><span class="auto-style1"> (<a href="https://github.com/GerHobbelt/diveintohtml5">github</a>)</span><br />
-				The online copy of the community-maintained book Dive Into 
-				HTML5.
-				</li>
-				<li><a href="#">Hypertext Link</a><br />
-				Cras nunc. Aliquam erat volutpat. Praesent rhoncus porttitor wisi.</li>
-				<li><a href="#">Hypertext Link</a><br />
-				Curabitur lobortis. </li>
+				<li>Remote human interaction is intended to be limited to 
+				'approval' and 'rejection' operations only: this means that the 
+				machine may suggest certain activities and wait for human 
+				approval, but the human operator will not be allowed to enforce 
+				their own initiative, i.e. trigger buy/sell/... operations on 
+				their own. This is both to prevent remote security breaches from 
+				being a total disaster and to prevent 'emotional responses' in 
+				dire times.</li>
+				<li>The only 'direct instruction' any human is allowed to give 
+				the machine is to 'abort the mission' at any time. This means 
+				that pending orders are to be cancelled, while positions are 
+				liquidated and any further 'buy' operations are withheld until 
+				further notice (human approval). Depending on the 
+				human-indicated 'severity' at the time of 'abort', position 
+				liquidation may be performed.</li>
+				<li>Several years of user experience have shown that 'looking at 
+				numbers' is an extremely tiring task. Hence it is paramount to 
+				provide the best possible graphical means of viewing the data 
+				and reviewing the machine activity. It also means that any human 
+				feedback, e.g. suggesting buy/sell positions and similar data 
+				points, should be entirely handled in the graphic. (One might 
+				start off with the IB/TWS Chart Trader idea and take it from 
+				there.)</li>
+			</ul>
+			<h2>Implementation Details</h2>
+			<ul>
+				<li>mongoose was picked as a starting point for the server. 
+				Apache and Node.js have been considered as well; apache was 
+				rejected as a choice as it was too hard (too much to learn about 
+				the API at the time) to create an augmented version suitable to 
+				our particular needs - the jury is still dubious on that 
+				decision though; Node.js was rejected as it has a significant 
+				risk of 'locking up' due to it's single-threaded nature. Web 
+				Workers might help there but the core was not considered 
+				suitable for what is ultimately a trading platform. For that, we 
+				must be in control of every line of code in the core - both 
+				physically and mentally.</li>
+				<li>As we are looking for ways to allow Rapid Development 
+				possible for the algorithms, we intend to provide a development 
+				mode which runs entirely in the browser/client - this goes 
+				against the security considerations mentioned above but it gives 
+				us a far better debugging environment where scripting 
+				(JavaScript) is concerned.<br />
+				JavaScript is picked as the language of choice for any work in 
+				the front-end; we have pondered including a JavaScript engine in 
+				the backend (thus turning mongoose in some sort of 
+				multi-threaded Node.js server) so that developed algorithms take 
+				0 time to become production-ready, but here too the jury is 
+				still out: adding the JavaScript interpreter to the backend 
+				gives it a lot of 'Node.js' feel and since we have reaons not to 
+				pick that one, why build one that's very similar?<br />
+				The alternative is transformation of the algorithms to C++ 
+				before moving them to production, but that introduces the 
+				drawback of reduced expressiveness (no closures, etc. in C++) 
+				and bugs in the translation, plus it makes 'tweaking' all that 
+				much tougher.<br />
+				We are, however, quite sure about one thing: adding heavy 
+				interpreters with little or no debugging support to the backend 
+				is a wrong choice, no matter what other considerations suggest 
+				them. We are considering using Lua as a backend script for 
+				configurability and 'tweakability' of any algorithms running at 
+				the back-end, but there's the ever looming threat of the lacking 
+				'development environment' for any backend scripting; 
+				Node.js/JavaScript allegedly has a good remote debugger solution 
+				now, but I am unsure about other scripting languages. Research 
+				indicates that the remote debugging support for JavaScript is 
+				better than for others, mostly due to the Node.js hype. 
+				(Reminder to self: others ride the V8 JS + node-inspector 
+				bandwagon, e.g. the Laboratory2D game engine.)</li>
 			</ul>
 			<!-- #EndEditable -->
 		</div>
@@ -94,7 +139,17 @@
 		<!-- Begin Right Column -->
 		<div id="column_right">
 			<!-- #BeginEditable "sidebar" -->
-			<h4>Links</h4>
+			<h4>Go to papa:</h4>
+			<ul>
+				<li><a href="default.html">Development Info</a></li>
+			</ul>
+			<h4>And little baby:</h4>
+			<ul>
+				<li><a href="multithreading_and_messaging_issues.html">
+				multithreading and messaging issues</a></li>
+				<li><a href="dev_links_to_external_tools_and_libs.html">Links to 
+				tools and libraries used</a></li>
+			</ul>
 			<p>Consectetuer adipiscing elit. Pellentesque faucibus consectetuer 
 			dui. Nam lacinia purus sit amet lacus. Donec quis nulla vel lectus mollis 
 			varius.</p>
