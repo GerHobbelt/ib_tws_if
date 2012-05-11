@@ -46,12 +46,11 @@ tier2_message::state_change tier2_message::handle_state_change(tier2_message::re
 {
 	state_change rv = PROCEED;
 
-	for (state_change_handler_set_t::iterator i = state_change_handlers.begin();
-		i != state_change_handlers.end(); 
-		i++)
+	for (int i = 0; i < state_change_handlers.size(); i++)
 	{
-		tier2_message_state_change_handler *h = *i;
+		tier2_message_state_change_handler *h = state_change_handlers[i];
 
+		assert(h);
 		switch (h->process(*this, new_state))
 		{
 		default:

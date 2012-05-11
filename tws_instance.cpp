@@ -408,95 +408,201 @@ int ib_tws_manager::tx_cancel_realtime_bars(ib_msg_cancel_realtime_bars *req_msg
 /* fired by: TICK_PRICE */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_price *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_PRICE (for modern versions, then immediately preceeded by an invocation of event_tick_price()), TICK_SIZE */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_size *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_OPTION_COMPUTATION */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_option_computation *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_GENERIC */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_generic *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_STRING */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_string *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_EFP */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_efp *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: ORDER_STATUS */
 int ib_tws_manager::process_response_message(ib_msg_resp_order_status *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: OPEN_ORDER */
 int ib_tws_manager::process_response_message(ib_msg_resp_open_order *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: OPEN_ORDER_END */
 int ib_tws_manager::process_response_message(ib_msg_resp_open_order_end *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: ACCT_VALUE */
 int ib_tws_manager::process_response_message(ib_msg_resp_update_account_value *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: PORTFOLIO_VALUE */
 int ib_tws_manager::process_response_message(ib_msg_resp_update_portfolio *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: ACCT_UPDATE_TIME */
 int ib_tws_manager::process_response_message(ib_msg_resp_update_account_time *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: NEXT_VALID_ID */
 int ib_tws_manager::process_response_message(ib_msg_resp_next_valid_id *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: CONTRACT_DATA */
 int ib_tws_manager::process_response_message(ib_msg_resp_contract_details *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: CONTRACT_DATA_END */
 int ib_tws_manager::process_response_message(ib_msg_resp_contract_details_end *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: BOND_CONTRACT_DATA */
 int ib_tws_manager::process_response_message(ib_msg_resp_bond_contract_details *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: EXECUTION_DATA */
 int ib_tws_manager::process_response_message(ib_msg_resp_exec_details *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: EXECUTION_DATA_END */
 int ib_tws_manager::process_response_message(ib_msg_resp_exec_details_end *resp_msg)
 {
-	return 0;
+	return scan_queue_and_process(resp_msg);
 }
 /* fired by: ERR_MSG */
 int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: MARKET_DEPTH */
+int ib_tws_manager::process_response_message(ib_msg_resp_update_mkt_depth *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: MARKET_DEPTH_L2 */
+int ib_tws_manager::process_response_message(ib_msg_resp_update_mkt_depth_l2 *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: NEWS_BULLETINS */
+int ib_tws_manager::process_response_message(ib_msg_resp_update_news_bulletin *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: MANAGED_ACCTS */
+int ib_tws_manager::process_response_message(ib_msg_resp_managed_accounts *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: RECEIVE_FA */
+int ib_tws_manager::process_response_message(ib_msg_resp_receive_fa *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: HISTORICAL_DATA (possibly multiple times per incoming message) */
+int ib_tws_manager::process_response_message(ib_msg_resp_historical_data *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: HISTORICAL_DATA  (once, after one or more invocations of event_historical_data()) */
+int ib_tws_manager::process_response_message(ib_msg_resp_historical_data_end *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: SCANNER_PARAMETERS */
+int ib_tws_manager::process_response_message(ib_msg_resp_scanner_parameters *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: SCANNER_DATA (possibly multiple times per incoming message) */
+int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: SCANNER_DATA (once, after one or more invocations of event_scanner_data()) */
+int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data_end *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: SCANNER_DATA (once, before any invocations of event_scanner_data()) */
+int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data_start *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: CURRENT_TIME -- in response to REQ_CURRENT_TIME */
+int ib_tws_manager::process_response_message(ib_msg_resp_current_time *resp_msg)
+{
+	/*
+	walk through the set of req_current_time_active_set requests and send 
+	the current response to each of 'em, thus discarding any subsequent 
+	time responses.
+	*/
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: REAL_TIME_BARS */
+int ib_tws_manager::process_response_message(ib_msg_resp_realtime_bar *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: FUNDAMENTAL_DATA */
+int ib_tws_manager::process_response_message(ib_msg_resp_fundamental_data *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: DELTA_NEUTRAL_VALIDATION */
+int ib_tws_manager::process_response_message(ib_msg_resp_delta_neutral_validation *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: ACCT_DOWNLOAD_END */
+int ib_tws_manager::process_response_message(ib_msg_resp_acct_download_end *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: TICK_SNAPSHOT_END */
+int ib_tws_manager::process_response_message(ib_msg_resp_tick_snapshot_end *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: MARKET_DATA_TYPE */
+int ib_tws_manager::process_response_message(ib_msg_resp_market_data_type *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+/* fired by: COMMISSION_REPORT */
+int ib_tws_manager::process_response_message(ib_msg_resp_commission_report *resp_msg)
+{
+	return scan_queue_and_process(resp_msg);
+}
+
+
+int ib_tws_manager::scan_queue_and_process(tier2_message *resp_msg)
 {
 	int rv = 0;
 
@@ -515,106 +621,6 @@ int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
 
 	return rv;
 }
-/* fired by: MARKET_DEPTH */
-int ib_tws_manager::process_response_message(ib_msg_resp_update_mkt_depth *resp_msg)
-{
-	return 0;
-}
-/* fired by: MARKET_DEPTH_L2 */
-int ib_tws_manager::process_response_message(ib_msg_resp_update_mkt_depth_l2 *resp_msg)
-{
-	return 0;
-}
-/* fired by: NEWS_BULLETINS */
-int ib_tws_manager::process_response_message(ib_msg_resp_update_news_bulletin *resp_msg)
-{
-	return 0;
-}
-/* fired by: MANAGED_ACCTS */
-int ib_tws_manager::process_response_message(ib_msg_resp_managed_accounts *resp_msg)
-{
-	return 0;
-}
-/* fired by: RECEIVE_FA */
-int ib_tws_manager::process_response_message(ib_msg_resp_receive_fa *resp_msg)
-{
-	return 0;
-}
-/* fired by: HISTORICAL_DATA (possibly multiple times per incoming message) */
-int ib_tws_manager::process_response_message(ib_msg_resp_historical_data *resp_msg)
-{
-	return 0;
-}
-/* fired by: HISTORICAL_DATA  (once, after one or more invocations of event_historical_data()) */
-int ib_tws_manager::process_response_message(ib_msg_resp_historical_data_end *resp_msg)
-{
-	return 0;
-}
-/* fired by: SCANNER_PARAMETERS */
-int ib_tws_manager::process_response_message(ib_msg_resp_scanner_parameters *resp_msg)
-{
-	return 0;
-}
-/* fired by: SCANNER_DATA (possibly multiple times per incoming message) */
-int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data *resp_msg)
-{
-	return 0;
-}
-/* fired by: SCANNER_DATA (once, after one or more invocations of event_scanner_data()) */
-int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data_end *resp_msg)
-{
-	return 0;
-}
-/* fired by: SCANNER_DATA (once, before any invocations of event_scanner_data()) */
-int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data_start *resp_msg)
-{
-	return 0;
-}
-/* fired by: CURRENT_TIME -- in response to REQ_CURRENT_TIME */
-int ib_tws_manager::process_response_message(ib_msg_resp_current_time *resp_msg)
-{
-	/*
-	walk through the set of req_current_time_active_set requests and send 
-	the current response to each of 'em, thus discarding any subsequent 
-	time responses.
-	*/
-	return 0;
-}
-/* fired by: REAL_TIME_BARS */
-int ib_tws_manager::process_response_message(ib_msg_resp_realtime_bar *resp_msg)
-{
-	return 0;
-}
-/* fired by: FUNDAMENTAL_DATA */
-int ib_tws_manager::process_response_message(ib_msg_resp_fundamental_data *resp_msg)
-{
-	return 0;
-}
-/* fired by: DELTA_NEUTRAL_VALIDATION */
-int ib_tws_manager::process_response_message(ib_msg_resp_delta_neutral_validation *resp_msg)
-{
-	return 0;
-}
-/* fired by: ACCT_DOWNLOAD_END */
-int ib_tws_manager::process_response_message(ib_msg_resp_acct_download_end *resp_msg)
-{
-	return 0;
-}
-/* fired by: TICK_SNAPSHOT_END */
-int ib_tws_manager::process_response_message(ib_msg_resp_tick_snapshot_end *resp_msg)
-{
-	return 0;
-}
-/* fired by: MARKET_DATA_TYPE */
-int ib_tws_manager::process_response_message(ib_msg_resp_market_data_type *resp_msg)
-{
-	return 0;
-}
-/* fired by: COMMISSION_REPORT */
-int ib_tws_manager::process_response_message(ib_msg_resp_commission_report *resp_msg)
-{
-	return 0;
-}
 
 
 
@@ -625,55 +631,6 @@ int ib_tws_manager::process_response_message(ib_msg_resp_commission_report *resp
 
 
 
-
-
-/*
-
-template<> int tws_req_active_msg_set<class ib_msg_req_executions *>::process_response_message(class tws_response_message *resp_msg)
-{
-	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
-
-	mg_cry(conn, "process response message for %s?", "ib_msg_req_executions");
-
-	return 0;
-}
-
-
-template<> int tws_req_active_msg_set<class ib_msg_req_scanner_parameters *>::process_response_message(class tws_response_message *resp_msg)
-{
-	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
-
-	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_parameters");
-
-	ib_msg_req_scanner_parameters *req = find(resp_msg);
-
-	if (req)
-		return req->process_response_message(resp_msg);
-	return -1;
-}
-
-
-template<> int tws_req_active_msg_set<class ib_msg_req_scanner_subscription *>::process_response_message(class tws_response_message *resp_msg)
-{
-	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
-
-	ib_msg_req_scanner_subscription *req = find(resp_msg);
-
-	if (req)
-		return req->process_response_message(resp_msg);
-
-	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_subscription");
-
-	return 0;
-}
-
-*/
 
 
 
@@ -774,7 +731,7 @@ tier2_message::state_change ib_tws_scanner_subscription_limitation::process(tier
 		}
 		return tier2_message::DONT_CHANGE;
 	}
-	else if (msg.state() == tier2_message::COMMENCE_TRANSMIT)
+	else if (new_state == tier2_message::RESPONSE_COMPLETE || new_state < 0)
 	{
 		/* remove this entry from the 'active set' */
 		for (int i = 0; i < m_active_scanner_subscriptions.size(); i++)

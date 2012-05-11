@@ -358,6 +358,8 @@ public:
 	int tx_cancel_realtime_bars(ib_msg_cancel_realtime_bars *req_msg);
 
 public:
+	int scan_queue_and_process(tier2_message *resp_msg);
+
 	/* fired by: TICK_PRICE */
 	int process_response_message(ib_msg_resp_tick_price *resp_msg);
 	/* fired by: TICK_PRICE (for modern versions, then immediately preceeded by an invocation of event_tick_price()), TICK_SIZE */
