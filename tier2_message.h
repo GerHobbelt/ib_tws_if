@@ -58,7 +58,7 @@ b) adding this 'tracking in limbo messages' feature would imply adding locks aro
 class tier2_message_state_change_handler;
 
 
-extern unique_type_id_manager tier2_msg_typeid_mgr;
+extern unique_type_id_threadsafe_manager tier2_msg_typeid_mgr;
 
 
 class tier2_message

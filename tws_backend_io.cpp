@@ -90,6 +90,7 @@ int ib_backend_io_channel::pop_before(ib_backend_io_observer *listener)
 		if (m_before[i] == listener)
 		{
 			m_before.erase(m_before.begin() + i);
+			return 1;
 		}
 	}
 	return 0;
@@ -104,6 +105,7 @@ int ib_backend_io_channel::pop_after(ib_backend_io_observer *listener)
 		if (m_after[i] == listener)
 		{
 			m_after.erase(m_after.begin() + i);
+			return 1;
 		}
 	}
 	return 0;

@@ -408,6 +408,11 @@ protected:
 
 public:
 	virtual int process_response_message(tier2_message *response);
+
+	ib_int_t get_order_id(void) const
+	{
+		return m_order_id;
+	}
 };
 
 
@@ -559,6 +564,19 @@ protected:
 
 public:
 	virtual int process_response_message(tier2_message *response);
+
+	ib_int_t get_ticker_id(void) const
+	{
+		return m_id;
+	}
+	ib_int_t get_error_code(void) const
+	{
+		return m_error_code;
+	}
+	const char *get_error_string(void) const
+	{
+		return m_error_string.c_str();
+	}
 };
 
 
@@ -669,6 +687,11 @@ protected:
 
 public:
 	virtual int process_response_message(tier2_message *response);
+
+	const char *get_accounts_list(void) const
+	{
+		return m_accounts_list.c_str();
+	}
 };
 
 

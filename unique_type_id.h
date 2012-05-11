@@ -35,7 +35,7 @@ private:
 	unique_id_t prev_id;
 
 public:
-	unique_type_id_manager(unique_id_t start_id = 0)
+	unique_type_id_manager(unique_id_t start_id = 1)
 		: prev_id(start_id - 1)
 	{
 	}
@@ -60,6 +60,91 @@ public:
 			prev_id = new_start_value;
 		}
 		return prev_id;
+	}
+};
+
+
+
+
+class unique_type_id_threadsafe_manager : public unique_type_id_manager
+{
+private:
+#if defined(_POSIX_SPIN_LOCKS)
+	pthread_spinlock_t m_lock;
+#else
+	pthread_mutex_t m_lock;
+#endif
+
+public:
+	unique_type_id_threadsafe_manager(unique_id_t start_id = 1)
+		: unique_type_id_manager(start_id - 1)
+	{
+#if defined(_POSIX_SPIN_LOCKS)
+		pthread_spin_init(&m_lock, false);
+#else
+		pthread_mutex_init(&m_lock, NULL);
+#endif
+	}
+	virtual ~unique_type_id_threadsafe_manager()
+	{
+#if defined(_POSIX_SPIN_LOCKS)
+		pthread_spin_destroy(&m_lock);
+#else
+		pthread_mutex_destroy(&m_lock);
+#endif
+	}
+
+public:
+	virtual unique_id_t obtain_unique_id(void)
+	{
+		unique_id_t rv;
+
+#if defined(_POSIX_SPIN_LOCKS)
+		pthread_spin_lock(&m_lock);
+#else
+		pthread_mutex_lock(&m_lock);
+#endif
+		rv = __super::obtain_unique_id();
+#if defined(_POSIX_SPIN_LOCKS)
+		pthread_spin_unlock(&m_lock);
+#else
+		pthread_mutex_unlock(&m_lock);
+#endif
+		return rv;
+	}
+	virtual unique_id_t reset_unique_id(unique_id_t new_start_value)
+	{
+		unique_id_t rv;
+
+#if defined(_POSIX_SPIN_LOCKS)
+		pthread_spin_lock(&m_lock);
+#else
+		pthread_mutex_lock(&m_lock);
+#endif
+		rv = __super::reset_unique_id(new_start_value);
+#if defined(_POSIX_SPIN_LOCKS)
+		pthread_spin_unlock(&m_lock);
+#else
+		pthread_mutex_unlock(&m_lock);
+#endif
+		return rv;
+	}
+	virtual unique_id_t update_unique_id(unique_id_t new_start_value)
+	{
+		unique_id_t rv;
+
+#if defined(_POSIX_SPIN_LOCKS)
+		pthread_spin_lock(&m_lock);
+#else
+		pthread_mutex_lock(&m_lock);
+#endif
+		rv = __super::update_unique_id(new_start_value);
+#if defined(_POSIX_SPIN_LOCKS)
+		pthread_spin_unlock(&m_lock);
+#else
+		pthread_mutex_unlock(&m_lock);
+#endif
+		return rv;
 	}
 };
 

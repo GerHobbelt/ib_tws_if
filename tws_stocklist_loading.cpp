@@ -289,6 +289,7 @@ int ib_msg_resp_scanner_parameters::process_response_message(class tier2_message
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 	struct mg_connection *conn = ibm->get_connection();
 
+	assert(resp_msg);
 	ib_string_t s1 = typeid(*resp_msg).name();
 	ib_string_t s2 = typeid(ib_msg_req_scanner_parameters).name();
 	mg_cry(conn, "matching: %s <> %s? %d", s1.c_str(), s2.c_str(), (s1 == s2));

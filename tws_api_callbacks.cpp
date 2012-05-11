@@ -409,24 +409,6 @@ void event_error(void *opaque, int ticker_id, int error_code, const char error_s
 
     tws_cb_printf(opaque, 0, "error: opaque=%p, ticker_id=%d, error_code=%d, msg='%s'\n", opaque, ticker_id, error_code, error_string);
 
-#if 0
-    /*
-    some scanner subscription requests may trigger error responses, such as 'duplicate subscription'
-    and we need to keep the scanner subscription active list in proper order, so we check whether the related
-    ticker_id is one of our active scanner subscription queue items and when it is, we ditch that one
-    and replace it by another pending scanner subscription request.
-    */
-	if (ticker_id >= 0
-		&& error_code != INFO_HISTORICAL_MARKET_DATA_SERVICE_QUERY
-			/* generally that would be 'N times received' or 'no items received',
-			   where the latter is handled in the scanner_data_start handler */
-		&& error_code != FAIL_NO_SCANNER_SUBSCRIPTION_FOUND
-	   )
-	{
-		cancel_tws_scanner_subscription(info, ticker_id);
-	}
-#endif
-
 	ib_msg_resp_error *msg = new ib_msg_resp_error(tws, NULL, ticker_id, error_code, error_string);
 	ibm->process_response_message(msg);
 }

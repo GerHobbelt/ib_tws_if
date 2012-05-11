@@ -37,7 +37,7 @@
 
 
 
-unique_type_id_manager tier2_msg_typeid_mgr(0);
+unique_type_id_threadsafe_manager tier2_msg_typeid_mgr;
 
 
 
@@ -45,10 +45,15 @@ unique_type_id_manager tier2_msg_typeid_mgr(0);
 tier2_message::state_change tier2_message::handle_state_change(tier2_message::request_state_t new_state)
 {
 	state_change rv = PROCEED;
+	/*
+	we copy the handler list before traversing it as the list may change as a 'side effect'
+	of invoking the handler->process() method!
+	*/
+	state_change_handler_set_t h_set(state_change_handlers);
 
-	for (int i = 0; i < state_change_handlers.size(); i++)
+	for (int i = 0; i < h_set.size(); i++)
 	{
-		tier2_message_state_change_handler *h = state_change_handlers[i];
+		tier2_message_state_change_handler *h = h_set[i];
 
 		assert(h);
 		switch (h->process(*this, new_state))
@@ -196,7 +201,8 @@ tier2_message::request_state_t tier2_message::state(request_state_t new_state)
 
 		case DONT_CHANGE:
 			new_state = now_state;
-			break;
+			// do NOT execute the f_* state handlers for the same state again!
+			return new_state;
 
 		case PROCEED:
 			previous_state = now_state;

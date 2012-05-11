@@ -1047,14 +1047,23 @@ bool tws_request_message::response_is_meant_for_us(class tier2_message *resp_msg
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
 bool ib_msg_req_scanner_parameters::response_is_meant_for_us(class tier2_message *resp_msg) const
 {
-	if (!ib_msg_resp_scanner_parameters::type_matches_class(resp_msg))
-		return false;
-
-	return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
+	if (ib_msg_resp_scanner_parameters::type_matches_class(resp_msg))
+	{
+		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
+	}
+	return false;
 }
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 bool ib_msg_req_scanner_subscription::response_is_meant_for_us(class tier2_message *resp_msg) const
 {
+	if (ib_msg_resp_scanner_data::type_matches_class(resp_msg))
+	{
+		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
+	}
+	if (ib_msg_resp_error::type_matches_class(resp_msg))
+	{
+		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
+	}
 	return false;
 }
 /* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
@@ -1261,6 +1270,22 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 
 	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_subscription");
 
+	if (ib_msg_resp_scanner_data::type_matches_class(resp_msg))
+	{
+		// sneaky: let the response message handle itself:
+		return resp_msg->process_response_message(this);
+	}
+	if (ib_msg_resp_error::type_matches_class(resp_msg))
+	{
+		ib_msg_resp_error *err_msg = dynamic_cast<ib_msg_resp_error *>(resp_msg);
+
+		if (err_msg->get_error_code() == tws::FAIL_HISTORICAL_MARKET_DATA_SERVICE
+			&& err_msg->get_ticker_id() == m_ticker_id)
+		{
+			// cancel this request.
+			state(tier2_message::ABORTED);
+		}
+	}
 	return 0;
 }
 
