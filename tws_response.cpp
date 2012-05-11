@@ -85,12 +85,15 @@ int ib_msg_resp_order_status::process_response_message(class tier2_message *resp
 
 int ib_msg_resp_scanner_data::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
+	assert(resp_msg != this);
+	assert(resp_msg != NULL);
 	app_manager *mgr = get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 	struct mg_connection *conn = ibm->get_connection();
 
 	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data");
+
+	mg_cry(conn, "TODO: save contract data");
 
 	return __super::process_response_message(resp_msg);
 }
@@ -485,13 +488,14 @@ int ib_msg_resp_update_portfolio::process_response_message(class tier2_message *
 
 int tws_response_message::process_response_message(tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
+	assert(resp_msg != this);
+	assert(resp_msg != NULL);
 	app_manager *mgr = get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 	struct mg_connection *conn = ibm->get_connection();
 
 	// default behaviour is to destroy a reponse message once it's processed
-	destroy();
+	//destroy();
 
 	return 0;
 }
