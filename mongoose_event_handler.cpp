@@ -47,10 +47,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 			assert(mgr->get_requester(conn));
 			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
 			ib_msg_req_current_time *tws_req = new ib_msg_req_current_time(mgr->get_requester(conn), mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
-            struct timespec poll_time;
 			int err;
-            poll_time.tv_sec = mgr->get_tws_ib_connection_config().backend_poll_period / 1000;
-            poll_time.tv_nsec = (mgr->get_tws_ib_connection_config().backend_poll_period % 1000) * 1000000;
 
             // pass the request to the backend; block & wait for the response...
 			tws_req->state(tier2_message::EXEC_COMMAND);

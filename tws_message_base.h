@@ -39,10 +39,6 @@ protected:
 	virtual ~tws_reqresp_message()
 	{
 	}
-
-public:
-	virtual bool equal(const tier2_message &alt) const;
-	virtual bool equal(const tws_reqresp_message &alt) const;
 };
 
 

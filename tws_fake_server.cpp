@@ -102,7 +102,7 @@ static int respond_with(struct mg_connection *conn, time_t elem)
 	return rv;
 }
 
-static int respond_with_file(struct mg_connection *conn, ib_tws_manager *ibm, const char *uri)
+static int respond_with_file(struct mg_connection *conn, ib_backend_io_channel *ibm, const char *uri)
 {
 	FILE *in;
 	char buf[2048];
@@ -143,7 +143,7 @@ mode:
 0: flush on transmit to server
 1: wait for async server response(s) in waiting loop
 */
-void ib_tws_manager::fake_ib_tws_server(int mode)
+void ib_backend_io_channel::fake_ib_tws_server(int mode)
 {
 	if (!fake_ib_tws_connection)
 		return;
@@ -151,14 +151,14 @@ void ib_tws_manager::fake_ib_tws_server(int mode)
 	/*
 	A message may be pending at conn[1]; when it does, we play back a suitable response at conn[1]
 	*/
-	mg_connection *conn = this->fake_conn[1];
+	mg_connection *conn = fake_conn[1];
 
     if (conn)
     {
 		if (mode == 0)
 		{
 			// send 'magic' to uniquely mark the end of the message (this simplifies the fake server code)
-			mg_write(this->fake_conn[0], EOM_magick, sizeof(EOM_magick));
+			mg_write(fake_conn[0], EOM_magick, sizeof(EOM_magick));
 		}
 
         // check whether there's anything available:

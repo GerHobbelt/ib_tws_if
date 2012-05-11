@@ -40,13 +40,13 @@ namespace tws
 helper functions:
 */
 
-void tws_cb_print_under_comp(void *opaque, int indent_level, under_comp_t *und)
+void tws_cb_print_under_comp(void *opaque, int indent_level, const under_comp_t *und)
 {
     tws_cb_printf(opaque, indent_level, "UNDER_COMP: price=%g, delta=%g, conid=%d\n",
 		und->u_price, und->u_delta, und->u_conid);
 }
 
-void tws_cb_print_tag_value_set(void *opaque, int indent_level, int count, tr_tag_value_t *set)
+void tws_cb_print_tag_value_set(void *opaque, int indent_level, int count, const tr_tag_value_t *set)
 {
 	int i;
 
@@ -54,14 +54,14 @@ void tws_cb_print_tag_value_set(void *opaque, int indent_level, int count, tr_ta
 
 	for (i = 0; i < count; i++)
 	{
-		tr_tag_value_t *t = &set[i];
+		const tr_tag_value_t *t = &set[i];
 
 	    tws_cb_printf(opaque, indent_level + 1, "TAG/VALUE [%d]: tag=[%s], val=[%s]\n",
 			i, t->t_tag, t->t_val);
 	}
 }
 
-void tws_cb_print_order_combolegs(void *opaque, int indent_level, int count, tr_order_combo_leg_t *legs)
+void tws_cb_print_order_combolegs(void *opaque, int indent_level, int count, const tr_order_combo_leg_t *legs)
 {
 	int i;
 
@@ -69,14 +69,14 @@ void tws_cb_print_order_combolegs(void *opaque, int indent_level, int count, tr_
 
 	for (i = 0; i < count; i++)
 	{
-		tr_order_combo_leg_t *leg = &legs[i];
+		const tr_order_combo_leg_t *leg = &legs[i];
 
 	    tws_cb_printf(opaque, indent_level + 1, "ORDER COMBOLEG[%d]: price=%g\n",
 			i, leg->cl_price);
 	}
 }
 
-void tws_cb_print_combolegs(void *opaque, int indent_level, int count, tr_comboleg_t *legs)
+void tws_cb_print_combolegs(void *opaque, int indent_level, int count, const tr_comboleg_t *legs)
 {
 	int i;
 
@@ -84,7 +84,7 @@ void tws_cb_print_combolegs(void *opaque, int indent_level, int count, tr_combol
 
 	for (i = 0; i < count; i++)
 	{
-		tr_comboleg_t *leg = &legs[i];
+		const tr_comboleg_t *leg = &legs[i];
 
 	    tws_cb_printf(opaque, indent_level + 1, "COMBOLEG[%d]: action=[%s], exchange=[%s], designated_location=[%s], conid=%d, ratio=%d, open_close=%d (%s), short_sale_slot=%d, exempt_code=%d\n",
 			i, leg->co_action, leg->co_exchange, leg->co_designated_location, leg->co_conid, leg->co_ratio, leg->co_open_close, tr_comboleg_type_name(leg->co_open_close), leg->co_short_sale_slot, leg->co_exempt_code);
@@ -292,10 +292,7 @@ void event_open_order(void *opaque, int order_id, const tr_contract_t *contract,
 	tws_cb_print_order(opaque, order);
 	tws_cb_print_order_status(opaque, ostatus);
 
-	ib_contract ib_c(*contract);
-	ib_order ib_o(*order);
-	ib_order_status ib_ostat(*ostatus);
-	ib_msg_resp_open_order *msg = new ib_msg_resp_open_order(tws, NULL, order_id, &ib_c, &ib_o, &ib_ostat);
+	ib_msg_resp_open_order *msg = new ib_msg_resp_open_order(tws, NULL, order_id, contract, order, ostatus);
 	ibm->process_response_message(msg);
 }
 
@@ -325,8 +322,7 @@ void event_update_portfolio(void *opaque, const tr_contract_t *contract, int pos
            opaque, contract->c_symbol, position, mkt_price, mkt_value, average_cost, unrealized_pnl, realized_pnl, account_name);
 	tws_cb_print_contract(opaque, 1, contract);
 
-	ib_contract ib_c(*contract);
-	ib_msg_resp_update_portfolio *msg = new ib_msg_resp_update_portfolio(tws, NULL, &ib_c, position, mkt_price, mkt_value, average_cost, unrealized_pnl, realized_pnl, account_name);
+	ib_msg_resp_update_portfolio *msg = new ib_msg_resp_update_portfolio(tws, NULL, contract, position, mkt_price, mkt_value, average_cost, unrealized_pnl, realized_pnl, account_name);
 	ibm->process_response_message(msg);
 }
 
@@ -374,12 +370,7 @@ void event_contract_details(void *opaque, int req_id, const tr_contract_details_
     tws_cb_printf(opaque, 0, "contract_details: opaque=%p, req_id=%d, ...\n", opaque, req_id);
 	tws_cb_print_contract_details(opaque, cd);
 
-#if 0
-	ib_cache_ticker_info(cd);
-#endif
-
-	ib_contract_details ib_cd(*cd);
-	ib_msg_resp_contract_details *msg = new ib_msg_resp_contract_details(tws, NULL, req_id, &ib_cd);
+	ib_msg_resp_contract_details *msg = new ib_msg_resp_contract_details(tws, NULL, req_id, cd);
 	ibm->process_response_message(msg);
 }
 
@@ -392,12 +383,7 @@ void event_bond_contract_details(void *opaque, int req_id, const tr_contract_det
     tws_cb_printf(opaque, 0, "bond_contract_details: opaque=%p, req_id=%d, ...\n", opaque, req_id);
 	tws_cb_print_contract_details(opaque, cd);
 
-#if 0
-	ib_cache_ticker_info(cd);
-#endif
-
-	ib_contract_details ib_cd(*cd);
-	ib_msg_resp_bond_contract_details *msg = new ib_msg_resp_bond_contract_details(tws, NULL, req_id, &ib_cd);
+	ib_msg_resp_bond_contract_details *msg = new ib_msg_resp_bond_contract_details(tws, NULL, req_id, cd);
 	ibm->process_response_message(msg);
 }
 
@@ -411,9 +397,7 @@ void event_exec_details(void *opaque, int order_id, const tr_contract_t *contrac
 	tws_cb_print_contract(opaque, 1, contract);
 	tws_cb_print_execution(opaque, execution);
 
-	ib_contract ib_c(*contract);
-	ib_execution ib_exec(*execution);
-	ib_msg_resp_exec_details *msg = new ib_msg_resp_exec_details(tws, NULL, order_id, &ib_c, &ib_exec);
+	ib_msg_resp_exec_details *msg = new ib_msg_resp_exec_details(tws, NULL, order_id, contract, execution);
 	ibm->process_response_message(msg);
 }
 
@@ -460,7 +444,7 @@ void event_update_mkt_depth(void *opaque, int ticker_id, int position, int opera
 	ibm->process_response_message(msg);
 }
 
-void event_update_mkt_depth_l2(void *opaque, int ticker_id, int position, char *market_maker, int operation, int side, double price, int size)
+void event_update_mkt_depth_l2(void *opaque, int ticker_id, int position, const char *market_maker, int operation, int side, double price, int size)
 {
 	app_manager *mgr = (app_manager *)opaque;
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -590,8 +574,7 @@ void event_scanner_data(void *opaque, int ticker_id, int rank, tr_contract_detai
     request_contract_details_from_tws(info, cd);
 #endif
 
-	ib_contract_details ib_cd(*cd);
-	ib_msg_resp_scanner_data *msg = new ib_msg_resp_scanner_data(tws, NULL, ticker_id, rank, &ib_cd, distance, benchmark, projection, legs_str);
+	ib_msg_resp_scanner_data *msg = new ib_msg_resp_scanner_data(tws, NULL, ticker_id, rank, cd, distance, benchmark, projection, legs_str);
 	ibm->process_response_message(msg);
 }
 
@@ -699,7 +682,7 @@ void event_open_order_end(void *opaque)
 	ibm->process_response_message(msg);
 }
 
-void event_delta_neutral_validation(void *opaque, int reqid, under_comp_t *und)
+void event_delta_neutral_validation(void *opaque, int reqid, const under_comp_t *und)
 {
 	app_manager *mgr = (app_manager *)opaque;
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -708,12 +691,11 @@ void event_delta_neutral_validation(void *opaque, int reqid, under_comp_t *und)
     tws_cb_printf(opaque, 0, "delta_neutral_validation: opaque=%p, reqid=%d, ...\n", opaque, reqid);
     tws_cb_print_under_comp(opaque, 1, und);
 
-	ib_under_comp ib_und(*und);
-	ib_msg_resp_delta_neutral_validation *msg = new ib_msg_resp_delta_neutral_validation(tws, NULL, reqid, &ib_und);
+	ib_msg_resp_delta_neutral_validation *msg = new ib_msg_resp_delta_neutral_validation(tws, NULL, reqid, und);
 	ibm->process_response_message(msg);
 }
 
-void event_acct_download_end(void *opaque, char acct_name[])
+void event_acct_download_end(void *opaque, const char acct_name[])
 {
 	app_manager *mgr = (app_manager *)opaque;
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -770,8 +752,7 @@ void event_commission_report(void *opaque, tr_commission_report_t *report)
 	tws_cb_printf(opaque, 0, "commission_report: opaque=%p, ...\n", opaque);
 	tws_cb_print_commission_report(opaque, report);
 
-	ib_commission_report ib_report(*report);
-	ib_msg_resp_commission_report *msg = new ib_msg_resp_commission_report(tws, NULL, &ib_report);
+	ib_msg_resp_commission_report *msg = new ib_msg_resp_commission_report(tws, NULL, report);
 	ibm->process_response_message(msg);
 }
 

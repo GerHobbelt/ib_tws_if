@@ -223,7 +223,7 @@ class ib_tws_manager *app_manager::get_ib_tws_manager(void)
 	// create ib_tws when it's not alive yet
 	if (!ib_tws)
 	{
-		ib_tws = new ib_tws_manager(this);
+		ib_tws = ib_tws_manager::get_instance(this, true);
 	}
 	assert(ib_tws);
 	return ib_tws;

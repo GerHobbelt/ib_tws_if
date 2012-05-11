@@ -39,9 +39,11 @@ typedef tws::tr_comboleg_type_t tws_comboleg_type_t;
 typedef tws::tr_fa_msg_type_t tws_fa_msg_type_t;
 namespace tws
 {
+	enum tws_outgoing_ids;
+
 	typedef struct tws_instance tws_instance_t;
 }
-
+typedef tws::tws_outgoing_ids ib_outgoing_id_t;
 
 
 
@@ -255,21 +257,22 @@ public:
 	}
 };
 typedef int ib_int_t;
+typedef long int ib_long_t;
 typedef bool ib_bool_t;
 typedef double ib_double_t;
 class ib_date_t
 {
 protected:
 	// the number of 100-nanosecond intervals since January 1, 1601 (eqv. to Win32 FILETIME)
-	time_t t;
+	time_t m_t;
 
 public:
 	ib_date_t() :
-		t(0)
+		m_t(0)
 	{
 	}
 	ib_date_t(time_t _t) :
-		t(_t)
+		m_t(_t)
 	{
 	}
 	ib_date_t(const char *_t);
@@ -435,7 +438,7 @@ public:
 
 public:
     ib_under_comp();
-    ib_under_comp(const tws::under_comp &uc);
+    ib_under_comp(const tws::under_comp *uc);
     virtual ~ib_under_comp();
 };
 
@@ -455,7 +458,7 @@ public:
 
 public:
     ib_comboleg();
-    ib_comboleg(const tws::tr_comboleg &leg);
+    ib_comboleg(const tws::tr_comboleg *leg);
     virtual ~ib_comboleg();
 };
 
@@ -492,7 +495,7 @@ public:
 
 public:
     ib_contract();
-    ib_contract(const tws::tr_contract &c);
+    ib_contract(const tws::tr_contract *c);
     virtual ~ib_contract();
 
 protected:
@@ -515,7 +518,7 @@ public:
 
 public:
     ib_tag_value();
-    ib_tag_value(const tws::tr_tag_value &t);
+    ib_tag_value(const tws::tr_tag_value *t);
     virtual ~ib_tag_value();
 };
 
@@ -566,7 +569,7 @@ public:
 
 public:
     ib_contract_details();
-    ib_contract_details(const tws::tr_contract_details &cd);
+    ib_contract_details(const tws::tr_contract_details *cd);
     virtual ~ib_contract_details();
 };
 
@@ -580,7 +583,7 @@ public:
 
 public:
     ib_order_combo_leg();
-    ib_order_combo_leg(const tws::tr_order_combo_leg &cl);
+    ib_order_combo_leg(const tws::tr_order_combo_leg *cl);
     virtual ~ib_order_combo_leg();
 };
 
@@ -681,7 +684,7 @@ public:
 
 public:
     ib_order();
-    ib_order(const tws::tr_order &o);
+    ib_order(const tws::tr_order *o);
     virtual ~ib_order();
 
 protected:
@@ -715,7 +718,7 @@ public:
 
 public:
     ib_order_status();
-    ib_order_status(const tws::tr_order_status &o);
+    ib_order_status(const tws::tr_order_status *o);
     virtual ~ib_order_status();
 };
 
@@ -744,7 +747,7 @@ public:
 
 public:
     ib_execution();
-    ib_execution(const tws::tr_execution &e);
+    ib_execution(const tws::tr_execution *e);
     virtual ~ib_execution();
 };
 
@@ -764,7 +767,7 @@ public:
 
 public:
     ib_exec_filter();
-    ib_exec_filter(const tws::tr_exec_filter &f);
+    ib_exec_filter(const tws::tr_exec_filter *f);
     virtual ~ib_exec_filter();
 
 protected:
@@ -808,7 +811,7 @@ public:
 
 public:
     ib_scanner_subscription();
-    ib_scanner_subscription(const tws::tr_scanner_subscription &s);
+    ib_scanner_subscription(const tws::tr_scanner_subscription *s);
     virtual ~ib_scanner_subscription();
 
 protected:
@@ -836,7 +839,7 @@ public:
 
 public:
     ib_commission_report();
-    ib_commission_report(const tws::tr_commission_report &s);
+    ib_commission_report(const tws::tr_commission_report *s);
     virtual ~ib_commission_report();
 };
 

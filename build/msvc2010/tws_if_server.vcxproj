@@ -470,6 +470,8 @@
     <ClCompile Include="..\..\tier2_message_queue.cpp" />
     <ClCompile Include="..\..\tier2_message_processor.cpp" />
     <ClCompile Include="..\..\tws_api_callbacks.cpp" />
+    <ClCompile Include="..\..\tws_backend_io.cpp" />
+    <ClCompile Include="..\..\tws_backend_io_logger.cpp" />
     <ClCompile Include="..\..\tws_fake_server.cpp" />
     <ClCompile Include="..\..\tws_input_output.cpp" />
     <ClCompile Include="..\..\tws_database_io.cpp" />
@@ -494,7 +496,11 @@
     <ClInclude Include="..\..\tier2_message.h" />
     <ClInclude Include="..\..\tier2_message_queue.h" />
     <ClInclude Include="..\..\tier2_message_processor.h" />
+    <ClInclude Include="..\..\tws_assert.h" />
     <ClInclude Include="..\..\tws_backend.h" />
+    <ClInclude Include="..\..\tws_backend_io.h" />
+    <ClInclude Include="..\..\tws_backend_io_logger.h" />
+    <ClInclude Include="..\..\tws_config_struct.h" />
     <ClInclude Include="..\..\tws_database_io.h" />
     <ClInclude Include="..\..\tws_data_structures.h" />
     <ClInclude Include="..\..\tws_instance.h" />

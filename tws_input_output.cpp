@@ -28,6 +28,7 @@
 
 #include "app_manager.h"
 #include "tws_database_io.h"
+#include "tws_backend_io.h"
 
 #include <mongoose/mongoose_ex.h>
 
@@ -37,181 +38,6 @@
 
 #define TWS_CONNECT_RETRY_DELAY     10000 // unit: milliseconds
 
-
-
-
-
-
-
-
-static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen)
-{
-    app_manager *mgr = (app_manager *)arg;
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	mg_connection *conn = ibm->get_connection();
-
-    if (conn)
-    {
-        return mg_write(conn, buf, buflen);
-    }
-    return -1;
-}
-
-static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize)
-{
-    app_manager *mgr = (app_manager *)arg;
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	mg_connection *conn = ibm->get_connection();
-	tier2_message_processor *recvr = mgr->get_receiver(conn);
-
-    if (conn && recvr)
-    {
-        // check whether there's anything available:
-        fd_set read_set, except_set;
-        struct timeval tv;
-        int max_fd;
-	    struct tws_conn_cfg &tws_cfg = ibm->get_config();
-
-        tv.tv_sec = tws_cfg.backend_poll_period / 1000;
-        tv.tv_usec = (tws_cfg.backend_poll_period % 1000) * 1000;
-
-        while (mg_get_stop_flag(mg_get_context(conn)) == 0)
-        {
-            struct timeval tv2 = tv;
-			int rv;
-
-            FD_ZERO(&read_set);
-			FD_ZERO(&except_set);
-            max_fd = -1;
-
-            // Add listening sockets to the read set
-            mg_FD_SET(mg_get_client_socket(conn), &read_set, &max_fd);
-			recvr->prepare_fd_sets_for_reception(&read_set, &except_set, max_fd);
-			if (ibm->fake_ib_tws_connection)
-			{
-				ibm->fake_ib_tws_server(1);
-			}
-
-            if (select(max_fd + 1, &read_set, NULL, &except_set, &tv2) < 0)
-            {
-				// signal a fatal failure:
-				max_bufsize = 0;
-                break;
-            }
-            else
-            {
-                if (mg_FD_ISSET(mg_get_client_socket(conn), &read_set))
-                {
-                    /*
-                    Mongoose mg_read() does NOT fetch any pending data from the TCP/IP stack when the 'content length' isn't set yet.
-
-                    We, however, desire to load an unknown and arbitrary amount of data here to fill a buffer and our protocol doesn't
-                    have something like a 'content length' to guide us along, so we'll have to use another method to make sure
-                    the read operation actually delivers DATA!
-                    */
-                    // conn->content_len = MAX_INT;
-                    break;
-                }
-
-                /*
-                When there's no pending incoming data from TWS itself, we'll be running around in this loop while waiting for
-                more data to arrive. Meanwhile, we can process queued requests from the front-end now:
-                */
-				rv = recvr->process_one_queued_tier2_request(&read_set, &except_set, max_fd);
-				if (rv < 0)
-				{
-					// signal a fatal failure:
-					max_bufsize = 0;
-					break;
-				}
-            }
-        }
-
-		if (max_bufsize)
-		{
-			return mg_pull(conn, buf, max_bufsize);
-		}
-    }
-    return -1;
-}
-
-/* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
-static int tws_flush_func(void *arg)
-{
-	app_manager *mgr = (app_manager *)arg;
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-
-	if (ibm->fake_ib_tws_connection)
-	{
-		// fetch data from fake socket[1] and push a response back:
-		ibm->fake_ib_tws_server(0);
-	}
-
-    return 0;
-}
-
-/* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
-static int tws_open_func(void *arg)
-{
-    app_manager *mgr = (app_manager *)arg;
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-    struct tws_conn_cfg &tws_cfg = ibm->get_config();
-    struct mg_context *ctx = ibm->get_context();
-    struct mg_connection *conn = mg_connect_to_host(ctx, tws_cfg.ip_address, tws_cfg.port, 0);
-
-	if (conn == NULL && ibm->fake_ib_tws_connection)
-	{
-		int rv = mg_socketpair(ibm->fake_conn, ctx);
-
-		if (!rv)
-		{
-			int tcpbuflen = 1 * 1024 * 1024;
-
-			conn = ibm->fake_conn[0];
-			
-			mg_setsockopt(mg_get_client_socket(ibm->fake_conn[0]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-			mg_setsockopt(mg_get_client_socket(ibm->fake_conn[0]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-			mg_setsockopt(mg_get_client_socket(ibm->fake_conn[1]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-			mg_setsockopt(mg_get_client_socket(ibm->fake_conn[1]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-		}
-	}
-
-    if (conn != NULL)
-    {
-		struct socket *sock = mg_get_client_socket(conn);
-
-        // Disable Nagle - act a la telnet:
-        mg_set_nodelay_mode(sock, 1);
-
-		// enable keepalive + rx/tx timeouts:
-		mg_set_socket_keepalive(sock, 1);
-		mg_set_socket_timeout(sock, 10);
-
-		mgr->register_backend_thread(conn);
-    }
-
-    ibm->set_connection(conn);
-
-    return (conn ? 0 : (int)tws::NOT_CONNECTED);
-}
-
-
-/* close callback is invoked on error or when tws_disconnect is invoked */
-static int tws_close_func(void *arg)
-{
-    app_manager *mgr = (app_manager *)arg;
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	mg_connection *conn = ibm->get_connection();
-
-    if (conn)
-    {
-        mg_close_connection(conn);
-		conn = NULL;
-		ibm->set_connection(conn);
-    }
-
-    return 0;
-}
 
 
 const char *ib_tws_manager::strerror(int errcode)
@@ -234,23 +60,6 @@ const char *ib_tws_manager::strerror(int errcode)
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -368,7 +177,7 @@ int ib_tws_manager::init_tws_api(void)
 {
 	int err = 0;
 
-	tws_handle = tws::tws_create(get_app_manager(), tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func);
+	tws_handle = tws::tws_create(get_app_manager(), tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func, tws_tx_elem_observe_func, tws_rx_elem_observe_func);
 	if (tws_handle)
 	{
 		err = tws::tws_connect(tws_handle, tws_cfg.our_id_code);

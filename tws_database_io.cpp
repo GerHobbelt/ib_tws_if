@@ -118,7 +118,7 @@ int db_manager::ib_store_scanner_parameters_xml(const char *xml)
 	ib_tws_manager *ibm = app_mgr->get_ib_tws_manager();
 
 	// don't store the XML file when we're faking...
-	if (!ibm->fake_ib_tws_connection)
+	if (!ibm->is_faking_the_ib_tws_connection())
 	{
 		// TODO: store this in the DB_MISC_BLOBS database table
 

@@ -365,7 +365,7 @@ int tier2_message::wait_for_response(void)
 {
 	interthread_communicator *comm = receiver->get_interthread_communicator(requester, receiver);
 
-	while (this->state() < RESPONSE_COMPLETE)
+	while (state() < RESPONSE_COMPLETE)
 	{
 		tier2_message *msg = comm->pop_one_message();
 

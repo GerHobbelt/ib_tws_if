@@ -131,6 +131,12 @@
     <ClCompile Include="..\..\unique_type_id.cpp">
       <Filter>Glue\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\tws_backend_io.cpp">
+      <Filter>Backend / Tier2\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tws_backend_io_logger.cpp">
+      <Filter>Backend / Tier2\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\tws_data_structures.h">
@@ -198,6 +204,18 @@
     </ClInclude>
     <ClInclude Include="..\..\mongoose\win32\resource.h">
       <Filter>FrontEnd\Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tws_backend_io.h">
+      <Filter>Backend / Tier2\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tws_assert.h">
+      <Filter>Backend / Tier2\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tws_backend_io_logger.h">
+      <Filter>Backend / Tier2\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tws_config_struct.h">
+      <Filter>Backend / Tier2\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

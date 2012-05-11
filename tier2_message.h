@@ -202,11 +202,6 @@ public:
 	Abort the mission:  http://www.menagea3.net/strips-ma3/coop_lungeuhil%EF%BC%9F%EF%BC%9F
 	*/
 	virtual int cancel_request(tier2_message_processor *transmitter);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 };
 
 

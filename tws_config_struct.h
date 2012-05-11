@@ -19,32 +19,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-/*
- * Mongoose-based server app which interfaces with a TWS station and displays data in HTML form,
- * suitable for loading by, for example, 64-bit Excel 2010, using web queries.
- */
-
-#include "app_manager.h"
-
-#include <tws_c_api/twsapi-debug.h>
-#include <mongoose/mongoose_ex.h>
+#ifndef TWS_CONFIGURATION_STRUCT_H
+#define TWS_CONFIGURATION_STRUCT_H
 
 
 
-
-
-/*
-replace TWSAPI debug printf call.
-*/
-void tws_debug_printf(void *opaque, const char *fmt, ...)
+struct tws_conn_cfg
 {
-	app_manager *mgr = (app_manager *)opaque;
-	ib_tws_manager *ibm = (mgr ? mgr->get_ib_tws_manager() : NULL);
-	va_list ap;
+    /* configuration parameters: how to connect to TWS */
+    const char *ip_address;
+    int port;
+    int our_id_code;
 
-	va_start(ap, fmt);
-	mg_vlog((ibm ? ibm->get_connection() : NULL), "debug", fmt, ap);
-	va_end(ap);
-}
+    long backend_poll_period; // unit: milliseconds
+	long backend_reconnect_delay; // unit: milliseconds
+
+    bool tws_log_traffic;
+	const char *tws_traffic_log_file;
+
+public:
+	tws_conn_cfg() :
+		ip_address(0), port(0), our_id_code(0),
+		backend_poll_period(0), backend_reconnect_delay(0)
+	    , tws_log_traffic(false), tws_traffic_log_file(0)
+	{
+	}
+	~tws_conn_cfg()
+	{
+	}
+};
 
 
+
+
+#endif // TWS_CONFIGURATION_STRUCT_H

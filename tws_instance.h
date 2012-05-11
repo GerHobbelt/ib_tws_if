@@ -27,10 +27,12 @@ The 'ib_tws_manager' represents that single (back-end) thread which can send/rec
 at any time.
 */
 
+#include "tws_config_struct.h"
 #include "tws_request.h"
 #include "tws_response.h"
 #include "tier2_message_queue.h"
 #include "unique_type_id.h"
+#include "tws_backend_io.h"
 
 
 // forward reference:
@@ -39,6 +41,8 @@ namespace tws
 {
 	typedef struct tws_instance tws_instance_t;
 }
+class ib_backend_io_logger;
+
 
 
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
@@ -196,26 +200,6 @@ class ib_msg_resp_commission_report;
 
 
 
-struct tws_conn_cfg
-{
-    /* configuration parameters: how to connect to TWS */
-    const char *ip_address;
-    int port;
-    int our_id_code;
-
-    long backend_poll_period; // unit: milliseconds
-	long backend_reconnect_delay; // unit: milliseconds
-
-public:
-	tws_conn_cfg() :
-		ip_address(NULL), port(0), our_id_code(0),
-		backend_poll_period(0), backend_reconnect_delay(0)
-	{
-	}
-	~tws_conn_cfg()
-	{
-	}
-};
 
 
 
@@ -299,20 +283,19 @@ public:
 
 
 
-class ib_tws_manager
+class ib_tws_manager : public ib_backend_io_channel
 {
-public:
-	bool fake_ib_tws_connection;
-	struct mg_connection *fake_conn[2];
+	// overrides:
+public: 
+	/* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
+	virtual int io_open(void);
+	/* close callback is invoked on error or when tws_disconnect is invoked */
+	virtual int io_close(void);
 
-	void fake_ib_tws_server(int mode);
+	virtual int destroy(void);
 
 protected:
-	struct tws_conn_cfg tws_cfg;
-    struct mg_connection *tws_conn;
-    struct mg_context *tws_ctx;
-    tws::tws_instance_t *tws_handle;
-	app_manager *app_mgr;
+	ib_backend_io_logger *m_io_logger;
 
     /* tracking some TWS values here as well: */
     unique_type_id_manager next_order_id;		// dual use: orders and tickers, so that all ids we send to/use with IB/TWS are unique
@@ -397,9 +380,11 @@ protected:
 	/* sends message REQ_REAL_TIME_BARS to IB/TWS */
 	tws_req_active_msg_set<ib_msg_request_realtime_bars *> request_realtime_bars_active_set;
 
-public:
+protected:
 	ib_tws_manager(app_manager *mgr);
+public:
 	virtual ~ib_tws_manager();
+	static ib_tws_manager *get_instance(app_manager *mgr, bool instantiate_singleton = false);
 
 public:
 	int set_next_order_id(int id)
@@ -424,48 +409,6 @@ public:
 	int process_tws_event(void);
 
 	const char *strerror(int errcode);
-
-	struct tws_conn_cfg &get_config(void)
-	{
-		return tws_cfg;
-	}
-
-	tier2_message_processor *get_receiver(void);
-
-	app_manager *get_app_manager(void) const
-	{
-		return app_mgr;
-	}
-
-	tws::tws_instance_t *get_tws_instance(void)
-	{
-		return tws_handle;
-	}
-
-	// helper function: produce the IB/TWS app connection. (Used by the TWS backend communication thread / TWS API callbacks)
-	struct mg_connection *get_connection(void)
-	{
-		return tws_conn;
-	}
-	struct mg_context *get_context(void)
-	{
-		return tws_ctx;
-	}
-	struct tws_conn_cfg &get_tws_ib_connection_config(void)
-	{
-		return tws_cfg;
-	}
-
-	void set_connection(struct mg_connection *conn)
-	{
-		//assert(conn);
-		tws_conn = conn;
-	}
-	void set_context(struct mg_context *ctx)
-	{
-		assert(ctx);
-		tws_ctx = ctx;
-	}
 
 public:
 	/* sends message REQ_SCANNER_PARAMETERS to IB/TWS */

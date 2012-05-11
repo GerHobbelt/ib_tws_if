@@ -35,15 +35,16 @@
 #include "tws_request.h"
 #include "tws_response.h"
 
+#include "tws_backend_io_logger.h"
+
 #include <mongoose/mongoose_ex.h>
 
 
 
 
 ib_tws_manager::ib_tws_manager(app_manager *mgr) :
-	app_mgr(mgr),
-	tws_conn(NULL), tws_ctx(NULL), tws_handle(NULL), 
-	fake_ib_tws_connection(true),
+	ib_backend_io_channel(mgr),
+	m_io_logger(NULL),
 	next_order_id(0),
 	req_scanner_parameters_active_set(),
 	req_scanner_subscription_active_set(10 /* limit imposed by TWS/IB */),
@@ -71,27 +72,13 @@ ib_tws_manager::ib_tws_manager(app_manager *mgr) :
 	req_market_data_type_active_set(),
 	request_realtime_bars_active_set()
 {
-	fake_conn[0] = NULL;
-	fake_conn[1] = NULL;
 }
 
 ib_tws_manager::~ib_tws_manager()
 {
+	destroy();
 }
 
-
-
-
-tier2_message_processor *ib_tws_manager::get_receiver(void)
-{
-	app_manager *mgr = get_app_manager();
-	mg_context *ctx = get_context();
-	mg_connection *conn = get_connection();
-
-	tier2_message_processor *rv = mgr->get_receiver(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD);
-	assert(rv);
-	return rv;
-}
 
 
 
@@ -587,6 +574,8 @@ int ib_tws_manager::process_response_message(ib_msg_resp_market_data_type *resp_
 /* fired by: COMMISSION_REPORT */
 int ib_tws_manager::process_response_message(ib_msg_resp_commission_report *resp_msg)
 {
+	assert(resp_msg);
+
 	return 0;
 }
 
@@ -810,6 +799,11 @@ template<> int tws_req_active_msg_set<class ib_msg_req_scanner_subscription *>::
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 	struct mg_connection *conn = ibm->get_connection();
 
+	ib_msg_req_scanner_subscription *req = find(resp_msg);
+
+	if (req)
+		return req->process_response(resp_msg);
+
 	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_subscription");
 
 	return 0;
@@ -859,4 +853,74 @@ template<> int tws_req_active_msg_set<class ib_msg_calculate_implied_volatility 
 	return 0;
 }
 
+
+
+
+
+
+static ib_tws_manager *ib_tws;
+
+
+ib_tws_manager * ib_tws_manager::get_instance(app_manager *mgr, bool instantiate_singleton)
+{
+	ib_tws_manager *obj = dynamic_cast<ib_tws_manager *>(ib_backend_io_channel::get_instance(mgr, false));
+
+	if (!obj && instantiate_singleton)
+	{
+		obj = new ib_tws_manager(mgr);
+
+		set_instance(obj);
+	}
+	return obj;
+}
+
+
+
+
+
+/* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
+int ib_tws_manager::io_open(void)
+{
+	int rv = __super::io_open();
+
+	if (!faking_the_ib_tws_connection)
+	{
+		if (!m_io_logger)
+		{
+	        char tbuf[40];
+
+			m_io_logger = new ib_backend_io_logger();
+
+			if (m_io_logger->init())
+			{
+				delete m_io_logger;
+				m_io_logger = NULL;
+			}
+		}
+
+		push_after(m_io_logger);
+	}
+	return rv;
+}
+
+/* close callback is invoked on error or when tws_disconnect is invoked */
+int ib_tws_manager::io_close(void)
+{
+	int rv = __super::io_close();
+
+	pop_before(m_io_logger);
+	pop_after(m_io_logger);
+
+	return rv;
+}
+
+int ib_tws_manager::destroy(void)
+{
+	int rv = __super::destroy();
+
+	pop_before(m_io_logger);
+	pop_after(m_io_logger);
+
+	return rv;
+}
 

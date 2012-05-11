@@ -112,7 +112,7 @@ protected:
 	// the bits that make up the 'unique ID':
 	requester_id *unique_id;
 	// additional information attributes:
-	app_manager *manager;
+	app_manager *m_app_manager;
 
 	virtual void register_interthread_connection(interthread_communicator *info);
 
@@ -124,7 +124,7 @@ protected:
 
 public:
 	tier2_message_processor(requester_id *id, app_manager *mgr) :
-		unique_id(id), manager(mgr)
+		unique_id(id), m_app_manager(mgr)
 	{
 	}
 	virtual ~tier2_message_processor()
@@ -138,7 +138,7 @@ public:
 	}
 	app_manager *get_app_manager(void) const
 	{
-		return manager;
+		return m_app_manager;
 	}
 
 public:

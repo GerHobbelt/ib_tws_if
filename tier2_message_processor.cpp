@@ -26,8 +26,7 @@ void tier2_message_processor::register_sender(tier2_message_processor *sender)
 			return;
 	}
 
-	app_manager *mgr = this->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	ib_tws_manager *ibm = m_app_manager->get_ib_tws_manager();
 	mg_connection *conns[2];
 	interthread_communicator *comm = NULL;
 	
@@ -59,9 +58,6 @@ void tier2_message_processor::register_interthread_connection(interthread_commun
 		if (senders[i]->matches(comm))
 			return;
 	}
-
-	app_manager *mgr = this->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 
 	senders.push_back(comm);
 }
@@ -173,3 +169,40 @@ bool tier2_message_processor::does_own(tier2_message *msg) const
 	}
 	return true;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+requester_id::requester_id(mg_connection *thread, mg_connection *client, int seq_id) :
+	client_connection(client),
+	calling_thread_id(thread),
+	sequence_id(seq_id)
+{
+}
+
+requester_id::~requester_id()
+{
+}
+
+int requester_id::hash(void) const
+{
+	return 0;
+}
+
+int requester_id::get_next_sequence_value(requester_id *optional_id)
+{
+	return 0;
+}
+

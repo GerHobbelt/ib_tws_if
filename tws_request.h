@@ -152,11 +152,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -190,11 +185,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -223,11 +213,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -264,11 +249,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -310,11 +290,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -345,11 +320,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -379,11 +349,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -423,11 +388,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -464,11 +424,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -503,11 +458,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -537,11 +487,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -578,11 +523,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -618,11 +558,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -656,11 +591,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -697,11 +627,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -737,11 +662,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -771,11 +691,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -811,11 +726,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -845,11 +755,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -885,11 +790,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -924,11 +824,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -959,11 +854,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -993,11 +883,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -1032,11 +917,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -1073,11 +953,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -1107,11 +982,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -1149,11 +1019,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -1187,11 +1052,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -1230,11 +1090,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -1268,11 +1123,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -1311,11 +1161,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -1350,11 +1195,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -1384,11 +1224,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -1423,11 +1258,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -1466,11 +1296,6 @@ public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
 
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
-
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
 
@@ -1501,11 +1326,6 @@ friend class ib_tws_manager;
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
@@ -1557,11 +1377,6 @@ protected:
 public:
 	/* this method is invoked by the backend when a matching response message is received: */
 	virtual int process_response(tier2_message *response);
-
-	virtual int store(void);
-	virtual int load(void);
-
-	virtual bool equal(const tier2_message &alt) const;
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
 };
