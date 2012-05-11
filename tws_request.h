@@ -107,12 +107,12 @@ public:
 class tws_request_w_ticker_message: public tws_request_message
 {
 protected:
-	ib_int_t ticker_id;
+	ib_int_t m_ticker_id;
 
 public:
 	tws_request_w_ticker_message(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id) :
 		tws_request_message(from, to),
-		ticker_id(_ticker_id)
+		m_ticker_id(_ticker_id)
 	{
 	}
 protected:
@@ -224,14 +224,14 @@ class ib_msg_req_mkt_data: public tws_request_w_ticker_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_contract contract;
-	ib_ticker_list generic_tick_list;
-	int snapshot;
+	ib_contract m_contract;
+	ib_ticker_list m_generic_tick_list;
+	ib_int_t m_snapshot;
 
 public:
 	ib_msg_req_mkt_data(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id, ib_contract &_contract, const ib_ticker_list &_generic_tick_list, int _snapshot) :
 		tws_request_w_ticker_message(from, to, _ticker_id),
-		contract(_contract), generic_tick_list(_generic_tick_list), snapshot(_snapshot)
+		m_contract(_contract), m_generic_tick_list(_generic_tick_list), m_snapshot(_snapshot)
 	{
 	}
 protected:
@@ -260,18 +260,18 @@ class ib_msg_req_historical_data: public tws_request_w_ticker_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_contract contract;
-	ib_date_t end_date_time;
-	ib_string_t duration;
-	ib_string_t bar_size_setting;
-	ib_string_t what_to_show;
-	int use_rth;
-	int format_date;
+	ib_contract m_contract;
+	ib_date_t m_end_date_time;
+	ib_string_t m_duration;
+	ib_string_t m_bar_size_setting;
+	ib_string_t m_what_to_show;
+	ib_int_t m_use_rth;
+	ib_int_t m_format_date;
 
 public:
 	ib_msg_req_historical_data(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id, ib_contract &_contract, time_t _end_date_time, const char *_duration, const char *_bar_size_setting, const char _what_to_show[], int _use_rth, int _format_date) :
 	    tws_request_w_ticker_message(from, to, _ticker_id),
-		contract(_contract), end_date_time(_end_date_time), duration(_duration), bar_size_setting(_bar_size_setting), what_to_show(_what_to_show), use_rth(_use_rth), format_date(_format_date)
+		m_contract(_contract), m_end_date_time(_end_date_time), m_duration(_duration), m_bar_size_setting(_bar_size_setting), m_what_to_show(_what_to_show), m_use_rth(_use_rth), m_format_date(_format_date)
 	{
 	}
 protected:
@@ -360,16 +360,16 @@ class ib_msg_exercise_options: public tws_request_w_ticker_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_contract contract;
-	int exercise_action;
-	int exercise_quantity;
-	ib_string_t account;
-	int exc_override;
+	ib_contract m_contract;
+	ib_int_t m_exercise_action;
+	ib_int_t m_exercise_quantity;
+	ib_string_t m_account;
+	ib_int_t m_exc_override;
 
 public:
 	ib_msg_exercise_options(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id, ib_contract &_contract, int _exercise_action, int _exercise_quantity, const char *_account, int _exc_override) :
 	    tws_request_w_ticker_message(from, to, _ticker_id),
-		contract(_contract), exercise_action(_exercise_action), exercise_quantity(_exercise_quantity), account(_account), exc_override(_exc_override)
+		m_contract(_contract), m_exercise_action(_exercise_action), m_exercise_quantity(_exercise_quantity), m_account(_account), m_exc_override(_exc_override)
 	{
 	}
 protected:
@@ -398,14 +398,14 @@ class ib_msg_place_order: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int order_id;
-	ib_contract contract;
-	ib_order order;
+	ib_int_t m_order_id;
+	ib_contract m_contract;
+	ib_order m_order;
 
 public:
 	ib_msg_place_order(tier2_message_processor *from, tier2_message_processor *to, int _order_id, ib_contract &_contract, ib_order &_order) :
 	    tws_request_message(from, to),
-		order_id(_order_id), contract(_contract), order(_order)
+		m_order_id(_order_id), m_contract(_contract), m_order(_order)
 	{
 	}
 protected:
@@ -434,12 +434,12 @@ class ib_msg_cancel_order: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int order_id;
+	ib_int_t m_order_id;
 
 public:
 	ib_msg_cancel_order(tier2_message_processor *from, tier2_message_processor *to, int _order_id) :
 	    tws_request_message(from, to),
-		order_id(_order_id)
+		m_order_id(_order_id)
 	{
 	}
 protected:
@@ -498,13 +498,13 @@ class ib_msg_req_account_updates: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int subscribe;
-	ib_string_t acct_code;
+	ib_int_t m_subscribe;
+	ib_string_t m_acct_code;
 
 public:
 	ib_msg_req_account_updates(tier2_message_processor *from, tier2_message_processor *to, int _subscribe, const char *_acct_code) :
 	    tws_request_message(from, to),
-		subscribe(_subscribe), acct_code(_acct_code)
+		m_subscribe(_subscribe), m_acct_code(_acct_code)
 	{
 	}
 protected:
@@ -533,13 +533,13 @@ class ib_msg_req_executions: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int reqid;
-	ib_exec_filter filter;
+	ib_int_t m_reqid;
+	ib_exec_filter m_filter;
 
 public:
 	ib_msg_req_executions(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_exec_filter &_filter) :
 	    tws_request_message(from, to),
-		reqid(_reqid), filter(_filter)
+		m_reqid(_reqid), m_filter(_filter)
 	{
 	}
 protected:
@@ -568,12 +568,12 @@ class ib_msg_req_ids: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int num_ids;
+	ib_int_t m_num_ids;
 
 public:
 	ib_msg_req_ids(tier2_message_processor *from, tier2_message_processor *to, int _num_ids) :
 	    tws_request_message(from, to),
-		num_ids(_num_ids)
+		m_num_ids(_num_ids)
 	{
 	}
 protected:
@@ -602,13 +602,13 @@ class ib_msg_req_contract_details: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int reqid;
-	ib_contract contract;
+	ib_int_t m_reqid;
+	ib_contract m_contract;
 
 public:
 	ib_msg_req_contract_details(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_contract &_contract) :
 	    tws_request_message(from, to),
-		reqid(_reqid), contract(_contract)
+		m_reqid(_reqid), m_contract(_contract)
 	{
 	}
 protected:
@@ -637,13 +637,13 @@ class ib_msg_req_mkt_depth: public tws_request_w_ticker_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_contract contract;
-	int num_rows;
+	ib_contract m_contract;
+	ib_int_t m_num_rows;
 
 public:
 	ib_msg_req_mkt_depth(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id, ib_contract &_contract, int _num_rows) :
 	    tws_request_w_ticker_message(from, to, _ticker_id),
-		contract(_contract), num_rows(_num_rows)
+		m_contract(_contract), m_num_rows(_num_rows)
 	{
 	}
 protected:
@@ -702,12 +702,12 @@ class ib_msg_req_news_bulletins: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int all_msgs;
+	ib_int_t m_all_msgs;
 
 public:
 	ib_msg_req_news_bulletins(tier2_message_processor *from, tier2_message_processor *to, int _all_msgs) :
 	    tws_request_message(from, to),
-		all_msgs(_all_msgs)
+		m_all_msgs(_all_msgs)
 	{
 	}
 protected:
@@ -766,12 +766,12 @@ class ib_msg_set_server_log_level: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int level;
+	ib_int_t m_level;
 
 public:
 	ib_msg_set_server_log_level(tier2_message_processor *from, tier2_message_processor *to, int _level) :
 	    tws_request_message(from, to),
-		level(_level)
+		m_level(_level)
 	{
 	}
 protected:
@@ -800,12 +800,12 @@ class ib_msg_req_auto_open_orders: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int auto_bind;
+	ib_int_t m_auto_bind;
 
 public:
 	ib_msg_req_auto_open_orders(tier2_message_processor *from, tier2_message_processor *to, int _auto_bind) :
 	    tws_request_message(from, to),
-		auto_bind(_auto_bind)
+		m_auto_bind(_auto_bind)
 	{
 	}
 protected:
@@ -894,12 +894,12 @@ class ib_msg_request_fa: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	tws_fa_msg_type_t fa_data_type;
+	tws_fa_msg_type_t m_fa_data_type;
 
 public:
 	ib_msg_request_fa(tier2_message_processor *from, tier2_message_processor *to, tws_fa_msg_type_t _fa_data_type) :
 	    tws_request_message(from, to),
-		fa_data_type(_fa_data_type)
+		m_fa_data_type(_fa_data_type)
 	{
 	}
 protected:
@@ -928,13 +928,13 @@ class ib_msg_replace_fa: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	tws_fa_msg_type_t fa_data_type;
-	ib_string_t cxml;
+	tws_fa_msg_type_t m_fa_data_type;
+	ib_string_t m_cxml;
 
 public:
 	ib_msg_replace_fa(tier2_message_processor *from, tier2_message_processor *to, tws_fa_msg_type_t _fa_data_type, const char *_cxml) :
 	    tws_request_message(from, to),
-		fa_data_type(_fa_data_type), cxml(_cxml)
+		m_fa_data_type(_fa_data_type), m_cxml(_cxml)
 	{
 	}
 protected:
@@ -993,14 +993,14 @@ class ib_msg_req_fundamental_data: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int reqid;
-	ib_contract contract;
-	ib_string_t report_type;
+	ib_int_t m_reqid;
+	ib_contract m_contract;
+	ib_string_t m_report_type;
 
 public:
 	ib_msg_req_fundamental_data(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_contract &_contract, const char *_report_type) :
 	    tws_request_message(from, to),
-		reqid(_reqid), contract(_contract), report_type(_report_type)
+		m_reqid(_reqid), m_contract(_contract), m_report_type(_report_type)
 	{
 	}
 protected:
@@ -1029,12 +1029,12 @@ class ib_msg_cancel_fundamental_data: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int reqid;
+	ib_int_t m_reqid;
 
 public:
 	ib_msg_cancel_fundamental_data(tier2_message_processor *from, tier2_message_processor *to, int _reqid) :
 		tws_request_message(from, to), 
-		reqid(_reqid)
+		m_reqid(_reqid)
 	{
 	}
 protected:
@@ -1063,15 +1063,15 @@ class ib_msg_calculate_implied_volatility: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int reqid;
-	ib_contract contract;
-	double option_price;
-	double under_price;
+	ib_int_t m_reqid;
+	ib_contract m_contract;
+	ib_double_t m_option_price;
+	ib_double_t m_under_price;
 
 public:
 	ib_msg_calculate_implied_volatility(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_contract &_contract, double _option_price, double _under_price) :
 	    tws_request_message(from, to),
-		reqid(_reqid), contract(_contract), option_price(_option_price), under_price(_under_price)
+		m_reqid(_reqid), m_contract(_contract), m_option_price(_option_price), m_under_price(_under_price)
 	{
 	}
 protected:
@@ -1100,12 +1100,12 @@ class ib_msg_cancel_calculate_implied_volatility: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int reqid;
+	ib_int_t m_reqid;
 
 public:
 	ib_msg_cancel_calculate_implied_volatility(tier2_message_processor *from, tier2_message_processor *to, int _reqid) :
 	    tws_request_message(from, to),
-		reqid(_reqid)
+		m_reqid(_reqid)
 	{
 	}
 protected:
@@ -1134,15 +1134,15 @@ class ib_msg_calculate_option_price: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int reqid;
-	ib_contract contract;
-	double volatility;
-	double under_price;
+	ib_int_t m_reqid;
+	ib_contract m_contract;
+	ib_double_t m_volatility;
+	ib_double_t m_under_price;
 
 public:
 	ib_msg_calculate_option_price(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_contract &_contract, double _volatility, double _under_price) :
 	    tws_request_message(from, to),
-		reqid(_reqid), contract(_contract), volatility(_volatility), under_price(_under_price)
+		m_reqid(_reqid), m_contract(_contract), m_volatility(_volatility), m_under_price(_under_price)
 	{
 	}
 protected:
@@ -1171,12 +1171,12 @@ class ib_msg_cancel_calculate_option_price: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int reqid;
+	ib_int_t m_reqid;
 
 public:
 	ib_msg_cancel_calculate_option_price(tier2_message_processor *from, tier2_message_processor *to, int _reqid) :
 	    tws_request_message(from, to),
-		reqid(_reqid)
+		m_reqid(_reqid)
 	{
 	}
 protected:
@@ -1235,12 +1235,12 @@ class ib_msg_req_market_data_type: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	tws_market_data_type_t market_data_type;
+	tws_market_data_type_t m_market_data_type;
 
 public:
 	ib_msg_req_market_data_type(tier2_message_processor *from, tier2_message_processor *to, tws_market_data_type_t _market_data_type) :
 	    tws_request_message(from, to),
-		market_data_type(_market_data_type)
+		m_market_data_type(_market_data_type)
 	{
 	}
 protected:
@@ -1269,15 +1269,15 @@ class ib_msg_request_realtime_bars: public tws_request_w_ticker_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_contract contract;
-	int bar_size;
-	ib_string_t what_to_show;
-	int use_rth;
+	ib_contract m_contract;
+	ib_int_t m_bar_size;
+	ib_string_t m_what_to_show;
+	ib_int_t m_use_rth;
 
 public:
 	ib_msg_request_realtime_bars(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id, ib_contract &_contract, int _bar_size, const char *_what_to_show, int _use_rth) :
 	    tws_request_w_ticker_message(from, to, _ticker_id),
-		contract(_contract), bar_size(_bar_size), what_to_show(_what_to_show), use_rth(_use_rth)
+		m_contract(_contract), m_bar_size(_bar_size), m_what_to_show(_what_to_show), m_use_rth(_use_rth)
 	{
 	}
 protected:
@@ -1356,13 +1356,13 @@ class ib_msg_fetch_tws_info: public tws_request_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	int server_version;
-	ib_date_t connect_timestamp;
+	ib_int_t m_server_version;
+	ib_date_t m_connect_timestamp;
 
 public:
 	ib_msg_fetch_tws_info(tier2_message_processor *from, tier2_message_processor *to = NULL) :
 		tws_request_message(from, to),
-		server_version(0)
+		m_server_version(0), m_connect_timestamp()
 	{
 	}
 protected:

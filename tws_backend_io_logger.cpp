@@ -127,6 +127,11 @@ int ib_backend_io_logger::io_rx_elem_observe(ib_backend_io_channel *originator, 
 	{
 		if (!elem && !elem_size)
 		{
+			if (!m_rx_msg_buffer.empty())
+			{
+				write_rx_msg(originator);
+			}
+
 			m_pending_rx_msg = tws::TWS_NO_RX_MESSAGE;
 		}
 		else if (m_pending_rx_msg == tws::TWS_NO_RX_MESSAGE)
@@ -222,7 +227,7 @@ int ib_backend_io_logger::write_rx_msg(ib_backend_io_channel *originator)
 			m_rx_log_file = mg_get_logfile_path(path, sizeof(path), tws_cfg.tws_traffic_log_file, conn, m_rx_timestamp);
 		}
 
-		mg_write2log(originator->get_connection(), tws_cfg.tws_traffic_log_file, m_rx_timestamp, "trace", "RX: %s", m_rx_msg_buffer.c_str());
+		mg_write2log(originator->get_connection(), m_rx_log_file.c_str(), m_rx_timestamp, "trace", "RX: %s", m_rx_msg_buffer.c_str());
 
 		m_rx_msg_buffer.clear();
 	}
