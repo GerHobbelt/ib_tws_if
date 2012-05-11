@@ -291,6 +291,43 @@ tier2_message::request_state_t tier2_message::state(request_state_t new_state)
 				// push message across the pond:
 				err = comm->post_message(this);
 			}
+			else
+			{
+				// transmit message to 'beyond / outside world':
+				err = f_response_pending();
+			}
+			break;
+
+		case RESPONSE_COMPLETE:
+			// send message to requester ~ handler
+			if (owner != requester)
+			{
+				comm = requester->get_interthread_communicator(owner, requester);
+
+				// push message across the pond:
+				err = comm->post_message(this);
+			}
+			else
+			{
+				// transmit message to 'beyond / outside world':
+				err = f_response_complete();
+			}
+			break;
+
+		case TASK_COMPLETED:
+			// send message to requester ~ handler
+			if (owner != requester)
+			{
+				comm = requester->get_interthread_communicator(owner, requester);
+
+				// push message across the pond:
+				err = comm->post_message(this);
+			}
+			else
+			{
+				// transmit message to 'beyond / outside world':
+				err = f_task_completed();
+			}
 			break;
 
 		default:
@@ -380,7 +417,7 @@ int tier2_message::wait_for_response(void)
 	return 0;
 }
 
-int tier2_message::process_response(tier2_message *resp_msg)
+int tier2_message::process_response_message(tier2_message *resp_msg)
 {
 	assert(!"Should never get here!");
 	return 0;
@@ -442,6 +479,8 @@ int tier2_message::f_commence_transmit(void)
 }
 int tier2_message::f_wait_for_transmit(void)
 {
+	state(tier2_message::COMMENCE_TRANSMIT);
+
 	return 0;
 }
 

@@ -41,35 +41,6 @@
 
 
 
-int tws_request_message::f_exec_command(void)
-{
-	assert(!"Should never get here");
-	return 0;
-}
-int tws_request_message::f_task_completed(void)
-{
-	return 0;
-}
-int tws_request_message::f_response_complete(void)
-{
-	return 0;
-}
-int tws_request_message::f_response_pending(void)
-{
-	return 0;
-}
-int tws_request_message::f_ready_to_receive_response(void)
-{
-	return 0;
-}
-int tws_request_message::f_commence_transmit(void)
-{
-	return 0;
-}
-int tws_request_message::f_wait_for_transmit(void)
-{
-	return 0;
-}
 
 
 
@@ -1059,6 +1030,9 @@ ib_ticker_list::operator class ib_string_t(void)
 
 
 
+
+
+
 bool tws_request_message::response_is_meant_for_us(class tier2_message *resp_msg) const
 {
 	/* Assume NO by default */
@@ -1267,7 +1241,7 @@ bool ib_msg_cancel_realtime_bars::response_is_meant_for_us(class tier2_message *
 
 
 
-int ib_msg_req_scanner_parameters::process_response(class tier2_message *resp_msg)
+int ib_msg_req_scanner_parameters::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1276,10 +1250,10 @@ int ib_msg_req_scanner_parameters::process_response(class tier2_message *resp_ms
 	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_parameters");
 
 	// sneaky: let the response message handle itself:
-	return resp_msg->process_response(this);
+	return resp_msg->process_response_message(this);
 }
 
-int ib_msg_req_scanner_subscription::process_response(class tier2_message *resp_msg)
+int ib_msg_req_scanner_subscription::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1290,7 +1264,7 @@ int ib_msg_req_scanner_subscription::process_response(class tier2_message *resp_
 	return 0;
 }
 
-int ib_msg_cancel_scanner_subscription::process_response(class tier2_message *resp_msg)
+int ib_msg_cancel_scanner_subscription::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1301,7 +1275,7 @@ int ib_msg_cancel_scanner_subscription::process_response(class tier2_message *re
 	return 0;
 }
 
-int ib_msg_req_mkt_data::process_response(class tier2_message *resp_msg)
+int ib_msg_req_mkt_data::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1312,7 +1286,7 @@ int ib_msg_req_mkt_data::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_historical_data::process_response(class tier2_message *resp_msg)
+int ib_msg_req_historical_data::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1323,7 +1297,7 @@ int ib_msg_req_historical_data::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_cancel_historical_data::process_response(class tier2_message *resp_msg)
+int ib_msg_cancel_historical_data::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1334,7 +1308,7 @@ int ib_msg_cancel_historical_data::process_response(class tier2_message *resp_ms
 	return 0;
 }
 
-int ib_msg_cancel_mkt_data::process_response(class tier2_message *resp_msg)
+int ib_msg_cancel_mkt_data::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1345,7 +1319,7 @@ int ib_msg_cancel_mkt_data::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_exercise_options::process_response(class tier2_message *resp_msg)
+int ib_msg_exercise_options::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1356,7 +1330,7 @@ int ib_msg_exercise_options::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_place_order::process_response(class tier2_message *resp_msg)
+int ib_msg_place_order::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1367,7 +1341,7 @@ int ib_msg_place_order::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_cancel_order::process_response(class tier2_message *resp_msg)
+int ib_msg_cancel_order::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1378,7 +1352,7 @@ int ib_msg_cancel_order::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_open_orders::process_response(class tier2_message *resp_msg)
+int ib_msg_req_open_orders::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1389,7 +1363,7 @@ int ib_msg_req_open_orders::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_account_updates::process_response(class tier2_message *resp_msg)
+int ib_msg_req_account_updates::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1400,7 +1374,7 @@ int ib_msg_req_account_updates::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_executions::process_response(class tier2_message *resp_msg)
+int ib_msg_req_executions::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1411,7 +1385,7 @@ int ib_msg_req_executions::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_ids::process_response(class tier2_message *resp_msg)
+int ib_msg_req_ids::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1422,7 +1396,7 @@ int ib_msg_req_ids::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_contract_details::process_response(class tier2_message *resp_msg)
+int ib_msg_req_contract_details::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1433,7 +1407,7 @@ int ib_msg_req_contract_details::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_mkt_depth::process_response(class tier2_message *resp_msg)
+int ib_msg_req_mkt_depth::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1444,7 +1418,7 @@ int ib_msg_req_mkt_depth::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_cancel_mkt_depth::process_response(class tier2_message *resp_msg)
+int ib_msg_cancel_mkt_depth::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1455,7 +1429,7 @@ int ib_msg_cancel_mkt_depth::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_news_bulletins::process_response(class tier2_message *resp_msg)
+int ib_msg_req_news_bulletins::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1466,7 +1440,7 @@ int ib_msg_req_news_bulletins::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_cancel_news_bulletins::process_response(class tier2_message *resp_msg)
+int ib_msg_cancel_news_bulletins::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1477,7 +1451,7 @@ int ib_msg_cancel_news_bulletins::process_response(class tier2_message *resp_msg
 	return 0;
 }
 
-int ib_msg_set_server_log_level::process_response(class tier2_message *resp_msg)
+int ib_msg_set_server_log_level::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1488,7 +1462,7 @@ int ib_msg_set_server_log_level::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_auto_open_orders::process_response(class tier2_message *resp_msg)
+int ib_msg_req_auto_open_orders::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1499,7 +1473,7 @@ int ib_msg_req_auto_open_orders::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_all_open_orders::process_response(class tier2_message *resp_msg)
+int ib_msg_req_all_open_orders::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1510,7 +1484,7 @@ int ib_msg_req_all_open_orders::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_managed_accts::process_response(class tier2_message *resp_msg)
+int ib_msg_req_managed_accts::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1521,7 +1495,7 @@ int ib_msg_req_managed_accts::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_request_fa::process_response(class tier2_message *resp_msg)
+int ib_msg_request_fa::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1532,7 +1506,7 @@ int ib_msg_request_fa::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_replace_fa::process_response(class tier2_message *resp_msg)
+int ib_msg_replace_fa::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1543,7 +1517,7 @@ int ib_msg_replace_fa::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_current_time::process_response(class tier2_message *resp_msg)
+int ib_msg_req_current_time::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1554,7 +1528,7 @@ int ib_msg_req_current_time::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_fundamental_data::process_response(class tier2_message *resp_msg)
+int ib_msg_req_fundamental_data::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1565,7 +1539,7 @@ int ib_msg_req_fundamental_data::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_cancel_fundamental_data::process_response(class tier2_message *resp_msg)
+int ib_msg_cancel_fundamental_data::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1576,7 +1550,7 @@ int ib_msg_cancel_fundamental_data::process_response(class tier2_message *resp_m
 	return 0;
 }
 
-int ib_msg_calculate_implied_volatility::process_response(class tier2_message *resp_msg)
+int ib_msg_calculate_implied_volatility::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1587,7 +1561,7 @@ int ib_msg_calculate_implied_volatility::process_response(class tier2_message *r
 	return 0;
 }
 
-int ib_msg_cancel_calculate_implied_volatility::process_response(class tier2_message *resp_msg)
+int ib_msg_cancel_calculate_implied_volatility::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1598,7 +1572,7 @@ int ib_msg_cancel_calculate_implied_volatility::process_response(class tier2_mes
 	return 0;
 }
 
-int ib_msg_calculate_option_price::process_response(class tier2_message *resp_msg)
+int ib_msg_calculate_option_price::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1609,7 +1583,7 @@ int ib_msg_calculate_option_price::process_response(class tier2_message *resp_ms
 	return 0;
 }
 
-int ib_msg_cancel_calculate_option_price::process_response(class tier2_message *resp_msg)
+int ib_msg_cancel_calculate_option_price::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1620,7 +1594,7 @@ int ib_msg_cancel_calculate_option_price::process_response(class tier2_message *
 	return 0;
 }
 
-int ib_msg_req_global_cancel::process_response(class tier2_message *resp_msg)
+int ib_msg_req_global_cancel::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
@@ -1631,7 +1605,7 @@ int ib_msg_req_global_cancel::process_response(class tier2_message *resp_msg)
 	return 0;
 }
 
-int ib_msg_req_market_data_type::process_response(class tier2_message *resp_msg)
+int ib_msg_req_market_data_type::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();

@@ -283,7 +283,7 @@ scanner report.
 By using the queue the incoming TWS message traffic processing is kept as simple as possible; the scanner subscribe msg queue
 keeps this part essentially a single-thread process.
 */
-int ib_msg_resp_scanner_parameters::process_response(class tier2_message *resp_msg)
+int ib_msg_resp_scanner_parameters::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = get_requester()->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();

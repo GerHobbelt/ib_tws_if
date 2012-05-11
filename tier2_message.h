@@ -141,12 +141,6 @@ public:
 		return msg == this;
 	}
 
-	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const
-	{
-		/* accept NO responses by default */
-		return false;
-	}
-
 public:
 	virtual void destroy(void);
 
@@ -192,8 +186,14 @@ protected:
 	virtual int f_task_completed(void);
 	
 public:
+	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const
+	{
+		/* accept NO responses by default */
+		return false;
+	}
+
 	/* this method is invoked by the back-end when a matching response message is received: */
-	virtual int process_response(tier2_message *received_response);
+	virtual int process_response_message(tier2_message *received_response);
 
 	virtual int wait_for_response(void);
 

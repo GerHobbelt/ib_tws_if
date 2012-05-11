@@ -202,82 +202,26 @@ class ib_msg_resp_commission_report;
 
 
 
-
-template <typename /* tws_request_message* */ T> class tws_req_active_msg_set
+class ib_tws_scanner_subscription_limitation: public tier2_message_state_change_handler
 {
 protected:
-	int max_active_limit;
-
-	typedef std::vector<T> store_t;
-	typedef typename store_t::iterator iter_t;
-	typedef typename store_t::const_iterator const_iter_t;
-
-	store_t store;
+	std::vector<tier2_message *> m_active_scanner_subscriptions;
+	int m_max_scanner_subscriptions;
 
 public:
-	tws_req_active_msg_set(int max_allowed = INT_MAX) :
-	  max_active_limit(max_allowed)
+	ib_tws_scanner_subscription_limitation()
+		: m_active_scanner_subscriptions()
+		, m_max_scanner_subscriptions(10 /* limit imposed by TWS/IB */)
 	{
 	}
-	virtual ~tws_req_active_msg_set()
+	virtual ~ib_tws_scanner_subscription_limitation()
 	{
-		for (iter_t i = store.begin(); i != store.end(); i++)
-		{
-			T elem = *i;
-			elem->destroy();
-		}
 	}
 
 public:
-	T find(int unique_id) const
-	{
-		for (iter_t i = store.begin(); i != store.end(); i++)
-		{
-			T elem = *i;
-			if (elem->matches(unique_id))
-				return T;
-		}
-		return 0;
-	}
-	T find(tws_response_message *resp_msg) const
-	{
-		for (const_iter_t i = store.begin(); i != store.end(); i++)
-		{
-			T elem = *i;
-			if (elem->response_is_meant_for_us(resp_msg))
-				return elem;
-		}
-		return 0;
-	}
-
-	int process_response_message(tws_response_message *resp_msg);
-
-	// return false when the item cannot be immediately activated due to limitations
-	bool push(T msg)
-	{
-		store.push_back(msg);
-		return !are_limits_reached();
-	}
-
-	bool remove(T msg)
-	{
-		for (iter_t i = store.begin(); i != store.end(); i++)
-		{
-			T elem = *i;
-			if (elem == msg)
-			{
-				store.erase(i);
-				return true;
-			}
-		}
-		return false;
-	}
-
-	bool are_limits_reached(void) const
-	{
-		return int(store.size()) >= max_active_limit;
-	}
+	virtual tier2_message::state_change process(tier2_message &msg, tier2_message::request_state_t new_state);
 };
+
 
 
 
@@ -304,81 +248,10 @@ protected:
 	//hash_map
 
     /* -- and the working men -- */
+	typedef std::vector<tier2_message *> store_t;
+	store_t m_msg_queue;
 
-	/* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_scanner_parameters *> req_scanner_parameters_active_set;
-
-	/* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_scanner_subscription *> req_scanner_subscription_active_set;
-
-	/* sends message REQ_MKT_DATA to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_mkt_data *> req_mkt_data_active_set;
-	
-	/* sends message REQ_HISTORICAL_DATA to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_historical_data *> req_historical_data_active_set;
-	
-	/* sends message EXERCISE_OPTIONS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_exercise_options *> exercise_options_active_set;
-	
-	/* sends message PLACE_ORDER to IB/TWS */
-	tws_req_active_msg_set<ib_msg_place_order *> place_order_active_set;
-	
-	/* sends message REQ_OPEN_ORDERS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_open_orders *> req_open_orders_active_set;
-	
-	/* sends message REQ_ACCOUNT_DATA to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_account_updates *> req_account_updates_active_set;
-	
-	/* sends message REQ_EXECUTIONS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_executions *> req_executions_active_set;
-	
-	/* sends message REQ_IDS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_ids *> req_ids_active_set;
-	
-	/* sends message REQ_CONTRACT_DATA to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_contract_details *> req_contract_details_active_set;
-	
-	/* sends message REQ_MKT_DEPTH to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_mkt_depth *> req_mkt_depth_active_set;
-	
-	/* sends message REQ_NEWS_BULLETINS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_news_bulletins *> req_news_bulletins_active_set;
-	
-	/* sends message SET_SERVER_LOGLEVEL to IB/TWS */
-	tws_req_active_msg_set<ib_msg_set_server_log_level *> set_server_log_level_active_set;
-	
-	/* sends message REQ_AUTO_OPEN_ORDERS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_auto_open_orders *> req_auto_open_orders_active_set;
-	
-	/* sends message REQ_ALL_OPEN_ORDERS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_all_open_orders *> req_all_open_orders_active_set;
-	
-	/* sends message REQ_MANAGED_ACCTS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_managed_accts *> req_managed_accts_active_set;
-	
-	/* sends message REQ_FA to IB/TWS */
-	tws_req_active_msg_set<ib_msg_request_fa *> request_fa_active_set;
-	
-	/* sends message REPLACE_FA to IB/TWS */
-	tws_req_active_msg_set<ib_msg_replace_fa *> replace_fa_active_set;
-	
-	/* sends message REQ_CURRENT_TIME to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_current_time *> req_current_time_active_set;
-	
-	/* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_fundamental_data *> req_fundamental_data_active_set;
-	
-	/* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
-	tws_req_active_msg_set<ib_msg_calculate_implied_volatility *> calculate_implied_volatility_active_set;
-	
-	/* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
-	tws_req_active_msg_set<ib_msg_calculate_option_price *> calculate_option_price_active_set;
-	
-	/* sends message REQ_MARKET_DATA_TYPE to IB/TWS */
-	tws_req_active_msg_set<ib_msg_req_market_data_type *> req_market_data_type_active_set;
-	
-	/* sends message REQ_REAL_TIME_BARS to IB/TWS */
-	tws_req_active_msg_set<ib_msg_request_realtime_bars *> request_realtime_bars_active_set;
+	ib_tws_scanner_subscription_limitation m_scanner_subscription_limit;
 
 protected:
 	ib_tws_manager(app_manager *mgr);

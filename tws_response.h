@@ -44,6 +44,8 @@ protected:
 	{
 	}
 
+public:
+	virtual int process_response_message(tier2_message *received_response);
 };
 
 
@@ -72,7 +74,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 /* fired by: TICK_PRICE (for modern versions, then immediately preceeded by an invocation of event_tick_price()), TICK_SIZE */
@@ -97,7 +99,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -132,7 +134,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -158,7 +160,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -184,7 +186,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -218,7 +220,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -252,7 +254,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -279,7 +281,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -299,7 +301,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -326,7 +328,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -357,7 +359,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -381,7 +383,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -405,7 +407,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -430,7 +432,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -454,7 +456,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -479,7 +481,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -505,7 +507,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -529,7 +531,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -556,7 +558,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -585,7 +587,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -615,7 +617,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -642,7 +644,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -666,7 +668,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -691,7 +693,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -724,7 +726,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -750,7 +752,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -774,7 +776,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -804,7 +806,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -829,7 +831,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -854,7 +856,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -878,7 +880,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -910,7 +912,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -935,7 +937,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -960,7 +962,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -984,7 +986,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -1008,7 +1010,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -1033,7 +1035,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
@@ -1057,7 +1059,7 @@ protected:
 	}
 
 public:
-	virtual int process_response(tier2_message *response);
+	virtual int process_response_message(tier2_message *response);
 };
 
 
