@@ -13,6 +13,8 @@
 
 void tier2_message_processor::register_sender(tier2_message_processor *sender)
 {
+	assert(sender);
+
 	// ignore the 'loopback' path:
 	if (this == sender)
 		return;
@@ -40,10 +42,7 @@ void tier2_message_processor::register_sender(tier2_message_processor *sender)
 	}
 	senders.push_back(comm);
 
-	if (sender)
-	{
-		sender->register_interthread_connection(comm);
-	}
+	sender->register_interthread_connection(comm);
 }
 
 void tier2_message_processor::register_interthread_connection(interthread_communicator *comm)

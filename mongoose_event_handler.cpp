@@ -53,9 +53,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 			tws_req->state(tier2_message::EXEC_COMMAND);
 			err = tws_req->wait_for_response();
 
-#if 0
-			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", ctime(&tws_req->current_time));
-#endif
+			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", "bugger");
 			break;
 		}
         // No suitable handler found, mark as not processed. Mongoose will
