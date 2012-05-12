@@ -80,7 +80,7 @@ void tws_worker_thread(struct mg_context *ctx)
 	db_manager *dbm = mgr->get_db_manager();
 
 	ibm->set_context(ctx);
-	mgr->register_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD);
+	mgr->register_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD, ibm);
 	
     // retry connecting to TWS as long as the server itself hasn't been stopped!
     while (mg_get_stop_flag(ctx) == 0)
@@ -115,14 +115,14 @@ void tws_worker_thread(struct mg_context *ctx)
 				}
 
                 // request the valid set of scanner parameters first: this will trigger the requesting of several market scans from the msg receive handler:
-				ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(mgr->get_requester(ctx), NULL);
+				assert(mgr->get_requester(ctx) == ibm);
+				ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(ibm, NULL);
 				err = scan->state(tier2_message::EXEC_COMMAND);
 
                 while (mg_get_stop_flag(ctx) == 0 && ibm->is_tws_connected())
                 {
 					// push messages across the thread barrier + destory messages marked for destruction
-					assert(mgr->get_requester(ctx));
-					if (0 != mgr->get_requester(ctx)->pulse_marked_messages())
+					if (0 != ibm->pulse_marked_messages())
 					{
 						break;
 					}

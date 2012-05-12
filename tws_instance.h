@@ -282,8 +282,6 @@ protected:
 	//hash_map
 
     /* -- and the working men -- */
-	typedef std::vector<tier2_message *> store_t;
-	store_t m_msg_queue;
 	int m_last_tickled_queue_position;
 
 	ib_tws_req_cancel_monitor m_cancel_monitor;
@@ -483,8 +481,6 @@ public:
 	int process_response_message(ib_msg_resp_market_data_type *resp_msg);
 	/* fired by: COMMISSION_REPORT */
 	int process_response_message(ib_msg_resp_commission_report *resp_msg);
-
-	int remove_message_from_queue(tier2_message *msg);
 };
 
 

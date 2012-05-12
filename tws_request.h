@@ -71,6 +71,10 @@ class tws_request_message: public tws_reqresp_message
 public:
 	// The message (and optional response) has been completely processed
 	virtual int f_task_completed(void);
+	// The message has been marked as having failed (an error occurred)
+	virtual int f_task_failed(void);
+	// The message is being aborted
+	virtual int f_task_aborted(void);
 
 public:
 	tws_request_message(tier2_message_processor *from, tier2_message_processor *to = NULL) :

@@ -246,13 +246,16 @@ app_manager::~app_manager()
 
 
 
-int app_manager::register_frontend_thread(struct mg_connection *conn)
+int app_manager::register_frontend_thread(struct mg_connection *conn, tier2_message_processor *processor)
 {
 	sendrecvr_connkey k = { conn };
 	tier2_message_processor *rv = sr_store->find(k);
 	if (!rv)
 	{
-		rv = new tier2_message_processor(new requester_id(NULL, conn, 0), this);
+		if (processor)
+			rv = processor;
+		else
+			rv = new tier2_message_processor(new requester_id(NULL, conn, 0), this);
 		sr_store->store(k, rv);
 	}
 	return 0;
@@ -264,13 +267,16 @@ int app_manager::unregister_frontend_thread(struct mg_connection *conn)
 	return 0;
 }
 
-int app_manager::register_backend_thread(struct mg_connection *conn)
+int app_manager::register_backend_thread(struct mg_connection *conn, tier2_message_processor *processor)
 {
 	sendrecvr_connkey k = { conn };
 	tier2_message_processor *rv = sr_store->find(k);
 	if (!rv)
 	{
-		rv = new tier2_message_processor(new requester_id(NULL, conn, 0), this);
+		if (processor)
+			rv = processor;
+		else
+			rv = new tier2_message_processor(new requester_id(NULL, conn, 0), this);
 		sr_store->store(k, rv);
 	}
 	return 0;
@@ -282,13 +288,16 @@ int app_manager::unregister_backend_thread(struct mg_connection *conn)
 	return 0;
 }
 
-int app_manager::register_backend_thread(struct mg_context *ctx, app_manager::optional_requester_id_t optional_id)
+int app_manager::register_backend_thread(struct mg_context *ctx, app_manager::optional_requester_id_t optional_id, tier2_message_processor *processor)
 {
 	sendrecvr_ctxkey k = { ctx, optional_id };
 	tier2_message_processor *rv = sr_store->find(k);
 	if (!rv)
 	{
-		rv = new tier2_message_processor(new requester_id(NULL, NULL, 0), this);
+		if (processor)
+			rv = processor;
+		else
+			rv = new tier2_message_processor(new requester_id(NULL, NULL, 0), this);
 		sr_store->store(k, rv);
 	}
 	return 0;

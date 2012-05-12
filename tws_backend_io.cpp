@@ -4,6 +4,7 @@
 #include <tws_c_api/twsapi.h>
 
 #include "app_manager.h"
+#include "tier2_message_processor.h"
 #include "tws_database_io.h"
 
 #include <mongoose/mongoose_ex.h>
@@ -12,7 +13,7 @@
 
 
 ib_backend_io_channel::ib_backend_io_channel(app_manager *mgr)
-	: m_app_manager(mgr)
+	: tier2_message_processor(new requester_id(NULL, NULL, 0), mgr)
 	, tws_conn(NULL), tws_ctx(NULL), tws_handle(NULL)
 	, fake_ib_tws_connection(true)
 	, faking_the_ib_tws_connection(false)
@@ -213,9 +214,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 
 	if (!rv)
 	{
-		tier2_message_processor *recvr = m_app_manager->get_receiver(tws_conn);
-
-		if (tws_conn && recvr)
+		if (tws_conn)
 		{
 			// check whether there's anything available:
 			fd_set read_set, except_set;
@@ -242,7 +241,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 
 				// Add listening sockets to the read set
 				mg_FD_SET(mg_get_client_socket(tws_conn), &read_set, &max_fd);
-				recvr->prepare_fd_sets_for_reception(&read_set, &except_set, max_fd);
+				prepare_fd_sets_for_reception(&read_set, &except_set, max_fd);
 				if (fake_ib_tws_connection)
 				{
 					fake_ib_tws_server(1);
@@ -255,6 +254,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 					FD_ZERO(&read_set);
 					FD_ZERO(&except_set);
 					max_fd = -1;
+					assert(!"Should never get here");
 
 					max_bufsize = 0;
 					break;
@@ -274,14 +274,11 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 						break;
 					}
 
-					// prevent the mg_read() from locking up due to no incoming data:
-					max_bufsize = 0;
-
 					/*
 					When there's no pending incoming data from TWS itself, we'll be running around in this loop while waiting for
 					more data to arrive. Meanwhile, we can process queued requests from the front-end now:
 					*/
-					proc_rv = recvr->process_one_queued_tier2_request(&read_set, &except_set, max_fd);
+					proc_rv = process_one_queued_tier2_request(&read_set, &except_set, max_fd);
 					if (proc_rv < 0)
 					{
 						// signal a fatal failure:
@@ -289,6 +286,10 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 						FD_ZERO(&read_set);
 						FD_ZERO(&except_set);
 						max_fd = -1;
+						assert(!"Should never get here");
+
+						// prevent the mg_read() from locking up due to no incoming data:
+						max_bufsize = 0;
 						break;
 					}
 
@@ -297,28 +298,55 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 					scheduled / postponed requests get serviced.
 					*/
 					proc_rv = pulse_pending_issues();
+					if (proc_rv < 0)
+					{
+						// signal a fatal failure:
+						// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+						FD_ZERO(&read_set);
+						FD_ZERO(&except_set);
+						max_fd = -1;
+						assert(!"Should never get here");
+
+						// prevent the mg_read() from locking up due to no incoming data:
+						max_bufsize = 0;
+						break;
+					}
 				}
 			}
 
-			/*
-			Even when there's pending incoming data from TWS itself, we'll need to process queued 
-			requests from the front-end and 'pending' queue or we would be experiencing lockup:
-			*/
-			rv = recvr->process_one_queued_tier2_request(&read_set, &except_set, max_fd);
-			if (rv < 0)
+			if (mg_get_stop_flag(mg_get_context(tws_conn)) == 0)
 			{
-				// signal a fatal failure:
-			}
-			else 
-			{
-				rv = pulse_pending_issues();
-				if (rv < 0)
+				int proc_rv;
+
+				/*
+				Even when there's pending incoming data from TWS itself, we'll need to process queued 
+				requests from the front-end and 'pending' queue or we would be experiencing lockup:
+				*/
+				proc_rv = process_one_queued_tier2_request(&read_set, &except_set, max_fd);
+				if (proc_rv < 0)
 				{
-					// signal fatal failure:
+					// signal a fatal failure:
+					rv = proc_rv;
+					assert(!"Should never get here");
 				}
-				else if (max_bufsize)
+				else 
 				{
-					rv = mg_pull(tws_conn, buf, max_bufsize);
+					proc_rv = pulse_pending_issues();
+					if (proc_rv < 0)
+					{
+						// signal fatal failure:
+						rv = proc_rv;
+						assert(!"Should never get here");
+					}
+					else if (max_bufsize)
+					{
+						rv = mg_pull(tws_conn, buf, max_bufsize);
+						if (rv < 0)
+						{
+							assert(!"Should never get here");
+						}
+						assert(rv != 0);
+					}
 				}
 			}
 		}
@@ -337,6 +365,11 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 			break;
 	}
 
+	if (rv < 0)
+	{
+		assert(!"Should never get here");
+	}
+	assert(rv != 0);
     return rv;
 }
 
@@ -414,21 +447,8 @@ int ib_backend_io_channel::io_open(void)
 
 		if (tws_conn == NULL && fake_ib_tws_connection)
 		{
-			int sp_rv = mg_socketpair(fake_conn, tws_ctx);
-
-			if (!sp_rv)
-			{
-				int tcpbuflen = 1 * 1024 * 1024;
-
-				tws_conn = fake_conn[0];
-			
-				mg_setsockopt(mg_get_client_socket(fake_conn[0]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-				mg_setsockopt(mg_get_client_socket(fake_conn[0]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-				mg_setsockopt(mg_get_client_socket(fake_conn[1]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-				mg_setsockopt(mg_get_client_socket(fake_conn[1]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-
-				faking_the_ib_tws_connection = true;
-			}
+			// open a fake server socket connection:
+			fake_ib_tws_server(2);
 		}
 
 		if (tws_conn != NULL)
@@ -442,7 +462,7 @@ int ib_backend_io_channel::io_open(void)
 			mg_set_socket_keepalive(sock, 1);
 			mg_set_socket_timeout(sock, 10);
 
-			m_app_manager->register_backend_thread(tws_conn);
+			m_app_manager->register_backend_thread(tws_conn, this);
 		}
 
 		rv = (tws_conn ? 0 : (int)tws::NOT_CONNECTED);
@@ -487,6 +507,12 @@ int ib_backend_io_channel::io_close(void)
 	{
 		if (tws_conn)
 		{
+			if (fake_ib_tws_connection)
+			{
+				// close the fake server connection:
+				fake_ib_tws_server(3);
+			}
+
 			mg_close_connection(tws_conn);
 			tws_conn = NULL;
 		}
@@ -568,15 +594,6 @@ int ib_backend_io_channel::tws_rx_elem_observe_func(void *arg, const char *elem,
 
 
 
-
-
-tier2_message_processor *ib_backend_io_channel::get_receiver(void)
-{
-	tier2_message_processor *rv = m_app_manager->get_receiver(tws_ctx, app_manager::IB_TWS_API_CONNECTION_THREAD);
-
-	assert(rv);
-	return rv;
-}
 
 
 int ib_backend_io_channel::pulse_pending_issues(void)

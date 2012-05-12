@@ -123,7 +123,7 @@ void tier2_message::resolve_requester_and_receiver_issues(void)
 	*/
 	if (!m_receiver)
 	{
-		assert(typeid(*m_requester) == typeid(tier2_message_processor));
+		assert(dynamic_cast<tier2_message_processor *>(m_requester));
 		m_receiver = m_requester;
 		assert(m_receiver);
 	}
@@ -178,12 +178,6 @@ tier2_message::~tier2_message()
 	release_unique_msgID();
 }
 
-void tier2_message::destroy(void)
-{
-	// this way, the state change will make it through /just before/ the destructor sequence is executed!
-	state(DESTRUCTION);
-}
-
 tier2_message::request_state_t tier2_message::state(request_state_t new_state)
 {
 	for (int i = 2; i > 0 && new_state != m_now_state; i--)
@@ -218,9 +212,8 @@ tier2_message::request_state_t tier2_message::exec_state(request_state_t new_sta
 		break;
 	}
 
-	if (m_owner)
+	assert(m_owner);
 	{
-		interthread_communicator *comm = NULL;
 		int err = 0;
 
 		switch (new_state)
@@ -357,8 +350,16 @@ tier2_message::request_state_t tier2_message::exec_state(request_state_t new_sta
 			break;
 		}
 
+		/*
+		WARNING: the f_*() template functions may have bumped the state to a new value;
+		         we should be aware of that possibility and NOT revert the state in
+				 our own outer state() loop:
+		*/
+		new_state = m_now_state;
+
 		// changing to FAILED state is only useful when we're still in charge here, otherwise it's only cause to collisions!
-		if (err != 0 && m_owner)
+		assert(m_owner);
+		if (err != 0)
 		{
 			new_state = FAILED;
 		}
@@ -375,11 +376,24 @@ int tier2_message::pulse(void)
 	switch (m_now_state)
 	{
 	case DESTRUCTION:				// T: just before the destructor is invoked: last call!
-		if (m_owner)
+		// send message to receiver ~ handler
+		if (m_owner != m_requester)
 		{
-			m_owner->release(this);
+			comm = m_requester->get_interthread_communicator(m_owner, m_requester);
+
+			// push message across the pond:
+			err = comm->post_message(this);
 		}
-		delete this;
+		else 
+		{
+			if (m_owner)
+			{
+				m_owner->release(this);
+				m_owner = NULL;
+			}
+			delete this;
+		}
+		break;
 
 	case EXEC_COMMAND:
 	case WAIT_FOR_TRANSMIT:
@@ -421,19 +435,20 @@ tier2_message_processor *tier2_message::current_owner(tier2_message_processor *n
 		if (m_owner)
 		{
 			m_owner->release(this);
+			m_owner = NULL;
 		}
 		if (new_owner)
 		{
 			new_owner->own(this);
 
 			// and re-run the state processing again so the state-related task can be performed:
+			m_owner = new_owner; // set up an owner for the state handlers
 			request_state_t new_state = exec_state(m_now_state);
 			if (new_state != m_now_state)
 			{
 				exec_state(new_state);
 			}
 		}
-		m_owner = new_owner;
 	}
 
 	return m_owner;

@@ -53,12 +53,12 @@ public:
 	virtual ~app_manager();
 
 public:
-	int register_frontend_thread(struct mg_connection *conn);
+	int register_frontend_thread(struct mg_connection *conn, tier2_message_processor *processor = NULL);
 	int unregister_frontend_thread(struct mg_connection *conn);
 
-	int register_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	int register_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED, tier2_message_processor *processor = NULL);
 	int unregister_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
-	int register_backend_thread(struct mg_connection *conn);
+	int register_backend_thread(struct mg_connection *conn, tier2_message_processor *processor = NULL);
 	int unregister_backend_thread(struct mg_connection *conn);
 
 	int register_communication_path(tier2_message_processor *requester, tier2_message_processor *receiver);

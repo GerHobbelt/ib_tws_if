@@ -119,7 +119,7 @@ protected:
 	typedef std::vector<interthread_communicator *> sender_set_t;
 	sender_set_t senders;
 
-	typedef std::list<tier2_message *> msg_set_t;
+	typedef std::vector<tier2_message *> msg_set_t;
 	msg_set_t m_msgs_i_own;
 	msg_set_t m_msgs_pending_for_pulsing;
 

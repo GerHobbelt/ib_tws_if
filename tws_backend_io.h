@@ -4,11 +4,10 @@
 
 #include "system-includes.h"
 #include "tws_config_struct.h"
+#include "tier2_message_processor.h"
 
 
-class app_manager;
 class ib_backend_io_channel;
-class tier2_message_processor;
 namespace tws
 {
 	enum tws_outgoing_ids;
@@ -67,12 +66,11 @@ public:
 
 
 
-class ib_backend_io_channel
+class ib_backend_io_channel : public tier2_message_processor
 {
 protected:
 	typedef std::vector<ib_backend_io_observer *> io_observer_list_t;
 
-	app_manager *m_app_manager;
 	io_observer_list_t m_before;
 	io_observer_list_t m_after;
 
@@ -139,13 +137,6 @@ public:
 	struct tws_conn_cfg &get_config(void)
 	{
 		return tws_cfg;
-	}
-
-	tier2_message_processor *get_receiver(void);
-
-	app_manager *get_app_manager(void) const
-	{
-		return m_app_manager;
 	}
 
 	tws::tws_instance_t *get_tws_instance(void)

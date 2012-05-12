@@ -225,6 +225,45 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 	if (!fake_ib_tws_connection)
 		return;
 
+	if (mode == 2)
+	{
+		if (!tws_conn)
+		{
+			// open a new fake server connection
+			int sp_rv = mg_socketpair(fake_conn, tws_ctx);
+
+			if (!sp_rv)
+			{
+				int tcpbuflen = 1 * 1024 * 1024;
+
+				tws_conn = fake_conn[0];
+			
+				mg_setsockopt(mg_get_client_socket(fake_conn[0]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(mg_get_client_socket(fake_conn[0]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(mg_get_client_socket(fake_conn[1]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(mg_get_client_socket(fake_conn[1]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+
+				faking_the_ib_tws_connection = true;
+			}
+		}
+		return;
+	}
+	if (mode == 3)
+	{
+		// close a server connection
+		if (fake_conn[1])
+		{
+			mg_close_connection(fake_conn[1]);
+		}
+		fake_conn[0] = NULL;
+		fake_conn[1] = NULL;
+		faking_the_ib_tws_connection = false;
+		return;
+	}
+
+	if (!faking_the_ib_tws_connection)
+		return;
+
 	/*
 	A message may be pending at conn[1]; when it does, we play back a suitable response at conn[1]
 	*/

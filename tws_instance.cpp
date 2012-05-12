@@ -68,8 +68,7 @@ ib_tws_manager::~ib_tws_manager()
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
 int ib_tws_manager::tx_request_scanner_parameters(ib_msg_req_scanner_parameters *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -79,8 +78,7 @@ int ib_tws_manager::tx_request_scanner_parameters(ib_msg_req_scanner_parameters 
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_tws_manager::tx_request_scanner_subscription(ib_msg_req_scanner_subscription *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_scanner_subscription_limit);
 	req_msg->register_handler(&m_cancel_monitor);
 
@@ -91,8 +89,7 @@ int ib_tws_manager::tx_request_scanner_subscription(ib_msg_req_scanner_subscript
 /* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_tws_manager::tx_cancel_scanner_subscription(ib_msg_cancel_scanner_subscription *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -102,8 +99,7 @@ int ib_tws_manager::tx_cancel_scanner_subscription(ib_msg_cancel_scanner_subscri
 /* sends message REQ_MKT_DATA to IB/TWS */
 int ib_tws_manager::tx_request_mkt_data(ib_msg_req_mkt_data *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -113,8 +109,7 @@ int ib_tws_manager::tx_request_mkt_data(ib_msg_req_mkt_data *req_msg)
 /* sends message REQ_HISTORICAL_DATA to IB/TWS */
 int ib_tws_manager::tx_request_historical_data(ib_msg_req_historical_data *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -124,8 +119,7 @@ int ib_tws_manager::tx_request_historical_data(ib_msg_req_historical_data *req_m
 /* sends message CANCEL_HISTORICAL_DATA to IB/TWS */
 int ib_tws_manager::tx_cancel_historical_data(ib_msg_cancel_historical_data *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -135,8 +129,7 @@ int ib_tws_manager::tx_cancel_historical_data(ib_msg_cancel_historical_data *req
 /* sends message CANCEL_MKT_DATA to IB/TWS */
 int ib_tws_manager::tx_cancel_mkt_data(ib_msg_cancel_mkt_data *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -146,8 +139,7 @@ int ib_tws_manager::tx_cancel_mkt_data(ib_msg_cancel_mkt_data *req_msg)
 /* sends message EXERCISE_OPTIONS to IB/TWS */
 int ib_tws_manager::tx_exercise_options(ib_msg_exercise_options *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -157,8 +149,7 @@ int ib_tws_manager::tx_exercise_options(ib_msg_exercise_options *req_msg)
 /* sends message PLACE_ORDER to IB/TWS */
 int ib_tws_manager::tx_place_order(ib_msg_place_order *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -168,8 +159,7 @@ int ib_tws_manager::tx_place_order(ib_msg_place_order *req_msg)
 /* sends message CANCEL_ORDER to IB/TWS */
 int ib_tws_manager::tx_cancel_order(ib_msg_cancel_order *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -179,8 +169,7 @@ int ib_tws_manager::tx_cancel_order(ib_msg_cancel_order *req_msg)
 /* sends message REQ_OPEN_ORDERS to IB/TWS */
 int ib_tws_manager::tx_request_open_orders(ib_msg_req_open_orders *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -190,8 +179,7 @@ int ib_tws_manager::tx_request_open_orders(ib_msg_req_open_orders *req_msg)
 /* sends message REQ_ACCOUNT_DATA to IB/TWS */
 int ib_tws_manager::tx_request_account_updates(ib_msg_req_account_updates *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -201,8 +189,7 @@ int ib_tws_manager::tx_request_account_updates(ib_msg_req_account_updates *req_m
 /* sends message REQ_EXECUTIONS to IB/TWS */
 int ib_tws_manager::tx_request_executions(ib_msg_req_executions *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -212,8 +199,7 @@ int ib_tws_manager::tx_request_executions(ib_msg_req_executions *req_msg)
 /* sends message REQ_IDS to IB/TWS */
 int ib_tws_manager::tx_request_ids(ib_msg_req_ids *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -223,8 +209,7 @@ int ib_tws_manager::tx_request_ids(ib_msg_req_ids *req_msg)
 /* sends message REQ_CONTRACT_DATA to IB/TWS */
 int ib_tws_manager::tx_request_contract_details(ib_msg_req_contract_details *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -234,8 +219,7 @@ int ib_tws_manager::tx_request_contract_details(ib_msg_req_contract_details *req
 /* sends message REQ_MKT_DEPTH to IB/TWS */
 int ib_tws_manager::tx_request_mkt_depth(ib_msg_req_mkt_depth *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -245,8 +229,7 @@ int ib_tws_manager::tx_request_mkt_depth(ib_msg_req_mkt_depth *req_msg)
 /* sends message CANCEL_MKT_DEPTH to IB/TWS */
 int ib_tws_manager::tx_cancel_mkt_depth(ib_msg_cancel_mkt_depth *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -256,8 +239,7 @@ int ib_tws_manager::tx_cancel_mkt_depth(ib_msg_cancel_mkt_depth *req_msg)
 /* sends message REQ_NEWS_BULLETINS to IB/TWS */
 int ib_tws_manager::tx_request_news_bulletins(ib_msg_req_news_bulletins *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -267,8 +249,7 @@ int ib_tws_manager::tx_request_news_bulletins(ib_msg_req_news_bulletins *req_msg
 /* sends message CANCEL_NEWS_BULLETINS to IB/TWS */
 int ib_tws_manager::tx_cancel_news_bulletins(ib_msg_cancel_news_bulletins *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -278,8 +259,7 @@ int ib_tws_manager::tx_cancel_news_bulletins(ib_msg_cancel_news_bulletins *req_m
 /* sends message SET_SERVER_LOGLEVEL to IB/TWS */
 int ib_tws_manager::tx_set_server_log_level(ib_msg_set_server_log_level *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -289,8 +269,7 @@ int ib_tws_manager::tx_set_server_log_level(ib_msg_set_server_log_level *req_msg
 /* sends message REQ_AUTO_OPEN_ORDERS to IB/TWS */
 int ib_tws_manager::tx_request_auto_open_orders(ib_msg_req_auto_open_orders *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -300,8 +279,7 @@ int ib_tws_manager::tx_request_auto_open_orders(ib_msg_req_auto_open_orders *req
 /* sends message REQ_ALL_OPEN_ORDERS to IB/TWS */
 int ib_tws_manager::tx_request_all_open_orders(ib_msg_req_all_open_orders *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -311,8 +289,7 @@ int ib_tws_manager::tx_request_all_open_orders(ib_msg_req_all_open_orders *req_m
 /* sends message REQ_MANAGED_ACCTS to IB/TWS */
 int ib_tws_manager::tx_request_managed_accts(ib_msg_req_managed_accts *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -322,8 +299,7 @@ int ib_tws_manager::tx_request_managed_accts(ib_msg_req_managed_accts *req_msg)
 /* sends message REQ_FA to IB/TWS */
 int ib_tws_manager::tx_request_fa(ib_msg_request_fa *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -333,8 +309,7 @@ int ib_tws_manager::tx_request_fa(ib_msg_request_fa *req_msg)
 /* sends message REPLACE_FA to IB/TWS */
 int ib_tws_manager::tx_replace_fa(ib_msg_replace_fa *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -344,8 +319,7 @@ int ib_tws_manager::tx_replace_fa(ib_msg_replace_fa *req_msg)
 /* sends message REQ_CURRENT_TIME to IB/TWS */
 int ib_tws_manager::tx_request_current_time(ib_msg_req_current_time *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -355,8 +329,7 @@ int ib_tws_manager::tx_request_current_time(ib_msg_req_current_time *req_msg)
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
 int ib_tws_manager::tx_request_fundamental_data(ib_msg_req_fundamental_data *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -366,8 +339,7 @@ int ib_tws_manager::tx_request_fundamental_data(ib_msg_req_fundamental_data *req
 /* sends message CANCEL_FUNDAMENTAL_DATA to IB/TWS */
 int ib_tws_manager::tx_cancel_fundamental_data(ib_msg_cancel_fundamental_data *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -377,8 +349,7 @@ int ib_tws_manager::tx_cancel_fundamental_data(ib_msg_cancel_fundamental_data *r
 /* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_tws_manager::tx_calculate_implied_volatility(ib_msg_calculate_implied_volatility *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -388,8 +359,7 @@ int ib_tws_manager::tx_calculate_implied_volatility(ib_msg_calculate_implied_vol
 /* sends message CANCEL_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_tws_manager::tx_cancel_calculate_implied_volatility(ib_msg_cancel_calculate_implied_volatility *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -399,8 +369,7 @@ int ib_tws_manager::tx_cancel_calculate_implied_volatility(ib_msg_cancel_calcula
 /* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
 int ib_tws_manager::tx_calculate_option_price(ib_msg_calculate_option_price *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -410,8 +379,7 @@ int ib_tws_manager::tx_calculate_option_price(ib_msg_calculate_option_price *req
 /* sends message CANCEL_CALC_OPTION_PRICE to IB/TWS */
 int ib_tws_manager::tx_cancel_calculate_option_price(ib_msg_cancel_calculate_option_price *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -421,8 +389,7 @@ int ib_tws_manager::tx_cancel_calculate_option_price(ib_msg_cancel_calculate_opt
 /* sends message REQ_GLOBAL_CANCEL to IB/TWS */
 int ib_tws_manager::tx_request_global_cancel(ib_msg_req_global_cancel *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -432,8 +399,7 @@ int ib_tws_manager::tx_request_global_cancel(ib_msg_req_global_cancel *req_msg)
 /* sends message REQ_MARKET_DATA_TYPE to IB/TWS */
 int ib_tws_manager::tx_request_market_data_type(ib_msg_req_market_data_type *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -443,8 +409,7 @@ int ib_tws_manager::tx_request_market_data_type(ib_msg_req_market_data_type *req
 /* sends message REQ_REAL_TIME_BARS to IB/TWS */
 int ib_tws_manager::tx_request_realtime_bars(ib_msg_request_realtime_bars *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -454,8 +419,7 @@ int ib_tws_manager::tx_request_realtime_bars(ib_msg_request_realtime_bars *req_m
 /* sends message CANCEL_REAL_TIME_BARS to IB/TWS */
 int ib_tws_manager::tx_cancel_realtime_bars(ib_msg_cancel_realtime_bars *req_msg)
 {
-	m_msg_queue.push_back(req_msg);
-
+	assert(does_own(req_msg));
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -904,11 +868,11 @@ int ib_tws_manager::scan_queue_and_process(tier2_message *resp_msg)
 	hence we collect the items to access in a temporary list and run
 	the set from there:
 	*/
-	store_t q;
+	msg_set_t q;
 
-	for (int i = 0; i < m_msg_queue.size(); i++)
+	for (int i = 0; i < m_msgs_i_own.size(); i++)
 	{
-		tier2_message *req = m_msg_queue[i];
+		tier2_message *req = m_msgs_i_own[i];
 
 		//if (req->state() == tier2_message::READY_TO_RECEIVE_RESPONSE)
 		if (req->response_is_meant_for_us(resp_msg))
@@ -934,7 +898,8 @@ int ib_tws_manager::scan_queue_and_process(tier2_message *resp_msg)
 		mg_cry(conn, "response message has not been linked to a request message");
 	}
 
-	resp_msg->destroy();
+	// and mark message for subsequent destruction
+	resp_msg->state(tier2_message::DESTRUCTION);
 
 	return rv;
 }
@@ -1020,38 +985,21 @@ int ib_tws_manager::destroy(void)
 	return rv;
 }
 
-int ib_tws_manager::remove_message_from_queue(tier2_message *msg)
-{
-	assert(msg);
-
-	for (int i = 0; i < m_msg_queue.size(); i++)
-	{
-		tier2_message *m = m_msg_queue[i];
-
-		if (m == msg)
-		{
-			m_msg_queue.erase(m_msg_queue.begin() + i);
-			return 0;
-		}
-	}
-	return -1;
-}
-
 /*
 Also 'tickle' the pending queue in round-robin fashion to ensure that 
 scheduled / postponed requests get serviced.
 */
 int ib_tws_manager::pulse_pending_issues(void)
 {
-	get_receiver()->pulse_marked_messages();
+	pulse_marked_messages();
 
 	int hitcount = 0;
 	int start_index_for_next_time = m_last_tickled_queue_position;
 
-	for (int i = 0; i < m_msg_queue.size(); i++)
+	for (int i = 0; i < m_msgs_i_own.size(); i++)
 	{
-		int idx = (i + m_last_tickled_queue_position) % m_msg_queue.size();
-		tier2_message *msg = m_msg_queue[idx];
+		int idx = (i + m_last_tickled_queue_position) % m_msgs_i_own.size();
+		tier2_message *msg = m_msgs_i_own[idx];
 
 		switch (msg->state())
 		{
@@ -1074,7 +1022,7 @@ int ib_tws_manager::pulse_pending_issues(void)
 			break;
 
 		case tier2_message::RESPONSE_COMPLETE:			// T: The entire response has been collected (requester must still process it though)
-			assert(msg->get_requester() == this->get_receiver());
+			assert(msg->get_requester() == this);
 			break;
 
 		case tier2_message::DESTRUCTION:				// T: just before the destructor is invoked: last call!
@@ -1170,9 +1118,7 @@ tier2_message::state_change ib_tws_req_cancel_monitor::process(tier2_message &ms
 		break;
 
 	default:
-		assert(m_ibm);
-		m_ibm->remove_message_from_queue(&msg);
-		// and unregister this listener as well:
+		// unregister this listener:
 		msg.unregister_handler(this);
 		break;
 	}

@@ -65,6 +65,13 @@ class tier2_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
+protected:
+	virtual const char *get_class_name(void) const
+	{
+		const type_info &inf = typeid(*this);
+		return inf.name();
+	}
+
 public:
 	enum request_state_t
 	{
@@ -140,9 +147,6 @@ public:
 	{
 		return msg == this;
 	}
-
-public:
-	virtual void destroy(void);
 
 public:
 	enum state_change

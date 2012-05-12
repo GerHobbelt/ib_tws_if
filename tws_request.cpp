@@ -46,8 +46,9 @@ int tws_request_message::f_task_completed(void)
 {
 	app_manager *mgr = m_owner->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
 
-	if (get_requester() == ibm->get_receiver())
+	if (get_requester() == ibm)
 	{
 		/*
 		When the TWS backend task issued the request itself, we can safely 
@@ -55,7 +56,49 @@ int tws_request_message::f_task_completed(void)
 
 		Ditch it!
 		*/
-		destroy();
+		mg_cry(conn, "COMPLETED task: %s", get_class_name());
+
+		state(DESTRUCTION);
+	}
+	return 0;
+}
+int tws_request_message::f_task_failed(void)
+{
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	if (get_requester() == ibm)
+	{
+		/*
+		When the TWS backend task issued the request itself, we can safely 
+		state that a failed task is a terminated task.
+
+		Ditch it!
+		*/
+		mg_cry(conn, "FAILED task: %s", get_class_name());
+
+		state(DESTRUCTION);
+	}
+	return 0;
+}
+int tws_request_message::f_task_aborted(void)
+{
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+	struct mg_connection *conn = ibm->get_connection();
+
+	if (get_requester() == ibm)
+	{
+		/*
+		When the TWS backend task issued the request itself, we can safely 
+		state that an aborted task is a terminated task.
+
+		Ditch it!
+		*/
+		mg_cry(conn, "ABORTED task: %s", get_class_name());
+
+		state(DESTRUCTION);
 	}
 	return 0;
 }

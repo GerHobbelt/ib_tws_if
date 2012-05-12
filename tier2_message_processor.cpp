@@ -151,7 +151,7 @@ int tier2_message_processor::own(tier2_message *msg)
 		return 1;
 	}
 	m_msgs_i_own.push_back(msg);
-	assert(msg->current_owner() == this);
+	assert(msg->current_owner() == this || (!msg->current_owner() && msg->state() == tier2_message::MSG_INITIALIZED));  // constructed messages have no owner yet!
 
 	return 0;
 }
@@ -176,7 +176,7 @@ bool tier2_message_processor::does_own(tier2_message *msg) const
 		if (*i == msg)
 			return true;
 	}
-	return true;
+	return false;
 }
 
 int tier2_message_processor::queue_msg_for_pulsing(tier2_message *msg)
