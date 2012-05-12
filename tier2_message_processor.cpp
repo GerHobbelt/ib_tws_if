@@ -94,39 +94,47 @@ int tier2_message_processor::prepare_fd_sets_for_reception(fd_set *read_set, fd_
 
 int tier2_message_processor::process_one_queued_tier2_request(fd_set *read_set, fd_set *except_set, int max_fd)
 {
-	int count = senders.size();
+	int requests_handled_counter = 0;
 
-	for (int i = 0; i < count; i++)
+	// we only need to check the client connections when there's actually something to expected there:
+	if (max_fd >= 0)
 	{
-		interthread_communicator *comm = senders[i];
-		assert(comm);
+		int count = senders.size();
 
-		if (comm->has_receiver(this))
+		for (int i = 0; i < count; i++)
 		{
-			interthread_communicator::msg_pending_mode_t mode = comm->is_message_pending(read_set, except_set, max_fd);
-			tier2_message *msg = NULL;
+			interthread_communicator *comm = senders[i];
+			assert(comm);
 
-			switch (mode)
+			if (comm->has_receiver(this))
 			{
-			default:
-				continue;
+				interthread_communicator::msg_pending_mode_t mode = comm->is_message_pending(read_set, except_set, max_fd);
+				tier2_message *msg = NULL;
 
-			case interthread_communicator::MSG_PENDING:
-				// fetch message from socket ~ queue
-				msg = comm->pop_one_message(&mode);
-				if (msg)
+				switch (mode)
 				{
-					// ???
+				default:
+					continue;
+
+				case interthread_communicator::MSG_PENDING:
+					// fetch message from socket ~ queue
+					requests_handled_counter++;
+					msg = comm->pop_one_message(&mode);
+					if (msg)
+					{
+						// ???
+					}
+					break;
+
+				case interthread_communicator::CONNECTION_DROPPED:
+					// connection has been dropped or other fatality:
+					break;
 				}
 				break;
-
-			case interthread_communicator::CONNECTION_DROPPED:
-				// connection has been dropped or other fatality:
-				break;
 			}
-			break;
 		}
 	}
+
 	return 0;
 }
 

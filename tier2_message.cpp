@@ -51,7 +51,7 @@ tier2_message::state_change tier2_message::handle_state_change(tier2_message::re
 	*/
 	state_change_handler_set_t h_set(state_change_handlers);
 
-	for (int i = 0; i < h_set.size(); i++)
+	for (size_t i = 0; i < h_set.size(); i++)
 	{
 		tier2_message_state_change_handler *h = h_set[i];
 

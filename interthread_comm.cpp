@@ -21,12 +21,16 @@ int interthread_communicator::prepare_fd_sets_for_reception(struct fd_set *read_
 
 interthread_communicator::msg_pending_mode_t interthread_communicator::is_message_pending(fd_set *read_set, fd_set *except_set, int max_fd)
 {
-	struct socket *sock = mg_get_client_socket(outgoing);
+	// only check when there's actually something to be expected at all:
+	if (max_fd >= 0)
+	{
+		struct socket *sock = mg_get_client_socket(outgoing);
 
-	if (mg_FD_ISSET(sock, read_set))
-		return interthread_communicator::MSG_PENDING;
-	if (mg_FD_ISSET(sock, except_set))
-		return interthread_communicator::CONNECTION_DROPPED;
+		if (mg_FD_ISSET(sock, read_set))
+			return interthread_communicator::MSG_PENDING;
+		if (mg_FD_ISSET(sock, except_set))
+			return interthread_communicator::CONNECTION_DROPPED;
+	}
 	return interthread_communicator::NO_MSG;
 }
 

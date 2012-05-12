@@ -773,7 +773,7 @@ int ib_msg_req_account_updates::tx(tws::tws_instance_t *tws)
 int ib_msg_req_executions::tx(tws::tws_instance_t *tws)
 {
 	m_filter.prep_for_tws(tws);
-	int rv = tws::tws_req_executions(tws, m_reqid, m_filter.to_tws());
+	int rv = tws::tws_req_executions(tws, get_ticker_id(), m_filter.to_tws());
 	m_filter.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
@@ -793,7 +793,7 @@ int ib_msg_req_ids::tx(tws::tws_instance_t *tws)
 int ib_msg_req_contract_details::tx(tws::tws_instance_t *tws)
 {
 	m_contract.prep_for_tws(tws);
-	int rv = tws::tws_req_contract_details(tws, m_reqid, m_contract.to_tws());
+	int rv = tws::tws_req_contract_details(tws, get_ticker_id(), m_contract.to_tws());
 	m_contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
@@ -905,7 +905,7 @@ int ib_msg_req_current_time::tx(tws::tws_instance_t *tws)
 int ib_msg_req_fundamental_data::tx(tws::tws_instance_t *tws)
 {
 	m_contract.prep_for_tws(tws);
-	int rv = tws::tws_req_fundamental_data(tws, m_reqid, m_contract.to_tws(), m_report_type);
+	int rv = tws::tws_req_fundamental_data(tws, get_ticker_id(), m_contract.to_tws(), m_report_type);
 	m_contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
@@ -915,7 +915,7 @@ int ib_msg_req_fundamental_data::tx(tws::tws_instance_t *tws)
 /* sends message CANCEL_FUNDAMENTAL_DATA to IB/TWS */
 int ib_msg_cancel_fundamental_data::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_cancel_fundamental_data(tws, m_reqid);
+	int rv = tws::tws_cancel_fundamental_data(tws, get_ticker_id());
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -925,7 +925,7 @@ int ib_msg_cancel_fundamental_data::tx(tws::tws_instance_t *tws)
 int ib_msg_calculate_implied_volatility::tx(tws::tws_instance_t *tws)
 {
 	m_contract.prep_for_tws(tws);
-	int rv = tws::tws_calculate_implied_volatility(tws, m_reqid, m_contract.to_tws(), m_option_price, m_under_price);
+	int rv = tws::tws_calculate_implied_volatility(tws, get_ticker_id(), m_contract.to_tws(), m_option_price, m_under_price);
 	m_contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
@@ -935,7 +935,7 @@ int ib_msg_calculate_implied_volatility::tx(tws::tws_instance_t *tws)
 /* sends message CANCEL_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_msg_cancel_calculate_implied_volatility::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_cancel_calculate_implied_volatility(tws, m_reqid);
+	int rv = tws::tws_cancel_calculate_implied_volatility(tws, get_ticker_id());
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -945,7 +945,7 @@ int ib_msg_cancel_calculate_implied_volatility::tx(tws::tws_instance_t *tws)
 int ib_msg_calculate_option_price::tx(tws::tws_instance_t *tws)
 {
 	m_contract.prep_for_tws(tws);
-	int rv = tws::tws_calculate_option_price(tws, m_reqid, m_contract.to_tws(), m_volatility, m_under_price);
+	int rv = tws::tws_calculate_option_price(tws, get_ticker_id(), m_contract.to_tws(), m_volatility, m_under_price);
 	m_contract.cleanup_after_tws(tws);
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
@@ -955,7 +955,7 @@ int ib_msg_calculate_option_price::tx(tws::tws_instance_t *tws)
 /* sends message CANCEL_CALC_OPTION_PRICE to IB/TWS */
 int ib_msg_cancel_calculate_option_price::tx(tws::tws_instance_t *tws)
 {
-	int rv = tws::tws_cancel_calculate_option_price(tws, m_reqid);
+	int rv = tws::tws_cancel_calculate_option_price(tws, get_ticker_id());
 
 	state(tier2_message::READY_TO_RECEIVE_RESPONSE);
 
@@ -1057,6 +1057,14 @@ bool ib_msg_req_scanner_parameters::response_is_meant_for_us(class tier2_message
 bool ib_msg_req_scanner_subscription::response_is_meant_for_us(class tier2_message *resp_msg) const
 {
 	if (ib_msg_resp_scanner_data::type_matches_class(resp_msg))
+	{
+		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
+	}
+	if (ib_msg_resp_scanner_data_start::type_matches_class(resp_msg))
+	{
+		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
+	}
+	if (ib_msg_resp_scanner_data_end::type_matches_class(resp_msg))
 	{
 		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
 	}
@@ -1270,6 +1278,27 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 
 	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_subscription");
 
+	if (ib_msg_resp_scanner_data_start::type_matches_class(resp_msg))
+	{
+		// ignore for now; we should collect the response if this is a user request, though...
+	}
+	if (ib_msg_resp_scanner_data_end::type_matches_class(resp_msg))
+	{
+		// terminate the request when we are the requester ourselves:
+		// we only use these scans to get a dynamically constructed list of 
+		// known contracts.
+		ib_msg_resp_scanner_data_end *end_msg = dynamic_cast<ib_msg_resp_scanner_data_end *>(resp_msg);
+
+		if (get_requester() == ibm->get_receiver()
+			&& end_msg->get_ticker_id() == m_ticker_id)
+		{
+			/*
+			mark the request as completed; it's state observers should consequently
+			remove it from the queue and destroy the message.
+			*/
+			state(tier2_message::TASK_COMPLETED);
+		}
+	}
 	if (ib_msg_resp_scanner_data::type_matches_class(resp_msg))
 	{
 		// sneaky: let the response message handle itself:

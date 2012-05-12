@@ -44,7 +44,8 @@
 
 ib_tws_manager::ib_tws_manager(app_manager *mgr) :
 	ib_backend_io_channel(mgr),
-	m_io_logger(NULL)
+	m_io_logger(NULL),
+	m_last_tickled_queue_position(0)
 {
 	m_cancel_monitor.set_ib_tws_manager(this);
 }
@@ -779,6 +780,11 @@ int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data *resp_msg)
 	assert(resp_msg);
 	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data");
 
+	/*
+	Also register the item in the database...
+	*/
+	register_contract_info(resp_msg->get_contract_details());
+
 	return scan_queue_and_process(resp_msg);
 }
 /* fired by: SCANNER_DATA (once, after one or more invocations of event_scanner_data()) */
@@ -1031,6 +1037,78 @@ int ib_tws_manager::remove_message_from_queue(tier2_message *msg)
 	return -1;
 }
 
+/*
+Also 'tickle' the pending queue in round-robin fashion to ensure that 
+scheduled / postponed requests get serviced.
+*/
+int ib_tws_manager::pulse_pending_issues(void)
+{
+	int hitcount = 0;
+	int start_index_for_next_time = m_last_tickled_queue_position;
+
+	for (int i = 0; i < m_msg_queue.size(); i++)
+	{
+		int idx = (i + m_last_tickled_queue_position) % m_msg_queue.size();
+		tier2_message *msg = m_msg_queue[idx];
+
+		switch (msg->state())
+		{
+		case tier2_message::EXEC_COMMAND:				// R: before the message is processed, i.e. send the message off to the designated processor (task)
+			assert(!"should never get here");
+			break;
+
+		case tier2_message::WAIT_FOR_TRANSMIT:          // R: message has been received by the 'processor'/'end node' and is waiting for clearance to be transmitted / executed
+			if (tier2_message::COMMENCE_TRANSMIT == msg->state(tier2_message::COMMENCE_TRANSMIT))
+			{
+				hitcount++;
+				// prevent hitting the same scheduled message over and over, while other lay waiting:
+				start_index_for_next_time = idx + 1;
+			}
+			break;
+
+		case tier2_message::COMMENCE_TRANSMIT:          // R: message is been processed / transmitted to entity outside this application
+		case tier2_message::READY_TO_RECEIVE_RESPONSE:	// R: once the message is processed and a response is expected
+		case tier2_message::RESPONSE_PENDING:	        // R: when a response is constructed of multiple messages itself: we're still waiting for a few more...
+			break;
+
+		case tier2_message::RESPONSE_COMPLETE:			// T: The entire response has been collected (requester must still process it though)
+			assert(msg->get_requester() == this->get_receiver());
+			break;
+
+		case tier2_message::DESTRUCTION:				// T: just before the destructor is invoked: last call!
+		case tier2_message::FAILED:						// T: when an error occurred
+		case tier2_message::ABORTED:					// T: when the request has been canceled
+		case tier2_message::MSG_INITIALIZED:			// T: start value
+		case tier2_message::TASK_COMPLETED:				// T: The message (and optional response) has been completely processed
+			assert(!"should never get here");
+			break;
+		}
+	}
+
+	m_last_tickled_queue_position = start_index_for_next_time;
+
+	return 0;
+}
+
+int ib_tws_manager::register_contract_info(const ib_contract_details *cd)
+{
+	if (!cd)
+		return -1;
+
+	for (int i = 0; i < m_cds.size(); i++)
+	{
+		ib_contract_details *c = m_cds[i];
+
+		if (c->equals(cd))
+			return 1;
+	}
+
+	// clone to make sure we've a heap-allocated entity to store:
+	ib_contract_details *ncd = new ib_contract_details(*cd);
+	m_cds.push_back(ncd);
+
+	return 0;
+}
 
 
 

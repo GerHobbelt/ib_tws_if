@@ -284,6 +284,7 @@ protected:
     /* -- and the working men -- */
 	typedef std::vector<tier2_message *> store_t;
 	store_t m_msg_queue;
+	int m_last_tickled_queue_position;
 
 	ib_tws_req_cancel_monitor m_cancel_monitor;
 
@@ -318,6 +319,15 @@ public:
 	int process_tws_event(void);
 
 	const char *strerror(int errcode);
+
+	virtual int pulse_pending_issues(void);
+
+protected:
+	typedef std::vector<ib_contract_details *> cd_store_t;
+	cd_store_t m_cds;
+
+public:
+	int register_contract_info(const ib_contract_details *cd);
 
 public:
 	/* sends message REQ_SCANNER_PARAMETERS to IB/TWS */

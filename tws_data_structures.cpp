@@ -1103,6 +1103,15 @@ ib_under_comp::~ib_under_comp()
 {
 }
 
+bool ib_under_comp::equals(const ib_under_comp *s) const
+{
+	if (!s)
+		return false;
+
+	return (u_price == s->u_price
+		&& u_delta == s->u_delta
+		&& u_conid == s->u_conid);
+}
 
    
 
@@ -1128,6 +1137,21 @@ ib_comboleg::ib_comboleg(const tws::tr_comboleg *s)
 }
 ib_comboleg::~ib_comboleg()
 {
+}
+
+bool ib_comboleg::equals(const ib_comboleg *s) const
+{
+	if (!s)
+		return false;
+
+	return (co_action == s->co_action
+		&& co_exchange == s->co_exchange
+		&& co_designated_location == s->co_designated_location
+		&& co_conid == s->co_conid
+		&& co_ratio == s->co_ratio
+		&& co_open_close == s->co_open_close
+		&& co_short_sale_slot == s->co_short_sale_slot
+		&& co_exempt_code == s->co_exempt_code);
 }
 
 
@@ -1344,6 +1368,34 @@ void ib_contract::cleanup_after_tws(tws::tws_instance_t *tws)
 	m_tws_data = NULL;
 }
 
+bool ib_contract::equals(const ib_contract *s) const
+{
+	if (!s)
+		return false;
+
+	if (c_conid.value(0) && c_conid == s->c_conid)
+		return true;
+
+	return (
+		//   c_strike == s->c_strike
+		   c_symbol == s->c_symbol
+		&& c_sectype == s->c_sectype
+		&& c_exchange == s->c_exchange
+		&& c_primary_exch == s->c_primary_exch
+		&& c_expiry == s->c_expiry
+		&& c_currency == s->c_currency
+		&& c_right == s->c_right
+		&& c_local_symbol == s->c_local_symbol
+		&& c_multiplier == s->c_multiplier
+		&& c_combolegs_descrip == s->c_combolegs_descrip
+		&& c_secid_type == s->c_secid_type
+		&& c_secid == s->c_secid
+		//&& c_comboleg == s->c_comboleg
+		&& c_conid == s->c_conid
+		//&& c_include_expired == s->c_include_expired
+		);
+}
+
 
 
 ib_contract_details::ib_contract_details() :
@@ -1406,6 +1458,51 @@ ib_contract_details::ib_contract_details(const tws::tr_contract_details *s)
 }
 ib_contract_details::~ib_contract_details()
 {
+}
+
+bool ib_contract_details::equals(const ib_contract_details *s) const
+{
+	if (!s)
+		return false;
+
+	if (!d_summary.equals(&s->d_summary))
+		return false;
+
+	return (
+		//   d_mintick == s->d_mintick
+		//&& d_coupon == s->d_coupon
+		//&& d_ev_multiplier == s->d_ev_multiplier
+    	   d_market_name == s->d_market_name
+    	&& d_trading_class == s->d_trading_class
+    	&& d_order_types == s->d_order_types
+    	&& d_valid_exchanges == s->d_valid_exchanges
+    	&& d_cusip == s->d_cusip
+    	&& d_maturity == s->d_maturity
+    	&& d_issue_date == s->d_issue_date
+    	&& d_ratings == s->d_ratings
+    	&& d_bond_type == s->d_bond_type
+    	&& d_coupon_type == s->d_coupon_type
+    	&& d_desc_append == s->d_desc_append
+    	//&& d_next_option_date == s->d_next_option_date
+    	//&& d_next_option_type == s->d_next_option_type
+    	&& d_notes == s->d_notes
+    	&& d_long_name == s->d_long_name
+    	&& d_contract_month == s->d_contract_month
+    	&& d_industry == s->d_industry
+    	&& d_category == s->d_category
+    	&& d_subcategory == s->d_subcategory
+    	&& d_timezone_id == s->d_timezone_id
+    	&& d_trading_hours == s->d_trading_hours
+    	&& d_liquid_hours == s->d_liquid_hours
+    	&& d_ev_rule == s->d_ev_rule
+    	&& d_price_magnifier == s->d_price_magnifier
+    	&& d_under_conid == s->d_under_conid
+    	&& d_convertible == s->d_convertible
+    	&& d_callable == s->d_callable
+    	&& d_putable == s->d_putable
+    	//&& d_next_option_partial == s->d_next_option_partial
+		//&& d_sec_id_list == s->d_sec_id_list
+		);
 }
 
 

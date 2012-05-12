@@ -294,7 +294,7 @@ typedef std::vector<int> ib_int_list_t;
 template <typename T> class optional_value
 {
 protected:
-    T m_stored_value;
+    mutable T m_stored_value;
     bool m_is_valid;
 
 public:
@@ -326,7 +326,7 @@ public:
     {
         return m_is_valid;
     }
-    T &value(T usr_default_value = T())
+    T &value(T usr_default_value = T()) const
     {
         if (!m_is_valid)
 		{
@@ -350,6 +350,35 @@ public:
         m_is_valid = v.m_is_valid;
         m_stored_value = v.m_stored_value;
         return *this;
+    }
+
+    bool operator ==(T v) const
+    {
+        if (m_is_valid)
+		{
+			return m_stored_value == v;
+		}
+		return false;
+    }
+    bool operator ==(const optional_value<T> &v) const
+    {
+        if (m_is_valid == v.m_is_valid)
+		{
+			if (!m_is_valid)
+				return true;
+			return m_stored_value == v.m_stored_value;
+		}
+        return false;
+    }
+    bool operator ==(optional_value<T> &v) const
+    {
+        if (m_is_valid == v.m_is_valid)
+		{
+			if (!m_is_valid)
+				return true;
+			return m_stored_value == v.m_stored_value;
+		}
+        return false;
     }
 };
 
@@ -440,6 +469,8 @@ public:
     ib_under_comp();
     ib_under_comp(const tws::under_comp *uc);
     virtual ~ib_under_comp();
+
+    bool equals(const ib_under_comp *uc) const;
 };
 
 DECLARE_TWS_FORWARD_REFERENCE(struct tr_comboleg);
@@ -460,9 +491,11 @@ public:
     ib_comboleg();
     ib_comboleg(const tws::tr_comboleg *leg);
     virtual ~ib_comboleg();
+
+    bool equals(const ib_comboleg *cl) const;
 };
 
-typedef optional_value<ib_under_comp>	o_ib_under_comp_t;
+typedef optional_value<ib_under_comp> o_ib_under_comp_t;
 
 
 
@@ -505,6 +538,8 @@ public:
 	void prep_for_tws(tws::tws_instance_t *tws);
 	void cleanup_after_tws(tws::tws_instance_t *tws);
 	tws::tr_contract *to_tws(void) const;
+
+    bool equals(const ib_contract *c) const;
 };
 
 
@@ -571,6 +606,8 @@ public:
     ib_contract_details();
     ib_contract_details(const tws::tr_contract_details *cd);
     virtual ~ib_contract_details();
+
+    bool equals(const ib_contract_details *cd) const;
 };
 
 

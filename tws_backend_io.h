@@ -172,6 +172,8 @@ public:
 		assert(ctx);
 		tws_ctx = ctx;
 	}
+
+	virtual int pulse_pending_issues(void);
 };
 
 

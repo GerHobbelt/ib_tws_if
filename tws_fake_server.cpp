@@ -69,11 +69,19 @@ static char *strtok0(char *s = NULL)
 	return NULL;
 }
 
+static int inttok0(char *s = NULL)
+{
+	const char *v = strtok0(s);
+
+	if (v)
+		return atoi(v);
+	return 0;
+}
 
 static int respond_with(struct mg_connection *conn, const char *elem)
 {
 	int len = strlen(elem);
-	int rv = mg_write(conn, elem, len + 1);
+	int rv = mg_send_data(conn, elem, len + 1);
 	return rv;
 }
 static int respond_with(struct mg_connection *conn, int elem)
@@ -81,7 +89,7 @@ static int respond_with(struct mg_connection *conn, int elem)
 	char buf[40];
 	mg_snprintf(conn, buf, sizeof(buf), "%d", elem);
 	int len = strlen(buf);
-	int rv = mg_write(conn, buf, len + 1);
+	int rv = mg_send_data(conn, buf, len + 1);
 	return rv;
 }
 static int respond_with(struct mg_connection *conn, double elem)
@@ -89,16 +97,16 @@ static int respond_with(struct mg_connection *conn, double elem)
 	char buf[40];
 	mg_snprintf(conn, buf, sizeof(buf), "%g", elem);
 	int len = strlen(buf);
-	int rv = mg_write(conn, buf, len + 1);
+	int rv = mg_send_data(conn, buf, len + 1);
 	return rv;
 }
 static int respond_with(struct mg_connection *conn, time_t elem)
 {
 	char buf[60];
-	strncpy(buf, asctime(gmtime(&elem)), sizeof(buf));
+	strftime(buf, sizeof(buf), "%Y%m%d %H:%M:%S %z", gmtime(&elem));
 	buf[59] = 0;
 	int len = strlen(buf);
-	int rv = mg_write(conn, buf, len + 1);
+	int rv = mg_send_data(conn, buf, len + 1);
 	return rv;
 }
 
@@ -121,7 +129,7 @@ static int respond_with_file(struct mg_connection *conn, ib_backend_io_channel *
 			int len = fread(buf, 1, sizeof(buf), in);
 			if (len > 0)
 			{
-				rv += mg_write(conn, buf, len);
+				rv += mg_send_data(conn, buf, len);
 			}
 			else
 			{
@@ -131,9 +139,78 @@ static int respond_with_file(struct mg_connection *conn, ib_backend_io_channel *
 		mg_fclose(in);
 	}
 	buf[0] = 0;
-	rv += mg_write(conn, buf, 1);
+	rv += mg_send_data(conn, buf, 1);
 	return rv;
 }
+
+static int respond_with_messages_file(struct mg_connection *conn, ib_backend_io_channel *ibm, const char *uri, const char *uri_param, ...)
+{
+	va_list args;
+	FILE *in;
+	char *buf = NULL;
+	char path[PATH_MAX];
+	struct mg_context *ctx = mg_get_context(conn);
+	struct mg_request_info *info = mg_get_request_info(conn);
+	struct mgstat st;
+	int rv = 0;
+
+	mg_asprintf(conn, &buf, 0, uri, uri_param);
+	mg_snprintf(conn, path, sizeof(path), "%s/%s", mg_get_option(ctx, "document_root"), buf);
+
+	if (mg_stat(path, &st))
+		return -1;
+
+	free(buf);
+	buf = (char *)malloc(st.size + 1 /* extra space for NUL sentinel */);
+	if (!buf)
+		return -1;
+
+	in = mg_fopen(path, "rb");
+	if (in)
+	{
+		int len = fread(buf, 1, st.size, in);
+		if (len > 0)
+		{
+			char *procd_buf = NULL;
+			char *s;
+			char *d;
+
+			buf[len] = 0;
+
+			va_start(args, uri_param);
+			mg_vasprintf(conn, &procd_buf, 0, buf, args);
+			va_end(args);
+
+			// now we have the message(s) ready for transmission, only we need to replace any CRLF to NUL:
+			d = s = procd_buf;
+			for (size_t i = strlen(procd_buf); i > 0; i--)
+			{
+				switch (*s++)
+				{
+				case '\r':
+					if (*s == '\n')
+						continue;
+					*d++ = '\0';
+					continue;
+
+				case '\n':
+					*d++ = '\0';
+					continue;
+
+				default:
+					*d++ = s[-1];
+					continue;
+				}
+			}
+			*d = 0;
+
+			rv += mg_send_data(conn, procd_buf, d - procd_buf);
+		}
+		mg_fclose(in);
+	}
+	return rv;
+}
+
 
 
 
@@ -152,13 +229,15 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 	A message may be pending at conn[1]; when it does, we play back a suitable response at conn[1]
 	*/
 	mg_connection *conn = fake_conn[1];
+	mg_request_info *request_info = mg_get_request_info(conn);
+	int64_t old_num_bytes_sent = mg_get_num_bytes_sent(conn);
 
     if (conn)
     {
 		if (mode == 0)
 		{
 			// send 'magic' to uniquely mark the end of the message (this simplifies the fake server code)
-			mg_write(fake_conn[0], EOM_magick, sizeof(EOM_magick));
+			mg_send_data(fake_conn[0], EOM_magick, sizeof(EOM_magick));
 		}
 
         // check whether there's anything available:
@@ -172,6 +251,14 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
         for (int loopcount = 3; loopcount > 0 && mg_get_stop_flag(mg_get_context(conn)) == 0; loopcount--)
         {
             struct timeval tv2 = tv;
+
+			/*
+			stop sending [so we don't overflow socketpair I/O buffers] when we've sent one message; 
+			as we send one complete message in here each time we merely need to check whether we've
+			sent any data at all.
+			*/
+			if (old_num_bytes_sent < mg_get_num_bytes_sent(conn))
+				break;
 
             FD_ZERO(&read_set);
             max_fd = -1;
@@ -220,12 +307,59 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 						else if (eom && in_server_negotiation)
 						{
 							client_id = mcode;
+
+							/* 
+							act like my European TWS with second test/paper account
+							*/
+							respond_with(conn, tws::MANAGED_ACCTS);
+							respond_with(conn, 1);
+							respond_with(conn, "FAKE12345");
+
+							respond_with(conn, tws::NEXT_VALID_ID);
+							respond_with(conn, 1);
+							respond_with(conn, 1);
+
+							static const struct
+							{
+								tws::twsclient_error_code_t code;
+								char *text;
+							} farm_msgs[] = 
+							{
+								{
+									tws::FAIL_MARKET_DATA_FARM_CONNECTED,
+									"Market data farm connection is OK:eurofarm",
+								},
+								{
+									tws::FAIL_HISTORICAL_DATA_FARM_CONNECTED,
+									"HMDS data farm connection is OK:euhmds",
+								},
+								{
+									tws::FAIL_HISTORICAL_DATA_FARM_CONNECTED,
+									"HMDS data farm connection is OK:hkhmds",
+								},
+								{
+									tws::FAIL_HISTORICAL_DATA_FARM_CONNECTED,
+									"HMDS data farm connection is OK:ushmds",
+								},
+							};
+
+							for (int fi = 0; fi < ARRAY_SIZE(farm_msgs); fi++)
+							{
+								respond_with(conn, tws::ERR_MSG);
+								respond_with(conn, 2);
+								respond_with(conn, -1);
+								respond_with(conn, farm_msgs[fi].code);
+								respond_with(conn, farm_msgs[fi].text);
+							}
+
 							in_server_negotiation = false;
 						}
 						else
 						{
+							ib_outgoing_id_t msgcode = (ib_outgoing_id_t)mcode;
+
 							in_server_negotiation = false;
-							switch (mcode)
+							switch (msgcode)
 							{
 							case tws::REQ_MKT_DATA :
 								break;
@@ -291,6 +425,30 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 								break;
 
 							case tws::REQ_SCANNER_SUBSCRIPTION :
+								t = strtok0();
+								if (t)
+								{
+									int ticker_id = atoi(t);
+									int maxrows = inttok0();
+									const char *instrument = strtok0();
+									const char *scanloc = strtok0();
+									const char *scancode = strtok0();
+
+									if (mg_strcasecmp("HIGH_DIVIDEND_YIELD_IB", scancode))
+									{
+										// reject subscription:
+										respond_with(conn, tws::ERR_MSG);
+										respond_with(conn, 2);
+										respond_with(conn, ticker_id);
+										respond_with(conn, tws::FAIL_HISTORICAL_MARKET_DATA_SERVICE);
+										respond_with(conn, "Historical Market Data Service error message:duplicate scan subscription");
+									}
+									else
+									{
+										// accept subscription: send 2 messages based on file templte (quicker to code here ;-) )
+										respond_with_messages_file(conn, this, "faking_it/RX.scanner_data.%s.txt", scancode, ticker_id, ticker_id);
+									}
+								}
 								break;
 
 							case tws::CANCEL_SCANNER_SUBSCRIPTION :
@@ -351,10 +509,15 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 						}
 					}
                 }
+				else
+				{
+					/*
+					done faking for now; wait for more request data...
 
-                /*
-                Meanwhile, we can process queued requests, such as from the front-end now:
-                */
+					we MAY fake async responses here based on pending subscriptions...
+					*/
+					break;
+				}
             }
         }
     }

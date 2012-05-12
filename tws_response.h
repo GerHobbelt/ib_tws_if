@@ -49,23 +49,46 @@ public:
 };
 
 
+class tws_response_w_ticker_message: public tws_response_message
+{
+protected:
+	ib_int_t m_ticker_id;
+
+public:
+	tws_response_w_ticker_message(tier2_message_processor *from, tier2_message_processor *to, int ticker_id) :
+		tws_response_message(from, to),
+		m_ticker_id(ticker_id)
+	{
+	}
+protected:
+	virtual ~tws_response_w_ticker_message()
+	{
+	}
+
+public:
+	ib_int_t get_ticker_id(void) const
+	{
+		return m_ticker_id;
+	}
+};
+
+
 
 
 /* fired by: TICK_PRICE */
-class ib_msg_resp_tick_price: public tws_response_message
+class ib_msg_resp_tick_price: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	tws_tick_type_t m_field;
 	ib_double_t m_price;
 	ib_bool_t m_can_auto_execute;
 
 public:
 	ib_msg_resp_tick_price(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, tws_tick_type_t field, double price, int can_auto_execute) 
-		: tws_response_message(from, to)
-		, m_ticker_id(ticker_id), m_field(field), m_price(price), m_can_auto_execute(!!can_auto_execute)
+		: tws_response_w_ticker_message(from, to, ticker_id)
+		, m_field(field), m_price(price), m_can_auto_execute(!!can_auto_execute)
 	{
 	}
 protected:
@@ -78,19 +101,18 @@ public:
 };
 
 /* fired by: TICK_PRICE (for modern versions, then immediately preceeded by an invocation of event_tick_price()), TICK_SIZE */
-class ib_msg_resp_tick_size: public tws_response_message
+class ib_msg_resp_tick_size: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	tws_tick_type_t m_field;
 	ib_int_t m_size;
 
 public:
 	ib_msg_resp_tick_size(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, tws_tick_type_t field, int size) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_field(field), m_size(size)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_field(field), m_size(size)
 	  {
 	  }
 protected:
@@ -104,12 +126,11 @@ public:
 
 
 /* fired by: TICK_OPTION_COMPUTATION */
-class ib_msg_resp_tick_option_computation: public tws_response_message
+class ib_msg_resp_tick_option_computation: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	tws_tick_type_t m_type;
 	ib_double_t m_implied_vol;
 	ib_double_t m_delta;
@@ -122,8 +143,8 @@ protected:
 
 public:
 	ib_msg_resp_tick_option_computation(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, tws_tick_type_t type, double implied_vol, double delta, double opt_price, double pv_dividend, double gamma, double vega, double theta, double und_price) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_type(type), m_implied_vol(implied_vol), m_delta(delta)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_type(type), m_implied_vol(implied_vol), m_delta(delta)
 		  , m_opt_price(opt_price), m_pv_dividend(pv_dividend)
 		  , m_gamma(gamma), m_vega(vega), m_theta(theta), m_und_price(und_price)
 	  {
@@ -139,19 +160,18 @@ public:
 
 
 /* fired by: TICK_GENERIC */
-class ib_msg_resp_tick_generic: public tws_response_message
+class ib_msg_resp_tick_generic: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	tws_tick_type_t m_type;
 	ib_double_t m_value;
 
 public:
 	ib_msg_resp_tick_generic(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, tws_tick_type_t type, double value) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_type(type), m_value(value)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_type(type), m_value(value)
 	  {
 	  }
 protected:
@@ -165,19 +185,18 @@ public:
 
 
 /* fired by: TICK_STRING */
-class ib_msg_resp_tick_string: public tws_response_message
+class ib_msg_resp_tick_string: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	tws_tick_type_t m_type;
 	ib_string_t m_value;
 
 public:
 	ib_msg_resp_tick_string(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, tws_tick_type_t type, const char value[]) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_type(type), m_value(value)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_type(type), m_value(value)
 	  {
 	  }
 protected:
@@ -191,12 +210,11 @@ public:
 
 
 /* fired by: TICK_EFP */
-class ib_msg_resp_tick_efp: public tws_response_message
+class ib_msg_resp_tick_efp: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	tws_tick_type_t m_tick_type;
 	ib_double_t m_basis_points;
 	ib_string_t m_formatted_basis_points;
@@ -208,8 +226,8 @@ protected:
 
 public:
 	ib_msg_resp_tick_efp(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, tws_tick_type_t tick_type, double basis_points, const char formatted_basis_points[], double implied_futures_price, int hold_days, const char future_expiry[], double dividend_impact, double dividends_to_expiry) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_tick_type(tick_type), m_basis_points(basis_points)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_tick_type(tick_type), m_basis_points(basis_points)
 		  , m_formatted_basis_points(formatted_basis_points), m_implied_futures_price(implied_futures_price), m_hold_days(hold_days)
 		  , m_future_expiry(future_expiry), m_dividend_impact(dividend_impact), m_dividends_to_expiry(dividends_to_expiry)
 	  {
@@ -417,18 +435,17 @@ public:
 
 
 /* fired by: CONTRACT_DATA */
-class ib_msg_resp_contract_details: public tws_response_message
+class ib_msg_resp_contract_details: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_req_id;
 	ib_contract_details m_contract_details;
 
 public:
 	ib_msg_resp_contract_details(tier2_message_processor *from, tier2_message_processor *to, int req_id, const tws::tr_contract_details *contract_details) :
-	  tws_response_message(from, to)
-		  , m_req_id(req_id), m_contract_details(contract_details)
+	  tws_response_w_ticker_message(from, to, req_id)
+		  , m_contract_details(contract_details)
 	  {
 	  }
 protected:
@@ -442,17 +459,13 @@ public:
 
 
 /* fired by: CONTRACT_DATA_END */
-class ib_msg_resp_contract_details_end: public tws_response_message
+class ib_msg_resp_contract_details_end: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
-protected:
-	ib_int_t m_reqid;
-
 public:
-	ib_msg_resp_contract_details_end(tier2_message_processor *from, tier2_message_processor *to, int reqid) :
-	  tws_response_message(from, to)
-		  , m_reqid(reqid)
+	ib_msg_resp_contract_details_end(tier2_message_processor *from, tier2_message_processor *to, int req_id) :
+	  tws_response_w_ticker_message(from, to, req_id)
 	  {
 	  }
 protected:
@@ -466,18 +479,17 @@ public:
 
 
 /* fired by: BOND_CONTRACT_DATA */
-class ib_msg_resp_bond_contract_details: public tws_response_message
+class ib_msg_resp_bond_contract_details: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_req_id;
 	ib_contract_details m_contract_details;
 
 public:
 	ib_msg_resp_bond_contract_details(tier2_message_processor *from, tier2_message_processor *to, int req_id, const tws::tr_contract_details *contract_details) :
-	  tws_response_message(from, to)
-		  , m_req_id(req_id), m_contract_details(contract_details)
+	  tws_response_w_ticker_message(from, to, req_id)
+		  , m_contract_details(contract_details)
 	  {
 	  }
 protected:
@@ -517,17 +529,13 @@ public:
 
 
 /* fired by: EXECUTION_DATA_END */
-class ib_msg_resp_exec_details_end: public tws_response_message
+class ib_msg_resp_exec_details_end: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
-protected:
-	ib_int_t m_reqid;
-
 public:
-	ib_msg_resp_exec_details_end(tier2_message_processor *from, tier2_message_processor *to, int reqid) :
-	  tws_response_message(from, to)
-		  , m_reqid(reqid)
+	ib_msg_resp_exec_details_end(tier2_message_processor *from, tier2_message_processor *to, int req_id) :
+	  tws_response_w_ticker_message(from, to, req_id)
 	  {
 	  }
 protected:
@@ -541,19 +549,18 @@ public:
 
 
 /* fired by: ERR_MSG */
-class ib_msg_resp_error: public tws_response_message
+class ib_msg_resp_error: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_id;
 	ib_int_t m_error_code;
 	ib_string_t m_error_string;
 
 public:
 	ib_msg_resp_error(tier2_message_processor *from, tier2_message_processor *to, int id, int error_code, const char error_string[])
-		: tws_response_message(from, to)
-		, m_id(id), m_error_code(error_code) 
+		: tws_response_w_ticker_message(from, to, id)
+		, m_error_code(error_code) 
 		, m_error_string(error_string)
 	{
 	}
@@ -565,10 +572,6 @@ protected:
 public:
 	virtual int process_response_message(tier2_message *response);
 
-	ib_int_t get_ticker_id(void) const
-	{
-		return m_id;
-	}
 	ib_int_t get_error_code(void) const
 	{
 		return m_error_code;
@@ -581,12 +584,11 @@ public:
 
 
 /* fired by: MARKET_DEPTH */
-class ib_msg_resp_update_mkt_depth: public tws_response_message
+class ib_msg_resp_update_mkt_depth: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	ib_int_t m_position;
 	ib_int_t m_operation;
 	ib_int_t m_side;
@@ -595,8 +597,8 @@ protected:
 
 public:
 	ib_msg_resp_update_mkt_depth(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, int position, int operation, int side, double price, int size) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_position(position), m_operation(operation), m_side(side), m_price(price), m_size(size)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_position(position), m_operation(operation), m_side(side), m_price(price), m_size(size)
 	  {
 	  }
 protected:
@@ -610,12 +612,11 @@ public:
 
 
 /* fired by: MARKET_DEPTH_L2 */
-class ib_msg_resp_update_mkt_depth_l2: public tws_response_message
+class ib_msg_resp_update_mkt_depth_l2: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	ib_int_t m_position;
 	ib_string_t m_market_maker;
 	ib_int_t m_operation;
@@ -625,8 +626,8 @@ protected:
 
 public:
 	ib_msg_resp_update_mkt_depth_l2(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, int position, const char *market_maker, int operation, int side, double price, int size) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_position(position), m_market_maker(market_maker), m_operation(operation), m_side(side), m_price(price), m_size(size)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_position(position), m_market_maker(market_maker), m_operation(operation), m_side(side), m_price(price), m_size(size)
 	  {
 	  }
 protected:
@@ -721,12 +722,11 @@ public:
 
 
 /* fired by: HISTORICAL_DATA (possibly multiple times per incoming message) */
-class ib_msg_resp_historical_data: public tws_response_message
+class ib_msg_resp_historical_data: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_string_t m_date;
 	ib_double_t m_open;
 	ib_double_t m_high;
@@ -738,9 +738,9 @@ protected:
 	ib_int_t m_has_gaps;
 
 public:
-	ib_msg_resp_historical_data(tier2_message_processor *from, tier2_message_processor *to, int reqid, const char date[], double open, double high, double low, double close, long int volume, int bar_count, double wap, int has_gaps) :
-	  tws_response_message(from, to)
-		  , m_reqid(reqid), m_date(date), m_open(open), m_high(high), m_low(low), m_close(close), m_volume(volume), m_bar_count(bar_count), m_wap(wap), m_has_gaps(has_gaps)
+	ib_msg_resp_historical_data(tier2_message_processor *from, tier2_message_processor *to, int req_id, const char date[], double open, double high, double low, double close, long int volume, int bar_count, double wap, int has_gaps) :
+	  tws_response_w_ticker_message(from, to, req_id)
+		  , m_date(date), m_open(open), m_high(high), m_low(low), m_close(close), m_volume(volume), m_bar_count(bar_count), m_wap(wap), m_has_gaps(has_gaps)
 	  {
 	  }
 protected:
@@ -754,19 +754,18 @@ public:
 
 
 /* fired by: HISTORICAL_DATA  (once, after one or more invocations of event_historical_data()) */
-class ib_msg_resp_historical_data_end: public tws_response_message
+class ib_msg_resp_historical_data_end: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_string_t m_completion_from;
 	ib_string_t m_completion_to;
 
 public:
-	ib_msg_resp_historical_data_end(tier2_message_processor *from, tier2_message_processor *to, int reqid, const char completion_from[], const char completion_to[]) :
-	  tws_response_message(from, to)
-		  , m_reqid(reqid), m_completion_from(completion_from), m_completion_to(completion_to)
+	ib_msg_resp_historical_data_end(tier2_message_processor *from, tier2_message_processor *to, int req_id, const char completion_from[], const char completion_to[]) :
+	  tws_response_w_ticker_message(from, to, req_id)
+		  , m_completion_from(completion_from), m_completion_to(completion_to)
 	  {
 	  }
 protected:
@@ -804,12 +803,11 @@ public:
 
 
 /* fired by: SCANNER_DATA (possibly multiple times per incoming message) */
-class ib_msg_resp_scanner_data: public tws_response_message
+class ib_msg_resp_scanner_data: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	ib_int_t m_rank;
 	ib_contract_details m_cd;
 	ib_string_t m_distance;
@@ -819,8 +817,8 @@ protected:
 
 public:
 	ib_msg_resp_scanner_data(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, int rank, tws::tr_contract_details *cd, const char distance[], const char benchmark[], const char projection[], const char legs_str[]) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_rank(rank), m_cd(cd), m_distance(distance), m_benchmark(benchmark), m_projection(projection), m_legs_str(legs_str)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_rank(rank), m_cd(cd), m_distance(distance), m_benchmark(benchmark), m_projection(projection), m_legs_str(legs_str)
 	  {
 	  }
 protected:
@@ -830,22 +828,26 @@ protected:
 
 public:
 	virtual int process_response_message(tier2_message *response);
+
+	const ib_contract_details *get_contract_details(void) const
+	{
+		return &m_cd;
+	}
 };
 
 
 /* fired by: SCANNER_DATA (once, after one or more invocations of event_scanner_data()) */
-class ib_msg_resp_scanner_data_end: public tws_response_message
+class ib_msg_resp_scanner_data_end: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	ib_int_t m_num_elements;
 
 public:
 	ib_msg_resp_scanner_data_end(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, int num_elements) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_num_elements(num_elements)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_num_elements(num_elements)
 	  {
 	  }
 protected:
@@ -859,18 +861,17 @@ public:
 
 
 /* fired by: SCANNER_DATA (once, before any invocations of event_scanner_data()) */
-class ib_msg_resp_scanner_data_start: public tws_response_message
+class ib_msg_resp_scanner_data_start: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_ticker_id;
 	ib_int_t m_num_elements;
 
 public:
 	ib_msg_resp_scanner_data_start(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, int num_elements) :
-	  tws_response_message(from, to)
-		  , m_ticker_id(ticker_id), m_num_elements(num_elements)
+	  tws_response_w_ticker_message(from, to, ticker_id)
+		  , m_num_elements(num_elements)
 	  {
 	  }
 protected:
@@ -908,12 +909,11 @@ public:
 
 
 /* fired by: REAL_TIME_BARS */
-class ib_msg_resp_realtime_bar: public tws_response_message
+class ib_msg_resp_realtime_bar: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_date_t m_time;
 	ib_double_t m_open;
 	ib_double_t m_high;
@@ -924,9 +924,9 @@ protected:
 	ib_int_t m_count;
 
 public:
-	ib_msg_resp_realtime_bar(tier2_message_processor *from, tier2_message_processor *to, int reqid, long time, double open, double high, double low, double close, long int volume, double wap, int count) :
-	  tws_response_message(from, to)
-		  , m_reqid(reqid), m_time(time), m_open(open), m_high(high), m_low(low), m_close(close), m_volume(volume), m_wap(wap), m_count(count)
+	ib_msg_resp_realtime_bar(tier2_message_processor *from, tier2_message_processor *to, int req_id, long time, double open, double high, double low, double close, long int volume, double wap, int count) :
+	  tws_response_w_ticker_message(from, to, req_id)
+		  , m_time(time), m_open(open), m_high(high), m_low(low), m_close(close), m_volume(volume), m_wap(wap), m_count(count)
 	  {
 	  }
 protected:
@@ -940,18 +940,17 @@ public:
 
 
 /* fired by: FUNDAMENTAL_DATA */
-class ib_msg_resp_fundamental_data: public tws_response_message
+class ib_msg_resp_fundamental_data: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_string_t m_data;
 
 public:
-	ib_msg_resp_fundamental_data(tier2_message_processor *from, tier2_message_processor *to, int reqid, const char data[]) :
-	  tws_response_message(from, to)
-		  , m_reqid(reqid), m_data(data)
+	ib_msg_resp_fundamental_data(tier2_message_processor *from, tier2_message_processor *to, int req_id, const char data[]) :
+	  tws_response_w_ticker_message(from, to, req_id)
+		  , m_data(data)
 	  {
 	  }
 protected:
@@ -965,18 +964,17 @@ public:
 
 
 /* fired by: DELTA_NEUTRAL_VALIDATION */
-class ib_msg_resp_delta_neutral_validation: public tws_response_message
+class ib_msg_resp_delta_neutral_validation: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_under_comp m_und;
 
 public:
-	ib_msg_resp_delta_neutral_validation(tier2_message_processor *from, tier2_message_processor *to, int reqid, const tws::under_comp *und) :
-	  tws_response_message(from, to)
-		  , m_reqid(reqid), m_und(und)
+	ib_msg_resp_delta_neutral_validation(tier2_message_processor *from, tier2_message_processor *to, int req_id, const tws::under_comp *und) :
+	  tws_response_w_ticker_message(from, to, req_id)
+		  , m_und(und)
 	  {
 	  }
 protected:
@@ -1014,17 +1012,13 @@ public:
 
 
 /* fired by: TICK_SNAPSHOT_END */
-class ib_msg_resp_tick_snapshot_end: public tws_response_message
+class ib_msg_resp_tick_snapshot_end: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
-protected:
-	ib_int_t m_reqid;
-
 public:
-	ib_msg_resp_tick_snapshot_end(tier2_message_processor *from, tier2_message_processor *to, int reqid) :
-	  tws_response_message(from, to)
-		  , m_reqid(reqid)
+	ib_msg_resp_tick_snapshot_end(tier2_message_processor *from, tier2_message_processor *to, int req_id) :
+	  tws_response_w_ticker_message(from, to, req_id)
 	  {
 	  }
 protected:
@@ -1038,18 +1032,17 @@ public:
 
 
 /* fired by: MARKET_DATA_TYPE */
-class ib_msg_resp_market_data_type: public tws_response_message
+class ib_msg_resp_market_data_type: public tws_response_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	tws_market_data_type_t m_data_type;
 
 public:
-	ib_msg_resp_market_data_type(tier2_message_processor *from, tier2_message_processor *to, int reqid, tws_market_data_type_t data_type) :
-	  tws_response_message(from, to)
-		  , m_reqid(reqid), m_data_type(data_type)
+	ib_msg_resp_market_data_type(tier2_message_processor *from, tier2_message_processor *to, int req_id, tws_market_data_type_t data_type) :
+	  tws_response_w_ticker_message(from, to, req_id)
+		  , m_data_type(data_type)
 	  {
 	  }
 protected:

@@ -224,6 +224,10 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 
 			rv = -1;
 
+			FD_ZERO(&read_set);
+			FD_ZERO(&except_set);
+			max_fd = -1;
+
 			tv.tv_sec = tws_cfg.backend_poll_period / 1000;
 			tv.tv_usec = (tws_cfg.backend_poll_period % 1000) * 1000;
 
@@ -247,6 +251,11 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 				if (select(max_fd + 1, &read_set, NULL, &except_set, &tv2) < 0)
 				{
 					// signal a fatal failure:
+					// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+					FD_ZERO(&read_set);
+					FD_ZERO(&except_set);
+					max_fd = -1;
+
 					max_bufsize = 0;
 					break;
 				}
@@ -265,6 +274,9 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 						break;
 					}
 
+					// prevent the mg_read() from locking up due to no incoming data:
+					max_bufsize = 0;
+
 					/*
 					When there's no pending incoming data from TWS itself, we'll be running around in this loop while waiting for
 					more data to arrive. Meanwhile, we can process queued requests from the front-end now:
@@ -273,15 +285,41 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 					if (proc_rv < 0)
 					{
 						// signal a fatal failure:
-						max_bufsize = 0;
+						// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+						FD_ZERO(&read_set);
+						FD_ZERO(&except_set);
+						max_fd = -1;
 						break;
 					}
+
+					/*
+					Also 'tickle' the pending queue in round-robin fashion to ensure that 
+					scheduled / postponed requests get serviced.
+					*/
+					proc_rv = pulse_pending_issues();
 				}
 			}
 
-			if (max_bufsize)
+			/*
+			Even when there's pending incoming data from TWS itself, we'll need to process queued 
+			requests from the front-end and 'pending' queue or we would be experiencing lockup:
+			*/
+			rv = recvr->process_one_queued_tier2_request(&read_set, &except_set, max_fd);
+			if (rv < 0)
 			{
-				rv = mg_pull(tws_conn, buf, max_bufsize);
+				// signal a fatal failure:
+			}
+			else 
+			{
+				rv = pulse_pending_issues();
+				if (rv < 0)
+				{
+					// signal fatal failure:
+				}
+				else if (max_bufsize)
+				{
+					rv = mg_pull(tws_conn, buf, max_bufsize);
+				}
 			}
 		}
 		else 
@@ -324,7 +362,7 @@ int ib_backend_io_channel::io_flush(void)
 			break;
 	}
 
-	if (rv)
+	if (!rv)
 	{
 		if (fake_ib_tws_connection)
 		{
@@ -540,3 +578,10 @@ tier2_message_processor *ib_backend_io_channel::get_receiver(void)
 	return rv;
 }
 
+
+int ib_backend_io_channel::pulse_pending_issues(void)
+{
+	assert(!"Should never get here!");
+
+	return 0;
+}

@@ -93,14 +93,20 @@ protected:
 	ib_int_t m_ticker_id;
 
 public:
-	tws_request_w_ticker_message(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id) :
+	tws_request_w_ticker_message(tier2_message_processor *from, tier2_message_processor *to, int ticker_id) :
 		tws_request_message(from, to),
-		m_ticker_id(_ticker_id)
+		m_ticker_id(ticker_id)
 	{
 	}
 protected:
 	virtual ~tws_request_w_ticker_message()
 	{
+	}
+
+public:
+	ib_int_t get_ticker_id(void) const
+	{
+		return m_ticker_id;
 	}
 };
 
@@ -147,8 +153,8 @@ protected:
 	ib_scanner_subscription m_subscription;
 
 public:
-	ib_msg_req_scanner_subscription(tier2_message_processor *from, tier2_message_processor *to, int _ticker_id, ib_scanner_subscription &_subscription) :
-		tws_request_w_ticker_message(from, to, _ticker_id),
+	ib_msg_req_scanner_subscription(tier2_message_processor *from, tier2_message_processor *to, int ticker_id, ib_scanner_subscription &_subscription) :
+		tws_request_w_ticker_message(from, to, ticker_id),
 		m_subscription(_subscription)
 	{
 	}
@@ -511,18 +517,17 @@ public:
 
 
 /* sends message REQ_EXECUTIONS to IB/TWS */
-class ib_msg_req_executions: public tws_request_message
+class ib_msg_req_executions: public tws_request_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_exec_filter m_filter;
 
 public:
-	ib_msg_req_executions(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_exec_filter &_filter) :
-	    tws_request_message(from, to),
-		m_reqid(_reqid), m_filter(_filter)
+	ib_msg_req_executions(tier2_message_processor *from, tier2_message_processor *to, int _req_id, ib_exec_filter &_filter) :
+	    tws_request_w_ticker_message(from, to, _req_id),
+		m_filter(_filter)
 	{
 	}
 protected:
@@ -580,18 +585,17 @@ public:
 
 
 /* sends message REQ_CONTRACT_DATA to IB/TWS */
-class ib_msg_req_contract_details: public tws_request_message
+class ib_msg_req_contract_details: public tws_request_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_contract m_contract;
 
 public:
-	ib_msg_req_contract_details(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_contract &_contract) :
-	    tws_request_message(from, to),
-		m_reqid(_reqid), m_contract(_contract)
+	ib_msg_req_contract_details(tier2_message_processor *from, tier2_message_processor *to, int _req_id, ib_contract &_contract) :
+	    tws_request_w_ticker_message(from, to, _req_id),
+		m_contract(_contract)
 	{
 	}
 protected:
@@ -971,19 +975,18 @@ public:
 
 
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
-class ib_msg_req_fundamental_data: public tws_request_message
+class ib_msg_req_fundamental_data: public tws_request_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_contract m_contract;
 	ib_string_t m_report_type;
 
 public:
-	ib_msg_req_fundamental_data(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_contract &_contract, const char *_report_type) :
-	    tws_request_message(from, to),
-		m_reqid(_reqid), m_contract(_contract), m_report_type(_report_type)
+	ib_msg_req_fundamental_data(tier2_message_processor *from, tier2_message_processor *to, int _req_id, ib_contract &_contract, const char *_report_type) :
+	    tws_request_w_ticker_message(from, to, _req_id),
+		m_contract(_contract), m_report_type(_report_type)
 	{
 	}
 protected:
@@ -1007,17 +1010,13 @@ public:
 
 
 /* sends message CANCEL_FUNDAMENTAL_DATA to IB/TWS */
-class ib_msg_cancel_fundamental_data: public tws_request_message
+class ib_msg_cancel_fundamental_data: public tws_request_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
-protected:
-	ib_int_t m_reqid;
-
 public:
-	ib_msg_cancel_fundamental_data(tier2_message_processor *from, tier2_message_processor *to, int _reqid) :
-		tws_request_message(from, to), 
-		m_reqid(_reqid)
+	ib_msg_cancel_fundamental_data(tier2_message_processor *from, tier2_message_processor *to, int _req_id) :
+		tws_request_w_ticker_message(from, to, _req_id)
 	{
 	}
 protected:
@@ -1041,20 +1040,19 @@ public:
 
 
 /* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
-class ib_msg_calculate_implied_volatility: public tws_request_message
+class ib_msg_calculate_implied_volatility: public tws_request_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_contract m_contract;
 	ib_double_t m_option_price;
 	ib_double_t m_under_price;
 
 public:
-	ib_msg_calculate_implied_volatility(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_contract &_contract, double _option_price, double _under_price) :
-	    tws_request_message(from, to),
-		m_reqid(_reqid), m_contract(_contract), m_option_price(_option_price), m_under_price(_under_price)
+	ib_msg_calculate_implied_volatility(tier2_message_processor *from, tier2_message_processor *to, int _req_id, ib_contract &_contract, double _option_price, double _under_price) :
+	    tws_request_w_ticker_message(from, to, _req_id),
+		m_contract(_contract), m_option_price(_option_price), m_under_price(_under_price)
 	{
 	}
 protected:
@@ -1078,17 +1076,13 @@ public:
 
 
 /* sends message CANCEL_CALC_IMPLIED_VOLAT to IB/TWS */
-class ib_msg_cancel_calculate_implied_volatility: public tws_request_message
+class ib_msg_cancel_calculate_implied_volatility: public tws_request_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
-protected:
-	ib_int_t m_reqid;
-
 public:
-	ib_msg_cancel_calculate_implied_volatility(tier2_message_processor *from, tier2_message_processor *to, int _reqid) :
-	    tws_request_message(from, to),
-		m_reqid(_reqid)
+	ib_msg_cancel_calculate_implied_volatility(tier2_message_processor *from, tier2_message_processor *to, int _req_id) :
+	    tws_request_w_ticker_message(from, to, _req_id)
 	{
 	}
 protected:
@@ -1112,20 +1106,19 @@ public:
 
 
 /* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
-class ib_msg_calculate_option_price: public tws_request_message
+class ib_msg_calculate_option_price: public tws_request_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	ib_int_t m_reqid;
 	ib_contract m_contract;
 	ib_double_t m_volatility;
 	ib_double_t m_under_price;
 
 public:
-	ib_msg_calculate_option_price(tier2_message_processor *from, tier2_message_processor *to, int _reqid, ib_contract &_contract, double _volatility, double _under_price) :
-	    tws_request_message(from, to),
-		m_reqid(_reqid), m_contract(_contract), m_volatility(_volatility), m_under_price(_under_price)
+	ib_msg_calculate_option_price(tier2_message_processor *from, tier2_message_processor *to, int _req_id, ib_contract &_contract, double _volatility, double _under_price) :
+	    tws_request_w_ticker_message(from, to, _req_id),
+		m_contract(_contract), m_volatility(_volatility), m_under_price(_under_price)
 	{
 	}
 protected:
@@ -1149,17 +1142,13 @@ public:
 
 
 /* sends message CANCEL_CALC_OPTION_PRICE to IB/TWS */
-class ib_msg_cancel_calculate_option_price: public tws_request_message
+class ib_msg_cancel_calculate_option_price: public tws_request_w_ticker_message
 {
 	UNIQUE_TYPE_ID_CLASSDEF();
 
-protected:
-	ib_int_t m_reqid;
-
 public:
-	ib_msg_cancel_calculate_option_price(tier2_message_processor *from, tier2_message_processor *to, int _reqid) :
-	    tws_request_message(from, to),
-		m_reqid(_reqid)
+	ib_msg_cancel_calculate_option_price(tier2_message_processor *from, tier2_message_processor *to, int _req_id) :
+	    tws_request_w_ticker_message(from, to, _req_id)
 	{
 	}
 protected:
