@@ -42,6 +42,23 @@
 
 
 
+int tws_request_message::f_task_completed(void)
+{
+	app_manager *mgr = owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	if (get_requester() == ibm->get_receiver())
+	{
+		/*
+		When the TWS backend task issued the request itself, we can safely 
+		state that a completed task is a terminated task.
+
+		Ditch it!
+		*/
+		destroy();
+	}
+	return 0;
+}
 
 
 
@@ -1266,8 +1283,20 @@ int ib_msg_req_scanner_parameters::process_response_message(class tier2_message 
 
 	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_parameters");
 
-	// sneaky: let the response message handle itself:
-	return resp_msg->process_response_message(this);
+	if (ib_msg_resp_scanner_parameters::type_matches_class(resp_msg))
+	{
+		// sneaky: let the response message handle itself:
+		int rv = resp_msg->process_response_message(this);
+
+		/*
+		mark the request as completed; it's state observers should consequently
+		remove it from the queue and destroy the message.
+		*/
+		state(tier2_message::TASK_COMPLETED);
+
+		return rv;
+	}
+	return 0;
 }
 
 int ib_msg_req_scanner_subscription::process_response_message(class tier2_message *resp_msg)
@@ -1289,8 +1318,7 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 		// known contracts.
 		ib_msg_resp_scanner_data_end *end_msg = dynamic_cast<ib_msg_resp_scanner_data_end *>(resp_msg);
 
-		if (get_requester() == ibm->get_receiver()
-			&& end_msg->get_ticker_id() == m_ticker_id)
+		if (end_msg->get_ticker_id() == m_ticker_id)
 		{
 			/*
 			mark the request as completed; it's state observers should consequently

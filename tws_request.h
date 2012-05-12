@@ -69,6 +69,10 @@ class tws_request_message: public tws_reqresp_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 public:
+	// The message (and optional response) has been completely processed
+	virtual int f_task_completed(void);
+
+public:
 	tws_request_message(tier2_message_processor *from, tier2_message_processor *to = NULL) :
 		tws_reqresp_message(from, to)
 	{
