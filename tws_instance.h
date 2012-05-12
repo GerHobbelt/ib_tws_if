@@ -283,6 +283,7 @@ protected:
 
     /* -- and the working men -- */
 	int m_last_tickled_queue_position;
+	bool m_still_need_to_prime_the_pump;
 
 	ib_tws_req_cancel_monitor m_cancel_monitor;
 

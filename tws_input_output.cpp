@@ -116,8 +116,10 @@ void tws_worker_thread(struct mg_context *ctx)
 
                 // request the valid set of scanner parameters first: this will trigger the requesting of several market scans from the msg receive handler:
 				assert(mgr->get_requester(ctx) == ibm);
+#if 0  // won't work when IB doesn't have a data connection itself: SILENT FAILURE!
 				ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(ibm, NULL);
-				err = scan->state(tier2_message::EXEC_COMMAND);
+				scan->state(tier2_message::EXEC_COMMAND);
+#endif
 
                 while (mg_get_stop_flag(ctx) == 0 && ibm->is_tws_connected())
                 {
@@ -183,6 +185,8 @@ fail_dramatically:
 int ib_tws_manager::init_tws_api(void)
 {
 	int err = 0;
+
+	m_still_need_to_prime_the_pump = true;
 
 	tws_handle = tws::tws_create(get_app_manager(), tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func, tws_tx_elem_observe_func, tws_rx_elem_observe_func);
 	if (tws_handle)

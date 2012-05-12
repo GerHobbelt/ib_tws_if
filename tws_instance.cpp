@@ -45,7 +45,8 @@
 ib_tws_manager::ib_tws_manager(app_manager *mgr) :
 	ib_backend_io_channel(mgr),
 	m_io_logger(NULL),
-	m_last_tickled_queue_position(0)
+	m_last_tickled_queue_position(0),
+	m_still_need_to_prime_the_pump(true)
 {
 	m_cancel_monitor.set_ib_tws_manager(this);
 }
@@ -630,6 +631,25 @@ int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
 
 	assert(resp_msg);
 	mg_cry(conn, "process response message for %s?", "ib_msg_resp_error");
+
+	/*
+	We can only request any scanner data when there's actually any DATA FARM connection reported by TWS.
+
+	We ran into a scenario where IB/TWS would fail silently due to no data farms available whatsoever:
+	this was not reported as such, but one simply doesn't get ANY error messages listing ANY farm as OK
+	instead!
+	*/
+	if (resp_msg->get_error_code() == tws::FAIL_MARKET_DATA_FARM_CONNECTED
+		|| resp_msg->get_error_code() == tws::FAIL_HISTORICAL_DATA_FARM_CONNECTED)
+	{
+		if (m_still_need_to_prime_the_pump)
+		{
+			ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(this, NULL);
+			scan->state(tier2_message::EXEC_COMMAND);
+
+			m_still_need_to_prime_the_pump = false;
+		}
+	}
 
 #if 0
     /*
