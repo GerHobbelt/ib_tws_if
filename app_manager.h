@@ -28,7 +28,6 @@ class tier2_message;
 class ib_tws_manager;
 class db_manager;
 class sender_receiver_store;
-class sender_receiver_links;
 
 
 
@@ -39,7 +38,11 @@ protected:
 	db_manager *dbi;
 
 	sender_receiver_store *sr_store;
-	sender_receiver_links *sr_links;
+
+	typedef std::vector<interthread_communicator *> interthread_communicator_set_t;
+	interthread_communicator_set_t m_communicators;
+	int m_new_communicators_count;
+	pthread_mutex_t m_comm_mutex;
 
 public:
 	enum optional_requester_id_t
@@ -61,7 +64,10 @@ public:
 	int register_backend_thread(struct mg_connection *conn, tier2_message_processor *processor = NULL);
 	int unregister_backend_thread(struct mg_connection *conn);
 
-	int register_communication_path(tier2_message_processor *requester, tier2_message_processor *receiver);
+	interthread_communicator *create_communication_path(tier2_message_processor *requester, tier2_message_processor *receiver);
+	interthread_communicator *get_interthread_communicator(tier2_message_processor *from, tier2_message_processor *to);
+
+	int fetch_new_interthread_communicators(tier2_message_processor *receiver);
 
 	tier2_message_processor *get_requester(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
 	tier2_message_processor *get_requester(struct mg_connection *conn);

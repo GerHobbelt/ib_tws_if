@@ -1011,6 +1011,9 @@ scheduled / postponed requests get serviced.
 */
 int ib_tws_manager::pulse_pending_issues(void)
 {
+	// check whether any new client interconnects have been set up?
+	m_app_manager->fetch_new_interthread_communicators(this);
+
 	pulse_marked_messages();
 
 	int hitcount = 0;

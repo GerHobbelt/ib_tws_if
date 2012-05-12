@@ -130,6 +130,8 @@ public:
 		return m_owner;
 	}
 
+	interthread_communicator *get_interthread_communicator(bool tx2rx = false);
+
 	// set up the defaults; perform any necessary registration with the app_manager, etc...
 	virtual void resolve_requester_and_receiver_issues(void);
 
@@ -210,7 +212,7 @@ public:
 	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *received_response);
 
-	virtual int wait_for_response(void);
+	virtual int wait_for_response(interthread_communicator *listen_comm);
 
 	/* 
 	Invoke this method to cancel a long-running (repetitive) request or...

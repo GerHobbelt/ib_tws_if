@@ -132,17 +132,20 @@ void tier2_message::resolve_requester_and_receiver_issues(void)
 		m_requester = m_receiver;
 	}
 
-	if (!m_owner)
+	if (m_requester != m_receiver)
 	{
-		current_owner(m_requester);
+		/*
+		Also register the thread interconnect so that we can re-use it
+		later on to send/receive additional messages across the same
+		interconnection.
+
+		The creation/registration is a side effect of the query:
+		*/
+		(void)m_requester->get_interthread_communicator(m_requester, m_receiver);
 	}
 
-	/*
-	Register the communication path with the app_manager so it can help all receivers to track their incoming message paths.
-
-	Ignore the 'loopback' path to the node itself.
-	*/
-	m_receiver->register_sender(m_requester);
+	assert(!m_owner);
+	current_owner(m_requester);
 }
 
 
@@ -173,7 +176,7 @@ tier2_message::~tier2_message()
 	// state(DESTRUCTION); -- can't do that here as derived classes will already have destructed themselves! Hence protected destructor!
 	
 	//m_owner = NULL;
-	current_owner(m_owner);
+	//current_owner(m_owner);
 
 	release_unique_msgID();
 }
@@ -373,24 +376,25 @@ int tier2_message::pulse(void)
 	interthread_communicator *comm = NULL;
 	int err = 0;
 
+	assert(m_owner);
+
 	switch (m_now_state)
 	{
 	case DESTRUCTION:				// T: just before the destructor is invoked: last call!
 		// send message to receiver ~ handler
 		if (m_owner != m_requester)
 		{
-			comm = m_requester->get_interthread_communicator(m_owner, m_requester);
+			comm = m_owner->get_interthread_communicator(m_owner, m_requester);
+			assert(comm);
 
 			// push message across the pond:
 			err = comm->post_message(this);
 		}
 		else 
 		{
-			if (m_owner)
-			{
-				m_owner->release(this);
-				m_owner = NULL;
-			}
+			m_owner->release(this);
+			m_owner = NULL;
+
 			delete this;
 		}
 		break;
@@ -403,7 +407,8 @@ int tier2_message::pulse(void)
 		// send message to receiver ~ handler
 		if (m_owner != m_receiver)
 		{
-			comm = m_receiver->get_interthread_communicator(m_owner, m_receiver);
+			comm = m_owner->get_interthread_communicator(m_owner, m_receiver);
+			assert(comm);
 
 			// push message across the pond:
 			err = comm->post_message(this);
@@ -418,7 +423,8 @@ int tier2_message::pulse(void)
 		// send message to requester ~ handler
 		if (m_owner != m_requester)
 		{
-			comm = m_requester->get_interthread_communicator(m_owner, m_requester);
+			comm = m_owner->get_interthread_communicator(m_owner, m_requester);
+			assert(comm);
 
 			// push message across the pond:
 			err = comm->post_message(this);
@@ -477,24 +483,44 @@ int tier2_message::cancel_request(tier2_message_processor *transmitter)
 	return 0;
 }
 
-
-int tier2_message::wait_for_response(void)
+interthread_communicator *tier2_message::get_interthread_communicator(bool tx2rx)
 {
-	interthread_communicator *comm = m_receiver->get_interthread_communicator(m_requester, m_receiver);
-
-	while (state() < RESPONSE_COMPLETE)
+	assert(m_owner);
+	if (m_requester != m_receiver)
 	{
-		tier2_message *msg = comm->pop_one_message();
+		if (tx2rx)
+			return m_owner->get_interthread_communicator(m_requester, m_receiver);
+		else
+			return m_owner->get_interthread_communicator(m_receiver, m_requester);
+	}
+	return NULL;
+}
+
+int tier2_message::wait_for_response(interthread_communicator *listen_comm)
+{
+	assert(m_requester != m_receiver);
+	//interthread_communicator *comm = m_owner->get_interthread_communicator(m_receiver, m_requester);  -- m_owner is in limbo, hence untrustworthy!
+	assert(listen_comm);
+	assert(listen_comm->receiver() == m_requester);
+
+	if (!listen_comm)
+		return -1;
+
+	while (mg_get_stop_flag(mg_get_context(listen_comm->receiver_socket())) == 0)
+	{
+		tier2_message *msg = listen_comm->pop_one_message();
 
 		// if the popped message is our response (and not some book-keeping sort of thing), we know we're done.
-
 		if (!msg)
 		{
 			return -1;
 		}
+		if (msg == this)
+		{
+			return 0;
+		}
 	}
-	
-	return 0;
+	return -1;
 }
 
 int tier2_message::process_response_message(tier2_message *resp_msg)

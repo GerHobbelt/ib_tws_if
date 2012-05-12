@@ -9,9 +9,25 @@
 
 
 
+interthread_communicator::interthread_communicator(tier2_message_processor *requester, tier2_message_processor *receiver, struct mg_connection *conns[2]) :
+	m_receiving_socket(conns[0]),
+	m_sending_socket(conns[1]),
+	m_sender(requester),
+	m_receipient(receiver),
+	m_reverse(NULL)
+{
+}
+
+interthread_communicator::~interthread_communicator()
+{
+	mg_close_connection(m_receiving_socket);
+}
+
+
+
 int interthread_communicator::prepare_fd_sets_for_reception(struct fd_set *read_set, struct fd_set *except_set, int &max_fd)
 {
-	struct socket *sock = mg_get_client_socket(outgoing);
+	struct socket *sock = mg_get_client_socket(m_receiving_socket);
 
 	mg_FD_SET(sock, read_set, &max_fd);
 	mg_FD_SET(sock, except_set, &max_fd);
@@ -24,7 +40,7 @@ interthread_communicator::msg_pending_mode_t interthread_communicator::is_messag
 	// only check when there's actually something to be expected at all:
 	if (max_fd >= 0)
 	{
-		struct socket *sock = mg_get_client_socket(outgoing);
+		struct socket *sock = mg_get_client_socket(m_receiving_socket);
 
 		if (mg_FD_ISSET(sock, read_set))
 			return interthread_communicator::MSG_PENDING;
@@ -70,11 +86,11 @@ receiver/sender threads' state and/or interconnection is untrustworthy.
 int interthread_communicator::post_message(tier2_message *msg)
 {
 	tier2_message_processor *prev_owner = msg->current_owner();
-	assert(prev_owner == sender);
+	assert(prev_owner == m_sender);
 
 	msg->current_owner(NULL); // put message 'in limbo'
 
-	int rv = mg_write(incoming, &msg, sizeof(msg));
+	int rv = mg_write(m_sending_socket, &msg, sizeof(msg));
 
 	rv = (rv > 0 ? rv != sizeof(msg) : rv);
 	if (rv)
@@ -89,7 +105,70 @@ tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t *mod
 {
 	tier2_message *msg = NULL;
 	msg_pending_mode_t mode;
-	int rv = mg_read(outgoing, &msg, sizeof(msg));
+	int rv;
+	// check whether there's anything available:
+	fd_set read_set;
+	struct timeval tv;
+	int max_fd;
+
+	rv = -1;
+
+	FD_ZERO(&read_set);
+	max_fd = -1;
+
+	tv.tv_sec = 1;
+	tv.tv_usec = 0;
+
+	while (mg_get_stop_flag(mg_get_context(m_receiving_socket)) == 0)
+	{
+		struct timeval tv2 = tv;
+		int proc_rv;
+
+		FD_ZERO(&read_set);
+		max_fd = -1;
+
+		// Add listening sockets to the read set
+		mg_FD_SET(mg_get_client_socket(m_receiving_socket), &read_set, &max_fd);
+		if (select(max_fd + 1, &read_set, NULL, NULL, &tv2) < 0)
+		{
+			// signal a fatal failure:
+			// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+			FD_ZERO(&read_set);
+			max_fd = -1;
+			assert(!"Should never get here");
+			break;
+		}
+		else
+		{
+			if (mg_FD_ISSET(mg_get_client_socket(m_receiving_socket), &read_set))
+			{
+				break;
+			}
+
+#if 0
+			/*
+			Also 'tickle' the pending queue in round-robin fashion to ensure that 
+			scheduled / postponed requests get serviced.
+			*/
+			proc_rv = pulse_pending_issues();
+			if (proc_rv < 0)
+			{
+				// signal a fatal failure:
+				// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+				FD_ZERO(&read_set);
+				max_fd = -1;
+				assert(!"Should never get here");
+				break;
+			}
+#endif
+		}
+	}
+	
+	if (max_fd >= 0)
+	{
+		// don't use mg_read() as that depends upon decoded HTTP header info
+		rv = mg_pull(m_receiving_socket, &msg, sizeof(msg));
+	}
 
 	if (rv != sizeof(msg))
 	{
@@ -100,7 +179,7 @@ tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t *mod
 	{
 		mode = MSG_PENDING;
 
-		msg->current_owner(receipient); // and attach the message to the new owner ~ receiver
+		msg->current_owner(m_receipient); // and attach the message to the new owner ~ receiver
 	}
 
 	if (mode_ref)

@@ -11,42 +11,11 @@
 
 
 
-void tier2_message_processor::register_sender(tier2_message_processor *sender)
+interthread_communicator *tier2_message_processor::register_interthread_connection(interthread_communicator *comm)
 {
-	assert(sender);
+	if (!comm)
+		return NULL;
 
-	// ignore the 'loopback' path:
-	if (this == sender)
-		return;
-
-	// do not add the sender to the list a second time:
-	int count = senders.size();
-
-	for (int i = 0; i < count; i++)
-	{
-		if (senders[i]->has_sender(sender))
-			return;
-	}
-
-	ib_tws_manager *ibm = m_app_manager->get_ib_tws_manager();
-	mg_connection *conns[2];
-	interthread_communicator *comm = NULL;
-	
-	if (!mg_socketpair(conns, ibm->get_context()))
-	{
-		comm = new interthread_communicator(sender, this, conns);
-	}
-	else
-	{
-		assert(0);
-	}
-	senders.push_back(comm);
-
-	sender->register_interthread_connection(comm);
-}
-
-void tier2_message_processor::register_interthread_connection(interthread_communicator *comm)
-{
 	assert(comm->receiver() == this || comm->transmitter() == this);
 
 	// do not add the sender to the list a second time:
@@ -54,11 +23,19 @@ void tier2_message_processor::register_interthread_connection(interthread_commun
 
 	for (int i = 0; i < count; i++)
 	{
-		if (senders[i]->matches(comm))
-			return;
+		if (senders[i] == comm)
+			return comm;
 	}
 
 	senders.push_back(comm);
+	senders.push_back(comm->reverse());
+
+	/*
+	The comms will already have been registered with the Main Man. After all,
+	he'll have been the one who produced them!
+	*/
+
+	return comm;
 }
 
 interthread_communicator *tier2_message_processor::get_interthread_communicator(tier2_message_processor *from, tier2_message_processor *to)
@@ -67,10 +44,18 @@ interthread_communicator *tier2_message_processor::get_interthread_communicator(
 
 	for (int i = 0; i < count; i++)
 	{
-		if (senders[i]->matches(from, to))
-			return senders[i];
+		interthread_communicator *comm = senders[i];
+
+		assert(comm);
+		if (comm->matches(from, to))
+			return comm;
 	}
-	return NULL;
+
+	/*
+	When we can't find a match in our own local cache, then 
+	we'll have to consult the Main Man and damn the locks.
+	*/
+	return register_interthread_connection(m_app_manager->get_interthread_communicator(from, to));
 }
 
 
@@ -80,11 +65,11 @@ int tier2_message_processor::prepare_fd_sets_for_reception(fd_set *read_set, fd_
 
 	for (int i = 0; i < count; i++)
 	{
-		if (senders[i]->has_receiver(this))
-		{
-			interthread_communicator *comm = senders[i];
+		interthread_communicator *comm = senders[i];
 
-			assert(comm);
+		assert(comm);
+		if (comm->has_receiver(this))
+		{
 			comm->prepare_fd_sets_for_reception(read_set, except_set, max_fd);
 		}
 	}
@@ -150,7 +135,9 @@ int tier2_message_processor::own(tier2_message *msg)
 		return 1;
 	}
 	m_msgs_i_own.push_back(msg);
-	assert(msg->current_owner() == this || (!msg->current_owner() && msg->state() == tier2_message::MSG_INITIALIZED));  // constructed messages have no owner yet!
+	assert(msg->current_owner() == this 
+		|| (!msg->current_owner() && msg->state() == tier2_message::MSG_INITIALIZED)  // constructed messages have no owner yet!
+		|| (!msg->current_owner() && msg->get_receiver() != msg->get_requester()));   // messages which were being transferred between threads
 
 	return 0;
 }

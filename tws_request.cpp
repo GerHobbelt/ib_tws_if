@@ -288,8 +288,10 @@ int ib_msg_replace_fa::f_exec_command(void)
 /* sends message REQ_CURRENT_TIME to IB/TWS */
 int ib_msg_req_current_time::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_current_time(this);
 }
 
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
@@ -557,8 +559,10 @@ int ib_msg_replace_fa::f_commence_transmit(void)
 /* sends message REQ_CURRENT_TIME to IB/TWS */
 int ib_msg_req_current_time::f_commence_transmit(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return tx(ibm->get_tws_instance());
 }
 
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */

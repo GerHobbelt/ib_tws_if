@@ -108,13 +108,15 @@ it is referenced by.
 */
 class tier2_message_processor
 {
+	friend class app_manager; // app_manager must be able to access 'senders' for thread-safe updating
+
 protected:
 	// the bits that make up the 'unique ID':
 	requester_id *unique_id;
 	// additional information attributes:
 	app_manager *m_app_manager;
 
-	virtual void register_interthread_connection(interthread_communicator *info);
+	virtual interthread_communicator *register_interthread_connection(interthread_communicator *info);
 
 	typedef std::vector<interthread_communicator *> sender_set_t;
 	sender_set_t senders;
@@ -143,7 +145,6 @@ public:
 	}
 
 public:
-	virtual void register_sender(tier2_message_processor *sender);
 	virtual interthread_communicator *get_interthread_communicator(tier2_message_processor *from, tier2_message_processor *to);
 
 	virtual int prepare_fd_sets_for_reception(fd_set *read_set, fd_set *except_set, int &max_fd);

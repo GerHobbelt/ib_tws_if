@@ -46,12 +46,15 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
         {
 			assert(mgr->get_requester(conn));
 			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
-			ib_msg_req_current_time *tws_req = new ib_msg_req_current_time(mgr->get_requester(conn), mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
+			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD) == mgr->get_ib_tws_manager());
+			ib_msg_req_current_time *tws_req = new ib_msg_req_current_time(mgr->get_requester(conn), mgr->get_ib_tws_manager());
+			interthread_communicator *comm = tws_req->get_interthread_communicator();
 			int err;
 
             // pass the request to the backend; block & wait for the response...
 			tws_req->state(tier2_message::EXEC_COMMAND);
-			err = tws_req->wait_for_response();
+			tws_req->pulse();
+			err = tws_req->wait_for_response(comm);
 
 			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", "bugger");
 			break;

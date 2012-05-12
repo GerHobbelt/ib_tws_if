@@ -345,7 +345,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 						{
 							assert(!"Should never get here");
 						}
-						assert(rv != 0);
+						//assert(rv != 0);
 					}
 				}
 			}

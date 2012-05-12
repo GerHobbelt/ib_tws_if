@@ -39,23 +39,17 @@ class interthread_communicator
 {
 protected:
 	// the socket pair:
-	struct mg_connection *outgoing;
-	struct mg_connection *incoming;
+	struct mg_connection *m_receiving_socket;
+	struct mg_connection *m_sending_socket;
 
-	tier2_message_processor *sender;
-	tier2_message_processor *receipient;
+	tier2_message_processor *m_sender;
+	tier2_message_processor *m_receipient;
+
+	interthread_communicator *m_reverse;
 
 public:
-	interthread_communicator(tier2_message_processor *requester, tier2_message_processor *receiver, struct mg_connection *conns[2]) :
-		outgoing(conns[0]),
-		incoming(conns[1]),
-		sender(requester),
-		receipient(receiver)
-	{
-	}
-	virtual ~interthread_communicator()
-	{
-	}
+	interthread_communicator(tier2_message_processor *requester, tier2_message_processor *receiver, struct mg_connection *conns[2]);
+	virtual ~interthread_communicator();
 
 public:
 	enum msg_pending_mode_t
@@ -73,27 +67,36 @@ public:
 
 	bool has_sender(tier2_message_processor *messager) const
 	{
-		return messager == sender;
+		return messager == m_sender;
 	}
 	bool has_receiver(tier2_message_processor *messager) const
 	{
-		return messager == receipient;
+		return messager == m_receipient;
 	}
 	bool matches(tier2_message_processor *from, tier2_message_processor *to) const 
 	{
-		return from == sender && to == receipient;
-	}
-	bool matches(interthread_communicator *c) const
-	{
-		return c->sender == sender && c->receipient == receipient;
+		return from == m_sender && to == m_receipient;
 	}
 	tier2_message_processor *receiver(void) const
 	{
-		return receipient;
+		return m_receipient;
 	}
 	tier2_message_processor *transmitter(void) const
 	{
-		return sender;
+		return m_sender;
+	}
+	struct mg_connection *receiver_socket(void)
+	{
+		return m_receiving_socket;
+	}
+
+	interthread_communicator *reverse(void) const
+	{
+		return m_reverse;
+	}
+	void set_reverse(interthread_communicator *comm) 
+	{
+		m_reverse = comm;
 	}
 };
 
