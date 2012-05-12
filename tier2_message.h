@@ -83,21 +83,21 @@ public:
 	};
 
 protected:
-	request_state_t previous_state;
-	request_state_t now_state;
+	request_state_t m_previous_state;
+	request_state_t m_now_state;
 
-	unique_id_t unique_msgID;
+	unique_id_t m_unique_msgID;
 
-	tier2_message_processor *requester;
-	tier2_message_processor *receiver;
-	tier2_message_processor *owner;
+	tier2_message_processor *m_requester;
+	tier2_message_processor *m_receiver;
+	tier2_message_processor *m_owner;
 
 protected:
 	typedef std::vector<unique_id_t> unique_id_list_t;
-	unique_id_list_t acceptable_responses;
+	unique_id_list_t m_acceptable_responses;
 
 public:
-	tier2_message(tier2_message_processor *from = NULL, tier2_message_processor *to = NULL, request_state_t s = MSG_INITIALIZED);
+	tier2_message(tier2_message_processor *from = NULL, tier2_message_processor *to = NULL, request_state_t start_state = MSG_INITIALIZED);
 
 protected:
 	virtual ~tier2_message();
@@ -109,18 +109,18 @@ protected:
 public:
 	tier2_message_processor *get_requester(void) const
 	{
-		return requester;
+		return m_requester;
 	}
 
 	tier2_message_processor *get_receiver(void) const
 	{
-		return receiver;
+		return m_receiver;
 	}
 
 	tier2_message_processor *current_owner(tier2_message_processor *new_owner);
 	tier2_message_processor *current_owner(void) const
 	{
-		return owner;
+		return m_owner;
 	}
 
 	// set up the defaults; perform any necessary registration with the app_manager, etc...
@@ -128,12 +128,12 @@ public:
 
 	unique_id_t get_uniq_msg_id(void) const
 	{
-		return unique_msgID;
+		return m_unique_msgID;
 	}
 
 	virtual bool matches(unique_id_t id) const
 	{
-		return id == unique_msgID;
+		return id == m_unique_msgID;
 	}
 
 	virtual bool matches(tier2_message *msg) const
@@ -155,14 +155,19 @@ public:
 	request_state_t state(request_state_t new_state);
 	request_state_t state(void) const
 	{
-		return now_state;
+		return m_now_state;
 	}
 
+	/* possibly transfer message to another owner */
+	int pulse(void);
+
 protected:
+	request_state_t exec_state(request_state_t new_state);
+
 	typedef std::vector<tier2_message_state_change_handler *> state_change_handler_set_t;
 	friend tier2_message_state_change_handler;
 
-	state_change_handler_set_t state_change_handlers;
+	state_change_handler_set_t m_state_change_handlers;
 
 public:
 	virtual state_change handle_state_change(request_state_t new_state);
@@ -184,6 +189,12 @@ protected:
 	virtual int f_response_complete(void);
 	// The message (and optional response) has been completely processed
 	virtual int f_task_completed(void);
+	// The message has been marked as having failed (an error occurred)
+	virtual int f_task_failed(void);
+	// The message is being aborted
+	virtual int f_task_aborted(void);
+	// The message has been marked for destruction
+	virtual int f_destruction_imminent(void);
 	
 public:
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const
@@ -228,12 +239,12 @@ class cancel_message: public tier2_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	tier2_message *refd_msg;
+	tier2_message *m_refd_msg;
 
 public:
 	cancel_message(tier2_message_processor *from, tier2_message *referenced_msg) :
 	  tier2_message(from, referenced_msg->get_receiver()),
-		  refd_msg(referenced_msg)
+		  m_refd_msg(referenced_msg)
 	  {
 	  }
 protected:
@@ -257,31 +268,31 @@ class schedule_message: public tier2_message
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:
-	tier2_message *refd_msg;
+	tier2_message *m_refd_msg;
 
-	int priority;							// higher is more important
+	int m_priority;							// higher is more important
 
 	// The moment this request should become 'active', i.e. should be executed
-	time_t activation_time;
+	time_t m_activation_time;
 	// and the number of times this command should be executed at the given interval (seconds)
-	int exec_run_count;
-	unsigned int exec_time_interval;
+	int m_exec_run_count;
+	unsigned int m_exec_time_interval;
 
 	// The last time this request has been sent
-	time_t last_transmit_time;
+	time_t m_last_transmit_time;
 	// The last time a response for this request has been received
-	time_t last_response_time;
+	time_t m_last_response_time;
 
 public:
 	schedule_message(tier2_message_processor *from, tier2_message *referenced_msg, time_t activate = 0, int run_count = 1, int interval = 3600, int prio = 0) :
 		tier2_message(from, referenced_msg->get_receiver()),
-		refd_msg(referenced_msg),
-		activation_time(activate),
-		exec_run_count(run_count <= 0 ? 1 : run_count), // make sure the message is run at least once
-		exec_time_interval(interval),
-		last_transmit_time(0),
-		last_response_time(0),
-		priority(prio)
+		m_refd_msg(referenced_msg),
+		m_activation_time(activate),
+		m_exec_run_count(run_count <= 0 ? 1 : run_count), // make sure the message is run at least once
+		m_exec_time_interval(interval),
+		m_last_transmit_time(0),
+		m_last_response_time(0),
+		m_priority(prio)
 	{
 	}
 protected:

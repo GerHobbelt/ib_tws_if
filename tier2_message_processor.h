@@ -120,7 +120,8 @@ protected:
 	sender_set_t senders;
 
 	typedef std::list<tier2_message *> msg_set_t;
-	msg_set_t pending_msgs;
+	msg_set_t m_msgs_i_own;
+	msg_set_t m_msgs_pending_for_pulsing;
 
 public:
 	tier2_message_processor(requester_id *id, app_manager *mgr) :
@@ -151,6 +152,29 @@ public:
 	virtual int own(tier2_message *msg);
 	virtual int release(tier2_message *msg);
 	virtual bool does_own(tier2_message *msg) const;
+
+	/*
+	To allow [response] messages to be processed by multiple 
+	[request] messages, observers, etc., we cannot simply destroy
+	messages when we feel like it.
+
+	Instead, messages are moved to the DESTRUCTION state and
+	the owner will then make sure the messages marked thusly
+	will destroyed as soon as it is safe to do so.
+
+	N.B.: as one state handler out of many can alter a message's
+	      state so that the message will transfer to another owner
+		  immediately, subsequently state handlers may act
+		  in a dangerously thread UNSAFE manner.
+
+		  To counter this, message ownership transfer is also
+		  'queued' for processing, which is very similar
+		  to the 'destruction' process. This transfer is
+		  performed by the same 'pulse_marked_messages'
+		  process.
+	*/
+	virtual int queue_msg_for_pulsing(tier2_message *msg);
+	virtual int pulse_marked_messages(void);
 };
 
 

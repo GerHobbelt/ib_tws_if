@@ -120,6 +120,13 @@ void tws_worker_thread(struct mg_context *ctx)
 
                 while (mg_get_stop_flag(ctx) == 0 && ibm->is_tws_connected())
                 {
+					// push messages across the thread barrier + destory messages marked for destruction
+					assert(mgr->get_requester(ctx));
+					if (0 != mgr->get_requester(ctx)->pulse_marked_messages())
+					{
+						break;
+					}
+
                     // process another message
                     if (0 != ibm->process_tws_event())
                     {

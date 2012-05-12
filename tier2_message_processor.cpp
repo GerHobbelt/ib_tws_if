@@ -150,18 +150,19 @@ int tier2_message_processor::own(tier2_message *msg)
 	{
 		return 1;
 	}
-	pending_msgs.push_back(msg);
+	m_msgs_i_own.push_back(msg);
+	assert(msg->current_owner() == this);
 
 	return 0;
 }
 
 int tier2_message_processor::release(tier2_message *msg)
 {
-	for (msg_set_t::iterator i = pending_msgs.begin(); i != pending_msgs.end(); i++)
+	for (msg_set_t::iterator i = m_msgs_i_own.begin(); i != m_msgs_i_own.end(); i++)
 	{
 		if (*i == msg)
 		{
-			pending_msgs.erase(i);
+			m_msgs_i_own.erase(i);
 			return 0;
 		}
 	}
@@ -170,13 +171,47 @@ int tier2_message_processor::release(tier2_message *msg)
 
 bool tier2_message_processor::does_own(tier2_message *msg) const
 {
-	for (msg_set_t::const_iterator i = pending_msgs.cbegin(); i != pending_msgs.cend(); i++)
+	for (msg_set_t::const_iterator i = m_msgs_i_own.cbegin(); i != m_msgs_i_own.cend(); i++)
 	{
 		if (*i == msg)
 			return true;
 	}
 	return true;
 }
+
+int tier2_message_processor::queue_msg_for_pulsing(tier2_message *msg)
+{
+	assert(does_own(msg));
+	for (msg_set_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
+	{
+		if (*i == msg)
+		{
+			return 1;
+		}
+	}
+	m_msgs_pending_for_pulsing.push_back(msg);
+
+	return 0;
+}
+
+int tier2_message_processor::pulse_marked_messages(void)
+{
+	int rv = 0;
+
+	for (msg_set_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
+	{
+		tier2_message *msg = *i;
+
+		if (msg->current_owner() == this)
+		{
+			rv |= msg->pulse();
+		}
+	}
+	m_msgs_pending_for_pulsing.clear();
+
+	return rv;
+}
+
 
 
 

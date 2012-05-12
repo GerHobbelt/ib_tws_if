@@ -37,8 +37,7 @@ void tier2_queue_item::destroy(void)
 
 		h->on_item_destroy(*this);
 	}
-
-	delete this;
+	//delete this;
 }
 
 

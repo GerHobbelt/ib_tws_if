@@ -44,7 +44,7 @@
 
 int tws_request_message::f_task_completed(void)
 {
-	app_manager *mgr = owner->get_app_manager();
+	app_manager *mgr = m_owner->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 
 	if (get_requester() == ibm->get_receiver())
@@ -66,7 +66,7 @@ int tws_request_message::f_task_completed(void)
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
 int ib_msg_req_scanner_parameters::f_exec_command(void)
 {
-	app_manager *mgr = owner->get_app_manager();
+	app_manager *mgr = m_owner->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 
 	return ibm->tx_request_scanner_parameters(this);
@@ -75,7 +75,7 @@ int ib_msg_req_scanner_parameters::f_exec_command(void)
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_msg_req_scanner_subscription::f_exec_command(void)
 {
-	app_manager *mgr = owner->get_app_manager();
+	app_manager *mgr = m_owner->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 
 	return ibm->tx_request_scanner_subscription(this);
@@ -335,7 +335,7 @@ int ib_msg_cancel_realtime_bars::f_exec_command(void)
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
 int ib_msg_req_scanner_parameters::f_commence_transmit(void)
 {
-	app_manager *mgr = owner->get_app_manager();
+	app_manager *mgr = m_owner->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 
 	return tx(ibm->get_tws_instance());
@@ -344,7 +344,7 @@ int ib_msg_req_scanner_parameters::f_commence_transmit(void)
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_msg_req_scanner_subscription::f_commence_transmit(void)
 {
-	app_manager *mgr = owner->get_app_manager();
+	app_manager *mgr = m_owner->get_app_manager();
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 
 	return tx(ibm->get_tws_instance());

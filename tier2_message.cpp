@@ -49,7 +49,7 @@ tier2_message::state_change tier2_message::handle_state_change(tier2_message::re
 	we copy the handler list before traversing it as the list may change as a 'side effect'
 	of invoking the handler->process() method!
 	*/
-	state_change_handler_set_t h_set(state_change_handlers);
+	state_change_handler_set_t h_set(m_state_change_handlers);
 
 	for (size_t i = 0; i < h_set.size(); i++)
 	{
@@ -80,8 +80,8 @@ tier2_message::state_change tier2_message::handle_state_change(tier2_message::re
 
 void tier2_message::register_handler(tier2_message_state_change_handler *handler)
 {
-	for (state_change_handler_set_t::iterator i = state_change_handlers.begin();
-		i != state_change_handlers.end(); 
+	for (state_change_handler_set_t::iterator i = m_state_change_handlers.begin();
+		i != m_state_change_handlers.end(); 
 		i++)
 	{
 		tier2_message_state_change_handler *h = *i;
@@ -89,20 +89,20 @@ void tier2_message::register_handler(tier2_message_state_change_handler *handler
 		if (h == handler)
 			return;
 	}
-	state_change_handlers.push_back(handler);
+	m_state_change_handlers.push_back(handler);
 }
 
 void tier2_message::unregister_handler(tier2_message_state_change_handler *handler)
 {
-	for (state_change_handler_set_t::iterator i = state_change_handlers.begin();
-		i != state_change_handlers.end(); 
+	for (state_change_handler_set_t::iterator i = m_state_change_handlers.begin();
+		i != m_state_change_handlers.end(); 
 		i++)
 	{
 		tier2_message_state_change_handler *h = *i;
 
 		if (h == handler)
 		{
-			state_change_handlers.erase(i);
+			m_state_change_handlers.erase(i);
 			return;
 		}
 	}
@@ -116,25 +116,25 @@ void tier2_message::unregister_handler(tier2_message_state_change_handler *handl
 // set up the defaults; perform any necessary registration with the app_manager, etc...
 void tier2_message::resolve_requester_and_receiver_issues(void)
 {
-	assert(requester || receiver);
+	assert(m_requester || m_receiver);
 
 	/*
 	Default: receiver == requester.
 	*/
-	if (!receiver)
+	if (!m_receiver)
 	{
-		assert(typeid(*requester) == typeid(tier2_message_processor));
-		receiver = requester;
-		assert(receiver);
+		assert(typeid(*m_requester) == typeid(tier2_message_processor));
+		m_receiver = m_requester;
+		assert(m_receiver);
 	}
-	if (!requester)
+	if (!m_requester)
 	{
-		requester = receiver;
+		m_requester = m_receiver;
 	}
 
-	if (!owner)
+	if (!m_owner)
 	{
-		current_owner(requester);
+		current_owner(m_requester);
 	}
 
 	/*
@@ -142,7 +142,7 @@ void tier2_message::resolve_requester_and_receiver_issues(void)
 
 	Ignore the 'loopback' path to the node itself.
 	*/
-	receiver->register_sender(requester);
+	m_receiver->register_sender(m_requester);
 }
 
 
@@ -156,14 +156,14 @@ void tier2_message::resolve_requester_and_receiver_issues(void)
 
 
 
-tier2_message::tier2_message(tier2_message_processor *from, tier2_message_processor *to, request_state_t s) :
-	requester(from),
-	receiver(to),
-	now_state(s),
-	previous_state(INIT4PREV),
-	owner(NULL)
+tier2_message::tier2_message(tier2_message_processor *from, tier2_message_processor *to, request_state_t initial_state) :
+	m_requester(from),
+	m_receiver(to),
+	m_now_state(initial_state),
+	m_previous_state(INIT4PREV),
+	m_owner(NULL)
 {
-	unique_msgID = obtain_next_unique_msgID();
+	m_unique_msgID = obtain_next_unique_msgID();
 
 	resolve_requester_and_receiver_issues();
 }
@@ -172,8 +172,8 @@ tier2_message::~tier2_message()
 {
 	// state(DESTRUCTION); -- can't do that here as derived classes will already have destructed themselves! Hence protected destructor!
 	
-	owner = NULL;
-	current_owner(owner);
+	//m_owner = NULL;
+	current_owner(m_owner);
 
 	release_unique_msgID();
 }
@@ -182,201 +182,261 @@ void tier2_message::destroy(void)
 {
 	// this way, the state change will make it through /just before/ the destructor sequence is executed!
 	state(DESTRUCTION);
-
-	delete this;
 }
 
 tier2_message::request_state_t tier2_message::state(request_state_t new_state)
 {
-	for (int i = 2; i > 0 && new_state != now_state; i--)
+	for (int i = 2; i > 0 && new_state != m_now_state; i--)
 	{
-		tier2_message::state_change rv = handle_state_change(new_state);
-		switch (rv)
-		{
-		default:
-		case ERROR_OCCURRED:
-			previous_state = now_state;
-			now_state = new_state = FAILED;
-			break;
+		new_state = exec_state(new_state);
+	}
+	return new_state;
+}
 
-		case DONT_CHANGE:
-			new_state = now_state;
-			// do NOT execute the f_* state handlers for the same state again!
-			return new_state;
+tier2_message::request_state_t tier2_message::exec_state(request_state_t new_state)
+{
+	tier2_message::state_change rv = handle_state_change(new_state);
 
-		case PROCEED:
-			previous_state = now_state;
-			now_state = new_state;
-			break;
-		}
+	switch (rv)
+	{
+	default:
+	case ERROR_OCCURRED:
+		if (m_previous_state != m_now_state)
+			m_previous_state = m_now_state;
+		m_now_state = new_state = FAILED;
+		break;
 
+	case DONT_CHANGE:
+		new_state = m_now_state;
+		// do NOT execute the f_* state handlers for the same state again!
+		return new_state;
+
+	case PROCEED:
+		if (m_previous_state != m_now_state)
+			m_previous_state = m_now_state;
+		m_now_state = new_state;
+		break;
+	}
+
+	if (m_owner)
+	{
 		interthread_communicator *comm = NULL;
 		int err = 0;
 
 		switch (new_state)
 		{
 		case EXEC_COMMAND:
-			// send message to receiver ~ handler
-			if (owner != receiver)
+			// receiver ~ handler
+			if (m_owner == m_receiver)
 			{
-				comm = receiver->get_interthread_communicator(owner, receiver);
-
-				// push message across the pond:
-				err = comm->post_message(this);
+				err = f_exec_command();
 			}
 			else
 			{
-				// transmit message to 'beyond / outside world':
-				err = f_exec_command();
+				m_owner->queue_msg_for_pulsing(this);
 			}
 			break;
 
 		case WAIT_FOR_TRANSMIT:
-			// queue message at receiver for forwarding transmission to 'abroad'
-			if (owner != receiver)
+			// receiver ~ handler
+			if (m_owner == m_receiver)
 			{
-				assert(!"Should not get here");
-
-				comm = receiver->get_interthread_communicator(owner, receiver);
-
-				// push message across the pond:
-				err = comm->post_message(this);
+				err = f_wait_for_transmit();
 			}
 			else
 			{
-				// transmit message to 'beyond / outside world':
-				err = f_wait_for_transmit();
+				m_owner->queue_msg_for_pulsing(this);
 			}
 			break;
 
 		case COMMENCE_TRANSMIT:
-			// at receiver: forward message to 'abroad'
-			if (owner != receiver)
+			// receiver ~ handler
+			if (m_owner == m_receiver)
 			{
-				assert(!"Should not get here");
-
-				comm = receiver->get_interthread_communicator(owner, receiver);
-
-				// push message across the pond:
-				err = comm->post_message(this);
+				err = f_commence_transmit();
 			}
 			else
 			{
-				// transmit message to 'beyond / outside world':
-				err = f_commence_transmit();
+				m_owner->queue_msg_for_pulsing(this);
 			}
 			break;
 
 		case READY_TO_RECEIVE_RESPONSE:
-			// at receiver: wait for reception of corresponding response(s) from 'abroad'
-			if (owner != receiver)
+			// receiver ~ handler
+			if (m_owner == m_receiver)
 			{
-				assert(!"Should not get here");
-
-				comm = receiver->get_interthread_communicator(owner, receiver);
-
-				// push message across the pond:
-				err = comm->post_message(this);
+				err = f_ready_to_receive_response();
 			}
 			else
 			{
-				// transmit message to 'beyond / outside world':
-				err = f_ready_to_receive_response();
+				m_owner->queue_msg_for_pulsing(this);
 			}
 			break;
 
 		case RESPONSE_PENDING:
-			// send message to receiver ~ handler
-			if (owner != receiver)
+			// receiver ~ handler
+			if (m_owner == m_receiver)
 			{
-				assert(!"Should not get here");
-
-				comm = receiver->get_interthread_communicator(owner, receiver);
-
-				// push message across the pond:
-				err = comm->post_message(this);
+				err = f_response_pending();
 			}
 			else
 			{
-				// transmit message to 'beyond / outside world':
-				err = f_response_pending();
+				m_owner->queue_msg_for_pulsing(this);
 			}
 			break;
 
 		case RESPONSE_COMPLETE:
-			// send message to requester ~ handler
-			if (owner != requester)
+			// requester ~ handler
+			if (m_owner == m_requester)
 			{
-				comm = requester->get_interthread_communicator(owner, requester);
-
-				// push message across the pond:
-				err = comm->post_message(this);
+				err = f_response_complete();
 			}
 			else
 			{
-				// transmit message to 'beyond / outside world':
-				err = f_response_complete();
+				m_owner->queue_msg_for_pulsing(this);
 			}
 			break;
 
 		case TASK_COMPLETED:
-			// send message to requester ~ handler
-			if (owner != requester)
+			// requester ~ handler
+			if (m_owner == m_requester)
 			{
-				comm = requester->get_interthread_communicator(owner, requester);
-
-				// push message across the pond:
-				err = comm->post_message(this);
+				err = f_task_completed();
 			}
 			else
 			{
-				// transmit message to 'beyond / outside world':
-				err = f_task_completed();
+				m_owner->queue_msg_for_pulsing(this);
+			}
+			break;
+
+		case tier2_message::DESTRUCTION:				// T: just before the destructor is invoked: last call!
+			// requester ~ handler
+			if (m_owner == m_requester)
+			{
+				err = f_destruction_imminent();
+			}
+			/*
+			'destruction' itself is also a 'pulsable' task so ALWAYS queue the bugger for pulsing.
+
+			 We ignore the case where the f_destruction_imminent() function would've changed
+			 the state on us; the 'pulsing' process is smart enough to cope with such 
+			 'nothing to do here' occassions as may occur then.
+			*/
+			m_owner->queue_msg_for_pulsing(this);
+			break;
+
+		case tier2_message::FAILED:						// T: when an error occurred
+			// requester ~ handler
+			if (m_owner == m_requester)
+			{
+				err = f_task_failed();
+			}
+			else
+			{
+				m_owner->queue_msg_for_pulsing(this);
+			}
+			break;
+
+		case tier2_message::ABORTED:					// T: when the request has been canceled
+			// requester ~ handler
+			if (m_owner == m_requester)
+			{
+				err = f_task_aborted();
+			}
+			else
+			{
+				m_owner->queue_msg_for_pulsing(this);
 			}
 			break;
 
 		default:
-			// return message to requester
-			if (owner != requester)
+			if (m_owner != m_requester)
 			{
-				comm = requester->get_interthread_communicator(owner, requester);
-
-				// push message across the pond:
-				err = comm->post_message(this);
+				m_owner->queue_msg_for_pulsing(this);
 			}
 			break;
 		}
 
 		// changing to FAILED state is only useful when we're still in charge here, otherwise it's only cause to collisions!
-		if (err != 0 && owner)
+		if (err != 0 && m_owner)
 		{
 			new_state = FAILED;
-			continue;
 		}
-		break;
 	}
 
 	return new_state;
 }
 
+int tier2_message::pulse(void)
+{
+	interthread_communicator *comm = NULL;
+	int err = 0;
 
+	switch (m_now_state)
+	{
+	case DESTRUCTION:				// T: just before the destructor is invoked: last call!
+		if (m_owner)
+		{
+			m_owner->release(this);
+		}
+		delete this;
+
+	case EXEC_COMMAND:
+	case WAIT_FOR_TRANSMIT:
+	case COMMENCE_TRANSMIT:
+	case READY_TO_RECEIVE_RESPONSE:
+	case RESPONSE_PENDING:
+		// send message to receiver ~ handler
+		if (m_owner != m_receiver)
+		{
+			comm = m_receiver->get_interthread_communicator(m_owner, m_receiver);
+
+			// push message across the pond:
+			err = comm->post_message(this);
+		}
+		break;
+
+	case RESPONSE_COMPLETE:
+	case TASK_COMPLETED:
+	case FAILED:					// T: when an error occurred
+	case ABORTED:					// T: when the request has been canceled
+	default:
+		// send message to requester ~ handler
+		if (m_owner != m_requester)
+		{
+			comm = m_requester->get_interthread_communicator(m_owner, m_requester);
+
+			// push message across the pond:
+			err = comm->post_message(this);
+		}
+		break;
+	}
+	return err;
+}
 
 tier2_message_processor *tier2_message::current_owner(tier2_message_processor *new_owner)
 {
-	if (owner != new_owner)
+	if (m_owner != new_owner)
 	{
-		if (owner)
+		if (m_owner)
 		{
-			owner->release(this);
+			m_owner->release(this);
 		}
 		if (new_owner)
 		{
 			new_owner->own(this);
+
+			// and re-run the state processing again so the state-related task can be performed:
+			request_state_t new_state = exec_state(m_now_state);
+			if (new_state != m_now_state)
+			{
+				exec_state(new_state);
+			}
 		}
+		m_owner = new_owner;
 	}
 
-	owner = new_owner;
-	return owner;
+	return m_owner;
 }
 
 
@@ -405,7 +465,7 @@ int tier2_message::cancel_request(tier2_message_processor *transmitter)
 
 int tier2_message::wait_for_response(void)
 {
-	interthread_communicator *comm = receiver->get_interthread_communicator(requester, receiver);
+	interthread_communicator *comm = m_receiver->get_interthread_communicator(m_requester, m_receiver);
 
 	while (state() < RESPONSE_COMPLETE)
 	{
@@ -488,6 +548,18 @@ int tier2_message::f_wait_for_transmit(void)
 
 	return 0;
 }
+int tier2_message::f_task_failed(void)
+{
+	return 0;
+}
+int tier2_message::f_task_aborted(void)
+{
+	return 0;
+}
+int tier2_message::f_destruction_imminent(void)
+{
+	return 0;
+}
 
 
 
@@ -499,8 +571,8 @@ int tier2_message::f_wait_for_transmit(void)
 
 int cancel_message::f_exec_command(void)
 {
-	assert(refd_msg);
-	assert(owner == receiver);
+	assert(m_refd_msg);
+	assert(m_owner == m_receiver);
 
 	/*
 	prevent race condition where original msg already got sent back to the requester while a cancel request (this one) was still pending in the receiver queue:
@@ -517,9 +589,9 @@ int cancel_message::f_exec_command(void)
 	message has truly already left again as it has been sent to this processor before we ('the cancel request') got sent there, so it should have popped up in
 	the queue a little while after we arrived, at the very latest.
 	*/
-	if (receiver->does_own(refd_msg))
+	if (m_receiver->does_own(m_refd_msg))
 	{
-		tier2_message::request_state_t rv = refd_msg->state(tier2_message::ABORTED);
+		tier2_message::request_state_t rv = m_refd_msg->state(tier2_message::ABORTED);
 
 		return rv == tier2_message::ABORTED;
 	}

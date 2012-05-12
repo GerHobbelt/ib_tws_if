@@ -1043,6 +1043,8 @@ scheduled / postponed requests get serviced.
 */
 int ib_tws_manager::pulse_pending_issues(void)
 {
+	get_receiver()->pulse_marked_messages();
+
 	int hitcount = 0;
 	int start_index_for_next_time = m_last_tickled_queue_position;
 
