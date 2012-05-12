@@ -408,7 +408,7 @@ int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, i
 
 static void *event_callback(enum mg_event event, struct mg_connection *conn) {
   struct mg_context *ctx = mg_get_context(conn);
-  const struct mg_request_info *request_info = mg_get_request_info(conn);
+  struct mg_request_info *request_info = mg_get_request_info(conn);
 
   if (event == MG_SSI_INCLUDE_REQUEST || event == MG_NEW_REQUEST) {
 	struct mgstat st;
@@ -440,6 +440,8 @@ static void *event_callback(enum mg_event event, struct mg_connection *conn) {
       icon = FindResource(module, MAKEINTRESOURCE(IDR_FAVICON), RT_RCDATA);
       data = LockResource(LoadResource(module, icon));
       len = SizeofResource(module, icon);
+
+	  request_info->status_code = 200;
 
       (void) mg_printf(conn,
           "HTTP/1.1 200 OK\r\n"
