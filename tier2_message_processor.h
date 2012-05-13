@@ -30,6 +30,7 @@ class tier2_message;
 class app_manager;
 class interthread_communicator;
 struct mg_connection;
+typedef std::vector<tier2_message *> tier2_message_collection_t;
 
 
 
@@ -121,9 +122,8 @@ protected:
 	typedef std::vector<interthread_communicator *> sender_set_t;
 	sender_set_t senders;
 
-	typedef std::vector<tier2_message *> msg_set_t;
-	msg_set_t m_msgs_i_own;
-	msg_set_t m_msgs_pending_for_pulsing;
+	tier2_message_collection_t m_msgs_i_own;
+	tier2_message_collection_t m_msgs_pending_for_pulsing;
 
 public:
 	tier2_message_processor(requester_id *id, app_manager *mgr) :

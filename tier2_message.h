@@ -163,6 +163,10 @@ public:
 	{
 		return m_now_state;
 	}
+	request_state_t previous_state(void) const
+	{
+		return m_previous_state;
+	}
 
 	/* possibly transfer message to another owner */
 	int pulse(void);
@@ -221,6 +225,8 @@ public:
 	virtual int cancel_request(tier2_message_processor *transmitter);
 };
 
+
+typedef std::vector<tier2_message *> tier2_message_collection_t;
 
 
 

@@ -448,6 +448,8 @@ typedef optional_value<tws_action_code_t>			o_action_code_t;
 typedef optional_value<tws_comboleg_type_t>			o_comboleg_type_t;
 typedef optional_value<tws_short_sale_slot_type_t>	o_short_sale_slot_type_t;
 
+typedef optional_value<ib_date_t>			o_date_t;
+
 
 
 

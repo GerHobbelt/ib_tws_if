@@ -205,7 +205,7 @@ class ib_msg_resp_commission_report;
 class ib_tws_scanner_subscription_limitation: public tier2_message_state_change_handler
 {
 protected:
-	std::vector<tier2_message *> m_active_scanner_subscriptions;
+	std::vector<ib_msg_req_scanner_subscription *> m_active_scanner_subscriptions;
 	int m_max_scanner_subscriptions;
 
 public:

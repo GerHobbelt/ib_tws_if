@@ -144,7 +144,7 @@ int tier2_message_processor::own(tier2_message *msg)
 
 int tier2_message_processor::release(tier2_message *msg)
 {
-	for (msg_set_t::iterator i = m_msgs_i_own.begin(); i != m_msgs_i_own.end(); i++)
+	for (tier2_message_collection_t::iterator i = m_msgs_i_own.begin(); i != m_msgs_i_own.end(); i++)
 	{
 		if (*i == msg)
 		{
@@ -157,7 +157,7 @@ int tier2_message_processor::release(tier2_message *msg)
 
 bool tier2_message_processor::does_own(tier2_message *msg) const
 {
-	for (msg_set_t::const_iterator i = m_msgs_i_own.cbegin(); i != m_msgs_i_own.cend(); i++)
+	for (tier2_message_collection_t::const_iterator i = m_msgs_i_own.cbegin(); i != m_msgs_i_own.cend(); i++)
 	{
 		if (*i == msg)
 			return true;
@@ -168,7 +168,7 @@ bool tier2_message_processor::does_own(tier2_message *msg) const
 int tier2_message_processor::queue_msg_for_pulsing(tier2_message *msg)
 {
 	assert(does_own(msg));
-	for (msg_set_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
+	for (tier2_message_collection_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
 	{
 		if (*i == msg)
 		{
@@ -184,7 +184,7 @@ int tier2_message_processor::pulse_marked_messages(void)
 {
 	int rv = 0;
 
-	for (msg_set_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
+	for (tier2_message_collection_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
 	{
 		tier2_message *msg = *i;
 

@@ -66,7 +66,7 @@ protected:
 	}
 
 public:
-	ib_int_t get_ticker_id(void) const
+	virtual ib_int_t get_ticker_id(void) const
 	{
 		return m_ticker_id;
 	}
@@ -881,12 +881,19 @@ protected:
 
 public:
 	virtual int process_response_message(tier2_message *response);
+
+	ib_int_t get_num_elements(void) const
+	{
+		return m_num_elements;
+	}
 };
 
 
 /* fired by: CURRENT_TIME -- in response to REQ_CURRENT_TIME */
 class ib_msg_resp_current_time: public tws_response_message
 {
+friend class ib_msg_req_current_time;    // easier way to access the response that way than providing a plethora of get-style methods
+
 	UNIQUE_TYPE_ID_CLASSDEF();
 
 protected:

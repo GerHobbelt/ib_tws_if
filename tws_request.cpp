@@ -127,8 +127,10 @@ int ib_msg_req_scanner_subscription::f_exec_command(void)
 /* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_msg_cancel_scanner_subscription::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_scanner_subscription(this);
 }
 
 /* sends message REQ_MKT_DATA to IB/TWS */
@@ -398,8 +400,10 @@ int ib_msg_req_scanner_subscription::f_commence_transmit(void)
 /* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_msg_cancel_scanner_subscription::f_commence_transmit(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return tx(ibm->get_tws_instance());
 }
 
 /* sends message REQ_MKT_DATA to IB/TWS */
@@ -1256,6 +1260,10 @@ bool ib_msg_replace_fa::response_is_meant_for_us(class tier2_message *resp_msg) 
 /* sends message REQ_CURRENT_TIME to IB/TWS */
 bool ib_msg_req_current_time::response_is_meant_for_us(class tier2_message *resp_msg) const
 {
+	if (dynamic_cast<ib_msg_resp_current_time *>(resp_msg))
+	{
+		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
+	}
 	return false;
 }
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
@@ -1356,7 +1364,24 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 
 	if (ib_msg_resp_scanner_data_start::type_matches_class(resp_msg))
 	{
-		// ignore for now; we should collect the response if this is a user request, though...
+		// TODO: we should collect the response if this is a user request
+		//
+		// terminate the request when we are the requester ourselves
+		// and this scan doesn't deliver any rows: we only use these scans 
+		// to get a dynamically constructed list of known contracts, after all.
+		ib_msg_resp_scanner_data_start *start_msg = dynamic_cast<ib_msg_resp_scanner_data_start *>(resp_msg);
+
+		if (start_msg->get_ticker_id() == m_ticker_id
+			&& start_msg->get_num_elements() <= 0)
+		{
+			/*
+			mark the request as completed; it's state observers should consequently
+			remove it from the queue and destroy the message.
+
+			N.B.: We should also notify TWS about the subscription cancelation!
+			*/
+			state(tier2_message::TASK_COMPLETED);
+		}
 	}
 	if (ib_msg_resp_scanner_data_end::type_matches_class(resp_msg))
 	{
@@ -1370,6 +1395,8 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 			/*
 			mark the request as completed; it's state observers should consequently
 			remove it from the queue and destroy the message.
+
+			N.B.: We should also notify TWS about the subscription cancelation!
 			*/
 			state(tier2_message::TASK_COMPLETED);
 		}
@@ -1383,11 +1410,31 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 	{
 		ib_msg_resp_error *err_msg = dynamic_cast<ib_msg_resp_error *>(resp_msg);
 
+		/*
+		some scanner subscription requests may trigger error responses, such as 'duplicate subscription'
+		and we need to keep the scanner subscription active list in proper order, so we check whether the related
+		ticker_id is one of our active scanner subscription queue items and when it is, we ditch that one
+		(and replace it by another pending scanner subscription request through a later invocation
+		of the pulse_pending_issues() method).
+		*/
 		if (err_msg->get_error_code() == tws::FAIL_HISTORICAL_MARKET_DATA_SERVICE
 			&& err_msg->get_ticker_id() == m_ticker_id)
 		{
 			// cancel this request.
 			state(tier2_message::ABORTED);
+		}
+		if (err_msg->get_error_code() == tws::INFO_HISTORICAL_MARKET_DATA_SERVICE_QUERY
+			&& err_msg->get_ticker_id() == m_ticker_id
+			// e.g.: 'Historical Market Data Service query message:no items retrieved'
+			&& strstr(err_msg->get_error_string(), "no items retrieved"))
+		{
+			mg_cry(conn, "no items retrieved: TODO: unsubscribe scanner %d", this->get_ticker_id());
+
+			if (this->current_owner() == ibm)
+			{
+				// cancel this request.
+				state(tier2_message::ABORTED);
+			}
 		}
 	}
 	return 0;
@@ -1654,6 +1701,13 @@ int ib_msg_req_current_time::process_response_message(class tier2_message *resp_
 
 	mg_cry(conn, "process response message for %s?", "ib_msg_req_current_time");
 
+	ib_msg_resp_current_time *r_msg = dynamic_cast<ib_msg_resp_current_time *>(resp_msg);
+	if (r_msg)
+	{
+		this->m_response.m_time = r_msg->m_time;
+
+		state(RESPONSE_COMPLETE);
+	}
 	return 0;
 }
 

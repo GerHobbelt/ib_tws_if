@@ -91,6 +91,7 @@ int ib_tws_manager::tx_request_scanner_subscription(ib_msg_req_scanner_subscript
 int ib_tws_manager::tx_cancel_scanner_subscription(ib_msg_cancel_scanner_subscription *req_msg)
 {
 	assert(does_own(req_msg));
+	req_msg->register_handler(&m_scanner_subscription_limit);
 	req_msg->register_handler(&m_cancel_monitor);
 
 	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
@@ -644,8 +645,10 @@ int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
 	{
 		if (m_still_need_to_prime_the_pump)
 		{
+#if 0
 			ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(this, NULL);
 			scan->state(tier2_message::EXEC_COMMAND);
+#endif
 
 			m_still_need_to_prime_the_pump = false;
 		}
@@ -888,7 +891,7 @@ int ib_tws_manager::scan_queue_and_process(tier2_message *resp_msg)
 	hence we collect the items to access in a temporary list and run
 	the set from there:
 	*/
-	msg_set_t q;
+	tier2_message_collection_t q;
 
 	for (int i = 0; i < m_msgs_i_own.size(); i++)
 	{
@@ -1100,27 +1103,74 @@ int ib_tws_manager::register_contract_info(const ib_contract_details *cd)
 tier2_message::state_change ib_tws_scanner_subscription_limitation::process(tier2_message &msg, tier2_message::request_state_t new_state)
 {
 	/* protect against overrunning the TWS-imposed maximum number of subscriptions */
-	if (new_state == tier2_message::COMMENCE_TRANSMIT)
+	switch (new_state)
 	{
-		if (m_active_scanner_subscriptions.size() < this->m_max_scanner_subscriptions)
+	case tier2_message::COMMENCE_TRANSMIT:
 		{
-			m_active_scanner_subscriptions.push_back(&msg);
-			return tier2_message::PROCEED;
-		}
-		return tier2_message::DONT_CHANGE;
-	}
-	else if (new_state == tier2_message::RESPONSE_COMPLETE || new_state < 0)
-	{
-		/* remove this entry from the 'active set' */
-		for (int i = 0; i < m_active_scanner_subscriptions.size(); i++)
-		{
-			if (m_active_scanner_subscriptions[i] == &msg)
-			{
-				m_active_scanner_subscriptions.erase(m_active_scanner_subscriptions.begin() + i);
-				msg.unregister_handler(this);
+			ib_msg_req_scanner_subscription *scan_req = dynamic_cast<ib_msg_req_scanner_subscription *>(&msg);
+
+			// allow cancel messages to always do thier job...
+			if (!scan_req)
 				break;
+
+			if (m_active_scanner_subscriptions.size() < this->m_max_scanner_subscriptions)
+			{
+				m_active_scanner_subscriptions.push_back(scan_req);
+				return tier2_message::PROCEED;
 			}
 		}
+		return tier2_message::DONT_CHANGE;
+
+	case tier2_message::RESPONSE_COMPLETE:
+	case tier2_message::DESTRUCTION:
+	case tier2_message::FAILED:
+	case tier2_message::ABORTED:
+	case tier2_message::TASK_COMPLETED:
+		/* remove this entry from the 'active set' */
+		{
+			for (int i = 0; i < m_active_scanner_subscriptions.size(); i++)
+			{
+				ib_msg_req_scanner_subscription *scan_req = m_active_scanner_subscriptions[i];
+				tws_response_w_ticker_message *r_msg = dynamic_cast<tws_response_w_ticker_message *>(&msg);
+				tws_request_w_ticker_message *q_msg = dynamic_cast<tws_request_w_ticker_message *>(&msg);
+
+				if ((r_msg && r_msg->get_ticker_id() == scan_req->get_ticker_id())
+					|| (q_msg && q_msg->get_ticker_id() == scan_req->get_ticker_id()))
+				{
+					app_manager *mgr = msg.get_requester()->get_app_manager();
+					ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+					struct mg_connection *conn = ibm->get_connection();
+
+					assert(msg.current_owner() == ibm); // we SHOULD be running in the backend now
+
+					m_active_scanner_subscriptions.erase(m_active_scanner_subscriptions.begin() + i);
+					msg.unregister_handler(this);
+
+					/*
+					N.B. notify TWS about the subscription cancelation as well: it doesn't matter
+							if they get one or more cancel requests too many, but we'd better make
+							sure we cancel any possibly running subscription to reduce network
+							traffic.
+
+					WARNING: the 'cancel message' state machine logic will also try to unregister
+							the subscription in our local list, so only transmit the cancel request 
+							AFTER we're done with our local cursor [i].
+					*/
+					switch (scan_req->previous_state())
+					{
+					case tier2_message::COMMENCE_TRANSMIT:
+					case tier2_message::READY_TO_RECEIVE_RESPONSE:
+					case tier2_message::RESPONSE_PENDING:
+						ib_msg_cancel_scanner_subscription *cancel_req = new ib_msg_cancel_scanner_subscription(ibm, NULL, scan_req->get_ticker_id());
+						cancel_req->state(tier2_message::EXEC_COMMAND);
+						cancel_req->pulse(); // fire & forget
+						break;
+					}
+					break;
+				}
+			}
+		}
+		break;
 	}
 	return tier2_message::PROCEED;
 }

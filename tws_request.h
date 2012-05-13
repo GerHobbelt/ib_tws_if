@@ -112,7 +112,7 @@ protected:
 	}
 
 public:
-	ib_int_t get_ticker_id(void) const
+	virtual ib_int_t get_ticker_id(void) const
 	{
 		return m_ticker_id;
 	}
@@ -979,6 +979,18 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+protected:
+	struct response_values
+	{
+		o_date_t m_time;
+	} m_response;
+
+public:
+	const o_date_t &get_response_timestamp(void) const
+	{
+		return m_response.m_time;
+	}
 };
 
 
