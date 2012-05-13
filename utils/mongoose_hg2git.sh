@@ -25,7 +25,7 @@ cd mongoose-hg-tmp
 
 if test -z "$2" -o -z "$1" ; then
 	dst=mongoose
-	hgsrc=https://code.google.com/p/mongoose/
+	hgsrc=mongoose
 else
 	dst=$2
 	hgsrc=$1
@@ -39,7 +39,7 @@ cat <<EOT
 EOT
 
 if ! test -d ${dst} ; then
-	hg clone ${hgsrc} ${dst}
+	hg clone http://${hgsrc}.googlecode.com/hg/ ${dst}
 	cd ${dst}
 
 	# copy the config file to edit to tempfile; create an empty file to process when the config file does not exist yet.

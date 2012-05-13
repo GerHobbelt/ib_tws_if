@@ -28,19 +28,6 @@
 
 
 
-long tws_mkNextOrderId(app_manager *info);
-void tws_setNextOrderId(app_manager *info, long order_id);
-
-
-void push_tws_req_scanner_subscription(app_manager *info, scanner_subscription_request *reqdata);
-size_t pop_tws_req_scanner_subscription(app_manager *info);
-void cancel_tws_scanner_subscription(app_manager *info, int ticker_id);
-int is_active_tws_scanner_subscription(app_manager *info, int ticker_id);
-scanner_subscription_request *get_active_tws_scanner_subscription(app_manager *info, int ticker_id);
-
-
-void request_range_of_interesting_market_scans(app_manager *info, xmlNodePtr location, xmlXPathObjectPtr usable_scanners);
-void request_contract_details_from_tws(app_manager *info, tr_contract_details_t *cd);
 
 
 

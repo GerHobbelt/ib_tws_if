@@ -30,6 +30,7 @@
     <ProjectGuid>{FC4EFF85-2C41-4ED6-A13E-EB98409DE435}</ProjectGuid>
     <RootNamespace>My3rdparty_mongoose</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>mongoose</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -316,8 +317,16 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\..\mongoose\.gitmodules">
+      <FileType>Document</FileType>
+    </None>
     <None Include="..\..\mongoose\LICENSE" />
+    <None Include="..\..\mongoose\Makefile">
+      <FileType>Document</FileType>
+    </None>
     <None Include="..\..\mongoose\mongoose.1" />
+    <None Include="..\..\mongoose\selectable-socketpair\Makefile" />
+    <None Include="..\..\mongoose\selectable-socketpair\README" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\mongoose\mongoose.c">

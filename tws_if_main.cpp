@@ -33,6 +33,17 @@
 #include "mongoose_event_handler.h"
 #include "app_manager.h"
 
+#include "mongoose/win32/resource.h"
+
+
+#include <upskirt/src/markdown.h>
+#include <upskirt/html/html.h>
+
+
+using namespace upskirt;
+
+
+
 
 #define MAX_OPTIONS 40
 #define MAX_CONF_FILE_LINE_SIZE (8 * 1024)
@@ -55,7 +66,12 @@ static const char *default_options[] = {
     "listening_ports",       "8081",                         // "8081,8082s"
     //"ssl_certificate",     "ssl_cert.pem",
     "num_threads",           "5",
-    "error_log_file",        "../../log/%Y/%m/tws_ib_if_srv-%Y%m%d.%H-IP-%[s]-%[p].log",
+    "error_log_file",        "../../log/%Y/%m/tws_ib_if_srv-%Y%m%d.%H-IP-%[s]-%[p]-error.log",
+	"access_log_file",       "../../log/%Y/%m/tws_ib_if_srv-%Y%m%d.%H-IP-%[s]-%[p]-access.log",
+	"index_files",			 "default.html",
+	"ssi_pattern",			 "**.html$|**.htm|**.shtml$|**.shtm$",
+	"enable_keep_alive",     "yes",
+	//"ssi_marker",			 "{!--#,}",
 
     // set up our own worker thread which talks to TWS:
     "tws_ip_address",        "127.0.0.1",
@@ -64,6 +80,9 @@ static const char *default_options[] = {
 
     "tws_poll_delay",        "10", // unit: milliseconds
     "tws_reconnect_delay",   "10000", // unit: milliseconds
+
+    "tws_log_traffic",       "true",
+	"tws_traffic_log_file",  "../../log/TWS-IO/%Y/%m/%Y%m%d.%H%M%S-%[U].log",
 
     "database_file",         "../../ib_tws_if.hamsterdb",
 
@@ -103,7 +122,8 @@ static void show_usage_and_exit(const struct mg_context *ctx) {
 
     names = mg_get_valid_option_names();
     for (i = 0; names[i] != NULL; i += 3) {
-        fprintf(stderr, "  -%s %s (default: \"%s\")\n",
+        fprintf(stderr, "  %s%s %s (default: \"%s\")\n",
+			(names[i][0] ? "-" : "  "),
             names[i], names[i + 1], names[i + 2] == NULL ? "" : names[i + 2]);
     }
     fprintf(stderr, "See  http://code.google.com/p/mongoose/wiki/MongooseManual"
@@ -115,7 +135,7 @@ static void show_usage_and_exit(const struct mg_context *ctx) {
 static void verify_document_root(const char *root) {
     const char *p, *path;
     char buf[PATH_MAX];
-    struct stat st;
+	struct mgstat st;
 
     path = root;
     if ((p = strchr(root, ',')) != NULL && (size_t) (p - root) < sizeof(buf)) {
@@ -124,7 +144,7 @@ static void verify_document_root(const char *root) {
         path = buf;
     }
 
-    if (stat(path, &st) != 0 || !S_ISDIR(st.st_mode)) {
+    if (mg_stat(path, &st) != 0 || !st.is_directory) {
         die("Invalid root directory: [%s]: %s", root, mg_strerror(errno));
     }
 }
@@ -174,7 +194,7 @@ static void process_command_line_arguments(char *argv[], char **options) {
             (int) (p - argv[0]), argv[0], DIRSEP, CONFIG_FILE);
     }
 
-    fp = fopen(config_file, "r");
+	fp = mg_fopen(config_file, "r");
 
     // If config file was set in command line and open failed, exit
     if (argv[1] != NULL && argv[2] == NULL && fp == NULL) {
@@ -215,7 +235,7 @@ static void process_command_line_arguments(char *argv[], char **options) {
             }
         }
 
-        (void) fclose(fp);
+        (void) mg_fclose(fp);
     }
 
     // Now handle command line flags. They override config file / default settings.
@@ -228,18 +248,223 @@ static void process_command_line_arguments(char *argv[], char **options) {
 }
 
 static void init_server_name(void) {
-    snprintf(server_name, sizeof(server_name), "Mongoose web server v.%s",
+    snprintf(server_name, sizeof(server_name), "Mongoose web server v%s",
         mg_version());
 }
 
 
+static int report_markdown_failure(struct mg_connection *conn, int is_inline_production, int response_code, const char *fmt, ...)
+{
+	va_list args;
 
+	if (is_inline_production)
+	{
+		mg_printf(conn, "<h1 style=\"color: red;\">Error: %d - %s</h1>\n", response_code, mg_get_response_code_text(response_code));
+		va_start(args, fmt);
+		mg_vprintf(conn, fmt, args);
+		va_end(args);
+	}
+	else
+	{
+		va_start(args, fmt);
+		mg_vsend_http_error(conn, response_code, NULL, fmt, args);
+		va_end(args);
+	}
+	return -1;
+}
+
+
+int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, int is_inline_production)
+{
+#define SD_READ_UNIT 1024
+#define SD_OUTPUT_UNIT 64
+
+	struct mg_request_info *ri = mg_get_request_info(conn);
+	struct sd_buf *ib, *ob;
+	int ret;
+	unsigned int enabled_extensions = MKDEXT_TABLES | MKDEXT_FENCED_CODE | MKDEXT_EMAIL_FRIENDLY;
+	unsigned int render_flags = 0; // HTML_SKIP_HTML | HTML_SKIP_STYLE | HTML_HARD_WRAP;
+
+	struct sd_callbacks callbacks;
+	struct html_renderopt options;
+	struct sd_markdown *markdown;
+
+	/* opening the file */
+	FILE *in;
+
+	assert(ri->phys_path);
+	/* opening the file */
+	in = mg_fopen(ri->phys_path, "r");
+	if (!in)
+	{
+		return report_markdown_failure(conn, is_inline_production, 404, "Unable to open input file: [%s] %s", ri->uri, mg_strerror(errno));
+	}
+
+	/* reading everything */
+	ib = sd_bufnew(SD_READ_UNIT);
+	if (SD_BUF_OK != sd_bufgrow(ib, (size_t)st->size))
+	{
+		mg_fclose(in);
+		sd_bufrelease(ib);
+		return report_markdown_failure(conn, is_inline_production, 500, "Out of memory while loading Markdown input file: [%s]", ri->uri);
+	}
+	ret = fread(ib->data, 1, ib->asize, in);
+	if (ret > 0) 
+	{
+		ib->size += ret;
+		mg_fclose(in);
+	}
+	else
+	{
+		mg_fclose(in);
+		sd_bufrelease(ib);
+		return report_markdown_failure(conn, is_inline_production, 500, "Cannot read from input file: [%s] %s", ri->uri, mg_strerror(errno));
+	}
+
+	/* performing markdown parsing */
+	ob = sd_bufnew(SD_OUTPUT_UNIT);
+
+	sdhtml_renderer(&callbacks, &options, render_flags);
+	markdown = sd_markdown_new(enabled_extensions, 16, &callbacks, &options);
+	if (!markdown)
+	{
+		sd_bufrelease(ib);
+		sd_bufrelease(ob);
+		return report_markdown_failure(conn, is_inline_production, 500, "Out of memory while processing Markdown input file: [%s]", ri->uri);
+	}
+	sd_markdown_render(ob, ib->data, ib->size, markdown);
+	sd_markdown_free(markdown);
+
+	if (!is_inline_production)
+	{
+		/* write the appropriate headers */
+		char date[64], lm[64], etag[64], range[64];
+		time_t curtime = time(NULL);
+		const char *hdr;
+		int64_t cl, r1, r2;
+		int n;
+
+		ri->status_code = 200;
+
+		cl = ob->size;
+
+		range[0] = '\0';
+
+#if 0
+		// If Range: header specified, act accordingly
+		r1 = r2 = 0;
+		hdr = mg_get_header(conn, "Range");
+		if (hdr != NULL && (n = parse_range_header(hdr, &r1, &r2)) > 0) {
+			conn->request_info.status_code = 206;
+			(void) fseeko(fp, (off_t) r1, SEEK_SET);
+			cl = n == 2 ? r2 - r1 + 1: cl - r1;
+			(void) mg_snprintf(conn, range, sizeof(range),
+				"Content-Range: bytes "
+				"%" INT64_FMT "-%"
+				INT64_FMT "/%" INT64_FMT "\r\n",
+				r1, r1 + cl - 1, stp->size);
+		}
+#endif
+
+		// Prepare Etag, Date, Last-Modified headers. Must be in UTC, according to
+		// http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3
+		mg_gmt_time_string(date, sizeof(date), &curtime);
+		mg_gmt_time_string(lm, sizeof(lm), &st->mtime);
+		(void) mg_snprintf(conn, etag, sizeof(etag), "%lx.%lx", (unsigned long) st->mtime, (unsigned long) st->size);
+
+		(void) mg_printf(conn,
+			"HTTP/1.1 %d %s\r\n"
+			"Date: %s\r\n"
+			"Last-Modified: %s\r\n"
+			"Etag: \"%s\"\r\n"
+			"Content-Type: text/html\r\n"
+			"Content-Length: %" INT64_FMT "\r\n"
+			"Connection: %s\r\n"
+			// "Accept-Ranges: bytes\r\n"
+			// "%s\r\n"
+			, ri->status_code, mg_get_response_code_text(ri->status_code)
+			, date, lm, etag
+			, cl
+			, mg_suggest_connection_header(conn)
+			// , range
+			);
+
+		ret = (int)cl;
+		if (strcmp(ri->request_method, "HEAD") != 0) {
+			ret = mg_send_data(conn, ob->data, (size_t)cl);
+		}
+	}
+	else
+	{
+		ret = mg_send_data(conn, ob->data, ob->size);
+	}
+
+	/* cleanup */
+	sd_bufrelease(ib);
+	sd_bufrelease(ob);
+
+	return ret;
+}
+
+static void *event_callback(enum mg_event event, struct mg_connection *conn) {
+  struct mg_context *ctx = mg_get_context(conn);
+  struct mg_request_info *request_info = mg_get_request_info(conn);
+
+  if (event == MG_SSI_INCLUDE_REQUEST || event == MG_NEW_REQUEST) {
+	struct mgstat st;
+	int file_found;
+
+	assert(request_info->phys_path);
+	file_found = (0 == mg_stat(request_info->phys_path, &st) && !st.is_directory);
+	if (file_found) {
+	  // are we looking for HTML output of MarkDown file?
+      if (mg_match_prefix("**.md$|**.wiki$", -1, request_info->phys_path) > 0) {
+		serve_a_markdown_page(conn, &st, (event == MG_SSI_INCLUDE_REQUEST));
+		return "";
+	  }
+	  return NULL; // let mongoose handle the default of 'file exists'...
+	}
+  }
+
+#ifdef _WIN32
+  if (event == MG_NEW_REQUEST) {
+    // Send the systray icon as favicon
+    if (!strcmp("/favicon.ico", request_info->uri)) {
+      HMODULE module;
+      HRSRC icon;
+      DWORD len;
+      void *data;
+
+      module = GetModuleHandle(NULL);
+
+      icon = FindResource(module, MAKEINTRESOURCE(IDR_FAVICON), RT_RCDATA);
+      data = LockResource(LoadResource(module, icon));
+      len = SizeofResource(module, icon);
+
+	  request_info->status_code = 200;
+
+      (void) mg_printf(conn,
+          "HTTP/1.1 200 OK\r\n"
+          "Content-Type: image/x-icon\r\n"
+          "Cache-Control: no-cache\r\n"
+          "Content-Length: %d\r\n"
+          "Connection: close\r\n\r\n", len);
+
+      mg_send_data(conn, data, len);
+
+      return "";
+    }
+  }
+#endif
+
+  return event_handler(event, conn);
+}
 
 static void start_mongoose(int argc, char *argv[]) {
     char *options[MAX_OPTIONS * 2] = { NULL };
     int i;
     struct mg_user_class_t userdef = {
-        &event_handler,
+        &event_callback /* event_handler */,
         &mgr,
         &option_decode,
         &option_fill,
@@ -316,7 +541,7 @@ static void WINAPI ServiceMain(void) {
 #define ID_SEPARATOR 103
 #define ID_INSTALL_SERVICE 104
 #define ID_REMOVE_SERVICE 105
-#define ID_ICON 200
+
 static NOTIFYICONDATAA TrayIcon;
 
 static void edit_config_file(const struct mg_context *ctx) {
@@ -326,8 +551,8 @@ static void edit_config_file(const struct mg_context *ctx) {
     char cmd[200];
 
     // Create config file if it is not present yet
-    if ((fp = fopen(config_file, "r")) != NULL) {
-        fclose(fp);
+    if ((fp = mg_fopen(config_file, "r")) != NULL) {
+        mg_fclose(fp);
     } else if ((fp = fopen(config_file, "a+")) != NULL) {
         fprintf(fp,
             "# Mongoose web server configuration file.\n"
@@ -336,10 +561,10 @@ static void edit_config_file(const struct mg_context *ctx) {
             "# http://code.google.com/p/mongoose/wiki/MongooseManual\n\n");
         names = mg_get_valid_option_names();
         for (i = 0; names[i] != NULL; i += 3) {
-            value = mg_get_option(ctx, names[i]);
+            value = mg_get_option(ctx, names[i + 1]);
             fprintf(fp, "# %s %s\n", names[i + 1], *value ? value : "<value>");
         }
-        fclose(fp);
+        mg_fclose(fp);
     }
 
     snprintf(cmd, sizeof(cmd), "notepad.exe %s", config_file);
@@ -484,7 +709,7 @@ int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrev, LPSTR cmdline, int show) {
     TrayIcon.cbSize = sizeof(TrayIcon);
     TrayIcon.uID = ID_TRAYICON;
     TrayIcon.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
-    TrayIcon.hIcon = LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(ID_ICON),
+    TrayIcon.hIcon = LoadImage(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON),
         IMAGE_ICON, 16, 16, 0);
     TrayIcon.hWnd = hWnd;
     snprintf(TrayIcon.szTip, sizeof(TrayIcon.szTip), "%s", server_name);

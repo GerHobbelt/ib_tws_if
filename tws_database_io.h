@@ -40,28 +40,36 @@ class db_manager
 {
 protected:
 	struct database_cfg cfg;
-	app_manager *mgr;
+	app_manager *app_mgr;
 
 	ham_env_t *env;
 	ham_db_t *db[DB_MAX];
 
 public:
-	db_manager(app_manager *info);
+	db_manager(app_manager *mgr);
 	virtual ~db_manager();
 
 public:
-	const struct database_cfg &get_db_cfg(void);
 	void set_database_path(const char *path);
 
-	int ib_open_databases(void);
-	int ib_close_databases(void);
-	const char *ib_strerror(int errcode);
+	int open_databases(void);
+	int close_databases(void);
+	const char *strerror(int errcode);
 
 public:
 	int ib_cache_ticker_info(const ib_contract_details &cd);
 	int ib_get_ticker_info(ib_contract_details &cd);
 
 	int ib_store_scanner_parameters_xml(const char *xml);
+
+	const struct database_cfg &get_config(void)
+	{
+		return cfg;
+	}
+	app_manager *get_app_manager(void) const
+	{
+		return app_mgr;
+	}
 };
 
 

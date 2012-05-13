@@ -25,51 +25,66 @@
 #include "tws_instance.h"
 
 class tier2_message;
-class ib_instance;
+class ib_tws_manager;
 class db_manager;
-
+class sender_receiver_store;
 
 
 
 class app_manager
 {
 protected:
-	ib_instance *ib_tws;
+	ib_tws_manager *ib_tws;
 	db_manager *dbi;
 
-public:
-	app_manager()
-	{
-	}
-	virtual ~app_manager()
-	{
-	}
+	sender_receiver_store *sr_store;
+
+	typedef std::vector<interthread_communicator *> interthread_communicator_set_t;
+	interthread_communicator_set_t m_communicators;
+	int m_new_communicators_count;
+	pthread_mutex_t m_comm_mutex;
 
 public:
-	int register_frontend_thread(struct mg_connection *conn);
+	enum optional_requester_id_t
+	{
+		UNDEFINED = 0,
+		IB_TWS_API_CONNECTION_THREAD,
+	};
+
+public:
+	app_manager();
+	virtual ~app_manager();
+
+public:
+	int register_frontend_thread(struct mg_connection *conn, tier2_message_processor *processor = NULL);
 	int unregister_frontend_thread(struct mg_connection *conn);
 
-	int register_backend_thread(struct mg_context *ctx, int optional_id = 0);
-	int unregister_backend_thread(struct mg_context *ctx, int optional_id = 0);
+	int register_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED, tier2_message_processor *processor = NULL);
+	int unregister_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	int register_backend_thread(struct mg_connection *conn, tier2_message_processor *processor = NULL);
+	int unregister_backend_thread(struct mg_connection *conn);
 
-	tier2_message_requester *get_requester(struct mg_context *ctx, int optional_id = 0);
-	tier2_message_requester *get_requester(struct mg_connection *conn);
+	interthread_communicator *create_communication_path(tier2_message_processor *requester, tier2_message_processor *receiver);
+	interthread_communicator *get_interthread_communicator(tier2_message_processor *from, tier2_message_processor *to);
 
-	tier2_message_requester *get_ib_tws_manager(void);
+	int fetch_new_interthread_communicators(tier2_message_processor *receiver);
 
-	// helper function: produce the IB/TWS app connection. (Used by the TWS backend communication thread / TWS API callbacks)
-	struct mg_connection *get_tws_ib_connection(void);
-	struct mg_context *get_tws_ib_context(void);
+	tier2_message_processor *get_requester(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	tier2_message_processor *get_requester(struct mg_connection *conn);
+
+	tier2_message_processor *get_receiver(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	tier2_message_processor *get_receiver(struct mg_connection *conn);
+
 	struct tws_conn_cfg &get_tws_ib_connection_config(void);
     const struct database_cfg &get_db_config(void);
-	void fd_set_4_interthread_messaging(tier2_message_requester *requester, fd_set *read_set, fd_set *exception_set, int *max_fd);
-
-	void set_tws_ib_connection(struct mg_connection *conn);
 
 	db_manager *get_db_manager(void);
-
-	void process_response_message(tier2_message *response);
+	ib_tws_manager *get_ib_tws_manager(void);
 };
+
+
+
+void tws_worker_thread(struct mg_context *ctx);
 
 
 #endif // APPLICATION_MANAGER_HEADER_INCLUDED

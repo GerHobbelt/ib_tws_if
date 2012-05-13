@@ -106,6 +106,21 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
             return 1;
         }
     }
+    else if (0 == strcmp("tws_log_traffic", name))
+    {
+        bool tws_log_traffic = (atoi(value) != 0);
+        if (!mg_strncasecmp(value, "t", 1) || !mg_strncasecmp(value, "f", 1))
+		{
+			tws_log_traffic = !mg_strncasecmp(value, "t", 1);
+		}
+        tws_cfg.tws_log_traffic = tws_log_traffic;
+        return 1;
+    }
+    else if (0 == strcmp("tws_traffic_log_file", name))
+    {
+        tws_cfg.tws_traffic_log_file = mg_strdup(value);
+        return 1;
+    }
 	else if (0 == strcmp("database_file", name))
 	{
 		mgr->get_db_manager()->set_database_path(value);

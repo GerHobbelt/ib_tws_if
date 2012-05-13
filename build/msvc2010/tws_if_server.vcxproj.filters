@@ -57,6 +57,12 @@
     <None Include="..\..\TODO">
       <Filter>misc</Filter>
     </None>
+    <None Include="..\..\mongoose\win32\favicon.ico">
+      <Filter>FrontEnd\Sources</Filter>
+    </None>
+    <None Include="..\..\mongoose\win32\systray.ico">
+      <Filter>FrontEnd\Sources</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\fake_hamsterdb.c">
@@ -107,20 +113,32 @@
     <ClCompile Include="..\..\interthread_comm.cpp">
       <Filter>Glue\Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\tier2_message_requester.cpp">
-      <Filter>Glue\Sources</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\tws_debug_printf.cpp">
       <Filter>Backend / Tier2\Sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\tws_input_output.cpp">
       <Filter>Backend / Tier2\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\app_manager.cpp">
+      <Filter>FrontEnd\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tier2_message_processor.cpp">
+      <Filter>Glue\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tws_fake_server.cpp">
+      <Filter>TWS I/F layer\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\unique_type_id.cpp">
+      <Filter>Glue\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tws_backend_io.cpp">
+      <Filter>Backend / Tier2\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tws_backend_io_logger.cpp">
+      <Filter>Backend / Tier2\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\blurb.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\tws_data_structures.h">
       <Filter>TWS I/F layer\Header Files</Filter>
     </ClInclude>
@@ -172,14 +190,37 @@
     <ClInclude Include="..\..\interthread_comm.h">
       <Filter>Glue\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\tier2_message_requester.h">
-      <Filter>Glue\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\app_manager.h">
       <Filter>FrontEnd\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\unique_id_manager.h">
       <Filter>FrontEnd\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\tier2_message_processor.h">
+      <Filter>Glue\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\unique_type_id.h">
+      <Filter>Glue\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\mongoose\win32\resource.h">
+      <Filter>FrontEnd\Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tws_backend_io.h">
+      <Filter>Backend / Tier2\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tws_assert.h">
+      <Filter>Backend / Tier2\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tws_backend_io_logger.h">
+      <Filter>Backend / Tier2\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tws_config_struct.h">
+      <Filter>Backend / Tier2\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\mongoose\win32\res.rc">
+      <Filter>FrontEnd\Sources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

@@ -15,7 +15,7 @@
 
 
 
-int db_manager::ib_open_databases(void)
+int db_manager::open_databases(void)
 {
 	int i;
 	int err = 0;
@@ -28,7 +28,7 @@ int db_manager::ib_open_databases(void)
 		{0, 0}
 	};
 
-	(void)ib_close_databases();
+	(void)close_databases();
 
 	ham_env_new(&env);
 
@@ -58,7 +58,7 @@ int db_manager::ib_open_databases(void)
 	return 0;
 }
 
-int db_manager::ib_close_databases(void)
+int db_manager::close_databases(void)
 {
 	int err = 0;
 
@@ -84,7 +84,7 @@ int db_manager::ib_close_databases(void)
 	return err;
 }
 
-const char *db_manager::ib_strerror(int errcode)
+const char *db_manager::strerror(int errcode)
 {
 	return ham_strerror(errcode);
 }
@@ -115,17 +115,41 @@ int db_manager::ib_get_ticker_info(ib_contract_details &cd)
 
 int db_manager::ib_store_scanner_parameters_xml(const char *xml)
 {
-	// TODO: store this in the DB_MISC_BLOBS database table
+	ib_tws_manager *ibm = app_mgr->get_ib_tws_manager();
 
-	const char *db_filename = cfg.database_path;
-	char fname[PATH_MAXSIZE];
-	char *dst;
-
-	dst = concat_path(fname, PATH_MAXSIZE, db_filename, "/../scanner-parameters.xml", NULL);
-	if (dst)
+	// don't store the XML file when we're faking...
+	if (!ibm->is_faking_the_ib_tws_connection())
 	{
-		writefile(dst, xml, strlen(xml), 0);
+		// TODO: store this in the DB_MISC_BLOBS database table
+
+		const char *db_filename = cfg.database_path;
+		char fname[PATH_MAXSIZE];
+		char *dst;
+
+		dst = concat_path(fname, PATH_MAXSIZE, db_filename, "/../scanner-parameters.xml", NULL);
+		if (dst)
+		{
+			writefile(dst, xml, strlen(xml), 0);
+		}
 	}
 
 	return 0;
 }
+
+
+
+
+
+
+
+db_manager::db_manager(app_manager *mgr) :
+	app_mgr(mgr),
+	env(NULL)
+{
+	memset(db, 0, sizeof(db));
+}
+
+db_manager::~db_manager(void)
+{
+}
+

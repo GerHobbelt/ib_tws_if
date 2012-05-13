@@ -67,7 +67,13 @@ winsock2.h -- and we want the latter to make it through where we need anything
 #undef read
 
 #include <vector>
+#include <list>
+#include <map>
 #include <string>
+
+// typeid / RTTI
+#include <typeinfo>
+
 #endif
 
 

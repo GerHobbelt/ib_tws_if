@@ -28,6 +28,8 @@
 #include "tws_request.h"
 #include "app_manager.h"
 
+#include <libxml/parser.h>
+#include <tre/regex.h>
 
 
 void *event_handler(enum mg_event event_id, struct mg_connection *conn)
@@ -42,25 +44,26 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     case MG_NEW_REQUEST:
         if (strncmp(ri->uri, "/tws/", 5) == 0)
         {
-			ib_req_current_time *tws_req = new ib_req_current_time(mgr->get_requester(conn));
-            struct timespec poll_time;
+			assert(mgr->get_requester(conn));
+			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
+			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD) == mgr->get_ib_tws_manager());
+			ib_msg_req_current_time *tws_req = new ib_msg_req_current_time(mgr->get_requester(conn), mgr->get_ib_tws_manager());
+			interthread_communicator *comm = tws_req->get_interthread_communicator();
 			int err;
-            poll_time.tv_sec = mgr->get_tws_ib_connection_config().backend_poll_period / 1000;
-            poll_time.tv_nsec = (mgr->get_tws_ib_connection_config().backend_poll_period % 1000) * 1000000;
 
             // pass the request to the backend; block & wait for the response...
-			err = mgr->tws_cfg->push(tws_req);
+			tws_req->state(tier2_message::EXEC_COMMAND);
+			tws_req->pulse();
+			err = tws_req->wait_for_response(comm);
 
-#if 0
-			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", ctime(&tws_req->current_time));
-#endif
+			const ib_date_t t = tws_req->get_response_timestamp();
+			const char *tstr = t;
+			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", tstr);
+			break;
 		}
-        else
-        {
-            // No suitable handler found, mark as not processed. Mongoose will
-            // try to serve the request.
-            processed = NULL;
-        }
+        // No suitable handler found, mark as not processed. Mongoose will
+        // try to serve the request.
+        processed = NULL;
         break;
 
 	case MG_REQUEST_COMPLETE:
@@ -69,9 +72,6 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 
     case MG_EXIT0:
         // threads have already shut down; discard our custom mutexes, etc.:
-        delete tws_cfg->exch;
-		tws_cfg->exch = NULL;
-
 		xmlCleanupParser();
         xmlMemoryDump();
         break;
@@ -89,6 +89,16 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
             processed = NULL;
         }
         break;
+
+	case MG_INIT_CLIENT_CONN:  // Mongoose has opened a connection to a client.
+		mgr->register_frontend_thread(conn);
+		processed = NULL;
+		break;
+
+	case MG_EXIT_CLIENT_CONN:  // Mongoose is going to close the client connection.
+		mgr->unregister_frontend_thread(conn);
+		processed = NULL;
+		break;
 
     case MG_EVENT_LOG:
         // dump log to stderr as well:

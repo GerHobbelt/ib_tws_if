@@ -22,10 +22,6 @@
 #ifndef TWS_BACKEND_GENERIC_HEADER_INCLUDED
 #define TWS_BACKEND_GENERIC_HEADER_INCLUDED
 
-#include "mongoose_headers.h"
-
-#include <tws_c_api/twsapi.h>
-
 
 
 #define ARRAY_SIZE(array) (sizeof(array) / sizeof(array[0]))
