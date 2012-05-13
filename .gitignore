@@ -7,8 +7,11 @@
 *.layout
 *.res
 *.user
+*.ncb
+
 mongoose-hg/*
 mongoose-tmp/
+
 build/msvc2010/bin/
 build/msvc2010/obj/
 build/msvc2010/ipch/
