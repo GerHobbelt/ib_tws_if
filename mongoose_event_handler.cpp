@@ -56,9 +56,9 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 			tws_req->pulse();
 			err = tws_req->wait_for_response(comm);
 
-			const ib_date_t t = tws_req->get_response_timestamp();
-			const char *tstr = t;
-			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", tstr);
+			const ib_date_t t = tws_req->get_response_timestamp().value();
+			ib_string_t tstr = ib_string_t(t);
+			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", tstr.c_str());
 			break;
 		}
         // No suitable handler found, mark as not processed. Mongoose will
