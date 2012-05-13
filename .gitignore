@@ -13,14 +13,14 @@ build/msvc2010/bin/
 build/msvc2010/obj/
 build/msvc2010/ipch/
 
+build/msvc2008/bin/
+build/msvc2008/obj/
+build/msvc2008/ipch/
+
 *.suo
 *.sdf
 *.opensdf
-<<<<<<< HEAD
 
-build/msvc2008/bin/
-build/msvc2008/obj/build/msvc2008/ipch/
-=======
 html/contact/images/_vti_cnf
 html/contact/_vti_cnf
 html/dev/_vti_cnf
@@ -35,4 +35,3 @@ html/_vti_pvt
 html/mongoose/_vti_cnf
 
 log/
->>>>>>> 3d68b8ec72e58d4d7f1973a7411e4a5451199546
