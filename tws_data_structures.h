@@ -282,7 +282,7 @@ public:
 	}
 
 public:
-	operator ib_string_t();
+	operator ib_string_t() const;
 	ib_date_t &operator =(const char *timestamp);
 };
 typedef std::vector<int> ib_int_list_t;

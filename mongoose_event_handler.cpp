@@ -56,6 +56,13 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 			tws_req->pulse();
 			err = tws_req->wait_for_response(comm);
 
+			(void) mg_printf(conn,
+				  "HTTP/1.1 200 OK\r\n"
+				  "Content-Type: text/html\r\n"
+				  "Cache-Control: no-cache\r\n"
+				  //"Content-Length: %d\r\n"
+				  "Connection: close\r\n\r\n");
+
 			const ib_date_t t = tws_req->get_response_timestamp().value();
 			ib_string_t tstr = ib_string_t(t);
 			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", tstr.c_str());

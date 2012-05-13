@@ -2412,7 +2412,7 @@ ib_date_t::ib_date_t(const char *ts)
 	m_t = mg_parse_date_string(ts);
 }
 
-ib_date_t::operator ib_string_t(void)
+ib_date_t::operator ib_string_t(void) const
 {
 	char buf[40];
 

@@ -92,6 +92,30 @@ static int respond_with(struct mg_connection *conn, int elem)
 	int rv = mg_send_data(conn, buf, len + 1);
 	return rv;
 }
+static int respond_with(struct mg_connection *conn, unsigned int elem)
+{
+	char buf[40];
+	mg_snprintf(conn, buf, sizeof(buf), "%u", elem);
+	int len = strlen(buf);
+	int rv = mg_send_data(conn, buf, len + 1);
+	return rv;
+}
+static int respond_with(struct mg_connection *conn, long int elem)
+{
+	char buf[40];
+	mg_snprintf(conn, buf, sizeof(buf), "%ld", elem);
+	int len = strlen(buf);
+	int rv = mg_send_data(conn, buf, len + 1);
+	return rv;
+}
+static int respond_with(struct mg_connection *conn, unsigned long int elem)
+{
+	char buf[40];
+	mg_snprintf(conn, buf, sizeof(buf), "%lu", elem);
+	int len = strlen(buf);
+	int rv = mg_send_data(conn, buf, len + 1);
+	return rv;
+}
 static int respond_with(struct mg_connection *conn, double elem)
 {
 	char buf[40];
@@ -503,6 +527,9 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 								break;
 
 							case tws::REQ_CURRENT_TIME :
+								respond_with(conn, tws::CURRENT_TIME);
+								respond_with(conn, 1);
+								respond_with(conn, (unsigned long int)time(NULL));  // dump as integer, not as timestamp string!
 								break;
 
 							case tws::REQ_REAL_TIME_BARS :
