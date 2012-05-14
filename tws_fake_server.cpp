@@ -425,66 +425,87 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 							switch (msgcode)
 							{
 							case tws::REQ_MKT_DATA :
+								assert(!"Should not get here: faking REQ/RESP: REQ_MKT_DATA");
 								break;
 
 							case tws::CANCEL_MKT_DATA :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_MKT_DATA");
 								break;
 
 							case tws::PLACE_ORDER :
+								assert(!"Should not get here: faking REQ/RESP: PLACE_ORDER");
 								break;
 
 							case tws::CANCEL_ORDER :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_ORDER");
 								break;
 
 							case tws::REQ_OPEN_ORDERS :
+								assert(!"Should not get here: faking REQ/RESP: REQ_OPEN_ORDERS");
 								break;
 
 							case tws::REQ_ACCOUNT_DATA :
+								assert(!"Should not get here: faking REQ/RESP: REQ_ACCOUNT_DATA");
 								break;
 
 							case tws::REQ_EXECUTIONS :
+								assert(!"Should not get here: faking REQ/RESP: REQ_EXECUTIONS");
 								break;
 
 							case tws::REQ_IDS :
+								assert(!"Should not get here: faking REQ/RESP: REQ_IDS");
 								break;
 
 							case tws::REQ_CONTRACT_DATA :
+								assert(!"Should not get here: faking REQ/RESP: REQ_CONTRACT_DATA");
 								break;
 
 							case tws::REQ_MKT_DEPTH :
+								assert(!"Should not get here: faking REQ/RESP: REQ_MKT_DEPTH");
 								break;
 
 							case tws::CANCEL_MKT_DEPTH :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_MKT_DEPTH");
 								break;
 
 							case tws::REQ_NEWS_BULLETINS :
+								assert(!"Should not get here: faking REQ/RESP: REQ_NEWS_BULLETINS");
 								break;
 
 							case tws::CANCEL_NEWS_BULLETINS :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_NEWS_BULLETINS");
 								break;
 
 							case tws::SET_SERVER_LOGLEVEL :
+								assert(!"Should not get here: faking REQ/RESP: SET_SERVER_LOGLEVEL");
 								break;
 
 							case tws::REQ_AUTO_OPEN_ORDERS :
+								assert(!"Should not get here: faking REQ/RESP: REQ_AUTO_OPEN_ORDERS");
 								break;
 
 							case tws::REQ_ALL_OPEN_ORDERS :
+								assert(!"Should not get here: faking REQ/RESP: REQ_ALL_OPEN_ORDERS");
 								break;
 
 							case tws::REQ_MANAGED_ACCTS :
+								assert(!"Should not get here: faking REQ/RESP: REQ_MANAGED_ACCTS");
 								break;
 
 							case tws::REQ_FA :
+								assert(!"Should not get here: faking REQ/RESP: REQ_FA");
 								break;
 
 							case tws::REPLACE_FA :
+								assert(!"Should not get here: faking REQ/RESP: REPLACE_FA");
 								break;
 
 							case tws::REQ_HISTORICAL_DATA :
+								assert(!"Should not get here: faking REQ/RESP: REQ_HISTORICAL_DATA");
 								break;
 
 							case tws::EXERCISE_OPTIONS :
+								assert(!"Should not get here: faking REQ/RESP: EXERCISE_OPTIONS");
 								break;
 
 							case tws::REQ_SCANNER_SUBSCRIPTION :
@@ -515,6 +536,7 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 								break;
 
 							case tws::CANCEL_SCANNER_SUBSCRIPTION :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_SCANNER_SUBSCRIPTION");
 								break;
 
 							case tws::REQ_SCANNER_PARAMETERS :
@@ -524,6 +546,7 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 								break;
 
 							case tws::CANCEL_HISTORICAL_DATA :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_HISTORICAL_DATA");
 								break;
 
 							case tws::REQ_CURRENT_TIME :
@@ -533,37 +556,47 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 								break;
 
 							case tws::REQ_REAL_TIME_BARS :
+								assert(!"Should not get here: faking REQ/RESP: REQ_REAL_TIME_BARS");
 								break;
 
 							case tws::CANCEL_REAL_TIME_BARS :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_REAL_TIME_BARS");
 								break;
 
 							case tws::REQ_FUNDAMENTAL_DATA :
+								assert(!"Should not get here: faking REQ/RESP: REQ_FUNDAMENTAL_DATA");
 								break;
 
 							case tws::CANCEL_FUNDAMENTAL_DATA :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_FUNDAMENTAL_DATA");
 								break;
 
 							case tws::REQ_CALC_IMPLIED_VOLAT :
+								assert(!"Should not get here: faking REQ/RESP: REQ_CALC_IMPLIED_VOLAT");
 								break;
 
 							case tws::REQ_CALC_OPTION_PRICE :
+								assert(!"Should not get here: faking REQ/RESP: REQ_CALC_OPTION_PRICE");
 								break;
 
 							case tws::CANCEL_CALC_IMPLIED_VOLAT :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_CALC_IMPLIED_VOLAT");
 								break;
 
 							case tws::CANCEL_CALC_OPTION_PRICE :
+								assert(!"Should not get here: faking REQ/RESP: CANCEL_CALC_OPTION_PRICE");
 								break;
 
 							case tws::REQ_GLOBAL_CANCEL :
+								assert(!"Should not get here: faking REQ/RESP: REQ_GLOBAL_CANCEL");
 								break;
 
 							case tws::REQ_MARKET_DATA_TYPE :
+								assert(!"Should not get here: faking REQ/RESP: REQ_MARKET_DATA_TYPE");
 								break;
 
 							default:
-								assert(0);
+								assert(!"Should not get here: faking REQ/RESP: (unknown)");
 								break;
 							}
 

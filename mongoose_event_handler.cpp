@@ -42,7 +42,8 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     switch (event_id)
     {
     case MG_NEW_REQUEST:
-        if (strncmp(ri->uri, "/tws/", 5) == 0)
+		if (mg_match_prefix("/tws/proxy/", -1, ri->uri) > 0
+			&& (!strcmp(ri->request_method, "GET") || !strcmp(ri->request_method, "POST")))
         {
 			assert(mgr->get_requester(conn));
 			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
@@ -55,6 +56,9 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 			tws_req->state(tier2_message::EXEC_COMMAND);
 			tws_req->pulse();
 			err = tws_req->wait_for_response(comm);
+
+			// we don't set the required 'Content-Length' header, so it's close after we're done here:
+			mg_connection_must_close(conn);
 
 			(void) mg_printf(conn,
 				  "HTTP/1.1 200 OK\r\n"
@@ -103,7 +107,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 		break;
 
 	case MG_EXIT_CLIENT_CONN:  // Mongoose is going to close the client connection.
-		mgr->unregister_frontend_thread(conn);
+//		mgr->unregister_frontend_thread(conn);
 		processed = NULL;
 		break;
 

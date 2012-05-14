@@ -40,3 +40,6 @@
 [submodule "html/dive_into_html5.original"]
 	path = html/dive_into_html5.original
 	url = git@github.com:GerHobbelt/diveintohtml5-original-sensibilities.git
+[submodule "html/js/cubism"]
+	path = html/js/cubism
+	url = git@github.com:GerHobbelt/cubism.git
