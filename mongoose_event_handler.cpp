@@ -89,9 +89,9 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 					  "Connection: close\r\n\r\n");
 
 				json_output channel(conn);
-				channel->start();
+				channel.start();
 				req_msg->save_response(&channel);
-				channel->finish();
+				channel.finish();
 			}
 			break;
 		}

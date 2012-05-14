@@ -506,6 +506,8 @@ int tier2_message::wait_for_response(interthread_communicator *listen_comm)
 	if (!listen_comm)
 		return -1;
 
+	// TODO: check the message queue of the requester to see if the expected message already was returned before we called this!
+
 	while (mg_get_stop_flag(mg_get_context(listen_comm->receiver_socket())) == 0)
 	{
 		tier2_message *msg = listen_comm->pop_one_message();
