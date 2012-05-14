@@ -137,6 +137,9 @@
     <ClCompile Include="..\..\tws_backend_io_logger.cpp">
       <Filter>Backend / Tier2\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\json_io.cpp">
+      <Filter>FrontEnd\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\tws_data_structures.h">
@@ -216,6 +219,9 @@
     </ClInclude>
     <ClInclude Include="..\..\tws_config_struct.h">
       <Filter>Backend / Tier2\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\json_io.h">
+      <Filter>FrontEnd\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -41,6 +41,13 @@
 
 
 
+int tws_reqresp_message::save_response(json_output *channel)
+{
+	assert(!"Should never get here!");
+	return 0;
+}
+
+
 
 int tws_request_message::f_task_completed(void)
 {
@@ -1798,6 +1805,211 @@ int ib_msg_req_market_data_type::process_response_message(class tier2_message *r
 
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
+int ib_msg_req_scanner_parameters::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
+int ib_msg_req_scanner_subscription::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
+int ib_msg_cancel_scanner_subscription::save_response(class json_output *channel)
+{
+	return false;	
+}
+/* sends message REQ_MKT_DATA to IB/TWS */
+int ib_msg_req_mkt_data::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_HISTORICAL_DATA to IB/TWS */
+int ib_msg_req_historical_data::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_HISTORICAL_DATA to IB/TWS */
+int ib_msg_cancel_historical_data::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_MKT_DATA to IB/TWS */
+int ib_msg_cancel_mkt_data::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message EXERCISE_OPTIONS to IB/TWS */
+int ib_msg_exercise_options::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message PLACE_ORDER to IB/TWS */
+int ib_msg_place_order::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_ORDER to IB/TWS */
+int ib_msg_cancel_order::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_OPEN_ORDERS to IB/TWS */
+int ib_msg_req_open_orders::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_ACCOUNT_DATA to IB/TWS */
+int ib_msg_req_account_updates::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_EXECUTIONS to IB/TWS */
+int ib_msg_req_executions::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_IDS to IB/TWS */
+int ib_msg_req_ids::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_CONTRACT_DATA to IB/TWS */
+int ib_msg_req_contract_details::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_MKT_DEPTH to IB/TWS */
+int ib_msg_req_mkt_depth::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_MKT_DEPTH to IB/TWS */
+int ib_msg_cancel_mkt_depth::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_NEWS_BULLETINS to IB/TWS */
+int ib_msg_req_news_bulletins::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_NEWS_BULLETINS to IB/TWS */
+int ib_msg_cancel_news_bulletins::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message SET_SERVER_LOGLEVEL to IB/TWS */
+int ib_msg_set_server_log_level::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_AUTO_OPEN_ORDERS to IB/TWS */
+int ib_msg_req_auto_open_orders::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_ALL_OPEN_ORDERS to IB/TWS */
+int ib_msg_req_all_open_orders::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_MANAGED_ACCTS to IB/TWS */
+int ib_msg_req_managed_accts::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_FA to IB/TWS */
+int ib_msg_request_fa::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REPLACE_FA to IB/TWS */
+int ib_msg_replace_fa::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_CURRENT_TIME to IB/TWS */
+int ib_msg_req_current_time::save_response(class json_output *channel)
+{
+	const ib_date_t t = get_response_timestamp().value();
+
+	assert(channel);
+	channel->add_sibling("time", t);
+	return 0;
+}
+/* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
+int ib_msg_req_fundamental_data::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_FUNDAMENTAL_DATA to IB/TWS */
+int ib_msg_cancel_fundamental_data::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
+int ib_msg_calculate_implied_volatility::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_CALC_IMPLIED_VOLAT to IB/TWS */
+int ib_msg_cancel_calculate_implied_volatility::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
+int ib_msg_calculate_option_price::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_CALC_OPTION_PRICE to IB/TWS */
+int ib_msg_cancel_calculate_option_price::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_GLOBAL_CANCEL to IB/TWS */
+int ib_msg_req_global_cancel::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_MARKET_DATA_TYPE to IB/TWS */
+int ib_msg_req_market_data_type::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message REQ_REAL_TIME_BARS to IB/TWS */
+int ib_msg_request_realtime_bars::save_response(class json_output *channel)
+{
+	return false;
+}
+/* sends message CANCEL_REAL_TIME_BARS to IB/TWS */
+int ib_msg_cancel_realtime_bars::save_response(class json_output *channel)
+{
+	return false;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

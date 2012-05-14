@@ -150,6 +150,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
@@ -183,6 +185,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 /* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
@@ -212,6 +216,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -248,6 +254,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -288,6 +296,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -318,6 +328,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -348,6 +360,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -386,6 +400,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -422,6 +438,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -456,6 +474,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -486,6 +506,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -521,6 +543,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -555,6 +579,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -589,6 +615,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -623,6 +651,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -658,6 +688,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -688,6 +720,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -722,6 +756,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -752,6 +788,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -786,6 +824,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -820,6 +860,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -850,6 +892,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -880,6 +924,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -914,6 +960,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -949,6 +997,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -979,6 +1029,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 
 protected:
 	struct response_values
@@ -1026,6 +1078,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1056,6 +1110,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1092,6 +1148,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1122,6 +1180,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1158,6 +1218,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1188,6 +1250,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1218,6 +1282,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1252,6 +1318,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1289,6 +1357,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1320,6 +1390,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 
@@ -1371,6 +1443,8 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+
+	virtual int save_response(class json_output *channel);
 };
 
 

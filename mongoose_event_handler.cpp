@@ -42,34 +42,57 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
     switch (event_id)
     {
     case MG_NEW_REQUEST:
-		if (mg_match_prefix("/tws/proxy/", -1, ri->uri) > 0
+		if (!strncmp("/tws/", ri->uri, 5)
 			&& (!strcmp(ri->request_method, "GET") || !strcmp(ri->request_method, "POST")))
         {
 			assert(mgr->get_requester(conn));
 			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD));
 			assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD) == mgr->get_ib_tws_manager());
-			ib_msg_req_current_time *tws_req = new ib_msg_req_current_time(mgr->get_requester(conn), mgr->get_ib_tws_manager());
-			interthread_communicator *comm = tws_req->get_interthread_communicator();
-			int err;
+			tier2_message_processor *from = mgr->get_requester(conn);
+			tier2_message_processor *to = mgr->get_ib_tws_manager();
+			assert(from);
+			assert(to);
+			tws_request_message *req_msg = NULL;
+			const char *req_uri = ri->uri + 5;
+			if (!strncmp("proxy/", req_uri, 6))
+			{
+				req_uri += 6;
 
-            // pass the request to the backend; block & wait for the response...
-			tws_req->state(tier2_message::EXEC_COMMAND);
-			tws_req->pulse();
-			err = tws_req->wait_for_response(comm);
+				if (!strcmp("server_time", req_uri))
+				{
+					req_msg = new ib_msg_req_current_time(mgr->get_requester(conn), mgr->get_ib_tws_manager());
+				}
+			}
 
-			// we don't set the required 'Content-Length' header, so it's close after we're done here:
-			mg_connection_must_close(conn);
+			if (!req_msg)
+			{
+				processed = NULL;
+			}
+			else
+			{
+				interthread_communicator *comm = req_msg->get_interthread_communicator();
+				int err;
 
-			(void) mg_printf(conn,
-				  "HTTP/1.1 200 OK\r\n"
-				  "Content-Type: text/html\r\n"
-				  "Cache-Control: no-cache\r\n"
-				  //"Content-Length: %d\r\n"
-				  "Connection: close\r\n\r\n");
+				// pass the request to the backend; block & wait for the response...
+				req_msg->state(tier2_message::EXEC_COMMAND);
+				req_msg->pulse();
+				err = req_msg->wait_for_response(comm);
 
-			const ib_date_t t = tws_req->get_response_timestamp().value();
-			ib_string_t tstr = ib_string_t(t);
-			mg_printf(conn, "<h1>TWS says the time is: %s</h1>\n", tstr.c_str());
+				// we don't set the required 'Content-Length' header, so it's close after we're done here:
+				mg_connection_must_close(conn);
+
+				(void) mg_printf(conn,
+					  "HTTP/1.1 200 OK\r\n"
+					  "Content-Type: application/json\r\n"  // http://stackoverflow.com/questions/477816/the-right-json-content-type
+					  "Cache-Control: no-cache\r\n"
+					  //"Content-Length: %d\r\n"
+					  "Connection: close\r\n\r\n");
+
+				json_output channel(conn);
+				channel->start();
+				req_msg->save_response(&channel);
+				channel->finish();
+			}
 			break;
 		}
         // No suitable handler found, mark as not processed. Mongoose will

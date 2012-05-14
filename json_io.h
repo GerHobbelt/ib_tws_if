@@ -19,38 +19,45 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#ifndef TWS_REQ_RESP_BASE_MSG_HEADER_INCLUDED
-#define TWS_REQ_RESP_BASE_MSG_HEADER_INCLUDED
-
-#include "tier2_message.h"
-#include "json_io.h"
+#ifndef JSON_INPUT_OUTPUT_STUFF
+#define JSON_INPUT_OUTPUT_STUFF
 
 
+#include "tws_data_structures.h"
 
 
 
-
-class tws_reqresp_message: public tier2_message
+class json_output
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
-public:
-	tws_reqresp_message(tier2_message_processor *from, tier2_message_processor *to = NULL) :
-		tier2_message(from, to)
-	{
-	}
 protected:
-	virtual ~tws_reqresp_message()
-	{
-	}
+	struct mg_connection *m_conn;
+	int m_indent_level;
+	int m_sibling_counter;
+	std::vector<int> m_counter_stack;
 
 public:
-	virtual int save_response(class json_output *channel);
+	json_output(struct mg_connection *conn);
+	virtual ~json_output();
+
+protected:
+	void json_output_indent(void);
+
+public:
+	virtual void add_sibling(const char *name, const char *value);
+	virtual void add_sibling(const char *name, const ib_date_t &value);
+	virtual void add_sibling(const char *name, const ib_string_t &value);
+	virtual void add_sibling(const char *name, int value);
+	virtual void add_sibling(const char *name, double value);
+
+	virtual void push_level(const char *name);
+	virtual void pop_level(void);
+
+	virtual void start(void);
+	virtual void finish(void);
 };
 
 
 
 
 
-
-#endif // TWS_REQ_RESP_BASE_MSG_HEADER_INCLUDED
+#endif // JSON_INPUT_OUTPUT_STUFF

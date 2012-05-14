@@ -466,6 +466,7 @@
     <ClCompile Include="..\..\app_manager.cpp" />
     <ClCompile Include="..\..\fake_hamsterdb.c" />
     <ClCompile Include="..\..\interthread_comm.cpp" />
+    <ClCompile Include="..\..\json_io.cpp" />
     <ClCompile Include="..\..\message_queue.cpp" />
     <ClCompile Include="..\..\mongoose_event_handler.cpp" />
     <ClCompile Include="..\..\mongoose_utils.cpp" />
@@ -491,6 +492,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\app_manager.h" />
     <ClInclude Include="..\..\interthread_comm.h" />
+    <ClInclude Include="..\..\json_io.h" />
     <ClInclude Include="..\..\message_queue.h" />
     <ClInclude Include="..\..\mongoose\win32\resource.h" />
     <ClInclude Include="..\..\mongoose_event_handler.h" />
