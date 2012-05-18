@@ -520,7 +520,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\libtre\win32\libtre_dll.2010.vcxproj">
-      <Project>{dea40833-fe35-6c5e-de29-b5f355c44c14}</Project>
+      <Project>{b1297402-b65a-e666-ffc7-9be1f22c2d99}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\libxml\win32.msvc2010\libxml_dll.vcxproj">
       <Project>{218f950c-eb90-4023-a016-e9af52c4aae9}</Project>
