@@ -1468,10 +1468,17 @@ bool ib_msg_exercise_options::cancel_request_is_meant_for_us(class tier2_message
 bool ib_msg_place_order::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
 {
 	ib_msg_cancel_order *req = dynamic_cast<ib_msg_cancel_order *>(resp_msg);
-
+	
 	if (req)
 	{
 		return req->get_order_id() == this->get_order_id();
+	}
+
+	ib_msg_req_global_cancel *global_cancel = dynamic_cast<ib_msg_req_global_cancel *>(resp_msg);
+
+	if (global_cancel)
+	{
+		return true;
 	}
 	return false;
 }
