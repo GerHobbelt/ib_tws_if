@@ -3,6 +3,8 @@
 # import mongoose from google code (Mercurial) to git 
 #
 
+pushd $(dirname $0)
+
 tmpar=$(mktemp).txt
 
 cat > ${tmpar} <<EOT
@@ -64,4 +66,5 @@ cat ${tmpar} | while read line ; do
 	./mongoose_hg2git.sh  ${src} ${dst}
 done
 
+popd
 

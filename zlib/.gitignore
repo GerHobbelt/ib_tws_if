@@ -23,4 +23,5 @@ minigzipsh
 *.sdf
 *.ncb
 *.bak
+*.user
 
