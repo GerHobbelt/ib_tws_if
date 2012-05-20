@@ -143,155 +143,199 @@ int ib_msg_cancel_scanner_subscription::f_exec_command(void)
 /* sends message REQ_MKT_DATA to IB/TWS */
 int ib_msg_req_mkt_data::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_mkt_data(this);
 }
 
 /* sends message REQ_HISTORICAL_DATA to IB/TWS */
 int ib_msg_req_historical_data::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_historical_data(this);
 }
 
 /* sends message CANCEL_HISTORICAL_DATA to IB/TWS */
 int ib_msg_cancel_historical_data::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_historical_data(this);
 }
 
 /* sends message CANCEL_MKT_DATA to IB/TWS */
 int ib_msg_cancel_mkt_data::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_mkt_data(this);
 }
 
 /* sends message EXERCISE_OPTIONS to IB/TWS */
 int ib_msg_exercise_options::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_exercise_options(this);
 }
 
 /* sends message PLACE_ORDER to IB/TWS */
 int ib_msg_place_order::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_place_order(this);
 }
 
 /* sends message CANCEL_ORDER to IB/TWS */
 int ib_msg_cancel_order::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_order(this);
 }
 
 /* sends message REQ_OPEN_ORDERS to IB/TWS */
 int ib_msg_req_open_orders::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_open_orders(this);
 }
 
 /* sends message REQ_ACCOUNT_DATA to IB/TWS */
 int ib_msg_req_account_updates::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_account_updates(this);
 }
 
 /* sends message REQ_EXECUTIONS to IB/TWS */
 int ib_msg_req_executions::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_executions(this);
 }
 
 /* sends message REQ_IDS to IB/TWS */
 int ib_msg_req_ids::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_ids(this);
 }
 
 /* sends message REQ_CONTRACT_DATA to IB/TWS */
 int ib_msg_req_contract_details::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_contract_details(this);
 }
 
 /* sends message REQ_MKT_DEPTH to IB/TWS */
 int ib_msg_req_mkt_depth::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_mkt_depth(this);
 }
 
 /* sends message CANCEL_MKT_DEPTH to IB/TWS */
 int ib_msg_cancel_mkt_depth::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_mkt_depth(this);
 }
 
 /* sends message REQ_NEWS_BULLETINS to IB/TWS */
 int ib_msg_req_news_bulletins::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_news_bulletins(this);
 }
 
 /* sends message CANCEL_NEWS_BULLETINS to IB/TWS */
 int ib_msg_cancel_news_bulletins::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_news_bulletins(this);
 }
 
 /* sends message SET_SERVER_LOGLEVEL to IB/TWS */
 int ib_msg_set_server_log_level::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_set_server_log_level(this);
 }
 
 /* sends message REQ_AUTO_OPEN_ORDERS to IB/TWS */
 int ib_msg_req_auto_open_orders::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_auto_open_orders(this);
 }
 
 /* sends message REQ_ALL_OPEN_ORDERS to IB/TWS */
 int ib_msg_req_all_open_orders::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_all_open_orders(this);
 }
 
 /* sends message REQ_MANAGED_ACCTS to IB/TWS */
 int ib_msg_req_managed_accts::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_managed_accts(this);
 }
 
 /* sends message REQ_FA to IB/TWS */
 int ib_msg_request_fa::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_fa(this);
 }
 
 /* sends message REPLACE_FA to IB/TWS */
 int ib_msg_replace_fa::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_replace_fa(this);
 }
 
 /* sends message REQ_CURRENT_TIME to IB/TWS */
@@ -306,71 +350,91 @@ int ib_msg_req_current_time::f_exec_command(void)
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
 int ib_msg_req_fundamental_data::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_fundamental_data(this);
 }
 
 /* sends message CANCEL_FUNDAMENTAL_DATA to IB/TWS */
 int ib_msg_cancel_fundamental_data::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_fundamental_data(this);
 }
 
 /* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_msg_calculate_implied_volatility::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_calculate_implied_volatility(this);
 }
 
 /* sends message CANCEL_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_msg_cancel_calculate_implied_volatility::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_calculate_implied_volatility(this);
 }
 
 /* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
 int ib_msg_calculate_option_price::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_calculate_option_price(this);
 }
 
 /* sends message CANCEL_CALC_OPTION_PRICE to IB/TWS */
 int ib_msg_cancel_calculate_option_price::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_calculate_option_price(this);
 }
 
 /* sends message REQ_GLOBAL_CANCEL to IB/TWS */
 int ib_msg_req_global_cancel::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_global_cancel(this);
 }
 
 /* sends message REQ_MARKET_DATA_TYPE to IB/TWS */
 int ib_msg_req_market_data_type::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_market_data_type(this);
 }
 
 /* sends message REQ_REAL_TIME_BARS to IB/TWS */
 int ib_msg_request_realtime_bars::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_request_realtime_bars(this);
 }
 
 /* sends message CANCEL_REAL_TIME_BARS to IB/TWS */
 int ib_msg_cancel_realtime_bars::f_exec_command(void)
 {
-	assert(!"Should never get here");
-	return 0;
+	app_manager *mgr = m_owner->get_app_manager();
+	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+
+	return ibm->tx_cancel_realtime_bars(this);
 }
 
 
@@ -1113,6 +1177,11 @@ bool tws_request_message::response_is_meant_for_us(class tier2_message *resp_msg
 	/* Assume NO by default */
 	return false;
 }
+bool tws_request_message::cancel_request_is_meant_for_us(tier2_message *req_msg) const
+{
+	/* Assume NO by default */
+	return false;
+}
 
 
 
@@ -1122,7 +1191,7 @@ bool tws_request_message::response_is_meant_for_us(class tier2_message *resp_msg
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
 bool ib_msg_req_scanner_parameters::response_is_meant_for_us(class tier2_message *resp_msg) const
 {
-	if (ib_msg_resp_scanner_parameters::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_scanner_parameters *>(resp_msg))
 	{
 		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
 	}
@@ -1131,19 +1200,19 @@ bool ib_msg_req_scanner_parameters::response_is_meant_for_us(class tier2_message
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 bool ib_msg_req_scanner_subscription::response_is_meant_for_us(class tier2_message *resp_msg) const
 {
-	if (ib_msg_resp_scanner_data::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_scanner_data *>(resp_msg))
 	{
 		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
 	}
-	if (ib_msg_resp_scanner_data_start::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_scanner_data_start *>(resp_msg))
 	{
 		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
 	}
-	if (ib_msg_resp_scanner_data_end::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_scanner_data_end *>(resp_msg))
 	{
 		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
 	}
-	if (ib_msg_resp_error::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_error *>(resp_msg))
 	{
 		return state() == tier2_message::READY_TO_RECEIVE_RESPONSE;
 	}
@@ -1337,6 +1406,260 @@ bool ib_msg_cancel_realtime_bars::response_is_meant_for_us(class tier2_message *
 
 
 
+/* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
+bool ib_msg_req_scanner_parameters::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
+bool ib_msg_req_scanner_subscription::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_scanner_subscription *req = dynamic_cast<ib_msg_cancel_scanner_subscription *>(resp_msg);
+
+	if (req)
+	{
+		return req->get_ticker_id() == this->get_ticker_id();
+	}
+	return false;
+}
+/* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
+bool ib_msg_cancel_scanner_subscription::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;	
+}
+/* sends message REQ_MKT_DATA to IB/TWS */
+bool ib_msg_req_mkt_data::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_mkt_data *req = dynamic_cast<ib_msg_cancel_mkt_data *>(resp_msg);
+
+	if (req)
+	{
+		return req->get_ticker_id() == this->get_ticker_id();
+	}
+	return false;
+}
+/* sends message REQ_HISTORICAL_DATA to IB/TWS */
+bool ib_msg_req_historical_data::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_historical_data *req = dynamic_cast<ib_msg_cancel_historical_data *>(resp_msg);
+
+	if (req)
+	{
+		return req->get_ticker_id() == this->get_ticker_id();
+	}
+	return false;
+}
+/* sends message CANCEL_HISTORICAL_DATA to IB/TWS */
+bool ib_msg_cancel_historical_data::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message CANCEL_MKT_DATA to IB/TWS */
+bool ib_msg_cancel_mkt_data::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message EXERCISE_OPTIONS to IB/TWS */
+bool ib_msg_exercise_options::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message PLACE_ORDER to IB/TWS */
+bool ib_msg_place_order::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_order *req = dynamic_cast<ib_msg_cancel_order *>(resp_msg);
+
+	if (req)
+	{
+		return req->get_order_id() == this->get_order_id();
+	}
+	return false;
+}
+/* sends message CANCEL_ORDER to IB/TWS */
+bool ib_msg_cancel_order::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_OPEN_ORDERS to IB/TWS */
+bool ib_msg_req_open_orders::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_ACCOUNT_DATA to IB/TWS */
+bool ib_msg_req_account_updates::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_EXECUTIONS to IB/TWS */
+bool ib_msg_req_executions::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_IDS to IB/TWS */
+bool ib_msg_req_ids::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_CONTRACT_DATA to IB/TWS */
+bool ib_msg_req_contract_details::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_MKT_DEPTH to IB/TWS */
+bool ib_msg_req_mkt_depth::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_mkt_depth *req = dynamic_cast<ib_msg_cancel_mkt_depth *>(resp_msg);
+
+	if (req)
+	{
+		return req->get_ticker_id() == this->get_ticker_id();
+	}
+	return false;
+}
+/* sends message CANCEL_MKT_DEPTH to IB/TWS */
+bool ib_msg_cancel_mkt_depth::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_NEWS_BULLETINS to IB/TWS */
+bool ib_msg_req_news_bulletins::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_news_bulletins *req = dynamic_cast<ib_msg_cancel_news_bulletins *>(resp_msg);
+
+	if (req)
+	{
+		return true; // blow away all news bulletin requests
+	}
+	return false;
+}
+/* sends message CANCEL_NEWS_BULLETINS to IB/TWS */
+bool ib_msg_cancel_news_bulletins::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message SET_SERVER_LOGLEVEL to IB/TWS */
+bool ib_msg_set_server_log_level::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_AUTO_OPEN_ORDERS to IB/TWS */
+bool ib_msg_req_auto_open_orders::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_ALL_OPEN_ORDERS to IB/TWS */
+bool ib_msg_req_all_open_orders::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_MANAGED_ACCTS to IB/TWS */
+bool ib_msg_req_managed_accts::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_FA to IB/TWS */
+bool ib_msg_request_fa::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REPLACE_FA to IB/TWS */
+bool ib_msg_replace_fa::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_CURRENT_TIME to IB/TWS */
+bool ib_msg_req_current_time::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
+bool ib_msg_req_fundamental_data::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_fundamental_data *req = dynamic_cast<ib_msg_cancel_fundamental_data *>(resp_msg);
+
+	if (req)
+	{
+		return req->get_ticker_id() == this->get_ticker_id();
+	}
+	return false;
+}
+/* sends message CANCEL_FUNDAMENTAL_DATA to IB/TWS */
+bool ib_msg_cancel_fundamental_data::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
+bool ib_msg_calculate_implied_volatility::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_calculate_implied_volatility *req = dynamic_cast<ib_msg_cancel_calculate_implied_volatility *>(resp_msg);
+
+	if (req)
+	{
+		return req->get_ticker_id() == this->get_ticker_id();
+	}
+	return false;
+}
+/* sends message CANCEL_CALC_IMPLIED_VOLAT to IB/TWS */
+bool ib_msg_cancel_calculate_implied_volatility::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
+bool ib_msg_calculate_option_price::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_calculate_option_price *req = dynamic_cast<ib_msg_cancel_calculate_option_price *>(resp_msg);
+
+	if (req)
+	{
+		return req->get_ticker_id() == this->get_ticker_id();
+	}
+	return false;
+}
+/* sends message CANCEL_CALC_OPTION_PRICE to IB/TWS */
+bool ib_msg_cancel_calculate_option_price::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_GLOBAL_CANCEL to IB/TWS */
+bool ib_msg_req_global_cancel::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_MARKET_DATA_TYPE to IB/TWS */
+bool ib_msg_req_market_data_type::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+/* sends message REQ_REAL_TIME_BARS to IB/TWS */
+bool ib_msg_request_realtime_bars::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	ib_msg_cancel_realtime_bars *req = dynamic_cast<ib_msg_cancel_realtime_bars *>(resp_msg);
+
+	if (req)
+	{
+		return req->get_ticker_id() == this->get_ticker_id();
+	}
+	return false;
+}
+/* sends message CANCEL_REAL_TIME_BARS to IB/TWS */
+bool ib_msg_cancel_realtime_bars::cancel_request_is_meant_for_us(class tier2_message *resp_msg) const
+{
+	return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int ib_msg_req_scanner_parameters::process_response_message(class tier2_message *resp_msg)
 {
 	app_manager *mgr = resp_msg->get_requester()->get_app_manager();
@@ -1345,7 +1668,7 @@ int ib_msg_req_scanner_parameters::process_response_message(class tier2_message 
 
 	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_parameters");
 
-	if (ib_msg_resp_scanner_parameters::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_scanner_parameters *>(resp_msg))
 	{
 		// sneaky: let the response message handle itself:
 		int rv = resp_msg->process_response_message(this);
@@ -1369,7 +1692,7 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 
 	mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_subscription");
 
-	if (ib_msg_resp_scanner_data_start::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_scanner_data_start *>(resp_msg))
 	{
 		// TODO: we should collect the response if this is a user request
 		//
@@ -1385,12 +1708,12 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 			mark the request as completed; it's state observers should consequently
 			remove it from the queue and destroy the message.
 
-			N.B.: We should also notify TWS about the subscription cancelation!
+			N.B.: We should also notify TWS about the subscription cancellation!
 			*/
 			state(tier2_message::TASK_COMPLETED);
 		}
 	}
-	if (ib_msg_resp_scanner_data_end::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_scanner_data_end *>(resp_msg))
 	{
 		// terminate the request when we are the requester ourselves:
 		// we only use these scans to get a dynamically constructed list of 
@@ -1403,17 +1726,17 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 			mark the request as completed; it's state observers should consequently
 			remove it from the queue and destroy the message.
 
-			N.B.: We should also notify TWS about the subscription cancelation!
+			N.B.: We should also notify TWS about the subscription cancellation!
 			*/
 			state(tier2_message::TASK_COMPLETED);
 		}
 	}
-	if (ib_msg_resp_scanner_data::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_scanner_data *>(resp_msg))
 	{
 		// sneaky: let the response message handle itself:
 		return resp_msg->process_response_message(this);
 	}
-	if (ib_msg_resp_error::type_matches_class(resp_msg))
+	if (dynamic_cast<ib_msg_resp_error *>(resp_msg))
 	{
 		ib_msg_resp_error *err_msg = dynamic_cast<ib_msg_resp_error *>(resp_msg);
 

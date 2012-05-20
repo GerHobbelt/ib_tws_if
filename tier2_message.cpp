@@ -166,8 +166,6 @@ tier2_message::tier2_message(tier2_message_processor *from, tier2_message_proces
 	m_previous_state(INIT4PREV),
 	m_owner(NULL)
 {
-	m_unique_msgID = obtain_next_unique_msgID();
-
 	resolve_requester_and_receiver_issues();
 }
 
@@ -177,8 +175,6 @@ tier2_message::~tier2_message()
 	
 	//m_owner = NULL;
 	//current_owner(m_owner);
-
-	release_unique_msgID();
 }
 
 tier2_message::request_state_t tier2_message::state(request_state_t new_state)
@@ -506,7 +502,26 @@ int tier2_message::wait_for_response(interthread_communicator *listen_comm)
 	if (!listen_comm)
 		return -1;
 
-	// TODO: check the message queue of the requester to see if the expected message already was returned before we called this!
+	// check the message queue of the requester to see if the expected message already was returned before we called this!
+	if (m_requester->does_own(this))
+	{
+		switch(this->state())
+		{
+		case MSG_INITIALIZED:
+		case EXEC_COMMAND:
+		case WAIT_FOR_TRANSMIT:
+		case COMMENCE_TRANSMIT:
+		case READY_TO_RECEIVE_RESPONSE:
+		case RESPONSE_PENDING:
+			break;
+
+		case RESPONSE_COMPLETE:
+		case TASK_COMPLETED:
+		default:
+			// our message has already been answered / completed / aborted ... it's concluded anyway.
+			return 0;
+		}
+	}
 
 	while (mg_get_stop_flag(mg_get_context(listen_comm->receiver_socket())) == 0)
 	{
@@ -528,16 +543,6 @@ int tier2_message::wait_for_response(interthread_communicator *listen_comm)
 int tier2_message::process_response_message(tier2_message *resp_msg)
 {
 	assert(!"Should never get here!");
-	return 0;
-}
-
-void tier2_message::release_unique_msgID(void)
-{
-	return;
-}
-
-unique_id_t tier2_message::obtain_next_unique_msgID(void)
-{
 	return 0;
 }
 

@@ -227,38 +227,6 @@ public:
 
 
 
-/*
-state change listener which should remove canceled/aborted requests
-from the queue.
-*/
-class ib_tws_req_cancel_monitor: public tier2_message_state_change_handler
-{
-protected:
-	ib_tws_manager *m_ibm;
-
-public:
-	ib_tws_req_cancel_monitor()
-		: m_ibm(NULL)
-	{
-	}
-	virtual ~ib_tws_req_cancel_monitor()
-	{
-	}
-
-public:
-	virtual tier2_message::state_change process(tier2_message &msg, tier2_message::request_state_t new_state);
-
-	void set_ib_tws_manager(ib_tws_manager *ibm)
-	{
-		m_ibm = ibm;
-	}
-};
-
-
-
-
-
-
 class ib_tws_manager : public ib_backend_io_channel
 {
 	// overrides:
@@ -284,8 +252,6 @@ protected:
     /* -- and the working men -- */
 	int m_last_tickled_queue_position;
 	bool m_still_need_to_prime_the_pump;
-
-	ib_tws_req_cancel_monitor m_cancel_monitor;
 
 	ib_tws_scanner_subscription_limitation m_scanner_subscription_limit;
 
@@ -404,6 +370,7 @@ public:
 
 protected:
 	int scan_queue_and_process(tier2_message *resp_msg);
+	int cancel_all_matching_requests(tws_request_message *cancel_req_msg);
 
 public:
 	/* fired by: TICK_PRICE */

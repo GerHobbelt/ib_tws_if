@@ -93,8 +93,6 @@ protected:
 	request_state_t m_previous_state;
 	request_state_t m_now_state;
 
-	unique_id_t m_unique_msgID;
-
 	tier2_message_processor *m_requester;
 	tier2_message_processor *m_receiver;
 	tier2_message_processor *m_owner;
@@ -108,10 +106,6 @@ public:
 
 protected:
 	virtual ~tier2_message();
-
-protected:
-	unique_id_t obtain_next_unique_msgID(void);
-	void release_unique_msgID(void);
 
 public:
 	tier2_message_processor *get_requester(void) const
@@ -134,16 +128,6 @@ public:
 
 	// set up the defaults; perform any necessary registration with the app_manager, etc...
 	virtual void resolve_requester_and_receiver_issues(void);
-
-	unique_id_t get_uniq_msg_id(void) const
-	{
-		return m_unique_msgID;
-	}
-
-	virtual bool matches(unique_id_t id) const
-	{
-		return id == m_unique_msgID;
-	}
 
 	virtual bool matches(tier2_message *msg) const
 	{

@@ -88,6 +88,7 @@ protected:
 
 public:
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 };
 
 
@@ -150,6 +151,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -185,6 +187,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -216,6 +219,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -254,6 +258,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -296,6 +301,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -328,6 +334,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -360,6 +367,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -400,6 +408,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -438,8 +447,14 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
+
+	ib_int_t get_order_id(void) const
+	{
+		return m_order_id;
+	}
 };
 
 
@@ -474,8 +489,14 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
+
+	ib_int_t get_order_id(void) const
+	{
+		return m_order_id;
+	}
 };
 
 
@@ -506,6 +527,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -543,6 +565,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -579,6 +602,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -615,6 +639,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -651,6 +676,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -688,6 +714,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -720,6 +747,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -756,6 +784,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -788,6 +817,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -824,6 +854,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -860,6 +891,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -892,6 +924,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -924,6 +957,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -960,6 +994,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -997,6 +1032,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1029,6 +1065,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 
@@ -1078,6 +1115,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1110,6 +1148,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1148,6 +1187,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1180,6 +1220,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1218,6 +1259,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1250,6 +1292,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1282,6 +1325,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1318,6 +1362,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1357,6 +1402,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1390,6 +1436,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };
@@ -1443,6 +1490,7 @@ public:
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
+	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
 };

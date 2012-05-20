@@ -35,26 +35,12 @@ bool tier2_message::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool tier2_message::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t tier2_message::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t tier2_message::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -68,26 +54,12 @@ bool cancel_message::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool cancel_message::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t cancel_message::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t cancel_message::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -101,26 +73,12 @@ bool schedule_message::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool schedule_message::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t schedule_message::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t schedule_message::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -134,26 +92,12 @@ bool tws_reqresp_message::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool tws_reqresp_message::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t tws_reqresp_message::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t tws_reqresp_message::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -167,26 +111,12 @@ bool tws_request_message::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool tws_request_message::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t tws_request_message::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t tws_request_message::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -200,26 +130,12 @@ bool tws_response_message::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool tws_response_message::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t tws_response_message::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t tws_response_message::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -234,26 +150,12 @@ bool ib_msg_resp_update_mkt_depth::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_update_mkt_depth::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_update_mkt_depth::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_update_mkt_depth::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -267,26 +169,12 @@ bool ib_msg_resp_market_data_type::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_market_data_type::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_market_data_type::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_market_data_type::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -300,26 +188,12 @@ bool ib_msg_resp_open_order::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_open_order::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_open_order::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_open_order::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -333,26 +207,12 @@ bool ib_msg_resp_order_status::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_order_status::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_order_status::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_order_status::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -366,26 +226,12 @@ bool ib_msg_resp_scanner_data::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_scanner_data::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_scanner_data::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_scanner_data::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -399,26 +245,12 @@ bool ib_msg_resp_historical_data::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_historical_data::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_historical_data::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_historical_data::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -432,26 +264,12 @@ bool ib_msg_resp_update_mkt_depth_l2::type_matches(const tier2_message *msg) con
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_update_mkt_depth_l2::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_update_mkt_depth_l2::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_update_mkt_depth_l2::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -465,26 +283,12 @@ bool ib_msg_resp_delta_neutral_validation::type_matches(const tier2_message *msg
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_delta_neutral_validation::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_delta_neutral_validation::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_delta_neutral_validation::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -498,26 +302,12 @@ bool ib_msg_resp_bond_contract_details::type_matches(const tier2_message *msg) c
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_bond_contract_details::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_bond_contract_details::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_bond_contract_details::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -531,26 +321,12 @@ bool ib_msg_resp_scanner_data_end::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_scanner_data_end::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_scanner_data_end::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_scanner_data_end::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -564,26 +340,12 @@ bool ib_msg_resp_scanner_data_start::type_matches(const tier2_message *msg) cons
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_scanner_data_start::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_scanner_data_start::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_scanner_data_start::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -597,26 +359,12 @@ bool ib_msg_resp_tick_size::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_tick_size::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_tick_size::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_tick_size::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -630,26 +378,12 @@ bool ib_msg_resp_tick_snapshot_end::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_tick_snapshot_end::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_tick_snapshot_end::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_tick_snapshot_end::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -663,26 +397,12 @@ bool ib_msg_resp_update_account_value::type_matches(const tier2_message *msg) co
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_update_account_value::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_update_account_value::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_update_account_value::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -696,26 +416,12 @@ bool ib_msg_resp_receive_fa::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_receive_fa::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_receive_fa::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_receive_fa::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -729,26 +435,12 @@ bool ib_msg_resp_open_order_end::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_open_order_end::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_open_order_end::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_open_order_end::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -762,26 +454,12 @@ bool ib_msg_resp_contract_details::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_contract_details::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_contract_details::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_contract_details::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -795,26 +473,12 @@ bool ib_msg_resp_exec_details::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_exec_details::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_exec_details::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_exec_details::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -828,26 +492,12 @@ bool ib_msg_resp_managed_accounts::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_managed_accounts::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_managed_accounts::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_managed_accounts::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -861,26 +511,12 @@ bool ib_msg_resp_tick_efp::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_tick_efp::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_tick_efp::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_tick_efp::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -894,26 +530,12 @@ bool ib_msg_resp_update_account_time::type_matches(const tier2_message *msg) con
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_update_account_time::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_update_account_time::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_update_account_time::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -927,26 +549,12 @@ bool ib_msg_resp_tick_option_computation::type_matches(const tier2_message *msg)
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_tick_option_computation::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_tick_option_computation::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_tick_option_computation::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -960,26 +568,12 @@ bool ib_msg_resp_tick_price::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_tick_price::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_tick_price::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_tick_price::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -993,26 +587,12 @@ bool ib_msg_resp_error::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_error::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_error::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_error::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1026,26 +606,12 @@ bool ib_msg_resp_acct_download_end::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_acct_download_end::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_acct_download_end::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_acct_download_end::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1059,26 +625,12 @@ bool ib_msg_resp_commission_report::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_commission_report::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_commission_report::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_commission_report::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1092,26 +644,12 @@ bool ib_msg_resp_fundamental_data::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_fundamental_data::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_fundamental_data::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_fundamental_data::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1125,26 +663,12 @@ bool ib_msg_resp_realtime_bar::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_realtime_bar::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_realtime_bar::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_realtime_bar::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1158,26 +682,12 @@ bool ib_msg_resp_historical_data_end::type_matches(const tier2_message *msg) con
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_historical_data_end::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_historical_data_end::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_historical_data_end::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1191,26 +701,12 @@ bool ib_msg_resp_next_valid_id::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_next_valid_id::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_next_valid_id::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_next_valid_id::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1224,26 +720,12 @@ bool ib_msg_resp_contract_details_end::type_matches(const tier2_message *msg) co
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_contract_details_end::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_contract_details_end::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_contract_details_end::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1257,26 +739,12 @@ bool ib_msg_resp_update_news_bulletin::type_matches(const tier2_message *msg) co
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_update_news_bulletin::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_update_news_bulletin::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_update_news_bulletin::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1290,26 +758,12 @@ bool ib_msg_resp_exec_details_end::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_exec_details_end::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_exec_details_end::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_exec_details_end::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1323,26 +777,12 @@ bool ib_msg_resp_tick_string::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_tick_string::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_tick_string::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_tick_string::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1356,26 +796,12 @@ bool ib_msg_resp_scanner_parameters::type_matches(const tier2_message *msg) cons
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_scanner_parameters::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_scanner_parameters::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_scanner_parameters::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1389,26 +815,12 @@ bool ib_msg_resp_current_time::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_current_time::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_current_time::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_current_time::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1422,26 +834,12 @@ bool ib_msg_resp_tick_generic::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_tick_generic::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_tick_generic::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_tick_generic::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1455,26 +853,12 @@ bool ib_msg_resp_update_portfolio::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_resp_update_portfolio::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_resp_update_portfolio::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_resp_update_portfolio::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1489,26 +873,12 @@ bool ib_msg_req_scanner_parameters::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_scanner_parameters::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_scanner_parameters::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_scanner_parameters::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1522,26 +892,12 @@ bool ib_msg_req_scanner_subscription::type_matches(const tier2_message *msg) con
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_scanner_subscription::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_scanner_subscription::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_scanner_subscription::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1555,26 +911,12 @@ bool ib_msg_cancel_scanner_subscription::type_matches(const tier2_message *msg) 
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_cancel_scanner_subscription::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_cancel_scanner_subscription::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_cancel_scanner_subscription::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1588,26 +930,12 @@ bool ib_msg_req_mkt_data::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_mkt_data::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_mkt_data::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_mkt_data::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1621,26 +949,12 @@ bool ib_msg_req_historical_data::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_historical_data::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_historical_data::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_historical_data::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1654,26 +968,12 @@ bool ib_msg_cancel_historical_data::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_cancel_historical_data::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_cancel_historical_data::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_cancel_historical_data::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1687,26 +987,12 @@ bool ib_msg_cancel_mkt_data::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_cancel_mkt_data::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_cancel_mkt_data::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_cancel_mkt_data::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1720,26 +1006,12 @@ bool ib_msg_exercise_options::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_exercise_options::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_exercise_options::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_exercise_options::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1753,26 +1025,12 @@ bool ib_msg_place_order::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_place_order::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_place_order::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_place_order::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1786,26 +1044,12 @@ bool ib_msg_cancel_order::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_cancel_order::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_cancel_order::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_cancel_order::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1819,26 +1063,12 @@ bool ib_msg_req_open_orders::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_open_orders::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_open_orders::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_open_orders::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1852,26 +1082,12 @@ bool ib_msg_req_account_updates::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_account_updates::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_account_updates::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_account_updates::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1885,26 +1101,12 @@ bool ib_msg_req_executions::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_executions::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_executions::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_executions::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1918,26 +1120,12 @@ bool ib_msg_req_ids::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_ids::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_ids::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_ids::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1951,26 +1139,12 @@ bool ib_msg_req_contract_details::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_contract_details::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_contract_details::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_contract_details::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -1984,26 +1158,12 @@ bool ib_msg_req_mkt_depth::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_mkt_depth::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_mkt_depth::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_mkt_depth::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2017,26 +1177,12 @@ bool ib_msg_cancel_mkt_depth::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_cancel_mkt_depth::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_cancel_mkt_depth::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_cancel_mkt_depth::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2050,26 +1196,12 @@ bool ib_msg_req_news_bulletins::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_news_bulletins::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_news_bulletins::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_news_bulletins::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2083,26 +1215,12 @@ bool ib_msg_cancel_news_bulletins::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_cancel_news_bulletins::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_cancel_news_bulletins::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_cancel_news_bulletins::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2116,26 +1234,12 @@ bool ib_msg_set_server_log_level::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_set_server_log_level::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_set_server_log_level::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_set_server_log_level::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2149,26 +1253,12 @@ bool ib_msg_req_auto_open_orders::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_auto_open_orders::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_auto_open_orders::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_auto_open_orders::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2182,26 +1272,12 @@ bool ib_msg_req_all_open_orders::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_all_open_orders::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_all_open_orders::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_all_open_orders::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2215,26 +1291,12 @@ bool ib_msg_req_managed_accts::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_managed_accts::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_managed_accts::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_managed_accts::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2248,26 +1310,12 @@ bool ib_msg_request_fa::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_request_fa::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_request_fa::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_request_fa::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2281,26 +1329,12 @@ bool ib_msg_replace_fa::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_replace_fa::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_replace_fa::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_replace_fa::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2314,26 +1348,12 @@ bool ib_msg_req_current_time::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_current_time::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_current_time::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_current_time::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2347,26 +1367,12 @@ bool ib_msg_req_fundamental_data::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_fundamental_data::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_fundamental_data::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_fundamental_data::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2380,26 +1386,12 @@ bool ib_msg_cancel_fundamental_data::type_matches(const tier2_message *msg) cons
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_cancel_fundamental_data::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_cancel_fundamental_data::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_cancel_fundamental_data::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2413,26 +1405,12 @@ bool ib_msg_calculate_implied_volatility::type_matches(const tier2_message *msg)
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_calculate_implied_volatility::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_calculate_implied_volatility::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_calculate_implied_volatility::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2446,26 +1424,12 @@ bool ib_msg_cancel_calculate_implied_volatility::type_matches(const tier2_messag
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_cancel_calculate_implied_volatility::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_cancel_calculate_implied_volatility::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_cancel_calculate_implied_volatility::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2479,26 +1443,12 @@ bool ib_msg_calculate_option_price::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_calculate_option_price::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_calculate_option_price::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_calculate_option_price::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2512,26 +1462,12 @@ bool ib_msg_cancel_calculate_option_price::type_matches(const tier2_message *msg
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_cancel_calculate_option_price::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_cancel_calculate_option_price::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_cancel_calculate_option_price::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2545,26 +1481,12 @@ bool ib_msg_req_global_cancel::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_global_cancel::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_global_cancel::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_global_cancel::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																
@@ -2578,26 +1500,12 @@ bool ib_msg_req_market_data_type::type_matches(const tier2_message *msg) const
 {																
 	return msg->get_type_id() == get_type_id();					
 }																
-bool ib_msg_req_market_data_type::type_matches_class(const tier2_message *msg) 
-{																
-	return msg->get_type_id() == get_type_id(0);					
-}																
 unique_id_t ib_msg_req_market_data_type::get_type_id(void) const							
 {																
 	if (!m_type_id)												
 	{															
 		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
 	}															
-	return m_type_id;											
-}																
-unique_id_t ib_msg_req_market_data_type::get_type_id(unique_id_t *ref)							
-{																
-	if (!m_type_id)												
-	{															
-		m_type_id = tier2_msg_typeid_mgr.obtain_unique_id();					
-	}	
-	if (ref)
-		*ref = m_type_id;
 	return m_type_id;											
 }																
 /* 																

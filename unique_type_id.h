@@ -120,8 +120,6 @@ public:
 public:															\
 	virtual bool type_matches(const tier2_message *msg) const;	\
 	virtual unique_id_t get_type_id(void) const;				\
-	static bool type_matches_class(const tier2_message *msg);	\
-	static unique_id_t get_type_id(unique_id_t *bogus);			\
 private:														\
 	static unique_id_t m_type_id
 
