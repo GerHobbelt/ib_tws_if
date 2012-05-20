@@ -144,7 +144,7 @@ public:
 		return tws_handle;
 	}
 
-	// helper function: produce the IB/TWS app connection. (Used by the TWS backend communication thread / TWS API callbacks)
+	// helper function: produce the IB/TWS app connection. (Used by the TWS back-end communication thread / TWS API callbacks)
 	struct mg_connection *get_connection(void)
 	{
 		return tws_conn;

@@ -58,7 +58,7 @@ int tws_request_message::f_task_completed(void)
 	if (get_requester() == ibm)
 	{
 		/*
-		When the TWS backend task issued the request itself, we can safely 
+		When the TWS back-end task issued the request itself, we can safely 
 		state that a completed task is a terminated task.
 
 		Ditch it!
@@ -78,7 +78,7 @@ int tws_request_message::f_task_failed(void)
 	if (get_requester() == ibm)
 	{
 		/*
-		When the TWS backend task issued the request itself, we can safely 
+		When the TWS back-end task issued the request itself, we can safely 
 		state that a failed task is a terminated task.
 
 		Ditch it!
@@ -98,7 +98,7 @@ int tws_request_message::f_task_aborted(void)
 	if (get_requester() == ibm)
 	{
 		/*
-		When the TWS backend task issued the request itself, we can safely 
+		When the TWS back-end task issued the request itself, we can safely 
 		state that an aborted task is a terminated task.
 
 		Ditch it!
@@ -1947,7 +1947,9 @@ int ib_msg_req_current_time::save_response(class json_output *channel)
 	const ib_date_t t = get_response_timestamp().value();
 
 	assert(channel);
+	channel->begin_object();
 	channel->add_sibling("time", t);
+	channel->end_object();
 	return 0;
 }
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */

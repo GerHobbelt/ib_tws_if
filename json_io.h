@@ -52,6 +52,11 @@ public:
 	virtual void push_level(const char *name);
 	virtual void pop_level(void);
 
+	virtual void begin_object(void);
+	virtual void end_object(void);
+	virtual void begin_array(void);
+	virtual void end_array(void);
+
 	virtual void start(void);
 	virtual void finish(void);
 };

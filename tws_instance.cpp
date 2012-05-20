@@ -1141,7 +1141,7 @@ tier2_message::state_change ib_tws_scanner_subscription_limitation::process(tier
 					ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 					struct mg_connection *conn = ibm->get_connection();
 
-					assert(msg.current_owner() == ibm); // we SHOULD be running in the backend now
+					assert(msg.current_owner() == ibm); // we SHOULD be running in the back-end now
 
 					m_active_scanner_subscriptions.erase(m_active_scanner_subscriptions.begin() + i);
 					msg.unregister_handler(this);

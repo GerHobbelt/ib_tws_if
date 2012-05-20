@@ -146,7 +146,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -181,7 +181,7 @@ protected:
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -212,7 +212,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -250,7 +250,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -292,7 +292,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -324,7 +324,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -356,7 +356,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -396,7 +396,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -434,7 +434,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -470,7 +470,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -502,7 +502,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -539,7 +539,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -575,7 +575,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -611,7 +611,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -647,7 +647,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -684,7 +684,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -716,7 +716,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -752,7 +752,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -784,7 +784,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -820,7 +820,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -856,7 +856,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -888,7 +888,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -920,7 +920,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -956,7 +956,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -993,7 +993,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1025,7 +1025,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1074,7 +1074,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1106,7 +1106,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1144,7 +1144,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1176,7 +1176,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1214,7 +1214,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1246,7 +1246,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1278,7 +1278,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1314,7 +1314,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1353,7 +1353,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1386,7 +1386,7 @@ friend class ib_tws_manager;
 	virtual int tx(tws::tws_instance_t *tws);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;
@@ -1439,7 +1439,7 @@ protected:
 	virtual int f_commence_transmit(void);
 
 public:
-	/* this method is invoked by the backend when a matching response message is received: */
+	/* this method is invoked by the back-end when a matching response message is received: */
 	virtual int process_response_message(tier2_message *response);
 
 	virtual bool response_is_meant_for_us(tier2_message *resp_msg) const;

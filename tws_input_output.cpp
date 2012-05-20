@@ -123,7 +123,7 @@ void tws_worker_thread(struct mg_context *ctx)
 
                 while (mg_get_stop_flag(ctx) == 0 && ibm->is_tws_connected())
                 {
-					// push messages across the thread barrier + destory messages marked for destruction
+					// push messages across the thread barrier + destroy messages marked for destruction
 					if (0 != ibm->pulse_marked_messages())
 					{
 						break;

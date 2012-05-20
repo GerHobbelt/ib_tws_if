@@ -106,7 +106,7 @@ public:
 /*
 Carries the 'globals' relevant for a particular front-end thread, 
 such as:
- - the socketpair to use for message passing to/from the backend
+ - the socketpair to use for message passing to/from the back-end
  - the thread-specific connection
  - ...
 */

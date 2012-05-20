@@ -73,7 +73,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 				interthread_communicator *comm = req_msg->get_interthread_communicator();
 				int err;
 
-				// pass the request to the backend; block & wait for the response...
+				// pass the request to the back-end; block & wait for the response...
 				req_msg->state(tier2_message::EXEC_COMMAND);
 				req_msg->pulse();
 				err = req_msg->wait_for_response(comm);
@@ -117,7 +117,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 
         // set up the 'front-end to back-end communication serialization' mutexes:
 
-        // kickstart the TWS backend thread now:
+        // kickstart the TWS back-end thread now:
         if (mg_start_thread(ctx, (mg_thread_func_t) tws_worker_thread, ctx) != 0) {
             mg_cry4ctx(ctx, "Cannot start TWS connection thread: %d", mg_strerror(mg_get_lasterror()));
             processed = NULL;

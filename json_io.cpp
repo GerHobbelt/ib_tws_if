@@ -140,3 +140,25 @@ void json_output::finish(void)
 	json_output_indent();
 	mg_printf(m_conn, "}");
 }
+
+
+void json_output::begin_object(void)
+{
+	assert(m_conn);
+}
+
+void json_output::end_object(void)
+{
+	assert(m_conn);
+}
+
+void json_output::begin_array(void)
+{
+	assert(m_conn);
+}
+
+void json_output::end_array(void)
+{
+	assert(m_conn);
+}
+
