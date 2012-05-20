@@ -28,3 +28,12 @@ tech notes:
   queue mutexes as the pusher relinquishes control while the receiver will obtain it by reading the pointer from the
   socket. PROBLEM: how can we safely discard messages originating from terminated/crashed threads? (This is also
   an issue for a 'regular' queue...)
+  --> implemented
+  
+- come up with something nice & easy for the various serialization/deserialization spots in the code.
+  Had a look at libs11n but it doesn't seem a good fit. Have to consider this some more.
+  
+  Another thought there is to use OpenSSL's ASN.1 code as a starter to serialize the class data to the database, but that
+  doesn't translate well when we move to using a SQL-based database for some stuff; rather, ASN.1 would be one of the
+  I/O formats next to SQL and JSON.
+  
