@@ -144,7 +144,7 @@ hg gexport
 if ! test -d ${dst} ; then
 	mkdir ${d}/${dst}
 fi
-rsync -rLkEt --delete --ignore-errors --force ./ ${d}/${dst}
+rsync -rLkEt --delete --delete-before --ignore-errors --force ./ ${d}/${dst}
 
 
 popd

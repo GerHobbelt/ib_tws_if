@@ -116,38 +116,5 @@ public:
 
 
 
-#define UNIQUE_TYPE_ID_CLASSDEF()								\
-public:															\
-	virtual bool type_matches(const tier2_message *msg) const;	\
-	virtual unique_id_t get_type_id(void) const;				\
-private:														\
-	static unique_id_t m_type_id
-
-
-#if 0
-
-#define UNIQUE_TYPE_ID_CLASSIMPL(class, manager)				\
-bool class::type_matches(const tier2_message *msg)				\
-{																\
-	return msg->get_type_id() == get_type_id();					\
-}																\
-unique_id_t class::get_type_id(void)							\
-{																\
-	if (!m_type_id)												\
-	{															\
-		m_type_id = manager.obtain_unique_id();					\
-	}															\
-	return m_type_id;											\
-}																\
-/* 																\
-	uninitialized; 												\
-	will be set up as soon as anyone invokes get_type_id() 		\
- */																\
-unique_id_t class::m_type_id = manager.obtain_unique_id()
-
-#endif
-
-
-
 
 #endif // UNIQUE_TYPE_ID_CALCULATOR_HEADER_INCLUDED

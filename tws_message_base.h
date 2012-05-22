@@ -32,8 +32,6 @@
 
 class tws_reqresp_message: public tier2_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 public:
 	tws_reqresp_message(tier2_message_processor *from, tier2_message_processor *to = NULL) :
 		tier2_message(from, to)

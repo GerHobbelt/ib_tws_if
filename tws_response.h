@@ -32,8 +32,6 @@
 
 class tws_response_message: public tws_reqresp_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 public:
 	tws_response_message(tier2_message_processor *from, tier2_message_processor *to = NULL) :
 		tws_reqresp_message(from, to)
@@ -78,8 +76,6 @@ public:
 /* fired by: TICK_PRICE */
 class ib_msg_resp_tick_price: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tws_tick_type_t m_field;
 	ib_double_t m_price;
@@ -103,8 +99,6 @@ public:
 /* fired by: TICK_PRICE (for modern versions, then immediately preceeded by an invocation of event_tick_price()), TICK_SIZE */
 class ib_msg_resp_tick_size: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tws_tick_type_t m_field;
 	ib_int_t m_size;
@@ -128,8 +122,6 @@ public:
 /* fired by: TICK_OPTION_COMPUTATION */
 class ib_msg_resp_tick_option_computation: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tws_tick_type_t m_type;
 	ib_double_t m_implied_vol;
@@ -162,8 +154,6 @@ public:
 /* fired by: TICK_GENERIC */
 class ib_msg_resp_tick_generic: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tws_tick_type_t m_type;
 	ib_double_t m_value;
@@ -187,8 +177,6 @@ public:
 /* fired by: TICK_STRING */
 class ib_msg_resp_tick_string: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tws_tick_type_t m_type;
 	ib_string_t m_value;
@@ -212,8 +200,6 @@ public:
 /* fired by: TICK_EFP */
 class ib_msg_resp_tick_efp: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tws_tick_type_t m_tick_type;
 	ib_double_t m_basis_points;
@@ -245,8 +231,6 @@ public:
 /* fired by: ORDER_STATUS */
 class ib_msg_resp_order_status: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_order_id;
 	ib_string_t m_status;
@@ -279,8 +263,6 @@ public:
 /* fired by: OPEN_ORDER */
 class ib_msg_resp_open_order: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_order_id;
 	ib_contract m_contract;
@@ -306,8 +288,6 @@ public:
 /* fired by: OPEN_ORDER_END */
 class ib_msg_resp_open_order_end: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 public:
 	ib_msg_resp_open_order_end(tier2_message_processor *from, tier2_message_processor *to) :
 	  tws_response_message(from, to)
@@ -326,8 +306,6 @@ public:
 /* fired by: ACCT_VALUE */
 class ib_msg_resp_update_account_value: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_string_t m_key;
 	ib_string_t m_val;
@@ -353,8 +331,6 @@ public:
 /* fired by: PORTFOLIO_VALUE */
 class ib_msg_resp_update_portfolio: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_contract m_contract;
 	ib_int_t m_position;
@@ -384,8 +360,6 @@ public:
 /* fired by: ACCT_UPDATE_TIME */
 class ib_msg_resp_update_account_time: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_date_t m_time_stamp;
 
@@ -408,8 +382,6 @@ public:
 /* fired by: NEXT_VALID_ID */
 class ib_msg_resp_next_valid_id: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_order_id;
 
@@ -437,8 +409,6 @@ public:
 /* fired by: CONTRACT_DATA */
 class ib_msg_resp_contract_details: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_contract_details m_contract_details;
 
@@ -461,8 +431,6 @@ public:
 /* fired by: CONTRACT_DATA_END */
 class ib_msg_resp_contract_details_end: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 public:
 	ib_msg_resp_contract_details_end(tier2_message_processor *from, tier2_message_processor *to, int req_id) :
 	  tws_response_w_ticker_message(from, to, req_id)
@@ -481,8 +449,6 @@ public:
 /* fired by: BOND_CONTRACT_DATA */
 class ib_msg_resp_bond_contract_details: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_contract_details m_contract_details;
 
@@ -505,8 +471,6 @@ public:
 /* fired by: EXECUTION_DATA */
 class ib_msg_resp_exec_details: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_order_id;
 	ib_contract m_contract;
@@ -531,8 +495,6 @@ public:
 /* fired by: EXECUTION_DATA_END */
 class ib_msg_resp_exec_details_end: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 public:
 	ib_msg_resp_exec_details_end(tier2_message_processor *from, tier2_message_processor *to, int req_id) :
 	  tws_response_w_ticker_message(from, to, req_id)
@@ -551,8 +513,6 @@ public:
 /* fired by: ERR_MSG */
 class ib_msg_resp_error: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_error_code;
 	ib_string_t m_error_string;
@@ -586,8 +546,6 @@ public:
 /* fired by: MARKET_DEPTH */
 class ib_msg_resp_update_mkt_depth: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_position;
 	ib_int_t m_operation;
@@ -614,8 +572,6 @@ public:
 /* fired by: MARKET_DEPTH_L2 */
 class ib_msg_resp_update_mkt_depth_l2: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_position;
 	ib_string_t m_market_maker;
@@ -643,8 +599,6 @@ public:
 /* fired by: NEWS_BULLETINS */
 class ib_msg_resp_update_news_bulletin: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_msgid;
 	ib_int_t m_msg_type;
@@ -670,8 +624,6 @@ public:
 /* fired by: MANAGED_ACCTS */
 class ib_msg_resp_managed_accounts: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_string_t m_accounts_list;
 
@@ -699,8 +651,6 @@ public:
 /* fired by: RECEIVE_FA */
 class ib_msg_resp_receive_fa: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tws_fa_msg_type_t m_fa_data_type;
 	ib_string_t m_cxml;
@@ -724,8 +674,6 @@ public:
 /* fired by: HISTORICAL_DATA (possibly multiple times per incoming message) */
 class ib_msg_resp_historical_data: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_string_t m_date;
 	ib_double_t m_open;
@@ -756,8 +704,6 @@ public:
 /* fired by: HISTORICAL_DATA  (once, after one or more invocations of event_historical_data()) */
 class ib_msg_resp_historical_data_end: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_string_t m_completion_from;
 	ib_string_t m_completion_to;
@@ -781,8 +727,6 @@ public:
 /* fired by: SCANNER_PARAMETERS */
 class ib_msg_resp_scanner_parameters: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_string_t m_xml;
 
@@ -805,8 +749,6 @@ public:
 /* fired by: SCANNER_DATA (possibly multiple times per incoming message) */
 class ib_msg_resp_scanner_data: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_rank;
 	ib_contract_details m_cd;
@@ -839,8 +781,6 @@ public:
 /* fired by: SCANNER_DATA (once, after one or more invocations of event_scanner_data()) */
 class ib_msg_resp_scanner_data_end: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_num_elements;
 
@@ -863,8 +803,6 @@ public:
 /* fired by: SCANNER_DATA (once, before any invocations of event_scanner_data()) */
 class ib_msg_resp_scanner_data_start: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_int_t m_num_elements;
 
@@ -894,8 +832,6 @@ class ib_msg_resp_current_time: public tws_response_message
 {
 friend class ib_msg_req_current_time;    // easier way to access the response that way than providing a plethora of get-style methods
 
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_date_t m_time;
 
@@ -918,8 +854,6 @@ public:
 /* fired by: REAL_TIME_BARS */
 class ib_msg_resp_realtime_bar: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_date_t m_time;
 	ib_double_t m_open;
@@ -949,8 +883,6 @@ public:
 /* fired by: FUNDAMENTAL_DATA */
 class ib_msg_resp_fundamental_data: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_string_t m_data;
 
@@ -973,8 +905,6 @@ public:
 /* fired by: DELTA_NEUTRAL_VALIDATION */
 class ib_msg_resp_delta_neutral_validation: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_under_comp m_und;
 
@@ -997,8 +927,6 @@ public:
 /* fired by: ACCT_DOWNLOAD_END */
 class ib_msg_resp_acct_download_end: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_string_t m_acct_name;
 
@@ -1021,8 +949,6 @@ public:
 /* fired by: TICK_SNAPSHOT_END */
 class ib_msg_resp_tick_snapshot_end: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 public:
 	ib_msg_resp_tick_snapshot_end(tier2_message_processor *from, tier2_message_processor *to, int req_id) :
 	  tws_response_w_ticker_message(from, to, req_id)
@@ -1041,8 +967,6 @@ public:
 /* fired by: MARKET_DATA_TYPE */
 class ib_msg_resp_market_data_type: public tws_response_w_ticker_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tws_market_data_type_t m_data_type;
 
@@ -1065,8 +989,6 @@ public:
 /* fired by: COMMISSION_REPORT */
 class ib_msg_resp_commission_report: public tws_response_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	ib_commission_report m_report;
 

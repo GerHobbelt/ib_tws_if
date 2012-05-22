@@ -63,8 +63,6 @@ extern unique_type_id_threadsafe_manager tier2_msg_typeid_mgr;
 
 class tier2_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	virtual const char *get_class_name(void) const
 	{
@@ -232,8 +230,6 @@ public:
 
 class cancel_message: public tier2_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tier2_message *m_refd_msg;
 
@@ -261,8 +257,6 @@ protected:
 
 class schedule_message: public tier2_message
 {
-	UNIQUE_TYPE_ID_CLASSDEF();
-
 protected:
 	tier2_message *m_refd_msg;
 

@@ -50,8 +50,11 @@ tekert		= tekert-keepalive-fix
 bel2125         = bel2125-mongoose
 visionofarun    = visionofarun-mongoose
 jmikhail-memfix = jmikhail-memfix
-
-
+vovodroid-req   = vovodroid-request-complete-event
+barrossmar-ssi  = barrossmar-ssi-echo
+morgandel-file  = morgandel-enablefileserving
+jigsaw-sqlite   = jigsaw-mongoose
+gerhobbelt-gh   = gerhobbelt-github-mongoose
 
 EOT
 
