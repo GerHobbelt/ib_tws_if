@@ -55,10 +55,14 @@ protected:
 public:
 	virtual ~data_tracker_manager();
 	static data_tracker_manager *get_instance(app_manager *mgr, bool instantiate_singleton = false);
+protected:
+	static void set_instance(data_tracker_manager *instance);
 
 protected:
 	typedef std::vector<ib_contract_details *> cd_store_t;
 	cd_store_t m_cds;
+
+    struct mg_context *m_global_ctx;
 
 public:
 	int register_contract_info(const ib_contract_details *cd);
@@ -66,6 +70,19 @@ public:
 protected:
 	int scan_queue_and_process(tier2_message *resp_msg);
 	int cancel_all_matching_requests(tws_request_message *cancel_req_msg);
+
+public:
+	struct mg_context *get_context(void)
+	{
+		return m_global_ctx;
+	}
+	void set_context(struct mg_context *ctx)
+	{
+		assert(ctx);
+		m_global_ctx = ctx;
+	}
+
+	int process_one_event(void);
 };
 
 

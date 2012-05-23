@@ -144,7 +144,7 @@
       <Filter>TWS I/F layer\Sources</Filter>
     </ClCompile>
     <ClCompile Include="..\..\data_tracker.cpp">
-      <Filter>Backend / Tier2\Sources</Filter>
+      <Filter>Glue\Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

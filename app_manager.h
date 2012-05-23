@@ -30,6 +30,7 @@ class tier2_message;
 class ib_tws_manager;
 class db_manager;
 class sender_receiver_store;
+class data_tracker_manager;
 
 
 
@@ -38,6 +39,7 @@ class app_manager
 protected:
 	ib_tws_manager *ib_tws;
 	db_manager *dbi;
+	data_tracker_manager *m_data_tracker;
 
 	sender_receiver_store *sr_store;
 
@@ -86,6 +88,7 @@ public:
 
 	db_manager *get_db_manager(void);
 	ib_tws_manager *get_ib_tws_manager(void);
+	data_tracker_manager *get_data_tracker_manager(void);
 
 	int set_next_order_id(int id);
 	int get_next_order_id(void);

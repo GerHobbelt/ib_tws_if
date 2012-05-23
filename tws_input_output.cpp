@@ -27,7 +27,6 @@
 #include <tws_c_api/twsapi.h>
 
 #include "app_manager.h"
-#include "tws_database_io.h"
 #include "tws_backend_io.h"
 
 #include <mongoose/mongoose_ex.h>
@@ -77,7 +76,6 @@ void tws_worker_thread(struct mg_context *ctx)
     int tws_app_is_down = 0;
 	app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	db_manager *dbm = mgr->get_db_manager();
 
 	ibm->set_context(ctx);
 	mgr->register_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD, ibm);
@@ -106,14 +104,6 @@ void tws_worker_thread(struct mg_context *ctx)
                 // reset the counter as we have a valid/working connection again now:
                 tws_app_is_down = 0;
 
-				err = dbm->open_databases();
-				if (err)
-				{
-					mg_cry4ctx(ctx, "FATAL ERROR: Cannot access the database: %d (%s)\n", err, dbm->strerror(err));
-					abortus_provocatus = 1;
-					goto fail_dramatically;
-				}
-
                 // request the valid set of scanner parameters first: this will trigger the requesting of several market scans from the msg receive handler:
 				assert(mgr->get_requester(ctx) == ibm);
 #if 0  // won't work when IB doesn't have a data connection itself: SILENT FAILURE!
@@ -130,7 +120,7 @@ void tws_worker_thread(struct mg_context *ctx)
 					}
 
                     // process another message
-                    if (0 != ibm->process_tws_event())
+                    if (0 != ibm->process_one_event())
                     {
                         break;
                     }
@@ -150,7 +140,6 @@ void tws_worker_thread(struct mg_context *ctx)
 
 fail_dramatically:
 		err = ibm->exit_tws_api();
-		err = dbm->close_databases();
 
 		if (abortus_provocatus)
 		{
@@ -209,7 +198,7 @@ int ib_tws_manager::is_tws_connected()
 }
 
 
-int ib_tws_manager::process_tws_event()
+int ib_tws_manager::process_one_event()
 {
 	return tws::tws_event_process(tws_handle);
 }

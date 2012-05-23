@@ -6,6 +6,7 @@
 #include "tws_database_io.h"
 #include "tws_instance.h"
 #include "interthread_comm.h"
+#include "data_tracker.h"
 
 #include <mongoose/mongoose_ex.h>
 
@@ -220,7 +221,7 @@ db_manager *app_manager::get_db_manager(void)
 	return dbi;
 }
 
-class ib_tws_manager *app_manager::get_ib_tws_manager(void)
+ib_tws_manager *app_manager::get_ib_tws_manager(void)
 {
 	// create ib_tws when it's not alive yet
 	if (!ib_tws)
@@ -231,6 +232,16 @@ class ib_tws_manager *app_manager::get_ib_tws_manager(void)
 	return ib_tws;
 }
 
+data_tracker_manager *app_manager::get_data_tracker_manager(void)
+{
+	// create data tracker when it's not alive yet
+	if (!m_data_tracker)
+	{
+		m_data_tracker = data_tracker_manager::get_instance(this, true);
+	}
+	assert(m_data_tracker);
+	return m_data_tracker;
+}
 
 
 app_manager::app_manager() :

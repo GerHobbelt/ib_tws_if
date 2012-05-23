@@ -263,7 +263,7 @@ public:
 	int exit_tws_api(void);
 
 	int is_tws_connected(void);
-	int process_tws_event(void);
+	int process_one_event(void);
 
 	const char *strerror(int errcode);
 

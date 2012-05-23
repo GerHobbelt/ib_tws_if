@@ -42,6 +42,27 @@
 
 
 
+data_tracker_manager::data_tracker_manager(app_manager *mgr)
+	: tier2_message_processor(new requester_id(NULL, NULL, 0), mgr)
+	, m_global_ctx(NULL)
+{
+}
+
+data_tracker_manager::~data_tracker_manager()
+{
+}
+
+
+
+
+int data_tracker_manager::process_one_event(void)
+{
+	return 0;
+}
+
+
+
+
 /*
 Track any 'registered' stocks: 
 
@@ -115,6 +136,34 @@ fail_dramatically:
 }
 
 
+
+
+
+
+
+static data_tracker_manager *singleton = NULL;
+
+
+data_tracker_manager *data_tracker_manager::get_instance(app_manager *mgr, bool instantiate_singleton)
+{
+	if (!singleton && instantiate_singleton)
+	{
+		data_tracker_manager *obj = new data_tracker_manager(mgr);
+
+		set_instance(obj);
+		return obj;
+	}
+	return singleton;
+}
+
+void data_tracker_manager::set_instance(data_tracker_manager *instance)
+{
+	if (singleton)
+	{
+		delete singleton;
+	}
+	singleton = instance;
+}
 
 
 
