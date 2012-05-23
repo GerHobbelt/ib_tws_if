@@ -522,3 +522,19 @@ tier2_message_processor *app_manager::get_receiver(struct mg_connection *conn)
 	return rv;
 }
 
+
+int app_manager::set_next_order_id(int id)
+{
+	// only allow the ID to be bumped UPWARDS
+	return m_next_order_id.update_unique_id(id);
+}
+int app_manager::get_next_order_id(void)
+{
+	return m_next_order_id.obtain_unique_id();
+}
+
+int app_manager::get_next_ticker_id(void)
+{
+	return m_next_order_id.obtain_unique_id();
+}
+

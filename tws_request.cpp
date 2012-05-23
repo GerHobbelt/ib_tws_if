@@ -40,6 +40,42 @@
 
 
 
+tws_request_w_ticker_message::tws_request_w_ticker_message(tier2_message_processor *from, tier2_message_processor *to, int ticker_id) :
+	tws_request_message(from, to)
+{
+	app_manager *mgr = this->get_app_manager();
+
+	if (ticker_id == 0)
+		m_ticker_id = mgr->get_next_ticker_id();
+	else
+		m_ticker_id = ticker_id;
+}
+
+tws_request_w_ticker_message::~tws_request_w_ticker_message()
+{
+}
+
+
+
+
+
+tws_request_w_order_message::tws_request_w_order_message(tier2_message_processor *from, tier2_message_processor *to, int order_id) :
+	tws_request_message(from, to)
+{
+	app_manager *mgr = this->get_app_manager();
+
+	if (order_id == 0)
+		m_order_id = mgr->get_next_order_id();
+	else
+		m_order_id = order_id;
+}
+
+tws_request_w_order_message::~tws_request_w_order_message()
+{
+}
+
+
+
 
 int tws_reqresp_message::save_response(json_output *channel)
 {
@@ -1708,7 +1744,7 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 		// to get a dynamically constructed list of known contracts, after all.
 		ib_msg_resp_scanner_data_start *start_msg = dynamic_cast<ib_msg_resp_scanner_data_start *>(resp_msg);
 
-		if (start_msg->get_ticker_id() == m_ticker_id
+		if (start_msg->get_ticker_id() == this->get_ticker_id()
 			&& start_msg->get_num_elements() <= 0)
 		{
 			/*
@@ -1727,7 +1763,7 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 		// known contracts.
 		ib_msg_resp_scanner_data_end *end_msg = dynamic_cast<ib_msg_resp_scanner_data_end *>(resp_msg);
 
-		if (end_msg->get_ticker_id() == m_ticker_id)
+		if (end_msg->get_ticker_id() == this->get_ticker_id())
 		{
 			/*
 			mark the request as completed; it's state observers should consequently
@@ -1755,13 +1791,13 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
 		of the pulse_pending_issues() method).
 		*/
 		if (err_msg->get_error_code() == tws::FAIL_HISTORICAL_MARKET_DATA_SERVICE
-			&& err_msg->get_ticker_id() == m_ticker_id)
+			&& err_msg->get_ticker_id() == this->get_ticker_id())
 		{
 			// cancel this request.
 			state(tier2_message::ABORTED);
 		}
 		if (err_msg->get_error_code() == tws::INFO_HISTORICAL_MARKET_DATA_SERVICE_QUERY
-			&& err_msg->get_ticker_id() == m_ticker_id
+			&& err_msg->get_ticker_id() == this->get_ticker_id()
 			// e.g.: 'Historical Market Data Service query message:no items retrieved'
 			&& strstr(err_msg->get_error_string(), "no items retrieved"))
 		{

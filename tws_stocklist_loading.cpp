@@ -259,7 +259,7 @@ static void request_range_of_interesting_market_scans(app_manager *mgr, ib_tws_m
             s.scan_above_price = 0.05;
             s.scan_above_volume = 1000;
 
-			ib_msg_req_scanner_subscription *reqss_msg = new ib_msg_req_scanner_subscription(requester, NULL, ibm->get_next_ticker_id(), s);
+			ib_msg_req_scanner_subscription *reqss_msg = new ib_msg_req_scanner_subscription(requester, NULL, 0, s);
 			reqss_msg->state(tier2_message::EXEC_COMMAND);
         }
     }

@@ -4,9 +4,6 @@
     <Filter Include="misc">
       <UniqueIdentifier>{b0d50a70-3fa4-4808-829f-c11b3d2be3a3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{6bf280cb-907c-473a-92b9-3c3adac41c49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="TWS I/F layer">
       <UniqueIdentifier>{7e0eb1d8-79bf-4848-ad06-0af04e7c54fd}</UniqueIdentifier>
     </Filter>
@@ -43,6 +40,9 @@
     <Filter Include="Glue\Sources">
       <UniqueIdentifier>{17fbba6b-4418-48f7-9b3d-108b3705b41a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrontEnd\Resources">
+      <UniqueIdentifier>{8f1b6668-aa8a-42e1-a77e-547b9f3fb28f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\.gitmodules">
@@ -58,10 +58,10 @@
       <Filter>misc</Filter>
     </None>
     <None Include="..\..\mongoose\win32\favicon.ico">
-      <Filter>FrontEnd\Sources</Filter>
+      <Filter>FrontEnd\Resources</Filter>
     </None>
     <None Include="..\..\mongoose\win32\systray.ico">
-      <Filter>FrontEnd\Sources</Filter>
+      <Filter>FrontEnd\Resources</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +140,12 @@
     <ClCompile Include="..\..\json_io.cpp">
       <Filter>FrontEnd\Sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\tws_callback_printf.cpp">
+      <Filter>TWS I/F layer\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\data_tracker.cpp">
+      <Filter>Backend / Tier2\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\tws_data_structures.h">
@@ -205,9 +211,6 @@
     <ClInclude Include="..\..\unique_type_id.h">
       <Filter>Glue\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\mongoose\win32\resource.h">
-      <Filter>FrontEnd\Sources</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\tws_backend_io.h">
       <Filter>Backend / Tier2\Header Files</Filter>
     </ClInclude>
@@ -223,10 +226,16 @@
     <ClInclude Include="..\..\json_io.h">
       <Filter>FrontEnd\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\mongoose\win32\resource.h">
+      <Filter>FrontEnd\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\data_tracker.h">
+      <Filter>Glue\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\..\mongoose\win32\res.rc">
-      <Filter>FrontEnd\Sources</Filter>
+      <Filter>FrontEnd\Resources</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>

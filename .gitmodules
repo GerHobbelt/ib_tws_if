@@ -43,3 +43,6 @@
 [submodule "html/js/cubism"]
 	path = html/js/cubism
 	url = git@github.com:GerHobbelt/cubism.git
+[submodule "utils/recrmdir"]
+	path = utils/recrmdir
+	url = git@github.com:GerHobbelt/recrmdir.git

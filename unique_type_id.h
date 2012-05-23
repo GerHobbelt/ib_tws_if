@@ -32,11 +32,11 @@ typedef unsigned int unique_id_t;
 class unique_type_id_manager
 {
 private:
-	unique_id_t prev_id;
+	unique_id_t m_prev_id;
 
 public:
 	unique_type_id_manager(unique_id_t start_id = 1)
-		: prev_id(start_id - 1)
+		: m_prev_id(start_id - 1)
 	{
 	}
 	virtual ~unique_type_id_manager()
@@ -46,20 +46,20 @@ public:
 public:
 	virtual unique_id_t obtain_unique_id(void)
 	{
-		return ++prev_id;
+		return ++m_prev_id;
 	}
 	virtual unique_id_t reset_unique_id(unique_id_t new_start_value)
 	{
-		prev_id = new_start_value;
-		return prev_id;
+		m_prev_id = new_start_value;
+		return m_prev_id;
 	}
 	virtual unique_id_t update_unique_id(unique_id_t new_start_value)
 	{
-		if (prev_id < new_start_value)
+		if (m_prev_id < new_start_value)
 		{
-			prev_id = new_start_value;
+			m_prev_id = new_start_value;
 		}
-		return prev_id;
+		return m_prev_id;
 	}
 };
 

@@ -128,6 +128,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "upskirt", "..\..\upskirt\mv
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsclean", "..\..\utils\wsclean\win32\msvc2010\wsclean.vcxproj", "{E5B75DC9-D071-EC7C-09CF-670AC2E01AF9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "recrmdir", "..\..\utils\recrmdir\win32\msvc2010\recrmdir.vcxproj", "{C3AEFD26-0598-D446-8685-EB404D1B925D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Itanium = Debug|Itanium
@@ -1706,6 +1708,35 @@ Global
 		{E5B75DC9-D071-EC7C-09CF-670AC2E01AF9}.Upskirt|Win32.ActiveCfg = Release|x64
 		{E5B75DC9-D071-EC7C-09CF-670AC2E01AF9}.Upskirt|x64.ActiveCfg = Release|x64
 		{E5B75DC9-D071-EC7C-09CF-670AC2E01AF9}.Upskirt|x64.Build.0 = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Debug|Itanium.Build.0 = Debug|Itanium
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Debug|Win32.Build.0 = Debug|Win32
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Debug|x64.ActiveCfg = Debug|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Debug|x64.Build.0 = Debug|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.DebugDll|Itanium.ActiveCfg = Debug|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.DebugDll|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.DebugDll|Win32.ActiveCfg = Debug|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.DebugDll|x64.ActiveCfg = Debug|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.DebugDll|x64.Build.0 = Debug|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Release|Itanium.ActiveCfg = Release|Itanium
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Release|Itanium.Build.0 = Release|Itanium
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Release|Win32.ActiveCfg = Release|Win32
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Release|Win32.Build.0 = Release|Win32
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Release|x64.ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Release|x64.Build.0 = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.ReleaseDll|Itanium.ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.ReleaseDll|Pocket PC 2003 (ARMV4).ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.ReleaseDll|Win32.ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.ReleaseDll|x64.ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.ReleaseDll|x64.Build.0 = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Upskirt|Itanium.ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Upskirt|Pocket PC 2003 (ARMV4).ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Upskirt|Win32.ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Upskirt|x64.ActiveCfg = Release|x64
+		{C3AEFD26-0598-D446-8685-EB404D1B925D}.Upskirt|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

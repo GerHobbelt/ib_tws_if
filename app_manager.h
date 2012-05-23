@@ -23,6 +23,8 @@
 #define APPLICATION_MANAGER_HEADER_INCLUDED
 
 #include "tws_instance.h"
+#include "unique_type_id.h"
+
 
 class tier2_message;
 class ib_tws_manager;
@@ -44,11 +46,15 @@ protected:
 	int m_new_communicators_count;
 	pthread_mutex_t m_comm_mutex;
 
+	/* tracking some TWS values here as well: */
+	unique_type_id_threadsafe_manager m_next_order_id;		// triple use: orders and tickers, so that all ids we send to/use with IB/TWS are unique + internal messages which need to link up to one another
+
 public:
 	enum optional_requester_id_t
 	{
 		UNDEFINED = 0,
 		IB_TWS_API_CONNECTION_THREAD,
+		DATA_TRACKER_THREAD,
 	};
 
 public:
@@ -80,6 +86,10 @@ public:
 
 	db_manager *get_db_manager(void);
 	ib_tws_manager *get_ib_tws_manager(void);
+
+	int set_next_order_id(int id);
+	int get_next_order_id(void);
+	int get_next_ticker_id(void);
 };
 
 

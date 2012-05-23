@@ -100,20 +100,36 @@ protected:
 	ib_int_t m_ticker_id;
 
 public:
-	tws_request_w_ticker_message(tier2_message_processor *from, tier2_message_processor *to, int ticker_id) :
-		tws_request_message(from, to),
-		m_ticker_id(ticker_id)
-	{
-	}
+	tws_request_w_ticker_message(tier2_message_processor *from, tier2_message_processor *to, int ticker_id = 0);
 protected:
-	virtual ~tws_request_w_ticker_message()
-	{
-	}
+	virtual ~tws_request_w_ticker_message();
 
 public:
 	virtual ib_int_t get_ticker_id(void) const
 	{
 		return m_ticker_id;
+	}
+};
+
+
+
+
+
+
+class tws_request_w_order_message: public tws_request_message
+{
+protected:
+	ib_int_t m_order_id;
+
+public:
+	tws_request_w_order_message(tier2_message_processor *from, tier2_message_processor *to, int order_id = 0);
+protected:
+	virtual ~tws_request_w_order_message();
+
+public:
+	virtual ib_int_t get_order_id(void) const
+	{
+		return m_order_id;
 	}
 };
 
@@ -397,17 +413,16 @@ public:
 
 
 /* sends message PLACE_ORDER to IB/TWS */
-class ib_msg_place_order: public tws_request_message
+class ib_msg_place_order: public tws_request_w_order_message
 {
 protected:
-	ib_int_t m_order_id;
 	ib_contract m_contract;
 	ib_order m_order;
 
 public:
-	ib_msg_place_order(tier2_message_processor *from, tier2_message_processor *to, int _order_id, ib_contract &_contract, ib_order &_order) :
-	    tws_request_message(from, to),
-		m_order_id(_order_id), m_contract(_contract), m_order(_order)
+	ib_msg_place_order(tier2_message_processor *from, tier2_message_processor *to, int order_id, ib_contract &_contract, ib_order &_order) :
+	    tws_request_w_order_message(from, to, order_id),
+		m_contract(_contract), m_order(_order)
 	{
 	}
 protected:
@@ -430,24 +445,15 @@ public:
 	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
-
-	ib_int_t get_order_id(void) const
-	{
-		return m_order_id;
-	}
 };
 
 
 /* sends message CANCEL_ORDER to IB/TWS */
-class ib_msg_cancel_order: public tws_request_message
+class ib_msg_cancel_order: public tws_request_w_order_message
 {
-protected:
-	ib_int_t m_order_id;
-
 public:
-	ib_msg_cancel_order(tier2_message_processor *from, tier2_message_processor *to, int _order_id) :
-	    tws_request_message(from, to),
-		m_order_id(_order_id)
+	ib_msg_cancel_order(tier2_message_processor *from, tier2_message_processor *to, int order_id) :
+	    tws_request_w_order_message(from, to, order_id)
 	{
 	}
 protected:
@@ -470,11 +476,6 @@ public:
 	virtual bool cancel_request_is_meant_for_us(tier2_message *req_msg) const;
 
 	virtual int save_response(class json_output *channel);
-
-	ib_int_t get_order_id(void) const
-	{
-		return m_order_id;
-	}
 };
 
 

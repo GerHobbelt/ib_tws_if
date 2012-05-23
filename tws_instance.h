@@ -243,9 +243,6 @@ protected:
 
 	ib_backend_io_logger *m_io_logger;
 
-    /* tracking some TWS values here as well: */
-    unique_type_id_manager next_order_id;		// dual use: orders and tickers, so that all ids we send to/use with IB/TWS are unique
-
 	/* the connection pairs used to communicate between front-end threads and tier2/TWS threads: */
 	//hash_map
 
@@ -262,21 +259,6 @@ public:
 	static ib_tws_manager *get_instance(app_manager *mgr, bool instantiate_singleton = false);
 
 public:
-	int set_next_order_id(int id)
-	{
-		// only allow the ID to be bumped UPWARDS
-		return next_order_id.update_unique_id(id);
-	}
-	int get_next_order_id(void)
-	{
-		return next_order_id.obtain_unique_id();
-	}
-
-	int get_next_ticker_id(void)
-	{
-		return next_order_id.obtain_unique_id();
-	}
-
 	int init_tws_api(void);
 	int exit_tws_api(void);
 

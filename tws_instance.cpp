@@ -552,11 +552,12 @@ int ib_tws_manager::process_response_message(ib_msg_resp_update_account_time *re
 int ib_tws_manager::process_response_message(ib_msg_resp_next_valid_id *resp_msg)
 {
 	struct mg_connection *conn = get_connection();
+	app_manager *mgr = get_app_manager();
 
 	assert(resp_msg);
 	mg_cry(conn, "process response message for %s?", "ib_msg_resp_next_valid_id");
 
-	set_next_order_id(resp_msg->get_order_id());
+	mgr->set_next_order_id(resp_msg->get_order_id());
 
 	return scan_queue_and_process(resp_msg);
 }

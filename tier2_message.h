@@ -48,7 +48,7 @@ for whatever reason (IP stack hickup, threads crashing, ...) but any message tha
 a) a clear indication that something is very rotten indeed and the application/server should have power-cycled already
 
 b) adding this 'tracking in limbo messages' feature would imply adding locks around this common/shared code, while using the socketpair()s' point is 
-   precisely the opposite, i.e. the intent that we WON'T need any interthread locks around our message traffic code at all, for the purposes of maximum
+   precisely the opposite, i.e. the intent that we WON'T need any inter-thread locks around our message traffic code at all, for the purposes of maximum
    scalability.
 
 */
@@ -56,6 +56,7 @@ b) adding this 'tracking in limbo messages' feature would imply adding locks aro
 
 // forward references:
 class tier2_message_state_change_handler;
+class app_manager;
 
 
 extern unique_type_id_threadsafe_manager tier2_msg_typeid_mgr;
@@ -123,6 +124,12 @@ public:
 	}
 
 	interthread_communicator *get_interthread_communicator(bool tx2rx = false);
+
+	app_manager *get_app_manager(void) const
+	{
+		assert(m_requester);
+		return m_requester->get_app_manager();
+	}
 
 	// set up the defaults; perform any necessary registration with the app_manager, etc...
 	virtual void resolve_requester_and_receiver_issues(void);
