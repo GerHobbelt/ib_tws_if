@@ -113,10 +113,10 @@ such as:
 class frontend_info_manager
 {
 protected:
-	struct mg_connection *thread_conn;
+	struct mg_connection *m_thread_conn;
 
 	// the socket pair:
-	interthread_communicator *comm;
+	interthread_communicator *m_comm;
 
 public:
 	frontend_info_manager(struct mg_connection *conn);

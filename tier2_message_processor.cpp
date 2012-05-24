@@ -19,16 +19,16 @@ interthread_communicator *tier2_message_processor::register_interthread_connecti
 	assert(comm->receiver() == this || comm->transmitter() == this);
 
 	// do not add the sender to the list a second time:
-	int count = senders.size();
+	int count = m_senders.size();
 
 	for (int i = 0; i < count; i++)
 	{
-		if (senders[i] == comm)
+		if (m_senders[i] == comm)
 			return comm;
 	}
 
-	senders.push_back(comm);
-	senders.push_back(comm->reverse());
+	m_senders.push_back(comm);
+	m_senders.push_back(comm->reverse());
 
 	/*
 	The comms will already have been registered with the Main Man. After all,
@@ -40,11 +40,11 @@ interthread_communicator *tier2_message_processor::register_interthread_connecti
 
 interthread_communicator *tier2_message_processor::get_interthread_communicator(tier2_message_processor *from, tier2_message_processor *to)
 {
-	int count = senders.size();
+	int count = m_senders.size();
 
 	for (int i = 0; i < count; i++)
 	{
-		interthread_communicator *comm = senders[i];
+		interthread_communicator *comm = m_senders[i];
 
 		assert(comm);
 		if (comm->matches(from, to))
@@ -61,11 +61,11 @@ interthread_communicator *tier2_message_processor::get_interthread_communicator(
 
 int tier2_message_processor::prepare_fd_sets_for_reception(fd_set *read_set, fd_set *except_set, int &max_fd)
 {
-	int count = senders.size();
+	int count = m_senders.size();
 
 	for (int i = 0; i < count; i++)
 	{
-		interthread_communicator *comm = senders[i];
+		interthread_communicator *comm = m_senders[i];
 
 		assert(comm);
 		if (comm->has_receiver(this))
@@ -83,11 +83,11 @@ int tier2_message_processor::process_one_queued_tier2_request(fd_set *read_set, 
 	// we only need to check the client connections when there's actually something to expected there:
 	if (max_fd >= 0)
 	{
-		int count = senders.size();
+		int count = m_senders.size();
 
 		for (int i = 0; i < count; i++)
 		{
-			interthread_communicator *comm = senders[i];
+			interthread_communicator *comm = m_senders[i];
 			assert(comm);
 
 			if (comm->has_receiver(this))
@@ -215,9 +215,9 @@ int tier2_message_processor::pulse_marked_messages(void)
 
 
 requester_id::requester_id(mg_connection *thread, mg_connection *client, int seq_id) :
-	client_connection(client),
-	calling_thread_id(thread),
-	sequence_id(seq_id)
+	m_client_connection(client),
+	m_calling_thread_id(thread),
+	m_sequence_id(seq_id)
 {
 }
 

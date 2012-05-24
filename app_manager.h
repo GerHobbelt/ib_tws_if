@@ -37,11 +37,9 @@ class data_tracker_manager;
 class app_manager
 {
 protected:
-	ib_tws_manager *ib_tws;
-	db_manager *dbi;
-	data_tracker_manager *m_data_tracker;
+	db_manager *m_dbi;
 
-	sender_receiver_store *sr_store;
+	sender_receiver_store *m_transmitter_store;
 
 	typedef std::vector<interthread_communicator *> interthread_communicator_set_t;
 	interthread_communicator_set_t m_communicators;

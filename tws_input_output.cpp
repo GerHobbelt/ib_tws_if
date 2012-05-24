@@ -180,7 +180,7 @@ int ib_tws_manager::init_tws_api(void)
 	tws_handle = tws::tws_create(get_app_manager(), tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func, tws_tx_elem_observe_func, tws_rx_elem_observe_func);
 	if (tws_handle)
 	{
-		err = tws::tws_connect(tws_handle, tws_cfg.our_id_code);
+		err = tws::tws_connect(tws_handle, m_tws_cfg.m_our_id_code);
 	}
 	else
 	{

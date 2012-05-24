@@ -182,7 +182,7 @@ int ib_backend_io_logger::write_tx_msg(ib_backend_io_channel *originator)
 {
 	struct tws_conn_cfg &tws_cfg = originator->get_config();
 
-	if (tws_cfg.tws_log_traffic)
+	if (tws_cfg.m_tws_log_traffic)
 	{
 		struct mg_connection *conn = originator->get_connection();
 
@@ -196,7 +196,7 @@ int ib_backend_io_logger::write_tx_msg(ib_backend_io_channel *originator)
 			rinfo->uri = const_cast<char *>(m_tx_msg_id.c_str());
 			rinfo->request_method = "TX";
 
-			m_tx_log_file = mg_get_logfile_path(path, sizeof(path), tws_cfg.tws_traffic_log_file, conn, m_tx_timestamp);
+			m_tx_log_file = mg_get_logfile_path(path, sizeof(path), tws_cfg.m_tws_traffic_log_file, conn, m_tx_timestamp);
 		}
 
 		mg_write2log(conn, m_tx_log_file.c_str(), m_tx_timestamp, "trace", "TX: %s", m_tx_msg_buffer.c_str());
@@ -210,7 +210,7 @@ int ib_backend_io_logger::write_rx_msg(ib_backend_io_channel *originator)
 {
 	struct tws_conn_cfg &tws_cfg = originator->get_config();
 
-	if (tws_cfg.tws_log_traffic)
+	if (tws_cfg.m_tws_log_traffic)
 	{
 		struct mg_connection *conn = originator->get_connection();
 
@@ -224,7 +224,7 @@ int ib_backend_io_logger::write_rx_msg(ib_backend_io_channel *originator)
 			rinfo->uri = const_cast<char *>(m_rx_msg_id.c_str());
 			rinfo->request_method = "RX";
 
-			m_rx_log_file = mg_get_logfile_path(path, sizeof(path), tws_cfg.tws_traffic_log_file, conn, m_rx_timestamp);
+			m_rx_log_file = mg_get_logfile_path(path, sizeof(path), tws_cfg.m_tws_traffic_log_file, conn, m_rx_timestamp);
 		}
 
 		mg_write2log(originator->get_connection(), m_rx_log_file.c_str(), m_rx_timestamp, "trace", "RX: %s", m_rx_msg_buffer.c_str());

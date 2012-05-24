@@ -62,22 +62,22 @@ enum tws_order_type_t
 {
     ORDER_MARKET_TO_LIMIT										,
     ORDER_MARKET_WITH_PROTECTION								,
-    ORDER_REQUEST_FOR_QUOTE									,
+    ORDER_REQUEST_FOR_QUOTE										,
     ORDER_STOP													,
     ORDER_STOP_LIMIT											,
-    ORDER_TRAILING_LIMIT_IF_TOUCHED							,
+    ORDER_TRAILING_LIMIT_IF_TOUCHED								,
     ORDER_TRAILING_MARKET_IF_TOUCHED							,
-    ORDER_TRAILING_STOP										,
+    ORDER_TRAILING_STOP											,
     ORDER_TRAILING_STOP_LIMIT									,
     ORDER_MARKET												,
-    ORDER_MARKET_IF_TOUCHED									,
+    ORDER_MARKET_IF_TOUCHED										,
     ORDER_MARKET_ON_CLOSE										,
     ORDER_MARKET_ON_OPEN										,
     ORDER_PEGGED_TO_MARKET										,
     ORDER_RELATIVE												,
     ORDER_BOX_TOP												,
     ORDER_LIMIT_ON_CLOSE										,
-    ORDER_LIMIT_ON_OPEN										,
+    ORDER_LIMIT_ON_OPEN											,
     ORDER_LIMIT_IF_TOUCHED										,
     ORDER_PEGGED_TO_MIDPOINT									,
     ORDER_VWAP_GUARANTEED										,
@@ -87,25 +87,25 @@ enum tws_order_type_t
     ORDER_IMMEDIATE_OR_CANCEL									,
     ORDER_ONE_CANCELS_ALL										,
     ORDER_VOLATILITY											,
-    ORDER_LIMIT												,
-    ORDER_ACTIVETIM											,
+    ORDER_LIMIT													,
+    ORDER_ACTIVETIM												,
     ORDER_ADJUST												,
-    ORDER_ALERT												,
-    ORDER_ALLOC												,
+    ORDER_ALERT													,
+    ORDER_ALLOC													,
     ORDER_AVGCOST												,
     ORDER_BASKET												,
     ORDER_COND													,
-    ORDER_CONDORDER											,
+    ORDER_CONDORDER												,
     ORDER_CONSCOST												,
     ORDER_DAY													,
-    ORDER_DEACT												,
+    ORDER_DEACT													,
     ORDER_DEACTDIS												,
     ORDER_DEACTEOD												,
     ORDER_GTT													,
     ORDER_HID													,
     ORDER_LTH													,
     ORDER_NONALGO												,
-    ORDER_SCALE												,
+    ORDER_SCALE													,
     ORDER_SCALERST												,
     ORDER_WHATIF												,
 };
@@ -635,8 +635,8 @@ public:
     o_double_t   o_discretionary_amt;                       /* SMART routing only: amount you are willing to pay above your specified limit price */
     o_double_t   o_lmt_price;                               /* Basic Order Field: limit price  */
     o_double_t   o_aux_price;                               /* Basic Order Field: stop price, trailing amount, or offset amount  */
-    o_double_t   o_percent_offset;                          /* Advanced order field: the offset amount for Relative (REL) orders, specified as a percent; specify either this OR the offset amount in m_auxPrice */
-    o_double_t   o_nbbo_price_cap;                          /* SMART routing only: see 'm_firmQuoteOnly' comment */
+    o_double_t   o_percent_offset;                          /* Advanced order field: the offset amount for Relative (REL) orders, specified as a percent; specify either this OR the offset amount in auxPrice */
+    o_double_t   o_nbbo_price_cap;                          /* SMART routing only: see 'firmQuoteOnly' comment */
     o_double_t   o_starting_price;                          /* For BOX option-pegged-to-stock orders only */
     o_double_t   o_stock_ref_price;                         /* For BOX option-pegged-to-stock orders only */
     o_double_t   o_delta;                                   /* For BOX option-pegged-to-stock orders only */
@@ -664,7 +664,7 @@ public:
     o_string_t   o_account;                                 /* Clearing info: IB account; can be left blank for users with only a single account   */
     o_string_t   o_open_close;                              /* For non-cleared (i.e. institutional) customers only: open/close flag: O=Open, C=Close */
     o_string_t   o_orderref;                                /* Advanced order field: order reference, enter any free-form text */
-    o_string_t   o_designated_location;                     /* For non-cleared (i.e. institutional) customers only: specifies where the shares are held; set only when m_shortSaleSlot=2 */
+    o_string_t   o_designated_location;                     /* For non-cleared (i.e. institutional) customers only: specifies where the shares are held; set only when shortSaleSlot=2 */
     o_string_t   o_rule80a;                                 /* Advanced order field: Individual = 'I', Agency = 'A', AgentOtherMember = 'W', IndividualPTIA = 'J', AgencyPTIA = 'U', AgentOtherMemberPTIA = 'M', IndividualPT = 'K', AgencyPT = 'Y', AgentOtherMemberPT = 'N' */
     o_string_t   o_settling_firm;
     o_string_t   o_delta_neutral_order_type;
@@ -676,8 +676,8 @@ public:
     o_string_t   o_delta_neutral_clearing_account;			/* For Volatility orders only: */
     o_string_t   o_delta_neutral_clearing_intent;			/* For Volatility orders only: */
 
-    ib_tag_value_collection_t o_algo_params;                /* 'm_algoParams': array of length o_algo_params_count, API user responsible for alloc/free */
-    ib_tag_value_collection_t o_smart_combo_routing_params;	/* Smart combo routing params: 'm_smartComboRoutingParams': array of length o_smart_combo_routing_params, API user responsible for alloc/free */
+    ib_tag_value_collection_t o_algo_params;                /* 'algoParams': array of length o_algo_params_count, API user responsible for alloc/free */
+    ib_tag_value_collection_t o_smart_combo_routing_params;	/* Smart combo routing params: 'smartComboRoutingParams': array of length o_smart_combo_routing_params, API user responsible for alloc/free */
 
     typedef std::vector<ib_order_combo_leg> ib_order_combo_leg_collection_t;
 
@@ -704,9 +704,9 @@ public:
     o_int_t      o_delta_neutral_con_id;					/* For Volatility orders only: */
     o_oca_type_t o_oca_type;								/* Advanced order field: OCA group type  1 = CANCEL_WITH_BLOCK, 2 = REDUCE_WITH_BLOCK, 3 = REDUCE_NON_BLOCK */
     o_auction_strategy_t o_auction_strategy;				/* For BOX option-pegged-to-stock and Volatility orders only: 1=AUCTION_MATCH, 2=AUCTION_IMPROVEMENT, 3=AUCTION_TRANSPARENT */
-    o_short_sale_slot_type_t o_short_sale_slot;				/* For non-cleared (i.e. institutional) customers only: specify only if m_action is "SSHORT": 1 if you hold the shares, 2 if they will be delivered from elsewhere */
+    o_short_sale_slot_type_t o_short_sale_slot;				/* For non-cleared (i.e. institutional) customers only: specify only if action is "SSHORT": 1 if you hold the shares, 2 if they will be delivered from elsewhere */
     o_bool_t     o_override_percentage_constraints;			/* Advanced order field: set true to override normal percentage constraint checks */
-    o_bool_t     o_firm_quote_only;							/* SMART routing only: if true, specifies that order should be routed to exchanges showing a "firm" quote, but not if the exchange is off the NBBO by more than the 'm_nbboPriceCap' amount */
+    o_bool_t     o_firm_quote_only;							/* SMART routing only: if true, specifies that order should be routed to exchanges showing a "firm" quote, but not if the exchange is off the NBBO by more than the 'nbboPriceCap' amount */
     o_bool_t     o_etrade_only;
     o_bool_t     o_all_or_none;								/* Advanced order field: if set to true, there can be no partial fills for the order */
     o_bool_t     o_outside_rth;								/* Advanced order field: if true, order could fill or trigger anytime; if false, order will fill or trigger only during regular trading hours */

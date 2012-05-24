@@ -212,51 +212,38 @@ const struct database_cfg &app_manager::get_db_config(void)
 
 db_manager *app_manager::get_db_manager(void)
 {
-	// create dbi when it's not alive yet
-	if (!dbi)
+	// create m_dbi when it's not alive yet
+	if (!m_dbi)
 	{
-		dbi = new db_manager(this);
+		m_dbi = new db_manager(this);
 	}
-	assert(dbi);
-	return dbi;
+	assert(m_dbi);
+	return m_dbi;
 }
 
 ib_tws_manager *app_manager::get_ib_tws_manager(void)
 {
-	// create ib_tws when it's not alive yet
-	if (!ib_tws)
-	{
-		ib_tws = ib_tws_manager::get_instance(this, true);
-	}
-	assert(ib_tws);
-	return ib_tws;
+	return ib_tws_manager::get_instance(this, true);
 }
 
 data_tracker_manager *app_manager::get_data_tracker_manager(void)
 {
-	// create data tracker when it's not alive yet
-	if (!m_data_tracker)
-	{
-		m_data_tracker = data_tracker_manager::get_instance(this, true);
-	}
-	assert(m_data_tracker);
-	return m_data_tracker;
+	return data_tracker_manager::get_instance(this, true);
 }
 
 
 app_manager::app_manager() :
-	ib_tws(NULL),
-	dbi(NULL),
+	m_dbi(NULL),
 	m_new_communicators_count(0)
 {
 	pthread_mutex_init(&m_comm_mutex, 0);
 
-	sr_store = new sender_receiver_store();
+	m_transmitter_store = new sender_receiver_store();
 }
 
 app_manager::~app_manager()
 {
-	delete sr_store;
+	delete m_transmitter_store;
 
 	pthread_mutex_destroy(&m_comm_mutex);
 }
@@ -269,14 +256,14 @@ int app_manager::register_frontend_thread(struct mg_connection *conn, tier2_mess
 
 	pthread_mutex_lock(&m_comm_mutex);
 
-	tier2_message_processor *rv = sr_store->find(k);
+	tier2_message_processor *rv = m_transmitter_store->find(k);
 	if (!rv)
 	{
 		if (processor)
 			rv = processor;
 		else
 			rv = new tier2_message_processor(new requester_id(NULL, conn, 0), this);
-		sr_store->store(k, rv);
+		m_transmitter_store->store(k, rv);
 	}
 
 	pthread_mutex_unlock(&m_comm_mutex);
@@ -289,7 +276,7 @@ int app_manager::unregister_frontend_thread(struct mg_connection *conn)
 
 	pthread_mutex_lock(&m_comm_mutex);
 
-	sr_store->erase(k);
+	m_transmitter_store->erase(k);
 
 	pthread_mutex_unlock(&m_comm_mutex);
 
@@ -302,14 +289,14 @@ int app_manager::register_backend_thread(struct mg_connection *conn, tier2_messa
 
 	pthread_mutex_lock(&m_comm_mutex);
 
-	tier2_message_processor *rv = sr_store->find(k);
+	tier2_message_processor *rv = m_transmitter_store->find(k);
 	if (!rv)
 	{
 		if (processor)
 			rv = processor;
 		else
 			rv = new tier2_message_processor(new requester_id(NULL, conn, 0), this);
-		sr_store->store(k, rv);
+		m_transmitter_store->store(k, rv);
 	}
 
 	pthread_mutex_unlock(&m_comm_mutex);
@@ -322,7 +309,7 @@ int app_manager::unregister_backend_thread(struct mg_connection *conn)
 
 	pthread_mutex_lock(&m_comm_mutex);
 
-	sr_store->erase(k);
+	m_transmitter_store->erase(k);
 
 	pthread_mutex_unlock(&m_comm_mutex);
 
@@ -335,14 +322,14 @@ int app_manager::register_backend_thread(struct mg_context *ctx, app_manager::op
 
 	pthread_mutex_lock(&m_comm_mutex);
 
-	tier2_message_processor *rv = sr_store->find(k);
+	tier2_message_processor *rv = m_transmitter_store->find(k);
 	if (!rv)
 	{
 		if (processor)
 			rv = processor;
 		else
 			rv = new tier2_message_processor(new requester_id(NULL, NULL, 0), this);
-		sr_store->store(k, rv);
+		m_transmitter_store->store(k, rv);
 	}
 
 	pthread_mutex_unlock(&m_comm_mutex);
@@ -355,7 +342,7 @@ int app_manager::unregister_backend_thread(struct mg_context *ctx, app_manager::
 
 	pthread_mutex_lock(&m_comm_mutex);
 
-	sr_store->erase(k);
+	m_transmitter_store->erase(k);
 
 	pthread_mutex_unlock(&m_comm_mutex);
 
@@ -471,9 +458,9 @@ int app_manager::fetch_new_interthread_communicators(tier2_message_processor *re
 			if (comm->has_receiver(receiver))
 			{
 				// see if this one is already in our own list:
-				for (int j = receiver->senders.size(); j-- > 0; )
+				for (int j = receiver->m_senders.size(); j-- > 0; )
 				{
-					interthread_communicator *cachedcomm = receiver->senders[j];
+					interthread_communicator *cachedcomm = receiver->m_senders[j];
 
 					if (cachedcomm == comm)
 					{
@@ -513,7 +500,7 @@ tier2_message_processor *app_manager::get_receiver(struct mg_context *ctx, app_m
 
 	pthread_mutex_lock(&m_comm_mutex);
 
-	tier2_message_processor *rv = sr_store->find(k);
+	tier2_message_processor *rv = m_transmitter_store->find(k);
 
 	pthread_mutex_unlock(&m_comm_mutex);
 
@@ -526,7 +513,7 @@ tier2_message_processor *app_manager::get_receiver(struct mg_connection *conn)
 
 	pthread_mutex_lock(&m_comm_mutex);
 
-	tier2_message_processor *rv = sr_store->find(k);
+	tier2_message_processor *rv = m_transmitter_store->find(k);
 
 	pthread_mutex_unlock(&m_comm_mutex);
 

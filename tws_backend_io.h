@@ -74,22 +74,22 @@ protected:
 	io_observer_list_t m_before;
 	io_observer_list_t m_after;
 
-	bool fake_ib_tws_connection;
-	bool faking_the_ib_tws_connection;
-	struct mg_connection *fake_conn[2];
+	bool m_fake_ib_tws_connection;
+	bool m_faking_the_ib_tws_connection;
+	struct mg_connection *m_fake_conn[2];
 
 	virtual void fake_ib_tws_server(int mode);
 
 public:
 	bool is_faking_the_ib_tws_connection(void) const
 	{
-		return faking_the_ib_tws_connection && tws_conn;
+		return m_faking_the_ib_tws_connection && m_tws_conn;
 	}
 
 protected:
-	struct tws_conn_cfg tws_cfg;
-    struct mg_connection *tws_conn;
-    struct mg_context *tws_ctx;
+	struct tws_conn_cfg m_tws_cfg;
+    struct mg_connection *m_tws_conn;
+    struct mg_context *m_tws_ctx;
     tws::tws_instance_t *tws_handle;
 
 protected:
@@ -136,7 +136,7 @@ protected:
 public:
 	struct tws_conn_cfg &get_config(void)
 	{
-		return tws_cfg;
+		return m_tws_cfg;
 	}
 
 	tws::tws_instance_t *get_tws_instance(void)
@@ -147,21 +147,21 @@ public:
 	// helper function: produce the IB/TWS app connection. (Used by the TWS back-end communication thread / TWS API callbacks)
 	struct mg_connection *get_connection(void)
 	{
-		return tws_conn;
+		return m_tws_conn;
 	}
 	struct mg_context *get_context(void)
 	{
-		return tws_ctx;
+		return m_tws_ctx;
 	}
 	struct tws_conn_cfg &get_tws_ib_connection_config(void)
 	{
-		return tws_cfg;
+		return m_tws_cfg;
 	}
 
 	void set_context(struct mg_context *ctx)
 	{
 		assert(ctx);
-		tws_ctx = ctx;
+		m_tws_ctx = ctx;
 	}
 
 	virtual int pulse_pending_issues(void);

@@ -43,7 +43,7 @@ class requester_id
 {
 protected:
 	/* optional: the client connection, serving as (part of) the ID */
-	mg_connection *client_connection;
+	mg_connection *m_client_connection;
 	/*
 		optional: the thread identifier; as we know we're working 
 		on top of mongoose, the thread's conn reference serves this 
@@ -52,12 +52,12 @@ protected:
 		in mongoose is the 'conn' pointer passed to the thread upon
 		instantiation.
 	*/
-	mg_connection *calling_thread_id;
+	mg_connection *m_calling_thread_id;
 	/* 
 		optional: issuer-specified sequence ID; need only be unique for 
 		this particular client/thread combo.
 	*/
-	int sequence_id;
+	int m_sequence_id;
 
 public:
 	requester_id(mg_connection *thread, mg_connection *client, int seq_id = 0);
@@ -82,15 +82,15 @@ public:
 	/* getters: */
 	mg_connection *get_client_connection(void) const
 	{
-		return client_connection;
+		return m_client_connection;
 	}
 	mg_connection *get_calling_thread_id(void) const
 	{
-		return calling_thread_id;
+		return m_calling_thread_id;
 	}
 	int get_my_sequence_id(void) const
 	{
-		return sequence_id;
+		return m_sequence_id;
 	}
 };
 
@@ -109,25 +109,25 @@ it is referenced by.
 */
 class tier2_message_processor
 {
-	friend class app_manager; // app_manager must be able to access 'senders' for thread-safe updating
+	friend class app_manager; // app_manager must be able to access 'm_senders' for thread-safe updating
 
 protected:
 	// the bits that make up the 'unique ID':
-	requester_id *unique_id;
+	requester_id *m_unique_id;
 	// additional information attributes:
 	app_manager *m_app_manager;
 
 	virtual interthread_communicator *register_interthread_connection(interthread_communicator *info);
 
 	typedef std::vector<interthread_communicator *> sender_set_t;
-	sender_set_t senders;
+	sender_set_t m_senders;
 
 	tier2_message_collection_t m_msgs_i_own;
 	tier2_message_collection_t m_msgs_pending_for_pulsing;
 
 public:
 	tier2_message_processor(requester_id *id, app_manager *mgr) :
-		unique_id(id), m_app_manager(mgr)
+		m_unique_id(id), m_app_manager(mgr)
 	{
 	}
 	virtual ~tier2_message_processor()
@@ -137,7 +137,7 @@ public:
 public:
 	requester_id *get_id(void) const
 	{
-		return unique_id;
+		return m_unique_id;
 	}
 	app_manager *get_app_manager(void) const
 	{

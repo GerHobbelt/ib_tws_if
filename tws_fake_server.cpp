@@ -246,28 +246,28 @@ mode:
 */
 void ib_backend_io_channel::fake_ib_tws_server(int mode)
 {
-	if (!fake_ib_tws_connection)
+	if (!m_fake_ib_tws_connection)
 		return;
 
 	if (mode == 2)
 	{
-		if (!tws_conn)
+		if (!m_tws_conn)
 		{
 			// open a new fake server connection
-			int sp_rv = mg_socketpair(fake_conn, tws_ctx);
+			int sp_rv = mg_socketpair(m_fake_conn, m_tws_ctx);
 
 			if (!sp_rv)
 			{
 				int tcpbuflen = 1 * 1024 * 1024;
 
-				tws_conn = fake_conn[0];
+				m_tws_conn = m_fake_conn[0];
 			
-				mg_setsockopt(mg_get_client_socket(fake_conn[0]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-				mg_setsockopt(mg_get_client_socket(fake_conn[0]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-				mg_setsockopt(mg_get_client_socket(fake_conn[1]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-				mg_setsockopt(mg_get_client_socket(fake_conn[1]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(mg_get_client_socket(m_fake_conn[0]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(mg_get_client_socket(m_fake_conn[0]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(mg_get_client_socket(m_fake_conn[1]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(mg_get_client_socket(m_fake_conn[1]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
 
-				faking_the_ib_tws_connection = true;
+				m_faking_the_ib_tws_connection = true;
 			}
 		}
 		return;
@@ -275,23 +275,23 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 	if (mode == 3)
 	{
 		// close a server connection
-		if (fake_conn[1])
+		if (m_fake_conn[1])
 		{
-			mg_close_connection(fake_conn[1]);
+			mg_close_connection(m_fake_conn[1]);
 		}
-		fake_conn[0] = NULL;
-		fake_conn[1] = NULL;
-		faking_the_ib_tws_connection = false;
+		m_fake_conn[0] = NULL;
+		m_fake_conn[1] = NULL;
+		m_faking_the_ib_tws_connection = false;
 		return;
 	}
 
-	if (!faking_the_ib_tws_connection)
+	if (!m_faking_the_ib_tws_connection)
 		return;
 
 	/*
 	A message may be pending at conn[1]; when it does, we play back a suitable response at conn[1]
 	*/
-	mg_connection *conn = fake_conn[1];
+	mg_connection *conn = m_fake_conn[1];
 	mg_request_info *request_info = mg_get_request_info(conn);
 	int64_t old_num_bytes_sent = mg_get_num_bytes_sent(conn);
 
@@ -300,7 +300,7 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 		if (mode == 0)
 		{
 			// send 'magic' to uniquely mark the end of the message (this simplifies the fake server code)
-			mg_send_data(fake_conn[0], EOM_magick, sizeof(EOM_magick));
+			mg_send_data(m_fake_conn[0], EOM_magick, sizeof(EOM_magick));
 		}
 
         // check whether there's anything available:

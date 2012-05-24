@@ -32,18 +32,18 @@ typedef enum
 
 struct database_cfg 
 {
-	const char *database_path;
+	const char *m_database_path;
 };
 
 
 class db_manager
 {
 protected:
-	struct database_cfg cfg;
-	app_manager *app_mgr;
+	struct database_cfg m_cfg;
+	app_manager *m_app_mgr;
 
-	ham_env_t *env;
-	ham_db_t *db[DB_MAX];
+	ham_env_t *m_env;
+	ham_db_t *m_db[DB_MAX];
 
 public:
 	db_manager(app_manager *mgr);
@@ -64,11 +64,11 @@ public:
 
 	const struct database_cfg &get_config(void)
 	{
-		return cfg;
+		return m_cfg;
 	}
 	app_manager *get_app_manager(void) const
 	{
-		return app_mgr;
+		return m_app_mgr;
 	}
 };
 

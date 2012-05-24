@@ -48,9 +48,9 @@ tier2_message::state_change tier2_queue_item::process(tier2_message &msg, tier2_
 
 	if (new_state == tier2_message::ABORTED
 		|| (new_state == tier2_message::TASK_COMPLETED
-			&& exec_run_count <= 0))
+			&& m_exec_run_count <= 0))
 	{
-		exec_run_count = -1;
+		m_exec_run_count = -1;
 
 		for (tier2_queue_item_visitor_set_t::iterator i = queue_item_visitors.begin();
 			i != queue_item_visitors.end();

@@ -986,7 +986,7 @@ int ib_tws_manager::cancel_all_matching_requests(tws_request_message *cancel_msg
 
 
 
-static ib_tws_manager *ib_tws;
+static ib_tws_manager *singleton = NULL;
 
 
 ib_tws_manager * ib_tws_manager::get_instance(app_manager *mgr, bool instantiate_singleton)
@@ -1011,7 +1011,7 @@ int ib_tws_manager::io_open(void)
 {
 	int rv = __super::io_open();
 
-	if (!faking_the_ib_tws_connection)
+	if (!m_faking_the_ib_tws_connection)
 	{
 		if (!m_io_logger)
 		{
@@ -1115,9 +1115,9 @@ int ib_tws_manager::register_contract_info(const ib_contract_details *cd)
 	if (!cd)
 		return -1;
 
-	for (int i = 0; i < m_cds.size(); i++)
+	for (int i = 0; i < m_contract_details_store.size(); i++)
 	{
-		ib_contract_details *c = m_cds[i];
+		ib_contract_details *c = m_contract_details_store[i];
 
 		if (c->equals(cd))
 			return 1;
@@ -1125,7 +1125,7 @@ int ib_tws_manager::register_contract_info(const ib_contract_details *cd)
 
 	// clone to make sure we've a heap-allocated entity to store:
 	ib_contract_details *ncd = new ib_contract_details(*cd);
-	m_cds.push_back(ncd);
+	m_contract_details_store.push_back(ncd);
 
 	return 0;
 }

@@ -14,12 +14,12 @@
 
 ib_backend_io_channel::ib_backend_io_channel(app_manager *mgr)
 	: tier2_message_processor(new requester_id(NULL, NULL, 0), mgr)
-	, tws_conn(NULL), tws_ctx(NULL), tws_handle(NULL)
-	, fake_ib_tws_connection(true)
-	, faking_the_ib_tws_connection(false)
+	, m_tws_conn(NULL), m_tws_ctx(NULL), tws_handle(NULL)
+	, m_fake_ib_tws_connection(true)
+	, m_faking_the_ib_tws_connection(false)
 {
-	fake_conn[0] = NULL;
-	fake_conn[1] = NULL;
+	m_fake_conn[0] = NULL;
+	m_fake_conn[1] = NULL;
 }
 
 ib_backend_io_channel::~ib_backend_io_channel()
@@ -42,6 +42,10 @@ ib_backend_io_channel *ib_backend_io_channel::get_instance(app_manager *mgr, boo
 void ib_backend_io_channel::set_instance(ib_backend_io_channel *obj)
 {
 	assert(!singleton);
+	if (singleton)
+	{
+		delete singleton;
+	}
 	singleton = obj;
 }
 
@@ -169,9 +173,9 @@ int ib_backend_io_channel::io_transmit(const void *buf, unsigned int buflen)
 
 	if (!rv)
 	{
-		if (tws_conn)
+		if (m_tws_conn)
 		{
-			rv = mg_write(tws_conn, buf, buflen);
+			rv = mg_write(m_tws_conn, buf, buflen);
 		}
 		else 
 		{
@@ -214,7 +218,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 
 	if (!rv)
 	{
-		if (tws_conn)
+		if (m_tws_conn)
 		{
 			// check whether there's anything available:
 			fd_set read_set, except_set;
@@ -227,10 +231,10 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 			FD_ZERO(&except_set);
 			max_fd = -1;
 
-			tv.tv_sec = tws_cfg.backend_poll_period / 1000;
-			tv.tv_usec = (tws_cfg.backend_poll_period % 1000) * 1000;
+			tv.tv_sec = m_tws_cfg.m_backend_poll_period / 1000;
+			tv.tv_usec = (m_tws_cfg.m_backend_poll_period % 1000) * 1000;
 
-			while (mg_get_stop_flag(mg_get_context(tws_conn)) == 0)
+			while (mg_get_stop_flag(mg_get_context(m_tws_conn)) == 0)
 			{
 				struct timeval tv2 = tv;
 				int proc_rv;
@@ -240,9 +244,9 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 				max_fd = -1;
 
 				// Add listening sockets to the read set
-				mg_FD_SET(mg_get_client_socket(tws_conn), &read_set, &max_fd);
+				mg_FD_SET(mg_get_client_socket(m_tws_conn), &read_set, &max_fd);
 				prepare_fd_sets_for_reception(&read_set, &except_set, max_fd);
-				if (fake_ib_tws_connection)
+				if (m_fake_ib_tws_connection)
 				{
 					fake_ib_tws_server(1);
 				}
@@ -261,7 +265,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 				}
 				else
 				{
-					if (mg_FD_ISSET(mg_get_client_socket(tws_conn), &read_set))
+					if (mg_FD_ISSET(mg_get_client_socket(m_tws_conn), &read_set))
 					{
 						/*
 						Mongoose mg_read() does NOT fetch any pending data from the TCP/IP stack when the 'content length' isn't set yet.
@@ -314,7 +318,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 				}
 			}
 
-			if (mg_get_stop_flag(mg_get_context(tws_conn)) == 0)
+			if (mg_get_stop_flag(mg_get_context(m_tws_conn)) == 0)
 			{
 				int proc_rv;
 
@@ -340,7 +344,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 					}
 					else if (max_bufsize)
 					{
-						rv = mg_pull(tws_conn, buf, max_bufsize);
+						rv = mg_pull(m_tws_conn, buf, max_bufsize);
 						if (rv < 0)
 						{
 							assert(!"Should never get here");
@@ -397,7 +401,7 @@ int ib_backend_io_channel::io_flush(void)
 
 	if (!rv)
 	{
-		if (fake_ib_tws_connection)
+		if (m_fake_ib_tws_connection)
 		{
 			// fetch data from fake socket[1] and push a response back:
 			fake_ib_tws_server(0);
@@ -440,20 +444,20 @@ int ib_backend_io_channel::io_open(void)
 
 	if (!rv)
 	{
-		assert(!tws_conn);
-		tws_conn = mg_connect_to_host(tws_ctx, tws_cfg.ip_address, tws_cfg.port, 0);
+		assert(!m_tws_conn);
+		m_tws_conn = mg_connect_to_host(m_tws_ctx, m_tws_cfg.m_ip_address, m_tws_cfg.m_port, 0);
 
-		faking_the_ib_tws_connection = false;
+		m_faking_the_ib_tws_connection = false;
 
-		if (tws_conn == NULL && fake_ib_tws_connection)
+		if (m_tws_conn == NULL && m_fake_ib_tws_connection)
 		{
 			// open a fake server socket connection:
 			fake_ib_tws_server(2);
 		}
 
-		if (tws_conn != NULL)
+		if (m_tws_conn != NULL)
 		{
-			struct socket *sock = mg_get_client_socket(tws_conn);
+			struct socket *sock = mg_get_client_socket(m_tws_conn);
 
 			// Disable Nagle - act a la telnet:
 			mg_set_nodelay_mode(sock, 1);
@@ -462,10 +466,10 @@ int ib_backend_io_channel::io_open(void)
 			mg_set_socket_keepalive(sock, 1);
 			mg_set_socket_timeout(sock, 10);
 
-			m_app_manager->register_backend_thread(tws_conn, this);
+			m_app_manager->register_backend_thread(m_tws_conn, this);
 		}
 
-		rv = (tws_conn ? 0 : (int)tws::NOT_CONNECTED);
+		rv = (m_tws_conn ? 0 : (int)tws::NOT_CONNECTED);
 	}
 
 	for (size_t i = 0; i < m_after.size(); i++)
@@ -505,16 +509,16 @@ int ib_backend_io_channel::io_close(void)
 
 	if (!rv)
 	{
-		if (tws_conn)
+		if (m_tws_conn)
 		{
-			if (fake_ib_tws_connection)
+			if (m_fake_ib_tws_connection)
 			{
 				// close the fake server connection:
 				fake_ib_tws_server(3);
 			}
 
-			mg_close_connection(tws_conn);
-			tws_conn = NULL;
+			mg_close_connection(m_tws_conn);
+			m_tws_conn = NULL;
 		}
 	}
 

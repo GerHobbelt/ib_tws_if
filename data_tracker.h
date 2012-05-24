@@ -60,7 +60,7 @@ protected:
 
 protected:
 	typedef std::vector<ib_contract_details *> cd_store_t;
-	cd_store_t m_cds;
+	cd_store_t m_contract_details_store;
 
     struct mg_context *m_global_ctx;
 

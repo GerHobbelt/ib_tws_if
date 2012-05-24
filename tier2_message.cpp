@@ -115,23 +115,23 @@ void tier2_message::unregister_handler(tier2_message_state_change_handler *handl
 // set up the defaults; perform any necessary registration with the app_manager, etc...
 void tier2_message::resolve_requester_and_receiver_issues(void)
 {
-	assert(m_requester || m_receiver);
+	assert(requester || m_receiver);
 
 	/*
 	Default: receiver == requester.
 	*/
 	if (!m_receiver)
 	{
-		assert(dynamic_cast<tier2_message_processor *>(m_requester));
-		m_receiver = m_requester;
+		assert(dynamic_cast<tier2_message_processor *>(requester));
+		m_receiver = requester;
 		assert(m_receiver);
 	}
-	if (!m_requester)
+	if (!requester)
 	{
-		m_requester = m_receiver;
+		requester = m_receiver;
 	}
 
-	if (m_requester != m_receiver)
+	if (requester != m_receiver)
 	{
 		/*
 		Also register the thread interconnect so that we can re-use it
@@ -140,11 +140,11 @@ void tier2_message::resolve_requester_and_receiver_issues(void)
 
 		The creation/registration is a side effect of the query:
 		*/
-		(void)m_requester->get_interthread_communicator(m_requester, m_receiver);
+		(void)requester->get_interthread_communicator(requester, m_receiver);
 	}
 
 	assert(!m_owner);
-	current_owner(m_requester);
+	current_owner(requester);
 }
 
 
@@ -159,7 +159,7 @@ void tier2_message::resolve_requester_and_receiver_issues(void)
 
 
 tier2_message::tier2_message(tier2_message_processor *from, tier2_message_processor *to, request_state_t initial_state) :
-	m_requester(from),
+	requester(from),
 	m_receiver(to),
 	m_now_state(initial_state),
 	m_previous_state(INIT4PREV),
@@ -278,7 +278,7 @@ tier2_message::request_state_t tier2_message::exec_state(request_state_t new_sta
 
 		case RESPONSE_COMPLETE:
 			// requester ~ handler
-			if (m_owner == m_requester)
+			if (m_owner == requester)
 			{
 				err = f_response_complete();
 			}
@@ -290,7 +290,7 @@ tier2_message::request_state_t tier2_message::exec_state(request_state_t new_sta
 
 		case TASK_COMPLETED:
 			// requester ~ handler
-			if (m_owner == m_requester)
+			if (m_owner == requester)
 			{
 				err = f_task_completed();
 			}
@@ -302,7 +302,7 @@ tier2_message::request_state_t tier2_message::exec_state(request_state_t new_sta
 
 		case tier2_message::DESTRUCTION:				// T: just before the destructor is invoked: last call!
 			// requester ~ handler
-			if (m_owner == m_requester)
+			if (m_owner == requester)
 			{
 				err = f_destruction_imminent();
 			}
@@ -318,7 +318,7 @@ tier2_message::request_state_t tier2_message::exec_state(request_state_t new_sta
 
 		case tier2_message::FAILED:						// T: when an error occurred
 			// requester ~ handler
-			if (m_owner == m_requester)
+			if (m_owner == requester)
 			{
 				err = f_task_failed();
 			}
@@ -330,7 +330,7 @@ tier2_message::request_state_t tier2_message::exec_state(request_state_t new_sta
 
 		case tier2_message::ABORTED:					// T: when the request has been canceled
 			// requester ~ handler
-			if (m_owner == m_requester)
+			if (m_owner == requester)
 			{
 				err = f_task_aborted();
 			}
@@ -341,7 +341,7 @@ tier2_message::request_state_t tier2_message::exec_state(request_state_t new_sta
 			break;
 
 		default:
-			if (m_owner != m_requester)
+			if (m_owner != requester)
 			{
 				m_owner->queue_msg_for_pulsing(this);
 			}
@@ -377,9 +377,9 @@ int tier2_message::pulse(void)
 	{
 	case DESTRUCTION:				// T: just before the destructor is invoked: last call!
 		// send message to receiver ~ handler
-		if (m_owner != m_requester)
+		if (m_owner != requester)
 		{
-			comm = m_owner->get_interthread_communicator(m_owner, m_requester);
+			comm = m_owner->get_interthread_communicator(m_owner, requester);
 			assert(comm);
 
 			// push message across the pond:
@@ -416,9 +416,9 @@ int tier2_message::pulse(void)
 	case ABORTED:					// T: when the request has been canceled
 	default:
 		// send message to requester ~ handler
-		if (m_owner != m_requester)
+		if (m_owner != requester)
 		{
-			comm = m_owner->get_interthread_communicator(m_owner, m_requester);
+			comm = m_owner->get_interthread_communicator(m_owner, requester);
 			assert(comm);
 
 			// push message across the pond:
@@ -497,28 +497,28 @@ int tier2_message::cancel_request(tier2_message_processor *transmitter)
 interthread_communicator *tier2_message::get_interthread_communicator(bool tx2rx)
 {
 	assert(m_owner);
-	if (m_requester != m_receiver)
+	if (requester != m_receiver)
 	{
 		if (tx2rx)
-			return m_owner->get_interthread_communicator(m_requester, m_receiver);
+			return m_owner->get_interthread_communicator(requester, m_receiver);
 		else
-			return m_owner->get_interthread_communicator(m_receiver, m_requester);
+			return m_owner->get_interthread_communicator(m_receiver, requester);
 	}
 	return NULL;
 }
 
 int tier2_message::wait_for_response(interthread_communicator *listen_comm)
 {
-	assert(m_requester != m_receiver);
-	//interthread_communicator *comm = m_owner->get_interthread_communicator(m_receiver, m_requester);  -- m_owner is in limbo, hence untrustworthy!
+	assert(requester != m_receiver);
+	//interthread_communicator *comm = m_owner->get_interthread_communicator(m_receiver, requester);  -- m_owner is in limbo, hence untrustworthy!
 	assert(listen_comm);
-	assert(listen_comm->receiver() == m_requester);
+	assert(listen_comm->receiver() == requester);
 
 	if (!listen_comm)
 		return -1;
 
 	// check the message queue of the requester to see if the expected message already was returned before we called this!
-	if (m_requester->does_own(this))
+	if (requester->does_own(this))
 	{
 		switch(this->state())
 		{

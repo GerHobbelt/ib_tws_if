@@ -67,7 +67,7 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
 
     if (0 == strcmp("tws_ip_address", name))
     {
-        tws_cfg.ip_address = mg_strdup(value);
+        tws_cfg.m_ip_address = mg_strdup(value);
         return 1;
     }
     else if (0 == strcmp("tws_ip_port", name))
@@ -75,7 +75,7 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         int portno = atoi(value);
         if (portno > 0)
         {
-            tws_cfg.port = portno;
+            tws_cfg.m_port = portno;
             return 1;
         }
     }
@@ -84,7 +84,7 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         int tws_id = atoi(value);
         if (tws_id > 0)
         {
-            tws_cfg.our_id_code = tws_id;
+            tws_cfg.m_our_id_code = tws_id;
             return 1;
         }
     }
@@ -93,7 +93,7 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         long poll_period = atol(value);
         if (poll_period > 0)
         {
-            tws_cfg.backend_poll_period = poll_period;
+            tws_cfg.m_backend_poll_period = poll_period;
             return 1;
         }
     }
@@ -102,23 +102,23 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         long reconnect_delay = atol(value);
         if (reconnect_delay > 0)
         {
-            tws_cfg.backend_reconnect_delay = reconnect_delay;
+            tws_cfg.m_backend_reconnect_delay = reconnect_delay;
             return 1;
         }
     }
-    else if (0 == strcmp("tws_log_traffic", name))
+    else if (0 == strcmp("m_tws_log_traffic", name))
     {
         bool tws_log_traffic = (atoi(value) != 0);
         if (!mg_strncasecmp(value, "t", 1) || !mg_strncasecmp(value, "f", 1))
 		{
 			tws_log_traffic = !mg_strncasecmp(value, "t", 1);
 		}
-        tws_cfg.tws_log_traffic = tws_log_traffic;
+        tws_cfg.m_tws_log_traffic = tws_log_traffic;
         return 1;
     }
-    else if (0 == strcmp("tws_traffic_log_file", name))
+    else if (0 == strcmp("m_tws_traffic_log_file", name))
     {
-        tws_cfg.tws_traffic_log_file = mg_strdup(value);
+        tws_cfg.m_tws_traffic_log_file = mg_strdup(value);
         return 1;
     }
 	else if (0 == strcmp("database_file", name))

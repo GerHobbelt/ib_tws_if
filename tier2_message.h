@@ -92,7 +92,7 @@ protected:
 	request_state_t m_previous_state;
 	request_state_t m_now_state;
 
-	tier2_message_processor *m_requester;
+	tier2_message_processor *requester;
 	tier2_message_processor *m_receiver;
 	tier2_message_processor *m_owner;
 
@@ -109,7 +109,7 @@ protected:
 public:
 	tier2_message_processor *get_requester(void) const
 	{
-		return m_requester;
+		return requester;
 	}
 
 	tier2_message_processor *get_receiver(void) const
@@ -127,17 +127,12 @@ public:
 
 	app_manager *get_app_manager(void) const
 	{
-		assert(m_requester);
-		return m_requester->get_app_manager();
+		assert(requester);
+		return requester->get_app_manager();
 	}
 
 	// set up the defaults; perform any necessary registration with the app_manager, etc...
 	virtual void resolve_requester_and_receiver_issues(void);
-
-	virtual bool matches(tier2_message *msg) const
-	{
-		return msg == this;
-	}
 
 public:
 	enum state_change

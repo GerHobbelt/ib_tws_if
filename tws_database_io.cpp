@@ -19,7 +19,7 @@ int db_manager::open_databases(void)
 {
 	int i;
 	int err = 0;
-	const char *db_filename = cfg.database_path;
+	const char *db_filename = m_cfg.m_database_path;
 	ham_parameter_t create_params[] = 
 	{
 		{ HAM_PARAM_MAX_ENV_DATABASES, 300 },
@@ -30,26 +30,26 @@ int db_manager::open_databases(void)
 
 	(void)close_databases();
 
-	ham_env_new(&env);
+	ham_env_new(&m_env);
 
 	return 0;
 
-	err = ham_env_open_ex(env, db_filename, 0, NULL);
+	err = ham_env_open_ex(m_env, db_filename, 0, NULL);
 	if (err == HAM_FILE_NOT_FOUND)
 	{
-		err = ham_env_create_ex(env, db_filename, 0, 0644, create_params);
+		err = ham_env_create_ex(m_env, db_filename, 0, 0644, create_params);
 	}
 	if (err)
 		return err;
 
-	for (i = 0; i < ARRAY_SIZE(db); i++)
+	for (i = 0; i < ARRAY_SIZE(m_db); i++)
 	{
-		ham_new(&db[i]);
+		ham_new(&m_db[i]);
 
-		err = ham_env_open_db(env, db[i], i + HAM_DBNAME_OFFSET, 0, NULL);
+		err = ham_env_open_db(m_env, m_db[i], i + HAM_DBNAME_OFFSET, 0, NULL);
 		if (err == HAM_DATABASE_NOT_FOUND)
 		{
-			err = ham_env_create_db(env, db[i], i + HAM_DBNAME_OFFSET, 0, NULL);
+			err = ham_env_create_db(m_env, m_db[i], i + HAM_DBNAME_OFFSET, 0, NULL);
 		}
 		if (err)
 			return err;
@@ -62,23 +62,23 @@ int db_manager::close_databases(void)
 {
 	int err = 0;
 
-	if (env)
+	if (m_env)
 	{
 		int i;
 
-		err = ham_env_close(env, 0);
+		err = ham_env_close(m_env, 0);
 
-		for (i = 0; i < ARRAY_SIZE(db); i++)
+		for (i = 0; i < ARRAY_SIZE(m_db); i++)
 		{
-			if (db[i])
+			if (m_db[i])
 			{
-				ham_delete(db[i]);
-				db[i] = NULL;
+				ham_delete(m_db[i]);
+				m_db[i] = NULL;
 			}
 		}
 
-		ham_env_delete(env);
-		env = NULL;
+		ham_env_delete(m_env);
+		m_env = NULL;
 	}
 
 	return err;
@@ -92,7 +92,7 @@ const char *db_manager::strerror(int errcode)
 
 void db_manager::set_database_path(const char *path)
 {
-	cfg.database_path = mg_strdup(path);
+	m_cfg.m_database_path = mg_strdup(path);
 }
 
 
@@ -115,14 +115,14 @@ int db_manager::ib_get_ticker_info(ib_contract_details &cd)
 
 int db_manager::ib_store_scanner_parameters_xml(const char *xml)
 {
-	ib_tws_manager *ibm = app_mgr->get_ib_tws_manager();
+	ib_tws_manager *ibm = m_app_mgr->get_ib_tws_manager();
 
 	// don't store the XML file when we're faking...
 	if (!ibm->is_faking_the_ib_tws_connection())
 	{
 		// TODO: store this in the DB_MISC_BLOBS database table
 
-		const char *db_filename = cfg.database_path;
+		const char *db_filename = m_cfg.m_database_path;
 		char fname[PATH_MAXSIZE];
 		char *dst;
 
@@ -143,10 +143,10 @@ int db_manager::ib_store_scanner_parameters_xml(const char *xml)
 
 
 db_manager::db_manager(app_manager *mgr) :
-	app_mgr(mgr),
-	env(NULL)
+	m_app_mgr(mgr),
+	m_env(NULL)
 {
-	memset(db, 0, sizeof(db));
+	memset(m_db, 0, sizeof(m_db));
 }
 
 db_manager::~db_manager(void)

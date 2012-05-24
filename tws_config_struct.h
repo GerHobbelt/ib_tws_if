@@ -27,21 +27,21 @@
 struct tws_conn_cfg
 {
     /* configuration parameters: how to connect to TWS */
-    const char *ip_address;
-    int port;
-    int our_id_code;
+    const char *m_ip_address;
+    int m_port;
+    int m_our_id_code;
 
-    long backend_poll_period; // unit: milliseconds
-	long backend_reconnect_delay; // unit: milliseconds
+    long m_backend_poll_period; // unit: milliseconds
+	long m_backend_reconnect_delay; // unit: milliseconds
 
-    bool tws_log_traffic;
-	const char *tws_traffic_log_file;
+    bool m_tws_log_traffic;
+	const char *m_tws_traffic_log_file;
 
 public:
 	tws_conn_cfg() :
-		ip_address(0), port(0), our_id_code(0),
-		backend_poll_period(0), backend_reconnect_delay(0)
-	    , tws_log_traffic(false), tws_traffic_log_file(0)
+		m_ip_address(0), m_port(0), m_our_id_code(0),
+		m_backend_poll_period(0), m_backend_reconnect_delay(0)
+	    , m_tws_log_traffic(false), m_tws_traffic_log_file(0)
 	{
 	}
 	~tws_conn_cfg()
