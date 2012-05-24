@@ -103,7 +103,7 @@ int tier2_message_processor::process_one_queued_tier2_request(fd_set *read_set, 
 				case interthread_communicator::MSG_PENDING:
 					// fetch message from socket ~ queue
 					requests_handled_counter++;
-					msg = comm->pop_one_message(&mode);
+					msg = comm->pop_one_message(mode);
 					if (msg)
 					{
 						// ???

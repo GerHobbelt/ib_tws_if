@@ -458,6 +458,7 @@
     <None Include="..\..\.gitmodules" />
     <None Include="..\..\mongoose\win32\favicon.ico" />
     <None Include="..\..\mongoose\win32\systray.ico" />
+    <None Include="..\..\otl\README.md" />
     <None Include="..\..\server\Makefile.am" />
     <None Include="..\..\README.md" />
     <None Include="..\..\TODO" />
@@ -500,6 +501,7 @@
     <ClInclude Include="..\..\mongoose\win32\resource.h" />
     <ClInclude Include="..\..\mongoose_event_handler.h" />
     <ClInclude Include="..\..\mongoose_utils.h" />
+    <ClInclude Include="..\..\otl\otlv4_h\otlv4.h" />
     <ClInclude Include="..\..\support-code.h" />
     <ClInclude Include="..\..\system-includes.h" />
     <ClInclude Include="..\..\tier2_message.h" />

@@ -33,6 +33,11 @@
 
 #include <mongoose/mongoose_ex.h>
 
+// kill mongoose/OTL collisions due to mongoose #defines:
+#undef close
+
+#include <otl/otlv4_h/otlv4.h>
+
 
 
 

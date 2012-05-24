@@ -46,3 +46,6 @@
 [submodule "utils/recrmdir"]
 	path = utils/recrmdir
 	url = git@github.com:GerHobbelt/recrmdir.git
+[submodule "otl"]
+	path = otl
+	url = git@github.com:GerHobbelt/otl.git

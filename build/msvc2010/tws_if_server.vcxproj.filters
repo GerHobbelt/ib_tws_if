@@ -43,6 +43,9 @@
     <Filter Include="FrontEnd\Resources">
       <UniqueIdentifier>{8f1b6668-aa8a-42e1-a77e-547b9f3fb28f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OTL">
+      <UniqueIdentifier>{9dc71b32-a7ef-44b1-80f0-43204e1af0ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\.gitmodules">
@@ -62,6 +65,9 @@
     </None>
     <None Include="..\..\mongoose\win32\systray.ico">
       <Filter>FrontEnd\Resources</Filter>
+    </None>
+    <None Include="..\..\otl\README.md">
+      <Filter>OTL</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +237,9 @@
     </ClInclude>
     <ClInclude Include="..\..\data_tracker.h">
       <Filter>Glue\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\otl\otlv4_h\otlv4.h">
+      <Filter>OTL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

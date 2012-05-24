@@ -36,7 +36,6 @@
 
 
 
-
 unique_type_id_threadsafe_manager tier2_msg_typeid_mgr;
 
 
@@ -430,10 +429,26 @@ int tier2_message::pulse(void)
 	return err;
 }
 
+/*
+Set the new owner. 
+
+A notable side effect is that the message state handlers/observers (registered visitors)
+are immediately notified about this change by invoking them.
+*/
 tier2_message_processor *tier2_message::current_owner(tier2_message_processor *new_owner)
 {
 	if (m_owner != new_owner)
 	{
+		/*
+		message should be 'in limbo' when transferring between owners. If the message is not,
+		it would mean that a
+
+			m_owner->release(this);
+
+		call would be required AND that the invoked release() method would require thread
+		safety measures (mutex or other).
+		*/
+		assert(!m_owner || !new_owner);
 		if (m_owner)
 		{
 			m_owner->release(this);
@@ -525,7 +540,10 @@ int tier2_message::wait_for_response(interthread_communicator *listen_comm)
 
 	while (mg_get_stop_flag(mg_get_context(listen_comm->receiver_socket())) == 0)
 	{
-		tier2_message *msg = listen_comm->pop_one_message();
+		// make me wait for a message to arrive...
+		interthread_communicator::msg_pending_mode_t msg_mode = interthread_communicator::NO_MSG; 
+
+		tier2_message *msg = listen_comm->pop_one_message(msg_mode);
 
 		// if the popped message is our response (and not some book-keeping sort of thing), we know we're done.
 		if (!msg)

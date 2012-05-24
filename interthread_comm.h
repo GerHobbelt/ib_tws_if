@@ -54,7 +54,7 @@ public:
 public:
 	enum msg_pending_mode_t
 	{
-	NO_MSG = 0,
+	NO_MSG = 0,                             // we'll have to wait for a message to arrive, shan't we?
 	CONNECTION_DROPPED = -1,				// connection has been dropped or other fatality:
 	MSG_PENDING = 1,						// fetch message from socket ~ queue
 	MSG_CANCELED = 2,						// the referenced message is to be canceled
@@ -63,7 +63,7 @@ public:
 	virtual int prepare_fd_sets_for_reception(struct fd_set *read_set, struct fd_set *except_set, int &max_fd);
 	virtual msg_pending_mode_t is_message_pending(fd_set *read_set, fd_set *except_set, int max_fd);
 	virtual int post_message(tier2_message *msg);
-	virtual tier2_message *pop_one_message(msg_pending_mode_t *mode_ref = 0);
+	virtual tier2_message *pop_one_message(msg_pending_mode_t &mode /* in/out */);
 
 	bool has_sender(tier2_message_processor *messager) const
 	{

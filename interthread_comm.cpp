@@ -101,57 +101,42 @@ int interthread_communicator::post_message(tier2_message *msg)
 	return rv;
 }
 
-tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t *mode_ref)
+/*
+We don't select/wait for the socket to cough up a message when the input mode 
+is MSG_PENDING; hence one should only use this mode when he is absolutely certain
+a message is waiting in the socket buffer or mg_pull() will lock up, unless you've
+non-blocking socket I/O turned on.
+*/
+tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t &mode)
 {
 	tier2_message *msg = NULL;
-	msg_pending_mode_t mode;
-	int rv;
-	// check whether there's anything available:
-	fd_set read_set;
-	struct timeval tv;
-	int max_fd;
+	int rv = -1;
+	bool good_to_go;
 
-	rv = -1;
-
-	FD_ZERO(&read_set);
-	max_fd = -1;
-
-	tv.tv_sec = 1;
-	tv.tv_usec = 0;
-
-	while (mg_get_stop_flag(mg_get_context(m_receiving_socket)) == 0)
+	if (mode != MSG_PENDING)
 	{
-		struct timeval tv2 = tv;
-		int proc_rv;
+		// check whether there's anything available:
+		fd_set read_set;
+		struct timeval tv;
+		int max_fd;
 
 		FD_ZERO(&read_set);
 		max_fd = -1;
 
-		// Add listening sockets to the read set
-		mg_FD_SET(mg_get_client_socket(m_receiving_socket), &read_set, &max_fd);
-		if (select(max_fd + 1, &read_set, NULL, NULL, &tv2) < 0)
+		tv.tv_sec = 1;
+		tv.tv_usec = 0;
+
+		while (mg_get_stop_flag(mg_get_context(m_receiving_socket)) == 0)
 		{
-			// signal a fatal failure:
-			// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+			struct timeval tv2 = tv;
+			int proc_rv;
+
 			FD_ZERO(&read_set);
 			max_fd = -1;
-			assert(!"Should never get here");
-			break;
-		}
-		else
-		{
-			if (mg_FD_ISSET(mg_get_client_socket(m_receiving_socket), &read_set))
-			{
-				break;
-			}
 
-#if 0
-			/*
-			Also 'tickle' the pending queue in round-robin fashion to ensure that 
-			scheduled / postponed requests get serviced.
-			*/
-			proc_rv = pulse_pending_issues();
-			if (proc_rv < 0)
+			// Add listening sockets to the read set
+			mg_FD_SET(mg_get_client_socket(m_receiving_socket), &read_set, &max_fd);
+			if (select(max_fd + 1, &read_set, NULL, NULL, &tv2) < 0)
 			{
 				// signal a fatal failure:
 				// clear the handles sets to prevent 'surprises' from processing these a second time (below):
@@ -160,11 +145,40 @@ tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t *mod
 				assert(!"Should never get here");
 				break;
 			}
+			else
+			{
+				if (mg_FD_ISSET(mg_get_client_socket(m_receiving_socket), &read_set))
+				{
+					break;
+				}
+
+#if 0
+				/*
+				Also 'tickle' the pending queue in round-robin fashion to ensure that 
+				scheduled / postponed requests get serviced.
+				*/
+				proc_rv = pulse_pending_issues();
+				if (proc_rv < 0)
+				{
+					// signal a fatal failure:
+					// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+					FD_ZERO(&read_set);
+					max_fd = -1;
+					assert(!"Should never get here");
+					break;
+				}
 #endif
+			}
 		}
-	}
 	
-	if (max_fd >= 0)
+		good_to_go = (max_fd >= 0);
+	}
+	else
+	{
+		good_to_go = true;
+	}
+
+	if (good_to_go)
 	{
 		// don't use mg_read() as that depends upon decoded HTTP header info
 		rv = mg_pull(m_receiving_socket, &msg, sizeof(msg));
@@ -180,11 +194,6 @@ tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t *mod
 		mode = MSG_PENDING;
 
 		msg->current_owner(m_receipient); // and attach the message to the new owner ~ receiver
-	}
-
-	if (mode_ref)
-	{
-		*mode_ref = mode;
 	}
 
 	return (rv ? msg : NULL);
