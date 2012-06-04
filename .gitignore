@@ -11,6 +11,7 @@
 
 mongoose-hg/*
 mongoose-tmp/
+gerhobbelt-github-mongoose/
 
 build/msvc2010/bin/
 build/msvc2010/obj/
