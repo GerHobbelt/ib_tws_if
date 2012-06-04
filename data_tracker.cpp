@@ -29,6 +29,7 @@
 #include "app_manager.h"
 #include "tws_database_io.h"
 #include "tws_backend_io.h"
+#include "interthread_comm.h"
 #include "data_tracker.h"
 
 #include <mongoose/mongoose_ex.h>
@@ -62,6 +63,138 @@ data_tracker_manager::~data_tracker_manager()
 
 int data_tracker_manager::process_one_event(void)
 {
+#if 0
+	// check whether there's anything available:
+	fd_set read_set, except_set;
+	struct timeval tv;
+	int max_fd;
+	int rv;
+
+	rv = -1;
+
+	tv.tv_sec = m_tracker_cfg.m_backend_poll_period / 1000;
+	tv.tv_usec = (m_tracker_cfg.m_backend_poll_period % 1000) * 1000;
+
+	while (mg_get_stop_flag(get_context()) == 0)
+	{
+		struct timeval tv2 = tv;
+		int proc_rv;
+
+		FD_ZERO(&read_set);
+		FD_ZERO(&except_set);
+		max_fd = -1;
+
+		// Add listening sockets to the read set
+		mg_FD_SET(mg_get_client_socket(m_tws_conn), &read_set, &max_fd);
+		prepare_fd_sets_for_reception(&read_set, &except_set, max_fd);
+
+		if (select(max_fd + 1, &read_set, NULL, &except_set, &tv2) < 0)
+		{
+			// signal a fatal failure:
+			// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+			FD_ZERO(&read_set);
+			FD_ZERO(&except_set);
+			max_fd = -1;
+			assert(!"Should never get here");
+
+			max_bufsize = 0;
+			break;
+		}
+		else
+		{
+			if (mg_FD_ISSET(mg_get_client_socket(m_tws_conn), &read_set))
+			{
+				/*
+				Mongoose mg_read() does NOT fetch any pending data from the TCP/IP stack when the 'content length' isn't set yet.
+
+				We, however, desire to load an unknown and arbitrary amount of data here to fill a buffer and our protocol doesn't
+				have something like a 'content length' to guide us along, so we'll have to use another method to make sure
+				the read operation actually delivers DATA!
+				*/
+				// conn->content_len = MAX_INT;
+				break;
+			}
+
+			/*
+			When there's no pending incoming data from TWS itself, we'll be running around in this loop while waiting for
+			more data to arrive. Meanwhile, we can process queued requests from the front-end now:
+			*/
+			proc_rv = process_one_queued_tier2_request(&read_set, &except_set, max_fd);
+			if (proc_rv < 0)
+			{
+				// signal a fatal failure:
+				// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+				FD_ZERO(&read_set);
+				FD_ZERO(&except_set);
+				max_fd = -1;
+				assert(!"Should never get here");
+
+				// prevent the mg_read() from locking up due to no incoming data:
+				max_bufsize = 0;
+				break;
+			}
+
+			// check whether any new client interconnects have been set up?
+			m_app_manager->fetch_new_interthread_communicators(this);
+
+			/*
+			Also 'tickle' the pending queue in round-robin fashion to ensure that 
+			scheduled / postponed requests get serviced.
+			*/
+			proc_rv = pulse_pending_issues();
+			if (proc_rv < 0)
+			{
+				// signal a fatal failure:
+				// clear the handles sets to prevent 'surprises' from processing these a second time (below):
+				FD_ZERO(&read_set);
+				FD_ZERO(&except_set);
+				max_fd = -1;
+				assert(!"Should never get here");
+
+				// prevent the mg_read() from locking up due to no incoming data:
+				max_bufsize = 0;
+				break;
+			}
+		}
+	}
+
+	if (mg_get_stop_flag(mg_get_context(m_tws_conn)) == 0)
+	{
+		int proc_rv;
+
+		/*
+		Even when there's pending incoming data from TWS itself, we'll need to process queued 
+		requests from the front-end and 'pending' queue or we would be experiencing lockup:
+		*/
+		proc_rv = process_one_queued_tier2_request(&read_set, &except_set, max_fd);
+		if (proc_rv < 0)
+		{
+			// signal a fatal failure:
+			rv = proc_rv;
+			assert(!"Should never get here");
+		}
+		else 
+		{
+			proc_rv = pulse_pending_issues();
+			if (proc_rv < 0)
+			{
+				// signal fatal failure:
+				rv = proc_rv;
+				assert(!"Should never get here");
+			}
+			else if (max_bufsize)
+			{
+				rv = mg_pull(m_tws_conn, buf, max_bufsize);
+				if (rv < 0)
+				{
+					assert(!"Should never get here");
+				}
+				//assert(rv != 0);
+			}
+		}
+	}
+#endif
+
 	return 0;
 }
 
@@ -100,7 +233,7 @@ void data_tracker_thread(struct mg_context *ctx)
 			goto fail_dramatically;
 		}
 
-		assert(mgr->get_requester(ctx) == clm);
+		assert(mgr->get_requester(ctx, app_manager::DATA_TRACKER_THREAD) == clm);
 
         while (mg_get_stop_flag(ctx) == 0)
         {

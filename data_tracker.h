@@ -48,6 +48,33 @@ class ib_tws_manager;
 
 
 
+struct data_tracker_cfg
+{
+	/* configuration parameters: */
+	long m_backend_poll_period; // unit: milliseconds
+	long m_backend_restart_delay; // unit: milliseconds
+
+	bool m_log_activity;
+	const char *m_activity_log_file;
+
+public:
+	data_tracker_cfg() :
+	  m_backend_poll_period(0),
+	  m_backend_restart_delay(0),
+	  m_log_activity(false),
+	  m_activity_log_file(0)
+	{
+	}
+	~data_tracker_cfg()
+	{
+	}
+};
+
+
+
+
+
+
 class data_tracker_manager : public tier2_message_processor
 {
 protected:
@@ -63,6 +90,8 @@ protected:
 	cd_store_t m_contract_details_store;
 
     struct mg_context *m_global_ctx;
+
+	data_tracker_cfg m_tracker_cfg;
 
 public:
 	int register_contract_info(const ib_contract_details *cd);
@@ -86,6 +115,8 @@ public:
 };
 
 
+
+void data_tracker_thread(struct mg_context *ctx);
 
 
 
