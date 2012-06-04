@@ -25,7 +25,9 @@ class sendrecvr_ctxkey_less: public std::less<sendrecvr_ctxkey>
 public:
 	bool operator()(const sendrecvr_ctxkey &n1, const sendrecvr_ctxkey &n2) const
 	{
-		return n1.ctx < n2.ctx ? n1.optional_id < n2.optional_id : false;
+		if (n1.ctx == n2.ctx)
+			return n1.optional_id < n2.optional_id;
+		return n1.ctx < n2.ctx;
 	}
 };
 
