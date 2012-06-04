@@ -146,7 +146,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;..\..\libtre\lib;..\..\libtre\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\mongoose\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -202,7 +202,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;..\..\libtre\lib;..\..\libtre\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\mongoose\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -259,7 +259,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;..\..\libtre\lib;..\..\libtre\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\mongoose\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;NDEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -307,7 +307,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;..\..\libtre\lib;..\..\libtre\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\mongoose\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE;MG_PROXY_SUPPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -362,7 +362,7 @@
       <Optimization>Disabled</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;..\..\libtre\lib;..\..\libtre\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\mongoose\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -417,7 +417,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <WholeProgramOptimization>true</WholeProgramOptimization>
-      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\pthread-win32;..\..\hamsterdb\include;..\..\libtre\lib;..\..\libtre\win32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..;..\..\include;..\..\libxml\include;..\..\mongoose\pthread-win32;..\..\hamsterdb\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>HAVE_PTHREAD;_CRT_NONSTDC_NO_DEPRECATE;_CRT_SECURE_NO_DEPRECATE;_DEBUG;WIN32;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <MinimalRebuild>false</MinimalRebuild>
@@ -530,15 +530,14 @@
     <ProjectReference Include="..\..\libxml\win32.msvc2010\libxml_dll.vcxproj">
       <Project>{218f950c-eb90-4023-a016-e9af52c4aae9}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\pthread-win32\pthread.2010.vcxproj">
+    <ProjectReference Include="..\..\mongoose\pthread-win32\pthread.2010.vcxproj">
       <Project>{5d459ba0-5eeb-47d3-a1c4-6b55c8d37ec0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mongoose\win32\msvc2010\3rdparty_mongoose_pthread.vcxproj">
+      <Project>{801b2151-543d-470b-8d9a-c480ec62a149}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\upskirt\mvc\libupskirt.vcxproj">
       <Project>{bef78878-99b5-47fc-ae1b-210edf9643f8}</Project>
-    </ProjectReference>
-    <ProjectReference Include="3rdparty_mongoose.vcxproj">
-      <Project>{fc4eff85-2c41-4ed6-a13e-eb98409de435}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
     <ProjectReference Include="3rdparty_tws_c_api_lib.vcxproj">
       <Project>{7ca3cfb9-ce10-41c8-9bcc-2061ad259f71}</Project>
