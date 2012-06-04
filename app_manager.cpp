@@ -486,9 +486,9 @@ int app_manager::fetch_new_interthread_communicators(tier2_message_processor *re
 	return 0;
 }
 
-tier2_message_processor *app_manager::get_requester(struct mg_context *ctx, app_manager::optional_requester_id_t optional_id)
+tier2_message_processor *app_manager::get_requester(struct mg_context *ctx, app_manager::optional_requester_id_t id)
 {
-	return get_receiver(ctx, optional_id);
+	return get_receiver(ctx, id);
 }
 
 tier2_message_processor *app_manager::get_requester(struct mg_connection *conn)
@@ -496,9 +496,9 @@ tier2_message_processor *app_manager::get_requester(struct mg_connection *conn)
 	return get_receiver(conn);
 }
 
-tier2_message_processor *app_manager::get_receiver(struct mg_context *ctx, app_manager::optional_requester_id_t optional_id)
+tier2_message_processor *app_manager::get_receiver(struct mg_context *ctx, app_manager::optional_requester_id_t id)
 {
-	sendrecvr_ctxkey k = { ctx, optional_id };
+	sendrecvr_ctxkey k = { ctx, id };
 
 	pthread_mutex_lock(&m_comm_mutex);
 

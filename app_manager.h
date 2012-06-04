@@ -75,10 +75,10 @@ public:
 
 	int fetch_new_interthread_communicators(tier2_message_processor *receiver);
 
-	tier2_message_processor *get_requester(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	tier2_message_processor *get_requester(struct mg_context *ctx, optional_requester_id_t id);
 	tier2_message_processor *get_requester(struct mg_connection *conn);
 
-	tier2_message_processor *get_receiver(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+	tier2_message_processor *get_receiver(struct mg_context *ctx, optional_requester_id_t id);
 	tier2_message_processor *get_receiver(struct mg_connection *conn);
 
 	struct tws_conn_cfg &get_tws_ib_connection_config(void);
