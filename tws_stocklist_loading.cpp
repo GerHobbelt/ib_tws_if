@@ -333,16 +333,12 @@ int ib_msg_resp_scanner_parameters::process_response_message(class tier2_message
 
 			if (fp != NULL)
 			{
-				mg_flockfile(fp);
-
+				flockfile(fp);
 				xmlXPathDebugDumpObject(fp, usable_locations, 0);
 
 				fflush(fp);
-				mg_funlockfile(fp);
-				if (fp != stderr)
-				{
-					mg_fclose(fp);
-				}
+				funlockfile(fp);
+				mg_fclose(fp);
 			}
 #endif
 

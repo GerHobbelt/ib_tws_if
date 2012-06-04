@@ -1058,9 +1058,6 @@ scheduled / postponed requests get serviced.
 */
 int ib_tws_manager::pulse_pending_issues(void)
 {
-	// check whether any new client interconnects have been set up?
-	m_app_manager->fetch_new_interthread_communicators(this);
-
 	pulse_marked_messages();
 
 	int hitcount = 0;
@@ -1081,7 +1078,7 @@ int ib_tws_manager::pulse_pending_issues(void)
 			if (tier2_message::COMMENCE_TRANSMIT == msg->state(tier2_message::COMMENCE_TRANSMIT))
 			{
 				hitcount++;
-				// prevent hitting the same scheduled message over and over, while other lay waiting:
+				// prevent hitting the same scheduled message over and over, while others lay waiting:
 				start_index_for_next_time = idx + 1;
 			}
 			break;

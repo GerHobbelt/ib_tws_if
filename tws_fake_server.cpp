@@ -81,7 +81,7 @@ static int inttok0(char *s = NULL)
 static int respond_with(struct mg_connection *conn, const char *elem)
 {
 	int len = strlen(elem);
-	int rv = mg_send_data(conn, elem, len + 1);
+	int rv = mg_write(conn, elem, len + 1);
 	return rv;
 }
 static int respond_with(struct mg_connection *conn, int elem)
@@ -89,7 +89,7 @@ static int respond_with(struct mg_connection *conn, int elem)
 	char buf[40];
 	mg_snprintf(conn, buf, sizeof(buf), "%d", elem);
 	int len = strlen(buf);
-	int rv = mg_send_data(conn, buf, len + 1);
+	int rv = mg_write(conn, buf, len + 1);
 	return rv;
 }
 static int respond_with(struct mg_connection *conn, unsigned int elem)
@@ -97,7 +97,7 @@ static int respond_with(struct mg_connection *conn, unsigned int elem)
 	char buf[40];
 	mg_snprintf(conn, buf, sizeof(buf), "%u", elem);
 	int len = strlen(buf);
-	int rv = mg_send_data(conn, buf, len + 1);
+	int rv = mg_write(conn, buf, len + 1);
 	return rv;
 }
 static int respond_with(struct mg_connection *conn, long int elem)
@@ -105,7 +105,7 @@ static int respond_with(struct mg_connection *conn, long int elem)
 	char buf[40];
 	mg_snprintf(conn, buf, sizeof(buf), "%ld", elem);
 	int len = strlen(buf);
-	int rv = mg_send_data(conn, buf, len + 1);
+	int rv = mg_write(conn, buf, len + 1);
 	return rv;
 }
 static int respond_with(struct mg_connection *conn, unsigned long int elem)
@@ -113,7 +113,7 @@ static int respond_with(struct mg_connection *conn, unsigned long int elem)
 	char buf[40];
 	mg_snprintf(conn, buf, sizeof(buf), "%lu", elem);
 	int len = strlen(buf);
-	int rv = mg_send_data(conn, buf, len + 1);
+	int rv = mg_write(conn, buf, len + 1);
 	return rv;
 }
 static int respond_with(struct mg_connection *conn, double elem)
@@ -121,7 +121,7 @@ static int respond_with(struct mg_connection *conn, double elem)
 	char buf[40];
 	mg_snprintf(conn, buf, sizeof(buf), "%g", elem);
 	int len = strlen(buf);
-	int rv = mg_send_data(conn, buf, len + 1);
+	int rv = mg_write(conn, buf, len + 1);
 	return rv;
 }
 static int respond_with(struct mg_connection *conn, time_t elem)
@@ -130,7 +130,7 @@ static int respond_with(struct mg_connection *conn, time_t elem)
 	strftime(buf, sizeof(buf), "%Y%m%d %H:%M:%S %z", gmtime(&elem));
 	buf[59] = 0;
 	int len = strlen(buf);
-	int rv = mg_send_data(conn, buf, len + 1);
+	int rv = mg_write(conn, buf, len + 1);
 	return rv;
 }
 
@@ -153,7 +153,7 @@ static int respond_with_file(struct mg_connection *conn, ib_backend_io_channel *
 			int len = fread(buf, 1, sizeof(buf), in);
 			if (len > 0)
 			{
-				rv += mg_send_data(conn, buf, len);
+				rv += mg_write(conn, buf, len);
 			}
 			else
 			{
@@ -163,7 +163,7 @@ static int respond_with_file(struct mg_connection *conn, ib_backend_io_channel *
 		mg_fclose(in);
 	}
 	buf[0] = 0;
-	rv += mg_send_data(conn, buf, 1);
+	rv += mg_write(conn, buf, 1);
 	return rv;
 }
 
@@ -228,7 +228,7 @@ static int respond_with_messages_file(struct mg_connection *conn, ib_backend_io_
 			}
 			*d = 0;
 
-			rv += mg_send_data(conn, procd_buf, d - procd_buf);
+			rv += mg_write(conn, procd_buf, d - procd_buf);
 		}
 		mg_fclose(in);
 	}
@@ -262,10 +262,10 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 
 				m_tws_conn = m_fake_conn[0];
 			
-				mg_setsockopt(mg_get_client_socket(m_fake_conn[0]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-				mg_setsockopt(mg_get_client_socket(m_fake_conn[0]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-				mg_setsockopt(mg_get_client_socket(m_fake_conn[1]), SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
-				mg_setsockopt(mg_get_client_socket(m_fake_conn[1]), SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(m_fake_conn[0], SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(m_fake_conn[0], SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(m_fake_conn[1], SOL_SOCKET, SO_RCVBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
+				mg_setsockopt(m_fake_conn[1], SOL_SOCKET, SO_SNDBUF, (const void *)&tcpbuflen, sizeof(tcpbuflen));
 
 				m_faking_the_ib_tws_connection = true;
 			}
@@ -300,7 +300,7 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
 		if (mode == 0)
 		{
 			// send 'magic' to uniquely mark the end of the message (this simplifies the fake server code)
-			mg_send_data(m_fake_conn[0], EOM_magick, sizeof(EOM_magick));
+			mg_write(m_fake_conn[0], EOM_magick, sizeof(EOM_magick));
 		}
 
         // check whether there's anything available:
@@ -327,7 +327,7 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
             max_fd = -1;
 
             // Add listening sockets to the read set
-            mg_FD_SET(mg_get_client_socket(conn), &read_set, &max_fd);
+            mg_FD_SET(conn, &read_set, &max_fd);
 
             if (select(max_fd + 1, &read_set, NULL, NULL, &tv2) < 0)
             {
@@ -336,7 +336,7 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
             }
             else
             {
-                if (mg_FD_ISSET(mg_get_client_socket(conn), &read_set))
+                if (mg_FD_ISSET(conn, &read_set))
                 {
                     /*
                     Mongoose mg_read() does NOT fetch any pending data from the TCP/IP stack when the 'content length' isn't set yet.

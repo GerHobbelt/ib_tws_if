@@ -26,10 +26,10 @@
 
 #include "mongoose_event_handler.h"
 #include "tws_request.h"
+#include "data_tracker.h"
 #include "app_manager.h"
 
 #include <libxml/parser.h>
-#include <tre/regex.h>
 
 
 void *event_handler(enum mg_event event_id, struct mg_connection *conn)
@@ -87,6 +87,7 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 					  "Cache-Control: no-cache\r\n"
 					  //"Content-Length: %d\r\n"
 					  "Connection: close\r\n\r\n");
+                mg_mark_end_of_header_transmission(conn);
 
 				json_output channel(conn);
 				channel.start();
@@ -117,11 +118,15 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
 
         // set up the 'front-end to back-end communication serialization' mutexes:
 
-        // kickstart the TWS back-end thread now:
+        // kickstart the TWS and Calculus/DB back-end threads now:
         if (mg_start_thread(ctx, (mg_thread_func_t) tws_worker_thread, ctx) != 0) {
             mg_cry4ctx(ctx, "Cannot start TWS connection thread: %d", mg_strerror(mg_get_lasterror()));
             processed = NULL;
         }
+		if (mg_start_thread(ctx, (mg_thread_func_t) data_tracker_thread, ctx) != 0) {
+			mg_cry4ctx(ctx, "Cannot start Data Tracker thread: %d", mg_strerror(mg_get_lasterror()));
+			processed = NULL;
+		}
         break;
 
 	case MG_INIT_CLIENT_CONN:  // Mongoose has opened a connection to a client.

@@ -381,22 +381,23 @@ int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, i
 			"Content-Length: %" INT64_FMT "\r\n"
 			"Connection: %s\r\n"
 			// "Accept-Ranges: bytes\r\n"
-			// "%s\r\n"
+			"%s\r\n"
 			, ri->status_code, mg_get_response_code_text(ri->status_code)
 			, date, lm, etag
 			, cl
 			, mg_suggest_connection_header(conn)
-			// , range
+			, range
 			);
+        mg_mark_end_of_header_transmission(conn);
 
 		ret = (int)cl;
 		if (strcmp(ri->request_method, "HEAD") != 0) {
-			ret = mg_send_data(conn, ob->data, (size_t)cl);
+			ret = mg_write(conn, ob->data, (size_t)cl);
 		}
 	}
 	else
 	{
-		ret = mg_send_data(conn, ob->data, ob->size);
+		ret = mg_write(conn, ob->data, ob->size);
 	}
 
 	/* cleanup */
@@ -449,8 +450,9 @@ static void *event_callback(enum mg_event event, struct mg_connection *conn) {
           "Cache-Control: no-cache\r\n"
           "Content-Length: %d\r\n"
           "Connection: close\r\n\r\n", len);
+      mg_mark_end_of_header_transmission(conn);
 
-      mg_send_data(conn, data, len);
+      mg_write(conn, data, len);
 
       return "";
     }

@@ -223,13 +223,9 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 			// check whether there's anything available:
 			fd_set read_set, except_set;
 			struct timeval tv;
-			int max_fd;
+			int max_fd = -1;
 
 			rv = -1;
-
-			FD_ZERO(&read_set);
-			FD_ZERO(&except_set);
-			max_fd = -1;
 
 			tv.tv_sec = m_tws_cfg.m_backend_poll_period / 1000;
 			tv.tv_usec = (m_tws_cfg.m_backend_poll_period % 1000) * 1000;
@@ -244,7 +240,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 				max_fd = -1;
 
 				// Add listening sockets to the read set
-				mg_FD_SET(mg_get_client_socket(m_tws_conn), &read_set, &max_fd);
+				mg_FD_SET(m_tws_conn, &read_set, &max_fd);
 				prepare_fd_sets_for_reception(&read_set, &except_set, max_fd);
 				if (m_fake_ib_tws_connection)
 				{
@@ -265,7 +261,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 				}
 				else
 				{
-					if (mg_FD_ISSET(mg_get_client_socket(m_tws_conn), &read_set))
+					if (mg_FD_ISSET(m_tws_conn, &read_set))
 					{
 						/*
 						Mongoose mg_read() does NOT fetch any pending data from the TCP/IP stack when the 'content length' isn't set yet.
@@ -296,6 +292,9 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 						max_bufsize = 0;
 						break;
 					}
+
+					// check whether any new client interconnects have been set up?
+					m_app_manager->fetch_new_interthread_communicators(this);
 
 					/*
 					Also 'tickle' the pending queue in round-robin fashion to ensure that 
@@ -457,14 +456,12 @@ int ib_backend_io_channel::io_open(void)
 
 		if (m_tws_conn != NULL)
 		{
-			struct socket *sock = mg_get_client_socket(m_tws_conn);
-
 			// Disable Nagle - act a la telnet:
-			mg_set_nodelay_mode(sock, 1);
+			mg_set_nodelay_mode(m_tws_conn, 1);
 
 			// enable keepalive + rx/tx timeouts:
-			mg_set_socket_keepalive(sock, 1);
-			mg_set_socket_timeout(sock, 10);
+			mg_set_socket_keepalive(m_tws_conn, 1);
+			mg_set_socket_timeout(m_tws_conn, 10);
 
 			m_app_manager->register_backend_thread(m_tws_conn, this);
 		}

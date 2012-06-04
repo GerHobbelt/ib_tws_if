@@ -38,7 +38,7 @@ through the regular mongoose approach:
 */
 extern "C" int option_decode(struct mg_context *ctx, const char *name, const char *value);
 extern "C" int option_fill(struct mg_context *ctx);
-extern "C" const char * option_get(const struct mg_context *ctx, const char *name);
+extern "C" const char * option_get(struct mg_context *ctx, struct mg_connection *conn, const char *name);
 
 
 

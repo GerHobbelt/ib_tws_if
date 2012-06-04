@@ -35,7 +35,7 @@
 
 
 
-const char *mg_get_option_ex(const struct mg_context *ctx, const char *name, const char *default_value)
+const char *mg_get_option_ex(struct mg_context *ctx, const char *name, const char *default_value)
 {
     const char *v = mg_get_option(ctx, name);
 
@@ -44,7 +44,7 @@ const char *mg_get_option_ex(const struct mg_context *ctx, const char *name, con
     return v;
 }
 
-int mg_get_option_int(const struct mg_context *ctx, const char *name, int default_value)
+int mg_get_option_int(struct mg_context *ctx, const char *name, int default_value)
 {
     const char *v = mg_get_option(ctx, name);
 
@@ -106,7 +106,7 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
             return 1;
         }
     }
-    else if (0 == strcmp("m_tws_log_traffic", name))
+    else if (0 == strcmp("tws_log_traffic", name))
     {
         bool tws_log_traffic = (atoi(value) != 0);
         if (!mg_strncasecmp(value, "t", 1) || !mg_strncasecmp(value, "f", 1))
@@ -116,7 +116,7 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         tws_cfg.m_tws_log_traffic = tws_log_traffic;
         return 1;
     }
-    else if (0 == strcmp("m_tws_traffic_log_file", name))
+    else if (0 == strcmp("tws_traffic_log_file", name))
     {
         tws_cfg.m_tws_traffic_log_file = mg_strdup(value);
         return 1;
@@ -136,7 +136,7 @@ int option_fill(struct mg_context *ctx)
     return 1;
 }
 
-const char * option_get(const struct mg_context *ctx, const char *name)
+const char * option_get(struct mg_context *ctx, struct mg_connection *conn, const char *name)
 {
     // we don't use this one, so keep it a dummy until we do...
     return NULL;

@@ -27,10 +27,8 @@ interthread_communicator::~interthread_communicator()
 
 int interthread_communicator::prepare_fd_sets_for_reception(struct fd_set *read_set, struct fd_set *except_set, int &max_fd)
 {
-	struct socket *sock = mg_get_client_socket(m_receiving_socket);
-
-	mg_FD_SET(sock, read_set, &max_fd);
-	mg_FD_SET(sock, except_set, &max_fd);
+	mg_FD_SET(m_receiving_socket, read_set, &max_fd);
+	mg_FD_SET(m_receiving_socket, except_set, &max_fd);
 	return 0;
 }
 
@@ -40,11 +38,9 @@ interthread_communicator::msg_pending_mode_t interthread_communicator::is_messag
 	// only check when there's actually something to be expected at all:
 	if (max_fd >= 0)
 	{
-		struct socket *sock = mg_get_client_socket(m_receiving_socket);
-
-		if (mg_FD_ISSET(sock, read_set))
+		if (mg_FD_ISSET(m_receiving_socket, read_set))
 			return interthread_communicator::MSG_PENDING;
-		if (mg_FD_ISSET(sock, except_set))
+		if (mg_FD_ISSET(m_receiving_socket, except_set))
 			return interthread_communicator::CONNECTION_DROPPED;
 	}
 	return interthread_communicator::NO_MSG;
@@ -129,13 +125,12 @@ tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t &mod
 		while (mg_get_stop_flag(mg_get_context(m_receiving_socket)) == 0)
 		{
 			struct timeval tv2 = tv;
-			int proc_rv;
 
 			FD_ZERO(&read_set);
 			max_fd = -1;
 
 			// Add listening sockets to the read set
-			mg_FD_SET(mg_get_client_socket(m_receiving_socket), &read_set, &max_fd);
+			mg_FD_SET(m_receiving_socket, &read_set, &max_fd);
 			if (select(max_fd + 1, &read_set, NULL, NULL, &tv2) < 0)
 			{
 				// signal a fatal failure:
@@ -147,27 +142,11 @@ tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t &mod
 			}
 			else
 			{
-				if (mg_FD_ISSET(mg_get_client_socket(m_receiving_socket), &read_set))
+				if (mg_FD_ISSET(m_receiving_socket, &read_set))
 				{
 					break;
 				}
-
-#if 0
-				/*
-				Also 'tickle' the pending queue in round-robin fashion to ensure that 
-				scheduled / postponed requests get serviced.
-				*/
-				proc_rv = pulse_pending_issues();
-				if (proc_rv < 0)
-				{
-					// signal a fatal failure:
-					// clear the handles sets to prevent 'surprises' from processing these a second time (below):
-					FD_ZERO(&read_set);
-					max_fd = -1;
-					assert(!"Should never get here");
-					break;
-				}
-#endif
+				max_fd = -1;
 			}
 		}
 	
