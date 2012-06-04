@@ -13,7 +13,8 @@ cat > ${tmpar} <<EOT
 # 
 # empty lines and lines starting with a # dash are ignored.
 #
-				
+
+aktiniya-xcap   = aktiniya-xcap-server				
 amoltambe		= amoltambe-m
 andyrahn-async	= andyrahn-async
 andyrahn-dyn	= andyrahn-dynamic-client
