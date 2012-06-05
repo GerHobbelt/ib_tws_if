@@ -46,7 +46,6 @@ mkovak			= mkovax-1
 mongoose    	= mongoose
 mongoose-wiki  	= wiki.mongoose
 morgandel-file  = morgandel-enablefileserving
-randyv03t       = randyv03t-mongoose
 rickard-cgi		= rickard-fixes
 rtems			= dufault-rtems-support
 teamYASSL		= teamyassl-conf
@@ -56,8 +55,6 @@ visionofarun    = visionofarun-mongoose
 vovodroid-glerr = vovodroid-get-last-error
 vovodroid-req   = vovodroid-request-complete-event
 zhenglei		= zhenglei-cond-wait-fix
-
-gerhobbelt-gh   = gerhobbelt-github-mongoose
 
 EOT
 
