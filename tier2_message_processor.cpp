@@ -146,6 +146,14 @@ int tier2_message_processor::release(tier2_message *msg)
 {
 	int rv = -1;
 
+	// make sure the given message node is removed from all lists we manage:
+	//
+	// There's a chance that a message is destroyed thanks to multiple state 
+	// transitions in a single 'pulse', so that it mandatory to remove the
+	// node from the 'pulse queue' as the next thing that will happen then
+	// is that the message will be destroyed and the next 'pulse' will then
+	// run into an illegal ex-message reference.
+	//
 	for (tier2_message_collection_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
 	{
 		if (*i == msg)
@@ -155,6 +163,7 @@ int tier2_message_processor::release(tier2_message *msg)
 			break;
 		}
 	}
+
 	for (tier2_message_collection_t::iterator i = m_msgs_i_own.begin(); i != m_msgs_i_own.end(); i++)
 	{
 		if (*i == msg)
