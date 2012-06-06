@@ -534,7 +534,7 @@
       <Project>{bef78878-99b5-47fc-ae1b-210edf9643f8}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\mongoose\win32\msvc2010\3rdparty_mongoose_pthread.vcxproj">
-      <Project>{801b2151-543d-470b-8d9a-c480ec62a149}</Project>
+      <Project>{5da681a2-3c45-2e42-0e35-0d24831144d8}</Project>
     </ProjectReference>
     <ProjectReference Include="3rdparty_tws_c_api_lib.vcxproj">
       <Project>{7ca3cfb9-ce10-41c8-9bcc-2061ad259f71}</Project>

@@ -466,8 +466,8 @@ static void start_mongoose(int argc, char *argv[]) {
     char *options[MAX_OPTIONS * 2] = { NULL };
     int i;
     struct mg_user_class_t userdef = {
-        &event_callback /* event_handler */,
         &mgr,
+		&event_callback /* event_handler */,
         &option_decode,
         &option_fill,
         &option_get
