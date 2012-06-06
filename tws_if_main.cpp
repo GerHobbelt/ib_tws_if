@@ -142,9 +142,11 @@ static void show_usage_and_exit(const struct mg_context *ctx) {
 
 static void verify_document_root(const char *root) {
 	struct mgstat st;
+	char buf[PATH_MAX];
 
+	getcwd(buf, sizeof(buf));
 	if (mg_stat(root, &st) != 0 || !st.is_directory) {
-        die("Invalid root directory: [%s]: %s", root, mg_strerror(errno));
+        die("Invalid root directory: [%s]: %s; current directory = [%s]", root, mg_strerror(errno), buf);
     }
 }
 
@@ -419,7 +421,7 @@ static void *event_callback(enum mg_event event, struct mg_connection *conn) {
   if (event == MG_INIT0)
   {
     verify_document_root(mg_get_conn_option(conn, "document_root"));
-    return (void *)1;
+    //return (void *)1;
   }
 
 #if defined(_WIN32)
@@ -432,7 +434,7 @@ static void *event_callback(enum mg_event event, struct mg_connection *conn) {
       MessageBoxA(NULL, request_info->log_message, "Error", MB_OK);
       error_dialog_shown_previously = 1;
     }
-    return 0;
+    //return 0;
   }
 #endif
 

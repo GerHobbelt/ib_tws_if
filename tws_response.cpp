@@ -494,7 +494,7 @@ int tws_response_message::process_response_message(tier2_message *resp_msg)
 	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 	struct mg_connection *conn = ibm->get_connection();
 
-	// default behaviour is to destroy a reponse message once it's processed
+	// default behaviour is to destroy a response message once it's processed
 	//destroy();
 
 	return 0;

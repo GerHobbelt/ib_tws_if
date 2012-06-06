@@ -631,7 +631,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
 	{
 		if (m_still_need_to_prime_the_pump)
 		{
-#if 0
+#if 01
 			ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(this, NULL);
 			scan->state(tier2_message::EXEC_COMMAND);
 #endif
@@ -940,7 +940,8 @@ int ib_tws_manager::cancel_all_matching_requests(tws_request_message *cancel_msg
 			has_been_processed = true;
 
 			q.push_back(req);
-			m_msgs_i_own.erase(m_msgs_i_own.begin() + i);
+			//m_msgs_i_own.erase(m_msgs_i_own.begin() + i);
+			i++;
 
 			// another item is now at cursor position [i] so go and test that one:
 			continue;
@@ -951,6 +952,11 @@ int ib_tws_manager::cancel_all_matching_requests(tws_request_message *cancel_msg
 	for (int i = 0; i < q.size(); i++)
 	{
 		tier2_message *req = q[i];
+		
+		// message must be removed from the ownership list or it will be added 
+		// during the second pulse-scan while it might be being processed
+		// elsewhere at the same time, which would cause all sorts of fatal
+		// issues.
 
 		rv |= req->state(tier2_message::ABORTED);
 	}

@@ -144,15 +144,28 @@ int tier2_message_processor::own(tier2_message *msg)
 
 int tier2_message_processor::release(tier2_message *msg)
 {
+	int rv = -1;
+
+	for (tier2_message_collection_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
+	{
+		if (*i == msg)
+		{
+			assert(does_own(*i));
+			m_msgs_pending_for_pulsing.erase(i);
+			break;
+		}
+	}
 	for (tier2_message_collection_t::iterator i = m_msgs_i_own.begin(); i != m_msgs_i_own.end(); i++)
 	{
 		if (*i == msg)
 		{
 			m_msgs_i_own.erase(i);
-			return 0;
+			assert(!does_own(msg));
+			rv = 0;
+			break;
 		}
 	}
-	return -1;
+	return rv;
 }
 
 bool tier2_message_processor::does_own(tier2_message *msg) const
@@ -170,6 +183,8 @@ int tier2_message_processor::queue_msg_for_pulsing(tier2_message *msg)
 	assert(does_own(msg));
 	for (tier2_message_collection_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
 	{
+		assert(does_own(*i));
+		assert((*i)->current_owner() == this);
 		if (*i == msg)
 		{
 			return 1;
@@ -184,16 +199,26 @@ int tier2_message_processor::pulse_marked_messages(void)
 {
 	int rv = 0;
 
-	for (tier2_message_collection_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i++)
+	/*
+	scan from position [0] every time again; the set may change while we work with it...
+	*/
+	for (tier2_message_collection_t::iterator i = m_msgs_pending_for_pulsing.begin(); i != m_msgs_pending_for_pulsing.end(); i = m_msgs_pending_for_pulsing.begin())
 	{
 		tier2_message *msg = *i;
 
+		assert(does_own(*i));
+		assert((*i)->current_owner() == this);
+		m_msgs_pending_for_pulsing.erase(i);
 		if (msg->current_owner() == this)
 		{
 			rv |= msg->pulse();
 		}
+		else
+		{
+			assert(!"should never get here");
+		}
 	}
-	m_msgs_pending_for_pulsing.clear();
+	//m_msgs_pending_for_pulsing.clear();
 
 	return rv;
 }

@@ -55,7 +55,7 @@ void json_output::add_sibling(const char *name, const char *value)
 		mg_printf(m_conn, ",\n");
 	}
 	json_output_indent();
-	mg_printf(m_conn, "%s: \"%s\"", name, value);
+	mg_printf(m_conn, "\"%s\": \"%s\"", name, value);
 	m_sibling_counter++;
 }
 void json_output::add_sibling(const char *name, const ib_date_t &value)
@@ -76,7 +76,7 @@ void json_output::add_sibling(const char *name, int value)
 		mg_printf(m_conn, ",\n");
 	}
 	json_output_indent();
-	mg_printf(m_conn, "%s: %d", name, value);
+	mg_printf(m_conn, "\"%s\": %d", name, value);
 	m_sibling_counter++;
 }
 void json_output::add_sibling(const char *name, double value)
@@ -87,7 +87,7 @@ void json_output::add_sibling(const char *name, double value)
 		mg_printf(m_conn, ",\n");
 	}
 	json_output_indent();
-	mg_printf(m_conn, "%s: %g", name, value);
+	mg_printf(m_conn, "\"%s\": %g", name, value);
 	m_sibling_counter++;
 }
 
@@ -99,7 +99,7 @@ void json_output::push_level(const char *name)
 		mg_printf(m_conn, ",\n");
 	}
 	json_output_indent();
-	mg_printf(m_conn, "%s: {\n", name);
+	mg_printf(m_conn, "\"%s\": {\n", name);
 	m_counter_stack.push_back(m_sibling_counter);
 	m_sibling_counter = 0;
 	m_indent_level++;

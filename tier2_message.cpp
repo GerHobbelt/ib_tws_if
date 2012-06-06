@@ -311,7 +311,7 @@ tier2_message::request_state_t tier2_message::exec_state(request_state_t new_sta
 
 			 We ignore the case where the f_destruction_imminent() function would've changed
 			 the state on us; the 'pulsing' process is smart enough to cope with such 
-			 'nothing to do here' occassions as may occur then.
+			 'nothing to do here' occasions as may occur then.
 			*/
 			m_owner->queue_msg_for_pulsing(this);
 			break;

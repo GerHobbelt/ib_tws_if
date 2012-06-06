@@ -79,6 +79,7 @@ void tws_worker_thread(struct mg_context *ctx)
 
 	ibm->set_context(ctx);
 	mgr->register_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD, ibm);
+	assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD) == ibm);
 	
     // retry connecting to TWS as long as the server itself hasn't been stopped!
     while (mg_get_stop_flag(ctx) == 0)
