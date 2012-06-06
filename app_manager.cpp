@@ -233,6 +233,12 @@ data_tracker_manager *app_manager::get_data_tracker_manager(void)
 	return data_tracker_manager::get_instance(this, true);
 }
 
+calculus_manager *app_manager::get_calculus_manager(void)
+{
+	//return data_tracker_manager::get_instance(this, true);
+	return NULL;
+}
+
 
 app_manager::app_manager() :
 	m_dbi(NULL),

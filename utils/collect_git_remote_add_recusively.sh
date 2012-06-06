@@ -28,7 +28,7 @@ done
 
 cat ${tmpdst} | sort | uniq >> ${mydir}/register_git_remotes_recursive.sh
 
-cat > ${mydir}/register_git_remotes_recursive.sh <<EOT
+cat >> ${mydir}/register_git_remotes_recursive.sh <<EOT
 
 popd
 

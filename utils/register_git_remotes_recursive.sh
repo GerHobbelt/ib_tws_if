@@ -76,13 +76,11 @@ pushd ../mongoose ; git remote add mevdschee90 ../mongoose-hg/mevdschee90 ; popd
 pushd ../mongoose ; git remote add mkovak ../mongoose-hg/mkovak ; popd
 pushd ../mongoose ; git remote add mongoose-wiki ../mongoose-hg/mongoose-wiki ; popd
 pushd ../mongoose ; git remote add morgandel-file ../mongoose-hg/morgandel-file ; popd
-pushd ../mongoose ; git remote add randyv03t ../mongoose-hg/randyv03t ; popd
 pushd ../mongoose ; git remote add rickard-cgi ../mongoose-hg/rickard-cgi ; popd
 pushd ../mongoose ; git remote add rtems ../mongoose-hg/rtems ; popd
 pushd ../mongoose ; git remote add teamYASSL ../mongoose-hg/teamYASSL ; popd
 pushd ../mongoose ; git remote add tekert ../mongoose-hg/tekert ; popd
 pushd ../mongoose ; git remote add timma666 ../mongoose-hg/timma666 ; popd
-pushd ../mongoose ; git remote add tmp ../mongoose-hg/tmp ; popd
 pushd ../mongoose ; git remote add visionofarun ../mongoose-hg/visionofarun ; popd
 pushd ../mongoose ; git remote add vovodroid-glerr ../mongoose-hg/vovodroid-glerr ; popd
 pushd ../mongoose ; git remote add vovodroid-req ../mongoose-hg/vovodroid-req ; popd
@@ -105,3 +103,4 @@ pushd ../upskirt ; git remote add tomaz git://github.com/tomaz/sundown.git ; pop
 pushd ../upskirt ; git remote add txdv git://github.com/txdv/sundown.git ; popd
 
 popd
+

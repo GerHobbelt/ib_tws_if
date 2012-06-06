@@ -31,6 +31,7 @@ class ib_tws_manager;
 class db_manager;
 class sender_receiver_store;
 class data_tracker_manager;
+class calculus_manager;
 
 
 
@@ -87,6 +88,7 @@ public:
 	db_manager *get_db_manager(void);
 	ib_tws_manager *get_ib_tws_manager(void);
 	data_tracker_manager *get_data_tracker_manager(void);
+	calculus_manager *get_calculus_manager(void);
 
 	int set_next_order_id(int id);
 	int get_next_order_id(void);
