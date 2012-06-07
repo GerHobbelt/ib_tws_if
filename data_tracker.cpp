@@ -72,13 +72,22 @@ int data_tracker_manager::process_one_event(void)
 
 	rv = -1;
 
-	tv.tv_sec = m_tracker_cfg.m_backend_poll_period / 1000;
-	tv.tv_usec = (m_tracker_cfg.m_backend_poll_period % 1000) * 1000;
-
 	while (mg_get_stop_flag(get_context()) == 0)
 	{
 		struct timeval tv2 = tv;
 		int proc_rv;
+		// determine how many messages are waiting to be 'pulsed':
+		size_t pulse_count = m_msgs_pending_for_pulsing.size();
+
+		tv.tv_sec = m_tws_cfg.m_backend_poll_period / 1000;
+		tv.tv_usec = (m_tws_cfg.m_backend_poll_period % 1000) * 1000;
+		// when there are messages waiting to be pulsed, we don't wait long to do so 
+		// if there's no incoming data:
+		if (pulse_count) 
+		{
+			tv.tv_sec = 0;
+			tv.tv_usec = 0;
+		}
 
 		FD_ZERO(&read_set);
 		FD_ZERO(&except_set);

@@ -222,18 +222,26 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 		{
 			// check whether there's anything available:
 			fd_set read_set, except_set;
-			struct timeval tv;
 			int max_fd = -1;
 
 			rv = -1;
 
-			tv.tv_sec = m_tws_cfg.m_backend_poll_period / 1000;
-			tv.tv_usec = (m_tws_cfg.m_backend_poll_period % 1000) * 1000;
-
 			while (mg_get_stop_flag(mg_get_context(m_tws_conn)) == 0)
 			{
-				struct timeval tv2 = tv;
+				struct timeval tv;
 				int proc_rv;
+				// determine how many messages are waiting to be 'pulsed':
+				size_t pulse_count = m_msgs_pending_for_pulsing.size();
+
+				tv.tv_sec = m_tws_cfg.m_backend_poll_period / 1000;
+				tv.tv_usec = (m_tws_cfg.m_backend_poll_period % 1000) * 1000;
+				// when there are messages waiting to be pulsed, we don't wait long to do so 
+				// if there's no incoming data:
+				if (pulse_count) 
+				{
+					tv.tv_sec = 0;
+					tv.tv_usec = 0;
+				}
 
 				FD_ZERO(&read_set);
 				FD_ZERO(&except_set);
@@ -247,7 +255,8 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 					fake_ib_tws_server(1);
 				}
 
-				if (select(max_fd + 1, &read_set, NULL, &except_set, &tv2) < 0)
+				proc_rv = select(max_fd + 1, &read_set, NULL, &except_set, &tv);
+				if (proc_rv < 0)
 				{
 					// signal a fatal failure:
 					// clear the handles sets to prevent 'surprises' from processing these a second time (below):
@@ -261,7 +270,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 				}
 				else
 				{
-					if (mg_FD_ISSET(m_tws_conn, &read_set))
+					if (proc_rv > 0 && mg_FD_ISSET(m_tws_conn, &read_set))
 					{
 						/*
 						Mongoose mg_read() does NOT fetch any pending data from the TCP/IP stack when the 'content length' isn't set yet.
@@ -272,6 +281,11 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 						*/
 						// conn->content_len = MAX_INT;
 						break;
+					}
+
+					if (proc_rv > 0 && mg_FD_ISSET(m_tws_conn, &except_set))
+					{
+						assert(!"should never get here");
 					}
 
 					/*
@@ -348,7 +362,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 						{
 							assert(!"Should never get here");
 						}
-						//assert(rv != 0);
+						//assert(rv != 0);  -- when rv==0 the connection got dropped by TWS; via read_line()=-1 we will error out and drop out too, then wait and try to reconnect.
 					}
 				}
 			}
@@ -372,7 +386,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
 	{
 		assert(!"Should never get here");
 	}
-	assert(rv != 0);
+	//assert(rv != 0);  -- when rv==0 the connection got dropped by TWS; via read_line()=-1 we will error out and drop out too, then wait and try to reconnect.
     return rv;
 }
 
