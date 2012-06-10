@@ -529,7 +529,7 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
                                     }
                                     else
                                     {
-                                        // accept subscription: send 2 messages based on file templte (quicker to code here ;-) )
+                                        // accept subscription: send 2 messages based on file template (quicker to code here ;-) )
                                         respond_with_messages_file(conn, this, "faking_it/RX.scanner_data.%s.txt", scancode, ticker_id, ticker_id);
                                     }
                                 }

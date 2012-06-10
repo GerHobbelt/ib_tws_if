@@ -239,7 +239,10 @@ public:
     virtual int destroy(void);
 
 protected:
-    std::string m_account_identifier;
+    ib_string_t m_account_identifier;
+	
+	std::vector<ib_string_t> m_rt_providers;		// the list of real-time data providers a.k.a. 'farms'
+	std::vector<ib_string_t> m_hist_providers;		// the list of historical data providers a.k.a. 'farms'
 
     ib_backend_io_logger *m_io_logger;
 

@@ -615,6 +615,8 @@ int ib_tws_manager::process_response_message(ib_msg_resp_exec_details_end *resp_
 int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
 {
     struct mg_connection *conn = get_connection();
+	const char *msg;
+	int i;
 
     assert(resp_msg);
     mg_cry(conn, "process response message for %s?", "ib_msg_resp_error");
@@ -626,18 +628,120 @@ int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
     this was not reported as such, but one simply doesn't get ANY error messages listing ANY farm as OK
     instead!
     */
-    if (resp_msg->get_error_code() == tws::FAIL_MARKET_DATA_FARM_CONNECTED
-        || resp_msg->get_error_code() == tws::FAIL_HISTORICAL_DATA_FARM_CONNECTED)
+    switch (resp_msg->get_error_code())
+	{
+	case tws::FAIL_MARKET_DATA_FARM_CONNECTED:
+		msg = resp_msg->get_error_string();
+		msg = strrchr(msg, ':');
+		if (msg)
+		{
+			msg++;
+			msg += strspn(msg, " ");
+			m_rt_providers.push_back(msg);
+		}
+		break;
+
+	case tws::FAIL_MARKET_DATA_FARM_DISCONNECTED:
+		msg = resp_msg->get_error_string();
+		msg = strrchr(msg, ':');
+		if (msg)
+		{
+			msg++;
+			msg += strspn(msg, " ");
+			for (i = 0; i < m_rt_providers.size(); i++)
+			{
+				if (m_rt_providers[i] == msg)
+				{
+					m_rt_providers.erase(m_rt_providers.begin() + i);
+					break;
+				}
+			}
+		}
+		break;
+
+	case tws::FAIL_MARKET_DATA_FARM_CONNECTION_INACTIVE:
+		assert(!"TODO");
+
+		msg = resp_msg->get_error_string();
+		msg = strrchr(msg, ':');
+		if (msg)
+		{
+			msg++;
+			msg += strspn(msg, " ");
+			for (i = 0; i < m_rt_providers.size(); i++)
+			{
+				if (m_rt_providers[i] == msg)
+				{
+					m_rt_providers.erase(m_rt_providers.begin() + i);
+					break;
+				}
+			}
+		}
+		break;
+
+	case tws::FAIL_HISTORICAL_DATA_FARM_CONNECTED:
+		msg = resp_msg->get_error_string();
+		msg = strrchr(msg, ':');
+		if (msg)
+		{
+			msg++;
+			msg += strspn(msg, " ");
+			m_hist_providers.push_back(msg);
+		}
+		break;
+
+	case tws::FAIL_HISTORICAL_DATA_FARM_DISCONNECTED:
+		msg = resp_msg->get_error_string();
+		msg = strrchr(msg, ':');
+		if (msg)
+		{
+			msg++;
+			msg += strspn(msg, " ");
+			for (i = 0; i < m_hist_providers.size(); i++)
+			{
+				if (m_hist_providers[i] == msg)
+				{
+					m_hist_providers.erase(m_hist_providers.begin() + i);
+					break;
+				}
+			}
+		}
+		break;
+
+	case tws::FAIL_HISTORICAL_DATA_FARM_INACTIVE:
+		assert(!"TODO");
+
+		msg = resp_msg->get_error_string();
+		msg = strrchr(msg, ':');
+		if (msg)
+		{
+			msg++;
+			msg += strspn(msg, " ");
+			for (i = 0; i < m_hist_providers.size(); i++)
+			{
+				if (m_hist_providers[i] == msg)
+				{
+					m_hist_providers.erase(m_hist_providers.begin() + i);
+					break;
+				}
+			}
+		}
+		break;
+
+	default:
+		break;
+	}
+
+	if (m_still_need_to_prime_the_pump
+		&& m_hist_providers.size() > 0
+		&& m_rt_providers.size() > 0)
     {
-        if (m_still_need_to_prime_the_pump)
-        {
 #if 01
-            ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(this, NULL);
-            scan->state(tier2_message::EXEC_COMMAND);
+        ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(this, NULL);
+        scan->state(tier2_message::EXEC_COMMAND);
 #endif
 
-            m_still_need_to_prime_the_pump = false;
-        }
+        m_still_need_to_prime_the_pump = false;
     }
 
 #if 0
