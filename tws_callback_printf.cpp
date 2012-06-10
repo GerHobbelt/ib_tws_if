@@ -38,12 +38,12 @@ replace TWSAPI debug printf call.
 */
 void tws_cb_printf(void *opaque, int indent_level, const char *fmt, ...)
 {
-	app_manager *mgr = (app_manager *)opaque;	
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
-	va_list ap;
+    app_manager *mgr = (app_manager *)opaque;
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
+    va_list ap;
 
-	va_start(ap, fmt);
-	mg_vlog(conn, "info", fmt, ap);
-	va_end(ap);
+    va_start(ap, fmt);
+    mg_vlog(conn, "info", fmt, ap);
+    va_end(ap);
 }

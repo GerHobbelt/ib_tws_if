@@ -62,7 +62,7 @@ int mg_get_option_int(struct mg_context *ctx, const char *name, int default_valu
 
 int option_decode(struct mg_context *ctx, const char *name, const char *value)
 {
-	app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
+    app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
     struct tws_conn_cfg &tws_cfg = mgr->get_tws_ib_connection_config();
 
     if (0 == strcmp("tws_ip_address", name))
@@ -110,9 +110,9 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
     {
         bool tws_log_traffic = (atoi(value) != 0);
         if (!mg_strncasecmp(value, "t", 1) || !mg_strncasecmp(value, "f", 1))
-		{
-			tws_log_traffic = !mg_strncasecmp(value, "t", 1);
-		}
+        {
+            tws_log_traffic = !mg_strncasecmp(value, "t", 1);
+        }
         tws_cfg.m_tws_log_traffic = tws_log_traffic;
         return 1;
     }
@@ -121,11 +121,11 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         tws_cfg.m_tws_traffic_log_file = mg_strdup(value);
         return 1;
     }
-	else if (0 == strcmp("database_file", name))
-	{
-		mgr->get_db_manager()->set_database_path(value);
-		return 1;
-	}
+    else if (0 == strcmp("database_file", name))
+    {
+        mgr->get_db_manager()->set_database_path(value);
+        return 1;
+    }
     return 0;
 }
 

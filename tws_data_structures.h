@@ -39,75 +39,75 @@ typedef tws::tr_comboleg_type_t tws_comboleg_type_t;
 typedef tws::tr_fa_msg_type_t tws_fa_msg_type_t;
 namespace tws
 {
-	enum tws_outgoing_ids;
+    enum tws_outgoing_ids;
 
-	typedef struct tws_instance tws_instance_t;
+    typedef struct tws_instance tws_instance_t;
 }
 typedef tws::tws_outgoing_ids ib_outgoing_id_t;
 
 
 
-#define DECLARE_TWS_FORWARD_REFERENCE(t)						\
-    namespace tws												\
-    { 															\
-        extern "C"												\
-        {														\
-            t;													\
-        }														\
+#define DECLARE_TWS_FORWARD_REFERENCE(t)                        \
+    namespace tws                                               \
+    {                                                           \
+        extern "C"                                              \
+        {                                                       \
+            t;                                                  \
+        }                                                       \
     }
 
 
 
 enum tws_order_type_t
 {
-    ORDER_MARKET_TO_LIMIT										,
-    ORDER_MARKET_WITH_PROTECTION								,
-    ORDER_REQUEST_FOR_QUOTE										,
-    ORDER_STOP													,
-    ORDER_STOP_LIMIT											,
-    ORDER_TRAILING_LIMIT_IF_TOUCHED								,
-    ORDER_TRAILING_MARKET_IF_TOUCHED							,
-    ORDER_TRAILING_STOP											,
-    ORDER_TRAILING_STOP_LIMIT									,
-    ORDER_MARKET												,
-    ORDER_MARKET_IF_TOUCHED										,
-    ORDER_MARKET_ON_CLOSE										,
-    ORDER_MARKET_ON_OPEN										,
-    ORDER_PEGGED_TO_MARKET										,
-    ORDER_RELATIVE												,
-    ORDER_BOX_TOP												,
-    ORDER_LIMIT_ON_CLOSE										,
-    ORDER_LIMIT_ON_OPEN											,
-    ORDER_LIMIT_IF_TOUCHED										,
-    ORDER_PEGGED_TO_MIDPOINT									,
-    ORDER_VWAP_GUARANTEED										,
-    ORDER_GOOD_AFTER_TIME_DATE									,
-    ORDER_GOOD_TILL_DATE_TIME									,
-    ORDER_GOOD_TILL_CANCELED									,
-    ORDER_IMMEDIATE_OR_CANCEL									,
-    ORDER_ONE_CANCELS_ALL										,
-    ORDER_VOLATILITY											,
-    ORDER_LIMIT													,
-    ORDER_ACTIVETIM												,
-    ORDER_ADJUST												,
-    ORDER_ALERT													,
-    ORDER_ALLOC													,
-    ORDER_AVGCOST												,
-    ORDER_BASKET												,
-    ORDER_COND													,
-    ORDER_CONDORDER												,
-    ORDER_CONSCOST												,
-    ORDER_DAY													,
-    ORDER_DEACT													,
-    ORDER_DEACTDIS												,
-    ORDER_DEACTEOD												,
-    ORDER_GTT													,
-    ORDER_HID													,
-    ORDER_LTH													,
-    ORDER_NONALGO												,
-    ORDER_SCALE													,
-    ORDER_SCALERST												,
-    ORDER_WHATIF												,
+    ORDER_MARKET_TO_LIMIT                                       ,
+    ORDER_MARKET_WITH_PROTECTION                                ,
+    ORDER_REQUEST_FOR_QUOTE                                     ,
+    ORDER_STOP                                                  ,
+    ORDER_STOP_LIMIT                                            ,
+    ORDER_TRAILING_LIMIT_IF_TOUCHED                             ,
+    ORDER_TRAILING_MARKET_IF_TOUCHED                            ,
+    ORDER_TRAILING_STOP                                         ,
+    ORDER_TRAILING_STOP_LIMIT                                   ,
+    ORDER_MARKET                                                ,
+    ORDER_MARKET_IF_TOUCHED                                     ,
+    ORDER_MARKET_ON_CLOSE                                       ,
+    ORDER_MARKET_ON_OPEN                                        ,
+    ORDER_PEGGED_TO_MARKET                                      ,
+    ORDER_RELATIVE                                              ,
+    ORDER_BOX_TOP                                               ,
+    ORDER_LIMIT_ON_CLOSE                                        ,
+    ORDER_LIMIT_ON_OPEN                                         ,
+    ORDER_LIMIT_IF_TOUCHED                                      ,
+    ORDER_PEGGED_TO_MIDPOINT                                    ,
+    ORDER_VWAP_GUARANTEED                                       ,
+    ORDER_GOOD_AFTER_TIME_DATE                                  ,
+    ORDER_GOOD_TILL_DATE_TIME                                   ,
+    ORDER_GOOD_TILL_CANCELED                                    ,
+    ORDER_IMMEDIATE_OR_CANCEL                                   ,
+    ORDER_ONE_CANCELS_ALL                                       ,
+    ORDER_VOLATILITY                                            ,
+    ORDER_LIMIT                                                 ,
+    ORDER_ACTIVETIM                                             ,
+    ORDER_ADJUST                                                ,
+    ORDER_ALERT                                                 ,
+    ORDER_ALLOC                                                 ,
+    ORDER_AVGCOST                                               ,
+    ORDER_BASKET                                                ,
+    ORDER_COND                                                  ,
+    ORDER_CONDORDER                                             ,
+    ORDER_CONSCOST                                              ,
+    ORDER_DAY                                                   ,
+    ORDER_DEACT                                                 ,
+    ORDER_DEACTDIS                                              ,
+    ORDER_DEACTEOD                                              ,
+    ORDER_GTT                                                   ,
+    ORDER_HID                                                   ,
+    ORDER_LTH                                                   ,
+    ORDER_NONALGO                                               ,
+    ORDER_SCALE                                                 ,
+    ORDER_SCALERST                                              ,
+    ORDER_WHATIF                                                ,
 };
 
 
@@ -234,27 +234,27 @@ enum tws_short_sale_slot_type_t
 
 
 
-class ib_string_t : public std::string 
+class ib_string_t : public std::string
 {
 public:
-	ib_string_t(const char *s) :
-		std::string(s ? s : "")
-	{
-	}
-	ib_string_t() :
-		std::string()
-	{
-	}
+    ib_string_t(const char *s) :
+        std::string(s ? s : "")
+    {
+    }
+    ib_string_t() :
+        std::string()
+    {
+    }
 
 public:
-	operator const char *()
-	{
-		return c_str();
-	}
-	operator const unsigned char *()
-	{
-		return (const unsigned char *)c_str();
-	}
+    operator const char *()
+    {
+        return c_str();
+    }
+    operator const unsigned char *()
+    {
+        return (const unsigned char *)c_str();
+    }
 };
 typedef int ib_int_t;
 typedef long int ib_long_t;
@@ -263,27 +263,27 @@ typedef double ib_double_t;
 class ib_date_t
 {
 protected:
-	// the number of 100-nanosecond intervals since January 1, 1601 (eqv. to Win32 FILETIME)
-	time_t m_t;
+    // the number of 100-nanosecond intervals since January 1, 1601 (eqv. to Win32 FILETIME)
+    time_t m_t;
 
 public:
-	ib_date_t() :
-		m_t(0)
-	{
-	}
-	ib_date_t(time_t _t) :
-		m_t(_t)
-	{
-	}
-	ib_date_t(const char *_t);
+    ib_date_t() :
+        m_t(0)
+    {
+    }
+    ib_date_t(time_t _t) :
+        m_t(_t)
+    {
+    }
+    ib_date_t(const char *_t);
 
-	virtual ~ib_date_t()
-	{
-	}
+    virtual ~ib_date_t()
+    {
+    }
 
 public:
-	operator ib_string_t() const;
-	ib_date_t &operator =(const char *timestamp);
+    operator ib_string_t() const;
+    ib_date_t &operator =(const char *timestamp);
 };
 typedef std::vector<int> ib_int_list_t;
 
@@ -304,9 +304,9 @@ public:
     optional_value(T &v) : m_stored_value(v), m_is_valid(true)
     {
     }
-	optional_value(T v) : m_stored_value(v), m_is_valid(true)
-	{
-	}
+    optional_value(T v) : m_stored_value(v), m_is_valid(true)
+    {
+    }
     ~optional_value()
     {
     }
@@ -329,15 +329,15 @@ public:
     T &value(T usr_default_value = T()) const
     {
         if (!m_is_valid)
-		{
+        {
             m_stored_value = usr_default_value;
-		}
+        }
         return m_stored_value;
     }
-	operator T()
-	{
-		return value();
-	}
+    operator T()
+    {
+        return value();
+    }
 
     optional_value<T> &operator =(T v)
     {
@@ -355,38 +355,38 @@ public:
     bool operator ==(T v) const
     {
         if (m_is_valid)
-		{
-			return m_stored_value == v;
-		}
-		return false;
+        {
+            return m_stored_value == v;
+        }
+        return false;
     }
     bool operator ==(const optional_value<T> &v) const
     {
         if (m_is_valid == v.m_is_valid)
-		{
-			if (!m_is_valid)
-				return true;
-			return m_stored_value == v.m_stored_value;
-		}
+        {
+            if (!m_is_valid)
+                return true;
+            return m_stored_value == v.m_stored_value;
+        }
         return false;
     }
     bool operator ==(optional_value<T> &v) const
     {
         if (m_is_valid == v.m_is_valid)
-		{
-			if (!m_is_valid)
-				return true;
-			return m_stored_value == v.m_stored_value;
-		}
+        {
+            if (!m_is_valid)
+                return true;
+            return m_stored_value == v.m_stored_value;
+        }
         return false;
     }
 };
 
 
 
-typedef optional_value<double>			o_double_t;
-typedef optional_value<int>				o_int_t;
-typedef optional_value<bool>			o_bool_t;
+typedef optional_value<double>          o_double_t;
+typedef optional_value<int>             o_int_t;
+typedef optional_value<bool>            o_bool_t;
 class o_string_t : public optional_value<std::string>
 {
 public:
@@ -423,9 +423,9 @@ public:
     std::string &value(const char *default_value = "")
     {
         if (!m_is_valid)
-		{
+        {
             m_stored_value = default_value;
-		}
+        }
         return m_stored_value;
     }
 
@@ -435,20 +435,20 @@ public:
         m_stored_value = v;
         return *this;
     }
-	operator const char *()
-	{
-		return value().c_str();
-	}
+    operator const char *()
+    {
+        return value().c_str();
+    }
 };
-typedef optional_value<tws_origin_t>				o_origin_t;
-typedef optional_value<tws_oca_type_t>				o_oca_type_t;
-typedef optional_value<tws_auction_strategy_t>		o_auction_strategy_t;
-typedef optional_value<tws_short_sale_slot_type_t>	o_short_sale_slot_type_t;
-typedef optional_value<tws_action_code_t>			o_action_code_t;
-typedef optional_value<tws_comboleg_type_t>			o_comboleg_type_t;
-typedef optional_value<tws_short_sale_slot_type_t>	o_short_sale_slot_type_t;
+typedef optional_value<tws_origin_t>                o_origin_t;
+typedef optional_value<tws_oca_type_t>              o_oca_type_t;
+typedef optional_value<tws_auction_strategy_t>      o_auction_strategy_t;
+typedef optional_value<tws_short_sale_slot_type_t>  o_short_sale_slot_type_t;
+typedef optional_value<tws_action_code_t>           o_action_code_t;
+typedef optional_value<tws_comboleg_type_t>         o_comboleg_type_t;
+typedef optional_value<tws_short_sale_slot_type_t>  o_short_sale_slot_type_t;
 
-typedef optional_value<ib_date_t>			o_date_t;
+typedef optional_value<ib_date_t>           o_date_t;
 
 
 
@@ -480,14 +480,14 @@ DECLARE_TWS_FORWARD_REFERENCE(struct tr_comboleg);
 class ib_comboleg
 {
 public:
-    o_action_code_t				co_action;					/* BUY/SELL/SSHORT/SSHORTX */
-    o_string_t					co_exchange;
-    o_string_t					co_designated_location;     /* set to "" if unused, as usual */
-    o_int_t						co_conid;
-    o_int_t						co_ratio;
-    o_comboleg_type_t			co_open_close;
-    o_short_sale_slot_type_t	co_short_sale_slot;			/* 1 = clearing broker, 2 = third party */
-    o_int_t						co_exempt_code;             /* set to -1 if you do not use it */
+    o_action_code_t             co_action;                  /* BUY/SELL/SSHORT/SSHORTX */
+    o_string_t                  co_exchange;
+    o_string_t                  co_designated_location;     /* set to "" if unused, as usual */
+    o_int_t                     co_conid;
+    o_int_t                     co_ratio;
+    o_comboleg_type_t           co_open_close;
+    o_short_sale_slot_type_t    co_short_sale_slot;         /* 1 = clearing broker, 2 = third party */
+    o_int_t                     co_exempt_code;             /* set to -1 if you do not use it */
 
 public:
     ib_comboleg();
@@ -534,12 +534,12 @@ public:
     virtual ~ib_contract();
 
 protected:
-	tws::tr_contract *m_tws_data;
+    tws::tr_contract *m_tws_data;
 
 public:
-	void prep_for_tws(tws::tws_instance_t *tws);
-	void cleanup_after_tws(tws::tws_instance_t *tws);
-	tws::tr_contract *to_tws(void) const;
+    void prep_for_tws(tws::tws_instance_t *tws);
+    void cleanup_after_tws(tws::tws_instance_t *tws);
+    tws::tr_contract *to_tws(void) const;
 
     bool equals(const ib_contract *c) const;
 };
@@ -570,7 +570,7 @@ public:
     ib_double_t                     d_mintick;
     ib_double_t                     d_coupon;                /* for bonds */
     ib_double_t                     d_ev_multiplier;
-    ib_contract						d_summary;
+    ib_contract                     d_summary;
     ib_string_t                     d_market_name;
     ib_string_t                     d_trading_class;
     ib_string_t                     d_order_types;
@@ -599,7 +599,7 @@ public:
 
     ib_int_t                        d_price_magnifier;
     ib_int_t                        d_under_conid;
-    ib_bool_t 					    d_convertible;         /* for bonds */
+    ib_bool_t                       d_convertible;         /* for bonds */
     ib_bool_t                       d_callable;            /* for bonds */
     ib_bool_t                       d_putable;             /* for bonds */
     ib_bool_t                       d_next_option_partial; /* for bonds */
@@ -618,7 +618,7 @@ DECLARE_TWS_FORWARD_REFERENCE(struct tr_order_combo_leg);
 class ib_order_combo_leg
 {
 public:
-    ib_double_t cl_price;									/* price per leg */
+    ib_double_t cl_price;                                   /* price per leg */
 
 public:
     ib_order_combo_leg();
@@ -647,9 +647,9 @@ public:
     o_double_t   o_trail_stop_price;                        /* Advanced order field: initial stop price for trailing stop (TRAIL) orders */
     o_double_t   o_trailing_percent;
     o_double_t   o_basis_points;
-    o_double_t   o_scale_price_increment;					/* For SCALE orders only */
-    o_double_t   o_scale_price_adjust_value;				/* For SCALE orders only */
-    o_double_t   o_scale_profit_offset;						/* For SCALE orders only */
+    o_double_t   o_scale_price_increment;                   /* For SCALE orders only */
+    o_double_t   o_scale_price_adjust_value;                /* For SCALE orders only */
+    o_double_t   o_scale_profit_offset;                     /* For SCALE orders only */
     o_string_t   o_algo_strategy;
     o_string_t   o_good_after_time;                         /* Advanced order field: format: YYYYMMDD HH:MM:SS {time zone}  e.g. 20060505 08:00:00 EST */
     o_string_t   o_good_till_date;                          /* Advanced order field: format: YYYYMMDD HH:MM:SS {time zone}  e.g. 20060505 08:00:00 EST */
@@ -670,14 +670,14 @@ public:
     o_string_t   o_delta_neutral_order_type;
     o_string_t   o_clearing_account;                        /* Clearing info: True beneficiary of the order */
     o_string_t   o_clearing_intent;                         /* Clearing info: "" (Default), "IB", "Away", "PTA" (PostTrade) */
-    o_string_t   o_hedge_type;								/* Hedge Orders: 'D' - delta, 'B' - beta, 'F' - FX, 'P' - pair */
-    o_string_t   o_hedge_param;								/* Hedge Orders: 'beta=X' value for beta hedge, 'ratio=Y' for pair hedge */
-    o_string_t   o_delta_neutral_settling_firm;				/* For Volatility orders only: */
-    o_string_t   o_delta_neutral_clearing_account;			/* For Volatility orders only: */
-    o_string_t   o_delta_neutral_clearing_intent;			/* For Volatility orders only: */
+    o_string_t   o_hedge_type;                              /* Hedge Orders: 'D' - delta, 'B' - beta, 'F' - FX, 'P' - pair */
+    o_string_t   o_hedge_param;                             /* Hedge Orders: 'beta=X' value for beta hedge, 'ratio=Y' for pair hedge */
+    o_string_t   o_delta_neutral_settling_firm;             /* For Volatility orders only: */
+    o_string_t   o_delta_neutral_clearing_account;          /* For Volatility orders only: */
+    o_string_t   o_delta_neutral_clearing_intent;           /* For Volatility orders only: */
 
     ib_tag_value_collection_t o_algo_params;                /* 'algoParams': array of length o_algo_params_count, API user responsible for alloc/free */
-    ib_tag_value_collection_t o_smart_combo_routing_params;	/* Smart combo routing params: 'smartComboRoutingParams': array of length o_smart_combo_routing_params, API user responsible for alloc/free */
+    ib_tag_value_collection_t o_smart_combo_routing_params; /* Smart combo routing params: 'smartComboRoutingParams': array of length o_smart_combo_routing_params, API user responsible for alloc/free */
 
     typedef std::vector<ib_order_combo_leg> ib_order_combo_leg_collection_t;
 
@@ -685,7 +685,7 @@ public:
 
     o_int_t      o_orderid;                                 /* Basic Order Field: order id generated by API client */
     o_int_t      o_total_quantity;                          /* Basic Order Field: order size */
-    o_origin_t   o_origin;									/* For non-cleared (i.e. institutional) customers only: origin: 0=Customer, 1=Firm */
+    o_origin_t   o_origin;                                  /* For non-cleared (i.e. institutional) customers only: origin: 0=Customer, 1=Firm */
     o_int_t      o_clientid;                                /* Basic Order Field: client id of the API client that submitted the order */
     o_int_t      o_permid;                                  /* Basic Order Field: TWS order ID (not specified by API) */
     o_int_t      o_parentid;                                /* Advanced order field: order id of parent order, to associate attached stop, trailing stop, or bracket orders with parent order (Auto STP, TRAIL)  */
@@ -695,31 +695,31 @@ public:
     o_int_t      o_volatility_type;                         /* For Volatility orders only: volatility type: 1=daily, 2=annual */
     o_int_t      o_reference_price_type;                    /* For Volatility orders only: what to use as the current stock price: 1=bid/ask average, 2 = bid or ask */
     o_int_t      o_basis_points_type;
-    o_int_t      o_scale_subs_level_size;					/* For SCALE orders only */
-    o_int_t      o_scale_init_level_size;					/* For SCALE orders only */
-    o_int_t      o_scale_price_adjust_interval;				/* For SCALE orders only */
-    o_int_t      o_scale_init_position;						/* For SCALE orders only */
-    o_int_t      o_scale_init_fill_qty;						/* For SCALE orders only */
+    o_int_t      o_scale_subs_level_size;                   /* For SCALE orders only */
+    o_int_t      o_scale_init_level_size;                   /* For SCALE orders only */
+    o_int_t      o_scale_price_adjust_interval;             /* For SCALE orders only */
+    o_int_t      o_scale_init_position;                     /* For SCALE orders only */
+    o_int_t      o_scale_init_fill_qty;                     /* For SCALE orders only */
     o_int_t      o_exempt_code;                             /* set to -1 if you do not use it */
-    o_int_t      o_delta_neutral_con_id;					/* For Volatility orders only: */
-    o_oca_type_t o_oca_type;								/* Advanced order field: OCA group type  1 = CANCEL_WITH_BLOCK, 2 = REDUCE_WITH_BLOCK, 3 = REDUCE_NON_BLOCK */
-    o_auction_strategy_t o_auction_strategy;				/* For BOX option-pegged-to-stock and Volatility orders only: 1=AUCTION_MATCH, 2=AUCTION_IMPROVEMENT, 3=AUCTION_TRANSPARENT */
-    o_short_sale_slot_type_t o_short_sale_slot;				/* For non-cleared (i.e. institutional) customers only: specify only if action is "SSHORT": 1 if you hold the shares, 2 if they will be delivered from elsewhere */
-    o_bool_t     o_override_percentage_constraints;			/* Advanced order field: set true to override normal percentage constraint checks */
-    o_bool_t     o_firm_quote_only;							/* SMART routing only: if true, specifies that order should be routed to exchanges showing a "firm" quote, but not if the exchange is off the NBBO by more than the 'nbboPriceCap' amount */
+    o_int_t      o_delta_neutral_con_id;                    /* For Volatility orders only: */
+    o_oca_type_t o_oca_type;                                /* Advanced order field: OCA group type  1 = CANCEL_WITH_BLOCK, 2 = REDUCE_WITH_BLOCK, 3 = REDUCE_NON_BLOCK */
+    o_auction_strategy_t o_auction_strategy;                /* For BOX option-pegged-to-stock and Volatility orders only: 1=AUCTION_MATCH, 2=AUCTION_IMPROVEMENT, 3=AUCTION_TRANSPARENT */
+    o_short_sale_slot_type_t o_short_sale_slot;             /* For non-cleared (i.e. institutional) customers only: specify only if action is "SSHORT": 1 if you hold the shares, 2 if they will be delivered from elsewhere */
+    o_bool_t     o_override_percentage_constraints;         /* Advanced order field: set true to override normal percentage constraint checks */
+    o_bool_t     o_firm_quote_only;                         /* SMART routing only: if true, specifies that order should be routed to exchanges showing a "firm" quote, but not if the exchange is off the NBBO by more than the 'nbboPriceCap' amount */
     o_bool_t     o_etrade_only;
-    o_bool_t     o_all_or_none;								/* Advanced order field: if set to true, there can be no partial fills for the order */
-    o_bool_t     o_outside_rth;								/* Advanced order field: if true, order could fill or trigger anytime; if false, order will fill or trigger only during regular trading hours */
-    o_bool_t     o_hidden;									/* Advanced order field: if true, order will be hidden, and will not be reflected in the market data or deep book */
-    o_bool_t     o_transmit;								/* Advanced order field: if false, order will be created in TWS but not transmitted */
-    o_bool_t     o_block_order;								/* Advanced order field: block order, for ISE option orders only */
-    o_bool_t     o_sweep_to_fill;							/* Advanced order field: for SMART orders, specifies that orders should be split and sent to multiple exchanges at the same time */
-    o_bool_t     o_continuous_update;						/* For Volatility orders only: if true, price will be continuously recalculated after order submission */
-    o_bool_t     o_whatif;									/* if true, the order will not be submitted, but margin info will be returned */
+    o_bool_t     o_all_or_none;                             /* Advanced order field: if set to true, there can be no partial fills for the order */
+    o_bool_t     o_outside_rth;                             /* Advanced order field: if true, order could fill or trigger anytime; if false, order will fill or trigger only during regular trading hours */
+    o_bool_t     o_hidden;                                  /* Advanced order field: if true, order will be hidden, and will not be reflected in the market data or deep book */
+    o_bool_t     o_transmit;                                /* Advanced order field: if false, order will be created in TWS but not transmitted */
+    o_bool_t     o_block_order;                             /* Advanced order field: block order, for ISE option orders only */
+    o_bool_t     o_sweep_to_fill;                           /* Advanced order field: for SMART orders, specifies that orders should be split and sent to multiple exchanges at the same time */
+    o_bool_t     o_continuous_update;                       /* For Volatility orders only: if true, price will be continuously recalculated after order submission */
+    o_bool_t     o_whatif;                                  /* if true, the order will not be submitted, but margin info will be returned */
     o_bool_t     o_not_held;
-    o_bool_t     o_opt_out_smart_routing;					/* SMART routing only: */
-    o_bool_t     o_scale_auto_reset;						/* For SCALE orders only */
-    o_bool_t     o_scale_random_percent;					/* For SCALE orders only */
+    o_bool_t     o_opt_out_smart_routing;                   /* SMART routing only: */
+    o_bool_t     o_scale_auto_reset;                        /* For SCALE orders only */
+    o_bool_t     o_scale_random_percent;                    /* For SCALE orders only */
 
 public:
     ib_order();
@@ -727,12 +727,12 @@ public:
     virtual ~ib_order();
 
 protected:
-	tws::tr_order *m_tws_data;
+    tws::tr_order *m_tws_data;
 
 public:
-	void prep_for_tws(tws::tws_instance_t *tws);
-	void cleanup_after_tws(tws::tws_instance_t *tws);
-	tws::tr_order *to_tws(void) const;
+    void prep_for_tws(tws::tws_instance_t *tws);
+    void cleanup_after_tws(tws::tws_instance_t *tws);
+    tws::tr_order *to_tws(void) const;
 };
 
 
@@ -810,12 +810,12 @@ public:
     virtual ~ib_exec_filter();
 
 protected:
-	tws::tr_exec_filter *m_tws_data;
+    tws::tr_exec_filter *m_tws_data;
 
 public:
-	void prep_for_tws(tws::tws_instance_t *tws);
-	void cleanup_after_tws(tws::tws_instance_t *tws);
-	tws::tr_exec_filter *to_tws(void) const;
+    void prep_for_tws(tws::tws_instance_t *tws);
+    void cleanup_after_tws(tws::tws_instance_t *tws);
+    tws::tr_exec_filter *to_tws(void) const;
 };
 
 
@@ -854,12 +854,12 @@ public:
     virtual ~ib_scanner_subscription();
 
 protected:
-	tws::tr_scanner_subscription *m_tws_data;
+    tws::tr_scanner_subscription *m_tws_data;
 
 public:
-	void prep_for_tws(tws::tws_instance_t *tws);
-	void cleanup_after_tws(tws::tws_instance_t *tws);
-	tws::tr_scanner_subscription *to_tws(void) const;
+    void prep_for_tws(tws::tws_instance_t *tws);
+    void cleanup_after_tws(tws::tws_instance_t *tws);
+    tws::tr_scanner_subscription *to_tws(void) const;
 };
 
 
@@ -871,10 +871,10 @@ class ib_commission_report
 public:
     ib_string_t cr_exec_id;
     ib_string_t cr_currency;
-    ib_double_t	cr_commission;
+    ib_double_t cr_commission;
     ib_double_t cr_realized_pnl;
     ib_double_t cr_yield;
-    ib_int_t    cr_yield_redemption_date;							/* YYYYMMDD format */
+    ib_int_t    cr_yield_redemption_date;                           /* YYYYMMDD format */
 
 public:
     ib_commission_report();

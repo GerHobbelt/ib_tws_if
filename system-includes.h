@@ -27,7 +27,7 @@
 #endif
 
 /*
-make sure we load system headers etc FIRST as windows.h and a few others have the 
+make sure we load system headers etc FIRST as windows.h and a few others have the
 very irritating idiosyncracy of loading winsock.h which clashes fataly with
 winsock2.h -- and we want the latter to make it through where we need anything
 'socky'.
@@ -57,7 +57,7 @@ winsock2.h -- and we want the latter to make it through where we need anything
 #include <unistd.h>
 #endif
 
-#ifndef PATH_MAX            
+#ifndef PATH_MAX
 #define PATH_MAX            1024
 #endif
 

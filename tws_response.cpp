@@ -37,449 +37,449 @@
 
 int ib_msg_resp_update_mkt_depth::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_market_data_type::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_market_data_type");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_market_data_type");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_open_order::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_order_status::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_order_status");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_order_status");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_scanner_data::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg != this);
-	assert(resp_msg != NULL);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg != this);
+    assert(resp_msg != NULL);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data");
 
-	mg_cry(conn, "TODO: save contract data");
+    mg_cry(conn, "TODO: save contract data");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_historical_data::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_update_mkt_depth_l2::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth_l2");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth_l2");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_delta_neutral_validation::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_delta_neutral_validation");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_delta_neutral_validation");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_bond_contract_details::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_bond_contract_details");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_bond_contract_details");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_scanner_data_end::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_end");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_end");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_scanner_data_start::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_start");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_start");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_tick_size::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_size");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_size");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_tick_snapshot_end::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_snapshot_end");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_snapshot_end");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_update_account_value::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_value");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_value");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_receive_fa::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_receive_fa");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_receive_fa");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_open_order_end::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order_end");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order_end");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_contract_details::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_exec_details::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_managed_accounts::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_managed_accounts");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_managed_accounts");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_tick_efp::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_efp");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_efp");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_update_account_time::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_time");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_time");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_tick_option_computation::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_option_computation");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_option_computation");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_tick_price::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_price");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_price");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_error::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_error");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_error");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_acct_download_end::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_acct_download_end");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_acct_download_end");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_commission_report::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_commission_report");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_commission_report");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_fundamental_data::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_fundamental_data");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_fundamental_data");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_realtime_bar::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_realtime_bar");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_realtime_bar");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_historical_data_end::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data_end");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data_end");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_next_valid_id::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_next_valid_id");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_next_valid_id");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_contract_details_end::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details_end");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details_end");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_update_news_bulletin::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_news_bulletin");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_news_bulletin");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_exec_details_end::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details_end");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details_end");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_tick_string::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_string");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_string");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_current_time::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_current_time");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_current_time");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_tick_generic::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_generic");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_generic");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 int ib_msg_resp_update_portfolio::process_response_message(class tier2_message *resp_msg)
 {
-	assert(resp_msg == this);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg == this);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_portfolio");
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_portfolio");
 
-	return __super::process_response_message(resp_msg);
+    return __super::process_response_message(resp_msg);
 }
 
 
@@ -488,14 +488,14 @@ int ib_msg_resp_update_portfolio::process_response_message(class tier2_message *
 
 int tws_response_message::process_response_message(tier2_message *resp_msg)
 {
-	assert(resp_msg != this);
-	assert(resp_msg != NULL);
-	app_manager *mgr = get_requester()->get_app_manager();
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-	struct mg_connection *conn = ibm->get_connection();
+    assert(resp_msg != this);
+    assert(resp_msg != NULL);
+    app_manager *mgr = get_requester()->get_app_manager();
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    struct mg_connection *conn = ibm->get_connection();
 
-	// default behaviour is to destroy a response message once it's processed
-	//destroy();
+    // default behaviour is to destroy a response message once it's processed
+    //destroy();
 
-	return 0;
+    return 0;
 }

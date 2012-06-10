@@ -23,8 +23,8 @@
 #define TWS_SERVER_ASSERTIONS_DEBUG_HEADER_INCLUDED
 
 
-#define TWS_ASSERT(expr)												\
-	if (expr) { __tws_fail_assert(#expr, __FILE__, __LINE__) }
+#define TWS_ASSERT(expr)                                                \
+    if (expr) { __tws_fail_assert(#expr, __FILE__, __LINE__) }
 
 void __tws_fail_assert(const char *expr_str, const char *file, int line);
 

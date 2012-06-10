@@ -38,61 +38,61 @@ class calculus_manager;
 class app_manager
 {
 protected:
-	db_manager *m_dbi;
+    db_manager *m_dbi;
 
-	sender_receiver_store *m_transmitter_store;
+    sender_receiver_store *m_transmitter_store;
 
-	typedef std::vector<interthread_communicator *> interthread_communicator_set_t;
-	interthread_communicator_set_t m_communicators;
-	int m_new_communicators_count;
-	pthread_mutex_t m_comm_mutex;
+    typedef std::vector<interthread_communicator *> interthread_communicator_set_t;
+    interthread_communicator_set_t m_communicators;
+    int m_new_communicators_count;
+    pthread_mutex_t m_comm_mutex;
 
-	/* tracking some TWS values here as well: */
-	unique_type_id_threadsafe_manager m_next_order_id;		// triple use: orders and tickers, so that all ids we send to/use with IB/TWS are unique + internal messages which need to link up to one another
-
-public:
-	enum optional_requester_id_t
-	{
-		UNDEFINED = 0,
-		IB_TWS_API_CONNECTION_THREAD,
-		DATA_TRACKER_THREAD,
-	};
+    /* tracking some TWS values here as well: */
+    unique_type_id_threadsafe_manager m_next_order_id;      // triple use: orders and tickers, so that all ids we send to/use with IB/TWS are unique + internal messages which need to link up to one another
 
 public:
-	app_manager();
-	virtual ~app_manager();
+    enum optional_requester_id_t
+    {
+        UNDEFINED = 0,
+        IB_TWS_API_CONNECTION_THREAD,
+        DATA_TRACKER_THREAD,
+    };
 
 public:
-	int register_frontend_thread(struct mg_connection *conn, tier2_message_processor *processor = NULL);
-	int unregister_frontend_thread(struct mg_connection *conn);
+    app_manager();
+    virtual ~app_manager();
 
-	int register_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED, tier2_message_processor *processor = NULL);
-	int unregister_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
-	int register_backend_thread(struct mg_connection *conn, tier2_message_processor *processor = NULL);
-	int unregister_backend_thread(struct mg_connection *conn);
+public:
+    int register_frontend_thread(struct mg_connection *conn, tier2_message_processor *processor = NULL);
+    int unregister_frontend_thread(struct mg_connection *conn);
 
-	interthread_communicator *create_communication_path(tier2_message_processor *requester, tier2_message_processor *receiver);
-	interthread_communicator *get_interthread_communicator(tier2_message_processor *from, tier2_message_processor *to);
+    int register_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED, tier2_message_processor *processor = NULL);
+    int unregister_backend_thread(struct mg_context *ctx, optional_requester_id_t optional_id = UNDEFINED);
+    int register_backend_thread(struct mg_connection *conn, tier2_message_processor *processor = NULL);
+    int unregister_backend_thread(struct mg_connection *conn);
 
-	int fetch_new_interthread_communicators(tier2_message_processor *receiver);
+    interthread_communicator *create_communication_path(tier2_message_processor *requester, tier2_message_processor *receiver);
+    interthread_communicator *get_interthread_communicator(tier2_message_processor *from, tier2_message_processor *to);
 
-	tier2_message_processor *get_requester(struct mg_context *ctx, optional_requester_id_t id);
-	tier2_message_processor *get_requester(struct mg_connection *conn);
+    int fetch_new_interthread_communicators(tier2_message_processor *receiver);
 
-	tier2_message_processor *get_receiver(struct mg_context *ctx, optional_requester_id_t id);
-	tier2_message_processor *get_receiver(struct mg_connection *conn);
+    tier2_message_processor *get_requester(struct mg_context *ctx, optional_requester_id_t id);
+    tier2_message_processor *get_requester(struct mg_connection *conn);
 
-	struct tws_conn_cfg &get_tws_ib_connection_config(void);
+    tier2_message_processor *get_receiver(struct mg_context *ctx, optional_requester_id_t id);
+    tier2_message_processor *get_receiver(struct mg_connection *conn);
+
+    struct tws_conn_cfg &get_tws_ib_connection_config(void);
     const struct database_cfg &get_db_config(void);
 
-	db_manager *get_db_manager(void);
-	ib_tws_manager *get_ib_tws_manager(void);
-	data_tracker_manager *get_data_tracker_manager(void);
-	calculus_manager *get_calculus_manager(void);
+    db_manager *get_db_manager(void);
+    ib_tws_manager *get_ib_tws_manager(void);
+    data_tracker_manager *get_data_tracker_manager(void);
+    calculus_manager *get_calculus_manager(void);
 
-	int set_next_order_id(int id);
-	int get_next_order_id(void);
-	int get_next_ticker_id(void);
+    int set_next_order_id(int id);
+    int get_next_order_id(void);
+    int get_next_ticker_id(void);
 };
 
 

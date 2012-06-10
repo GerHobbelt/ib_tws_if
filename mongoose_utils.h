@@ -30,8 +30,8 @@
 /*
 ===============================================================================
 
-custom handlers (callbacks) for extending the mongoose command line / config file 
-configurable parameter processing so we can detect and process our own parameters 
+custom handlers (callbacks) for extending the mongoose command line / config file
+configurable parameter processing so we can detect and process our own parameters
 through the regular mongoose approach:
 
 ===============================================================================

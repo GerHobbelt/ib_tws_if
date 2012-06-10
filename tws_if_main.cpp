@@ -47,10 +47,10 @@ using namespace upskirt;
 #define MAX_OPTIONS (1 + 27 /* NUM_OPTIONS */ * 3 /* once as defaults, once from config file, once from command line */)
 #define MAX_CONF_FILE_LINE_SIZE (8 * 1024)
 
-static volatile int exit_flag;
-static char server_name[40];        // Set by init_server_name()
-static char config_file[PATH_MAX];  // Set by process_command_line_arguments()
-static struct mg_context *ctx;      // Set by start_mongoose()
+static volatile int exit_flag = 0;
+static char server_name[40];          // Set by init_server_name()
+static char config_file[PATH_MAX];    // Set by process_command_line_arguments()
+static struct mg_context *ctx = NULL; // Set by start_mongoose()
 
 #if !defined(CONFIG_FILE)
 #define CONFIG_FILE "mongoose.conf"
@@ -66,12 +66,12 @@ static const char *default_options[] = {
     //"ssl_certificate",     "ssl_cert.pem",
     "num_threads",           "5",
     "error_log_file",        "./log/%Y/%m/tws_ib_if_srv-%Y%m%d.%H-IP-%[s]-%[p]-error.log",
-	"access_log_file",       "./log/%Y/%m/tws_ib_if_srv-%Y%m%d.%H-IP-%[s]-%[p]-access.log",
-	"index_files",			 "default.html",
-	"ssi_pattern",			 "**.html$|**.htm|**.shtml$|**.shtm$",
-	"enable_keep_alive",     "yes",
-	"keep_alive_timeout",    "5",
-	//"ssi_marker",			 "{!--#,}",
+    "access_log_file",       "./log/%Y/%m/tws_ib_if_srv-%Y%m%d.%H-IP-%[s]-%[p]-access.log",
+    "index_files",           "default.html",
+    "ssi_pattern",           "**.html$|**.htm|**.shtml$|**.shtm$",
+    "enable_keep_alive",     "yes",
+    "keep_alive_timeout",    "5",
+    //"ssi_marker",          "{!--#,}",
 
     // set up our own worker thread which talks to TWS:
     "tws_ip_address",        "127.0.0.1",
@@ -82,7 +82,7 @@ static const char *default_options[] = {
     "tws_reconnect_delay",   "10000", // unit: milliseconds
 
     "tws_log_traffic",       "true",
-	"tws_traffic_log_file",  "./log/TWS-IO/%Y/%m/%Y%m%d.%H%M%S-%[U].log",
+    "tws_traffic_log_file",  "./log/TWS-IO/%Y/%m/%Y%m%d.%H%M%S-%[U].log",
 
     "database_file",         "./ib_tws_if.hamsterdb",
 
@@ -105,11 +105,11 @@ void die(const char *fmt, ...) {
     va_end(ap);
 
 #if defined(_WIN32)
-	if (!error_dialog_shown_previously)
-	{
-		MessageBoxA(NULL, msg, "Error", MB_OK);
-		error_dialog_shown_previously = 1;
-	}
+    if (!error_dialog_shown_previously)
+    {
+        MessageBoxA(NULL, msg, "Error", MB_OK);
+        error_dialog_shown_previously = 1;
+    }
 #else
     fprintf(stderr, "%s\n", msg);
 #endif
@@ -129,9 +129,9 @@ static void show_usage_and_exit(const struct mg_context *ctx) {
     fprintf(stderr, "OPTIONS:\n");
 
     names = mg_get_valid_option_names();
-	for (i = 0; names[i] != NULL; i += MG_ENTRIES_PER_CONFIG_OPTION) {
+    for (i = 0; names[i] != NULL; i += MG_ENTRIES_PER_CONFIG_OPTION) {
         fprintf(stderr, "  %s%s %s (default: \"%s\")\n",
-			(names[i][0] ? "-" : "  "),
+            (names[i][0] ? "-" : "  "),
             names[i], names[i + 1], names[i + 2] == NULL ? "" : names[i + 2]);
     }
     fprintf(stderr, "See  http://code.google.com/p/mongoose/wiki/MongooseManual"
@@ -141,11 +141,11 @@ static void show_usage_and_exit(const struct mg_context *ctx) {
 }
 
 static void verify_document_root(const char *root) {
-	struct mgstat st;
-	char buf[PATH_MAX];
+    struct mgstat st;
+    char buf[PATH_MAX];
 
-	getcwd(buf, sizeof(buf));
-	if (mg_stat(root, &st) != 0 || !st.is_directory) {
+    getcwd(buf, sizeof(buf));
+    if (mg_stat(root, &st) != 0 || !st.is_directory) {
         die("Invalid root directory: [%s]: %s; current directory = [%s]", root, mg_strerror(errno), buf);
     }
 }
@@ -154,8 +154,8 @@ static void verify_document_root(const char *root) {
 static void set_option(char **options, const char *name, const char *value) {
     int i;
 
-	if (mg_get_option_long_name(name))
-    	name = mg_get_option_long_name(name);
+    if (mg_get_option_long_name(name))
+        name = mg_get_option_long_name(name);
 
     for (i = 0; i < MAX_OPTIONS * 2; i += 2) {
         // replace option value when it was set before: command line overrules config file, which overrules global defaults.
@@ -171,7 +171,7 @@ static void set_option(char **options, const char *name, const char *value) {
     }
 
     if (i > MAX_OPTIONS * 2 - 2) {
-	    die("Too many options specified");
+        die("Too many options specified");
     }
 }
 
@@ -194,7 +194,7 @@ static void process_command_line_arguments(char *argv[], char **options) {
             (int) (p - argv[0]), argv[0], DIRSEP, CONFIG_FILE);
     }
 
-	fp = mg_fopen(config_file, "r");
+    fp = mg_fopen(config_file, "r");
 
     // If config file was set in command line and open failed, exit
     if (argv[1] != NULL && argv[2] == NULL && fp == NULL) {
@@ -213,16 +213,16 @@ static void process_command_line_arguments(char *argv[], char **options) {
         // Loop over the lines in config file
         while (fgets(line, sizeof(line), fp) != NULL) {
 
-	        if (!line_no && !memcmp(line,"\xEF\xBB\xBF",3)) {
-	        	// strip UTF-8 BOM
-		        p = line+3;
-	      	} else {
-	        	p = line;
-	      	}
+            if (!line_no && !memcmp(line,"\xEF\xBB\xBF",3)) {
+                // strip UTF-8 BOM
+                p = line+3;
+            } else {
+                p = line;
+            }
 
             line_no++;
 
-      		// Ignore empty lines (with optional, ignored, whitespace) and comments
+            // Ignore empty lines (with optional, ignored, whitespace) and comments
             if (line[0] == '#')
                 continue;
 
@@ -262,22 +262,22 @@ static void init_server_name(void) {
 
 static int report_markdown_failure(struct mg_connection *conn, int is_inline_production, int response_code, const char *fmt, ...)
 {
-	va_list args;
+    va_list args;
 
-	if (is_inline_production)
-	{
-		mg_printf(conn, "<h1 style=\"color: red;\">Error: %d - %s</h1>\n", response_code, mg_get_response_code_text(response_code));
-		va_start(args, fmt);
-		mg_vprintf(conn, fmt, args);
-		va_end(args);
-	}
-	else
-	{
-		va_start(args, fmt);
-		mg_vsend_http_error(conn, response_code, NULL, fmt, args);
-		va_end(args);
-	}
-	return -1;
+    if (is_inline_production)
+    {
+        mg_printf(conn, "<h1 style=\"color: red;\">Error: %d - %s</h1>\n", response_code, mg_get_response_code_text(response_code));
+        va_start(args, fmt);
+        mg_vprintf(conn, fmt, args);
+        va_end(args);
+    }
+    else
+    {
+        va_start(args, fmt);
+        mg_vsend_http_error(conn, response_code, NULL, fmt, args);
+        va_end(args);
+    }
+    return -1;
 }
 
 
@@ -286,132 +286,132 @@ int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, i
 #define SD_READ_UNIT 1024
 #define SD_OUTPUT_UNIT 64
 
-	struct mg_request_info *ri = mg_get_request_info(conn);
-	struct sd_buf *ib, *ob;
-	int ret;
-	unsigned int enabled_extensions = MKDEXT_TABLES | MKDEXT_FENCED_CODE | MKDEXT_EMAIL_FRIENDLY;
-	unsigned int render_flags = 0; // HTML_SKIP_HTML | HTML_SKIP_STYLE | HTML_HARD_WRAP;
+    struct mg_request_info *ri = mg_get_request_info(conn);
+    struct sd_buf *ib, *ob;
+    int ret;
+    unsigned int enabled_extensions = MKDEXT_TABLES | MKDEXT_FENCED_CODE | MKDEXT_EMAIL_FRIENDLY;
+    unsigned int render_flags = 0; // HTML_SKIP_HTML | HTML_SKIP_STYLE | HTML_HARD_WRAP;
 
-	struct sd_callbacks callbacks;
-	struct html_renderopt options;
-	struct sd_markdown *markdown;
+    struct sd_callbacks callbacks;
+    struct html_renderopt options;
+    struct sd_markdown *markdown;
 
-	/* opening the file */
-	FILE *in;
+    /* opening the file */
+    FILE *in;
 
-	assert(ri->phys_path);
-	/* opening the file */
-	in = mg_fopen(ri->phys_path, "r");
-	if (!in)
-	{
-		return report_markdown_failure(conn, is_inline_production, 404, "Unable to open input file: [%s] %s", ri->uri, mg_strerror(errno));
-	}
+    assert(ri->phys_path);
+    /* opening the file */
+    in = mg_fopen(ri->phys_path, "r");
+    if (!in)
+    {
+        return report_markdown_failure(conn, is_inline_production, 404, "Unable to open input file: [%s] %s", ri->uri, mg_strerror(errno));
+    }
 
-	/* reading everything */
-	ib = sd_bufnew(SD_READ_UNIT);
-	if (SD_BUF_OK != sd_bufgrow(ib, (size_t)st->size))
-	{
-		mg_fclose(in);
-		sd_bufrelease(ib);
-		return report_markdown_failure(conn, is_inline_production, 500, "Out of memory while loading Markdown input file: [%s]", ri->uri);
-	}
-	ret = fread(ib->data, 1, ib->asize, in);
-	if (ret > 0)
-	{
-		ib->size += ret;
-		mg_fclose(in);
-	}
-	else
-	{
-		mg_fclose(in);
-		sd_bufrelease(ib);
-		return report_markdown_failure(conn, is_inline_production, 500, "Cannot read from input file: [%s] %s", ri->uri, mg_strerror(errno));
-	}
+    /* reading everything */
+    ib = sd_bufnew(SD_READ_UNIT);
+    if (SD_BUF_OK != sd_bufgrow(ib, (size_t)st->size))
+    {
+        mg_fclose(in);
+        sd_bufrelease(ib);
+        return report_markdown_failure(conn, is_inline_production, 500, "Out of memory while loading Markdown input file: [%s]", ri->uri);
+    }
+    ret = fread(ib->data, 1, ib->asize, in);
+    if (ret > 0)
+    {
+        ib->size += ret;
+        mg_fclose(in);
+    }
+    else
+    {
+        mg_fclose(in);
+        sd_bufrelease(ib);
+        return report_markdown_failure(conn, is_inline_production, 500, "Cannot read from input file: [%s] %s", ri->uri, mg_strerror(errno));
+    }
 
-	/* performing markdown parsing */
-	ob = sd_bufnew(SD_OUTPUT_UNIT);
+    /* performing markdown parsing */
+    ob = sd_bufnew(SD_OUTPUT_UNIT);
 
-	sdhtml_renderer(&callbacks, &options, render_flags);
-	markdown = sd_markdown_new(enabled_extensions, 16, &callbacks, &options);
-	if (!markdown)
-	{
-		sd_bufrelease(ib);
-		sd_bufrelease(ob);
-		return report_markdown_failure(conn, is_inline_production, 500, "Out of memory while processing Markdown input file: [%s]", ri->uri);
-	}
-	sd_markdown_render(ob, ib->data, ib->size, markdown);
-	sd_markdown_free(markdown);
+    sdhtml_renderer(&callbacks, &options, render_flags);
+    markdown = sd_markdown_new(enabled_extensions, 16, &callbacks, &options);
+    if (!markdown)
+    {
+        sd_bufrelease(ib);
+        sd_bufrelease(ob);
+        return report_markdown_failure(conn, is_inline_production, 500, "Out of memory while processing Markdown input file: [%s]", ri->uri);
+    }
+    sd_markdown_render(ob, ib->data, ib->size, markdown);
+    sd_markdown_free(markdown);
 
-	if (!is_inline_production)
-	{
-		/* write the appropriate headers */
-		char date[64], lm[64], etag[64], range[64];
-		time_t curtime = time(NULL);
-		const char *hdr;
-		int64_t cl, r1, r2;
-		int n;
+    if (!is_inline_production)
+    {
+        /* write the appropriate headers */
+        char date[64], lm[64], etag[64], range[64];
+        time_t curtime = time(NULL);
+        const char *hdr;
+        int64_t cl, r1, r2;
+        int n;
 
-		ri->status_code = 200;
+        ri->status_code = 200;
 
-		cl = ob->size;
+        cl = ob->size;
 
-		range[0] = '\0';
+        range[0] = '\0';
 
 #if 0
-		// If Range: header specified, act accordingly
-		r1 = r2 = 0;
-		hdr = mg_get_header(conn, "Range");
-		if (hdr != NULL && (n = parse_range_header(hdr, &r1, &r2)) > 0) {
-			conn->request_info.status_code = 206;
-			(void) fseeko(fp, (off_t) r1, SEEK_SET);
-			cl = n == 2 ? r2 - r1 + 1: cl - r1;
-			(void) mg_snprintf(conn, range, sizeof(range),
-				"Content-Range: bytes "
-				"%" INT64_FMT "-%"
-				INT64_FMT "/%" INT64_FMT "\r\n",
-				r1, r1 + cl - 1, stp->size);
-		}
+        // If Range: header specified, act accordingly
+        r1 = r2 = 0;
+        hdr = mg_get_header(conn, "Range");
+        if (hdr != NULL && (n = parse_range_header(hdr, &r1, &r2)) > 0) {
+            conn->request_info.status_code = 206;
+            (void) fseeko(fp, (off_t) r1, SEEK_SET);
+            cl = n == 2 ? r2 - r1 + 1: cl - r1;
+            (void) mg_snprintf(conn, range, sizeof(range),
+                "Content-Range: bytes "
+                "%" INT64_FMT "-%"
+                INT64_FMT "/%" INT64_FMT "\r\n",
+                r1, r1 + cl - 1, stp->size);
+        }
 #endif
 
-		// Prepare Etag, Date, Last-Modified headers. Must be in UTC, according to
-		// http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3
-		mg_gmt_time_string(date, sizeof(date), &curtime);
-		mg_gmt_time_string(lm, sizeof(lm), &st->mtime);
-		(void) mg_snprintf(conn, etag, sizeof(etag), "%lx.%lx", (unsigned long) st->mtime, (unsigned long) st->size);
+        // Prepare Etag, Date, Last-Modified headers. Must be in UTC, according to
+        // http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.3
+        mg_gmt_time_string(date, sizeof(date), &curtime);
+        mg_gmt_time_string(lm, sizeof(lm), &st->mtime);
+        (void) mg_snprintf(conn, etag, sizeof(etag), "%lx.%lx", (unsigned long) st->mtime, (unsigned long) st->size);
 
-		(void) mg_printf(conn,
-			"HTTP/1.1 %d %s\r\n"
-			"Date: %s\r\n"
-			"Last-Modified: %s\r\n"
-			"Etag: \"%s\"\r\n"
-			"Content-Type: text/html\r\n"
-			"Content-Length: %" INT64_FMT "\r\n"
-			"Connection: %s\r\n"
-			// "Accept-Ranges: bytes\r\n"
-			"%s\r\n"
-			, ri->status_code, mg_get_response_code_text(ri->status_code)
-			, date, lm, etag
-			, cl
-			, mg_suggest_connection_header(conn)
-			, range
-			);
+        (void) mg_printf(conn,
+            "HTTP/1.1 %d %s\r\n"
+            "Date: %s\r\n"
+            "Last-Modified: %s\r\n"
+            "Etag: \"%s\"\r\n"
+            "Content-Type: text/html\r\n"
+            "Content-Length: %" INT64_FMT "\r\n"
+            "Connection: %s\r\n"
+            // "Accept-Ranges: bytes\r\n"
+            "%s\r\n"
+            , ri->status_code, mg_get_response_code_text(ri->status_code)
+            , date, lm, etag
+            , cl
+            , mg_suggest_connection_header(conn)
+            , range
+            );
         mg_mark_end_of_header_transmission(conn);
 
-		ret = (int)cl;
-		if (strcmp(ri->request_method, "HEAD") != 0) {
-			ret = mg_write(conn, ob->data, (size_t)cl);
-		}
-	}
-	else
-	{
-		ret = mg_write(conn, ob->data, ob->size);
-	}
+        ret = (int)cl;
+        if (strcmp(ri->request_method, "HEAD") != 0) {
+            ret = mg_write(conn, ob->data, (size_t)cl);
+        }
+    }
+    else
+    {
+        ret = mg_write(conn, ob->data, ob->size);
+    }
 
-	/* cleanup */
-	sd_bufrelease(ib);
-	sd_bufrelease(ob);
+    /* cleanup */
+    sd_bufrelease(ib);
+    sd_bufrelease(ob);
 
-	return ret;
+    return ret;
 }
 
 static void *event_callback(enum mg_event event, struct mg_connection *conn) {
@@ -439,19 +439,19 @@ static void *event_callback(enum mg_event event, struct mg_connection *conn) {
 #endif
 
   if (event == MG_SSI_INCLUDE_REQUEST || event == MG_NEW_REQUEST) {
-	struct mgstat st;
-	int file_found;
+    struct mgstat st;
+    int file_found;
 
-	assert(request_info->phys_path);
-	file_found = (0 == mg_stat(request_info->phys_path, &st) && !st.is_directory);
-	if (file_found) {
-	  // are we looking for HTML output of MarkDown file?
+    assert(request_info->phys_path);
+    file_found = (0 == mg_stat(request_info->phys_path, &st) && !st.is_directory);
+    if (file_found) {
+      // are we looking for HTML output of MarkDown file?
       if (mg_match_prefix("**.md$|**.wiki$", -1, request_info->phys_path) > 0) {
-		serve_a_markdown_page(conn, &st, (event == MG_SSI_INCLUDE_REQUEST));
-		return "";
-	  }
-	  return NULL; // let mongoose handle the default of 'file exists'...
-	}
+        serve_a_markdown_page(conn, &st, (event == MG_SSI_INCLUDE_REQUEST));
+        return "";
+      }
+      return NULL; // let mongoose handle the default of 'file exists'...
+    }
   }
 
 #ifdef _WIN32
@@ -469,7 +469,7 @@ static void *event_callback(enum mg_event event, struct mg_connection *conn) {
       data = LockResource(LoadResource(module, icon));
       len = SizeofResource(module, icon);
 
-	  request_info->status_code = 200;
+      request_info->status_code = 200;
 
       (void) mg_printf(conn,
           "HTTP/1.1 200 OK\r\n"
@@ -497,20 +497,20 @@ static BOOL WINAPI mg_win32_break_handler(DWORD signal_type)
 {
   switch(signal_type)
   {
-    // Handle the CTRL-C signal.
-    case CTRL_C_EVENT:
-    // CTRL-CLOSE: confirm that the user wants to exit.
-    case CTRL_CLOSE_EVENT:
-    case CTRL_BREAK_EVENT:
-      exit_flag = 1000 + signal_type;
-      //mg_signal_stop(ctx);
-      return TRUE;
+  // Handle the CTRL-C signal.
+  case CTRL_C_EVENT:
+  // CTRL-CLOSE: confirm that the user wants to exit.
+  case CTRL_CLOSE_EVENT:
+  case CTRL_BREAK_EVENT:
+    exit_flag = 1000 + signal_type;
+    //mg_signal_stop(ctx);
+    return TRUE;
 
-    // Pass other signals to the next handler.
-    case CTRL_LOGOFF_EVENT:
-    case CTRL_SHUTDOWN_EVENT:
-    default:
-      return FALSE;
+  // Pass other signals to the next handler.
+  case CTRL_LOGOFF_EVENT:
+  case CTRL_SHUTDOWN_EVENT:
+  default:
+    return FALSE;
   }
 }
 
@@ -522,7 +522,7 @@ static void start_mongoose(int argc, char *argv[]) {
     int i;
     struct mg_user_class_t userdef = {
         &mgr,
-		&event_callback /* event_handler */,
+        &event_callback /* event_handler */,
         &option_decode,
         &option_fill,
         &option_get
@@ -547,17 +547,17 @@ static void start_mongoose(int argc, char *argv[]) {
     /* Setup signal handler: quit on Ctrl-C */
     signal(SIGTERM, signal_handler);
     signal(SIGINT, signal_handler);
-	signal(SIGABRT, signal_handler);
-	signal(SIGILL, signal_handler);
-	signal(SIGSEGV, signal_handler);
-	signal(SIGFPE, signal_handler);
-	// SIGINT and SIGTERM are pretty darn useless for Win32 applications.
-	// See http://msdn.microsoft.com/en-us/library/ms685049%28VS.85%29.aspx
+    signal(SIGABRT, signal_handler);
+    signal(SIGILL, signal_handler);
+    signal(SIGSEGV, signal_handler);
+    signal(SIGFPE, signal_handler);
+    // SIGINT and SIGTERM are pretty darn useless for Win32 applications.
+    // See http://msdn.microsoft.com/en-us/library/ms685049%28VS.85%29.aspx
 #if defined(_WIN32)
-	if (!SetConsoleCtrlHandler(mg_win32_break_handler, TRUE))
-	{
-		die("Failed to set up the Win32 console Ctrl-Break handler.");
-	}
+    if (!SetConsoleCtrlHandler(mg_win32_break_handler, TRUE))
+    {
+        die("Failed to set up the Win32 console Ctrl-Break handler.");
+    }
 #endif
 
     /* Start Mongoose */
@@ -567,7 +567,7 @@ static void start_mongoose(int argc, char *argv[]) {
     }
 
     if (ctx == NULL) {
-    	die("Failed to start Mongoose. Maybe some options are "
+        die("Failed to start Mongoose. Maybe some options are "
             "assigned bad values?\nTry to run with '-e error_log.txt' "
             "and check error_log.txt for more information.");
     }
@@ -613,7 +613,7 @@ static void WINAPI ServiceMain(void) {
 
 static NOTIFYICONDATAA TrayIcon;
 
-static void edit_config_file(const struct mg_context *ctx) {
+static void edit_config_file(struct mg_context *ctx) {
     const char **names, *value;
     FILE *fp;
     int i;
@@ -629,7 +629,7 @@ static void edit_config_file(const struct mg_context *ctx) {
             "# For detailed description of every option, visit\n"
             "# http://code.google.com/p/mongoose/wiki/MongooseManual\n\n");
         names = mg_get_valid_option_names();
-	    for (i = 0; names[i] != NULL; i += MG_ENTRIES_PER_CONFIG_OPTION) {
+        for (i = 0; names[i] != NULL; i += MG_ENTRIES_PER_CONFIG_OPTION) {
             value = mg_get_option(ctx, names[i + 1]);
             fprintf(fp, "# %s %s\n", names[i + 1], *value ? value : "<value>");
         }
@@ -801,13 +801,13 @@ int main(int argc, char *argv[]) {
         server_name, mg_get_option(ctx, "listening_ports"),
         mg_get_option(ctx, "document_root"));
     while (exit_flag == 0 && !mg_get_stop_flag(ctx)) {
-	    mg_sleep(100);
+        mg_sleep(100);
     }
     printf("Exiting on signal %d/%d, waiting for all threads to finish...",
         exit_flag, mg_get_stop_flag(ctx));
     fflush(stdout);
     mg_stop(ctx);
-	printf(" done.\n");
+    printf(" done.\n");
 
     return EXIT_SUCCESS;
 }

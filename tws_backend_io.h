@@ -10,8 +10,8 @@
 class ib_backend_io_channel;
 namespace tws
 {
-	enum tws_outgoing_ids;
-	typedef struct tws_instance tws_instance_t;
+    enum tws_outgoing_ids;
+    typedef struct tws_instance tws_instance_t;
 }
 typedef tws::tws_outgoing_ids ib_outgoing_id_t;
 struct mg_connection;
@@ -45,23 +45,23 @@ Generally, this parameter represents the (semi)final return value of the invokin
 class ib_backend_io_observer
 {
 public:
-	ib_backend_io_observer();
-	virtual ~ib_backend_io_observer();
+    ib_backend_io_observer();
+    virtual ~ib_backend_io_observer();
 
 public:
-	virtual int io_transmit(int &return_value, ib_backend_io_channel *originator, const void *buf, unsigned int buflen) = 0;
-	virtual int io_receive(int &return_value, ib_backend_io_channel *originator, void *buf, unsigned int max_bufsize) = 0;
-	/* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
-	virtual int io_flush(int &return_value, ib_backend_io_channel *originator) = 0;
-	/* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
-	virtual int io_open(int &return_value, ib_backend_io_channel *originator) = 0;
-	/* close callback is invoked on error or when tws_disconnect is invoked */
-	virtual int io_close(int &return_value, ib_backend_io_channel *originator) = 0;
+    virtual int io_transmit(int &return_value, ib_backend_io_channel *originator, const void *buf, unsigned int buflen) = 0;
+    virtual int io_receive(int &return_value, ib_backend_io_channel *originator, void *buf, unsigned int max_bufsize) = 0;
+    /* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
+    virtual int io_flush(int &return_value, ib_backend_io_channel *originator) = 0;
+    /* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
+    virtual int io_open(int &return_value, ib_backend_io_channel *originator) = 0;
+    /* close callback is invoked on error or when tws_disconnect is invoked */
+    virtual int io_close(int &return_value, ib_backend_io_channel *originator) = 0;
 
-	virtual int io_tx_elem_observe(ib_backend_io_channel *originator, const char *elem, unsigned int elem_size, ib_outgoing_id_t start_of_message) = 0;
-	virtual int io_rx_elem_observe(ib_backend_io_channel *originator, const char *elem, unsigned int elem_size, int return_value) = 0;
+    virtual int io_tx_elem_observe(ib_backend_io_channel *originator, const char *elem, unsigned int elem_size, ib_outgoing_id_t start_of_message) = 0;
+    virtual int io_rx_elem_observe(ib_backend_io_channel *originator, const char *elem, unsigned int elem_size, int return_value) = 0;
 
-	virtual int destroy(ib_backend_io_channel *originator) = 0;
+    virtual int destroy(ib_backend_io_channel *originator) = 0;
 };
 
 
@@ -69,102 +69,102 @@ public:
 class ib_backend_io_channel : public tier2_message_processor
 {
 protected:
-	typedef std::vector<ib_backend_io_observer *> io_observer_list_t;
+    typedef std::vector<ib_backend_io_observer *> io_observer_list_t;
 
-	io_observer_list_t m_before;
-	io_observer_list_t m_after;
+    io_observer_list_t m_before;
+    io_observer_list_t m_after;
 
-	bool m_fake_ib_tws_connection;
-	bool m_faking_the_ib_tws_connection;
-	struct mg_connection *m_fake_conn[2];
+    bool m_fake_ib_tws_connection;
+    bool m_faking_the_ib_tws_connection;
+    struct mg_connection *m_fake_conn[2];
 
-	virtual void fake_ib_tws_server(int mode);
+    virtual void fake_ib_tws_server(int mode);
 
 public:
-	bool is_faking_the_ib_tws_connection(void) const
-	{
-		return m_faking_the_ib_tws_connection && m_tws_conn;
-	}
+    bool is_faking_the_ib_tws_connection(void) const
+    {
+        return m_faking_the_ib_tws_connection && m_tws_conn;
+    }
 
 protected:
-	struct tws_conn_cfg m_tws_cfg;
+    struct tws_conn_cfg m_tws_cfg;
     struct mg_connection *m_tws_conn;
     struct mg_context *m_tws_ctx;
     tws::tws_instance_t *tws_handle;
 
 protected:
-	ib_backend_io_channel(app_manager *mgr);
+    ib_backend_io_channel(app_manager *mgr);
 public:
-	virtual ~ib_backend_io_channel();
-	static ib_backend_io_channel *get_instance(app_manager *mgr, bool instantiate_singleton = false);
+    virtual ~ib_backend_io_channel();
+    static ib_backend_io_channel *get_instance(app_manager *mgr, bool instantiate_singleton = false);
 protected:
-	static void set_instance(ib_backend_io_channel *instance);
+    static void set_instance(ib_backend_io_channel *instance);
 
 public:
-	static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen);
-	static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize);
-	/* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
-	static int tws_flush_func(void *arg);
-	/* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
-	static int tws_open_func(void *arg);
-	/* close callback is invoked on error or when tws_disconnect is invoked */
-	static int tws_close_func(void *arg);
+    static int tws_transmit_func(void *arg, const void *buf, unsigned int buflen);
+    static int tws_receive_func(void *arg, void *buf, unsigned int max_bufsize);
+    /* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
+    static int tws_flush_func(void *arg);
+    /* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
+    static int tws_open_func(void *arg);
+    /* close callback is invoked on error or when tws_disconnect is invoked */
+    static int tws_close_func(void *arg);
 
-	static int tws_tx_elem_observe_func(void *arg, const char *elem, unsigned int elem_size, ib_outgoing_id_t start_of_message);
-	static int tws_rx_elem_observe_func(void *arg, const char *elem, unsigned int elem_size, int return_value);
+    static int tws_tx_elem_observe_func(void *arg, const char *elem, unsigned int elem_size, ib_outgoing_id_t start_of_message);
+    static int tws_rx_elem_observe_func(void *arg, const char *elem, unsigned int elem_size, int return_value);
 
 public:
-	virtual int push_before(ib_backend_io_observer *listener);
-	virtual int push_after(ib_backend_io_observer *listener);
-	virtual int pop_before(ib_backend_io_observer *listener);
-	virtual int pop_after(ib_backend_io_observer *listener);
-	virtual int clean_before(void);
-	virtual int clean_after(void);
+    virtual int push_before(ib_backend_io_observer *listener);
+    virtual int push_after(ib_backend_io_observer *listener);
+    virtual int pop_before(ib_backend_io_observer *listener);
+    virtual int pop_after(ib_backend_io_observer *listener);
+    virtual int clean_before(void);
+    virtual int clean_after(void);
 
 protected:
-	virtual int io_transmit(const void *buf, unsigned int buflen);
-	virtual int io_receive(void *buf, unsigned int max_bufsize);
-	/* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
-	virtual int io_flush(void);
-	/* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
-	virtual int io_open(void);
-	/* close callback is invoked on error or when tws_disconnect is invoked */
-	virtual int io_close(void);
+    virtual int io_transmit(const void *buf, unsigned int buflen);
+    virtual int io_receive(void *buf, unsigned int max_bufsize);
+    /* 'flush()' marks the end of the outgoing message: it should be transmitted ASAP */
+    virtual int io_flush(void);
+    /* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
+    virtual int io_open(void);
+    /* close callback is invoked on error or when tws_disconnect is invoked */
+    virtual int io_close(void);
 
-	virtual int destroy(void);
+    virtual int destroy(void);
 
 public:
-	struct tws_conn_cfg &get_config(void)
-	{
-		return m_tws_cfg;
-	}
+    struct tws_conn_cfg &get_config(void)
+    {
+        return m_tws_cfg;
+    }
 
-	tws::tws_instance_t *get_tws_instance(void)
-	{
-		return tws_handle;
-	}
+    tws::tws_instance_t *get_tws_instance(void)
+    {
+        return tws_handle;
+    }
 
-	// helper function: produce the IB/TWS app connection. (Used by the TWS back-end communication thread / TWS API callbacks)
-	struct mg_connection *get_connection(void)
-	{
-		return m_tws_conn;
-	}
-	struct mg_context *get_context(void)
-	{
-		return m_tws_ctx;
-	}
-	struct tws_conn_cfg &get_tws_ib_connection_config(void)
-	{
-		return m_tws_cfg;
-	}
+    // helper function: produce the IB/TWS app connection. (Used by the TWS back-end communication thread / TWS API callbacks)
+    struct mg_connection *get_connection(void)
+    {
+        return m_tws_conn;
+    }
+    struct mg_context *get_context(void)
+    {
+        return m_tws_ctx;
+    }
+    struct tws_conn_cfg &get_tws_ib_connection_config(void)
+    {
+        return m_tws_cfg;
+    }
 
-	void set_context(struct mg_context *ctx)
-	{
-		assert(ctx);
-		m_tws_ctx = ctx;
-	}
+    void set_context(struct mg_context *ctx)
+    {
+        assert(ctx);
+        m_tws_ctx = ctx;
+    }
 
-	virtual int pulse_pending_issues(void);
+    virtual int pulse_pending_issues(void);
 };
 
 

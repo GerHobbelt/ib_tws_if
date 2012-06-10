@@ -32,35 +32,35 @@ typedef unsigned int unique_id_t;
 class unique_type_id_manager
 {
 private:
-	unique_id_t m_prev_id;
+    unique_id_t m_prev_id;
 
 public:
-	unique_type_id_manager(unique_id_t start_id = 1)
-		: m_prev_id(start_id - 1)
-	{
-	}
-	virtual ~unique_type_id_manager()
-	{
-	}
+    unique_type_id_manager(unique_id_t start_id = 1)
+        : m_prev_id(start_id - 1)
+    {
+    }
+    virtual ~unique_type_id_manager()
+    {
+    }
 
 public:
-	virtual unique_id_t obtain_unique_id(void)
-	{
-		return ++m_prev_id;
-	}
-	virtual unique_id_t reset_unique_id(unique_id_t new_start_value)
-	{
-		m_prev_id = new_start_value;
-		return m_prev_id;
-	}
-	virtual unique_id_t update_unique_id(unique_id_t new_start_value)
-	{
-		if (m_prev_id < new_start_value)
-		{
-			m_prev_id = new_start_value;
-		}
-		return m_prev_id;
-	}
+    virtual unique_id_t obtain_unique_id(void)
+    {
+        return ++m_prev_id;
+    }
+    virtual unique_id_t reset_unique_id(unique_id_t new_start_value)
+    {
+        m_prev_id = new_start_value;
+        return m_prev_id;
+    }
+    virtual unique_id_t update_unique_id(unique_id_t new_start_value)
+    {
+        if (m_prev_id < new_start_value)
+        {
+            m_prev_id = new_start_value;
+        }
+        return m_prev_id;
+    }
 };
 
 
@@ -69,47 +69,47 @@ public:
 class unique_type_id_threadsafe_manager : public unique_type_id_manager
 {
 private:
-	pthread_spinlock_t m_lock;
+    pthread_spinlock_t m_lock;
 
 public:
-	unique_type_id_threadsafe_manager(unique_id_t start_id = 1)
-		: unique_type_id_manager(start_id - 1)
-	{
-		pthread_spin_init(&m_lock, false);
-	}
-	virtual ~unique_type_id_threadsafe_manager()
-	{
-		pthread_spin_destroy(&m_lock);
-	}
+    unique_type_id_threadsafe_manager(unique_id_t start_id = 1)
+        : unique_type_id_manager(start_id - 1)
+    {
+        pthread_spin_init(&m_lock, false);
+    }
+    virtual ~unique_type_id_threadsafe_manager()
+    {
+        pthread_spin_destroy(&m_lock);
+    }
 
 public:
-	virtual unique_id_t obtain_unique_id(void)
-	{
-		unique_id_t rv;
+    virtual unique_id_t obtain_unique_id(void)
+    {
+        unique_id_t rv;
 
-		pthread_spin_lock(&m_lock);
-		rv = __super::obtain_unique_id();
-		pthread_spin_unlock(&m_lock);
-		return rv;
-	}
-	virtual unique_id_t reset_unique_id(unique_id_t new_start_value)
-	{
-		unique_id_t rv;
+        pthread_spin_lock(&m_lock);
+        rv = __super::obtain_unique_id();
+        pthread_spin_unlock(&m_lock);
+        return rv;
+    }
+    virtual unique_id_t reset_unique_id(unique_id_t new_start_value)
+    {
+        unique_id_t rv;
 
-		pthread_spin_lock(&m_lock);
-		rv = __super::reset_unique_id(new_start_value);
-		pthread_spin_unlock(&m_lock);
-		return rv;
-	}
-	virtual unique_id_t update_unique_id(unique_id_t new_start_value)
-	{
-		unique_id_t rv;
+        pthread_spin_lock(&m_lock);
+        rv = __super::reset_unique_id(new_start_value);
+        pthread_spin_unlock(&m_lock);
+        return rv;
+    }
+    virtual unique_id_t update_unique_id(unique_id_t new_start_value)
+    {
+        unique_id_t rv;
 
-		pthread_spin_lock(&m_lock);
-		rv = __super::update_unique_id(new_start_value);
-		pthread_spin_unlock(&m_lock);
-		return rv;
-	}
+        pthread_spin_lock(&m_lock);
+        rv = __super::update_unique_id(new_start_value);
+        pthread_spin_unlock(&m_lock);
+        return rv;
+    }
 };
 
 

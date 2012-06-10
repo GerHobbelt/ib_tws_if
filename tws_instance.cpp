@@ -43,16 +43,16 @@
 
 
 ib_tws_manager::ib_tws_manager(app_manager *mgr) :
-	ib_backend_io_channel(mgr),
-	m_io_logger(NULL),
-	m_last_tickled_queue_position(0),
-	m_still_need_to_prime_the_pump(true)
+    ib_backend_io_channel(mgr),
+    m_io_logger(NULL),
+    m_last_tickled_queue_position(0),
+    m_still_need_to_prime_the_pump(true)
 {
 }
 
 ib_tws_manager::~ib_tws_manager()
 {
-	destroy();
+    destroy();
 }
 
 
@@ -68,350 +68,350 @@ ib_tws_manager::~ib_tws_manager()
 /* sends message REQ_SCANNER_PARAMETERS to IB/TWS */
 int ib_tws_manager::tx_request_scanner_parameters(ib_msg_req_scanner_parameters *req_msg)
 {
-	assert(does_own(req_msg));
+    assert(does_own(req_msg));
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_tws_manager::tx_request_scanner_subscription(ib_msg_req_scanner_subscription *req_msg)
 {
-	assert(does_own(req_msg));
-	req_msg->register_handler(&m_scanner_subscription_limit);
+    assert(does_own(req_msg));
+    req_msg->register_handler(&m_scanner_subscription_limit);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message CANCEL_SCANNER_SUBSCRIPTION to IB/TWS */
 int ib_tws_manager::tx_cancel_scanner_subscription(ib_msg_cancel_scanner_subscription *req_msg)
 {
-	assert(does_own(req_msg));
-	req_msg->register_handler(&m_scanner_subscription_limit);
+    assert(does_own(req_msg));
+    req_msg->register_handler(&m_scanner_subscription_limit);
 
-	int rv = cancel_all_matching_requests(req_msg);
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message REQ_MKT_DATA to IB/TWS */
 int ib_tws_manager::tx_request_mkt_data(ib_msg_req_mkt_data *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_HISTORICAL_DATA to IB/TWS */
 int ib_tws_manager::tx_request_historical_data(ib_msg_req_historical_data *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message CANCEL_HISTORICAL_DATA to IB/TWS */
 int ib_tws_manager::tx_cancel_historical_data(ib_msg_cancel_historical_data *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message CANCEL_MKT_DATA to IB/TWS */
 int ib_tws_manager::tx_cancel_mkt_data(ib_msg_cancel_mkt_data *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message EXERCISE_OPTIONS to IB/TWS */
 int ib_tws_manager::tx_exercise_options(ib_msg_exercise_options *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message PLACE_ORDER to IB/TWS */
 int ib_tws_manager::tx_place_order(ib_msg_place_order *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message CANCEL_ORDER to IB/TWS */
 int ib_tws_manager::tx_cancel_order(ib_msg_cancel_order *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message REQ_OPEN_ORDERS to IB/TWS */
 int ib_tws_manager::tx_request_open_orders(ib_msg_req_open_orders *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_ACCOUNT_DATA to IB/TWS */
 int ib_tws_manager::tx_request_account_updates(ib_msg_req_account_updates *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_EXECUTIONS to IB/TWS */
 int ib_tws_manager::tx_request_executions(ib_msg_req_executions *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_IDS to IB/TWS */
 int ib_tws_manager::tx_request_ids(ib_msg_req_ids *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_CONTRACT_DATA to IB/TWS */
 int ib_tws_manager::tx_request_contract_details(ib_msg_req_contract_details *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_MKT_DEPTH to IB/TWS */
 int ib_tws_manager::tx_request_mkt_depth(ib_msg_req_mkt_depth *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message CANCEL_MKT_DEPTH to IB/TWS */
 int ib_tws_manager::tx_cancel_mkt_depth(ib_msg_cancel_mkt_depth *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message REQ_NEWS_BULLETINS to IB/TWS */
 int ib_tws_manager::tx_request_news_bulletins(ib_msg_req_news_bulletins *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message CANCEL_NEWS_BULLETINS to IB/TWS */
 int ib_tws_manager::tx_cancel_news_bulletins(ib_msg_cancel_news_bulletins *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message SET_SERVER_LOGLEVEL to IB/TWS */
 int ib_tws_manager::tx_set_server_log_level(ib_msg_set_server_log_level *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_AUTO_OPEN_ORDERS to IB/TWS */
 int ib_tws_manager::tx_request_auto_open_orders(ib_msg_req_auto_open_orders *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_ALL_OPEN_ORDERS to IB/TWS */
 int ib_tws_manager::tx_request_all_open_orders(ib_msg_req_all_open_orders *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_MANAGED_ACCTS to IB/TWS */
 int ib_tws_manager::tx_request_managed_accts(ib_msg_req_managed_accts *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_FA to IB/TWS */
 int ib_tws_manager::tx_request_fa(ib_msg_request_fa *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REPLACE_FA to IB/TWS */
 int ib_tws_manager::tx_replace_fa(ib_msg_replace_fa *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_CURRENT_TIME to IB/TWS */
 int ib_tws_manager::tx_request_current_time(ib_msg_req_current_time *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_FUNDAMENTAL_DATA to IB/TWS */
 int ib_tws_manager::tx_request_fundamental_data(ib_msg_req_fundamental_data *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message CANCEL_FUNDAMENTAL_DATA to IB/TWS */
 int ib_tws_manager::tx_cancel_fundamental_data(ib_msg_cancel_fundamental_data *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message REQ_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_tws_manager::tx_calculate_implied_volatility(ib_msg_calculate_implied_volatility *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message CANCEL_CALC_IMPLIED_VOLAT to IB/TWS */
 int ib_tws_manager::tx_cancel_calculate_implied_volatility(ib_msg_cancel_calculate_implied_volatility *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message REQ_CALC_OPTION_PRICE to IB/TWS */
 int ib_tws_manager::tx_calculate_option_price(ib_msg_calculate_option_price *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message CANCEL_CALC_OPTION_PRICE to IB/TWS */
 int ib_tws_manager::tx_cancel_calculate_option_price(ib_msg_cancel_calculate_option_price *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message REQ_GLOBAL_CANCEL to IB/TWS */
 int ib_tws_manager::tx_request_global_cancel(ib_msg_req_global_cancel *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 /* sends message REQ_MARKET_DATA_TYPE to IB/TWS */
 int ib_tws_manager::tx_request_market_data_type(ib_msg_req_market_data_type *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message REQ_REAL_TIME_BARS to IB/TWS */
 int ib_tws_manager::tx_request_realtime_bars(ib_msg_request_realtime_bars *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    assert(does_own(req_msg));
+    
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return 0;
+    return 0;
 }
 /* sends message CANCEL_REAL_TIME_BARS to IB/TWS */
 int ib_tws_manager::tx_cancel_realtime_bars(ib_msg_cancel_realtime_bars *req_msg)
 {
-	assert(does_own(req_msg));
-	
-	int rv = cancel_all_matching_requests(req_msg);
+    assert(does_own(req_msg));
+    
+    int rv = cancel_all_matching_requests(req_msg);
 
-	req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
+    req_msg->state(tier2_message::WAIT_FOR_TRANSMIT);
 
-	return rv;
+    return rv;
 }
 
 
@@ -431,214 +431,214 @@ int ib_tws_manager::tx_cancel_realtime_bars(ib_msg_cancel_realtime_bars *req_msg
 /* fired by: TICK_PRICE */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_price *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_price");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_price");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_PRICE (for modern versions, then immediately preceeded by an invocation of event_tick_price()), TICK_SIZE */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_size *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_size");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_size");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_OPTION_COMPUTATION */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_option_computation *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_option_computation");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_option_computation");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_GENERIC */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_generic *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_generic");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_generic");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_STRING */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_string *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_string");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_string");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_EFP */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_efp *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_efp");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_efp");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: ORDER_STATUS */
 int ib_tws_manager::process_response_message(ib_msg_resp_order_status *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_order_status");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_order_status");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: OPEN_ORDER */
 int ib_tws_manager::process_response_message(ib_msg_resp_open_order *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: OPEN_ORDER_END */
 int ib_tws_manager::process_response_message(ib_msg_resp_open_order_end *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order_end");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order_end");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: ACCT_VALUE */
 int ib_tws_manager::process_response_message(ib_msg_resp_update_account_value *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_value");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_value");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: PORTFOLIO_VALUE */
 int ib_tws_manager::process_response_message(ib_msg_resp_update_portfolio *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_portfolio");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_portfolio");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: ACCT_UPDATE_TIME */
 int ib_tws_manager::process_response_message(ib_msg_resp_update_account_time *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_time");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_time");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: NEXT_VALID_ID */
 int ib_tws_manager::process_response_message(ib_msg_resp_next_valid_id *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
-	app_manager *mgr = get_app_manager();
+    struct mg_connection *conn = get_connection();
+    app_manager *mgr = get_app_manager();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_next_valid_id");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_next_valid_id");
 
-	mgr->set_next_order_id(resp_msg->get_order_id());
+    mgr->set_next_order_id(resp_msg->get_order_id());
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: CONTRACT_DATA */
 int ib_tws_manager::process_response_message(ib_msg_resp_contract_details *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: CONTRACT_DATA_END */
 int ib_tws_manager::process_response_message(ib_msg_resp_contract_details_end *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details_end");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details_end");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: BOND_CONTRACT_DATA */
 int ib_tws_manager::process_response_message(ib_msg_resp_bond_contract_details *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_bond_contract_details");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_bond_contract_details");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: EXECUTION_DATA */
 int ib_tws_manager::process_response_message(ib_msg_resp_exec_details *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: EXECUTION_DATA_END */
 int ib_tws_manager::process_response_message(ib_msg_resp_exec_details_end *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details_end");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details_end");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: ERR_MSG */
 int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_error");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_error");
 
-	/*
-	We can only request any scanner data when there's actually any DATA FARM connection reported by TWS.
+    /*
+    We can only request any scanner data when there's actually any DATA FARM connection reported by TWS.
 
-	We ran into a scenario where IB/TWS would fail silently due to no data farms available whatsoever:
-	this was not reported as such, but one simply doesn't get ANY error messages listing ANY farm as OK
-	instead!
-	*/
-	if (resp_msg->get_error_code() == tws::FAIL_MARKET_DATA_FARM_CONNECTED
-		|| resp_msg->get_error_code() == tws::FAIL_HISTORICAL_DATA_FARM_CONNECTED)
-	{
-		if (m_still_need_to_prime_the_pump)
-		{
+    We ran into a scenario where IB/TWS would fail silently due to no data farms available whatsoever:
+    this was not reported as such, but one simply doesn't get ANY error messages listing ANY farm as OK
+    instead!
+    */
+    if (resp_msg->get_error_code() == tws::FAIL_MARKET_DATA_FARM_CONNECTED
+        || resp_msg->get_error_code() == tws::FAIL_HISTORICAL_DATA_FARM_CONNECTED)
+    {
+        if (m_still_need_to_prime_the_pump)
+        {
 #if 01
-			ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(this, NULL);
-			scan->state(tier2_message::EXEC_COMMAND);
+            ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(this, NULL);
+            scan->state(tier2_message::EXEC_COMMAND);
 #endif
 
-			m_still_need_to_prime_the_pump = false;
-		}
-	}
+            m_still_need_to_prime_the_pump = false;
+        }
+    }
 
 #if 0
     /*
@@ -647,270 +647,270 @@ int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
     ticker_id is one of our active scanner subscription queue items and when it is, we ditch that one
     and replace it by another pending scanner subscription request.
     */
-	if (ticker_id >= 0
-		&& error_code != INFO_HISTORICAL_MARKET_DATA_SERVICE_QUERY
-			/* generally that would be 'N times received' or 'no items received',
-			   where the latter is handled in the scanner_data_start handler */
-		&& error_code != FAIL_NO_SCANNER_SUBSCRIPTION_FOUND
-	   )
-	{
-		cancel_tws_scanner_subscription(info, ticker_id);
-	}
+    if (ticker_id >= 0
+        && error_code != INFO_HISTORICAL_MARKET_DATA_SERVICE_QUERY
+            /* generally that would be 'N times received' or 'no items received',
+               where the latter is handled in the scanner_data_start handler */
+        && error_code != FAIL_NO_SCANNER_SUBSCRIPTION_FOUND
+       )
+    {
+        cancel_tws_scanner_subscription(info, ticker_id);
+    }
 #endif
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: MARKET_DEPTH */
 int ib_tws_manager::process_response_message(ib_msg_resp_update_mkt_depth *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: MARKET_DEPTH_L2 */
 int ib_tws_manager::process_response_message(ib_msg_resp_update_mkt_depth_l2 *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth_l2");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth_l2");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: NEWS_BULLETINS */
 int ib_tws_manager::process_response_message(ib_msg_resp_update_news_bulletin *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_news_bulletin");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_news_bulletin");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: MANAGED_ACCTS */
 int ib_tws_manager::process_response_message(ib_msg_resp_managed_accounts *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_managed_accounts");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_managed_accounts");
 
-	if (m_account_identifier.empty())
-	{
-		m_account_identifier = resp_msg->get_accounts_list();
-	}
+    if (m_account_identifier.empty())
+    {
+        m_account_identifier = resp_msg->get_accounts_list();
+    }
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: RECEIVE_FA */
 int ib_tws_manager::process_response_message(ib_msg_resp_receive_fa *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_receive_fa");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_receive_fa");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: HISTORICAL_DATA (possibly multiple times per incoming message) */
 int ib_tws_manager::process_response_message(ib_msg_resp_historical_data *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: HISTORICAL_DATA  (once, after one or more invocations of event_historical_data()) */
 int ib_tws_manager::process_response_message(ib_msg_resp_historical_data_end *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data_end");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data_end");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: SCANNER_PARAMETERS */
 int ib_tws_manager::process_response_message(ib_msg_resp_scanner_parameters *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_parameters");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_parameters");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: SCANNER_DATA (possibly multiple times per incoming message) */
 int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data");
 
-	/*
-	Also register the item in the database...
-	*/
-	register_contract_info(resp_msg->get_contract_details());
+    /*
+    Also register the item in the database...
+    */
+    register_contract_info(resp_msg->get_contract_details());
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: SCANNER_DATA (once, after one or more invocations of event_scanner_data()) */
 int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data_end *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_end");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_end");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: SCANNER_DATA (once, before any invocations of event_scanner_data()) */
 int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data_start *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_start");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_start");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: CURRENT_TIME -- in response to REQ_CURRENT_TIME */
 int ib_tws_manager::process_response_message(ib_msg_resp_current_time *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_current_time");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_current_time");
 
-	/*
-	walk through the set of req_current_time_active_set requests and send 
-	the current response to each of 'em, thus discarding any subsequent 
-	time responses.
-	*/
-	return scan_queue_and_process(resp_msg);
+    /*
+    walk through the set of req_current_time_active_set requests and send
+    the current response to each of 'em, thus discarding any subsequent
+    time responses.
+    */
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: REAL_TIME_BARS */
 int ib_tws_manager::process_response_message(ib_msg_resp_realtime_bar *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_realtime_bar");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_realtime_bar");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: FUNDAMENTAL_DATA */
 int ib_tws_manager::process_response_message(ib_msg_resp_fundamental_data *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_fundamental_data");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_fundamental_data");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: DELTA_NEUTRAL_VALIDATION */
 int ib_tws_manager::process_response_message(ib_msg_resp_delta_neutral_validation *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_delta_neutral_validation");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_delta_neutral_validation");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: ACCT_DOWNLOAD_END */
 int ib_tws_manager::process_response_message(ib_msg_resp_acct_download_end *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_acct_download_end");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_acct_download_end");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: TICK_SNAPSHOT_END */
 int ib_tws_manager::process_response_message(ib_msg_resp_tick_snapshot_end *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_snapshot_end");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_snapshot_end");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: MARKET_DATA_TYPE */
 int ib_tws_manager::process_response_message(ib_msg_resp_market_data_type *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_market_data_type");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_market_data_type");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 /* fired by: COMMISSION_REPORT */
 int ib_tws_manager::process_response_message(ib_msg_resp_commission_report *resp_msg)
 {
-	struct mg_connection *conn = get_connection();
+    struct mg_connection *conn = get_connection();
 
-	assert(resp_msg);
-	mg_cry(conn, "process response message for %s?", "ib_msg_resp_commission_report");
+    assert(resp_msg);
+    mg_cry(conn, "process response message for %s?", "ib_msg_resp_commission_report");
 
-	return scan_queue_and_process(resp_msg);
+    return scan_queue_and_process(resp_msg);
 }
 
 
 int ib_tws_manager::scan_queue_and_process(tier2_message *resp_msg)
 {
-	int rv = 0;
-	bool has_been_processed = false;
+    int rv = 0;
+    bool has_been_processed = false;
 
-	/*
-	message_queue may be reduced/increased as a side effect,
-	hence we collect the items to access in a temporary list and run
-	the set from there:
-	*/
-	tier2_message_collection_t q;
+    /*
+    message_queue may be reduced/increased as a side effect,
+    hence we collect the items to access in a temporary list and run
+    the set from there:
+    */
+    tier2_message_collection_t q;
 
-	for (int i = 0; i < m_msgs_i_own.size(); i++)
-	{
-		tier2_message *req = m_msgs_i_own[i];
+    for (int i = 0; i < m_msgs_i_own.size(); i++)
+    {
+        tier2_message *req = m_msgs_i_own[i];
 
-		//if (req->state() == tier2_message::READY_TO_RECEIVE_RESPONSE)
-		if (req->response_is_meant_for_us(resp_msg))
-		{
-			has_been_processed = true;
+        //if (req->state() == tier2_message::READY_TO_RECEIVE_RESPONSE)
+        if (req->response_is_meant_for_us(resp_msg))
+        {
+            has_been_processed = true;
 
-			q.push_back(req);
-		}
-	}
+            q.push_back(req);
+        }
+    }
 
-	for (int i = 0; i < q.size(); i++)
-	{
-		tier2_message *req = q[i];
+    for (int i = 0; i < q.size(); i++)
+    {
+        tier2_message *req = q[i];
 
-		rv |= req->process_response_message(resp_msg);
-	}
+        rv |= req->process_response_message(resp_msg);
+    }
 
-	if (!has_been_processed)
-	{
-		struct mg_connection *conn = get_connection();
+    if (!has_been_processed)
+    {
+        struct mg_connection *conn = get_connection();
 
-		assert(resp_msg);
-		mg_cry(conn, "response message has not been linked to a request message");
-	}
+        assert(resp_msg);
+        mg_cry(conn, "response message has not been linked to a request message");
+    }
 
-	// and mark message for subsequent destruction
-	resp_msg->state(tier2_message::DESTRUCTION);
+    // and mark message for subsequent destruction
+    resp_msg->state(tier2_message::DESTRUCTION);
 
-	return rv;
+    return rv;
 }
 
 
@@ -919,60 +919,60 @@ int ib_tws_manager::scan_queue_and_process(tier2_message *resp_msg)
 
 int ib_tws_manager::cancel_all_matching_requests(tws_request_message *cancel_msg)
 {
-	int rv = 0;
-	bool has_been_processed = false;
+    int rv = 0;
+    bool has_been_processed = false;
 
-	/*
-	message_queue may be reduced/increased as a side effect,
-	hence we collect the items to access in a temporary list and run
-	the set from there:
-	*/
-	tier2_message_collection_t q;
+    /*
+    message_queue may be reduced/increased as a side effect,
+    hence we collect the items to access in a temporary list and run
+    the set from there:
+    */
+    tier2_message_collection_t q;
 
-	for (int i = 0; i < m_msgs_i_own.size(); /* i++ */)
-	{
-		tier2_message *req = m_msgs_i_own[i];
-		tws_request_message *tws_req = dynamic_cast<tws_request_message *>(req);
+    for (int i = 0; i < m_msgs_i_own.size(); /* i++ */)
+    {
+        tier2_message *req = m_msgs_i_own[i];
+        tws_request_message *tws_req = dynamic_cast<tws_request_message *>(req);
 
-		//if (req->state() == tier2_message::READY_TO_RECEIVE_RESPONSE)
-		if (tws_req && tws_req->cancel_request_is_meant_for_us(cancel_msg))
-		{
-			has_been_processed = true;
+        //if (req->state() == tier2_message::READY_TO_RECEIVE_RESPONSE)
+        if (tws_req && tws_req->cancel_request_is_meant_for_us(cancel_msg))
+        {
+            has_been_processed = true;
 
-			q.push_back(req);
-			//m_msgs_i_own.erase(m_msgs_i_own.begin() + i);
-			i++;
+            q.push_back(req);
+            //m_msgs_i_own.erase(m_msgs_i_own.begin() + i);
+            i++;
 
-			// another item is now at cursor position [i] so go and test that one:
-			continue;
-		}
-		i++;
-	}
+            // another item is now at cursor position [i] so go and test that one:
+            continue;
+        }
+        i++;
+    }
 
-	for (int i = 0; i < q.size(); i++)
-	{
-		tier2_message *req = q[i];
-		
-		// message must be removed from the ownership list or it will be added 
-		// during the second pulse-scan while it might be being processed
-		// elsewhere at the same time, which would cause all sorts of fatal
-		// issues.
+    for (int i = 0; i < q.size(); i++)
+    {
+        tier2_message *req = q[i];
+        
+        // message must be removed from the ownership list or it will be added
+        // during the second pulse-scan while it might be being processed
+        // elsewhere at the same time, which would cause all sorts of fatal
+        // issues.
 
-		rv |= req->state(tier2_message::ABORTED);
-	}
+        rv |= req->state(tier2_message::ABORTED);
+    }
 
-	if (!has_been_processed)
-	{
-		struct mg_connection *conn = get_connection();
+    if (!has_been_processed)
+    {
+        struct mg_connection *conn = get_connection();
 
-		assert(cancel_msg);
-		mg_cry(conn, "cancel message has not been linked to a request message");
-	}
+        assert(cancel_msg);
+        mg_cry(conn, "cancel message has not been linked to a request message");
+    }
 
-	// and mark message for subsequent destruction
-	cancel_msg->state(tier2_message::DESTRUCTION);
+    // and mark message for subsequent destruction
+    cancel_msg->state(tier2_message::DESTRUCTION);
 
-	return rv;
+    return rv;
 }
 
 
@@ -997,15 +997,15 @@ static ib_tws_manager *singleton = NULL;
 
 ib_tws_manager * ib_tws_manager::get_instance(app_manager *mgr, bool instantiate_singleton)
 {
-	ib_tws_manager *obj = dynamic_cast<ib_tws_manager *>(ib_backend_io_channel::get_instance(mgr, false));
+    ib_tws_manager *obj = dynamic_cast<ib_tws_manager *>(ib_backend_io_channel::get_instance(mgr, false));
 
-	if (!obj && instantiate_singleton)
-	{
-		obj = new ib_tws_manager(mgr);
+    if (!obj && instantiate_singleton)
+    {
+        obj = new ib_tws_manager(mgr);
 
-		set_instance(obj);
-	}
-	return obj;
+        set_instance(obj);
+    }
+    return obj;
 }
 
 
@@ -1015,122 +1015,122 @@ ib_tws_manager * ib_tws_manager::get_instance(app_manager *mgr, bool instantiate
 /* open callback is invoked when tws_connect is invoked and no connection has been established yet (tws_connected() == false); return 0 on success; a twsclient_error_codes error code on failure. */
 int ib_tws_manager::io_open(void)
 {
-	int rv = __super::io_open();
+    int rv = __super::io_open();
 
-	if (!m_faking_the_ib_tws_connection)
-	{
-		if (!m_io_logger)
-		{
-	        char tbuf[40];
+    if (!m_faking_the_ib_tws_connection)
+    {
+        if (!m_io_logger)
+        {
+            char tbuf[40];
 
-			m_io_logger = new ib_backend_io_logger();
+            m_io_logger = new ib_backend_io_logger();
 
-			if (m_io_logger->init())
-			{
-				delete m_io_logger;
-				m_io_logger = NULL;
-			}
-		}
+            if (m_io_logger->init())
+            {
+                delete m_io_logger;
+                m_io_logger = NULL;
+            }
+        }
 
-		push_after(m_io_logger);
-	}
-	return rv;
+        push_after(m_io_logger);
+    }
+    return rv;
 }
 
 /* close callback is invoked on error or when tws_disconnect is invoked */
 int ib_tws_manager::io_close(void)
 {
-	int rv = __super::io_close();
+    int rv = __super::io_close();
 
-	pop_before(m_io_logger);
-	pop_after(m_io_logger);
+    pop_before(m_io_logger);
+    pop_after(m_io_logger);
 
-	return rv;
+    return rv;
 }
 
 int ib_tws_manager::destroy(void)
 {
-	int rv = __super::destroy();
+    int rv = __super::destroy();
 
-	pop_before(m_io_logger);
-	pop_after(m_io_logger);
+    pop_before(m_io_logger);
+    pop_after(m_io_logger);
 
-	return rv;
+    return rv;
 }
 
 /*
-Also 'tickle' the pending queue in round-robin fashion to ensure that 
+Also 'tickle' the pending queue in round-robin fashion to ensure that
 scheduled / postponed requests get serviced.
 */
 int ib_tws_manager::pulse_pending_issues(void)
 {
-	pulse_marked_messages();
+    pulse_marked_messages();
 
-	int hitcount = 0;
-	int start_index_for_next_time = m_last_tickled_queue_position;
+    int hitcount = 0;
+    int start_index_for_next_time = m_last_tickled_queue_position;
 
-	for (int i = 0; i < m_msgs_i_own.size(); i++)
-	{
-		int idx = (i + m_last_tickled_queue_position) % m_msgs_i_own.size();
-		tier2_message *msg = m_msgs_i_own[idx];
+    for (int i = 0; i < m_msgs_i_own.size(); i++)
+    {
+        int idx = (i + m_last_tickled_queue_position) % m_msgs_i_own.size();
+        tier2_message *msg = m_msgs_i_own[idx];
 
-		switch (msg->state())
-		{
-		case tier2_message::EXEC_COMMAND:				// R: before the message is processed, i.e. send the message off to the designated processor (task)
-			assert(!"should never get here");
-			break;
+        switch (msg->state())
+        {
+        case tier2_message::EXEC_COMMAND:               // R: before the message is processed, i.e. send the message off to the designated processor (task)
+            assert(!"should never get here");
+            break;
 
-		case tier2_message::WAIT_FOR_TRANSMIT:          // R: message has been received by the 'processor'/'end node' and is waiting for clearance to be transmitted / executed
-			if (tier2_message::COMMENCE_TRANSMIT == msg->state(tier2_message::COMMENCE_TRANSMIT))
-			{
-				hitcount++;
-				// prevent hitting the same scheduled message over and over, while others lay waiting:
-				start_index_for_next_time = idx + 1;
-			}
-			break;
+        case tier2_message::WAIT_FOR_TRANSMIT:          // R: message has been received by the 'processor'/'end node' and is waiting for clearance to be transmitted / executed
+            if (tier2_message::COMMENCE_TRANSMIT == msg->state(tier2_message::COMMENCE_TRANSMIT))
+            {
+                hitcount++;
+                // prevent hitting the same scheduled message over and over, while others lay waiting:
+                start_index_for_next_time = idx + 1;
+            }
+            break;
 
-		case tier2_message::COMMENCE_TRANSMIT:          // R: message is been processed / transmitted to entity outside this application
-		case tier2_message::READY_TO_RECEIVE_RESPONSE:	// R: once the message is processed and a response is expected
-		case tier2_message::RESPONSE_PENDING:	        // R: when a response is constructed of multiple messages itself: we're still waiting for a few more...
-			break;
+        case tier2_message::COMMENCE_TRANSMIT:          // R: message is been processed / transmitted to entity outside this application
+        case tier2_message::READY_TO_RECEIVE_RESPONSE:  // R: once the message is processed and a response is expected
+        case tier2_message::RESPONSE_PENDING:           // R: when a response is constructed of multiple messages itself: we're still waiting for a few more...
+            break;
 
-		case tier2_message::RESPONSE_COMPLETE:			// T: The entire response has been collected (requester must still process it though)
-			assert(msg->get_requester() == this);
-			break;
+        case tier2_message::RESPONSE_COMPLETE:          // T: The entire response has been collected (requester must still process it though)
+            assert(msg->get_requester() == this);
+            break;
 
-		case tier2_message::DESTRUCTION:				// T: just before the destructor is invoked: last call!
-		case tier2_message::FAILED:						// T: when an error occurred
-		case tier2_message::ABORTED:					// T: when the request has been canceled
-		case tier2_message::MSG_INITIALIZED:			// T: start value
-		case tier2_message::TASK_COMPLETED:				// T: The message (and optional response) has been completely processed
-			assert(!"should never get here");
-			break;
-		}
-	}
+        case tier2_message::DESTRUCTION:                // T: just before the destructor is invoked: last call!
+        case tier2_message::FAILED:                     // T: when an error occurred
+        case tier2_message::ABORTED:                    // T: when the request has been canceled
+        case tier2_message::MSG_INITIALIZED:            // T: start value
+        case tier2_message::TASK_COMPLETED:             // T: The message (and optional response) has been completely processed
+            assert(!"should never get here");
+            break;
+        }
+    }
 
-	m_last_tickled_queue_position = start_index_for_next_time;
+    m_last_tickled_queue_position = start_index_for_next_time;
 
-	return 0;
+    return 0;
 }
 
 int ib_tws_manager::register_contract_info(const ib_contract_details *cd)
 {
-	if (!cd)
-		return -1;
+    if (!cd)
+        return -1;
 
-	for (int i = 0; i < m_contract_details_store.size(); i++)
-	{
-		ib_contract_details *c = m_contract_details_store[i];
+    for (int i = 0; i < m_contract_details_store.size(); i++)
+    {
+        ib_contract_details *c = m_contract_details_store[i];
 
-		if (c->equals(cd))
-			return 1;
-	}
+        if (c->equals(cd))
+            return 1;
+    }
 
-	// clone to make sure we've a heap-allocated entity to store:
-	ib_contract_details *ncd = new ib_contract_details(*cd);
-	m_contract_details_store.push_back(ncd);
+    // clone to make sure we've a heap-allocated entity to store:
+    ib_contract_details *ncd = new ib_contract_details(*cd);
+    m_contract_details_store.push_back(ncd);
 
-	return 0;
+    return 0;
 }
 
 
@@ -1149,79 +1149,79 @@ int ib_tws_manager::register_contract_info(const ib_contract_details *cd)
 
 tier2_message::state_change ib_tws_scanner_subscription_limitation::process(tier2_message &msg, tier2_message::request_state_t new_state)
 {
-	/* protect against overrunning the TWS-imposed maximum number of subscriptions */
-	switch (new_state)
-	{
-	case tier2_message::COMMENCE_TRANSMIT:
-		{
-			ib_msg_req_scanner_subscription *scan_req = dynamic_cast<ib_msg_req_scanner_subscription *>(&msg);
+    /* protect against overrunning the TWS-imposed maximum number of subscriptions */
+    switch (new_state)
+    {
+    case tier2_message::COMMENCE_TRANSMIT:
+        {
+            ib_msg_req_scanner_subscription *scan_req = dynamic_cast<ib_msg_req_scanner_subscription *>(&msg);
 
-			// allow cancel messages to always do their job...
-			if (!scan_req)
-				break;
+            // allow cancel messages to always do their job...
+            if (!scan_req)
+                break;
 
-			if (m_active_scanner_subscriptions.size() < m_max_scanner_subscriptions)
-			{
-				m_active_scanner_subscriptions.push_back(scan_req);
-				return tier2_message::PROCEED;
-			}
-		}
-		return tier2_message::DONT_CHANGE;
+            if (m_active_scanner_subscriptions.size() < m_max_scanner_subscriptions)
+            {
+                m_active_scanner_subscriptions.push_back(scan_req);
+                return tier2_message::PROCEED;
+            }
+        }
+        return tier2_message::DONT_CHANGE;
 
-	case tier2_message::RESPONSE_COMPLETE:
-	case tier2_message::DESTRUCTION:
-	case tier2_message::FAILED:
-	case tier2_message::ABORTED:
-	case tier2_message::TASK_COMPLETED:
-		/* remove this entry from the 'active set' */
-		{
-			app_manager *mgr = msg.get_requester()->get_app_manager();
-			ib_tws_manager *ibm = mgr->get_ib_tws_manager();
-			struct mg_connection *conn = ibm->get_connection();
+    case tier2_message::RESPONSE_COMPLETE:
+    case tier2_message::DESTRUCTION:
+    case tier2_message::FAILED:
+    case tier2_message::ABORTED:
+    case tier2_message::TASK_COMPLETED:
+        /* remove this entry from the 'active set' */
+        {
+            app_manager *mgr = msg.get_requester()->get_app_manager();
+            ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+            struct mg_connection *conn = ibm->get_connection();
 
-			assert(msg.current_owner() == ibm); // we SHOULD be running in the back-end now -- this is expected to GO BOOM! as soon as we send cancel requests from client threads!
+            assert(msg.current_owner() == ibm); // we SHOULD be running in the back-end now -- this is expected to GO BOOM! as soon as we send cancel requests from client threads!
 
-			tws_response_w_ticker_message *r_msg = dynamic_cast<tws_response_w_ticker_message *>(&msg);
-			tws_request_w_ticker_message *q_msg = dynamic_cast<tws_request_w_ticker_message *>(&msg);
+            tws_response_w_ticker_message *r_msg = dynamic_cast<tws_response_w_ticker_message *>(&msg);
+            tws_request_w_ticker_message *q_msg = dynamic_cast<tws_request_w_ticker_message *>(&msg);
 
-			assert(r_msg || q_msg);
-			for (int i = 0; i < m_active_scanner_subscriptions.size(); i++)
-			{
-				ib_msg_req_scanner_subscription *scan_req = m_active_scanner_subscriptions[i];
+            assert(r_msg || q_msg);
+            for (int i = 0; i < m_active_scanner_subscriptions.size(); i++)
+            {
+                ib_msg_req_scanner_subscription *scan_req = m_active_scanner_subscriptions[i];
 
-				if ((r_msg && r_msg->get_ticker_id() == scan_req->get_ticker_id())
-					|| (q_msg && q_msg->get_ticker_id() == scan_req->get_ticker_id()))
-				{
-					m_active_scanner_subscriptions.erase(m_active_scanner_subscriptions.begin() + i);
-					msg.unregister_handler(this);
+                if ((r_msg && r_msg->get_ticker_id() == scan_req->get_ticker_id())
+                    || (q_msg && q_msg->get_ticker_id() == scan_req->get_ticker_id()))
+                {
+                    m_active_scanner_subscriptions.erase(m_active_scanner_subscriptions.begin() + i);
+                    msg.unregister_handler(this);
 
-					/*
-					N.B. notify TWS about the subscription cancellation as well: it doesn't matter
-							if they get one or more cancel requests too many, but we'd better make
-							sure we cancel any possibly running subscription to reduce network
-							traffic.
+                    /*
+                    N.B. notify TWS about the subscription cancellation as well: it doesn't matter
+                            if they get one or more cancel requests too many, but we'd better make
+                            sure we cancel any possibly running subscription to reduce network
+                            traffic.
 
-					WARNING: the 'cancel message' state machine logic will also try to unregister
-							the subscription in our local list, so only transmit the cancel request 
-							AFTER we're done with our local cursor [i].
-					*/
-					switch (scan_req->previous_state())
-					{
-					case tier2_message::COMMENCE_TRANSMIT:
-					case tier2_message::READY_TO_RECEIVE_RESPONSE:
-					case tier2_message::RESPONSE_PENDING:
-						ib_msg_cancel_scanner_subscription *cancel_req = new ib_msg_cancel_scanner_subscription(ibm, NULL, scan_req->get_ticker_id());
-						cancel_req->state(tier2_message::EXEC_COMMAND);
-						cancel_req->pulse(); // fire & forget
-						break;
-					}
-					break;
-				}
-			}
-		}
-		break;
-	}
-	return tier2_message::PROCEED;
+                    WARNING: the 'cancel message' state machine logic will also try to unregister
+                            the subscription in our local list, so only transmit the cancel request
+                            AFTER we're done with our local cursor [i].
+                    */
+                    switch (scan_req->previous_state())
+                    {
+                    case tier2_message::COMMENCE_TRANSMIT:
+                    case tier2_message::READY_TO_RECEIVE_RESPONSE:
+                    case tier2_message::RESPONSE_PENDING:
+                        ib_msg_cancel_scanner_subscription *cancel_req = new ib_msg_cancel_scanner_subscription(ibm, NULL, scan_req->get_ticker_id());
+                        cancel_req->state(tier2_message::EXEC_COMMAND);
+                        cancel_req->pulse(); // fire & forget
+                        break;
+                    }
+                    break;
+                }
+            }
+        }
+        break;
+    }
+    return tier2_message::PROCEED;
 }
 
 

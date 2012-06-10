@@ -41,23 +41,23 @@
 
 const char *ib_tws_manager::strerror(int errcode)
 {
-	if (errcode >= 0)
-	{
-		const struct tws::twsclient_errmsg *einfo = tws::tws_strerror(errcode);
+    if (errcode >= 0)
+    {
+        const struct tws::twsclient_errmsg *einfo = tws::tws_strerror(errcode);
 
-		return einfo->err_msg;
-	}
-	else
-	{
-		switch (errcode)
-		{
-		case -1:
-			return "TWS API fatal initialization failure";
+        return einfo->err_msg;
+    }
+    else
+    {
+        switch (errcode)
+        {
+        case -1:
+            return "TWS API fatal initialization failure";
 
-		default:
-			return "Unidentified TWS API / MANAGER failure";
-		}
-	}
+        default:
+            return "Unidentified TWS API / MANAGER failure";
+        }
+    }
 }
 
 
@@ -74,22 +74,22 @@ request when their response has arrived.
 void tws_worker_thread(struct mg_context *ctx)
 {
     int tws_app_is_down = 0;
-	app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
-	ib_tws_manager *ibm = mgr->get_ib_tws_manager();
+    app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
+    ib_tws_manager *ibm = mgr->get_ib_tws_manager();
 
-	ibm->set_context(ctx);
-	mgr->register_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD, ibm);
-	assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD) == ibm);
-	
+    ibm->set_context(ctx);
+    mgr->register_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD, ibm);
+    assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD) == ibm);
+    
     // retry connecting to TWS as long as the server itself hasn't been stopped!
     while (mg_get_stop_flag(ctx) == 0)
     {
         int err;
-		int abortus_provocatus = 0;
+        int abortus_provocatus = 0;
 
-		err = ibm->init_tws_api();
-		if (err >= 0)
-		{
+        err = ibm->init_tws_api();
+        if (err >= 0)
+        {
             if (err)
             {
                 mg_cry4ctx(ctx, "tws connect returned error: %s", ibm->strerror(err));
@@ -106,19 +106,19 @@ void tws_worker_thread(struct mg_context *ctx)
                 tws_app_is_down = 0;
 
                 // request the valid set of scanner parameters first: this will trigger the requesting of several market scans from the msg receive handler:
-				assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD) == ibm);
+                assert(mgr->get_requester(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD) == ibm);
 #if 0  // won't work when IB doesn't have a data connection itself: SILENT FAILURE!
-				ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(ibm, NULL);
-				scan->state(tier2_message::EXEC_COMMAND);
+                ib_msg_req_scanner_parameters *scan = new ib_msg_req_scanner_parameters(ibm, NULL);
+                scan->state(tier2_message::EXEC_COMMAND);
 #endif
 
                 while (mg_get_stop_flag(ctx) == 0 && ibm->is_tws_connected())
                 {
-					// push messages across the thread barrier + destroy messages marked for destruction
-					if (0 != ibm->pulse_marked_messages())
-					{
-						break;
-					}
+                    // push messages across the thread barrier + destroy messages marked for destruction
+                    if (0 != ibm->pulse_marked_messages())
+                    {
+                        break;
+                    }
 
                     // process another message
                     if (0 != ibm->process_one_event())
@@ -126,27 +126,27 @@ void tws_worker_thread(struct mg_context *ctx)
                         break;
                     }
 
-					/*
-					The 'tws_receive_func' takes care of processing front-end messages 
-					while waiting for incoming TWS traffic...
-					*/
-				}
+                    /*
+                    The 'tws_receive_func' takes care of processing front-end messages
+                    while waiting for incoming TWS traffic...
+                    */
+                }
             }
         }
         else
         {
             mg_cry4ctx(ctx, "FATAL ERROR: memory error in tws_create: aborting thread\n");
-			abortus_provocatus = 1;
+            abortus_provocatus = 1;
         }
 
 fail_dramatically:
-		err = ibm->exit_tws_api();
+        err = ibm->exit_tws_api();
 
-		if (abortus_provocatus)
-		{
-			mg_signal_stop(ctx);
-			break;
-		}
+        if (abortus_provocatus)
+        {
+            mg_signal_stop(ctx);
+            break;
+        }
 
         // wait N seconds before retrying to connect to TWS:
         if (mg_get_stop_flag(ctx) == 0)
@@ -155,7 +155,7 @@ fail_dramatically:
         }
     }
 
-	mgr->unregister_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD);
+    mgr->unregister_backend_thread(ctx, app_manager::IB_TWS_API_CONNECTION_THREAD);
 
     mg_signal_mgr_this_thread_is_done(ctx);
 
@@ -174,20 +174,20 @@ fail_dramatically:
 
 int ib_tws_manager::init_tws_api(void)
 {
-	int err = 0;
+    int err = 0;
 
-	m_still_need_to_prime_the_pump = true;
+    m_still_need_to_prime_the_pump = true;
 
-	tws_handle = tws::tws_create(get_app_manager(), tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func, tws_tx_elem_observe_func, tws_rx_elem_observe_func);
-	if (tws_handle)
-	{
-		err = tws::tws_connect(tws_handle, m_tws_cfg.m_our_id_code);
-	}
-	else
-	{
-		err = -1;
-	}
-	return err;
+    tws_handle = tws::tws_create(get_app_manager(), tws_transmit_func, tws_receive_func, tws_flush_func, tws_open_func, tws_close_func, tws_tx_elem_observe_func, tws_rx_elem_observe_func);
+    if (tws_handle)
+    {
+        err = tws::tws_connect(tws_handle, m_tws_cfg.m_our_id_code);
+    }
+    else
+    {
+        err = -1;
+    }
+    return err;
 }
 
 
@@ -195,21 +195,21 @@ int ib_tws_manager::init_tws_api(void)
 
 int ib_tws_manager::is_tws_connected()
 {
-	return tws::tws_connected(tws_handle);
+    return tws::tws_connected(tws_handle);
 }
 
 
 int ib_tws_manager::process_one_event()
 {
-	return tws::tws_event_process(tws_handle);
+    return tws::tws_event_process(tws_handle);
 }
 
 
 int ib_tws_manager::exit_tws_api()
 {
-	tws::tws_disconnect(tws_handle);
-	tws::tws_destroy(tws_handle);
-	return 0;
+    tws::tws_disconnect(tws_handle);
+    tws::tws_destroy(tws_handle);
+    return 0;
 }
 
 

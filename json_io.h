@@ -30,35 +30,35 @@
 class json_output
 {
 protected:
-	struct mg_connection *m_conn;
-	int m_indent_level;
-	int m_sibling_counter;
-	std::vector<int> m_counter_stack;
+    struct mg_connection *m_conn;
+    int m_indent_level;
+    int m_sibling_counter;
+    std::vector<int> m_counter_stack;
 
 public:
-	json_output(struct mg_connection *conn);
-	virtual ~json_output();
+    json_output(struct mg_connection *conn);
+    virtual ~json_output();
 
 protected:
-	void json_output_indent(void);
+    void json_output_indent(void);
 
 public:
-	virtual void add_sibling(const char *name, const char *value);
-	virtual void add_sibling(const char *name, const ib_date_t &value);
-	virtual void add_sibling(const char *name, const ib_string_t &value);
-	virtual void add_sibling(const char *name, int value);
-	virtual void add_sibling(const char *name, double value);
+    virtual void add_sibling(const char *name, const char *value);
+    virtual void add_sibling(const char *name, const ib_date_t &value);
+    virtual void add_sibling(const char *name, const ib_string_t &value);
+    virtual void add_sibling(const char *name, int value);
+    virtual void add_sibling(const char *name, double value);
 
-	virtual void push_level(const char *name);
-	virtual void pop_level(void);
+    virtual void push_level(const char *name);
+    virtual void pop_level(void);
 
-	virtual void begin_object(void);
-	virtual void end_object(void);
-	virtual void begin_array(void);
-	virtual void end_array(void);
+    virtual void begin_object(void);
+    virtual void end_object(void);
+    virtual void begin_array(void);
+    virtual void end_array(void);
 
-	virtual void start(void);
-	virtual void finish(void);
+    virtual void start(void);
+    virtual void finish(void);
 };
 
 

@@ -29,84 +29,84 @@
 
 void tier2_queue_item::destroy(void)
 {
-	for (tier2_queue_item_visitor_set_t::iterator i = queue_item_visitors.begin();
-		i != queue_item_visitors.end();
-		i++)
-	{
-		tier2_queue_item_visitor *h = *i;
+    for (tier2_queue_item_visitor_set_t::iterator i = queue_item_visitors.begin();
+        i != queue_item_visitors.end();
+        i++)
+    {
+        tier2_queue_item_visitor *h = *i;
 
-		h->on_item_destroy(*this);
-	}
-	//delete this;
+        h->on_item_destroy(*this);
+    }
+    //delete this;
 }
 
 
 tier2_message::state_change tier2_queue_item::process(tier2_message &msg, tier2_message::request_state_t new_state)
 {
-	// when the state changes, we might also need to notify the queue that this bugger is gonna go!
-	tier2_message::state_change rv = tier2_message::PROCEED;
+    // when the state changes, we might also need to notify the queue that this bugger is gonna go!
+    tier2_message::state_change rv = tier2_message::PROCEED;
 
-	if (new_state == tier2_message::ABORTED
-		|| (new_state == tier2_message::TASK_COMPLETED
-			&& m_exec_run_count <= 0))
-	{
-		m_exec_run_count = -1;
+    if (new_state == tier2_message::ABORTED
+        || (new_state == tier2_message::TASK_COMPLETED
+            && m_exec_run_count <= 0))
+    {
+        m_exec_run_count = -1;
 
-		for (tier2_queue_item_visitor_set_t::iterator i = queue_item_visitors.begin();
-			i != queue_item_visitors.end();
-			i++)
-		{
-			tier2_queue_item_visitor *h = *i;
+        for (tier2_queue_item_visitor_set_t::iterator i = queue_item_visitors.begin();
+            i != queue_item_visitors.end();
+            i++)
+        {
+            tier2_queue_item_visitor *h = *i;
 
-			switch (h->process(*this, new_state))
-			{
-			default:
-			case tier2_message::ERROR_OCCURRED:
-				rv = tier2_message::ERROR_OCCURRED;
-				break;
+            switch (h->process(*this, new_state))
+            {
+            default:
+            case tier2_message::ERROR_OCCURRED:
+                rv = tier2_message::ERROR_OCCURRED;
+                break;
 
-			case tier2_message::DONT_CHANGE:
-				rv = tier2_message::DONT_CHANGE;
-				break;
+            case tier2_message::DONT_CHANGE:
+                rv = tier2_message::DONT_CHANGE;
+                break;
 
-			case tier2_message::PROCEED:
-				continue;
-			}
-			break;
-		}
-	}
+            case tier2_message::PROCEED:
+                continue;
+            }
+            break;
+        }
+    }
 
-	return tier2_message::PROCEED;
+    return tier2_message::PROCEED;
 }
 
 
 
 void tier2_queue_item::register_handler(tier2_queue_item_visitor *handler)
 {
-	for (tier2_queue_item_visitor_set_t::iterator i = queue_item_visitors.begin();
-		i != queue_item_visitors.end(); 
-		i++)
-	{
-		tier2_queue_item_visitor *h = *i;
+    for (tier2_queue_item_visitor_set_t::iterator i = queue_item_visitors.begin();
+        i != queue_item_visitors.end();
+        i++)
+    {
+        tier2_queue_item_visitor *h = *i;
 
-		if (h == handler)
-			return;
-	}
-	queue_item_visitors.push_back(handler);
+        if (h == handler)
+            return;
+    }
+    queue_item_visitors.push_back(handler);
 }
 
 void tier2_queue_item::unregister_handler(tier2_queue_item_visitor *handler)
 {
-	for (tier2_queue_item_visitor_set_t::iterator i = queue_item_visitors.begin();
-		i != queue_item_visitors.end(); 
-		i++)
-	{
-		tier2_queue_item_visitor *h = *i;
+    for (tier2_queue_item_visitor_set_t::iterator i = queue_item_visitors.begin();
+        i != queue_item_visitors.end();
+        i++)
+    {
+        tier2_queue_item_visitor *h = *i;
 
-		if (h == handler)
-		{
-			queue_item_visitors.erase(i);
-			return;
-		}
-	}
+        if (h == handler)
+        {
+            queue_item_visitors.erase(i);
+            return;
+        }
+    }
 }

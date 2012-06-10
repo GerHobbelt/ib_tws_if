@@ -38,73 +38,73 @@ thread to a (predetermined) destination thread.
 class interthread_communicator
 {
 protected:
-	// the socket pair:
-	struct mg_connection *m_receiving_socket;
-	struct mg_connection *m_sending_socket;
+    // the socket pair:
+    struct mg_connection *m_receiving_socket;
+    struct mg_connection *m_sending_socket;
 
-	tier2_message_processor *m_sender;
-	tier2_message_processor *m_receipient;
+    tier2_message_processor *m_sender;
+    tier2_message_processor *m_receipient;
 
-	interthread_communicator *m_reverse;
-
-public:
-	interthread_communicator(tier2_message_processor *requester, tier2_message_processor *receiver, struct mg_connection *conns[2]);
-	virtual ~interthread_communicator();
+    interthread_communicator *m_reverse;
 
 public:
-	enum msg_pending_mode_t
-	{
-	NO_MSG = 0,                             // we'll have to wait for a message to arrive, shan't we?
-	CONNECTION_DROPPED = -1,				// connection has been dropped or other fatality:
-	MSG_PENDING = 1,						// fetch message from socket ~ queue
-	MSG_CANCELED = 2,						// the referenced message is to be canceled
-	};
+    interthread_communicator(tier2_message_processor *requester, tier2_message_processor *receiver, struct mg_connection *conns[2]);
+    virtual ~interthread_communicator();
 
-	virtual int prepare_fd_sets_for_reception(struct fd_set *read_set, struct fd_set *except_set, int &max_fd);
-	virtual msg_pending_mode_t is_message_pending(fd_set *read_set, fd_set *except_set, int max_fd);
-	virtual int post_message(tier2_message *msg);
-	virtual tier2_message *pop_one_message(msg_pending_mode_t &mode /* in/out */);
+public:
+    enum msg_pending_mode_t
+    {
+    NO_MSG = 0,                             // we'll have to wait for a message to arrive, shan't we?
+    CONNECTION_DROPPED = -1,                // connection has been dropped or other fatality:
+    MSG_PENDING = 1,                        // fetch message from socket ~ queue
+    MSG_CANCELED = 2,                       // the referenced message is to be canceled
+    };
 
-	bool has_sender(tier2_message_processor *messager) const
-	{
-		return messager == m_sender;
-	}
-	bool has_receiver(tier2_message_processor *messager) const
-	{
-		return messager == m_receipient;
-	}
-	bool matches(tier2_message_processor *from, tier2_message_processor *to) const 
-	{
-		return from == m_sender && to == m_receipient;
-	}
-	tier2_message_processor *receiver(void) const
-	{
-		return m_receipient;
-	}
-	tier2_message_processor *transmitter(void) const
-	{
-		return m_sender;
-	}
-	struct mg_connection *receiver_socket(void)
-	{
-		return m_receiving_socket;
-	}
+    virtual int prepare_fd_sets_for_reception(struct fd_set *read_set, struct fd_set *except_set, int &max_fd);
+    virtual msg_pending_mode_t is_message_pending(fd_set *read_set, fd_set *except_set, int max_fd);
+    virtual int post_message(tier2_message *msg);
+    virtual tier2_message *pop_one_message(msg_pending_mode_t &mode /* in/out */);
 
-	interthread_communicator *reverse(void) const
-	{
-		return m_reverse;
-	}
-	void set_reverse(interthread_communicator *comm) 
-	{
-		m_reverse = comm;
-	}
+    bool has_sender(tier2_message_processor *messager) const
+    {
+        return messager == m_sender;
+    }
+    bool has_receiver(tier2_message_processor *messager) const
+    {
+        return messager == m_receipient;
+    }
+    bool matches(tier2_message_processor *from, tier2_message_processor *to) const
+    {
+        return from == m_sender && to == m_receipient;
+    }
+    tier2_message_processor *receiver(void) const
+    {
+        return m_receipient;
+    }
+    tier2_message_processor *transmitter(void) const
+    {
+        return m_sender;
+    }
+    struct mg_connection *receiver_socket(void)
+    {
+        return m_receiving_socket;
+    }
+
+    interthread_communicator *reverse(void) const
+    {
+        return m_reverse;
+    }
+    void set_reverse(interthread_communicator *comm)
+    {
+        m_reverse = comm;
+    }
 };
 
 
 
 
 /*
-Carries the 'globals' relevant for a particular front-end thread, 
+Carries the 'globals' relevant for a particular front-end thread,
 such as:
  - the socketpair to use for message passing to/from the back-end
  - the thread-specific connection
@@ -113,22 +113,22 @@ such as:
 class frontend_info_manager
 {
 protected:
-	struct mg_connection *m_thread_conn;
+    struct mg_connection *m_thread_conn;
 
-	// the socket pair:
-	interthread_communicator *m_comm;
-
-public:
-	frontend_info_manager(struct mg_connection *conn);
-	virtual ~frontend_info_manager();
+    // the socket pair:
+    interthread_communicator *m_comm;
 
 public:
-	int send(tier2_message *message);
-	tier2_message *receive(void);
+    frontend_info_manager(struct mg_connection *conn);
+    virtual ~frontend_info_manager();
 
-	// and these are used with select() to make threads notice they're being invoked:
-	void fd_set(struct fd_set *set, int *max_fd);
-	int fd_isset(struct fd_set *set);
+public:
+    int send(tier2_message *message);
+    tier2_message *receive(void);
+
+    // and these are used with select() to make threads notice they're being invoked:
+    void fd_set(struct fd_set *set, int *max_fd);
+    int fd_isset(struct fd_set *set);
 };
 
 

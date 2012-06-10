@@ -23,7 +23,7 @@
 #ifndef ION_SUPPORT_CODE_H__
 #define ION_SUPPORT_CODE_H__
 
-#define PATH_MAXSIZE		(2 * PATH_MAX + 2)
+#define PATH_MAXSIZE        (2 * PATH_MAX + 2)
 
 
 
@@ -45,15 +45,15 @@ char *concat_path(char *buf, size_t bufsize, const char *path, ...);
 
 static __inline int striEndsWith(const char *str, const char *end)
 {
-	size_t l = strlen(str);
-	size_t el = strlen(end);
+    size_t l = strlen(str);
+    size_t el = strlen(end);
 
-	if (l >= el)
-	{
-		str += l - el;
-		return stricmp(str, end) == 0;
-	}
-	return 0;
+    if (l >= el)
+    {
+        str += l - el;
+        return stricmp(str, end) == 0;
+    }
+    return 0;
 }
 
 

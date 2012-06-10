@@ -33,17 +33,17 @@
 class tws_reqresp_message: public tier2_message
 {
 public:
-	tws_reqresp_message(tier2_message_processor *from, tier2_message_processor *to = NULL) :
-		tier2_message(from, to)
-	{
-	}
+    tws_reqresp_message(tier2_message_processor *from, tier2_message_processor *to = NULL) :
+        tier2_message(from, to)
+    {
+    }
 protected:
-	virtual ~tws_reqresp_message()
-	{
-	}
+    virtual ~tws_reqresp_message()
+    {
+    }
 
 public:
-	virtual int save_response(class json_output *channel);
+    virtual int save_response(class json_output *channel);
 };
 
 
