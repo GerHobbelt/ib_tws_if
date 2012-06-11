@@ -41,9 +41,11 @@
 static bool in_server_negotiation = false;
 static int client_id = 0;
 
-static char EOM_magick[4] = "\xFA\xC7!";
-static char EOT_magick[4] = { '\0', '\xEB', '\xD6', '~' };
+static const char EOM_magick[4] = "\xFA\xC7!";
+static const char EOT_magick[4] = { '\0', '\xEB', '\xD6', '~' };
 
+static int req_subscription_counter = 0;
+static int cancel_subscription_counter = 0;
 
 
 static char *strtok0(char *s = NULL)
@@ -78,11 +80,16 @@ static int inttok0(char *s = NULL)
     return 0;
 }
 
-static int respond_with(struct mg_connection *conn, const char *elem)
+static int respond_with(struct mg_connection *conn, const char *elem, ...)
 {
-    int len = strlen(elem);
-    int rv = mg_write(conn, elem, len + 1);
-    return rv;
+	va_list ap;
+
+	va_start(ap, elem);
+	int len = mg_vprintf(conn, elem, ap);
+	va_end(ap);
+
+    len += mg_write(conn, "", 1); // write NUL
+    return len;
 }
 static int respond_with(struct mg_connection *conn, int elem)
 {
@@ -518,25 +525,49 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
                                     const char *scanloc = strtok0();
                                     const char *scancode = strtok0();
 
-                                    if (mg_strcasecmp("HIGH_DIVIDEND_YIELD_IB", scancode))
+									req_subscription_counter++;
+
+                                    // accept subscription: send 2 messages based on file template (quicker to code here ;-) )
+                                    if (0 > respond_with_messages_file(conn, this, "faking_it/RX.scanner_data.%s.txt", scancode, ticker_id, ticker_id))
                                     {
-                                        // reject subscription:
-                                        respond_with(conn, tws::ERR_MSG);
-                                        respond_with(conn, 2);
-                                        respond_with(conn, ticker_id);
-                                        respond_with(conn, tws::FAIL_HISTORICAL_MARKET_DATA_SERVICE);
-                                        respond_with(conn, "Historical Market Data Service error message:duplicate scan subscription");
-                                    }
-                                    else
-                                    {
-                                        // accept subscription: send 2 messages based on file template (quicker to code here ;-) )
-                                        respond_with_messages_file(conn, this, "faking_it/RX.scanner_data.%s.txt", scancode, ticker_id, ticker_id);
+										if (cancel_subscription_counter % 3 == 0 && req_subscription_counter >= 7)
+										{
+											// reject subscription by faking a mismatch between our own limit observer and TWS's to test our recovery capability:
+											respond_with(conn, tws::ERR_MSG);
+											respond_with(conn, 2);
+											respond_with(conn, ticker_id);
+											respond_with(conn, tws::FAIL_SERVER_ERROR_PROCESSING_REQUEST);
+											respond_with(conn, "Error processing request:-'id' : cause - Only 10 simultaneous API scanner subscriptions are allowed.");
+										}
+										else
+										{
+											// reject subscription:
+											respond_with(conn, tws::ERR_MSG);
+											respond_with(conn, 2);
+											respond_with(conn, ticker_id);
+											respond_with(conn, tws::FAIL_HISTORICAL_MARKET_DATA_SERVICE);
+											respond_with(conn, "Historical Market Data Service error message:duplicate scan subscription");
+										}
                                     }
                                 }
                                 break;
 
                             case tws::CANCEL_SCANNER_SUBSCRIPTION :
-                                assert(!"Should not get here: faking REQ/RESP: CANCEL_SCANNER_SUBSCRIPTION");
+                                t = strtok0();
+                                if (t)
+                                {
+                                    int ticker_id = atoi(t);
+
+									cancel_subscription_counter++;
+									if (cancel_subscription_counter % 2 == 1)
+									{
+										respond_with(conn, tws::ERR_MSG);
+										respond_with(conn, 2);
+										respond_with(conn, ticker_id);
+										respond_with(conn, tws::FAIL_NO_SCANNER_SUBSCRIPTION_FOUND);
+										respond_with(conn, "No scanner subscription found for ticker id:%d", ticker_id);
+									}
+								}
                                 break;
 
                             case tws::REQ_SCANNER_PARAMETERS :
