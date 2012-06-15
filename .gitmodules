@@ -43,3 +43,21 @@
 [submodule "otl"]
 	path = otl
 	url = git@github.com:GerHobbelt/otl.git
+[submodule "html/js/docco"]
+	path = html/js/docco
+	url = git@github.com:GerHobbelt/docco.git
+[submodule "html/js/Modernizr"]
+	path = html/js/Modernizr
+	url = git@github.com:GerHobbelt/Modernizr.git
+[submodule "html/js/underscore"]
+	path = html/js/underscore
+	url = git@github.com:GerHobbelt/underscore.git
+[submodule "html/js/backbone"]
+	path = html/js/backbone
+	url = git@github.com:GerHobbelt/backbone.git
+[submodule "html/js/backbone-fundamentals-book"]
+	path = html/js/backbone-fundamentals-book
+	url = git@github.com:GerHobbelt/backbone-fundamentals.git
+[submodule "html/js/crossfilter"]
+	path = html/js/crossfilter
+	url = git@github.com:GerHobbelt/crossfilter.git
