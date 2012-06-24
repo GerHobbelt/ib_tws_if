@@ -357,7 +357,7 @@ int ib_backend_io_channel::io_receive(void *buf, unsigned int max_bufsize)
                     }
                     else if (max_bufsize)
                     {
-                        rv = mg_pull(m_tws_conn, buf, max_bufsize);
+                        rv = mg_read(m_tws_conn, buf, max_bufsize);
                         if (rv < 0)
                         {
                             assert(!"Should never get here");

@@ -193,7 +193,7 @@ int data_tracker_manager::process_one_event(void)
             }
             else if (max_bufsize)
             {
-                rv = mg_pull(m_tws_conn, buf, max_bufsize);
+                rv = mg_read(m_tws_conn, buf, max_bufsize);
                 if (rv < 0)
                 {
                     assert(!"Should never get here");

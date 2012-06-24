@@ -345,15 +345,8 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
             {
                 if (mg_FD_ISSET(conn, &read_set))
                 {
-                    /*
-                    Mongoose mg_read() does NOT fetch any pending data from the TCP/IP stack when the 'content length' isn't set yet.
-
-                    We, however, desire to load an unknown and arbitrary amount of data here to fill a buffer and our protocol doesn't
-                    have something like a 'content length' to guide us along, so we'll have to use another method to make sure
-                    the read operation actually delivers DATA!
-                    */
                     char buf[4096 + 4];
-                    int len = mg_pull(conn, buf, sizeof(buf) - 4);
+                    int len = mg_read(conn, buf, sizeof(buf) - 4);
                     if (len > 0)
                     {
                         loopcount = 3;

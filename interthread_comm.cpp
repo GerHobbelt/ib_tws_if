@@ -100,7 +100,7 @@ int interthread_communicator::post_message(tier2_message *msg)
 /*
 We don't select/wait for the socket to cough up a message when the input mode
 is MSG_PENDING; hence one should only use this mode when he is absolutely certain
-a message is waiting in the socket buffer or mg_pull() will lock up, unless you've
+a message is waiting in the socket buffer or mg_read() will lock up, unless you've
 non-blocking socket I/O turned on.
 */
 tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t &mode)
@@ -159,8 +159,7 @@ tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t &mod
 
     if (good_to_go)
     {
-        // don't use mg_read() as that depends upon decoded HTTP header info
-        rv = mg_pull(m_receiving_socket, &msg, sizeof(msg));
+        rv = mg_read(m_receiving_socket, &msg, sizeof(msg));
     }
 
     if (rv != sizeof(msg))
@@ -173,7 +172,7 @@ tier2_message *interthread_communicator::pop_one_message(msg_pending_mode_t &mod
         mode = MSG_PENDING;
 
         msg->current_owner(m_receipient); // and attach the message to the new owner ~ receiver
-    }
+	}
 
     return (rv ? msg : NULL);
 }

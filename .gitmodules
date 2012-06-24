@@ -61,3 +61,6 @@
 [submodule "html/js/crossfilter"]
 	path = html/js/crossfilter
 	url = git@github.com:GerHobbelt/crossfilter.git
+[submodule "utils/uncrustify"]
+	path = utils/uncrustify
+	url = git@github.com:GerHobbelt/uncrustify.git
