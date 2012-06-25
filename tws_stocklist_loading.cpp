@@ -292,10 +292,10 @@ int ib_msg_resp_scanner_parameters::process_response_message(class tier2_message
     assert(resp_msg);
     ib_string_t s1 = typeid(*resp_msg).name();
     ib_string_t s2 = typeid(ib_msg_req_scanner_parameters).name();
-    mg_cry(conn, "matching: %s <> %s? %d", s1.c_str(), s2.c_str(), (s1 == s2));
+    mg_log(conn, 0, "matching: %s <> %s? %d", s1.c_str(), s2.c_str(), (s1 == s2));
     assert(typeid(*resp_msg) == typeid(ib_msg_req_scanner_parameters));
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_parameters");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_scanner_parameters");
 
     int rv = -1;
     xmlTextReaderPtr reader;

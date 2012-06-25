@@ -434,7 +434,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_tick_price *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_price");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_tick_price");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -444,7 +444,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_tick_size *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_size");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_tick_size");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -454,7 +454,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_tick_option_computation
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_option_computation");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_tick_option_computation");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -464,7 +464,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_tick_generic *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_generic");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_tick_generic");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -474,7 +474,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_tick_string *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_string");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_tick_string");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -484,7 +484,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_tick_efp *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_efp");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_tick_efp");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -494,7 +494,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_order_status *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_order_status");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_order_status");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -504,7 +504,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_open_order *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_open_order");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -514,7 +514,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_open_order_end *resp_ms
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_open_order_end");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_open_order_end");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -524,7 +524,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_update_account_value *r
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_value");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_update_account_value");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -534,7 +534,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_update_portfolio *resp_
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_portfolio");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_update_portfolio");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -544,7 +544,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_update_account_time *re
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_account_time");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_update_account_time");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -555,7 +555,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_next_valid_id *resp_msg
     app_manager *mgr = get_app_manager();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_next_valid_id");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_next_valid_id");
 
     mgr->set_next_order_id(resp_msg->get_order_id());
 
@@ -567,7 +567,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_contract_details *resp_
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_contract_details");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -577,7 +577,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_contract_details_end *r
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_contract_details_end");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_contract_details_end");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -587,7 +587,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_bond_contract_details *
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_bond_contract_details");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_bond_contract_details");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -597,7 +597,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_exec_details *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_exec_details");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -607,7 +607,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_exec_details_end *resp_
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_exec_details_end");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_exec_details_end");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -619,7 +619,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_error *resp_msg)
 	int i;
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_error");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_error");
 
     /*
     We can only request any scanner data when there's actually any DATA FARM connection reported by TWS.
@@ -770,7 +770,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_update_mkt_depth *resp_
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_update_mkt_depth");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -780,7 +780,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_update_mkt_depth_l2 *re
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_mkt_depth_l2");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_update_mkt_depth_l2");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -790,7 +790,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_update_news_bulletin *r
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_update_news_bulletin");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_update_news_bulletin");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -800,7 +800,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_managed_accounts *resp_
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_managed_accounts");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_managed_accounts");
 
     if (m_account_identifier.empty())
     {
@@ -815,7 +815,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_receive_fa *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_receive_fa");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_receive_fa");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -825,7 +825,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_historical_data *resp_m
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_historical_data");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -835,7 +835,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_historical_data_end *re
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_historical_data_end");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_historical_data_end");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -845,7 +845,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_scanner_parameters *res
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_parameters");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_scanner_parameters");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -855,7 +855,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_scanner_data");
 
     /*
     Also register the item in the database...
@@ -870,7 +870,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data_end *resp_
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_end");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_scanner_data_end");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -880,7 +880,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_scanner_data_start *res
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_scanner_data_start");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_scanner_data_start");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -890,7 +890,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_current_time *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_current_time");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_current_time");
 
     /*
     walk through the set of req_current_time_active_set requests and send
@@ -905,7 +905,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_realtime_bar *resp_msg)
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_realtime_bar");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_realtime_bar");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -915,7 +915,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_fundamental_data *resp_
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_fundamental_data");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_fundamental_data");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -925,7 +925,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_delta_neutral_validatio
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_delta_neutral_validation");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_delta_neutral_validation");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -935,7 +935,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_acct_download_end *resp
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_acct_download_end");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_acct_download_end");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -945,7 +945,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_tick_snapshot_end *resp
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_tick_snapshot_end");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_tick_snapshot_end");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -955,7 +955,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_market_data_type *resp_
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_market_data_type");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_market_data_type");
 
     return scan_queue_and_process(resp_msg);
 }
@@ -965,7 +965,7 @@ int ib_tws_manager::process_response_message(ib_msg_resp_commission_report *resp
     struct mg_connection *conn = get_connection();
 
     assert(resp_msg);
-    mg_cry(conn, "process response message for %s?", "ib_msg_resp_commission_report");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_resp_commission_report");
 
     return scan_queue_and_process(resp_msg);
 }

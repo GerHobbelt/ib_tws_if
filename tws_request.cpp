@@ -99,7 +99,7 @@ int tws_request_message::f_task_completed(void)
 
         Ditch it!
         */
-        mg_cry(conn, "COMPLETED task: %s", get_class_name());
+        mg_log(conn, 0, "COMPLETED task: %s", get_class_name());
 
         state(DESTRUCTION);
     }
@@ -119,7 +119,7 @@ int tws_request_message::f_task_failed(void)
 
         Ditch it!
         */
-        mg_cry(conn, "FAILED task: %s", get_class_name());
+        mg_log(conn, 0, "FAILED task: %s", get_class_name());
 
         state(DESTRUCTION);
     }
@@ -139,7 +139,7 @@ int tws_request_message::f_task_aborted(void)
 
         Ditch it!
         */
-        mg_cry(conn, "ABORTED task: %s", get_class_name());
+        mg_log(conn, 0, "ABORTED task: %s", get_class_name());
 
         state(DESTRUCTION);
     }
@@ -1709,7 +1709,7 @@ int ib_msg_req_scanner_parameters::process_response_message(class tier2_message 
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_parameters");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_scanner_parameters");
 
     if (dynamic_cast<ib_msg_resp_scanner_parameters *>(resp_msg))
     {
@@ -1733,7 +1733,7 @@ int ib_msg_req_scanner_subscription::process_response_message(class tier2_messag
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_scanner_subscription");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_scanner_subscription");
 
     if (dynamic_cast<ib_msg_resp_scanner_data_start *>(resp_msg))
     {
@@ -1819,7 +1819,7 @@ int ib_msg_cancel_scanner_subscription::process_response_message(class tier2_mes
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_cancel_scanner_subscription");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_cancel_scanner_subscription");
 
     return 0;
 }
@@ -1830,7 +1830,7 @@ int ib_msg_req_mkt_data::process_response_message(class tier2_message *resp_msg)
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_mkt_data");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_mkt_data");
 
     return 0;
 }
@@ -1841,7 +1841,7 @@ int ib_msg_req_historical_data::process_response_message(class tier2_message *re
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_historical_data");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_historical_data");
 
     return 0;
 }
@@ -1852,7 +1852,7 @@ int ib_msg_cancel_historical_data::process_response_message(class tier2_message 
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_cancel_historical_data");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_cancel_historical_data");
 
     return 0;
 }
@@ -1863,7 +1863,7 @@ int ib_msg_cancel_mkt_data::process_response_message(class tier2_message *resp_m
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_cancel_mkt_data");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_cancel_mkt_data");
 
     return 0;
 }
@@ -1874,7 +1874,7 @@ int ib_msg_exercise_options::process_response_message(class tier2_message *resp_
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_exercise_options");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_exercise_options");
 
     return 0;
 }
@@ -1885,7 +1885,7 @@ int ib_msg_place_order::process_response_message(class tier2_message *resp_msg)
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_place_order");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_place_order");
 
     return 0;
 }
@@ -1896,7 +1896,7 @@ int ib_msg_cancel_order::process_response_message(class tier2_message *resp_msg)
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_cancel_order");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_cancel_order");
 
     return 0;
 }
@@ -1907,7 +1907,7 @@ int ib_msg_req_open_orders::process_response_message(class tier2_message *resp_m
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_open_orders");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_open_orders");
 
     return 0;
 }
@@ -1918,7 +1918,7 @@ int ib_msg_req_account_updates::process_response_message(class tier2_message *re
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_account_updates");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_account_updates");
 
     return 0;
 }
@@ -1929,7 +1929,7 @@ int ib_msg_req_executions::process_response_message(class tier2_message *resp_ms
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_executions");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_executions");
 
     return 0;
 }
@@ -1940,7 +1940,7 @@ int ib_msg_req_ids::process_response_message(class tier2_message *resp_msg)
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_ids");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_ids");
 
     return 0;
 }
@@ -1951,7 +1951,7 @@ int ib_msg_req_contract_details::process_response_message(class tier2_message *r
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_contract_details");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_contract_details");
 
     return 0;
 }
@@ -1962,7 +1962,7 @@ int ib_msg_req_mkt_depth::process_response_message(class tier2_message *resp_msg
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_mkt_depth");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_mkt_depth");
 
     return 0;
 }
@@ -1973,7 +1973,7 @@ int ib_msg_cancel_mkt_depth::process_response_message(class tier2_message *resp_
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_cancel_mkt_depth");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_cancel_mkt_depth");
 
     return 0;
 }
@@ -1984,7 +1984,7 @@ int ib_msg_req_news_bulletins::process_response_message(class tier2_message *res
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_news_bulletins");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_news_bulletins");
 
     return 0;
 }
@@ -1995,7 +1995,7 @@ int ib_msg_cancel_news_bulletins::process_response_message(class tier2_message *
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_cancel_news_bulletins");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_cancel_news_bulletins");
 
     return 0;
 }
@@ -2006,7 +2006,7 @@ int ib_msg_set_server_log_level::process_response_message(class tier2_message *r
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_set_server_log_level");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_set_server_log_level");
 
     return 0;
 }
@@ -2017,7 +2017,7 @@ int ib_msg_req_auto_open_orders::process_response_message(class tier2_message *r
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_auto_open_orders");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_auto_open_orders");
 
     return 0;
 }
@@ -2028,7 +2028,7 @@ int ib_msg_req_all_open_orders::process_response_message(class tier2_message *re
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_all_open_orders");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_all_open_orders");
 
     return 0;
 }
@@ -2039,7 +2039,7 @@ int ib_msg_req_managed_accts::process_response_message(class tier2_message *resp
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_managed_accts");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_managed_accts");
 
     return 0;
 }
@@ -2050,7 +2050,7 @@ int ib_msg_request_fa::process_response_message(class tier2_message *resp_msg)
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_request_fa");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_request_fa");
 
     return 0;
 }
@@ -2061,7 +2061,7 @@ int ib_msg_replace_fa::process_response_message(class tier2_message *resp_msg)
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_replace_fa");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_replace_fa");
 
     return 0;
 }
@@ -2072,7 +2072,7 @@ int ib_msg_req_current_time::process_response_message(class tier2_message *resp_
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_current_time");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_current_time");
 
     ib_msg_resp_current_time *r_msg = dynamic_cast<ib_msg_resp_current_time *>(resp_msg);
     if (r_msg)
@@ -2090,7 +2090,7 @@ int ib_msg_req_fundamental_data::process_response_message(class tier2_message *r
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_fundamental_data");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_fundamental_data");
 
     return 0;
 }
@@ -2101,7 +2101,7 @@ int ib_msg_cancel_fundamental_data::process_response_message(class tier2_message
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_cancel_fundamental_data");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_cancel_fundamental_data");
 
     return 0;
 }
@@ -2112,7 +2112,7 @@ int ib_msg_calculate_implied_volatility::process_response_message(class tier2_me
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_calculate_implied_volatility");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_calculate_implied_volatility");
 
     return 0;
 }
@@ -2123,7 +2123,7 @@ int ib_msg_cancel_calculate_implied_volatility::process_response_message(class t
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_cancel_calculate_implied_volatility");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_cancel_calculate_implied_volatility");
 
     return 0;
 }
@@ -2134,7 +2134,7 @@ int ib_msg_calculate_option_price::process_response_message(class tier2_message 
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_calculate_option_price");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_calculate_option_price");
 
     return 0;
 }
@@ -2145,7 +2145,7 @@ int ib_msg_cancel_calculate_option_price::process_response_message(class tier2_m
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_cancel_calculate_option_price");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_cancel_calculate_option_price");
 
     return 0;
 }
@@ -2156,7 +2156,7 @@ int ib_msg_req_global_cancel::process_response_message(class tier2_message *resp
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_global_cancel");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_global_cancel");
 
     return 0;
 }
@@ -2167,7 +2167,7 @@ int ib_msg_req_market_data_type::process_response_message(class tier2_message *r
     ib_tws_manager *ibm = mgr->get_ib_tws_manager();
     struct mg_connection *conn = ibm->get_connection();
 
-    mg_cry(conn, "process response message for %s?", "ib_msg_req_market_data_type");
+    mg_log(conn, 0, "process response message for %s?", "ib_msg_req_market_data_type");
 
     return 0;
 }

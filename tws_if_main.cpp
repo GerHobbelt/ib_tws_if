@@ -425,15 +425,22 @@ static void *event_callback(enum mg_event event, struct mg_connection *conn) {
   }
 
 #if defined(_WIN32)
-  if (event == MG_EVENT_LOG &&
-      strstr(request_info->log_message, "cannot bind to") &&
-      !strcmp(request_info->log_severity, "error"))
+  if (event == MG_EVENT_LOG)
   {
-    if (!error_dialog_shown_previously)
+	if (strcmp(request_info->log_severity, "error"))
+	{
+		// only log these to file; no poluting the console
+		return (void *)0;
+	}
+	else if (!strcmp(request_info->log_severity, "error") &&
+		strstr(request_info->log_message, "cannot bind to"))
     {
-      MessageBoxA(NULL, request_info->log_message, "Error", MB_OK);
-      error_dialog_shown_previously = 1;
-    }
+      if (!error_dialog_shown_previously)
+      {
+        MessageBoxA(NULL, request_info->log_message, "Error", MB_OK);
+        error_dialog_shown_previously = 1;
+      }
+	}
     //return 0;
   }
 #endif

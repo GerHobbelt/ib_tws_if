@@ -139,7 +139,6 @@ void tws_worker_thread(struct mg_context *ctx)
             abortus_provocatus = 1;
         }
 
-fail_dramatically:
         err = ibm->exit_tws_api();
 
         if (abortus_provocatus)

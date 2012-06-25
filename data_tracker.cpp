@@ -257,6 +257,8 @@ void data_tracker_thread(struct mg_context *ctx)
             {
                 break;
             }
+
+			mg_sleep(100);
         }
 
 fail_dramatically:
