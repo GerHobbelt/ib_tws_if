@@ -458,7 +458,7 @@ int ib_backend_io_channel::io_open(void)
     if (!rv)
     {
         assert(!m_tws_conn);
-        m_tws_conn = mg_connect_to_host(m_tws_ctx, m_tws_cfg.m_ip_address, m_tws_cfg.m_port, 0);
+        m_tws_conn = mg_connect_to_host(m_tws_ctx, m_tws_cfg.m_ip_address, m_tws_cfg.m_port, MG_CONNECT_BASIC);
 
         m_faking_the_ib_tws_connection = false;
 

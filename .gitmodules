@@ -64,3 +64,21 @@
 [submodule "utils/uncrustify"]
 	path = utils/uncrustify
 	url = git@github.com:GerHobbelt/uncrustify.git
+[submodule "libcsv"]
+	path = libcsv
+	url = git@github.com:GerHobbelt/libcsv.git
+[submodule "libcsv-utils"]
+	path = libcsv-utils
+	url = git@github.com:GerHobbelt/csvutils.git
+[submodule "html/js/d3-plugins"]
+	path = html/js/d3-plugins
+	url = git://github.com/GerHobbelt/d3-plugins.git
+[submodule "html/js/nvd3"]
+	path = html/js/nvd3
+	url = git@github.com:GerHobbelt/nvd3.git
+[submodule "html/js/lazyload"]
+	path = html/js/lazyload
+	url = git://github.com/GerHobbelt/lazyload.git
+[submodule "html/js/tinyMCE"]
+	path = html/js/tinyMCE
+	url = git@github.com:GerHobbelt/tinymce.git

@@ -381,7 +381,7 @@ interthread_communicator *app_manager::create_communication_path(tier2_message_p
         */
         pthread_mutex_lock(&m_comm_mutex);
 
-        for (int i = 0; i < m_communicators.size(); i++)
+        for (int i = 0; i < (int)m_communicators.size(); i++)
         {
             interthread_communicator *c = m_communicators[i];
 
@@ -421,7 +421,7 @@ interthread_communicator *app_manager::get_interthread_communicator(tier2_messag
 
     pthread_mutex_lock(&m_comm_mutex);
 
-    for (int i = 0; i < m_communicators.size(); i++)
+    for (int i = 0; i < (int)m_communicators.size(); i++)
     {
         interthread_communicator *comm = m_communicators[i];
 

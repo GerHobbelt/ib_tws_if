@@ -1,8 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
-
-<!-- #BeginTemplate "master.dwt" -->
-
+<html><!-- #BeginTemplate "Templates/master.dwt" --><!-- DW6 -->
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <!-- #BeginEditable "doctitle" -->
@@ -38,7 +35,7 @@
 			<!-- #BeginEditable "content" -->
 			<h2>Introduction / Start</h2>
 			<p>Current server time is:
-			<span data-tws-command="current_server_time" data-tws-output-fmt="%Y-%m-%d %H:%M:%S">Y-m-d XX:XX:XX</span>
+			<!--#tws_if command="current_server_time" output-fmt="%Y-%m-%d %H:%M:%S" -->
 			</p>
 			<p>Fusce consequat. Vestibulum ante ipsum primis in faucibus orci luctus 
 			et ultrices posuere cubilia Curae; Accumsan lacinia. Sed ut perspiciatis 
@@ -80,5 +77,4 @@
 </div>
 <!-- End Container -->
 </body>
-<!-- #EndTemplate -->
-</html>
+<!-- #EndTemplate --></html>

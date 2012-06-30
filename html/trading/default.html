@@ -1,12 +1,32 @@
 ﻿<!DOCTYPE html>
-<html>
-
-<!-- #BeginTemplate "../master.dwt" -->
-
+<html><!-- #BeginTemplate "../Templates/master.dwt" --><!-- DW6 -->
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <!-- #BeginEditable "doctitle" -->
 <title>Trading</title>
+<style type="text/css">
+
+label
+{
+	display: block;	
+	margin: .25em 0;
+}
+
+textarea
+{
+	width: 500px;
+	height: 12em;
+}
+
+.file-upload {
+	width: 500px;
+}
+
+input.submit {
+	width: 500px;
+}
+
+</style>
 <!-- #EndEditable -->
 <link href="../styles/style3.css" media="screen" rel="stylesheet" title="CSS" type="text/css" />
 </head>
@@ -37,13 +57,22 @@
 		<div id="column_left">
 			<!-- #BeginEditable "content" -->
 			<h3>Trading</h3>
-			<p>Basic test pages:</p>
+			<h4>Basic JSON test pages</h4>
 			<ul>
 				<li><a href="/tws/proxy/server_time">get TWS server time</a></li>
 				<li><a href="/tws/contracts_list">get list of known contracts</a></li>
 			</ul>
-			<p>Affiliation</p>
-			<p>References available upon request.</p>
+			<h4>Uploading</h4>
+			<form method="post" name="tickers_upload" action="/tws/upload/tickers_form"
+                    	 		enctype="multipart/form-data" >
+				<label>Paste any tickers you want to add to the database here: 				
+					<textarea name="tickers_copypasta"></textarea>
+				</label>		
+				<label>... or upload a CSV file instead:
+					<input class="file-upload" name="tickers_file" type="file" multiple />
+				</label>		
+				
+				<input name="submit" type="submit" value="Upload" class="submit"></form>
 			<!-- #EndEditable -->
 		</div>
 		<!-- End Left Column -->
@@ -79,5 +108,4 @@
 </div>
 <!-- End Container -->
 </body>
-<!-- #EndTemplate -->
-</html>
+<!-- #EndTemplate --></html>

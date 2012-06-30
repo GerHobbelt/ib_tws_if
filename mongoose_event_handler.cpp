@@ -63,6 +63,97 @@ void *event_handler(enum mg_event event_id, struct mg_connection *conn)
                     req_msg = new ib_msg_req_current_time(mgr->get_requester(conn), mgr->get_ib_tws_manager());
                 }
             }
+            else if (!strncmp("upload/", req_uri, 7))
+            {
+                req_uri += 7;
+
+                if (!strcmp("tickers_form", req_uri))
+                {
+					const char *cl = mg_get_header(conn, "Content-Length");
+					size_t bufsiz = (cl ? atoi(cl) : 0);
+					size_t buflen = 0;
+					char *buf;
+					char 
+
+					if (bufsiz < BUFSIZ)
+						bufsiz = BUFSIZ;
+					buf = (char *)malloc(bufsiz);
+					if (!buf)
+					{
+outamem:				mg_send_http_error(conn, 500, NULL, "Out of memory");
+						return (void *)1;
+					}
+
+					// read all POSTed data into the buffer:
+					for (;;)
+					{
+						int n = mg_read(conn, buf + buflen, bufsiz - buflen);
+						if (n < 0)
+						{
+							mg_send_http_error(conn, 500, NULL, "Content data read error: %d (%s)", ERRNO, mg_strerror(ERRNO));
+							return (void *)1;
+						}
+						if (n == 0)
+						{
+							// end of request's content data!
+							break;
+						}
+						buflen += n;
+						if (bufsiz - buflen < 2)
+						{
+							// grow by x2:
+							bufsiz *= 2;
+							buf = (char *)realloc(buf, bufsiz);
+							if (!buf) goto outamem;
+						}
+					}
+
+			        mg_add_response_header(conn, 0, "Transfer-Encoding", "chunked");
+			        mg_add_response_header(conn, 0, "Content-Type", "text/plain");
+					mg_add_response_header(conn, 0, "Cache-Control", "no-cache");
+					mg_add_response_header(conn, 0, "Connection", "%s", mg_suggest_connection_header(conn));
+					mg_write_http_response_head(conn, 200, NULL);
+
+					mg_mark_end_of_header_transmission(conn);
+
+					// wicked show of explicitly setting chunksize: we say we'll deliver 2K at least!
+					mg_set_tx_next_chunk_size(conn, 2048);
+
+					// dump all headers to output:
+					mg_printf(conn, 
+							  "HTTP Request Headers\n"
+							  "====================\n"
+							  "\n");
+					{
+					    int i;
+						const struct mg_request_info *ri = mg_get_request_info(conn);
+
+					    for (i = 0; i < ri->num_headers; i++)
+						{
+							if (mg_get_tx_remaining_chunk_size(conn) < 40 + buflen)
+							{
+								mg_set_tx_next_chunk_size(conn, (ri->num_headers - i) * 40 + buflen);
+							}
+							mg_printf(conn, "%-40s: %s\n", ri->http_headers[i].name, ri->http_headers[i].value);
+						}
+					}
+					mg_printf(conn, 
+							  "\n"
+							  "----------------------------------------------------------------------\n"
+							  "\n"
+							  "POSTed data\n"
+							  "============\n"
+							  "\n");
+
+					// wicked: now make sure that we aren't expected to send more than buflen after this point in time:
+					mg_set_tx_next_chunk_size(conn, 0);
+
+					mg_write(conn, buf, buflen);
+
+					assert(mg_get_tx_remaining_chunk_size(conn) == 0);
+					return (void *)1;
+				}
+			}
 
             if (!req_msg)
             {
