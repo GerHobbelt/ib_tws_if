@@ -3,8 +3,20 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 <!-- #BeginEditable "doctitle" -->
-<title>Black MondayError <!--#echo var="REDIRECT_STATUS" --> - Things went belly up</title>
+<title>Black Monday - Doing the B0rk B0rk B0rk In <!--#echo var="REDIRECT_STATUS"--> Time</title>
 <base href="/error/" />
+<style>
+#biohazard
+{
+	width: 130px;
+	height: 130px;
+}
+div#biohazdiv
+{
+	float: left;
+}
+</style>
+
 <!-- #EndEditable -->
 <link href="../styles/style3.css" media="screen" rel="stylesheet" title="CSS" type="text/css" />
 </head>
@@ -34,9 +46,16 @@
 		<!-- Begin Left Column -->
 		<div id="column_left">
 			<!-- #BeginEditable "content" -->
-		<h1>Error <!--#echo var="REDIRECT_STATUS" --> - Things went belly up.</h1>
+<div id="biohazdiv">            
+<object id="biohazard" data="../images/biohazard-red-bg.svg" type="image/svg+xml"></object>
+</div>
+<div id="infosec">
+<h1>Robbery!</h1>
+
+<p>What you ask for isn't in store. We don't know who nabbed it or whether it's been around <em>at all</em>. Definitely <dfn>bad joss</dfn>.</p>
 
 <p>All we can say is: <!--#echo var="REDIRECT_ERROR_NOTES" --></p>
+</div>
 			<!-- #EndEditable -->
 		</div>
 		<!-- End Left Column -->
