@@ -1,0 +1,3 @@
+dhoerl = David Hoerl <dhoerl@users.sourceforge.net>
+i_a = Ger Hobbelt <ger@hobbelt.com>
+rnelsonwsu = Roger Nelson <rnelsonwsu@users.sourceforge.net>
