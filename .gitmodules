@@ -82,3 +82,6 @@
 [submodule "html/js/tinyMCE"]
 	path = html/js/tinyMCE
 	url = git@github.com:GerHobbelt/tinymce.git
+[submodule "xlslib"]
+	path = xlslib
+	url = git@github.com:GerHobbelt/xlslib.git
