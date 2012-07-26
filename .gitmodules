@@ -85,3 +85,9 @@
 [submodule "xlslib"]
 	path = xlslib
 	url = git@github.com:GerHobbelt/xlslib.git
+[submodule "html/js/jDataView"]
+	path = html/js/jDataView
+	url = git@github.com:GerHobbelt/jDataView.git
+[submodule "bl.ocks.org"]
+	path = bl.ocks.org
+	url = git@github.com:GerHobbelt/bl.ocks.org.git
