@@ -7,9 +7,6 @@
 [submodule "libxml"]
 	path = libxml
 	url = git@github.com:GerHobbelt/libxml2.git
-[submodule "json"]
-	path = json
-	url = git@github.com:GerHobbelt/ultrajson.git
 [submodule "libiconv"]
 	path = libiconv
 	url = git@github.com:GerHobbelt/libiconv.git
@@ -91,3 +88,9 @@
 [submodule "bl.ocks.org"]
 	path = bl.ocks.org
 	url = git@github.com:GerHobbelt/bl.ocks.org.git
+[submodule "libjson"]
+	path = libjson
+	url = https://github.com/GerHobbelt/libjson
+[submodule "html/js/CodeMirror2"]
+	path = html/js/CodeMirror2
+	url = git@github.com:GerHobbelt/CodeMirror2.git

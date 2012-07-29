@@ -37,11 +37,14 @@ struct tws_conn_cfg
     bool m_tws_log_traffic;
     const char *m_tws_traffic_log_file;
 
+	const char *m_gists_document_root;
+
 public:
     tws_conn_cfg() :
         m_ip_address(0), m_port(0), m_our_id_code(0),
         m_backend_poll_period(0), m_backend_reconnect_delay(0)
         , m_tws_log_traffic(false), m_tws_traffic_log_file(0)
+		, m_gists_document_root(0)
     {
     }
     ~tws_conn_cfg()

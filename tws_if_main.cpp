@@ -86,6 +86,8 @@ static const char *default_options[] = {
 
     "database_file",         "./ib_tws_if.hamsterdb",
 
+	"gists_document_root",   "./",
+
     NULL
 };
 

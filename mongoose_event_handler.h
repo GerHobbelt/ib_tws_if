@@ -37,5 +37,4 @@ extern "C" void *event_handler(enum mg_event event_id, struct mg_connection *con
 
 
 
-
 #endif // MONGOOSE_EVENT_HANDLER_HEADER_INCLUDED

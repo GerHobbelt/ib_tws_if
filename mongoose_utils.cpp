@@ -126,6 +126,11 @@ int option_decode(struct mg_context *ctx, const char *name, const char *value)
         mgr->get_db_manager()->set_database_path(value);
         return 1;
     }
+	else if (0 == strcmp("gists_document_root", name))
+	{
+		tws_cfg.m_gists_document_root = mg_strdup(value);
+		return 1;
+	}
     return 0;
 }
 
@@ -138,8 +143,16 @@ int option_fill(struct mg_context *ctx)
 
 const char * option_get(struct mg_context *ctx, struct mg_connection *conn, const char *name)
 {
-    // we don't use this one, so keep it a dummy until we do...
-    return NULL;
+	// when something for a GIST is requested, we assume a different document root:
+	const struct mg_request_info *ri = mg_get_request_info(conn);
+	app_manager *mgr = (app_manager *)mg_get_user_data(ctx)->user_data;
+	struct tws_conn_cfg &tws_cfg = mgr->get_tws_ib_connection_config();
+
+	if (ri && ri->uri && !strncmp("/gist-", ri->uri, 6) && !strcmp(name, "document_root"))
+	{
+		return tws_cfg.m_gists_document_root;
+	}
+	return NULL;
 }
 
 
