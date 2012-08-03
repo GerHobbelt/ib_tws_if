@@ -253,6 +253,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libjson_dll", "..\..\libjso
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_json", "..\..\libjson\build\msvc2010\test_json.vcxproj", "{86F4DFE9-E103-AAB2-8C3A-E89AB789A26A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libjson_benchmark", "..\..\libjson\build\msvc2010\libjson_benchmark.vcxproj", "{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Itanium = Debug|Itanium
@@ -2848,6 +2850,35 @@ Global
 		{86F4DFE9-E103-AAB2-8C3A-E89AB789A26A}.Upskirt|Win32.ActiveCfg = Release|x64
 		{86F4DFE9-E103-AAB2-8C3A-E89AB789A26A}.Upskirt|x64.ActiveCfg = Release|x64
 		{86F4DFE9-E103-AAB2-8C3A-E89AB789A26A}.Upskirt|x64.Build.0 = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Debug|Itanium.Build.0 = Debug|Itanium
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Debug|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Debug|Win32.ActiveCfg = Debug|Win32
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Debug|Win32.Build.0 = Debug|Win32
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Debug|x64.ActiveCfg = Debug|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Debug|x64.Build.0 = Debug|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.DebugDll|Itanium.ActiveCfg = Debug|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.DebugDll|Pocket PC 2003 (ARMV4).ActiveCfg = Debug|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.DebugDll|Win32.ActiveCfg = Debug|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.DebugDll|x64.ActiveCfg = Debug|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.DebugDll|x64.Build.0 = Debug|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Release|Itanium.ActiveCfg = Release|Itanium
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Release|Itanium.Build.0 = Release|Itanium
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Release|Pocket PC 2003 (ARMV4).ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Release|Win32.ActiveCfg = Release|Win32
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Release|Win32.Build.0 = Release|Win32
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Release|x64.ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Release|x64.Build.0 = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.ReleaseDll|Itanium.ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.ReleaseDll|Pocket PC 2003 (ARMV4).ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.ReleaseDll|Win32.ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.ReleaseDll|x64.ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.ReleaseDll|x64.Build.0 = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Upskirt|Itanium.ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Upskirt|Pocket PC 2003 (ARMV4).ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Upskirt|Win32.ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Upskirt|x64.ActiveCfg = Release|x64
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678}.Upskirt|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2946,6 +2977,7 @@ Global
 		{4BCC46B7-CF02-6360-E268-734B31B71FBF} = {ED12EF90-AC64-42A0-BC45-6AA10980669C}
 		{665CB440-5086-2BED-B1B7-CEB19FC7CF8C} = {ED12EF90-AC64-42A0-BC45-6AA10980669C}
 		{86F4DFE9-E103-AAB2-8C3A-E89AB789A26A} = {ED12EF90-AC64-42A0-BC45-6AA10980669C}
+		{86F4DFE9-E103-AAB2-8C3A-E89AB7895678} = {ED12EF90-AC64-42A0-BC45-6AA10980669C}
 	EndGlobalSection
 	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
 		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}

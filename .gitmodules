@@ -94,3 +94,15 @@
 [submodule "html/js/CodeMirror2"]
 	path = html/js/CodeMirror2
 	url = git@github.com:GerHobbelt/CodeMirror2.git
+[submodule "html/js/SyntaxHighlighter"]
+	path = html/js/SyntaxHighlighter
+	url = git@github.com:GerHobbelt/SyntaxHighlighter.git
+[submodule "html/js/javascript-debug"]
+	path = html/js/javascript-debug
+	url = git@github.com:GerHobbelt/javascript-debug.git
+[submodule "html/js/CoolClock"]
+	path = html/js/CoolClock
+	url = git@github.com:GerHobbelt/CoolClock.git
+[submodule "html/js/d3-cloud"]
+	path = html/js/d3-cloud
+	url = git@github.com:GerHobbelt/d3-cloud.git
