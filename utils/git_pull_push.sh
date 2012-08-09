@@ -37,10 +37,12 @@ f )
 		$@
 		git pull --all
 		git push --all
+		git push --tags
 		popd       >2 /dev/null
 	done
 	git pull --all
 	git push --all
+	git push --tags
 	;;
 	
 * )
