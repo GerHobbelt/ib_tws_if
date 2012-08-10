@@ -1,6 +1,6 @@
 #! /bin/bash
 
-pushd $(dirname $0)       >2 /dev/null
+pushd $(dirname $0)       2> /dev/null
 cd ..
 
 getopts ":fh" opt
@@ -9,9 +9,9 @@ case "$opt$OPTARG" in
 "?" )
 	echo --- pull/push every git repo in this directory tree ---
 	#echo full - args: $@
-	for f in $( find . -maxdepth 1 -name '.git' ) ; do
-		pushd .       >2 /dev/null
-		f=$( echo $f | sed -e 's#/?\.git$##' )
+	for f in $( find . -maxdepth 3 -name '.git' ) ; do
+		pushd .       2> /dev/null
+		f=$( echo $f | sed -e 's#/\?\.git$##' )
 		echo processing PATH/SUBMODULE: $f
 		cd $f
 		#echo $@
@@ -19,7 +19,7 @@ case "$opt$OPTARG" in
 		git pull --all
 		git push --all
 		git push --tags
-		popd       >2 /dev/null
+		popd         2> /dev/null
 	done
 	;;
 	
@@ -30,7 +30,7 @@ f )
 	done
 	#echo args: $@
 	for f in $( git submodule foreach --recursive --quiet pwd ) ; do
-		pushd .       >2 /dev/null
+		pushd .       2> /dev/null
 		echo processing PATH/SUBMODULE: $f
 		cd $f
 		#echo $@
@@ -38,7 +38,7 @@ f )
 		git pull --all
 		git push --all
 		git push --tags
-		popd       >2 /dev/null
+		popd         2> /dev/null
 	done
 	git pull --all
 	git push --all
@@ -66,7 +66,7 @@ EOT
 esac
 
 
-popd       >2 /dev/null
+popd       2> /dev/null
 
 
 
