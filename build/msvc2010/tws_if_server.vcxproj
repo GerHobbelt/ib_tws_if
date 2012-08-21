@@ -524,25 +524,36 @@
     <ClInclude Include="..\..\unique_type_id.h" />
   </ItemGroup>
   <ItemGroup>
+    <ResourceCompile Include="..\..\mongoose\win32\res.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\hamsterdb\win32\msvc2010\hamsterDB_dll.vcxproj">
+      <Project>{b82d2df8-f8b2-4331-86d0-508bbd806507}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libcsv\build\msvc2010\libcsv.vcxproj">
+      <Project>{4bcc46b7-cf02-6360-e268-714b31b72faf}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libjson\build\msvc2010\libjson.vcxproj">
+      <Project>{4bcc46b7-cf02-6360-e268-734b31b71fbf}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\libxml\win32.msvc2010\libxml_dll.vcxproj">
       <Project>{218f950c-eb90-4023-a016-e9af52c4aae9}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\mongoose\pthread-win32\pthread.2010.vcxproj">
       <Project>{5d459ba0-5eeb-47d3-a1c4-6b55c8d37ec0}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\mongoose\upskirt\mvc\libupskirt.vcxproj">
+    <ProjectReference Include="..\..\mongoose\upskirt\mvc\2010\libupskirt.vcxproj">
       <Project>{bef78878-99b5-47fc-ae1b-210edf9643f8}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\mongoose\win32\msvc2010\3rdparty_mongoose_pthread.vcxproj">
       <Project>{5da681a2-3c45-2e42-0e35-0d24831144d8}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\xlslib\xlslib\build\msvc2010\xlslib_dll.vcxproj">
+      <Project>{4a077629-8590-434c-9486-0d069df341af}</Project>
+    </ProjectReference>
     <ProjectReference Include="3rdparty_tws_c_api_lib.vcxproj">
       <Project>{7ca3cfb9-ce10-41c8-9bcc-2061ad259f71}</Project>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="..\..\mongoose\win32\res.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

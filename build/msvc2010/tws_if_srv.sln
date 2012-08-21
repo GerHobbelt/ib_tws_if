@@ -112,11 +112,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mongoose_service", "..\..\m
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "upskirt", "upskirt", "{D5713257-50BF-4B3D-BBBC-F11057FD275B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libupskirt", "..\..\mongoose\upskirt\mvc\libupskirt.vcxproj", "{BEF78878-99B5-47FC-AE1B-210EDF9643F8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libupskirt", "..\..\mongoose\upskirt\mvc\2010\libupskirt.vcxproj", "{BEF78878-99B5-47FC-AE1B-210EDF9643F8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smartypants", "..\..\mongoose\upskirt\mvc\smartypants.vcxproj", "{B682A9FC-8C10-CE85-1083-3C42CA82502D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "smartypants", "..\..\mongoose\upskirt\mvc\2010\smartypants.vcxproj", "{B682A9FC-8C10-CE85-1083-3C42CA82502D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "upskirt", "..\..\mongoose\upskirt\mvc\upskirt.vcxproj", "{17794A55-DE45-431F-BAEE-B92226BF831E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "upskirt", "..\..\mongoose\upskirt\mvc\2010\upskirt.vcxproj", "{17794A55-DE45-431F-BAEE-B92226BF831E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wsclean", "..\..\utils\wsclean\win32\msvc2010\wsclean.vcxproj", "{A4BE99BC-1ED6-3BC5-E8B5-7CF82AE6AA74}"
 EndProject

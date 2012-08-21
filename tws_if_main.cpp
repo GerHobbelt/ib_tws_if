@@ -288,7 +288,7 @@ int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, i
 #define SD_READ_UNIT 1024
 #define SD_OUTPUT_UNIT 64
 
-    struct mg_request_info *ri = mg_get_request_info(conn);
+    const struct mg_request_info *ri = mg_get_request_info(conn);
     struct sd_buf *ib, *ob;
     int ret;
     unsigned int enabled_extensions = MKDEXT_TABLES | MKDEXT_FENCED_CODE | MKDEXT_EMAIL_FRIENDLY;
@@ -353,7 +353,7 @@ int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, i
         int64_t cl, r1, r2;
         int n;
 
-        ri->status_code = 200;
+        mg_set_response_code(conn, 200);
 
         cl = ob->size;
 
@@ -418,7 +418,7 @@ int serve_a_markdown_page(struct mg_connection *conn, const struct mgstat *st, i
 
 static void *event_callback(enum mg_event event, struct mg_connection *conn) {
   struct mg_context *ctx = mg_get_context(conn);
-  struct mg_request_info *request_info = mg_get_request_info(conn);
+  const struct mg_request_info *request_info = mg_get_request_info(conn);
 
   if (event == MG_INIT0)
   {
@@ -478,7 +478,7 @@ static void *event_callback(enum mg_event event, struct mg_connection *conn) {
       data = LockResource(LoadResource(module, icon));
       len = SizeofResource(module, icon);
 
-      request_info->status_code = 200;
+      mg_set_response_code(conn, 200);
 
       (void) mg_printf(conn,
           "HTTP/1.1 200 OK\r\n"

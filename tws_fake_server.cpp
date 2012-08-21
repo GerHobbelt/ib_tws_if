@@ -147,7 +147,7 @@ static int respond_with_file(struct mg_connection *conn, ib_backend_io_channel *
     char buf[2048];
     char path[PATH_MAX];
     struct mg_context *ctx = mg_get_context(conn);
-    struct mg_request_info *info = mg_get_request_info(conn);
+    const struct mg_request_info *info = mg_get_request_info(conn);
     int rv = 0;
 
     mg_snprintf(conn, path, sizeof(path), "%s/%s", mg_get_option(ctx, "document_root"), uri);
@@ -181,7 +181,7 @@ static int respond_with_messages_file(struct mg_connection *conn, ib_backend_io_
     char *buf = NULL;
     char path[PATH_MAX];
     struct mg_context *ctx = mg_get_context(conn);
-    struct mg_request_info *info = mg_get_request_info(conn);
+    const struct mg_request_info *info = mg_get_request_info(conn);
     struct mgstat st;
     int rv = 0;
 
@@ -298,8 +298,8 @@ void ib_backend_io_channel::fake_ib_tws_server(int mode)
     /*
     A message may be pending at conn[1]; when it does, we play back a suitable response at conn[1]
     */
-    mg_connection *conn = m_fake_conn[1];
-    mg_request_info *request_info = mg_get_request_info(conn);
+    struct mg_connection *conn = m_fake_conn[1];
+    const struct mg_request_info *request_info = mg_get_request_info(conn);
     int64_t old_num_bytes_sent = mg_get_num_bytes_sent(conn);
 
     if (conn)

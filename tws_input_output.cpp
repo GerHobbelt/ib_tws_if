@@ -158,7 +158,7 @@ void tws_worker_thread(struct mg_context *ctx)
 
     mg_signal_mgr_this_thread_is_done(ctx);
 
-    DEBUG_TRACE(("exiting"));
+    DEBUG_TRACE(0x0001000, ("exiting"));
 }
 
 

@@ -100,10 +100,8 @@ int ib_backend_io_logger::io_tx_elem_observe(ib_backend_io_channel *originator, 
 
         struct mg_connection *conn = originator->get_connection();
         assert(conn);
-        struct mg_request_info *rinfo = mg_get_request_info(conn);
-        assert(rinfo);
-        rinfo->uri = NULL;
-        rinfo->request_method = NULL;
+		mg_set_request_uri(conn, "...", "");
+		mg_set_request_method(conn, "...");
 
         m_tx_msg_id = "TX.";
         m_tx_msg_id += tws_outgoing_msg_name(start_of_message);
@@ -138,10 +136,8 @@ int ib_backend_io_logger::io_rx_elem_observe(ib_backend_io_channel *originator, 
         {
             struct mg_connection *conn = originator->get_connection();
             assert(conn);
-            struct mg_request_info *rinfo = mg_get_request_info(conn);
-            assert(rinfo);
-            rinfo->uri = NULL;
-            rinfo->request_method = NULL;
+            mg_set_request_uri(conn, "...", "");
+			mg_set_request_method(conn, "...");
 
             m_pending_rx_msg = (ib_incoming_id_t)atoi(elem);
             m_rx_msg_id = "RX.";
@@ -191,14 +187,8 @@ int ib_backend_io_logger::write_tx_msg(ib_backend_io_channel *originator)
         {
             char path[MAX_PATH];
 
-            if (conn)
-            {
-                struct mg_request_info *rinfo;
-
-                rinfo = mg_get_request_info(conn);
-                rinfo->uri = const_cast<char *>(m_tx_msg_id.c_str());
-                rinfo->request_method = "TX";
-            }
+			mg_set_request_uri(conn, const_cast<char *>(m_tx_msg_id.c_str()), "");
+			mg_set_request_method(conn, "TX");
 
             m_tx_log_file = mg_get_logfile_path(path, sizeof(path), tws_cfg.m_tws_traffic_log_file, conn, m_tx_timestamp);
         }
@@ -227,14 +217,8 @@ int ib_backend_io_logger::write_rx_msg(ib_backend_io_channel *originator)
         {
             char path[MAX_PATH];
 
-            if (conn)
-            {
-                struct mg_request_info *rinfo;
-
-                rinfo = mg_get_request_info(conn);
-                rinfo->uri = const_cast<char *>(m_rx_msg_id.c_str());
-                rinfo->request_method = "RX";
-            }
+			mg_set_request_uri(conn, const_cast<char *>(m_rx_msg_id.c_str()), "");
+			mg_set_request_method(conn, "RX");
 
             m_rx_log_file = mg_get_logfile_path(path, sizeof(path), tws_cfg.m_tws_traffic_log_file, conn, m_rx_timestamp);
         }
