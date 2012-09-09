@@ -1,0 +1,165 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "created_at": "2011-10-22T00:28:17Z",
+      "updated_at": "2011-10-22T00:41:31Z",
+      "url": "https://api.github.com/gists/1305337",
+      "id": "1305337"
+    },
+    {
+      "user": {
+        "gravatar_id": "1be3b4f6f485e8e531e43bbf9de2b660",
+        "avatar_url": "https://secure.gravatar.com/avatar/1be3b4f6f485e8e531e43bbf9de2b660?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "tracend",
+        "url": "https://api.github.com/users/tracend",
+        "id": 542296
+      },
+      "created_at": "2012-01-26T19:37:29Z",
+      "updated_at": "2012-01-26T19:37:29Z",
+      "url": "https://api.github.com/gists/1684607",
+      "id": "1684607"
+    },
+    {
+      "user": {
+        "gravatar_id": "a839a1dce92696539e7e9475604ef310",
+        "avatar_url": "https://secure.gravatar.com/avatar/a839a1dce92696539e7e9475604ef310?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "jmgimeno",
+        "url": "https://api.github.com/users/jmgimeno",
+        "id": 718396
+      },
+      "created_at": "2012-06-18T15:54:28Z",
+      "updated_at": "2012-06-18T15:54:28Z",
+      "url": "https://api.github.com/gists/2949059",
+      "id": "2949059"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1305111.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "1df998295c438c757cfa59559ab5522a4361cc5d",
+      "change_status": {
+        "total": 29,
+        "additions": 14,
+        "deletions": 15
+      },
+      "url": "https://api.github.com/gists/1305111/1df998295c438c757cfa59559ab5522a4361cc5d",
+      "committed_at": "2011-10-21T22:17:33Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "734025af707cc4ca0dcf562c5e2e62d268bacb41",
+      "change_status": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1305111/734025af707cc4ca0dcf562c5e2e62d268bacb41",
+      "committed_at": "2011-10-21T22:15:50Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "375a19aadd78f4723ebd70a13d2fd777046d8808",
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/1305111/375a19aadd78f4723ebd70a13d2fd777046d8808",
+      "committed_at": "2011-10-21T22:14:53Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "43111260fe3a0fcc905bf9a6e9005b6bfc132700",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1305111/43111260fe3a0fcc905bf9a6e9005b6bfc132700",
+      "committed_at": "2011-10-21T22:11:57Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "5d4a7216e482a7f0d0713390a23eca8333230ac7",
+      "change_status": {
+        "total": 62,
+        "additions": 62,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1305111/5d4a7216e482a7f0d0713390a23eca8333230ac7",
+      "committed_at": "2011-10-21T22:11:27Z"
+    }
+  ],
+  "description": "Pie Multiples",
+  "html_url": "https://gist.github.com/1305111",
+  "git_push_url": "git@gist.github.com:1305111.git",
+  "comments": 0,
+  "created_at": "2011-10-21T22:11:27Z",
+  "public": true,
+  "files": {
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 360,
+      "content": "An example of multiple pie (donut) charts created with [D3](http://mbostock.github.com/d3/). The data is represented as a two-dimensional array of numbers; each row in the array is mapped to a pie chart. Thus, each pie represents the relative value of a number (such as 1,013) within its rows. Note that in this dataset, the totals for each row are not equal.\n",
+      "raw_url": "https://gist.github.com/raw/1305111/33c9515f96df952e9dff6031bb80c618cf51cca9/README.md",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 2063,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n    <title>Multiple Pie Charts</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.4.5\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.4.5\"></script>\n    <style type=\"text/css\">\n\nbody {\n  text-align: center;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\n// Define the data as a two-dimensional array of numbers. If you had other\n// data to associate with each number, replace each number with an object, e.g.,\n// `{key: \"value\"}`.\nvar data = [\n  [11975,  5871, 8916, 2868],\n  [ 1951, 10048, 2060, 6171],\n  [ 8010, 16145, 8090, 8045],\n  [ 1013,   990,  940, 6907]\n];\n\n// Define the margin, radius, and color scale. The color scale will be\n// assigned by index, but if you define your data using objects, you could pass\n// in a named field from the data object instead, such as `d.name`. Colors\n// are assigned lazily, so if you want deterministic behavior, define a domain\n// for the color scale.\nvar m = 10,\n    r = 100,\n    z = d3.scale.category20c();\n\n// Insert an svg:svg element (with margin) for each row in our dataset. A\n// child svg:g element translates the origin to the pie center.\nvar svg = d3.select(\"body\").selectAll(\"svg\")\n    .data(data)\n  .enter().append(\"svg:svg\")\n    .attr(\"width\", (r + m) * 2)\n    .attr(\"height\", (r + m) * 2)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + (r + m) + \",\" + (r + m) + \")\");\n\n// The data for each svg:svg element is a row of numbers (an array). We pass\n// that to d3.layout.pie to compute the angles for each arc. These start and end\n// angles are passed to d3.svg.arc to draw arcs! Note that the arc radius is\n// specified on the arc, not the layout.\nsvg.selectAll(\"path\")\n    .data(d3.layout.pie())\n  .enter().append(\"svg:path\")\n    .attr(\"d\", d3.svg.arc()\n    .innerRadius(r / 2)\n    .outerRadius(r))\n    .style(\"fill\", function(d, i) { return z(i); });\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1305111/311fc38351072886c48b1a2573eddf96159736f5/index.html",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-10-21T22:11:27Z",
+  "url": "https://api.github.com/gists/1305111",
+  "id": "1305111"
+}

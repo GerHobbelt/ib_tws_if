@@ -1,0 +1,264 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "created_at": "2012-01-19T21:45:20Z",
+      "updated_at": "2012-01-19T21:45:35Z",
+      "url": "https://api.github.com/gists/1642989",
+      "id": "1642989"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "created_at": "2012-01-19T21:51:30Z",
+      "updated_at": "2012-01-19T22:02:50Z",
+      "url": "https://api.github.com/gists/1643051",
+      "id": "1643051"
+    },
+    {
+      "user": {
+        "gravatar_id": "cda236e6c15d0e5e36f49e56d25096bf",
+        "login": "canimus",
+        "url": "https://api.github.com/users/canimus",
+        "avatar_url": "https://secure.gravatar.com/avatar/cda236e6c15d0e5e36f49e56d25096bf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 278303
+      },
+      "created_at": "2012-01-20T19:55:32Z",
+      "updated_at": "2012-01-20T19:55:32Z",
+      "url": "https://api.github.com/gists/1649256",
+      "id": "1649256"
+    },
+    {
+      "user": {
+        "gravatar_id": "509a1651aa69233889051580cd9664f3",
+        "login": "pims",
+        "url": "https://api.github.com/users/pims",
+        "avatar_url": "https://secure.gravatar.com/avatar/509a1651aa69233889051580cd9664f3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 27320
+      },
+      "created_at": "2012-01-22T03:54:40Z",
+      "updated_at": "2012-01-22T03:54:40Z",
+      "url": "https://api.github.com/gists/1655391",
+      "id": "1655391"
+    },
+    {
+      "user": {
+        "gravatar_id": "684986541ffbb035225dce636b167f7a",
+        "login": "slojo404",
+        "url": "https://api.github.com/users/slojo404",
+        "avatar_url": "https://secure.gravatar.com/avatar/684986541ffbb035225dce636b167f7a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 924190
+      },
+      "created_at": "2012-04-11T19:12:52Z",
+      "updated_at": "2012-04-11T19:12:52Z",
+      "url": "https://api.github.com/gists/2361528",
+      "id": "2361528"
+    },
+    {
+      "user": {
+        "gravatar_id": "6ff08f2b5a9ce02aa8f9fe092f1b05fc",
+        "login": "wizjo",
+        "url": "https://api.github.com/users/wizjo",
+        "avatar_url": "https://secure.gravatar.com/avatar/6ff08f2b5a9ce02aa8f9fe092f1b05fc?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 167792
+      },
+      "created_at": "2012-04-26T18:39:52Z",
+      "updated_at": "2012-04-26T18:39:52Z",
+      "url": "https://api.github.com/gists/2501799",
+      "id": "2501799"
+    },
+    {
+      "user": {
+        "gravatar_id": "d9fba6d190cedee6f21571b5226f0f65",
+        "login": "milroc",
+        "url": "https://api.github.com/users/milroc",
+        "avatar_url": "https://secure.gravatar.com/avatar/d9fba6d190cedee6f21571b5226f0f65?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 542959
+      },
+      "created_at": "2012-07-05T22:52:49Z",
+      "updated_at": "2012-07-06T00:39:09Z",
+      "url": "https://api.github.com/gists/3056952",
+      "id": "3056952"
+    },
+    {
+      "user": {
+        "gravatar_id": "d6adfb51421ccfa7d46b87aecd116cb5",
+        "login": "simboyz",
+        "url": "https://api.github.com/users/simboyz",
+        "avatar_url": "https://secure.gravatar.com/avatar/d6adfb51421ccfa7d46b87aecd116cb5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 750218
+      },
+      "created_at": "2012-08-06T05:33:24Z",
+      "updated_at": "2012-08-06T05:33:24Z",
+      "url": "https://api.github.com/gists/3271047",
+      "id": "3271047"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "3f8e4113610a2d18190f5d95df50eb993f4123a8",
+      "committed_at": "2012-01-19T21:53:52Z",
+      "url": "https://api.github.com/gists/1642874/3f8e4113610a2d18190f5d95df50eb993f4123a8"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "55583349b2d6b41f99bafde76f54e1c2ee5cede0",
+      "committed_at": "2012-01-19T21:46:28Z",
+      "url": "https://api.github.com/gists/1642874/55583349b2d6b41f99bafde76f54e1c2ee5cede0"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 14,
+        "additions": 8,
+        "deletions": 6
+      },
+      "version": "485107b3c26f41583ee4eb4e306526a1a7d8234d",
+      "committed_at": "2012-01-19T21:44:54Z",
+      "url": "https://api.github.com/gists/1642874/485107b3c26f41583ee4eb4e306526a1a7d8234d"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 24,
+        "additions": 17,
+        "deletions": 7
+      },
+      "version": "73ed8a0899ae25d6e4b7ac5baab649214e3d43e1",
+      "committed_at": "2012-01-19T21:40:17Z",
+      "url": "https://api.github.com/gists/1642874/73ed8a0899ae25d6e4b7ac5baab649214e3d43e1"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "5a771b79862bab91e4e26dbc4e20a07a1252ee4d",
+      "committed_at": "2012-01-19T21:36:24Z",
+      "url": "https://api.github.com/gists/1642874/5a771b79862bab91e4e26dbc4e20a07a1252ee4d"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 19,
+        "additions": 10,
+        "deletions": 9
+      },
+      "version": "34065583641e011966525532348f633e1a045a94",
+      "committed_at": "2012-01-19T21:36:04Z",
+      "url": "https://api.github.com/gists/1642874/34065583641e011966525532348f633e1a045a94"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 112,
+        "additions": 112,
+        "deletions": 0
+      },
+      "version": "1a86d938a5d53778166822c3e97e1ba1abb38a6c",
+      "committed_at": "2012-01-19T21:33:21Z",
+      "url": "https://api.github.com/gists/1642874/1a86d938a5d53778166822c3e97e1ba1abb38a6c"
+    }
+  ],
+  "description": "Line Transition",
+  "comments": 1,
+  "created_at": "2012-01-19T21:33:21Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1642874",
+  "git_pull_url": "git://gist.github.com/1642874.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 2015,
+      "raw_url": "https://gist.github.com/raw/1642874/e1c2009a62fa51532fac8663a941b5368ba709b0/index.html",
+      "content": "<!DOCTYPE html>\n<meta charset=\"utf-8\">\n<style>\n\nsvg {\n  font: 10px sans-serif;\n}\n\n.line {\n  fill: none;\n  stroke: #000;\n  stroke-width: 1.5px;\n}\n\n.axis path, .axis line {\n  fill: none;\n  stroke: #000;\n  shape-rendering: crispEdges;\n}\n\n</style>\n<body>\n<script src=\"http://mbostock.github.com/d3/d3.js?2.7.2\"></script>\n<script>\n\nvar n = 40,\n    random = d3.random.normal(0, .2),\n    data = d3.range(n).map(random);\n\nvar margin = {top: 10, right: 10, bottom: 20, left: 40},\n    width = 960 - margin.left - margin.right,\n    height = 500 - margin.top - margin.bottom;\n\nvar x = d3.scale.linear()\n    .domain([0, n - 1])\n    .range([0, width]);\n\nvar y = d3.scale.linear()\n    .domain([-1, 1])\n    .range([height, 0]);\n\nvar line = d3.svg.line()\n    .x(function(d, i) { return x(i); })\n    .y(function(d, i) { return y(d); });\n\nvar svg = d3.select(\"body\").append(\"svg\")\n    .attr(\"width\", width + margin.left + margin.right)\n    .attr(\"height\", height + margin.top + margin.bottom)\n  .append(\"g\")\n    .attr(\"transform\", \"translate(\" + margin.left + \",\" + margin.top + \")\");\n\nsvg.append(\"defs\").append(\"clipPath\")\n    .attr(\"id\", \"clip\")\n  .append(\"rect\")\n    .attr(\"width\", width)\n    .attr(\"height\", height);\n\nsvg.append(\"g\")\n    .attr(\"class\", \"x axis\")\n    .attr(\"transform\", \"translate(0,\" + height + \")\")\n    .call(d3.svg.axis().scale(x).orient(\"bottom\"));\n\nsvg.append(\"g\")\n    .attr(\"class\", \"y axis\")\n    .call(d3.svg.axis().scale(y).orient(\"left\"));\n\nvar path = svg.append(\"g\")\n    .attr(\"clip-path\", \"url(#clip)\")\n  .append(\"path\")\n    .data([data])\n    .attr(\"class\", \"line\")\n    .attr(\"d\", line);\n\ntick();\n\nfunction tick() {\n\n  // push a new data point onto the back\n  data.push(random());\n\n  // redraw the line, and slide it to the left\n  path\n      .attr(\"d\", line)\n      .attr(\"transform\", null)\n    .transition()\n      .duration(500)\n      .ease(\"linear\")\n      .attr(\"transform\", \"translate(\" + x(-1) + \")\")\n      .each(\"end\", tick);\n\n  // pop the old data point off the front\n  data.shift();\n\n}\n\n</script>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 1907,
+      "raw_url": "https://gist.github.com/raw/1642874/1e552432a88eed13d0ab7ea8ff6500a4830434f9/README.md",
+      "content": "D3’s default path interpolation is the same as its string interpolation: it finds numbers embedded in strings, and interpolates those numbers. So, the default behavior when interpolating two paths is like this:\n\n    M x0, y0 L x1, y1 L x2, y2 L x3, y3 \n       ↓   ↓    ↓   ↓    ↓   ↓    ↓   ↓\n    M x0, y1 L x1, y2 L x2, y3 L x3, y4 \n\nFor example, the first point ⟨x0,y0⟩ is interpolated to ⟨x0,y1⟩. Since x0 is the same, all you see are the y-values changing [(see example)](http://bl.ocks.org/1643051)—you don't see the path slide to the left as intended.\n\nWhat you want to happen here is something like this: \n\n    M x0, y0 L x1, y1 L x2, y2 L x3, y3 L xR, y4\n       ↓   ↓    ↓   ↓    ↓   ↓    ↓   ↓\n    M xL, y0 L x0, y1 L x1, y2 L x2, y3 L x3, y4 \n\nWhere xL is some negative value off the left side, and xR is some positive value off the right side. This way, the first point ⟨x0,y0⟩ is interpolated to ⟨xL,y0⟩; meaning, the x-coordinate is interpolated rather than the y-coordinate, and so the path appears to slide off to  the left. Likewise, the incoming point ⟨xR,y4⟩ is interpolated to ⟨x3,y4⟩. \n\nAlternatively, you can achieve this effect by interpolating a transform attribute rather than the path, so that the path \"d\" attribute remains static but the path element translates to the left during the transition. In that case, the path is redrawn like this:\n\n    M x0, y0 L x1, y1 L x2, y2 L x3, y3 L xR, y4\n\nThen, a transform transition is applied:\n\n    translate(0)\n              ↓\n    translate(xL)\n\nThus causing the path to slide to the left. A clip path is used so the path is not visible outside of the chart body.\n\nNote that for charts with spline interpolation, you’ll need to crop the visible part of the line by an extra point, so that the change in tangent is not visible. See the [spline interpolation version](1642989).",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1642874.git",
+  "updated_at": "2012-01-19T21:33:21Z",
+  "url": "https://api.github.com/gists/1642874",
+  "id": "1642874"
+}

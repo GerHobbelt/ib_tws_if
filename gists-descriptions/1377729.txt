@@ -1,0 +1,195 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+    "login": "MoritzStefaner",
+    "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/MoritzStefaner",
+    "id": 216044
+  },
+  "git_pull_url": "git://gist.github.com/1377729.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+        "login": "MoritzStefaner",
+        "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/MoritzStefaner",
+        "id": 216044
+      },
+      "version": "ff3b73e13b5fff196b192bd5e9bce6eecec63d3a",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1377729/ff3b73e13b5fff196b192bd5e9bce6eecec63d3a",
+      "committed_at": "2012-06-05T22:04:55Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+        "login": "MoritzStefaner",
+        "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/MoritzStefaner",
+        "id": 216044
+      },
+      "version": "c3a971bdd1638d79c710a33a0f71b00cfc07c2c7",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1377729/c3a971bdd1638d79c710a33a0f71b00cfc07c2c7",
+      "committed_at": "2012-06-05T22:04:21Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+        "login": "MoritzStefaner",
+        "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/MoritzStefaner",
+        "id": 216044
+      },
+      "version": "0b65469da7d4d37cad4020c425f87f174da75327",
+      "change_status": {
+        "total": 22,
+        "additions": 11,
+        "deletions": 11
+      },
+      "url": "https://api.github.com/gists/1377729/0b65469da7d4d37cad4020c425f87f174da75327",
+      "committed_at": "2012-06-05T22:03:58Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+        "login": "MoritzStefaner",
+        "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/MoritzStefaner",
+        "id": 216044
+      },
+      "version": "8634e35a88d76d93483dcbd1dee056024ed11913",
+      "change_status": {
+        "total": 35,
+        "additions": 18,
+        "deletions": 17
+      },
+      "url": "https://api.github.com/gists/1377729/8634e35a88d76d93483dcbd1dee056024ed11913",
+      "committed_at": "2011-11-23T21:47:39Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+        "login": "MoritzStefaner",
+        "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/MoritzStefaner",
+        "id": 216044
+      },
+      "version": "4ff3bb00e27377f8b7497e8d82802fbaf6f98fd0",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1377729/4ff3bb00e27377f8b7497e8d82802fbaf6f98fd0",
+      "committed_at": "2011-11-18T21:28:13Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+        "login": "MoritzStefaner",
+        "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/MoritzStefaner",
+        "id": 216044
+      },
+      "version": "416eda48061add74e8ffa3b905fb3af2e16466aa",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1377729/416eda48061add74e8ffa3b905fb3af2e16466aa",
+      "committed_at": "2011-11-18T21:26:46Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+        "login": "MoritzStefaner",
+        "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/MoritzStefaner",
+        "id": 216044
+      },
+      "version": "3a2d70778062ee1bbfd4300e2c62690c38d55e47",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1377729/3a2d70778062ee1bbfd4300e2c62690c38d55e47",
+      "committed_at": "2011-11-18T21:05:55Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+        "login": "MoritzStefaner",
+        "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/MoritzStefaner",
+        "id": 216044
+      },
+      "version": "387121c2232171b43b0930ef99dec751bf110c96",
+      "change_status": {
+        "total": 7,
+        "additions": 6,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1377729/387121c2232171b43b0930ef99dec751bf110c96",
+      "committed_at": "2011-11-18T21:04:40Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "4eb788c4efbab6f3088e6ae16a85f09f",
+        "login": "MoritzStefaner",
+        "avatar_url": "https://secure.gravatar.com/avatar/4eb788c4efbab6f3088e6ae16a85f09f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/MoritzStefaner",
+        "id": 216044
+      },
+      "version": "1d8fbecdaab0d03a5cec299f5f8fecd980c6dd12",
+      "change_status": {
+        "total": 130,
+        "additions": 130,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1377729/1d8fbecdaab0d03a5cec299f5f8fecd980c6dd12",
+      "committed_at": "2011-11-18T20:55:49Z"
+    }
+  ],
+  "description": "Force-based label placement",
+  "html_url": "https://gist.github.com/1377729",
+  "git_push_url": "git@gist.github.com:1377729.git",
+  "comments": 3,
+  "created_at": "2011-11-18T20:55:49Z",
+  "public": true,
+  "files": {
+    "readme.mkd": {
+      "raw_url": "https://gist.github.com/raw/1377729/1b7d8cb980962f404a230c5ba1c783bc1905d760/readme.mkd",
+      "type": "text/plain",
+      "filename": "readme.mkd",
+      "size": 822,
+      "content": "A small demo of a pleasant, yet simple label placement algorithm for densely packed visualizations. The basic idea is to have labels orbit around their target node at a fixed distance, but repeal each other, so that they don't overlap, and orient themselves to the outside of clusters. To support that, labels on the right of their target node are left-aligned, and labels on the left of their target node are right-aligned; in between, we interpolate. In this example, one force layout governs the node placement, and the second one the label placement, but of course, the node placement could be computed by any other algorithm.\n\nI first used this label placement in the [MPG research networks project](http://max-planck-research-networks.net) and owe the basic idea to [Cedric Kiefer](https://twitter.com/cedrickiefer).",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/1377729/ebb376075039043ff7d71e03d1cb4c4fc42d35c2/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 3692,
+      "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01//EN\">\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<title>Force based label placement</title>\n\t\t<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.6.0\"></script>\n\t\t<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.6.0\"></script>\n\t\t<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.js?2.6.0\"></script>\n\t</head>\n\t<body>\n<script type=\"text/javascript\" charset=\"utf-8\">\n\t\t\tvar w = 960, h = 500;\n\n\t\t\tvar labelDistance = 0;\n\n\t\t\tvar vis = d3.select(\"body\").append(\"svg:svg\").attr(\"width\", w).attr(\"height\", h);\n\n\t\t\tvar nodes = [];\n\t\t\tvar labelAnchors = [];\n\t\t\tvar labelAnchorLinks = [];\n\t\t\tvar links = [];\n\n\t\t\tfor(var i = 0; i < 30; i++) {\n\t\t\t\tvar node = {\n\t\t\t\t\tlabel : \"node \" + i\n\t\t\t\t};\n\t\t\t\tnodes.push(node);\n\t\t\t\tlabelAnchors.push({\n\t\t\t\t\tnode : node\n\t\t\t\t});\n\t\t\t\tlabelAnchors.push({\n\t\t\t\t\tnode : node\n\t\t\t\t});\n\t\t\t};\n\n\t\t\tfor(var i = 0; i < nodes.length; i++) {\n\t\t\t\tfor(var j = 0; j < i; j++) {\n\t\t\t\t\tif(Math.random() > .95)\n\t\t\t\t\t\tlinks.push({\n\t\t\t\t\t\t\tsource : i,\n\t\t\t\t\t\t\ttarget : j,\n\t\t\t\t\t\t\tweight : Math.random()\n\t\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t\tlabelAnchorLinks.push({\n\t\t\t\t\tsource : i * 2,\n\t\t\t\t\ttarget : i * 2 + 1,\n\t\t\t\t\tweight : 1\n\t\t\t\t});\n\t\t\t};\n\n\t\t\tvar force = d3.layout.force().size([w, h]).nodes(nodes).links(links).gravity(1).linkDistance(50).charge(-3000).linkStrength(function(x) {\n\t\t\t\treturn x.weight * 10\n\t\t\t});\n\n\n\t\t\tforce.start();\n\n\t\t\tvar force2 = d3.layout.force().nodes(labelAnchors).links(labelAnchorLinks).gravity(0).linkDistance(0).linkStrength(8).charge(-100).size([w, h]);\n\t\t\tforce2.start();\n\n\t\t\tvar link = vis.selectAll(\"line.link\").data(links).enter().append(\"svg:line\").attr(\"class\", \"link\").style(\"stroke\", \"#CCC\");\n\n\t\t\tvar node = vis.selectAll(\"g.node\").data(force.nodes()).enter().append(\"svg:g\").attr(\"class\", \"node\");\n\t\t\tnode.append(\"svg:circle\").attr(\"r\", 5).style(\"fill\", \"#555\").style(\"stroke\", \"#FFF\").style(\"stroke-width\", 3);\n\t\t\tnode.call(force.drag);\n\n\n\t\t\tvar anchorLink = vis.selectAll(\"line.anchorLink\").data(labelAnchorLinks)//.enter().append(\"svg:line\").attr(\"class\", \"anchorLink\").style(\"stroke\", \"#999\");\n\n\t\t\tvar anchorNode = vis.selectAll(\"g.anchorNode\").data(force2.nodes()).enter().append(\"svg:g\").attr(\"class\", \"anchorNode\");\n\t\t\tanchorNode.append(\"svg:circle\").attr(\"r\", 0).style(\"fill\", \"#FFF\");\n\t\t\t\tanchorNode.append(\"svg:text\").text(function(d, i) {\n\t\t\t\treturn i % 2 == 0 ? \"\" : d.node.label\n\t\t\t}).style(\"fill\", \"#555\").style(\"font-family\", \"Arial\").style(\"font-size\", 12);\n\n\t\t\tvar updateLink = function() {\n\t\t\t\tthis.attr(\"x1\", function(d) {\n\t\t\t\t\treturn d.source.x;\n\t\t\t\t}).attr(\"y1\", function(d) {\n\t\t\t\t\treturn d.source.y;\n\t\t\t\t}).attr(\"x2\", function(d) {\n\t\t\t\t\treturn d.target.x;\n\t\t\t\t}).attr(\"y2\", function(d) {\n\t\t\t\t\treturn d.target.y;\n\t\t\t\t});\n\n\t\t\t}\n\n\t\t\tvar updateNode = function() {\n\t\t\t\tthis.attr(\"transform\", function(d) {\n\t\t\t\t\treturn \"translate(\" + d.x + \",\" + d.y + \")\";\n\t\t\t\t});\n\n\t\t\t}\n\n\n\t\t\tforce.on(\"tick\", function() {\n\n\t\t\t\tforce2.start();\n\n\t\t\t\tnode.call(updateNode);\n\n\t\t\t\tanchorNode.each(function(d, i) {\n\t\t\t\t\tif(i % 2 == 0) {\n\t\t\t\t\t\td.x = d.node.x;\n\t\t\t\t\t\td.y = d.node.y;\n\t\t\t\t\t} else {\n\t\t\t\t\t\tvar b = this.childNodes[1].getBBox();\n\n\t\t\t\t\t\tvar diffX = d.x - d.node.x;\n\t\t\t\t\t\tvar diffY = d.y - d.node.y;\n\n\t\t\t\t\t\tvar dist = Math.sqrt(diffX * diffX + diffY * diffY);\n\n\t\t\t\t\t\tvar shiftX = b.width * (diffX - dist) / (dist * 2);\n\t\t\t\t\t\tshiftX = Math.max(-b.width, Math.min(0, shiftX));\n\t\t\t\t\t\tvar shiftY = 5;\n\t\t\t\t\t\tthis.childNodes[1].setAttribute(\"transform\", \"translate(\" + shiftX + \",\" + shiftY + \")\");\n\t\t\t\t\t}\n\t\t\t\t});\n\n\n\t\t\t\tanchorNode.call(updateNode);\n\n\t\t\t\tlink.call(updateLink);\n\t\t\t\tanchorLink.call(updateLink);\n\n\t\t\t});\n\n\t\t</script>\n\t</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-11-18T20:55:49Z",
+  "url": "https://api.github.com/gists/1377729",
+  "id": "1377729"
+}

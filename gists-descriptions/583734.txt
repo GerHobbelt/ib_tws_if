@@ -1,0 +1,116 @@
+{
+  "git_push_url": "git@gist.github.com:583734.git",
+  "forks": [
+
+  ],
+  "updated_at": "2010-09-19T06:42:07Z",
+  "public": true,
+  "html_url": "https://gist.github.com/583734",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "raw_url": "https://gist.github.com/raw/583734/bffb83ea96a2dd2cd7be5001430367ff3f8546c8/index.html",
+      "content": "<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.2.0/polymaps.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.2.0/examples/canvas/procedural.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/simplegeo/polymaps/raw/v2.2.0/examples/example.css\");\n\n#map {\n  background: #ddd;\n}\n\n    </style>\n  </head>\n  <body id=\"map\">\n    <script type=\"text/javascript\">\n\nvar po = org.polymaps;\n\nvar map = po.map()\n    .container(document.getElementById(\"map\").appendChild(po.svg(\"svg\")))\n    .zoomRange([0, 5])\n    .zoom(1)\n    .tileSize({x: 512, y: 512})\n    .center({lat: 0, lon: 0})\n    .add(po.interact())\n    .add(po.hash());\n\nmap.add(po.procedural()\n    .zoom(function(z) { return Math.min(4, z); })\n    .worker(\"cell-worker.js\"));\n\nmap.add(po.compass()\n    .pan(\"none\"));\n\n    </script>\n  </body>\n</html>",
+      "size": 923
+    },
+    "cell-worker.js": {
+      "type": "application/javascript",
+      "filename": "cell-worker.js",
+      "language": "JavaScript",
+      "raw_url": "https://gist.github.com/raw/583734/224ea81e135c9fd791cf33ca937c7a6a8deea63d/cell-worker.js",
+      "content": "onmessage = function(e) {\n  var z0 = Math.max(0, 4 - e.data.zoom),\n      z1 = Math.max(0, e.data.zoom - 4),\n      w = e.data.size.x >> z0,\n      h = e.data.size.y >> z0,\n      n = 1 << z0,\n      col = e.data.column >> z1 << z0,\n      row = e.data.row >> z1 << z0,\n      data = e.data.data = [],\n      state = [];\n\n  for (var j = 0, y = 0; j < n; j++, y += h) {\n    for (var i = 0, x = 0; i < n; i++, x += w) {\n      draw((j | row) | ((i | col) << 4), x, y);\n    }\n  }\n\n  function draw(r, x, y) {\n    for (var i = 0; i < w; i++) {\n      state[i] = ~~(Math.random() * 2);\n    }\n    for (var j = 0; j < h; j++) {\n      var p = state.slice(),\n          k = 4 * (e.data.size.x * (j + y) + x);\n      for (var i = 0; i < w; i++) {\n        data[k++] = data[k++] = data[k++] = 255 * state[i];\n        data[k++] = 255;\n        state[i] = (r >> (p[i - 1] << 2 | p[i] << 1 | p[i + 1])) & 1;\n      }\n    }\n  }\n\n  postMessage(e.data);\n};",
+      "size": 923
+    },
+    "README.mkd": {
+      "type": "text/plain",
+      "filename": "README.mkd",
+      "language": "Markdown",
+      "raw_url": "https://gist.github.com/raw/583734/9c736fdf31630eadda98e5f07fca8410d932f4c7/README.mkd",
+      "content": "From [MathWorld](http://mathworld.wolfram.com/CellularAutomaton.html): &ldquo;A cellular automaton is a collection of &lsquo;colored&rsquo; cells on a grid of specified shape that evolves through a number of discrete time steps according to a set of rules based on the states of neighboring cells.&rdquo;\n\nThis example explores binary, nearest-neighbor, one-dimensional automata, of which there are 256 (2<sup>8</sup>) possible rules. All 256 rules are arranged in a grid, by column and then by row. The top-left corner is rule 0; the bottom-right corner is rule 255. Zoom in to see more of any particular rule.",
+      "size": 611
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "url": "https://api.github.com/users/mbostock",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "version": "c9da9133f35e1bf2267ea67824b64f2d3340732a",
+      "change_status": {
+        "total": 6,
+        "deletions": 3,
+        "additions": 3
+      },
+      "committed_at": "2010-09-19T06:42:07Z",
+      "user": null,
+      "url": "https://api.github.com/gists/583734/c9da9133f35e1bf2267ea67824b64f2d3340732a"
+    },
+    {
+      "version": "99bf7916a4e4f90f9de1d24d801c43078645e1b2",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-17T05:09:34Z",
+      "user": null,
+      "url": "https://api.github.com/gists/583734/99bf7916a4e4f90f9de1d24d801c43078645e1b2"
+    },
+    {
+      "version": "c69695c83adfa652954b42cc4875c2f1f0932676",
+      "change_status": {
+        "total": 4,
+        "deletions": 3,
+        "additions": 1
+      },
+      "committed_at": "2010-09-17T05:05:34Z",
+      "user": null,
+      "url": "https://api.github.com/gists/583734/c69695c83adfa652954b42cc4875c2f1f0932676"
+    },
+    {
+      "version": "b645537318ccd0562a7505bce165c0ca733c4dfd",
+      "change_status": {
+        "total": 4,
+        "deletions": 1,
+        "additions": 3
+      },
+      "committed_at": "2010-09-17T05:04:48Z",
+      "user": null,
+      "url": "https://api.github.com/gists/583734/b645537318ccd0562a7505bce165c0ca733c4dfd"
+    },
+    {
+      "version": "1a51e9b8f43f1cfbce7870dfbfbcb56bca465ece",
+      "change_status": {
+        "total": 3,
+        "deletions": 2,
+        "additions": 1
+      },
+      "committed_at": "2010-09-17T04:50:20Z",
+      "user": null,
+      "url": "https://api.github.com/gists/583734/1a51e9b8f43f1cfbce7870dfbfbcb56bca465ece"
+    },
+    {
+      "version": "a00715dc747e59211065aeffd176936975807350",
+      "change_status": {
+        "total": 76,
+        "deletions": 0,
+        "additions": 76
+      },
+      "committed_at": "2010-09-17T04:49:55Z",
+      "user": null,
+      "url": "https://api.github.com/gists/583734/a00715dc747e59211065aeffd176936975807350"
+    }
+  ],
+  "url": "https://api.github.com/gists/583734",
+  "description": "Cellular automata",
+  "git_pull_url": "git://gist.github.com/583734.git",
+  "id": "583734",
+  "comments": 0,
+  "created_at": "2010-09-17T04:49:54Z"
+}

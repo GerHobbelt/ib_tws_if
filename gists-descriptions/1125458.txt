@@ -1,0 +1,259 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "a858a54895a4242c16f7f43f92fd343d",
+        "login": "nkhine",
+        "avatar_url": "https://secure.gravatar.com/avatar/a858a54895a4242c16f7f43f92fd343d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/nkhine",
+        "id": 85080
+      },
+      "created_at": "2012-07-10T11:54:01Z",
+      "updated_at": "2012-07-10T11:54:01Z",
+      "url": "https://api.github.com/gists/3082878",
+      "id": "3082878"
+    }
+  ],
+  "user": {
+    "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+    "login": "bsn",
+    "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/bsn",
+    "id": 39050
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:49:29Z",
+      "version": "e1ddf2278c8a41d009f85a8e07abe718abd5b095",
+      "url": "https://api.github.com/gists/1125458/e1ddf2278c8a41d009f85a8e07abe718abd5b095",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:49:05Z",
+      "version": "c0cbcab9790a9dbc1c7b929bbad332d9ae44fadc",
+      "url": "https://api.github.com/gists/1125458/c0cbcab9790a9dbc1c7b929bbad332d9ae44fadc",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:48:44Z",
+      "version": "590bf9a4d1cd33790d37ac06ff35ae474767f6df",
+      "url": "https://api.github.com/gists/1125458/590bf9a4d1cd33790d37ac06ff35ae474767f6df",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:48:18Z",
+      "version": "1fd7add7cb3f599141f911cefeebb2578449c09c",
+      "url": "https://api.github.com/gists/1125458/1fd7add7cb3f599141f911cefeebb2578449c09c",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:47:50Z",
+      "version": "b6ca0fb83094b9222e9591720b80e8642a886677",
+      "url": "https://api.github.com/gists/1125458/b6ca0fb83094b9222e9591720b80e8642a886677",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:47:30Z",
+      "version": "24341fcaa9f0add20bcef22f938af54c416c1f9f",
+      "url": "https://api.github.com/gists/1125458/24341fcaa9f0add20bcef22f938af54c416c1f9f",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:47:08Z",
+      "version": "ec5bf26f5b521f1c1db4dbc7ced6f4402a60842f",
+      "url": "https://api.github.com/gists/1125458/ec5bf26f5b521f1c1db4dbc7ced6f4402a60842f",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:46:28Z",
+      "version": "85405ff9b53c30a9d01fc1dc642b0c6c13415f97",
+      "url": "https://api.github.com/gists/1125458/85405ff9b53c30a9d01fc1dc642b0c6c13415f97",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:45:58Z",
+      "version": "13e5fde66dbdc2aefd4c6f73819355da9596d060",
+      "url": "https://api.github.com/gists/1125458/13e5fde66dbdc2aefd4c6f73819355da9596d060",
+      "change_status": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "a37568647520ce16f2b533ea6d1b1627",
+        "login": "bsn",
+        "avatar_url": "https://secure.gravatar.com/avatar/a37568647520ce16f2b533ea6d1b1627?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bsn",
+        "id": 39050
+      },
+      "committed_at": "2011-08-04T15:44:47Z",
+      "version": "a824a2ff4d7317163607f25a1521eef935b775a1",
+      "url": "https://api.github.com/gists/1125458/a824a2ff4d7317163607f25a1521eef935b775a1",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    }
+  ],
+  "description": "Google Maps + D3",
+  "comments": 0,
+  "created_at": "2011-08-04T15:34:40Z",
+  "git_pull_url": "git://gist.github.com/1125458.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1125458",
+  "git_push_url": "git@gist.github.com:1125458.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1125458/b3719eab11c7fd19a5b01f75a6cbcb32e8e824f7/index.html",
+      "size": 2378,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\"/>\n    <script type=\"text/javascript\" src=\"http://maps.google.com/maps/api/js?sensor=true\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/mbostock/d3/raw/v1.8.4/d3.js\"></script>\n    <style type=\"text/css\">\n\nhtml, body, #map {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n\n.stations, .stations svg {\n  position: absolute;\n}\n\n.stations svg {\n  width:50px;\n  height:50px;\n  padding-right: 100px;\n  font: 10px sans-serif;\n}\n\n.stations circle {\n  fill: brown;\n  stroke: black;\n  stroke-width: 1.5px;\n}\n\n    </style>\n  </head>\n  <body>\n    <div id=\"map\"></div>\n    <script type=\"text/javascript\">\n\n// Create the Google Map…\nvar map = new google.maps.Map(d3.select(\"#map\").node(), {\n  zoom: 8,\n  center: new google.maps.LatLng(37.76487, -122.41948),\n  mapTypeId: google.maps.MapTypeId.TERRAIN\n});\n\n// Load the station data. When the data comes back, create an overlay.\nd3.json(\"stations.json\", function(data) {\n  var overlay = new google.maps.OverlayView();\n\n  // Add the container when the overlay is added to the map.\n  overlay.onAdd = function() {\n    var layer = d3.select(this.getPanes().overlayLayer).append(\"div\")\n        .attr(\"class\", \"stations\");\n\n    // Draw each marker as a separate SVG element.\n    // We could use a single SVG, but what size would it have?\n    overlay.draw = function() {\n      var projection = this.getProjection();\n\n      var marker = layer.selectAll(\"svg\")\n          .data(d3.entries(data))\n          .each(transform) // update existing markers\n        .enter().append(\"svg:svg\")\n          .each(transform)\n          .attr(\"class\", \"marker\");\n\n      // Add a circle.\n      marker.append(\"svg:circle\")\n          .attr(\"r\", 4.5)\n          .attr(\"cx\", 25)\n          .attr(\"cy\", 25);\n\n      // Add a label.\n      marker.append(\"svg:text\")\n          .attr(\"x\", 33)\n          .attr(\"dy\", 28)\n          .text(function(d) { return d.key; });\n\n      function transform(d) {\n        d = new google.maps.LatLng(d.value[1], d.value[0]);\n        d = projection.fromLatLngToDivPixel(d);\n        return d3.select(this)\n            .style(\"left\", (d.x-25) + \"px\")\n            .style(\"top\", (d.y-25) + \"px\");\n      }\n    };\n  };\n\n  // Bind our overlay to the map…\n  overlay.setMap(map);\n});\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "stations.json": {
+      "type": "application/json",
+      "filename": "stations.json",
+      "raw_url": "https://gist.github.com/raw/1125458/f5b132f98e3d30bfe193c5e9c5bc5fc6b75aba5f/stations.json",
+      "size": 2098,
+      "content": "{\"KMAE\":[-120.12,36.98,\"MADERA MUNICIPAL AIRPORT\",[26,1,2,5,6,3,2,1,2,7,29,12,3]],\"KSJC\":[-121.92,37.37,\"SAN JOSE INTERNATIONAL  AIRPORT\",[28,1,1,1,6,10,5,3,2,4,14,21,7]],\"KMCE\":[-120.50,37.28,\"MERCED MUNICIPAL AIRPORT\",[29,1,1,3,7,5,2,1,3,6,12,26,5]],\"KMER\":[-120.57,37.37,\"Merced / Castle Air Force Base\",[34,1,1,1,4,5,2,1,1,4,17,22,7]],\"KAPC\":[-122.28,38.20,\"NAPA COUNTY AIRPORT\",[23,2,1,6,3,3,8,18,11,13,4,3,5]],\"KSUU\":[-121.95,38.27,\"Fairfield / Travis Air Force Base\",[13,7,4,3,3,6,4,13,33,4,1,2,7]],\"KSQL\":[-122.25,37.52,\"San Carlos Airport\",[18,3,2,2,3,4,3,2,5,17,16,12,12]],\"KSNS\":[-121.60,36.67,\"SALINAS MUNICIPAL AIRPORT\",[21,1,1,6,12,3,1,2,9,21,17,5,1]],\"KMOD\":[-120.95,37.62,\"MODESTO CITY CO SHAM FLD\",[27,1,1,2,10,5,1,1,1,3,17,24,8]],\"KOAK\":[-122.23,37.72,\"METRO OAKLAND INTERNATIONAL  AIRPORT \",[16,3,3,2,4,6,3,4,9,23,20,6,2]],\"KSCK\":[-121.23,37.90,\"STOCKTON METROPOLITAN AIRPORT \",[21,2,2,3,6,8,2,1,4,15,19,12,4]],\"KCCR\":[-122.05,38.00,\"CONCORD BUCHANAN FIELD\",[24,3,2,1,1,5,17,12,9,9,7,6,4]],\"KMRY\":[-121.85,36.58,\"MONTEREY PENINSULA AIRPORT\",[26,1,2,9,5,3,4,9,13,14,9,4,1]],\"KPAO\":[-122.12,37.47,\"Palo Alto Airport\",[31,3,1,1,2,5,1,1,1,4,10,25,14]],\"KSAC\":[-121.50,38.50,\"SACRAMENTO EXECUTIVE AIRPORT \",[32,1,0,1,3,11,12,16,5,2,4,9,3]],\"KHWD\":[-122.12,37.67,\"HAYWARD AIR TERMINAL\",[20,2,7,2,2,6,3,3,6,23,18,6,2]],\"KSTS\":[-122.82,38.50,\"SANTA ROSA SONOMA COUNTY\",[46,1,0,1,5,13,10,4,3,3,4,6,3]],\"KSMF\":[-121.60,38.70,\"SACRAMENTO INTERNATIONAL  AIRPORT\",[19,2,1,2,4,21,18,8,3,2,5,12,4]],\"KNUQ\":[-122.05,37.43,\"MOFFETT FIELD\",[35,3,1,1,4,7,2,1,2,5,6,17,15]],\"KRHV\":[-121.82,37.33,\"San Jose / Reid / Hillv\",[35,0,0,1,4,4,2,1,1,10,28,11,1]],\"KWVI\":[-121.78,36.93,\"WATSONVILLE MUNICIPAL AIRPORT \",[44,1,2,3,4,5,7,9,8,4,6,5,2]],\"KMHR\":[-121.30,38.55,\"Sacramento, Sacramento Mather Airport\",[21,1,1,2,8,15,12,12,7,4,5,7,3]],\"KVCB\":[-121.95,38.38,\"VACAVILLE NUT TREE AIRPORT\",[36,2,1,1,2,6,10,18,10,2,2,5,6]],\"KSFO\":[-122.37,37.62,\"SAN FRANCISCO INTERNATIONAL  AIRPORT \",[13,3,3,2,3,4,4,4,7,31,20,2,3]],\"KLVK\":[-121.82,37.70,\"LIVERMORE MUNICIPAL AIRPORT \",[32,2,7,3,1,1,2,7,9,17,16,2,1]]}\n",
+      "language": "JSON"
+    }
+  },
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mbostock",
+      "id": 230541
+    },
+    "description": "Google Maps + D3",
+    "comments": 3,
+    "created_at": "2011-04-02T18:03:45Z",
+    "git_pull_url": "git://gist.github.com/899711.git",
+    "public": true,
+    "html_url": "https://gist.github.com/899711",
+    "git_push_url": "git@gist.github.com:899711.git",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/899711/c32a6ef92dab913b99f556386bd6c6abd7852ee4/index.html",
+        "size": 2468,
+        "language": "HTML"
+      },
+      "stations.json": {
+        "type": "application/json",
+        "filename": "stations.json",
+        "raw_url": "https://gist.github.com/raw/899711/f5b132f98e3d30bfe193c5e9c5bc5fc6b75aba5f/stations.json",
+        "size": 2098,
+        "language": "JSON"
+      }
+    },
+    "updated_at": "2011-04-02T18:03:45Z",
+    "url": "https://api.github.com/gists/899711",
+    "id": "899711"
+  },
+  "updated_at": "2011-08-04T15:34:40Z",
+  "url": "https://api.github.com/gists/1125458",
+  "id": "1125458"
+}

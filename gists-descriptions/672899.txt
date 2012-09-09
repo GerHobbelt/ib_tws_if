@@ -1,0 +1,63 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "created_at": "2011-10-28T09:09:06Z",
+      "updated_at": "2011-10-28T09:09:06Z",
+      "url": "https://api.github.com/gists/1321922",
+      "id": "1321922"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 96,
+        "additions": 96,
+        "deletions": 0
+      },
+      "version": "3af78d0a46441753e44c32c7b6a7405b80b02d21",
+      "committed_at": "2010-11-11T17:55:20Z",
+      "url": "https://api.github.com/gists/672899/3af78d0a46441753e44c32c7b6a7405b80b02d21"
+    }
+  ],
+  "description": "Fast Pointing",
+  "comments": 0,
+  "created_at": "2010-11-11T17:55:19Z",
+  "public": true,
+  "html_url": "https://gist.github.com/672899",
+  "git_pull_url": "git://gist.github.com/672899.git",
+  "files": {
+    "gistfile1.txt": {
+      "type": "text/plain",
+      "filename": "gistfile1.txt",
+      "size": 2092,
+      "raw_url": "https://gist.github.com/raw/672899/525041d08a33d520965b8f647d7bf76d08b8c767/gistfile1.txt",
+      "content": "<html>\n  <head>\n    <title>Pointing</title>\n    <script type=\"text/javascript\" src=\"http://github.com/mbostock/protovis/raw/v3.3.1/protovis.js\"></script>\n    <style type=\"text/css\">\n\n#fig {\n  width: 450px;\n  height: 425px;\n}\n\nbody {\n  margin: 0;\n  display: table;\n  height: 100%;\n  width: 100%;\n  font: 14px/134% Helvetica Neue, sans-serif;\n}\n\n#center {\n  display: table-cell;\n  vertical-align: middle;\n}\n\n#fig {\n  position: relative;\n  margin: auto;\n}\n\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript+protovis\">\n\nvar data = pv.range(100).map(function(x) {\n    return {x: x, y: Math.random(), z: Math.pow(10, 2 * Math.random())};\n  });\n\n/* Sizing and scales. */\nvar w = 400,\n    h = 400,\n    x = pv.Scale.linear(0, 99).range(0, w),\n    y = pv.Scale.linear(0, 1).range(0, h),\n    c = pv.Scale.linear(0, 1).range(\"orange\", \"brown\");\n\n/* The root panel. */\nvar vis = new pv.Panel()\n    .width(w)\n    .height(h)\n    .bottom(20)\n    .left(20)\n    .right(30)\n    .top(5)\n    .events(\"all\")\n    .event(\"mousemove\", pv.Behavior.point());\n\n/* Y-axis and ticks. */\nvis.add(pv.Rule)\n    .data(y.ticks())\n    .bottom(y)\n    .strokeStyle(function(d) d ? \"#eee\" : \"#000\")\n  .anchor(\"left\").add(pv.Label)\n    .visible(function(d) d > 0 && d < 1)\n    .text(y.tickFormat);\n\n/* X-axis and ticks. */\nvis.add(pv.Rule)\n    .data(x.ticks())\n    .left(x)\n    .strokeStyle(function(d) d ? \"#eee\" : \"#000\")\n  .anchor(\"bottom\").add(pv.Label)\n    .visible(function(d) d > 0 && d < 100)\n    .text(x.tickFormat);\n\n/* The dot plot! */\nvis.add(pv.Panel)\n  .data(data)\n  .add(pv.Panel) // singleton panel!\n  .add(pv.Dot)\n    .def(\"active\", -1)\n    .left(function(d) x(d.x + Math.random()))\n    .bottom(function(d) y(d.y))\n    .strokeStyle(function(d) c(d.y))\n    .fillStyle(function() this.strokeStyle().alpha(.2))\n    .event(\"point\", function() this.active(0).parent)\n    .event(\"unpoint\", function() this.active(-1).parent)\n  .anchor(\"right\").add(pv.Label)\n    .visible(function() this.anchorTarget().active() == 0)\n    .text(function(d) d.y.toFixed(2));\n\nvis.render();\n\n    </script>\n  </body>\n</html>\n",
+      "language": null
+    }
+  },
+  "git_push_url": "git@gist.github.com:672899.git",
+  "updated_at": "2010-11-11T17:55:37Z",
+  "url": "https://api.github.com/gists/672899",
+  "id": "672899"
+}

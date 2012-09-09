@@ -1,0 +1,122 @@
+{
+  "git_pull_url": "git://gist.github.com/603148.git",
+  "forks": [
+
+  ],
+  "git_push_url": "git@gist.github.com:603148.git",
+  "updated_at": "2010-09-29T17:40:53Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.2.0/polymaps.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/mbostock/polymaps/raw/30a15c8165afc55a43df54779c232f3e5f8ee544/examples/loupe/loupe.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/simplegeo/polymaps/raw/v2.2.0/examples/example.css\");\n\nhtml, body {\n  height: 100%;\n}\n\nsvg {\n  display: block;\n}\n\n    </style>\n  </head>\n  <body id=\"map\">\n    <script type=\"text/javascript\">\n\nvar po = org.polymaps;\n\nvar map = po.map()\n    .container(document.getElementById(\"map\").appendChild(po.svg(\"svg\")))\n    .center({lat: 0, lon: 0})\n    .zoom(3)\n    .zoomRange([1, 7])\n    .add(po.interact());\n\nmap.add(po.image()\n    .zoom(function(z) { return Math.max(3, z); })\n    .url(hd(\"http://www.haltadefinizione.com\"\n    + \"/immagini/opere/14/imgfull/bacco_krpano\"\n    + \"/l{Z}_{Y}_{X}.jpg\")));\n\nmap.add(po.compass()\n    .pan(\"none\"));\n\nfunction hd(template) {\n  return function(c) {\n    var x = c.column + 1,\n        y = c.row + 1,\n        z = c.zoom - 2;\n    if (x <= 0) return \"about:blank\";\n    return template.replace(/{(.)}/g, function(s, v) {\n      switch (v) {\n        case \"Z\": return z;\n        case \"X\": return x < 10 ? \"0\" + x : x;\n        case \"Y\": return y < 10 ? \"0\" + y : y;\n      }\n      return v;\n    });\n  };\n}\n\n    </script>\n    <span id=\"copy\">\n      &copy; 2010\n      <a href=\"http://www.haltadefinizione.com/\">Haltadefinizione</a>.\n    </span>\n  </body>\n</html>",
+      "raw_url": "https://gist.github.com/raw/603148/d1d13d44d41cf7a70971eb1dc2c0a56a257562de/index.html",
+      "size": 1546
+    }
+  },
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "version": "065ea616f405beb4973e5b07aba7b3ee77a38592",
+      "user": null,
+      "url": "https://api.github.com/gists/603148/065ea616f405beb4973e5b07aba7b3ee77a38592",
+      "change_status": {
+        "total": 3,
+        "deletions": 1,
+        "additions": 2
+      },
+      "committed_at": "2010-09-29T17:39:46Z"
+    },
+    {
+      "version": "6edff527281be280382018e09ad34fde96df2620",
+      "user": null,
+      "url": "https://api.github.com/gists/603148/6edff527281be280382018e09ad34fde96df2620",
+      "change_status": {
+        "total": 6,
+        "deletions": 3,
+        "additions": 3
+      },
+      "committed_at": "2010-09-29T17:38:15Z"
+    },
+    {
+      "version": "592d2934356f526a53103d0087902736944ad7d0",
+      "user": null,
+      "url": "https://api.github.com/gists/603148/592d2934356f526a53103d0087902736944ad7d0",
+      "change_status": {
+        "total": 10,
+        "deletions": 3,
+        "additions": 7
+      },
+      "committed_at": "2010-09-29T17:34:41Z"
+    },
+    {
+      "version": "a0b22d0325f505835abf9bc1bb13d04f31162b4c",
+      "user": null,
+      "url": "https://api.github.com/gists/603148/a0b22d0325f505835abf9bc1bb13d04f31162b4c",
+      "change_status": {
+        "total": 3,
+        "deletions": 2,
+        "additions": 1
+      },
+      "committed_at": "2010-09-29T17:32:52Z"
+    },
+    {
+      "version": "5aa59f9c58ddbf74303a26009ebb7d3b80f1b872",
+      "user": null,
+      "url": "https://api.github.com/gists/603148/5aa59f9c58ddbf74303a26009ebb7d3b80f1b872",
+      "change_status": {
+        "total": 21,
+        "deletions": 3,
+        "additions": 18
+      },
+      "committed_at": "2010-09-29T17:32:24Z"
+    },
+    {
+      "version": "e5d07efd4cf21965e0accaf93e1d338f71e85892",
+      "user": null,
+      "url": "https://api.github.com/gists/603148/e5d07efd4cf21965e0accaf93e1d338f71e85892",
+      "change_status": {
+        "total": 3,
+        "deletions": 1,
+        "additions": 2
+      },
+      "committed_at": "2010-09-29T17:26:10Z"
+    },
+    {
+      "version": "35aaaa34150d98f6c6b4da54a76eda2b9168477b",
+      "user": null,
+      "url": "https://api.github.com/gists/603148/35aaaa34150d98f6c6b4da54a76eda2b9168477b",
+      "change_status": {
+        "total": 4,
+        "deletions": 1,
+        "additions": 3
+      },
+      "committed_at": "2010-09-29T17:25:06Z"
+    },
+    {
+      "version": "ed7a01a40ced56c61a2447c743892442e9ae1c9f",
+      "user": null,
+      "url": "https://api.github.com/gists/603148/ed7a01a40ced56c61a2447c743892442e9ae1c9f",
+      "change_status": {
+        "total": 42,
+        "deletions": 0,
+        "additions": 42
+      },
+      "committed_at": "2010-09-29T17:24:18Z"
+    }
+  ],
+  "html_url": "https://gist.github.com/603148",
+  "url": "https://api.github.com/gists/603148",
+  "description": "Caravaggio, Bacco (1597), Firenze, Galleria degli Uffizi",
+  "id": "603148",
+  "comments": 0,
+  "created_at": "2010-09-29T17:24:18Z"
+}

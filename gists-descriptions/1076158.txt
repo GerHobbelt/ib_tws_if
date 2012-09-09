@@ -1,0 +1,162 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "3dfe581ced82b6ab7d10429bc60541e1",
+    "login": "fod",
+    "avatar_url": "https://secure.gravatar.com/avatar/3dfe581ced82b6ab7d10429bc60541e1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/fod",
+    "id": 163355
+  },
+  "git_push_url": "git@gist.github.com:1076158.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "8084f5521e1cd364272b7d38eadf603f",
+        "login": "g2010a",
+        "avatar_url": "https://secure.gravatar.com/avatar/8084f5521e1cd364272b7d38eadf603f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/g2010a",
+        "id": 516006
+      },
+      "version": "f75e5260452ca7bf745c176fca176da6eb941104",
+      "change_status": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "committed_at": "2011-06-15T12:49:57Z",
+      "url": "https://api.github.com/gists/1076158/f75e5260452ca7bf745c176fca176da6eb941104"
+    },
+    {
+      "user": {
+        "gravatar_id": "8084f5521e1cd364272b7d38eadf603f",
+        "login": "g2010a",
+        "avatar_url": "https://secure.gravatar.com/avatar/8084f5521e1cd364272b7d38eadf603f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/g2010a",
+        "id": 516006
+      },
+      "version": "c20dcc7c9591d85712605393418fd082acf37939",
+      "change_status": {
+        "total": 41,
+        "additions": 22,
+        "deletions": 19
+      },
+      "committed_at": "2011-06-15T11:41:10Z",
+      "url": "https://api.github.com/gists/1076158/c20dcc7c9591d85712605393418fd082acf37939"
+    },
+    {
+      "user": {
+        "gravatar_id": "8084f5521e1cd364272b7d38eadf603f",
+        "login": "g2010a",
+        "avatar_url": "https://secure.gravatar.com/avatar/8084f5521e1cd364272b7d38eadf603f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/g2010a",
+        "id": 516006
+      },
+      "version": "ce62b9b0000a5d725ea0409ac3ba21c4627568ae",
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "committed_at": "2011-06-15T08:28:30Z",
+      "url": "https://api.github.com/gists/1076158/ce62b9b0000a5d725ea0409ac3ba21c4627568ae"
+    },
+    {
+      "user": {
+        "gravatar_id": "8084f5521e1cd364272b7d38eadf603f",
+        "login": "g2010a",
+        "avatar_url": "https://secure.gravatar.com/avatar/8084f5521e1cd364272b7d38eadf603f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/g2010a",
+        "id": 516006
+      },
+      "version": "40000babf0ea18b1b3a222154c38ca76d04de26d",
+      "change_status": {
+        "total": 68,
+        "additions": 68,
+        "deletions": 0
+      },
+      "committed_at": "2011-06-15T07:49:12Z",
+      "url": "https://api.github.com/gists/1076158/40000babf0ea18b1b3a222154c38ca76d04de26d"
+    },
+    {
+      "user": {
+        "gravatar_id": "8084f5521e1cd364272b7d38eadf603f",
+        "login": "g2010a",
+        "avatar_url": "https://secure.gravatar.com/avatar/8084f5521e1cd364272b7d38eadf603f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/g2010a",
+        "id": 516006
+      },
+      "version": "7ec37068763360c5b1b632516a08877734930ffd",
+      "change_status": {
+        "total": 81,
+        "additions": 81,
+        "deletions": 0
+      },
+      "committed_at": "2011-06-15T07:33:26Z",
+      "url": "https://api.github.com/gists/1076158/7ec37068763360c5b1b632516a08877734930ffd"
+    }
+  ],
+  "fork_of": {
+    "user": {
+      "gravatar_id": "8084f5521e1cd364272b7d38eadf603f",
+      "login": "g2010a",
+      "avatar_url": "https://secure.gravatar.com/avatar/8084f5521e1cd364272b7d38eadf603f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/g2010a",
+      "id": 516006
+    },
+    "git_push_url": "git@gist.github.com:1026649.git",
+    "description": "Behaviors for D3 Visualization library",
+    "comments": 0,
+    "created_at": "2011-06-15T07:33:26Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1026649",
+    "files": {
+      "select.js": {
+        "type": "application/javascript",
+        "filename": "select.js",
+        "raw_url": "https://gist.github.com/raw/1026649/d82ea3210fd797f46c379cc191e8af7de0f4c770/select.js",
+        "size": 1227,
+        "language": "JavaScript"
+      },
+      "drag.js": {
+        "type": "application/javascript",
+        "filename": "drag.js",
+        "raw_url": "https://gist.github.com/raw/1026649/ebb573ae26774cfa83e1c2443a37f1f54136d4a3/drag.js",
+        "size": 1604,
+        "language": "JavaScript"
+      }
+    },
+    "updated_at": "2011-06-15T07:33:26Z",
+    "url": "https://api.github.com/gists/1026649",
+    "git_pull_url": "git://gist.github.com/1026649.git",
+    "id": "1026649"
+  },
+  "description": "Behaviors for D3 Visualization library",
+  "comments": 0,
+  "created_at": "2011-07-11T15:53:57Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1076158",
+  "files": {
+    "select.js": {
+      "type": "application/javascript",
+      "filename": "select.js",
+      "raw_url": "https://gist.github.com/raw/1076158/d82ea3210fd797f46c379cc191e8af7de0f4c770/select.js",
+      "size": 1227,
+      "content": "d3.behavior.select = function() {\n\n  var listeners = [],\n      sel;\n\n  function select() {\n    var container = this\n        .on(\"mousedown\", mousedown)\n  }\n\n  function mousedown(d, i) {\n\tsel = {\n\t  m: d3.svg.mouse(this),\n\t  dm: [0,0],\n      target: this,\n      data: d,\n      index: i\n    };\n\t\n\td3.select(window)\n        .on(\"mousemove\", mousemove)\n        .on(\"mouseup\", mouseup);\n    d3.event.preventDefault();\n    window.focus(); // TODO focusableParent\n  }\n\n  function mousemove() {\n    if (sel) {\n\t\t\tsel.dm = d3.svg.mouse(sel.target);\n\t\t\tdispatch.call(sel.target, sel.data, sel.index);\n    }\n  }\n\n  function mouseup() {\n  d3.select(window)\n        .on(\"mousemove\", null)\n        .on(\"mouseup\", null);\n    if (sel) {\n      mousemove();\n      sel = null;\n    }\n  }\n\n\n  function dispatch(d, i) {\n    var o = d3.event // Events can be reentrant (e.g., focus).\n\t\n    d3.event = {\n      select: {start:sel.m, end:sel.dm}\n    };\n\n    try {\n      for (var j = 0, m = listeners.length; j < m; j++) {\n        listeners[j].call(this, d, i);\n      }\n    } finally {\n      d3.event = o;\n    }\n  }\n\n  select.on = function(type, listener) {\n    if (type == \"select\") listeners.push(listener);\n    return select;\n  };\n\n  return select;\n};",
+      "language": "JavaScript"
+    },
+    "drag.js": {
+      "type": "application/javascript",
+      "filename": "drag.js",
+      "raw_url": "https://gist.github.com/raw/1076158/ebb573ae26774cfa83e1c2443a37f1f54136d4a3/drag.js",
+      "size": 1604,
+      "content": "d3.behavior.drag = function() {\n\n  var x = 0,\n      y = 0,\n      listeners = [],\n\t  dragit\n\n  function drag() {\n    var container = this\n        .on(\"mousedown\", mousedown)\n}\n\n  function mousedown(d, i) {\n\t// Pick up on where we left before\n\t// NOTE: Are regexes necessary?\n\tvar prevtrans = d3.select(this).attr('transform');\n\t\n\td3.select(window)\n        .on(\"mousemove\", mousemove)\n        .on(\"mouseup\", mouseup);\n\n\tif (prevtrans) {\n\t\tvar reg = prevtrans.match(/translate\\((\\d+),(\\d+)\\)/i)\n\t\tx = reg[1];\n\t\ty = reg[2];\n\t} else {\n\t\tx = 0; y = 0;\n\t}\n\t\n\t// Replace x and y with new coordinates\n    dragit = {\n      x0: x - d3.event.clientX,\n      y0: y - d3.event.clientY,\n      target: this,\n      data: d,\n      index: i\n    };\n    d3.event.preventDefault();\n    window.focus(); // TODO focusableParent\n  }\n\n  function mousemove() {\n      if (dragit) {\n\t\t\tx = d3.event.clientX + dragit.x0;\n\t\t\ty = d3.event.clientY + dragit.y0;\n\t\t\tdispatch.call(dragit.target, dragit.data, dragit.index);\n    }\n  }\n\n  function mouseup() {\n\td3.select(window)\n        .on(\"mousemove\", null)\n        .on(\"mouseup\", null);\n    if (dragit) {\n      mousemove();\n      dragit = null;\n    }\n  }\n\n\n\n  function dispatch(d, i) {\n    var o = d3.event // Events can be reentrant (e.g., focus).\n\n    d3.event = {\n      translate: [x, y]\n    };\n\n    try {\n      for (var j = 0, m = listeners.length; j < m; j++) {\n        listeners[j].call(this, d, i);\n      }\n    } finally {\n      d3.event = o;\n    }\n  }\n\n  drag.on = function(type, listener) {\n    if (type == \"drag\") listeners.push(listener);\n    return drag;\n  };\n\n  return drag;\n};",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-07-11T15:53:57Z",
+  "url": "https://api.github.com/gists/1076158",
+  "git_pull_url": "git://gist.github.com/1076158.git",
+  "id": "1076158"
+}

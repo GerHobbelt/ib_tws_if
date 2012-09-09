@@ -1,0 +1,97 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "73ce908bf0306a5cea521134b8daa647",
+        "login": "nautat",
+        "avatar_url": "https://secure.gravatar.com/avatar/73ce908bf0306a5cea521134b8daa647?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/nautat",
+        "id": 1380775
+      },
+      "created_at": "2012-04-03T04:07:41Z",
+      "updated_at": "2012-04-03T04:11:09Z",
+      "url": "https://api.github.com/gists/2289227",
+      "id": "2289227"
+    }
+  ],
+  "user": {
+    "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+    "login": "enjalot",
+    "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/enjalot",
+    "id": 96189
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "committed_at": "2011-10-04T17:52:34Z",
+      "version": "367819b5fd0175d0b25bda246c470fb666fd4c2d",
+      "url": "https://api.github.com/gists/1262305/367819b5fd0175d0b25bda246c470fb666fd4c2d"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "committed_at": "2011-10-04T17:52:19Z",
+      "version": "83f245db8da9b02862210c9b7095ff6a95b96f11",
+      "url": "https://api.github.com/gists/1262305/83f245db8da9b02862210c9b7095ff6a95b96f11"
+    },
+    {
+      "change_status": {
+        "total": 113,
+        "additions": 113,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "committed_at": "2011-10-04T17:51:38Z",
+      "version": "3b01943a279218f451daa61c002626882ec5a364",
+      "url": "https://api.github.com/gists/1262305/3b01943a279218f451daa61c002626882ec5a364"
+    }
+  ],
+  "description": "Bakery",
+  "html_url": "https://gist.github.com/1262305",
+  "comments": 0,
+  "created_at": "2011-10-04T17:51:38Z",
+  "git_pull_url": "git://gist.github.com/1262305.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1262305/c7823c5d4a374aeadf1664c4a562418829c90ad4/index.html",
+      "size": 2949,
+      "content": "<!DOCTYPE html>\n<html>\n <head>\n   <title>Pie Chart</title>\n   <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.3.0\"></script>\n   <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.3.0\"></script>\n   <style type=\"text/css\">\n\nbody {\n font: 10px sans-serif;\n}\n\n   </style>\n </head>\n <body>\n\n     <p style=\"font-size:12pt;\">Click in the box to bake a pie!<p>\n\n   <script type=\"text/javascript\">\n\n\n    function bakepie(classname, data, x, y, r)\n    { \n        //color could be made a parameter\n        var color = d3.scale.category10()\n        var arc = d3.svg.arc().outerRadius(r)\n        var donut = d3.layout.pie();\n\n        var pie = d3.select(\"#charts\")\n            .append(\"svg:g\")\n                //.data([data.sort(d3.descending)])\n                .data([data])\n                .attr(\"class\", classname);\n\n        var arcs = pie.selectAll(\"g.arc\")\n           .data(donut)\n         .enter().append(\"svg:g\")\n           .attr(\"class\", \"arc\")\n           .attr(\"transform\", \"translate(\" + x + \",\" + y + \")\");\n\n\n        var paths = arcs.append(\"svg:path\")\n            .attr(\"fill\", function(d, i) { return color(i); })\n            .attr(\"fill-opacity\", .6);\n        \n        var tweenPie = function (b) {\n         b.innerRadius = 0;\n         var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);\n         return function(t) {\n           return arc(i(t));\n         };\n        }\n\n        var tweenDonut = function (b) {\n         b.innerRadius = r * .6;\n         var i = d3.interpolate({innerRadius: 0}, b);\n         return function(t) {\n           return arc(i(t));\n         };\n        }\n\n        paths.transition()\n           .ease(\"bounce\")\n           .duration(2000)\n           .attrTween(\"d\", tweenPie);\n\n        paths.transition()\n           .ease(\"elastic\")\n           .delay(function(d, i) { return 2000 + i * 50; })\n           .duration(750)\n           .attrTween(\"d\", tweenDonut);\n\n    }\n\n\n    //setup svg canvas\n    d3.select(\"body\")\n        .append(\"svg:svg\")\n            .attr(\"width\", 1000)\n            .attr(\"height\", 700)\n            .attr(\"id\", \"charts\")\n            .on(\"click\", clickypie)\n            .append(\"svg:rect\")\n                .attr(\"width\", \"100%\")\n                .attr(\"height\", \"100%\")\n                .attr(\"stroke\", \"#000\")\n                .attr(\"stroke-width\", 3)\n                .attr(\"fill\", \"none\")\n\n    count = 0\n    function clickypie()\n    {  \n        count += 1;\n        var xy = d3.svg.mouse(this);\n        var r = 50 + Math.random() * 100;\n        var data = d3.range(10).map(Math.random)\n        bakepie(\"pie\"+count, data, xy[0], xy[1], r);\n    };\n\n    /*\n    var data = d3.range(10).map(Math.random)\n    bakepie(\"pie1\", data, 100, 100, 100);\n    data = d3.range(20).map(Math.random)\n    bakepie(\"pie2\", data, 200, 200, 150);\n    data = d3.range(30).map(Math.random)\n    bakepie(\"pie3\", data, 300, 300, 200);\n    */\n\n\n   \n   </script>\n </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1262305.git",
+  "updated_at": "2011-10-04T17:51:38Z",
+  "url": "https://api.github.com/gists/1262305",
+  "id": "1262305"
+}

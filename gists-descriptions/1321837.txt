@@ -1,0 +1,174 @@
+{
+  "git_pull_url": "git://gist.github.com/1321837.git",
+  "forks": [
+    {
+      "updated_at": "2011-11-11T09:33:19Z",
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "johan",
+        "id": 2459
+      },
+      "url": "https://api.github.com/gists/1357601",
+      "id": "1357601",
+      "created_at": "2011-11-11T09:32:37Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1321837.git",
+  "updated_at": "2011-10-28T08:00:49Z",
+  "fork_of": {
+    "git_pull_url": "git://gist.github.com/899711.git",
+    "git_push_url": "git@gist.github.com:899711.git",
+    "updated_at": "2011-04-02T18:03:45Z",
+    "public": true,
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.github.com/raw/899711/c32a6ef92dab913b99f556386bd6c6abd7852ee4/index.html",
+        "size": 2468
+      },
+      "stations.json": {
+        "type": "application/json",
+        "filename": "stations.json",
+        "language": "JSON",
+        "raw_url": "https://gist.github.com/raw/899711/f5b132f98e3d30bfe193c5e9c5bc5fc6b75aba5f/stations.json",
+        "size": 2098
+      }
+    },
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "url": "https://api.github.com/users/mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "mbostock",
+      "id": 230541
+    },
+    "html_url": "https://gist.github.com/899711",
+    "url": "https://api.github.com/gists/899711",
+    "description": "Google Maps + D3",
+    "id": "899711",
+    "comments": 3,
+    "created_at": "2011-04-02T18:03:45Z"
+  },
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\"/>\n    <script type=\"text/javascript\" src=\"http://maps.google.com/maps/api/js?sensor=true\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.29.1\"></script>\n    <style type=\"text/css\">\n\nhtml, body, #map {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n\n.stations, .stations svg {\n  position: absolute;\n}\n\n.stations svg {\n  width: 60px;\n  height: 20px;\n  padding-right: 100px;\n  font: 10px sans-serif;\n  /* we need rather many text shadows to outline the text in enough contrast */\n  text-shadow: 0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF,\n               0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF,\n               0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF,\n               0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF,\n               0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF;\n}\n\n.stations circle {\n  fill: brown;\n  stroke: black;\n  stroke-width: 1.5px;\n}\n\n    </style>\n  </head>\n  <body>\n    <div id=\"map\"></div>\n    <script type=\"text/javascript\">\n\n// Create the Google Map…\nvar map = new google.maps.Map(d3.select(\"#map\").node(), {\n  zoom: 8,\n  center: new google.maps.LatLng(37.76487, -122.41948),\n  mapTypeId: google.maps.MapTypeId.TERRAIN\n});\n\n// Load the station data. When the data comes back, create an overlay.\nd3.json(\"stations.json\", function(data) {\n  var overlay = new google.maps.OverlayView();\n\n  // Add the container when the overlay is added to the map.\n  overlay.onAdd = function() {\n    var layer = d3.select(this.getPanes().overlayLayer).append(\"div\")\n        .attr(\"class\", \"stations\");\n\n    // Draw each marker as a separate SVG element.\n    // We could use a single SVG, but what size would it have?\n    overlay.draw = function() {\n      var projection = this.getProjection(),\n          padding = 10;\n\n      var marker = layer.selectAll(\"svg\")\n          .data(d3.entries(data))\n          .each(transform) // update existing markers\n        .enter().append(\"svg:svg\")\n          .each(transform)\n          .attr(\"class\", \"marker\");\n\n      // Add a circle.\n      marker.append(\"svg:circle\")\n          .attr(\"r\", 4.5)\n          .attr(\"cx\", padding)\n          .attr(\"cy\", padding);\n\n      // Add a label.\n      marker.append(\"svg:text\")\n          .attr(\"x\", padding + 7)\n          .attr(\"y\", padding)\n          .attr(\"dy\", \".31em\")\n          .text(function(d) { return d.key; });\n\n      function transform(d) {\n        d = new google.maps.LatLng(d.value[1], d.value[0]);\n        d = projection.fromLatLngToDivPixel(d);\n        return d3.select(this)\n            .style(\"left\", (d.x - padding) + \"px\")\n            .style(\"top\", (d.y - padding) + \"px\");\n      }\n    };\n  };\n\n  // Bind our overlay to the map…\n  overlay.setMap(map);\n});\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1321837/d0805a0aa16fec590fe976a067b076c128b94d37/index.html",
+      "size": 2903
+    },
+    "stations.json": {
+      "type": "application/json",
+      "filename": "stations.json",
+      "language": "JSON",
+      "content": "{ \"KMAE\":[ -120.12\n         , 36.98\n         , \"MADERA MUNICIPAL AIRPORT\"\n         , [26,1,2,5,6,3,2,1,2,7,29,12,3]\n         ]\n, \"KSJC\":[ -121.92\n         , 37.37\n         , \"SAN JOSE INTERNATIONAL AIRPORT\"\n         , [28,1,1,1,6,10,5,3,2,4,14,21,7]\n         ]\n, \"KMCE\":[ -120.50\n         , 37.28\n         , \"MERCED MUNICIPAL AIRPORT\"\n         , [29,1,1,3,7,5,2,1,3,6,12,26,5]\n         ]\n, \"KMER\":[ -120.57\n         , 37.37\n         , \"Merced / Castle Air Force Base\"\n         , [34,1,1,1,4,5,2,1,1,4,17,22,7]\n         ]\n, \"KAPC\":[ -122.28\n         , 38.20\n         , \"NAPA COUNTY AIRPORT\"\n         , [23,2,1,6,3,3,8,18,11,13,4,3,5]\n         ]\n, \"KSUU\":[ -121.95\n         , 38.27\n         , \"Fairfield / Travis Air Force Base\"\n         , [13,7,4,3,3,6,4,13,33,4,1,2,7]\n         ]\n, \"KSQL\":[ -122.25\n         , 37.52\n         , \"San Carlos Airport\"\n         , [18,3,2,2,3,4,3,2,5,17,16,12,12]\n         ]\n, \"KSNS\":[ -121.60\n         , 36.67\n         , \"SALINAS MUNICIPAL AIRPORT\"\n         , [21,1,1,6,12,3,1,2,9,21,17,5,1]\n         ]\n, \"KMOD\":[ -120.95\n         , 37.62\n         , \"MODESTO CITY CO SHAM FLD\"\n         , [27,1,1,2,10,5,1,1,1,3,17,24,8]\n         ]\n, \"KOAK\":[ -122.23\n         , 37.72\n         , \"METRO OAKLAND INTERNATIONAL AIRPORT\"\n         , [16,3,3,2,4,6,3,4,9,23,20,6,2]\n         ]\n, \"KSCK\":[ -121.23\n         , 37.90\n         , \"STOCKTON METROPOLITAN AIRPORT\"\n         , [21,2,2,3,6,8,2,1,4,15,19,12,4]\n         ]\n, \"KCCR\":[ -122.05\n         , 38.00\n         , \"CONCORD BUCHANAN FIELD\"\n         , [24,3,2,1,1,5,17,12,9,9,7,6,4]\n         ]\n, \"KMRY\":[ -121.85\n         , 36.58\n         , \"MONTEREY PENINSULA AIRPORT\"\n         , [26,1,2,9,5,3,4,9,13,14,9,4,1]\n         ]\n, \"KPAO\":[ -122.12\n         , 37.47\n         , \"Palo Alto Airport\"\n         , [31,3,1,1,2,5,1,1,1,4,10,25,14]\n         ]\n, \"KSAC\":[ -121.50\n         , 38.50\n         , \"SACRAMENTO EXECUTIVE AIRPORT\"\n         , [32,1,0,1,3,11,12,16,5,2,4,9,3]\n         ]\n, \"KHWD\":[ -122.12\n         , 37.67\n         , \"HAYWARD AIR TERMINAL\"\n         , [20,2,7,2,2,6,3,3,6,23,18,6,2]\n         ]\n, \"KSTS\":[ -122.82\n         , 38.50\n         , \"SANTA ROSA SONOMA COUNTY\"\n         , [46,1,0,1,5,13,10,4,3,3,4,6,3]\n         ]\n, \"KSMF\":[ -121.60\n         , 38.70\n         , \"SACRAMENTO INTERNATIONAL AIRPORT\"\n         , [19,2,1,2,4,21,18,8,3,2,5,12,4]\n         ]\n, \"KNUQ\":[ -122.05\n         , 37.43\n         , \"MOFFETT FIELD\"\n         , [35,3,1,1,4,7,2,1,2,5,6,17,15]\n         ]\n, \"KRHV\":[ -121.82\n         , 37.33\n         , \"San Jose / Reid / Hillv\"\n         , [35,0,0,1,4,4,2,1,1,10,28,11,1]\n         ]\n, \"KWVI\":[ -121.78\n         , 36.93\n         , \"WATSONVILLE MUNICIPAL AIRPORT\"\n         , [44,1,2,3,4,5,7,9,8,4,6,5,2]\n         ]\n, \"KMHR\":[ -121.30\n         , 38.55\n         , \"Sacramento, Sacramento Mather Airport\"\n         , [21,1,1,2,8,15,12,12,7,4,5,7,3]\n         ]\n, \"KVCB\":[ -121.95\n         , 38.38\n         , \"VACAVILLE NUT TREE AIRPORT\"\n         , [36,2,1,1,2,6,10,18,10,2,2,5,6]\n         ]\n, \"KSFO\":[ -122.37\n         , 37.62\n         , \"SAN FRANCISCO INTERNATIONAL AIRPORT\"\n         , [13,3,3,2,3,4,4,4,7,31,20,2,3]\n         ]\n, \"KLVK\":[ -121.82\n         , 37.70\n         , \"LIVERMORE MUNICIPAL AIRPORT\"\n         , [32,2,7,3,1,1,2,7,9,17,16,2,1]\n         ]\n}\n",
+      "raw_url": "https://gist.github.com/raw/1321837/d3a200b6cad2d8abbdae60d7e57be00e945e34c9/stations.json",
+      "size": 3238
+    }
+  },
+  "user": {
+    "gravatar_id": "580e00312773d30472c21660f69eb0da",
+    "url": "https://api.github.com/users/johan",
+    "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "johan",
+    "id": 2459
+  },
+  "history": [
+    {
+      "version": "180712d266cd0ea2a3e9323fe3cc0b78f1d48b87",
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "johan",
+        "id": 2459
+      },
+      "url": "https://api.github.com/gists/1321837/180712d266cd0ea2a3e9323fe3cc0b78f1d48b87",
+      "change_status": {
+        "total": 2,
+        "deletions": 0,
+        "additions": 2
+      },
+      "committed_at": "2011-11-11T09:31:07Z"
+    },
+    {
+      "version": "ad56e6e16bb4fd81a84cc0de49f4ec6c428aa3ae",
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "johan",
+        "id": 2459
+      },
+      "url": "https://api.github.com/gists/1321837/ad56e6e16bb4fd81a84cc0de49f4ec6c428aa3ae",
+      "change_status": {
+        "total": 4,
+        "deletions": 0,
+        "additions": 4
+      },
+      "committed_at": "2011-11-11T09:18:00Z"
+    },
+    {
+      "version": "1dbb8cb0a3d9448cef59f1e578980355814520f0",
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "johan",
+        "id": 2459
+      },
+      "url": "https://api.github.com/gists/1321837/1dbb8cb0a3d9448cef59f1e578980355814520f0",
+      "change_status": {
+        "total": 127,
+        "deletions": 1,
+        "additions": 126
+      },
+      "committed_at": "2011-10-28T08:06:55Z"
+    },
+    {
+      "version": "453ec4fd52806d310b557bbc55d1d4a3ac24150b",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1321837/453ec4fd52806d310b557bbc55d1d4a3ac24150b",
+      "change_status": {
+        "total": 19,
+        "deletions": 7,
+        "additions": 12
+      },
+      "committed_at": "2011-08-04T16:15:55Z"
+    },
+    {
+      "version": "4eb838df25e5ecd95d2a33d58a4c0e9e4afc7097",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1321837/4eb838df25e5ecd95d2a33d58a4c0e9e4afc7097",
+      "change_status": {
+        "total": 93,
+        "deletions": 0,
+        "additions": 93
+      },
+      "committed_at": "2011-04-02T18:03:45Z"
+    }
+  ],
+  "html_url": "https://gist.github.com/1321837",
+  "url": "https://api.github.com/gists/1321837",
+  "description": "Google Maps + D3",
+  "id": "1321837",
+  "comments": 0,
+  "created_at": "2011-10-28T08:00:49Z"
+}

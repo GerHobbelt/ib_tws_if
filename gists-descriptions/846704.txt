@@ -1,0 +1,102 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/846704.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "50c2626900e1df31a5bc7b3411981b92b9baafc0",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/846704/50c2626900e1df31a5bc7b3411981b92b9baafc0",
+      "committed_at": "2011-02-27T23:50:20Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "60c8f537ac5b481d0b69044156e8d9aea7f5493c",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/846704/60c8f537ac5b481d0b69044156e8d9aea7f5493c",
+      "committed_at": "2011-02-27T23:49:54Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "8051382adf9990970237b7df768a847dff7c7303",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/846704/8051382adf9990970237b7df768a847dff7c7303",
+      "committed_at": "2011-02-27T23:48:43Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "473ac75dc320b051f9570488689ccf7223d1a1c6",
+      "change_status": {
+        "total": 41,
+        "additions": 41,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/846704/473ac75dc320b051f9570488689ccf7223d1a1c6",
+      "committed_at": "2011-02-27T23:48:17Z"
+    }
+  ],
+  "description": "Circular Layout (Arc)",
+  "html_url": "https://gist.github.com/846704",
+  "git_push_url": "git@gist.github.com:846704.git",
+  "comments": 0,
+  "created_at": "2011-02-27T23:48:17Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/846704/ae6076f39639287c65722533e7f931371336f4ed/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 994,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"https://github.com/mbostock/d3/raw/v1.3.0/d3.js\"></script>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar radius = d3.scale.linear()\n    .domain([0, 9])\n    .range([180, 240]);\n\nvar fill = d3.scale.linear()\n    .domain([0, 9])\n    .range([\"brown\", \"steelblue\"]);\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", 960)\n    .attr(\"height\", 500)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(480, 250)\");\n\nvar g = svg.selectAll(\"g\")\n    .data(d3.range(0, 360, 2))\n  .enter().append(\"svg:g\")\n    .attr(\"transform\", function(d) { return \"rotate(\" + d + \")\"; });\n\nvar path = g.selectAll(\"path\")\n    .data(d3.range(10))\n  .enter().append(\"svg:path\")\n    .attr(\"d\", d3.svg.arc()\n    .innerRadius(radius)\n    .outerRadius(function(d) { return radius(d) + 9; })\n    .startAngle(0)\n    .endAngle(Math.PI / 90))\n    .attr(\"fill\", fill)\n    .attr(\"stroke\", \"black\");\n\n    </script>\n  </body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-02-27T23:50:20Z",
+  "url": "https://api.github.com/gists/846704",
+  "id": "846704"
+}

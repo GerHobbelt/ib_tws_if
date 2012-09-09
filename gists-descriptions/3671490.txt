@@ -1,0 +1,139 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-09-09T08:44:38Z",
+      "version": "519048e1df35c9c3a6a118958eb6fd71673a0166",
+      "url": "https://api.github.com/gists/3671490/519048e1df35c9c3a6a118958eb6fd71673a0166"
+    },
+    {
+      "change_status": {
+        "total": 53,
+        "additions": 36,
+        "deletions": 17
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-09-08T03:29:46Z",
+      "version": "26534ca2d5afd7a83a662aad3a404b65892c614f",
+      "url": "https://api.github.com/gists/3671490/26534ca2d5afd7a83a662aad3a404b65892c614f"
+    },
+    {
+      "change_status": {
+        "total": 89,
+        "additions": 89,
+        "deletions": 0
+      },
+      "user": null,
+      "committed_at": "2012-09-07T23:10:50Z",
+      "version": "cf3365b94263a524402888fcd4ffd56c041b4e77",
+      "url": "https://api.github.com/gists/3671490/cf3365b94263a524402888fcd4ffd56c041b4e77"
+    }
+  ],
+  "description": "Help on mapping to Cartesian coordinate ",
+  "html_url": "https://gist.github.com/3671490",
+  "comments": 0,
+  "created_at": "2012-09-08T03:06:17Z",
+  "git_pull_url": "git://gist.github.com/3671490.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/3671490/a06ea9762ab2593cf6687951bed4f7349ef8ebf7/index.html",
+      "size": 330,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Test</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"style.css\"/>\n  </head>\n  <body>\n    <div id=\"chart\"></div>\n    <script type=\"text/javascript\" src=\"script.js\"></script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "script.js": {
+      "type": "application/javascript",
+      "filename": "script.js",
+      "raw_url": "https://gist.github.com/raw/3671490/1e47a416b73846fa45b86a63160b93421e8f3c8a/script.js",
+      "size": 2398,
+      "content": "//Width and height\nvar w = 200;\nvar h = 200;\nvar padding = 8;\nvar scale_padding = 20; // space to show axes\n\n\nvar dataset = [\n [80, 20, 10, 60] ];  // x, y, w, h\n\n\n//Create scale functions\nvar xScale = d3.scale.linear()\n    .domain([0, d3.max(dataset, function (d) {\n        return (100);\n    })])\n    .range([padding + scale_padding, w - padding]);\n\nvar yScale = d3.scale.linear()\n    .domain([0, d3.max(dataset, function (d) {\n        return (100);\n    })])\n    .range([h - padding - scale_padding, padding]);\n\n//Define X axis\nvar xAxis = d3.svg.axis()\n    .scale(xScale)\n    .orient(\"bottom\")\n    .ticks(5);\n\n//Define Y axis\nvar yAxis = d3.svg.axis()\n    .scale(yScale)\n    .orient(\"left\")\n    .ticks(5);\n\n//Create SVG element\nvar svg = d3.select(\"body\")\n    .append(\"svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\n//Create circles\nsvg.selectAll(\"rect\")\n    .data(dataset)\n    .enter()\n    .append(\"rect\")\n/*\nYour y-axis is -linear and SVG doesn't accept negative widths, not does it accept x2/y2 < x1/y1 if you\nwould use <rect x1 y1 x2 y2> instead, so coordinate pair flipping is in order...\n\nThis is the way to do it, particularly important when your scales are not linear (but, say, logarithmic),\nbut keep in mind that YOU must still guarantee that those width & hieight values are always positive!\n\nOf course, such work might best be done in the preparation phase rather than right here.\n*/\n    .attr(\"x\", function (d) {\n        var x = Math.min(xScale(d[0]), xScale(d[0] + d[2]));\n        return x;\n    })\n    .attr(\"y\", function (d) {\n        var y = Math.min(yScale(d[1]), yScale(d[1] + d[3]));\n        return y;\n    })\n    .attr(\"width\", function (d) {\n        // return xScale(d[2]);  -- only works like that for +linear scale;\n        var x2 = Math.max(xScale(d[0]), xScale(d[0] + d[2]));\n        var x1 = Math.min(xScale(d[0]), xScale(d[0] + d[2]));\n        return x2 - x1;\n    })\n    .attr(\"height\", function (d) {\n        var y2 = Math.max(yScale(d[1]), yScale(d[1] + d[3]));\n        var y1 = Math.min(yScale(d[1]), yScale(d[1] + d[3]));\n        return y2 - y1;\n    });\n\n//Create X axis\nsvg.append(\"g\")\n    .attr(\"class\", \"axis\")\n    .attr(\"transform\", \"translate(0,\" + (h - padding - scale_padding) + \")\")\n    .call(xAxis);\n\n//Create Y axis\nsvg.append(\"g\")\n    .attr(\"class\", \"axis\")\n    .attr(\"transform\", \"translate(\" + (padding + scale_padding) + \",0)\")\n    .call(yAxis);\n",
+      "language": "JavaScript"
+    },
+    "style.css": {
+      "type": "text/css",
+      "filename": "style.css",
+      "raw_url": "https://gist.github.com/raw/3671490/6f87ed1366baf51469190b79391d6619ab5cb109/style.css",
+      "size": 144,
+      "content": ".axis text, .origintext {\n  font: 10px sans-serif;\n}\n  \n.axis path, .axis line {\n  fill: none;\n  stroke: #000;\n  shape-rendering: crispEdges;\n}\n",
+      "language": "CSS"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/3671490/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    }
+  },
+  "git_push_url": "git@gist.github.com:3671490.git",
+  "fork_of": {
+    "user": null,
+    "description": "Main",
+    "html_url": "https://gist.github.com/3670595",
+    "comments": 0,
+    "created_at": "2012-09-07T23:10:50Z",
+    "git_pull_url": "git://gist.github.com/3670595.git",
+    "public": true,
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/3670595/a06ea9762ab2593cf6687951bed4f7349ef8ebf7/index.html",
+        "size": 330,
+        "language": "HTML"
+      },
+      "script.js": {
+        "type": "application/javascript",
+        "filename": "script.js",
+        "raw_url": "https://gist.github.com/raw/3670595/2a68503dbd37d89ad407b05b5ef57bbf32dc226a/script.js",
+        "size": 2088,
+        "language": "JavaScript"
+      },
+      "style.css": {
+        "type": "text/css",
+        "filename": "style.css",
+        "raw_url": "https://gist.github.com/raw/3670595/6f87ed1366baf51469190b79391d6619ab5cb109/style.css",
+        "size": 144,
+        "language": "CSS"
+      }
+    },
+    "git_push_url": "git@gist.github.com:3670595.git",
+    "updated_at": "2012-09-07T23:10:50Z",
+    "url": "https://api.github.com/gists/3670595",
+    "id": "3670595"
+  },
+  "updated_at": "2012-09-09T09:02:57Z",
+  "url": "https://api.github.com/gists/3671490",
+  "id": "3671490"
+}

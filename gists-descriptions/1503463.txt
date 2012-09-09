@@ -1,0 +1,135 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+    "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "enjalot",
+    "url": "https://api.github.com/users/enjalot",
+    "id": 96189
+  },
+  "git_pull_url": "git://gist.github.com/1503463.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "version": "f64fe814bdea236abc7bf6d5a9cfe837771cc411",
+      "change_status": {
+        "total": 24,
+        "additions": 8,
+        "deletions": 16
+      },
+      "url": "https://api.github.com/gists/1503463/f64fe814bdea236abc7bf6d5a9cfe837771cc411",
+      "committed_at": "2011-12-20T22:13:34Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "version": "64e52a5e1395ab0dd843772966549e9c4fa5e776",
+      "change_status": {
+        "total": 53,
+        "additions": 28,
+        "deletions": 25
+      },
+      "url": "https://api.github.com/gists/1503463/64e52a5e1395ab0dd843772966549e9c4fa5e776",
+      "committed_at": "2011-12-20T22:09:49Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "version": "669b617fc6edffb6b4fc724d3a0956370d95eda1",
+      "change_status": {
+        "total": 25,
+        "additions": 20,
+        "deletions": 5
+      },
+      "url": "https://api.github.com/gists/1503463/669b617fc6edffb6b4fc724d3a0956370d95eda1",
+      "committed_at": "2011-12-20T21:57:20Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "version": "2d122de6950e8a4be2794f8b1c62a409f081eb42",
+      "change_status": {
+        "total": 27,
+        "additions": 27,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1503463/2d122de6950e8a4be2794f8b1c62a409f081eb42",
+      "committed_at": "2011-12-20T21:54:30Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "version": "76d63d4b1afbd1d9144adc75273fd14ea4169315",
+      "change_status": {
+        "total": 82,
+        "additions": 82,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1503463/76d63d4b1afbd1d9144adc75273fd14ea4169315",
+      "committed_at": "2011-12-20T21:53:35Z"
+    }
+  ],
+  "description": "masking with external svg elements",
+  "html_url": "https://gist.github.com/1503463",
+  "git_push_url": "git@gist.github.com:1503463.git",
+  "comments": 0,
+  "created_at": "2011-12-20T21:53:35Z",
+  "public": true,
+  "files": {
+    "woman.svg": {
+      "type": "image/svg+xml",
+      "filename": "woman.svg",
+      "size": 983,
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->\r\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.0//EN\" \"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd\">\r\n<svg version=\"1.0\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\r\n\t width=\"45.833px\" height=\"100px\" viewBox=\"0 0 45.833 100\" enable-background=\"new 0 0 45.833 100\" xml:space=\"preserve\">\r\n\r\n<g id=\"icon\">\r\n<path fill=\"#fff\" d=\"M29.775,18.047c5.697,0,8.008,4.695,8.871,7.283l6.999,23.008c1.396,4.949-4.899,6.998-6.4,2.175l-6.298-21.125h-1.833\r\n\tL42.03,66.966H31.973v29.296c0,4.996-7.514,4.971-7.514,0V66.774h-3.063l0.005,29.447c0,5.037-7.545,5.037-7.545,0l-0.002-29.255\r\n\tH3.765l10.831-37.578h-1.694l-6.299,21.2c-1.5,4.621-7.85,2.724-6.396-2.228L7.2,25.33c0.749-2.625,3.045-7.283,8.795-7.283H29.775z\r\n\t\"/>\r\n<circle fill=\"#fff\" cx=\"22.925\" cy=\"8.164\" r=\"8.164\"/>\r\n</g>\r\n</svg>\r\n",
+      "raw_url": "https://gist.github.com/raw/1503463/3988a914bd80ed416514b2f751f3d3693a638b33/woman.svg",
+      "language": "XML"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 4014,
+      "content": "<html>\n    <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.6.0\"></script>\n    </head>\n    <body>\n        <svg>\n            <defs>\n            \n            <mask id=\"rekt\">\n                <g id=\"rrr\">\n                    <rect  width=50 height=50 fill=\"#ccc\"></rect> \n                    <rect  x=50 y=50 width=50 height=50 fill=\"#ccc\"></rect> \n                </g>\n            </mask>\n            </defs>\n\n            <rect width=\"100%\" height=\"100%\" fill=\"#cccccc\"></rect>\n            <rect mask=\"url(#rekt)\" width=100 height=100 x=0 y=0 fill=\"#00f\"transform=\"translate(20,20)\"></rect>\n            <rect mask=\"url(#rekt)\" width=100 height=100 x=0 y=0 fill=\"#00f\"transform=\"translate(20,230)rotate(-90)\"></rect>\n            <rect mask=\"url(#rekt)\" width=100 height=100 x=0 y=0 fill=\"#00f\"transform=\"translate(110,120)rotate(-90)\"></rect>\n            <rect mask=\"url(#rekt)\" width=100 height=100 x=0 y=0 fill=\"#00f\"transform=\"translate(110,130)\"></rect>\n\n            <!--\n            you can reuse the masked out rect\n            <rect id=\"maniconinstance\" mask=\"url(#maniconmask)\" width=100 height=100 x=0 y=0 fill=\"#f00\"></rect>\n            <rect id=\"womaniconinstance\" mask=\"url(#womaniconmask)\" width=100 height=100 x=0 y=0 fill=\"#f00\"></rect>\n\n            <use xlink:href=\"#maniconinstance\" transform=\"translate(110,0)\" width=100 height=100></use>\n            <use xlink:href=\"#womaniconinstance\" transform=\"translate(160,0)\" width=100 height=100></use>\n\n            or you can directly use the elements (as long as you are referencing the proper id)\n            <use xlink:href=\"#manicon\" transform=\"translate(200,200)scale(.5,.5)\"></use>\n            -->\n        </svg>\n\n        <script type=\"text/javascript\">\n            //Make a mask from an external svg element, then mask a rectangle with it\n            function make_icon(url, name, color)\n            {\n                defs = d3.select(\"defs\")\n                d3.html(url, function(data) {\n                    console.log(\"data\", data)\n                    //get a selection of the image so we can pull out the icon\n                    xml = d3.select(data) \n                    console.log(\"xml\", xml.select(\"#icon\"), xml.select(\"#icon\").node())\n\n                    icon = document.importNode(xml.select(\"#icon\").node(), true)\n                    console.log(\"icon\", icon)\n\n                    //we make a mask object\n                    mask = defs.append(\"svg:mask\")\n                        .attr(\"id\", name + \"iconmask\")\n                    icon.id = name + \"icon\"\n                    //this is where the icon gets inserted into the DOM\n                    mask.node().appendChild(icon)\n\n                    console.log(\"mask\", mask)\n                })\n                //masked rectangle \n                defs.append(\"svg:rect\")\n                    .attr(\"id\", name + \"iconinstance\")\n                    .attr(\"width\", 50)\n                    .attr(\"height\", 100)\n                    .attr(\"mask\", \"url(#\" + name + \"iconmask)\")\n                    .attr(\"fill\", color)\n            }\n\n            //add a row of use elements which point to our masked element\n            function make_row(name, icon, n, x, y)\n            {\n                d3.select(\"svg\").selectAll(\"use.\" + name)\n                    .data(d3.range(n))\n                .enter()\n                    .append(\"svg:use\")\n                    .attr(\"class\", name)\n                    .attr(\"xlink:href\", \"#\" + icon + \"iconinstance\")\n                    .attr(\"transform\", function(d,i) {\n                           return \"translate(\" + [x + 50 * i, y] + \")\"\n                    })\n            }\n\n            \n            make_icon(\"man.svg\", \"man\", \"red\")\n            make_icon(\"woman.svg\", \"woman\", \"white\")\n           \n            make_row(\"a\", \"man\", 14, 220, 20)\n            make_row(\"b\", \"woman\", 14, 220, 130)\n            make_row(\"c\", \"man\", 18, 20, 240)\n            make_row(\"d\", \"woman\", 18, 20, 350)\n        </script>\n    </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1503463/6fa389ae6dab4e27e024c3493244ebbb749bd00b/index.html",
+      "language": "HTML"
+    },
+    "man.svg": {
+      "type": "image/svg+xml",
+      "filename": "man.svg",
+      "size": 999,
+      "content": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->\r\n<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.0//EN\" \"http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd\">\r\n<svg version=\"1.0\" id=\"Layer_1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\"\r\n\t width=\"37.207px\" height=\"100px\" viewBox=\"0 0 37.207 100\" enable-background=\"new 0 0 37.207 100\" xml:space=\"preserve\">\r\n<g id=\"icon\">\r\n<circle fill=\"#fff\" cx=\"18.118\" cy=\"8.159\" r=\"8.159\"></circle>\r\n<path fill=\"#fff\" id=\"path\" d=\"M8.472,95.426c0,2.524,2.05,4.574,4.574,4.574c2.529,0,4.576-2.05,4.576-4.574l0.004-38.374h2.037L19.65,95.426\r\n\tc0,2.524,2.048,4.574,4.574,4.574s4.573-2.05,4.573-4.574l0.02-66.158h2.006v24.38c0,4.905,6.398,4.905,6.384,0v-24.9\r\n\tc0-5.418-3.184-10.728-9.523-10.728L9.396,18.012C3.619,18.012,0,22.722,0,28.599v25.05c0,4.869,6.433,4.869,6.433,0v-24.38h2.048\r\n\tL8.472,95.426z\"></path>\r\n</g>\r\n</svg>\r\n",
+      "raw_url": "https://gist.github.com/raw/1503463/262abbbcb16ca10d4cf51038183718fdaef5cbf7/man.svg",
+      "language": "XML"
+    }
+  },
+  "updated_at": "2011-12-20T21:53:35Z",
+  "url": "https://api.github.com/gists/1503463",
+  "id": "1503463"
+}

@@ -1,0 +1,63 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "503bf281b0be2e4265ca1a084107f339",
+        "login": "crismanNoble",
+        "avatar_url": "https://secure.gravatar.com/avatar/503bf281b0be2e4265ca1a084107f339?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/crismanNoble",
+        "id": 1040884
+      },
+      "created_at": "2012-07-16T23:00:23Z",
+      "updated_at": "2012-07-16T23:02:42Z",
+      "url": "https://api.github.com/gists/3125623",
+      "id": "3125623"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1086421.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "6f568e84ff19f9b11742b025da16ee440cf7873c",
+      "change_status": {
+        "total": 42,
+        "additions": 42,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1086421/6f568e84ff19f9b11742b025da16ee440cf7873c",
+      "committed_at": "2011-07-16T15:01:20Z"
+    }
+  ],
+  "description": "SVG Linear Gradient (D3)",
+  "html_url": "https://gist.github.com/1086421",
+  "git_push_url": "git@gist.github.com:1086421.git",
+  "comments": 0,
+  "created_at": "2011-07-16T15:01:20Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/1086421/89dd2c7aa08b4b36ee479f6c13941cde90e701a2/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 902,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.27.1\"></script>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500;\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvar gradient = svg.append(\"svg:defs\")\n  .append(\"svg:linearGradient\")\n    .attr(\"id\", \"gradient\")\n    .attr(\"x1\", \"0%\")\n    .attr(\"y1\", \"0%\")\n    .attr(\"x2\", \"100%\")\n    .attr(\"y2\", \"100%\")\n    .attr(\"spreadMethod\", \"pad\");\n\ngradient.append(\"svg:stop\")\n    .attr(\"offset\", \"0%\")\n    .attr(\"stop-color\", \"#0c0\")\n    .attr(\"stop-opacity\", 1);\n\ngradient.append(\"svg:stop\")\n    .attr(\"offset\", \"100%\")\n    .attr(\"stop-color\", \"#c00\")\n    .attr(\"stop-opacity\", 1);\n\nsvg.append(\"svg:rect\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n    .style(\"fill\", \"url(#gradient)\");\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-07-16T15:01:20Z",
+  "url": "https://api.github.com/gists/1086421",
+  "id": "1086421"
+}

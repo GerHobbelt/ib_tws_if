@@ -1,0 +1,196 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1643051.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "83477a84d8273ac788acb03ea6e526ed89c168f6",
+      "change_status": {
+        "total": 47,
+        "additions": 8,
+        "deletions": 39
+      },
+      "url": "https://api.github.com/gists/1643051/83477a84d8273ac788acb03ea6e526ed89c168f6",
+      "committed_at": "2012-01-19T21:52:55Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "55583349b2d6b41f99bafde76f54e1c2ee5cede0",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1643051/55583349b2d6b41f99bafde76f54e1c2ee5cede0",
+      "committed_at": "2012-01-19T21:46:28Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "485107b3c26f41583ee4eb4e306526a1a7d8234d",
+      "change_status": {
+        "total": 14,
+        "additions": 8,
+        "deletions": 6
+      },
+      "url": "https://api.github.com/gists/1643051/485107b3c26f41583ee4eb4e306526a1a7d8234d",
+      "committed_at": "2012-01-19T21:44:54Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "73ed8a0899ae25d6e4b7ac5baab649214e3d43e1",
+      "change_status": {
+        "total": 24,
+        "additions": 17,
+        "deletions": 7
+      },
+      "url": "https://api.github.com/gists/1643051/73ed8a0899ae25d6e4b7ac5baab649214e3d43e1",
+      "committed_at": "2012-01-19T21:40:17Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "5a771b79862bab91e4e26dbc4e20a07a1252ee4d",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1643051/5a771b79862bab91e4e26dbc4e20a07a1252ee4d",
+      "committed_at": "2012-01-19T21:36:24Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "34065583641e011966525532348f633e1a045a94",
+      "change_status": {
+        "total": 19,
+        "additions": 10,
+        "deletions": 9
+      },
+      "url": "https://api.github.com/gists/1643051/34065583641e011966525532348f633e1a045a94",
+      "committed_at": "2012-01-19T21:36:04Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "1a86d938a5d53778166822c3e97e1ba1abb38a6c",
+      "change_status": {
+        "total": 112,
+        "additions": 112,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1643051/1a86d938a5d53778166822c3e97e1ba1abb38a6c",
+      "committed_at": "2012-01-19T21:33:21Z"
+    }
+  ],
+  "description": "Line Transition (Broken)",
+  "html_url": "https://gist.github.com/1643051",
+  "git_push_url": "git@gist.github.com:1643051.git",
+  "comments": 0,
+  "created_at": "2012-01-19T21:51:30Z",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mbostock",
+      "id": 230541
+    },
+    "git_pull_url": "git://gist.github.com/1642874.git",
+    "description": "Line Transition",
+    "html_url": "https://gist.github.com/1642874",
+    "git_push_url": "git@gist.github.com:1642874.git",
+    "comments": 1,
+    "created_at": "2012-01-19T21:33:21Z",
+    "public": true,
+    "files": {
+      "README.md": {
+        "raw_url": "https://gist.github.com/raw/1642874/1e552432a88eed13d0ab7ea8ff6500a4830434f9/README.md",
+        "type": "text/plain",
+        "filename": "README.md",
+        "size": 1907,
+        "language": "Markdown"
+      },
+      "index.html": {
+        "raw_url": "https://gist.github.com/raw/1642874/e1c2009a62fa51532fac8663a941b5368ba709b0/index.html",
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 2015,
+        "language": "HTML"
+      }
+    },
+    "updated_at": "2012-01-19T21:33:21Z",
+    "url": "https://api.github.com/gists/1642874",
+    "id": "1642874"
+  },
+  "public": true,
+  "files": {
+    "README.md": {
+      "raw_url": "https://gist.github.com/raw/1643051/053d45f0ba51318e286768e8a243ef6d7ceaf1c3/README.md",
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 620,
+      "content": "D3’s default path interpolation is the same as its string interpolation: it finds numbers embedded in strings, and interpolates those numbers. So, the default behavior when interpolating two paths is like this:\n\n    M x0, y0 L x1, y1 L x2, y2 L x3, y3 \n       ↓   ↓    ↓   ↓    ↓   ↓    ↓   ↓\n    M x0, y1 L x1, y2 L x2, y3 L x3, y4 \n\nFor example, the first point ⟨x0,y0⟩ is interpolated to ⟨x0,y1⟩. Since x0 is the same, all you see are the y-values changing—you don't see the path slide to the left as intended.\n\nFor the correct behavior, see [this explanation](http://bl.ocks.org/1642874).",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/1643051/c74d3b31e355565ebbdab932d97d5fce63c97beb/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1743,
+      "content": "<!DOCTYPE html>\n<meta charset=\"utf-8\">\n<style>\n\nsvg {\n  font: 10px sans-serif;\n}\n\n.line {\n  fill: none;\n  stroke: #000;\n  stroke-width: 1.5px;\n}\n\n.axis path, .axis line {\n  fill: none;\n  stroke: #000;\n  shape-rendering: crispEdges;\n}\n\n</style>\n<body>\n<script src=\"http://mbostock.github.com/d3/d3.js?2.7.2\"></script>\n<script>\n\nvar n = 40,\n    random = d3.random.normal(0, .2),\n    data = d3.range(n).map(random);\n\nvar margin = {top: 10, right: 10, bottom: 20, left: 40},\n    width = 960 - margin.left - margin.right,\n    height = 500 - margin.top - margin.bottom;\n\nvar x = d3.scale.linear()\n    .domain([0, n - 1])\n    .range([0, width]);\n\nvar y = d3.scale.linear()\n    .domain([-1, 1])\n    .range([height, 0]);\n\nvar line = d3.svg.line()\n    .x(function(d, i) { return x(i); })\n    .y(function(d, i) { return y(d); });\n\nvar svg = d3.select(\"body\").append(\"svg\")\n    .attr(\"width\", width + margin.left + margin.right)\n    .attr(\"height\", height + margin.top + margin.bottom)\n  .append(\"g\")\n    .attr(\"transform\", \"translate(\" + margin.left + \",\" + margin.top + \")\");\n\nsvg.append(\"g\")\n    .attr(\"class\", \"x axis\")\n    .attr(\"transform\", \"translate(0,\" + height + \")\")\n    .call(d3.svg.axis().scale(x).orient(\"bottom\"));\n\nsvg.append(\"g\")\n    .attr(\"class\", \"y axis\")\n    .call(d3.svg.axis().scale(y).orient(\"left\"));\n\nvar path = svg.append(\"path\")\n    .data([data])\n    .attr(\"class\", \"line\")\n    .attr(\"d\", line);\n\ntick();\n\nfunction tick() {\n\n  // push a new data point onto the back\n  data.push(random());\n\n  // pop the old data point off the front\n  data.shift();\n\n  // redraw the line (with the wrong interpolation)\n  path.transition()\n      .duration(500)\n      .ease(\"linear\")\n      .attr(\"d\", line)\n      .each(\"end\", tick);\n\n}\n\n</script>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2012-01-19T22:02:50Z",
+  "url": "https://api.github.com/gists/1643051",
+  "id": "1643051"
+}

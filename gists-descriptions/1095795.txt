@@ -1,0 +1,176 @@
+{
+  "git_push_url": "git@gist.github.com:1095795.git",
+  "fork_of": {
+    "git_push_url": "git@gist.github.com:1095727.git",
+    "updated_at": "2011-07-20T19:34:38Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1095727",
+    "files": {
+      "d3jsproblem.html": {
+        "type": "text/html",
+        "filename": "d3jsproblem.html",
+        "language": "HTML",
+        "raw_url": "https://gist.github.com/raw/1095727/b7550e69ebb1c2dde2819d98c517bc7b78a073c9/d3jsproblem.html",
+        "size": 3588
+      }
+    },
+    "user": {
+      "avatar_url": "https://secure.gravatar.com/avatar/0dbc072c620f9ca0ffbdcb3651afd4c1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "gravatar_id": "0dbc072c620f9ca0ffbdcb3651afd4c1",
+      "url": "https://api.github.com/users/ZoltanLajosKis",
+      "login": "ZoltanLajosKis",
+      "id": 769858
+    },
+    "url": "https://api.github.com/gists/1095727",
+    "description": "d3.js force-directed graph dynamic nodes problem",
+    "git_pull_url": "git://gist.github.com/1095727.git",
+    "id": "1095727",
+    "comments": 0,
+    "created_at": "2011-07-20T19:34:38Z"
+  },
+  "forks": [
+    {
+      "updated_at": "2011-09-16T07:37:46Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/dc5d2efb1d5eca0374bbbacec636ce44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "dc5d2efb1d5eca0374bbbacec636ce44",
+        "url": "https://api.github.com/users/fergithub",
+        "login": "fergithub",
+        "id": 1055338
+      },
+      "url": "https://api.github.com/gists/1221457",
+      "id": "1221457",
+      "created_at": "2011-09-16T07:37:46Z"
+    }
+  ],
+  "updated_at": "2011-09-18T01:16:14Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1095795",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "raw_url": "https://gist.github.com/raw/1095795/0fed8748f9da8fa65c401bee08f4f6d6cc752d05/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.1.3\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.js?2.1.3\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.1.3\"></script>\n    <style type=\"text/css\">\n\n.link {\n  stroke: #ccc;\n}\n\n.nodetext {\n  pointer-events: none;\n  font: 10px sans-serif;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500;\n\nvar force = d3.layout.force()\n    .gravity(.05)\n    .distance(100)\n    .charge(-100)\n    .size([w, h]);\n\nvar nodes = force.nodes(),\n    links = force.links();\n\t\nvar vis = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nforce.on(\"tick\", function() {\n  vis.selectAll(\"g.node\")\n      .attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; });\n\n  vis.selectAll(\"line.link\")\n      .attr(\"x1\", function(d) { return d.source.x; })\n      .attr(\"y1\", function(d) { return d.source.y; })\n      .attr(\"x2\", function(d) { return d.target.x; })\n      .attr(\"y2\", function(d) { return d.target.y; });\n});\n\nfunction restart() {\n  var link = vis.selectAll(\"line.link\")\n      .data(links, function(d) { return d.source.id + \"-\" + d.target.id; });\n\n  link.enter().insert(\"svg:line\", \"g.node\")\n      .attr(\"class\", \"link\");\n\n  link.exit().remove();\n\n  var node = vis.selectAll(\"g.node\")\n      .data(nodes, function(d) { return d.id;});\n\t\n  var nodeEnter = node.enter().append(\"svg:g\")\n      .attr(\"class\", \"node\")\n      .call(force.drag);\n\t\t\n  nodeEnter.append(\"svg:image\")\n      .attr(\"class\", \"circle\")\n      .attr(\"xlink:href\", \"https://d3nwyuy0nl342s.cloudfront.net/images/icons/public.png\")\n      .attr(\"x\", \"-8px\")\n      .attr(\"y\", \"-8px\")\n      .attr(\"width\", \"16px\")\n      .attr(\"height\", \"16px\");\n\n  nodeEnter.append(\"svg:text\")\n      .attr(\"class\", \"nodetext\")\n      .attr(\"dx\", 12)\n      .attr(\"dy\", \".35em\")\n      .text(function(d) { return d.id });\n\n  node.exit().remove();\n\t\t\n  force.start();\n}\n\n// Add three nodes and three links.\nfunction step1() {\n  var a = {id: \"aaa\"}, b = {id: \"bbb\"}, c = {id: \"ccc\"};\n  nodes.push(a, b, c);\n  links.push({source: a, target: b}, {source: a, target: c}, {source: b, target: c});\n  restart();\n}\n\n// Remove node bbb and associated links.\nfunction step2() {\n  nodes.splice(1, 1); // remove b\n  links.shift(); // remove a-b\n  links.pop(); // remove b-c\n  restart();\n}\n\n// Add node bbb back.\nfunction step3() {\n  var a = nodes[0], b = {id: \"bbb\"}, c = nodes[1];\n  nodes.push(b);\n  links.push({source: a, target: b}, {source: b, target: c});\n  restart();\n}\n\nrestart();\nsetTimeout(step1, 2000);\nsetTimeout(step2, 4000);\nsetTimeout(step3, 6000);\n\n    </script>\n  </body>\n</html>\n",
+      "size": 2801
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "url": "https://api.github.com/users/mbostock",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "version": "d7e9bee7c45d044fcf2f64f96fc2d9a560865f49",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2011-09-18T04:24:58Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1095795/d7e9bee7c45d044fcf2f64f96fc2d9a560865f49"
+    },
+    {
+      "version": "7975705c7a38ce4a699c26395a4854daab037d44",
+      "change_status": {
+        "total": 199,
+        "deletions": 114,
+        "additions": 85
+      },
+      "committed_at": "2011-09-18T01:13:53Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1095795/7975705c7a38ce4a699c26395a4854daab037d44"
+    },
+    {
+      "version": "89a65ed9b4e9623be0b48fdec8257c65b12cd357",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2011-09-18T00:57:22Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1095795/89a65ed9b4e9623be0b48fdec8257c65b12cd357"
+    },
+    {
+      "version": "022bffe64ca72b25715ff01557f259f3a6b6a7f3",
+      "change_status": {
+        "total": 5,
+        "deletions": 1,
+        "additions": 4
+      },
+      "committed_at": "2011-07-20T20:11:40Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1095795/022bffe64ca72b25715ff01557f259f3a6b6a7f3"
+    },
+    {
+      "version": "4da9e2e152f0a8335f453734d9b8a6beed3e32c8",
+      "change_status": {
+        "total": 284,
+        "deletions": 142,
+        "additions": 142
+      },
+      "committed_at": "2011-07-20T20:06:28Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1095795/4da9e2e152f0a8335f453734d9b8a6beed3e32c8"
+    },
+    {
+      "version": "aa70ced2d1e3f0f2f3e6edbadafc168c0033dcf0",
+      "change_status": {
+        "total": 142,
+        "deletions": 0,
+        "additions": 142
+      },
+      "committed_at": "2011-07-20T19:34:38Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/0dbc072c620f9ca0ffbdcb3651afd4c1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "0dbc072c620f9ca0ffbdcb3651afd4c1",
+        "url": "https://api.github.com/users/ZoltanLajosKis",
+        "login": "ZoltanLajosKis",
+        "id": 769858
+      },
+      "url": "https://api.github.com/gists/1095795/aa70ced2d1e3f0f2f3e6edbadafc168c0033dcf0"
+    }
+  ],
+  "url": "https://api.github.com/gists/1095795",
+  "description": "Adding To and Removing From a Force Layout",
+  "git_pull_url": "git://gist.github.com/1095795.git",
+  "id": "1095795",
+  "comments": 0,
+  "created_at": "2011-07-20T20:06:12Z"
+}

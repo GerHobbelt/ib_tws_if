@@ -1,0 +1,212 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+    "login": "RandomEtc",
+    "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/RandomEtc",
+    "id": 39635
+  },
+  "git_push_url": "git@gist.github.com:1233904.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "ccd66faed3db9277d6d5b6ac7c66cfd3f2d3baba",
+      "change_status": {
+        "total": 21,
+        "additions": 12,
+        "deletions": 9
+      },
+      "committed_at": "2011-09-27T21:09:30Z",
+      "url": "https://api.github.com/gists/1233904/ccd66faed3db9277d6d5b6ac7c66cfd3f2d3baba"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "d6e518e23247af3bbf684770ea6cc2e4868cee83",
+      "change_status": {
+        "total": 16,
+        "additions": 1,
+        "deletions": 15
+      },
+      "committed_at": "2011-09-27T21:06:59Z",
+      "url": "https://api.github.com/gists/1233904/d6e518e23247af3bbf684770ea6cc2e4868cee83"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "5055a8a5f07995e4b8879b23d1edf88e0be37c23",
+      "change_status": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "committed_at": "2011-09-25T03:20:47Z",
+      "url": "https://api.github.com/gists/1233904/5055a8a5f07995e4b8879b23d1edf88e0be37c23"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "44146fa1dacd8edbb4f48426c1aa75090c258edf",
+      "change_status": {
+        "total": 23,
+        "additions": 15,
+        "deletions": 8
+      },
+      "committed_at": "2011-09-25T02:12:20Z",
+      "url": "https://api.github.com/gists/1233904/44146fa1dacd8edbb4f48426c1aa75090c258edf"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "49cc6836c6a733a61877faa7b2b8466924e84134",
+      "change_status": {
+        "total": 161,
+        "additions": 103,
+        "deletions": 58
+      },
+      "committed_at": "2011-09-25T01:42:27Z",
+      "url": "https://api.github.com/gists/1233904/49cc6836c6a733a61877faa7b2b8466924e84134"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "609f8337b2032a2a3c134af0ea6a8e41d01b1c8a",
+      "change_status": {
+        "total": 202,
+        "additions": 117,
+        "deletions": 85
+      },
+      "committed_at": "2011-09-24T04:41:14Z",
+      "url": "https://api.github.com/gists/1233904/609f8337b2032a2a3c134af0ea6a8e41d01b1c8a"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "18b26ccf6c4b00e812dfacc8716292d452daa705",
+      "change_status": {
+        "total": 34,
+        "additions": 19,
+        "deletions": 15
+      },
+      "committed_at": "2011-09-23T17:48:30Z",
+      "url": "https://api.github.com/gists/1233904/18b26ccf6c4b00e812dfacc8716292d452daa705"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "eeaea6d2262cfd31e8ee849912863ed5137c1f7c",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-09-23T17:20:20Z",
+      "url": "https://api.github.com/gists/1233904/eeaea6d2262cfd31e8ee849912863ed5137c1f7c"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "6cebd5d15f3fe697f4214b8c3449c723a0c3884e",
+      "change_status": {
+        "total": 16,
+        "additions": 9,
+        "deletions": 7
+      },
+      "committed_at": "2011-09-23T17:19:21Z",
+      "url": "https://api.github.com/gists/1233904/6cebd5d15f3fe697f4214b8c3449c723a0c3884e"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "c5989dab44ab4b0d9f51c952f87ad60dcbfbbbdb",
+      "change_status": {
+        "total": 176,
+        "additions": 99,
+        "deletions": 77
+      },
+      "committed_at": "2011-09-23T17:04:39Z",
+      "url": "https://api.github.com/gists/1233904/c5989dab44ab4b0d9f51c952f87ad60dcbfbbbdb"
+    }
+  ],
+  "description": "Map Tiles in D3",
+  "comments": 0,
+  "created_at": "2011-09-22T02:41:18Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1233904",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1233904/cf520b4b177ba316e2d83170f899a7340de9848f/index.html",
+      "size": 21874,
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\" />\n        <title>Map Tiles in D3</title>\n        <!-- An exercise in learning D3 for DOM manipulation and transitions.\n             Uses CSS (3D) transforms where available, falls back to normal CSS if not.\n             Coordinate and tile positioning logic cribbed from Modest Maps. \n             A two day hack... Doubtless still glitches to be ironed out!\n             No projections, no layers, no double click, no touching, no overlays.\n             Queueing img requests seems overkill but smooths things out a lot.\n             (C) 2011 Tom Carden, released under the same BSD license as D3 itself: \n             https://github.com/mbostock/d3/blob/master/LICENSE\n             Forks welcome! -->\n        <script src=\"http://mbostock.github.com/d3/d3.min.js\"></script>\n        <script type=\"text/javascript\">\n\n            var coord = [ 2, 2, 2 ],        // col, row, zoom\n                roundCoord = null,          // coord at an integer zoom level\n                tileSize = [ 256, 256 ],    // px\n                redraw = null,              // visible here for console hacking\n                loadedTiles = {},           // [src] --> millis when load completed\n                w = window.innerWidth,\n                h = window.innerHeight,\n                center = [ w/2, h/2 ];      // center of map in pixels\n                \n            // borrowed from Modest Maps, inspired by LeafletJS\n            var transformProperty = (function(props) {\n                var style = document.documentElement.style;\n                for (var i = 0; i < props.length; i++) {\n                    if (props[i] in style) {\n                        return props[i];\n                    }\n                }\n                return false;\n            })(['transform', '-webkit-transform', '-o-transform', '-moz-transform', '-ms-transform']);\n\n            var matrixString = (function() {\n                if (('WebKitCSSMatrix' in window) && ('m11' in new WebKitCSSMatrix())) {\n                    return function(scale,x,y,cx,cy) {\n                        scale = scale || 1;\n                        return 'translate3d(' + [ x, y, '0px' ].join('px,') + ') scale3d(' + [ scale,scale,1 ].join(',') + ')';\n/*                        return 'matrix3d(' +\n                            [ scale, '0,0,0,0',\n                              scale, '0,0,0,0,1,0',\n                              (x + ((cx * scale) - cx)).toFixed(4),\n                              (y + ((cy * scale) - cy)).toFixed(4),\n                              '0,1'].join(',') + ')'; */\n                    }\n                } else {\n                    return function(scale,x,y,cx,cy) {\n                        var unit = (transformProperty == 'MozTransform') ? 'px' : '';\n                        return 'matrix(' +\n                            [(scale || '1'), 0, 0,\n                            (scale || '1'),\n                            (x + ((cx * scale) - cx)) + unit,\n                            (y + ((cy * scale) - cy)) + unit\n                            ].join(',') + ')';\n                    }\n                }\n            })();\n\n            // make a tile provider that knows how to wrap tiles around the world\n            function provider(d) {\n                var c = d.slice();\n                var minCol = 0, \n                    maxCol = Math.pow(2,d[2]);                        \n                while (c[0] < minCol) c[0] += maxCol;\n                while (c[0] >= maxCol) c[0] -= maxCol;\n                var z = c[2], x = c[0], y = c[1];\n                return 'http://otile1.mqcdn.com/tiles/1.0.0/osm/'+z+'/'+x+'/'+y+'.jpg';\n            }\n            \n            // ----- Queue stuff (should really be wrapped in an object)\n            \n            var queue = [],\n                queueById = {},\n                numOpenRequests = 0,\n                requestById = {};\n            \n            // called with .each, this == <img>\n            function addToQueue(d,i) {\n                var src = provider(d);\n                if (src in loadedTiles) {\n                    // if we've seen it this session the browser cache probably has it                    \n                    d3.select(this).attr(\"src\", src);\n                } else {\n                    var item = { id: this.id, img: this };\n                    queue.push(item);\n                    queueById[item.id] = item;\n                }\n            }\n\n            // called with .each, this == <img>\n            function removeFromQueue(d,i) {\n                // attempt to cancel loading for incomplete tiles\n                // and prevent very large/tiny tiles from being scaled\n                // (remove these immediately so they don't slow down positioning)\n                if (!this.complete || (coord[2] - d[2] > 5) || (d[2] - coord[2] > 2)) {\n                    this.src = null;\n                    d3.select(this).remove();\n                }\n                // also clear the open request\n                removeOpenRequest(this);\n                // and mark the image null in the queue so it will be skipped\n                var item = queueById[this.id];\n                if (item) {\n                    item.img = null;\n                    delete queueById[this.id];\n                }\n            }\n\n            // called when tiles are complete /or/ canceled\n            function removeOpenRequest(img) {\n                var request = requestById[img.id];\n                if (request) {\n                    request.img = null;\n                    delete requestById[img.id];\n                    numOpenRequests--;\n                }            \n            }\n            \n            // request up to 8 things from the queue, skipping blank items\n            function processQueue() {\n                while (numOpenRequests < 8 && queue.length > 0) {\n                    var request = queue.shift();\n                    if (request.img && request.img.parentNode) {\n                        // luckily there's a magic mapping inside d3\n                        // that knows how to pass the correct data to provider()\n                        d3.select(request.img) \n                            .attr(\"src\", provider);\n                        requestById[request.id] = request; \n                        numOpenRequests++;\n                    }\n                    delete queueById[request.id];                        \n                }\n            }\n            \n            // ----- end Queue stuff\n\n            // ----- Tile Positioning Functions\n\n            // remove round/ceil for greater accuracy but visible seams\n            function left(d) { \n                var scale = Math.pow(2, coord[2]-d[2]),\n                    power = Math.pow(2, d[2] - roundCoord[2]),\n                    centerCol = roundCoord[0] * power;\n                return Math.round(center[0] + (d[0] - centerCol) * tileSize[0] * scale) + 'px'; \n            }\n            function top(d) { \n                var scale = Math.pow(2, coord[2]-d[2]),\n                    power = Math.pow(2, d[2] - roundCoord[2]),\n                    centerRow = roundCoord[1] * power;\n                return Math.round(center[1] + (d[1] - centerRow) * tileSize[1] * scale) + 'px'; \n            }\n            function width(d) { \n                var scale = Math.pow(2, coord[2]-d[2]);\n                return Math.ceil(scale * tileSize[0])+'px'; \n            }\n            function height(d) { \n                var scale = Math.pow(2, coord[2]-d[2]);\n                return Math.ceil(scale * tileSize[1])+'px'; \n            }          \n            \n            // for 3D webkit mode\n            function transform(d) {\n                var scale = Math.pow(2, coord[2]-d[2]);\n                // adjust to nearest whole pixel scale (thx @tmcw)\n                if (scale * tileSize[0] % 1) {\n                    scale += (1 - scale * tileSize[0] % 1) / tileSize[0];\n                }                \n                var zoomedCoord = zoomedBy(roundCoord, d[2] - roundCoord[2]),\n                    x = Math.round(center[0] + (d[0] - zoomedCoord[0]) * tileSize[0] * scale),\n                    y = Math.round(center[1] + (d[1] - zoomedCoord[1]) * tileSize[1] * scale);\n                return matrixString(scale, x, y, tileSize[0]/2.0, tileSize[1]/2.0);\n            }\n            \n            // ----- end Tile Positioning Functions\n            \n            // ----- Coordinate manipulation\n            \n            // NB:- coords are just Arrays [ x,y,z ]\n            // create a new coord with [ col, row, zoom ] (x,y,z)\n            // copy a coord with c.slice()\n            \n            function zoomedBy(c, dz) {\n                var power = Math.pow(2,dz);\n                return [ c[0] * power, c[1] * power, c[2] + dz ];\n            }\n            function offsetBy(c, o) {\n                return [ c[0] + o[0], c[1] + o[1], c[2] + o[2] ];\n            }\n            function container(c) {\n                c = zoomedBy(c, Math.round(c[2])-c[2]);\n                return [ Math.floor(c[0]), Math.floor(c[1]), c[2] ];\n            }\n\n            // ----- end Coordinate manipulation\n\n            window.onload = function() {\n            \n                var map = d3.select(\"body\")\n                                .insert(\"div\",\"p\")\n                                    .attr(\"class\", \"map\")\n                                    .style(\"width\", \"100%\")\n                                    .style(\"height\", \"100%\");\n                                    \n                redraw = function() {\n\n                    // apply coord limits\n                    if (coord[2] > 18) {\n                        coord = zoomedBy(coord, 18-coord[2]);\n                    } else if (coord[2] < 0) {\n                        coord = zoomedBy(coord, -coord[2]);\n                    }\n                    \n                    // find coordinate extents of map\n                    var tl = offsetBy(coord, [ -center[0] / tileSize[0], -center[1] / tileSize[1], 0 ]),\n                        br = offsetBy(coord, [ center[0] / tileSize[0], center[1] / tileSize[1], 0 ]);\n\n                    // round coords to \"best\" zoom level\n                    roundCoord = zoomedBy(coord, Math.round(coord[2])-coord[2]);\n                    tl = zoomedBy(tl, Math.round(tl[2])-tl[2]);\n                    br = zoomedBy(br, Math.round(br[2])-br[2]);\n\n                    // generate visible tile coords           \n                    var padding = 0;\n                    var cols = d3.range( Math.floor(tl[0]) - padding, Math.ceil(br[0]) + padding),\n                        rows = d3.range( Math.floor(tl[1]) - padding, Math.ceil(br[1]) + padding),\n                        visibleCoords = [];\n                    rows.forEach(function(row) {\n                        cols.forEach(function(col) {\n                            visibleCoords.push([col,row,roundCoord[2]]);\n                        });\n                    });\n                    \n                    // don't show above/below the poles\n                    visibleCoords = visibleCoords.filter(function(c) {\n                        var minRow = 0, \n                            maxRow = Math.pow(2,c[2]);                    \n                        return c[1] >= minRow && c[1] < maxRow;                \n                    });\n                    \n                    // explicitly preserve parent tiles for tiles we haven't already loaded\n                    // not strictly necessary but helps with continuity on slow connections\n                    var compensationCoords = [];\n                        uniqueCompensations = {};\n                    /*function addPyramidParents(c) {\n                        if (c[2] > 0) {\n                            c = container(zoomedBy(c, -1));\n                            var src = provider(c);\n                            if (!(src in uniqueCompensations)) {\n                                uniqueCompensations[src] = true;\n                                compensationCoords.push(c);\n                            }\n                            addPyramidParents(c);\n                        }\n                    } \n                    visibleCoords.forEach(addPyramidParents);\n                    compensationCoords.sort(function(c1,c2) {\n                        return d3.ascending(c1[2],c2[2]);\n                    })*/          \n                    function addParentIfNeeded(c) {\n                        if (c[2] > 0 && coord[2] - c[2] < 3) {\n                            var src = provider(c);\n                            if (!(src in loadedTiles) || (Date.now() - loadedTiles[src] < 250)) {\n                                c = container(zoomedBy(c, -1));\n                                src = provider(c);\n                                if (src in loadedTiles && !(src in uniqueCompensations)) {\n                                    uniqueCompensations[src] = true;\n                                    compensationCoords.push(c);\n                                }\n                                // better continuity if we loop, but slower (needs tuning)\n                                addParentIfNeeded(c);\n                            }\n                        }\n                    }                                            \n                    visibleCoords.forEach(addParentIfNeeded);\n                    visibleCoords = compensationCoords.concat(visibleCoords);\n\n                    var tiles = map.selectAll('img.tile')\n                       .data(visibleCoords, String);\n\n                    // setup new things                        \n                    tiles.enter().append('img')\n                        .attr(\"id\", String)\n                        .attr(\"class\", \"tile\")\n                        .style(\"opacity\", 0.0)\n                        .style(\"display\", \"none\") // opacity doesn't seem to \"take\" until load event fires\n                        .style(\"z-index\", function(d) { return 100 * d[2] })\n                        .on('load', function(d) {\n\n                            loadedTiles[this.src] = Date.now();\n                            \n                            d3.select(this)\n                              .style(\"display\", \"block\")\n                              .style(\"opacity\", 0.0)\n                                .transition()\n                                  .duration(250)\n                                    .style(\"opacity\", 1.0);\n\n                            removeOpenRequest(this);\n                            // request redraw (which will also check queue)\n                            d3.timer(redraw,50); // TODO: only remove compensation tiles for this tile instead of a full redraw\n                        })\n                        .each(addToQueue) // sets img src 8 at a time using provider()\n\n                    // TODO: on('error')?\n\n                    // ensure updating tiles are at opacity 1.0 (if old enough)\n                    tiles.filter(function() {\n                        return (this.src in loadedTiles) && (Date.now() - loadedTiles[this.src] > 500);\n                    }).transition().duration(250).style(\"opacity\", 1.0);\n\n                    // clean up old things\n                    tiles.exit()\n                        .each(removeFromQueue)\n                        .transition()\n                          .duration(250)\n                            .style(\"opacity\", 0.0)\n                              .delay(250)\n                                .remove()\n                                  .each('end',function() {\n                                    // prevents blank tiles if zooming confuses transitions\n                                    d3.timer(redraw,50);\n                                  });\n                                \n                    \n                    // update all positions, enter/update/exit alike\n                    if (transformProperty) {\n                        map.selectAll('img.tile')\n                            .style(transformProperty, transform);                        \n                    } else {\n                        map.selectAll('img.tile')\n                            .style(\"left\", left)\n                            .style(\"top\", top)\n                            .style(\"width\", width)\n                            .style(\"height\", height);\n                    }                    \n\n                    //console.log(map.selectAll('img.tile')[0].length, 'img.tiles');\n                    \n                    // see what's new\n                    processQueue();\n\n                    return true;\n                }\n                \n                d3.timer(redraw);\n                \n                map.on('mousedown.map', function() {\n                        var prevMouse = [ d3.event.pageX, d3.event.pageY ];\n                        d3.select(window)\n                            .on('mousemove.map', function() {\n                                var mouse = prevMouse;\n                                prevMouse = [ d3.event.pageX, d3.event.pageY ];\n                                coord = offsetBy(coord, [\n                                    -((prevMouse[0] - mouse[0]) / tileSize[0]),\n                                    -((prevMouse[1] - mouse[1]) / tileSize[1]),\n                                    0\n                                ]);\n                                d3.event.preventDefault();\n                                d3.event.stopPropagation();\n                                d3.timer(redraw);\n                            })\n                            .on('mouseup.map', function() {\n                                prevMouse = null;\n                                d3.select(window)\n                                    .on('mousemove.map',null)\n                                    .on('mouseup.map',null);\n                            })\n                        d3.event.preventDefault();\n                        d3.event.stopPropagation();                        \n                    })\n                    .on('mousewheel.map', onWheel)\n                    .on('DOMMouseScroll.map', onWheel);\n                \n                function onWheel() {\n                    // 18 = max zoom, 0 = min zoom\n                    var delta = Math.min(18-coord[2],Math.max(0-coord[2],d3_behavior_zoomDelta()));\n                    if (delta != 0) {\n                        var mouse = [ d3.event.pageX, d3.event.pageY ];\n                        coord = offsetBy(coord, [\n                            ((mouse[0]-center[0]) / tileSize[0]),\n                            ((mouse[1]-center[1]) / tileSize[1]),\n                            0\n                        ]);\n                        coord = zoomedBy(coord, delta);\n                        coord = offsetBy(coord, [ \n                            -((mouse[0]-center[0]) / tileSize[0]),\n                            -((mouse[1]-center[1]) / tileSize[1]),\n                            0\n                        ]);\n                        d3.timer(redraw);\n                    }\n                    d3.event.preventDefault();\n                    d3.event.stopPropagation();                        \n                }\n                    \n                d3.select(window).on('resize.map', function() {\n                    center = [ window.innerWidth/2, window.innerHeight/2 ] \n                    d3.timer(redraw);\n                });\n  \n            }\n            \n            // expose this so our own mousewheel handler can use it\n            var d3_behavior_zoomDiv = null;\n            \n            // detect the pixels that would be scrolled by this wheel event\n            function d3_behavior_zoomDelta() {\n            \n              // mousewheel events are totally broken!\n              // https://bugs.webkit.org/show_bug.cgi?id=40441\n              // not only that, but Chrome and Safari differ in re. to acceleration!\n              if (!d3_behavior_zoomDiv) {\n                d3_behavior_zoomDiv = d3.select(\"body\").append(\"div\")\n                    .style(\"visibility\", \"hidden\")\n                    .style(\"top\", 0)\n                    .style(\"height\", 0)\n                    .style(\"width\", 0)\n                    .style(\"overflow-y\", \"scroll\")\n                  .append(\"div\")\n                    .style(\"height\", \"2000px\")\n                  .node().parentNode;\n              }\n            \n              var e = d3.event, delta;\n              try {\n                d3_behavior_zoomDiv.scrollTop = 250;\n                d3_behavior_zoomDiv.dispatchEvent(e);\n                delta = 250 - d3_behavior_zoomDiv.scrollTop;\n              } catch (error) {\n                delta = e.wheelDelta || (-e.detail * 5);\n              }\n            \n              return delta * .005;\n            }          \n            \n\t\t</script>\n\t\t<style>\n\t\t    html, body {\n\t\t        width: 100%;\n\t\t        height: 100%;\n\t\t        margin: 0;\n\t\t        padding: 0;\n\t\t        border: 0;\n\t\t    }\n\t\t    div.map {\n\t\t        position: absolute;\n\t\t        overflow: hidden;\n\t\t        margin: 0;\n\t\t        padding: 0;\n\t\t        border: 0;\n\t\t    }\n\t\t    img.tile {\n\t\t        display: block;\n\t\t        position: absolute;\n\t\t        margin: 0;\n\t\t        padding: 0;\n\t\t        border: 0;\n\t\t        -webkit-transform-origin: 0px 0px;\n\t\t    }\n\t\t    p {\n\t\t        font: bold 12px sans-serif;\n\t\t        position: absolute;\n\t\t        display: block;\n\t\t        right: 5px;\n\t\t        bottom: 5px;\n\t\t        color: white;\n\t\t        text-shadow: 1px 1px 4px rgba(0,0,0,0.75);\n\t\t        z-index: 250;\n\t\t        margin: 0;\n\t\t        padding: 5px;\n\t\t    }\n\t\t    p a {\n\t\t        color: white;\n\t\t    }\n\t\t</style>\n    </head>\n    <body>\n        <p>Tiles &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, CC-BY-SA. Courtesy of <a href=\"http://www.mapquest.com/\" target=\"_blank\">MapQuest</a> <img src=\"http://developer.mapquest.com/content/osm/mq_logo.png\"></p>\n    </body>\n</html>",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/1233904/dc1efbba5d746512ab4ec9ba757a1f5e5b593bc6/README.md",
+      "size": 208,
+      "content": "An exercise in learning D3 / a proof of concept / my hat-in-the-ring for what comes next after Polymaps and Modest Maps. See the [github project page](https://github.com/bloomtime/d3map) for more information.",
+      "language": "Markdown"
+    }
+  },
+  "updated_at": "2011-09-22T02:41:18Z",
+  "url": "https://api.github.com/gists/1233904",
+  "git_pull_url": "git://gist.github.com/1233904.git",
+  "id": "1233904"
+}

@@ -1,0 +1,164 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "1be3b4f6f485e8e531e43bbf9de2b660",
+        "avatar_url": "https://secure.gravatar.com/avatar/1be3b4f6f485e8e531e43bbf9de2b660?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "tracend",
+        "url": "https://api.github.com/users/tracend",
+        "id": 542296
+      },
+      "created_at": "2012-01-26T19:38:10Z",
+      "updated_at": "2012-01-26T19:38:10Z",
+      "url": "https://api.github.com/gists/1684613",
+      "id": "1684613"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1283663.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "73ffbf87bf9ef0ba359d706b53d4245b2bc3b84c",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1283663/73ffbf87bf9ef0ba359d706b53d4245b2bc3b84c",
+      "committed_at": "2011-10-13T07:38:00Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "1d3012b2c94015cdcc8611d839fbdb3b42eac471",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1283663/1d3012b2c94015cdcc8611d839fbdb3b42eac471",
+      "committed_at": "2011-10-13T07:37:35Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "ff5898170f94b58f4cfde916faac2cced67b78f1",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1283663/ff5898170f94b58f4cfde916faac2cced67b78f1",
+      "committed_at": "2011-10-13T07:35:22Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "56512ecc236bb2f2b7fc7b7c693295537c3b7ca2",
+      "change_status": {
+        "total": 760,
+        "additions": 380,
+        "deletions": 380
+      },
+      "url": "https://api.github.com/gists/1283663/56512ecc236bb2f2b7fc7b7c693295537c3b7ca2",
+      "committed_at": "2011-10-13T07:34:52Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "a98adc163f5b8226e1f422cdfa0bed724a7da5e2",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1283663/a98adc163f5b8226e1f422cdfa0bed724a7da5e2",
+      "committed_at": "2011-10-13T07:34:34Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "ceca59524d73b09885b51379b236545b71fd1202",
+      "change_status": {
+        "total": 604,
+        "additions": 604,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1283663/ceca59524d73b09885b51379b236545b71fd1202",
+      "committed_at": "2011-10-13T07:34:05Z"
+    }
+  ],
+  "description": "Hierarchical Bar Chart",
+  "html_url": "https://gist.github.com/1283663",
+  "git_push_url": "git@gist.github.com:1283663.git",
+  "comments": 0,
+  "created_at": "2011-10-13T07:34:05Z",
+  "public": true,
+  "files": {
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 444,
+      "content": "This bar chart visualizes hierarchical data using [D3](http://mbostock.github.com/d3/). Each blue bar represents a folder, whose length encodes the total size of all files in that folder (and all subfolders). Clicking on a bar dives into that folder, while clicking on the background bubbles back up to the parent folder. The effect is similar to a [zoomable partition layout](http://bl.ocks.org/1005873), though in a more conventional display.",
+      "raw_url": "https://gist.github.com/raw/1283663/e663adcd293bd868d6efdbc7ead352fc2488c55a/README.md",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 6686,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Hierarchical Bar Chart</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.4.2\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.4.2\"></script>\n    <style type=\"text/css\">\n\ntext {\n  font: 10px sans-serif;\n}\n\nrect.background {\n  fill: white;\n}\n\n.axis {\n  shape-rendering: crispEdges;\n}\n\n.axis path, .axis line {\n  fill: none;\n  stroke: #000;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar m = [30, 40, 20, 120], // top right bottom left\n    w = 960 - m[1] - m[3], // width\n    h = 500 - m[0] - m[2], // height\n    x = d3.scale.linear().range([0, w]),\n    y = 20, // bar height\n    z = d3.scale.ordinal().range([\"steelblue\", \"#ccc\"]), // bar color\n    duration = 750,\n    delay = 25;\n\nvar hierarchy = d3.layout.partition()\n    .value(function(d) { return d.size; });\n\nvar xAxis = d3.svg.axis()\n    .scale(x)\n    .orient(\"top\");\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w + m[1] + m[3])\n    .attr(\"height\", h + m[0] + m[2])\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + m[3] + \",\" + m[0] + \")\");\n\nsvg.append(\"svg:rect\")\n    .attr(\"class\", \"background\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n    .on(\"click\", up);\n\nsvg.append(\"svg:g\")\n    .attr(\"class\", \"x axis\");\n\nsvg.append(\"svg:g\")\n    .attr(\"class\", \"y axis\")\n  .append(\"svg:line\")\n    .attr(\"y1\", \"100%\");\n\nd3.json(\"readme.json\", function(root) {\n  hierarchy.nodes(root);\n  x.domain([0, root.value]).nice();\n  down(root, 0);\n});\n\nfunction down(d, i) {\n  if (!d.children || this.__transition__) return;\n  var end = duration + d.children.length * delay;\n\n  // Mark any currently-displayed bars as exiting.\n  var exit = svg.selectAll(\".enter\").attr(\"class\", \"exit\");\n\n  // Entering nodes immediately obscure the clicked-on bar, so hide it.\n  exit.selectAll(\"rect\").filter(function(p) { return p === d; })\n      .style(\"fill-opacity\", 1e-6);\n\n  // Enter the new bars for the clicked-on data.\n  // Per above, entering bars are immediately visible.\n  var enter = bar(d)\n      .attr(\"transform\", stack(i))\n      .style(\"opacity\", 1);\n\n  // Have the text fade-in, even though the bars are visible.\n  // Color the bars as parents; they will fade to children if appropriate.\n  enter.select(\"text\").style(\"fill-opacity\", 1e-6);\n  enter.select(\"rect\").style(\"fill\", z(true));\n\n  // Update the x-scale domain.\n  x.domain([0, d3.max(d.children, function(d) { return d.value; })]).nice();\n\n  // Update the x-axis.\n  svg.selectAll(\".x.axis\").transition().duration(duration).call(xAxis);\n\n  // Transition entering bars to their new position.\n  var enterTransition = enter.transition()\n      .duration(duration)\n      .delay(function(d, i) { return i * delay; })\n      .attr(\"transform\", function(d, i) { return \"translate(0,\" + y * i * 1.2 + \")\"; });\n\n  // Transition entering text.\n  enterTransition.select(\"text\").style(\"fill-opacity\", 1);\n\n  // Transition entering rects to the new x-scale.\n  enterTransition.select(\"rect\")\n      .attr(\"width\", function(d) { return x(d.value); })\n      .style(\"fill\", function(d) { return z(!!d.children); });\n\n  // Transition exiting bars to fade out.\n  var exitTransition = exit.transition()\n      .duration(duration)\n      .style(\"opacity\", 1e-6)\n      .remove();\n\n  // Transition exiting bars to the new x-scale.\n  exitTransition.selectAll(\"rect\").attr(\"width\", function(d) { return x(d.value); });\n\n  // Rebind the current node to the background.\n  svg.select(\".background\").data([d]).transition().duration(end); d.index = i;\n}\n\nfunction up(d) {\n  if (!d.parent || this.__transition__) return;\n  var end = duration + d.children.length * delay;\n\n  // Mark any currently-displayed bars as exiting.\n  var exit = svg.selectAll(\".enter\").attr(\"class\", \"exit\");\n\n  // Enter the new bars for the clicked-on data's parent.\n  var enter = bar(d.parent)\n      .attr(\"transform\", function(d, i) { return \"translate(0,\" + y * i * 1.2 + \")\"; })\n      .style(\"opacity\", 1e-6);\n\n  // Color the bars as appropriate.\n  // Exiting nodes will obscure the parent bar, so hide it.\n  enter.select(\"rect\")\n      .style(\"fill\", function(d) { return z(!!d.children); })\n    .filter(function(p) { return p === d; })\n      .style(\"fill-opacity\", 1e-6);\n\n  // Update the x-scale domain.\n  x.domain([0, d3.max(d.parent.children, function(d) { return d.value; })]).nice();\n\n  // Update the x-axis.\n  svg.selectAll(\".x.axis\").transition().duration(duration).call(xAxis);\n\n  // Transition entering bars to fade in over the full duration.\n  var enterTransition = enter.transition()\n      .duration(end)\n      .style(\"opacity\", 1);\n\n  // Transition entering rects to the new x-scale.\n  // When the entering parent rect is done, make it visible!\n  enterTransition.select(\"rect\")\n      .attr(\"width\", function(d) { return x(d.value); })\n      .each(\"end\", function(p) { if (p === d) d3.select(this).style(\"fill-opacity\", null); });\n\n  // Transition exiting bars to the parent's position.\n  var exitTransition = exit.selectAll(\"g\").transition()\n      .duration(duration)\n      .delay(function(d, i) { return i * delay; })\n      .attr(\"transform\", stack(d.index));\n\n  // Transition exiting text to fade out.\n  exitTransition.select(\"text\")\n      .style(\"fill-opacity\", 1e-6);\n\n  // Transition exiting rects to the new scale and fade to parent color.\n  exitTransition.select(\"rect\")\n      .attr(\"width\", function(d) { return x(d.value); })\n      .style(\"fill\", z(true));\n\n  // Remove exiting nodes when the last child has finished transitioning.\n  exit.transition().duration(end).remove();\n\n  // Rebind the current parent to the background.\n  svg.select(\".background\").data([d.parent]).transition().duration(end);;\n}\n\n// Creates a set of bars for the given data node, at the specified index.\nfunction bar(d) {\n  var bar = svg.insert(\"svg:g\", \".y.axis\")\n      .attr(\"class\", \"enter\")\n      .attr(\"transform\", \"translate(0,5)\")\n    .selectAll(\"g\")\n      .data(d.children)\n    .enter().append(\"svg:g\")\n      .style(\"cursor\", function(d) { return !d.children ? null : \"pointer\"; })\n      .on(\"click\", down);\n\n  bar.append(\"svg:text\")\n      .attr(\"x\", -6)\n      .attr(\"y\", y / 2)\n      .attr(\"dy\", \".35em\")\n      .attr(\"text-anchor\", \"end\")\n      .text(function(d) { return d.name; });\n\n  bar.append(\"svg:rect\")\n      .attr(\"width\", function(d) { return x(d.value); })\n      .attr(\"height\", y);\n\n  return bar;\n}\n\n// A stateful closure for stacking bars horizontally.\nfunction stack(i) {\n  var x0 = 0;\n  return function(d) {\n    var tx = \"translate(\" + x0 + \",\" + y * i * 1.2 + \")\";\n    x0 += x(d.value);\n    return tx;\n  };\n}\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1283663/85f18d0ba06c4e03723f9d8dfd8c66fecd0d0663/index.html",
+      "language": "HTML"
+    },
+    "readme.json": {
+      "type": "application/json",
+      "filename": "readme.json",
+      "size": 11413,
+      "content": "{\n \"name\": \"flare\",\n \"children\": [\n  {\n   \"name\": \"analytics\",\n   \"children\": [\n    {\n     \"name\": \"cluster\",\n     \"children\": [\n      {\"name\": \"AgglomerativeCluster\", \"size\": 3938},\n      {\"name\": \"CommunityStructure\", \"size\": 3812},\n      {\"name\": \"HierarchicalCluster\", \"size\": 6714},\n      {\"name\": \"MergeEdge\", \"size\": 743}\n     ]\n    },\n    {\n     \"name\": \"graph\",\n     \"children\": [\n      {\"name\": \"BetweennessCentrality\", \"size\": 3534},\n      {\"name\": \"LinkDistance\", \"size\": 5731},\n      {\"name\": \"MaxFlowMinCut\", \"size\": 7840},\n      {\"name\": \"ShortestPaths\", \"size\": 5914},\n      {\"name\": \"SpanningTree\", \"size\": 3416}\n     ]\n    },\n    {\n     \"name\": \"optimization\",\n     \"children\": [\n      {\"name\": \"AspectRatioBanker\", \"size\": 7074}\n     ]\n    }\n   ]\n  },\n  {\n   \"name\": \"animate\",\n   \"children\": [\n    {\"name\": \"Easing\", \"size\": 17010},\n    {\"name\": \"FunctionSequence\", \"size\": 5842},\n    {\n     \"name\": \"interpolate\",\n     \"children\": [\n      {\"name\": \"ArrayInterpolator\", \"size\": 1983},\n      {\"name\": \"ColorInterpolator\", \"size\": 2047},\n      {\"name\": \"DateInterpolator\", \"size\": 1375},\n      {\"name\": \"Interpolator\", \"size\": 8746},\n      {\"name\": \"MatrixInterpolator\", \"size\": 2202},\n      {\"name\": \"NumberInterpolator\", \"size\": 1382},\n      {\"name\": \"ObjectInterpolator\", \"size\": 1629},\n      {\"name\": \"PointInterpolator\", \"size\": 1675},\n      {\"name\": \"RectangleInterpolator\", \"size\": 2042}\n     ]\n    },\n    {\"name\": \"ISchedulable\", \"size\": 1041},\n    {\"name\": \"Parallel\", \"size\": 5176},\n    {\"name\": \"Pause\", \"size\": 449},\n    {\"name\": \"Scheduler\", \"size\": 5593},\n    {\"name\": \"Sequence\", \"size\": 5534},\n    {\"name\": \"Transition\", \"size\": 9201},\n    {\"name\": \"Transitioner\", \"size\": 19975},\n    {\"name\": \"TransitionEvent\", \"size\": 1116},\n    {\"name\": \"Tween\", \"size\": 6006}\n   ]\n  },\n  {\n   \"name\": \"data\",\n   \"children\": [\n    {\n     \"name\": \"converters\",\n     \"children\": [\n      {\"name\": \"Converters\", \"size\": 721},\n      {\"name\": \"DelimitedTextConverter\", \"size\": 4294},\n      {\"name\": \"GraphMLConverter\", \"size\": 9800},\n      {\"name\": \"IDataConverter\", \"size\": 1314},\n      {\"name\": \"JSONConverter\", \"size\": 2220}\n     ]\n    },\n    {\"name\": \"DataField\", \"size\": 1759},\n    {\"name\": \"DataSchema\", \"size\": 2165},\n    {\"name\": \"DataSet\", \"size\": 586},\n    {\"name\": \"DataSource\", \"size\": 3331},\n    {\"name\": \"DataTable\", \"size\": 772},\n    {\"name\": \"DataUtil\", \"size\": 3322}\n   ]\n  },\n  {\n   \"name\": \"display\",\n   \"children\": [\n    {\"name\": \"DirtySprite\", \"size\": 8833},\n    {\"name\": \"LineSprite\", \"size\": 1732},\n    {\"name\": \"RectSprite\", \"size\": 3623},\n    {\"name\": \"TextSprite\", \"size\": 10066}\n   ]\n  },\n  {\n   \"name\": \"flex\",\n   \"children\": [\n    {\"name\": \"FlareVis\", \"size\": 4116}\n   ]\n  },\n  {\n   \"name\": \"physics\",\n   \"children\": [\n    {\"name\": \"DragForce\", \"size\": 1082},\n    {\"name\": \"GravityForce\", \"size\": 1336},\n    {\"name\": \"IForce\", \"size\": 319},\n    {\"name\": \"NBodyForce\", \"size\": 10498},\n    {\"name\": \"Particle\", \"size\": 2822},\n    {\"name\": \"Simulation\", \"size\": 9983},\n    {\"name\": \"Spring\", \"size\": 2213},\n    {\"name\": \"SpringForce\", \"size\": 1681}\n   ]\n  },\n  {\n   \"name\": \"query\",\n   \"children\": [\n    {\"name\": \"AggregateExpression\", \"size\": 1616},\n    {\"name\": \"And\", \"size\": 1027},\n    {\"name\": \"Arithmetic\", \"size\": 3891},\n    {\"name\": \"Average\", \"size\": 891},\n    {\"name\": \"BinaryExpression\", \"size\": 2893},\n    {\"name\": \"Comparison\", \"size\": 5103},\n    {\"name\": \"CompositeExpression\", \"size\": 3677},\n    {\"name\": \"Count\", \"size\": 781},\n    {\"name\": \"DateUtil\", \"size\": 4141},\n    {\"name\": \"Distinct\", \"size\": 933},\n    {\"name\": \"Expression\", \"size\": 5130},\n    {\"name\": \"ExpressionIterator\", \"size\": 3617},\n    {\"name\": \"Fn\", \"size\": 3240},\n    {\"name\": \"If\", \"size\": 2732},\n    {\"name\": \"IsA\", \"size\": 2039},\n    {\"name\": \"Literal\", \"size\": 1214},\n    {\"name\": \"Match\", \"size\": 3748},\n    {\"name\": \"Maximum\", \"size\": 843},\n    {\n     \"name\": \"methods\",\n     \"children\": [\n      {\"name\": \"add\", \"size\": 593},\n      {\"name\": \"and\", \"size\": 330},\n      {\"name\": \"average\", \"size\": 287},\n      {\"name\": \"count\", \"size\": 277},\n      {\"name\": \"distinct\", \"size\": 292},\n      {\"name\": \"div\", \"size\": 595},\n      {\"name\": \"eq\", \"size\": 594},\n      {\"name\": \"fn\", \"size\": 460},\n      {\"name\": \"gt\", \"size\": 603},\n      {\"name\": \"gte\", \"size\": 625},\n      {\"name\": \"iff\", \"size\": 748},\n      {\"name\": \"isa\", \"size\": 461},\n      {\"name\": \"lt\", \"size\": 597},\n      {\"name\": \"lte\", \"size\": 619},\n      {\"name\": \"max\", \"size\": 283},\n      {\"name\": \"min\", \"size\": 283},\n      {\"name\": \"mod\", \"size\": 591},\n      {\"name\": \"mul\", \"size\": 603},\n      {\"name\": \"neq\", \"size\": 599},\n      {\"name\": \"not\", \"size\": 386},\n      {\"name\": \"or\", \"size\": 323},\n      {\"name\": \"orderby\", \"size\": 307},\n      {\"name\": \"range\", \"size\": 772},\n      {\"name\": \"select\", \"size\": 296},\n      {\"name\": \"stddev\", \"size\": 363},\n      {\"name\": \"sub\", \"size\": 600},\n      {\"name\": \"sum\", \"size\": 280},\n      {\"name\": \"update\", \"size\": 307},\n      {\"name\": \"variance\", \"size\": 335},\n      {\"name\": \"where\", \"size\": 299},\n      {\"name\": \"xor\", \"size\": 354},\n      {\"name\": \"_\", \"size\": 264}\n     ]\n    },\n    {\"name\": \"Minimum\", \"size\": 843},\n    {\"name\": \"Not\", \"size\": 1554},\n    {\"name\": \"Or\", \"size\": 970},\n    {\"name\": \"Query\", \"size\": 13896},\n    {\"name\": \"Range\", \"size\": 1594},\n    {\"name\": \"StringUtil\", \"size\": 4130},\n    {\"name\": \"Sum\", \"size\": 791},\n    {\"name\": \"Variable\", \"size\": 1124},\n    {\"name\": \"Variance\", \"size\": 1876},\n    {\"name\": \"Xor\", \"size\": 1101}\n   ]\n  },\n  {\n   \"name\": \"scale\",\n   \"children\": [\n    {\"name\": \"IScaleMap\", \"size\": 2105},\n    {\"name\": \"LinearScale\", \"size\": 1316},\n    {\"name\": \"LogScale\", \"size\": 3151},\n    {\"name\": \"OrdinalScale\", \"size\": 3770},\n    {\"name\": \"QuantileScale\", \"size\": 2435},\n    {\"name\": \"QuantitativeScale\", \"size\": 4839},\n    {\"name\": \"RootScale\", \"size\": 1756},\n    {\"name\": \"Scale\", \"size\": 4268},\n    {\"name\": \"ScaleType\", \"size\": 1821},\n    {\"name\": \"TimeScale\", \"size\": 5833}\n   ]\n  },\n  {\n   \"name\": \"util\",\n   \"children\": [\n    {\"name\": \"Arrays\", \"size\": 8258},\n    {\"name\": \"Colors\", \"size\": 10001},\n    {\"name\": \"Dates\", \"size\": 8217},\n    {\"name\": \"Displays\", \"size\": 12555},\n    {\"name\": \"Filter\", \"size\": 2324},\n    {\"name\": \"Geometry\", \"size\": 10993},\n    {\n     \"name\": \"heap\",\n     \"children\": [\n      {\"name\": \"FibonacciHeap\", \"size\": 9354},\n      {\"name\": \"HeapNode\", \"size\": 1233}\n     ]\n    },\n    {\"name\": \"IEvaluable\", \"size\": 335},\n    {\"name\": \"IPredicate\", \"size\": 383},\n    {\"name\": \"IValueProxy\", \"size\": 874},\n    {\n     \"name\": \"math\",\n     \"children\": [\n      {\"name\": \"DenseMatrix\", \"size\": 3165},\n      {\"name\": \"IMatrix\", \"size\": 2815},\n      {\"name\": \"SparseMatrix\", \"size\": 3366}\n     ]\n    },\n    {\"name\": \"Maths\", \"size\": 17705},\n    {\"name\": \"Orientation\", \"size\": 1486},\n    {\n     \"name\": \"palette\",\n     \"children\": [\n      {\"name\": \"ColorPalette\", \"size\": 6367},\n      {\"name\": \"Palette\", \"size\": 1229},\n      {\"name\": \"ShapePalette\", \"size\": 2059},\n      {\"name\": \"SizePalette\", \"size\": 2291}\n     ]\n    },\n    {\"name\": \"Property\", \"size\": 5559},\n    {\"name\": \"Shapes\", \"size\": 19118},\n    {\"name\": \"Sort\", \"size\": 6887},\n    {\"name\": \"Stats\", \"size\": 6557},\n    {\"name\": \"Strings\", \"size\": 22026}\n   ]\n  },\n  {\n   \"name\": \"vis\",\n   \"children\": [\n    {\n     \"name\": \"axis\",\n     \"children\": [\n      {\"name\": \"Axes\", \"size\": 1302},\n      {\"name\": \"Axis\", \"size\": 24593},\n      {\"name\": \"AxisGridLine\", \"size\": 652},\n      {\"name\": \"AxisLabel\", \"size\": 636},\n      {\"name\": \"CartesianAxes\", \"size\": 6703}\n     ]\n    },\n    {\n     \"name\": \"controls\",\n     \"children\": [\n      {\"name\": \"AnchorControl\", \"size\": 2138},\n      {\"name\": \"ClickControl\", \"size\": 3824},\n      {\"name\": \"Control\", \"size\": 1353},\n      {\"name\": \"ControlList\", \"size\": 4665},\n      {\"name\": \"DragControl\", \"size\": 2649},\n      {\"name\": \"ExpandControl\", \"size\": 2832},\n      {\"name\": \"HoverControl\", \"size\": 4896},\n      {\"name\": \"IControl\", \"size\": 763},\n      {\"name\": \"PanZoomControl\", \"size\": 5222},\n      {\"name\": \"SelectionControl\", \"size\": 7862},\n      {\"name\": \"TooltipControl\", \"size\": 8435}\n     ]\n    },\n    {\n     \"name\": \"data\",\n     \"children\": [\n      {\"name\": \"Data\", \"size\": 20544},\n      {\"name\": \"DataList\", \"size\": 19788},\n      {\"name\": \"DataSprite\", \"size\": 10349},\n      {\"name\": \"EdgeSprite\", \"size\": 3301},\n      {\"name\": \"NodeSprite\", \"size\": 19382},\n      {\n       \"name\": \"render\",\n       \"children\": [\n        {\"name\": \"ArrowType\", \"size\": 698},\n        {\"name\": \"EdgeRenderer\", \"size\": 5569},\n        {\"name\": \"IRenderer\", \"size\": 353},\n        {\"name\": \"ShapeRenderer\", \"size\": 2247}\n       ]\n      },\n      {\"name\": \"ScaleBinding\", \"size\": 11275},\n      {\"name\": \"Tree\", \"size\": 7147},\n      {\"name\": \"TreeBuilder\", \"size\": 9930}\n     ]\n    },\n    {\n     \"name\": \"events\",\n     \"children\": [\n      {\"name\": \"DataEvent\", \"size\": 2313},\n      {\"name\": \"SelectionEvent\", \"size\": 1880},\n      {\"name\": \"TooltipEvent\", \"size\": 1701},\n      {\"name\": \"VisualizationEvent\", \"size\": 1117}\n     ]\n    },\n    {\n     \"name\": \"legend\",\n     \"children\": [\n      {\"name\": \"Legend\", \"size\": 20859},\n      {\"name\": \"LegendItem\", \"size\": 4614},\n      {\"name\": \"LegendRange\", \"size\": 10530}\n     ]\n    },\n    {\n     \"name\": \"operator\",\n     \"children\": [\n      {\n       \"name\": \"distortion\",\n       \"children\": [\n        {\"name\": \"BifocalDistortion\", \"size\": 4461},\n        {\"name\": \"Distortion\", \"size\": 6314},\n        {\"name\": \"FisheyeDistortion\", \"size\": 3444}\n       ]\n      },\n      {\n       \"name\": \"encoder\",\n       \"children\": [\n        {\"name\": \"ColorEncoder\", \"size\": 3179},\n        {\"name\": \"Encoder\", \"size\": 4060},\n        {\"name\": \"PropertyEncoder\", \"size\": 4138},\n        {\"name\": \"ShapeEncoder\", \"size\": 1690},\n        {\"name\": \"SizeEncoder\", \"size\": 1830}\n       ]\n      },\n      {\n       \"name\": \"filter\",\n       \"children\": [\n        {\"name\": \"FisheyeTreeFilter\", \"size\": 5219},\n        {\"name\": \"GraphDistanceFilter\", \"size\": 3165},\n        {\"name\": \"VisibilityFilter\", \"size\": 3509}\n       ]\n      },\n      {\"name\": \"IOperator\", \"size\": 1286},\n      {\n       \"name\": \"label\",\n       \"children\": [\n        {\"name\": \"Labeler\", \"size\": 9956},\n        {\"name\": \"RadialLabeler\", \"size\": 3899},\n        {\"name\": \"StackedAreaLabeler\", \"size\": 3202}\n       ]\n      },\n      {\n       \"name\": \"layout\",\n       \"children\": [\n        {\"name\": \"AxisLayout\", \"size\": 6725},\n        {\"name\": \"BundledEdgeRouter\", \"size\": 3727},\n        {\"name\": \"CircleLayout\", \"size\": 9317},\n        {\"name\": \"CirclePackingLayout\", \"size\": 12003},\n        {\"name\": \"DendrogramLayout\", \"size\": 4853},\n        {\"name\": \"ForceDirectedLayout\", \"size\": 8411},\n        {\"name\": \"IcicleTreeLayout\", \"size\": 4864},\n        {\"name\": \"IndentedTreeLayout\", \"size\": 3174},\n        {\"name\": \"Layout\", \"size\": 7881},\n        {\"name\": \"NodeLinkTreeLayout\", \"size\": 12870},\n        {\"name\": \"PieLayout\", \"size\": 2728},\n        {\"name\": \"RadialTreeLayout\", \"size\": 12348},\n        {\"name\": \"RandomLayout\", \"size\": 870},\n        {\"name\": \"StackedAreaLayout\", \"size\": 9121},\n        {\"name\": \"TreeMapLayout\", \"size\": 9191}\n       ]\n      },\n      {\"name\": \"Operator\", \"size\": 2490},\n      {\"name\": \"OperatorList\", \"size\": 5248},\n      {\"name\": \"OperatorSequence\", \"size\": 4190},\n      {\"name\": \"OperatorSwitch\", \"size\": 2581},\n      {\"name\": \"SortOperator\", \"size\": 2023}\n     ]\n    },\n    {\"name\": \"Visualization\", \"size\": 16540}\n   ]\n  }\n ]\n}",
+      "raw_url": "https://gist.github.com/raw/1283663/a05a94858375bd0ae023f6950a2b13fac5127637/readme.json",
+      "language": "JSON"
+    }
+  },
+  "updated_at": "2011-10-13T07:34:05Z",
+  "url": "https://api.github.com/gists/1283663",
+  "id": "1283663"
+}

@@ -1,0 +1,212 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+    "login": "tovmeod",
+    "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/tovmeod",
+    "id": 1096577
+  },
+  "git_push_url": "git@gist.github.com:1257485.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "b27b4296850fd049271c4ed625583930203599ea",
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "committed_at": "2011-12-01T23:57:55Z",
+      "url": "https://api.github.com/gists/1257485/b27b4296850fd049271c4ed625583930203599ea"
+    },
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "d6eaa0514d22e19bf8cdf64a649e085ca8b65bca",
+      "change_status": {
+        "total": 20,
+        "additions": 16,
+        "deletions": 4
+      },
+      "committed_at": "2011-10-04T21:42:46Z",
+      "url": "https://api.github.com/gists/1257485/d6eaa0514d22e19bf8cdf64a649e085ca8b65bca"
+    },
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "a4ba341cb1e5944449b8c4ea9c2f3161ec677f8c",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-10-04T21:20:07Z",
+      "url": "https://api.github.com/gists/1257485/a4ba341cb1e5944449b8c4ea9c2f3161ec677f8c"
+    },
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "3f1fd1d8644772ffe1fec846fda4428f4bcde339",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "committed_at": "2011-10-04T21:03:14Z",
+      "url": "https://api.github.com/gists/1257485/3f1fd1d8644772ffe1fec846fda4428f4bcde339"
+    },
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "92975396d1e7882e2d57f27a4c1fece9b4337f5b",
+      "change_status": {
+        "total": 6,
+        "additions": 5,
+        "deletions": 1
+      },
+      "committed_at": "2011-10-04T21:01:49Z",
+      "url": "https://api.github.com/gists/1257485/92975396d1e7882e2d57f27a4c1fece9b4337f5b"
+    },
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "5eb99379a6ee389e2527d5113b33b4f8491f53a9",
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "committed_at": "2011-10-04T20:57:03Z",
+      "url": "https://api.github.com/gists/1257485/5eb99379a6ee389e2527d5113b33b4f8491f53a9"
+    },
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "869a5b72454576a5fc1cafa890295f3fbb467c96",
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "committed_at": "2011-10-04T20:54:02Z",
+      "url": "https://api.github.com/gists/1257485/869a5b72454576a5fc1cafa890295f3fbb467c96"
+    },
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "673de3e2a6b6277a7c42979cbd67d17fb5a10f8a",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-10-04T20:50:57Z",
+      "url": "https://api.github.com/gists/1257485/673de3e2a6b6277a7c42979cbd67d17fb5a10f8a"
+    },
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "41a516840e9bd715b341e768e5280e45837e9cfe",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-10-04T20:50:28Z",
+      "url": "https://api.github.com/gists/1257485/41a516840e9bd715b341e768e5280e45837e9cfe"
+    },
+    {
+      "user": {
+        "gravatar_id": "52584fea71e9ddcaf759b6085dcc78f2",
+        "login": "tovmeod",
+        "avatar_url": "https://secure.gravatar.com/avatar/52584fea71e9ddcaf759b6085dcc78f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tovmeod",
+        "id": 1096577
+      },
+      "version": "a14b7f92742b62dacd100b0ad240baf0a330d3aa",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-10-04T20:50:05Z",
+      "url": "https://api.github.com/gists/1257485/a14b7f92742b62dacd100b0ad240baf0a330d3aa"
+    }
+  ],
+  "description": "fb force graph",
+  "comments": 0,
+  "created_at": "2011-10-02T14:06:13Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1257485",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1257485/37cb2d0b7638ef7323f59fffc7322458fd0dd939/index.html",
+      "size": 2010,
+      "content": "<!doctype html>\n<html lang=\"en\" class=\"no-js\">\n<head>\n  <meta charset=\"utf-8\">\n\n  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame \n       Remove this if you use the .htaccess -->\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">\n\n  <title></title>\n  <meta name=\"description\" content=\"\">\n  <meta name=\"author\" content=\"\">\n\n  <!-- CSS : implied media=\"all\" -->\n  <link rel=\"stylesheet\" href=\"css/style.css?v=1\">\n  <link type=\"text/css\" rel=\"stylesheet\" href=\"css/force.css\"/>\n\n</head>\n<body>\n    \n<div id=\"main\">\n\n <div id=\"fb-root\">\n  <script src=\"http://connect.facebook.net/en_US/all.js\"></script>\n  <script>\n    FB.init(\n\t{\n      appId  : '127863167313646',\n      status : true, // check login status\n      cookie : true, // enable cookies to allow the server to access the session\n      xfbml  : true, // parse XFBML\n      channelURL : 'http://www.kttf.net/gen/channel.html', // channel.html file\n      oauth  : true // enable OAuth 2.0\n    });\n  </script>\n\t<fb:login-button scope=\"read_friendlists,user_photos,friends_photos\" onlogin=\"FBLoggedCB()\">\n\t\tLogin with Facebook\n    </fb:login-button>\n\t<form action='#' onsubmit=\"return onsubmitform();\">\n\tFB id: <input type=\"text\" id=\"username\" />\n\t<input type=\"submit\" value=\"Submit\" />\n\t</form>\n  <div id=\"chart\"></div>\n</div>\n\n</div>\n\n  <!-- Javascript at the bottom for fast page loading -->\n  <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.3.0\"></script>\n  <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.js?2.3.0\"></script>\n  <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.3.0\"></script>\n  <script type=\"text/javascript\" src=\"js.js\"></script>\n  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->\n  <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js\"></script>\n  <script>!window.jQuery && document.write('<script src=\"js/jquery-1.6.4.min.js\"><\\/script>')</script>\n  \n</body>\n</html>",
+      "language": "HTML"
+    },
+    "js.js": {
+      "type": "application/javascript",
+      "filename": "js.js",
+      "raw_url": "https://gist.github.com/raw/1257485/5802f67e8aa07619e8c7c781930e9e45bc484239/js.js",
+      "size": 4244,
+      "content": "var w = 1600,\n    h = 900,\n    nodes = [],\n    links=[];\n    nodesToAdd=[];\n\n\nvar vis = d3.select(\"body\").append(\"svg:svg\")\n\t.attr(\"height\",\"100%\")\n\t.attr(\"width\",\"100%\")\n\t.attr(\"viewBox\",\"0 0 50 50\");\n\nvar force = d3.layout.force()\n    .nodes(nodes)\n    .links(links)\n\t.linkDistance(500)\n    .size([w, h]);\n\nforce.on(\"tick\", function(e)\n{\n  vis.selectAll(\"path\")\n      .attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; });\n});\n\nfunction getNodeIndexbyID(id)\n{\n\tfor ( var i=0, len=nodes.length; i<len; i++ )\n\t{\n\t\tif (id==nodes[i].id)\n\t\t{\n\t\t\treturn i;\n\t\t}\n\t}\n\treturn -1;\n}\n\nfunction addPendingNodes()\n{\n\tif (nodesToAdd.length)\n\t\taddFriend(nodesToAdd.pop());\n}\nfunction addFriend(node)\n{\n\tconsole.time(node.name);\n\t//console.log(node.name);\n\t//alert(JSON.stringify(node));\n\t// checks if user is already in the graph\n\tif(getNodeIndexbyID(node.id)==-1)\n\t{\n\t\t// if not add node\n\t\taddNode(node);\n\t\t// check if someone (already in the graph) is his friend\n\t\tfor ( var i=0, len=nodes.length; i<len; i++ )\n\t\t{ \t// for each node already in the visualization, check if he is friend with the one just added\n\t\t\tif(node.id==nodes[i].id)\n\t\t\t\tcontinue;\n\n\t\t\tFB.api('/'+node.id+'/friends/'+nodes[i].id,(function(data)\n\t\t\t{\n\t\t\t\treturn function(response)\n\t\t\t\t{\n\t\t\t\t\tif(response.data.length>0) // True, they are friends\n\t\t\t\t\t{\n\t\t\t\t\t\taddLink(data.source.id,data.target.id);\n\t\t\t\t\t\t//alert(node.name+\" friend \"+nodes[i].name);\n\t\t\t\t\t}\n\t\t\t\t\t//else // they are not friends\n\t\t\t\t}\n\t\t\t})({source:node,target:nodes[i]})\n\t\t\t);\n\t\t}\n\t\tsetTimeout(addPendingNodes, (2500));\n\t}\n\telse\n\t{ // node already inserted, continue\n\t\taddPendingNodes();\n\t}\n\tconsole.timeEnd(node.name);\n}\nfunction addNode(node)\n{\n\tnodes.push(node);\n\t\n\t// Restart the layout.\n\tforce.start();\n      \n      vis.selectAll(\"circle.node\")\n      .data(nodes)\n    .enter().append(\"svg:circle\")\n      .attr(\"class\", \"node\")\n      .attr(\"cx\", function(d) { return d.x; })\n      .attr(\"cy\", function(d) { return d.y; })\n      .attr(\"r\", 5)\n      .style(\"fill\", \"steelblue\")\n\t  .call(force.drag);\n\t  \n\t  vis.selectAll(\"image\")\n\t  .data(nodes)\n\t  .enter().append(\"svg:image\")\n      .attr(\"xlink:href\", \"http://graph.facebook.com/\"+node.id+\"/picture\")\n      .attr(\"x\", \"-8px\")\n      .attr(\"y\", \"-8px\")\n      .attr(\"width\", \"16px\")\n      .attr(\"height\", \"16px\")\n      .call(force.drag)\n\t  .append(\"svg:title\").text(function(d) { return d.name; });\n}\nfunction addLink (sourceID,targetID)\n{\n\tlink={\"source\":getIndexbyID(sourceID),\"target\":getIndexbyID(targetID)}\n\tlinks.push(link);\n\t// Restart the layout.\n\tforce.start();\n  vis.selectAll(\"line.link\")\n      .data(links)\n    .enter().append(\"svg:line\")\n      .attr(\"class\", \"link\")\n      //.style(\"stroke-width\", function(d) { return Math.sqrt(d.value); })\n      .attr(\"x1\", function(d) { return d.source.x; })\n      .attr(\"y1\", function(d) { return d.source.y; })\n      .attr(\"x2\", function(d) { return d.target.x; })\n      .attr(\"y2\", function(d) { return d.target.y; })\n\t  .call(force.drag);\n}\nforce.on(\"tick\", function()\n{\n\tvis.selectAll(\"line.link\")\n      .attr(\"x1\", function(d) { return d.source.x; })\n      .attr(\"y1\", function(d) { return d.source.y; })\n      .attr(\"x2\", function(d) { return d.target.x; })\n      .attr(\"y2\", function(d) { return d.target.y; });\n  \n\tvis.selectAll(\"circle.node\")\n      .attr(\"cx\", function(d) { return d.x; })\n      .attr(\"cy\", function(d) { return d.y; });\n\t  \n\tvis.selectAll(\"image\").attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; });\n\t\n});\nfunction FBLoggedCB()\n{\n\tFB.api('/me', function(response)\n\t{\n\t\t//alert(JSON.stringify(response));\n\t\taddFriend(response);\n\t});\n\tFB.api('/me/friends', function(response)\n\t{\n\t\t//alert(JSON.stringify(response));\n\t\tfor ( var i=0, len=response.data.length; i<len; i++ )\n\t\t{\n\t\t\tnodesToAdd.push(response.data[i]);\n\t\t}\n\t\taddPendingNodes();\n\t});\n}\nfunction onsubmitform()\n{\n\tFB.api('/'+$(\"#username\").val(), function(response)\n\t{\n\t\t//alert(JSON.stringify(response));\n\t\taddFriend(response);\n\t});\n\tFB.api('/'+$(\"#username\").val()+'/friends', function(response)\n\t{\n\t\t//alert(JSON.stringify(response));\n\t\tfor ( var i=0, len=response.data.length; i<len; i++ )\n\t\t{\n\t\t\tnodesToAdd.push(response.data[i]);\n\t\t}\n\t\taddPendingNodes();\n\t});\n  return true;\n}\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-10-02T14:07:39Z",
+  "url": "https://api.github.com/gists/1257485",
+  "git_pull_url": "git://gist.github.com/1257485.git",
+  "id": "1257485"
+}

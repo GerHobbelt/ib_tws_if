@@ -1,0 +1,178 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-10-10T20:56:58Z",
+      "version": "4f4266997b387586bfdd591c30d002a2bad36e0b",
+      "url": "https://api.github.com/gists/1276463/4f4266997b387586bfdd591c30d002a2bad36e0b",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-10-10T20:54:53Z",
+      "version": "197c0270ce9d8d5cf430ca1198729da872a10183",
+      "url": "https://api.github.com/gists/1276463/197c0270ce9d8d5cf430ca1198729da872a10183",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-10-10T20:53:22Z",
+      "version": "37951fd272439f1d668af583c6480300206ab215",
+      "url": "https://api.github.com/gists/1276463/37951fd272439f1d668af583c6480300206ab215",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-10-10T20:49:52Z",
+      "version": "3e3106a0c3d96fa008945673fb99ed6ab79c0752",
+      "url": "https://api.github.com/gists/1276463/3e3106a0c3d96fa008945673fb99ed6ab79c0752",
+      "change_status": {
+        "total": 10,
+        "additions": 4,
+        "deletions": 6
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-10-10T20:48:56Z",
+      "version": "03caad940ab1fa2f300a6b5f82e2bde484810ce0",
+      "url": "https://api.github.com/gists/1276463/03caad940ab1fa2f300a6b5f82e2bde484810ce0",
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-10-10T20:47:19Z",
+      "version": "8192fda6f745f8a9a5c4d8f1a25f7d6566867dbc",
+      "url": "https://api.github.com/gists/1276463/8192fda6f745f8a9a5c4d8f1a25f7d6566867dbc",
+      "change_status": {
+        "total": 14,
+        "additions": 12,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-10-10T20:42:38Z",
+      "version": "67b3f4343d7f7d084303a53e397ac505f41af550",
+      "url": "https://api.github.com/gists/1276463/67b3f4343d7f7d084303a53e397ac505f41af550",
+      "change_status": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-10-10T20:41:57Z",
+      "version": "2f25ea936e4a3a13eea44c3bdc10e211a59c9912",
+      "url": "https://api.github.com/gists/1276463/2f25ea936e4a3a13eea44c3bdc10e211a59c9912",
+      "change_status": {
+        "total": 86,
+        "additions": 86,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "DOM-to-Canvas using D3",
+  "comments": 0,
+  "created_at": "2011-10-10T20:41:57Z",
+  "git_pull_url": "git://gist.github.com/1276463.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1276463",
+  "git_push_url": "git@gist.github.com:1276463.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1276463/843834014228b223b7b353e54e6807393924ee73/index.html",
+      "size": 2384,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Custom Elements</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.3.2\"></script>\n    <style type=\"text/css\">\n\nbody {\n  margin: 0;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\n// Register the \"custom\" namespace prefix for our custom elements.\nd3.ns.prefix.custom = \"http://github.com/mbostock/d3/examples/dom\";\n\nvar w = 960,\n    h = 500;\n\n// Add our \"custom\" sketch element to the body.\nvar sketch = d3.select(\"body\").append(\"custom:sketch\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n    .call(custom);\n\n// On each mouse move, create a circle that increases in size and fades away.\nd3.select(window).on(\"mousemove\", function() {\n  sketch.append(\"custom:circle\")\n      .attr(\"x\", d3.event.clientX)\n      .attr(\"y\", d3.event.clientY)\n      .attr(\"radius\", 0)\n      .attr(\"strokeStyle\", \"red\")\n    .transition()\n      .duration(2000)\n      .ease(Math.sqrt)\n      .attr(\"radius\", 200)\n      .attr(\"strokeStyle\", \"white\")\n      .remove();\n});\n\nfunction custom(selection) {\n  selection.each(function() {\n    var root = this,\n        canvas = root.parentNode.appendChild(document.createElement(\"canvas\")),\n        context = canvas.getContext(\"2d\");\n\n    canvas.style.position = \"absolute\";\n    canvas.style.top = root.offsetTop + \"px\";\n    canvas.style.left = root.offsetLeft + \"px\";\n\n    // It'd be nice to use DOM Mutation Events here instead.\n    // However, they appear to arrive irregularly, causing choppy animation.\n    d3.timer(redraw);\n\n    // Clear the canvas and then iterate over child elements.\n    function redraw() {\n      canvas.width = root.getAttribute(\"width\");\n      canvas.height = root.getAttribute(\"height\");\n      for (var child = root.firstChild; child; child = child.nextSibling) draw(child);\n    }\n\n    // For now we only support circles with strokeStyle.\n    // But you should imagine extending this to arbitrary shapes and groups!\n    function draw(element) {\n      switch (element.tagName) {\n        case \"circle\": {\n          context.strokeStyle = element.getAttribute(\"strokeStyle\");\n          context.beginPath();\n          context.arc(element.getAttribute(\"x\"), element.getAttribute(\"y\"), element.getAttribute(\"radius\"), 0, 2 * Math.PI);\n          context.stroke();\n          break;\n        }\n      }\n    }\n  });\n};\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/1276463/4b874ebe095f5c15eba04927d34e942d2915fb01/README.md",
+      "size": 1748,
+      "content": "**Mouseover to draw circles!**\n\nThis is a quick proof-of-concept example demonstrating how to create a [canvas](http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html) scenegraph in the DOM using custom namespaced elements. The scenegraph in this example consists of a simple container `sketch` element and a number of child `circle` elements:\n\n<pre>&lt;custom:sketch width=\"960\" height=\"500\">\n  &lt;custom:circle x=\"300\" y=\"400\" r=\"128\" strokeStyle=\"red\"/>\n  &lt;custom:circle x=\"302\" y=\"404\" r=\"129\" strokeStyle=\"red\"/>\n  …\n&lt;/custom:sketch></pre>\n\nThe browser ignores these elements because they exist in our \"custom\" namespace. To render them, we use a timer that iterates over the child elements and draws them to a canvas element.\n\nWhy do this? Well, if you wanted your own *custom representation* tailored to a specific application or domain, you can! This example demonstrates how to use the DOM to implement your own element hierarchy and render it to canvas. If you're designing a *general-purpose* graphical representation, though, I recommend using [SVG](http://www.w3.org/TR/SVG/) instead. For comparison, see the original [OMG Particles!](http://bl.ocks.org/1062544) example.\n\nImplementation note: I'd prefer to use [DOM Mutation Events](http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-eventgroupings-mutationevents) to listen for changes to our custom elements, but browsers seem a bit sluggish in reporting them, particularly when elements are removed. If you have a slow-moving scene, you could probably get away with using mutation events rather than a timer that runs continuously. Alternatively, you could improve this example by stopping the timer after extended periods of activity.",
+      "language": "Markdown"
+    }
+  },
+  "updated_at": "2011-10-10T20:44:14Z",
+  "url": "https://api.github.com/gists/1276463",
+  "id": "1276463"
+}

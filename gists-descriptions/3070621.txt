@@ -1,0 +1,300 @@
+{
+  "git_pull_url": "git://gist.github.com/3070621.git",
+  "forks": [
+
+  ],
+  "git_push_url": "git@gist.github.com:3070621.git",
+  "updated_at": "2012-09-09T08:53:18Z",
+  "fork_of": {
+    "git_pull_url": "git://gist.github.com/3012212.git",
+    "git_push_url": "git@gist.github.com:3012212.git",
+    "updated_at": "2012-06-28T16:09:51Z",
+    "public": true,
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.github.com/raw/3012212/4a80eaf47c46b38414af0617e5bd9de95c7597c6/index.html",
+        "size": 578
+      },
+      "tooltip.css": {
+        "type": "text/css",
+        "filename": "tooltip.css",
+        "language": "CSS",
+        "raw_url": "https://gist.github.com/raw/3012212/973ade1f57e75588d2d5e86ff63928ea053a4f0b/tooltip.css",
+        "size": 3796
+      },
+      "tooltip.js": {
+        "type": "application/javascript",
+        "filename": "tooltip.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.github.com/raw/3012212/d9855088b38cd2842e88e75ff570dac6e07756ed/tooltip.js",
+        "size": 4119
+      },
+      "index.js": {
+        "type": "application/javascript",
+        "filename": "index.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.github.com/raw/3012212/52ac0f2946a80eee71942e88aaa06c4828d4d732/index.js",
+        "size": 1614
+      },
+      "readme.mkd": {
+        "type": "text/plain",
+        "filename": "readme.mkd",
+        "language": "Markdown",
+        "raw_url": "https://gist.github.com/raw/3012212/8f9ed05e294b2247b86ff03751c40b07c48f8bcb/readme.mkd",
+        "size": 134
+      }
+    },
+    "user": {
+      "gravatar_id": "fcd59db6d86365a6fba1ce0f9c7b8102",
+      "url": "https://api.github.com/users/zmaril",
+      "avatar_url": "https://secure.gravatar.com/avatar/fcd59db6d86365a6fba1ce0f9c7b8102?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "zmaril",
+      "id": 539927
+    },
+    "html_url": "https://gist.github.com/3012212",
+    "url": "https://api.github.com/gists/3012212",
+    "description": "d3 bootstrap popovers",
+    "id": "3012212",
+    "comments": 0,
+    "created_at": "2012-06-28T16:09:35Z"
+  },
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!doctype html>\n<head>\n<style>\nbody {\n  font: 10px sans-serif;\n}\n#main {\n  left: 25%;\n  position: absolute;\n}\n#main #text {\n  padding-bottom: 10px;\n}\n.popover\n{\n  border: solid red 1px;\n}\n</style>\n<link rel=\"stylesheet\" href=\"tooltip.css\">\n<script src=\"http://d3js.org/d3.v2.min.js?2.8.1\"></script>\n<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js\"></script>\n<script>window.jQuery || document.write('<script src=\"js/vendor/jquery-1.7.2.min.js\"><\\/script>')</script>\n<script src=\"tooltip.js\"></script>\n<script src=\"index.js\"></script>\n</head>\n<body>\n    <div id=\"graphic\"></div>\n</body>\n</html>",
+      "raw_url": "https://gist.github.com/raw/3070621/bbce853cb666bbce2be370cabe583183f3bef922/index.html",
+      "size": 616
+    },
+    "tooltip.css": {
+      "type": "text/css",
+      "filename": "tooltip.css",
+      "language": "CSS",
+      "content": "/* Taken from bootstrap: https://github.com/twitter/bootstrap/blob/master/less/tooltip.less */\n.fade {\n  opacity: 0;\n  -webkit-transition: opacity 0.15s linear;\n     -moz-transition: opacity 0.15s linear;\n      -ms-transition: opacity 0.15s linear;\n       -o-transition: opacity 0.15s linear;\n          transition: opacity 0.15s linear;\n}\n\n.fade.in {\n  opacity: 1;\n}\n\n.tooltip {\n  position: absolute;\n  z-index: 1020;\n  display: block;\n  padding: 5px;\n  font-size: 11px;\n  opacity: 0;\n  filter: alpha(opacity=0);\n  visibility: visible;\n}\n\n.tooltip.in {\n  opacity: 0.8;\n  filter: alpha(opacity=80);\n}\n\n.tooltip.top {\n  margin-top: -2px;\n}\n\n.tooltip.right {\n  margin-left: 2px;\n}\n\n.tooltip.bottom {\n  margin-top: 2px;\n}\n\n.tooltip.left {\n  margin-left: -2px;\n}\n\n.tooltip.top .arrow {\n  bottom: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-top: 5px solid #000000;\n  border-right: 5px solid transparent;\n  border-left: 5px solid transparent;\n}\n\n.tooltip.left .arrow {\n  top: 50%;\n  right: 0;\n  margin-top: -5px;\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-left: 5px solid #000000;\n}\n\n.tooltip.bottom .arrow {\n  top: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-right: 5px solid transparent;\n  border-bottom: 5px solid #000000;\n  border-left: 5px solid transparent;\n}\n\n.tooltip.right .arrow {\n  top: 50%;\n  left: 0;\n  margin-top: -5px;\n  border-top: 5px solid transparent;\n  border-right: 5px solid #000000;\n  border-bottom: 5px solid transparent;\n}\n\n.tooltip-inner {\n  max-width: 200px;\n  padding: 3px 8px;\n  color: #ffffff;\n  text-align: center;\n  text-decoration: none;\n  background-color: #000000;\n  -webkit-border-radius: 4px;\n     -moz-border-radius: 4px;\n          border-radius: 4px;\n}\n\n.arrow {\n  position: absolute;\n  width: 0;\n  height: 0;\n}\n\n.popover {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 1010;\n  display: none;\n  padding: 5px;\n}\n\n.popover.top {\n  margin-top: -5px;\n}\n\n.popover.right {\n  margin-left: 5px;\n}\n\n.popover.bottom {\n  margin-top: 5px;\n}\n\n.popover.left {\n  margin-left: -5px;\n}\n\n.popover.top .arrow {\n  bottom: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-top: 5px solid #000000;\n  border-right: 5px solid transparent;\n  border-left: 5px solid transparent;\n}\n\n.popover.right .arrow {\n  top: 50%;\n  left: 0;\n  margin-top: -5px;\n  border-top: 5px solid transparent;\n  border-right: 5px solid #000000;\n  border-bottom: 5px solid transparent;\n}\n\n.popover.bottom .arrow {\n  top: 0;\n  left: 50%;\n  margin-left: -5px;\n  border-right: 5px solid transparent;\n  border-bottom: 5px solid #000000;\n  border-left: 5px solid transparent;\n}\n\n.popover.left .arrow {\n  top: 50%;\n  right: 0;\n  margin-top: -5px;\n  border-top: 5px solid transparent;\n  border-bottom: 5px solid transparent;\n  border-left: 5px solid #000000;\n}\n\n.popover-inner {\n  width: 280px;\n  padding: 3px;\n  overflow: hidden;\n  background: #000000;\n  background: rgba(0, 0, 0, 0.8);\n  -webkit-border-radius: 6px;\n     -moz-border-radius: 6px;\n          border-radius: 6px;\n  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);\n     -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);\n          box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);\n}\n\n.popover-title {\n  padding: 9px 15px;\n  line-height: 1;\n  background-color: #f5f5f5;\n  border-bottom: 1px solid #eee;\n  -webkit-border-radius: 3px 3px 0 0;\n     -moz-border-radius: 3px 3px 0 0;\n          border-radius: 3px 3px 0 0;\n  margin: 0;\n}\n\n.popover-content {\n  padding: 14px;\n  background-color: #ffffff;\n  -webkit-border-radius: 0 0 3px 3px;\n     -moz-border-radius: 0 0 3px 3px;\n          border-radius: 0 0 3px 3px;\n  -webkit-background-clip: padding-box;\n     -moz-background-clip: padding-box;\n          background-clip: padding-box;\n}\n\n.popover-content p,\n.popover-content ul,\n.popover-content ol {\n  margin-bottom: 0;\n}",
+      "raw_url": "https://gist.github.com/raw/3070621/973ade1f57e75588d2d5e86ff63928ea053a4f0b/tooltip.css",
+      "size": 3796
+    },
+    "tooltip.js": {
+      "type": "application/javascript",
+      "filename": "tooltip.js",
+      "language": "JavaScript",
+      "content": "d3.selection.prototype.tooltip = function(o, f) {\n  var body, clipped, clipper, d, defaults, height, holder, optionsList, parent, positions, sets, voronois, width;\n  if (arguments.length < 2) {\n    f = o;\n  }\n  body = d3.select('body');\n  defaults = {\n    type: \"tooltip\",\n    text: \"You need to pass in a string for the text value\",\n    title: \"Title value\",\n    content: \"Content examples\",\n    detection: \"shape\",\n    placement: \"fixed\",\n    gravity: \"right\",\n    position: [100, 100],\n    displacement: [0, 0],\n    mousemove: false\n  };\n  optionsList = [];\n  voronois = [];\n  this.each(function(d, i) {\n    var opt;\n    opt = f.apply(this, arguments);\n    optionsList.push(opt);\n    if (opt.detection === 'voronoi') {\n      return voronois.push([opt, i]);\n    }\n  });\n  if (voronois.length !== 0) {\n    parent = d3.select(this[0][0].ownerSVGElement);\n    holder = parent.append(\"g\").attr(\"id\", \"__clip__holder__\");\n    console.log(voronois);\n    positions = (function() {\n      var _i, _len, _results;\n      _results = [];\n      for (_i = 0, _len = voronois.length; _i < _len; _i++) {\n        d = voronois[_i];\n        _results.push(d[0].position);\n      }\n      return _results;\n    })();\n    console.log(positions);\n    sets = d3.geom.voronoi(positions);\n    height = parent.attr(\"height\");\n    width = parent.attr(\"width\");\n    clipper = d3.geom.polygon([[0, 0], [0, height], [width, height], [width, 0]]).clip;\n    clipped = positions.map(clipper);\n    holder.append(\"g\").attr(\"id\", \"clipPaths\").selectAll(\"clipPath\").data(voronois).enter().append(\"clipPath\").attr(\"id\", function(d, i) {\n      return \"clip-\" + i;\n    }).append(\"circle\").attr(\"cx\", function(d) {\n      return d[0].position[0];\n    }).attr(\"cy\", function(d) {\n      return d[0].position[1];\n    }).attr(\"r\", function(d) {\n      return 20;\n    });\n    holder.append(\"g\").attr(\"id\", \"clipped\").selectAll(\"path\").data(voronois).enter().append(\"path\").attr(\"d\", function(d, i) {\n      return \"M\" + (clipped[i].join('L')) + \"Z\";\n    }).attr(\"clip-path\", function(d, i) {\n      return \"url(#clip-\" + i + \")\";\n    });\n  }\n  return this.each(function(d, i) {\n    var el, move_tip, options;\n    options = optionsList[i];\n    el = d3.select(this);\n    move_tip = function(selection) {\n      var center, offsets;\n      center = [0, 0];\n      if (options.placement === \"mouse\") {\n        center = d3.mouse(body.node());\n      } else {\n        offsets = this.ownerSVGElement.getBoundingClientRect();\n        center[0] = offsets.left;\n        center[1] = offsets.top;\n        center[0] += options.position[0];\n        center[1] += options.position[1];\n        center[0] += window.scrollX;\n        center[1] += window.scrollY;\n      }\n      center[0] += options.displacement[0];\n      center[1] += options.displacement[1];\n      return selection.style(\"left\", \"\" + center[0] + \"px\").style(\"top\", \"\" + center[1] + \"px\").style(\"display\", \"block\");\n    };\n    el.on(\"mouseover\", function() {\nconsole.log(\"mouseover\", this, arguments, options);\n      var inner, tip;\n      tip = body.append(\"div\").classed(options.type, true).classed(options.gravity, true).classed('fade', true).style(\"display\", \"none\");\n      if (options.type === \"tooltip\") {\n        tip.append(\"div\").html(options.text).attr(\"class\", \"tooltip-inner\");\n      }\n      if (options.type === \"popover\") {\n        inner = tip.append(\"div\").attr(\"class\", \"popover-inner\");\n        inner.append(\"h3\").text(options.title).attr(\"class\", \"popover-title\");\n        inner.append(\"div\").attr(\"class\", \"popover-content\").append(\"p\").html(options.content[0][0].outerHTML);\n      }\n      tip.append(\"div\").attr(\"class\", \"arrow\");\n      setTimeout(function() {\n        return tip.classed('in', true);\n      }, 10);\n      return tip.style(\"display\", \"\").call(move_tip.bind(this));\n    });\n    if (options.mousemove) {\n      el.on(\"mousemove\", function() {\nconsole.log(\"mousemove\", this, arguments, options);\n        return d3.select(\".\" + options.type).call(move_tip.bind(this));\n      });\n    }\n    return el.on(\"mouseout\", function() {\n      var tip;\nconsole.log(\"mouseout\", this, arguments, options);\n      tip = d3.selectAll(\".\" + options.type).classed('in', false);\n      return setTimeout(function() {\n        return tip.remove();\n      }, 150);\n    });\n  });\n};",
+      "raw_url": "https://gist.github.com/raw/3070621/27dc5d9853af1b3e8f0ab49768f6b6841069ad24/tooltip.js",
+      "size": 4274
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "language": null,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "raw_url": "https://gist.github.com/raw/3070621/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623
+    },
+    "index.js": {
+      "type": "application/javascript",
+      "filename": "index.js",
+      "language": "JavaScript",
+      "content": "var graphic;\n\ngraphic = new Object;\n\ngraphic.create = function() {\n  var g, height, i, j, points, size, spacing, width, _i, _j, _len, _len1, _ref, _ref1;\n  width = $(document).width() / 2;\n  height = $(document).height() * .85;\n  size = d3.min([width, height]);\n  graphic.svg = d3.select(\"#graphic\").append(\"svg\").attr(\"width\", size).attr(\"height\", size);\n  g = graphic.svg.append(\"g\");\n  points = [];\n  spacing = 30;\n  _ref = d3.range(0, height - spacing, spacing);\n  for (_i = 0, _len = _ref.length; _i < _len; _i++) {\n    i = _ref[_i];\n    _ref1 = d3.range(0, width - spacing, spacing);\n    for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {\n      j = _ref1[_j];\n      points.push({\n        x: i,\n        y: j\n      });\n    }\n  }\n  return g.selectAll(\"circle\").data(points).enter().append(\"circle\").attr(\"cx\", function(d, i) {\n    return d.x;\n  }).attr(\"cy\", function(d, i) {\n    return d.y;\n  }).attr(\"r\", function(d, i) {\n    return Math.round(Math.random() * spacing / 2 + 1);\n  }).tooltip(function(d, i) {\n    var r, svg;\n    r = +d3.select(this).attr('r');\n    svg = d3.select(document.createElement(\"svg\")).attr(\"height\", 50);\n    g = svg.append(\"g\");\n    g.append(\"rect\").attr(\"width\", r * 10).attr(\"height\", 10);\n    g.append(\"text\").text(\"10 times the radius of the cirlce\").attr(\"dy\", \"25\");\n    return {\n      type: \"popover\",\n      title: \"It's a me, Rectangle\",\n      content: svg,\n      detection: \"shape\",\n      placement: \"fixed\",\n      gravity: \"right\",\n      position: [d.x, d.y],\n      displacement: [r + 2, -72],\n      mousemove: false\n    };\n  });\n};\n\n$(document).ready(graphic.create);",
+      "raw_url": "https://gist.github.com/raw/3070621/52ac0f2946a80eee71942e88aaa06c4828d4d732/index.js",
+      "size": 1614
+    },
+    "readme.mkd": {
+      "type": "text/plain",
+      "filename": "readme.mkd",
+      "language": "Markdown",
+      "content": "Uses the markup and css from bootstrap to make pretty popovers. \nFind the files [here](https://github.com/zmaril/d3-bootstrap-plugins)\n\nSee [gist 3070659](http://bl.ocks.org/3070659) for the fix & explanation.\n\nTesting\n-------\n\nPosition mouse over the right half of a circle node (a little more to the right please, so you end up within the tooltip red border when it shows up ;-) ); move mouse very little to see odd behaviour.\n\nFirefox is particularly wicked: position mouse in that area, on the **edge** of a circle node, manoeuvre subtly to see a hail of mouseout/mouseover events being fired from the circle node (see console.log).",
+      "raw_url": "https://gist.github.com/raw/3070621/26a281b1867e5411a37f1d9da2fac524b3eff666/readme.mkd",
+      "size": 636
+    }
+  },
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "version": "b50dddf143b05ee8c94a1e7568f6f0b9c47bc201",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3070621/b50dddf143b05ee8c94a1e7568f6f0b9c47bc201",
+      "change_status": {
+        "total": 46,
+        "deletions": 0,
+        "additions": 46
+      },
+      "committed_at": "2012-09-09T08:44:30Z"
+    },
+    {
+      "version": "f232d986e2fe3a5e2c3f08a374c438d0edda3145",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3070621/f232d986e2fe3a5e2c3f08a374c438d0edda3145",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2012-07-08T14:03:33Z"
+    },
+    {
+      "version": "8674f06a7fedd605977245142263181493342994",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3070621/8674f06a7fedd605977245142263181493342994",
+      "change_status": {
+        "total": 9,
+        "deletions": 1,
+        "additions": 8
+      },
+      "committed_at": "2012-07-08T14:02:43Z"
+    },
+    {
+      "version": "f5c7163f7d439e29f9b49dbd78bab8a4dff78951",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3070621/f5c7163f7d439e29f9b49dbd78bab8a4dff78951",
+      "change_status": {
+        "total": 4,
+        "deletions": 1,
+        "additions": 3
+      },
+      "committed_at": "2012-07-08T13:59:04Z"
+    },
+    {
+      "version": "9ed2099f105d4320c43daae3fa6a5ebb9c8f2382",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3070621/9ed2099f105d4320c43daae3fa6a5ebb9c8f2382",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2012-07-08T11:53:08Z"
+    },
+    {
+      "version": "e2ee4fea2e5c8d1f577feaa70f5eb8adc3e01b78",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3070621/e2ee4fea2e5c8d1f577feaa70f5eb8adc3e01b78",
+      "change_status": {
+        "total": 4,
+        "deletions": 0,
+        "additions": 4
+      },
+      "committed_at": "2012-07-08T11:52:12Z"
+    },
+    {
+      "version": "0d43e6c268b39443d085fb06bc37d6896ff0be9c",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3070621/0d43e6c268b39443d085fb06bc37d6896ff0be9c",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2012-07-08T11:49:06Z"
+    },
+    {
+      "version": "440bb01770e366ab0c67404a3219f5f75e78c592",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3070621/440bb01770e366ab0c67404a3219f5f75e78c592",
+      "change_status": {
+        "total": 3,
+        "deletions": 0,
+        "additions": 3
+      },
+      "committed_at": "2012-07-08T11:44:04Z"
+    },
+    {
+      "version": "7e6286170f4ec2ea32bac9d0881ee27df4d2ec8e",
+      "user": {
+        "gravatar_id": "fcd59db6d86365a6fba1ce0f9c7b8102",
+        "url": "https://api.github.com/users/zmaril",
+        "avatar_url": "https://secure.gravatar.com/avatar/fcd59db6d86365a6fba1ce0f9c7b8102?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "zmaril",
+        "id": 539927
+      },
+      "url": "https://api.github.com/gists/3070621/7e6286170f4ec2ea32bac9d0881ee27df4d2ec8e",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2012-07-06T11:00:41Z"
+    },
+    {
+      "version": "670deaaf01b148fc46f69eaa26339da42d9d4e4b",
+      "user": {
+        "gravatar_id": "fcd59db6d86365a6fba1ce0f9c7b8102",
+        "url": "https://api.github.com/users/zmaril",
+        "avatar_url": "https://secure.gravatar.com/avatar/fcd59db6d86365a6fba1ce0f9c7b8102?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "zmaril",
+        "id": 539927
+      },
+      "url": "https://api.github.com/gists/3070621/670deaaf01b148fc46f69eaa26339da42d9d4e4b",
+      "change_status": {
+        "total": 186,
+        "deletions": 70,
+        "additions": 116
+      },
+      "committed_at": "2012-07-06T10:59:46Z"
+    }
+  ],
+  "html_url": "https://gist.github.com/3070621",
+  "url": "https://api.github.com/gists/3070621",
+  "description": "d3 bootstrap popovers (exhibit A)",
+  "id": "3070621",
+  "comments": 0,
+  "created_at": "2012-07-08T11:41:53Z"
+}

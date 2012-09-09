@@ -1,0 +1,177 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "git_push_url": "git@gist.github.com:2724323.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "e0c30dd1fd1556e5901c7da6cee07b55cfd5c165",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "committed_at": "2012-09-09T08:44:28Z",
+      "url": "https://api.github.com/gists/2724323/e0c30dd1fd1556e5901c7da6cee07b55cfd5c165"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "2386926c6df8823b94572739949c57ae9b14b4f0",
+      "change_status": {
+        "total": 7,
+        "additions": 5,
+        "deletions": 2
+      },
+      "committed_at": "2012-05-18T10:13:23Z",
+      "url": "https://api.github.com/gists/2724323/2386926c6df8823b94572739949c57ae9b14b4f0"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "3f2a3d0b094f6b37baaaf0b91dc94d869be34f44",
+      "change_status": {
+        "total": 13,
+        "additions": 4,
+        "deletions": 9
+      },
+      "committed_at": "2012-05-18T10:03:13Z",
+      "url": "https://api.github.com/gists/2724323/3f2a3d0b094f6b37baaaf0b91dc94d869be34f44"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "8e5f976ce5b84a471d6d99c39529583ade967b4f",
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "committed_at": "2012-05-18T09:51:42Z",
+      "url": "https://api.github.com/gists/2724323/8e5f976ce5b84a471d6d99c39529583ade967b4f"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "c09ae4380d7eba6eba508a8b77112c2eb179e7c9",
+      "change_status": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "committed_at": "2012-05-18T09:48:45Z",
+      "url": "https://api.github.com/gists/2724323/c09ae4380d7eba6eba508a8b77112c2eb179e7c9"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "2f2537ddb762951669d5ffc1ace98a97650d780b",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-05-18T09:43:18Z",
+      "url": "https://api.github.com/gists/2724323/2f2537ddb762951669d5ffc1ace98a97650d780b"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "4aea6c00569cb033f4a256205e0d70f415b4b025",
+      "change_status": {
+        "total": 216,
+        "additions": 216,
+        "deletions": 0
+      },
+      "committed_at": "2012-05-18T09:42:12Z",
+      "url": "https://api.github.com/gists/2724323/4aea6c00569cb033f4a256205e0d70f415b4b025"
+    }
+  ],
+  "description": "csv is just a file in a gist",
+  "comments": 0,
+  "created_at": "2012-05-18T09:42:12Z",
+  "public": true,
+  "html_url": "https://gist.github.com/2724323",
+  "files": {
+    "barchart.js": {
+      "type": "application/javascript",
+      "filename": "barchart.js",
+      "raw_url": "https://gist.github.com/raw/2724323/0297c38c9ef5bb97b104e6512185d0861d4d06ac/barchart.js",
+      "size": 6285,
+      "content": "/* ### EDITED ### */ d3.csv('readme.csv', function(data) {\n       var format = d3.time.format(\"%d/%m/%Y\");\n       var color = d3.scale.category10();\n\n       data.forEach(function(o){\n               o.Total_Gross_Actual = parseFloat(o.Total_Gross_Actual);\n               o.Total_Gross_Estimate = parseFloat(o.Total_Gross_Estimate);\n               o.Initiated = format.parse(o.Initiated);\n       });\n\n       var w = 1000;\n       var h = 500;\n\n\n       var yScale = d3.scale.linear()\n               .domain([0,d3.max(data, function(d){\n                       if (d.Total_Gross_Estimate > d.Total_Gross_Actual)\n                               {\n                                       return d.Total_Gross_Estimate\n                               }\n                               else\n                               {\n                                       return d.Total_Gross_Actual\n                               }\n               })])\n               .range([0,h/2]);\n\n       var yScale2 = d3.scale.linear()\n               .domain([0,d3.max(data, function(d){\n               if (d.Total_Gross_Estimate > d.Total_Gross_Actual)\n                               {\n                                       return d.Total_Gross_Estimate\n                               }\n                               else\n                               {\n                                       return d.Total_Gross_Actual\n                               }\n               })])\n               .range([h/2,0]);\n\n       var vis = d3.select(\"body\")\n                               .append(\"svg\")\n                               .attr(\"width\", w+110)\n                               .attr(\"height\", h+100)\n                               .append(\"g\")\n                               .attr(\"transform\", \"translate(100,50)\")\n                               ;\n       var bigBarWidth = w/data.length - 1;\n       var smallBarWidth = bigBarWidth/2;\n       var smallBarOffset = (bigBarWidth-smallBarWidth)/2\n\n       var bars = vis.selectAll(\"bar\")\n               .data(data)\n               .enter().append(\"g\")\n               .on(\"click\", typeFilter)\n               .attr(\"class\",\"bar\")\n               ;\n\n//draw the data bars\n       bars.append(\"rect\")\n               .attr(\"x\", function (d,i){\n                       return i * (w/data.length);\n               })\n               .attr(\"y\", h/2)\n               .attr(\"width\", bigBarWidth)\n               .attr(\"fill\", function(d) { return color(d.Type); })\n               .attr(\"opacity\" , \"0.5\")\n               .attr(\"height\", function(d){\n                       return yScale(d.Total_Gross_Estimate);\n               })              ;\n\n\n               bars.append(\"rect\")\n               .attr(\"x\", function (d,i){\n                       return i * (w/data.length);\n               })\n               .attr(\"y\", function(d){\n               return yScale2(d.Total_Gross_Actual);\n               })\n               .attr(\"width\", bigBarWidth)\n               .attr(\"fill\", function(d) { return color(d.Type); })\n               .attr(\"opacity\" , \"0.5\")\n               .attr(\"height\", function(d){\n                       return yScale(d.Total_Gross_Actual);\n               });\n\n//draw the difference bars\n\n               bars.append(\"rect\")\n               .attr(\"x\", function (d,i){\n                       return i * (w/data.length) + smallBarOffset;\n               })\n               .attr(\"y\",function(d){\n                       if (d.Total_Gross_Actual-d.Total_Gross_Estimate > 0)\n                       {\n                               return yScale2(d.Total_Gross_Actual-d.Total_Gross_Estimate);\n                       }\n                       else\n                       {\n                               return 0;\n                       }\n\n               })\n               .attr(\"width\", smallBarWidth)\n               .attr(\"fill\", function(d) { return color(d.Type); })\n               .attr(\"height\", function(d){\n\n                       if (d.Total_Gross_Actual-d.Total_Gross_Estimate > 0)\n                       {\n                               return yScale(d.Total_Gross_Actual-d.Total_Gross_Estimate);\n                       }\n                       else\n                       {\n                               return 0;\n                       }\n               });\n\n\n               bars.append(\"rect\")\n               .attr(\"x\", function (d,i){\n                       return i * (w/data.length) + smallBarOffset;\n               })\n               .attr(\"y\", h/2)\n               .attr(\"width\", smallBarWidth)\n               .attr(\"fill\", function(d) { return color(d.Type); })\n               .attr(\"height\", function(d){\n                       if (d.Total_Gross_Estimate-d.Total_Gross_Actual >=0)\n                       {\n                               return yScale(d.Total_Gross_Estimate-d.Total_Gross_Actual);\n                       }\n                       else\n                       {\n                               return 0;\n                       }\n\n               })\n               ;\n\n\n//draw the axis\n\n       var xScale = d3.scale.linear()\n               .domain([0,1])\n               .range([0,w]);\n\n       var xAxis = d3.svg.axis()\n       .scale(xScale)\n       .orient(\"bottom\")\n               .ticks(0);\n\n       var yAxis = d3.svg.axis()\n               .scale(yScale)\n               .orient(\"left\")\n               .ticks(5);\n\n       var yAxis2 = d3.svg.axis()\n               .scale(yScale2)\n               .orient(\"left\")\n               .ticks(5);\n\n   vis.append(\"g\")\n               .attr(\"class\", \"axis\")\n               .attr(\"transform\", \"translate(0,\"+ h /2 +\")\")\n               .call(yAxis);\n\n       vis.append(\"g\")\n               .attr(\"class\",\"axis\")\n               .call(yAxis2);\n\n       vis.append(\"g\")\n               .attr(\"class\", \"axis\")\n               .attr(\"transform\", \"translate(0,\"+ h /2 +\")\")\n               .call(xAxis);\n\n//function to filter on type click\n       function typeFilter(d,i){\n               var data2 = data.filter(function(e, j)\n               {\n                       return (e.Type !== d.Type);\n               });\n               var test = bars.filter(function(e, j)\n               {\n                       return (e.Type === d.Type);\n               })\n               /*.exit() */.remove();\n               //console.log(test)\n\n       }\n\n});",
+      "language": "JavaScript"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/2724323/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/2724323/6833d823d949a96ca782ad8deabaf1e98ca23c8a/index.html",
+      "size": 287,
+      "content": "<!DOCTYPE html>\n<html>\n <head>\n    <title>Simple Template Example</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.v2.js\"></script>\n </head>\n <body>\n\n    <svg id=\"svg\"></svg>\n\n    <script type=\"text/javascript\" src=\"barchart.js\"></script>\n </body>\n</html>",
+      "language": "HTML"
+    },
+    "readme.csv": {
+      "type": "text/csv",
+      "filename": "readme.csv",
+      "raw_url": "https://gist.github.com/raw/2724323/3c9af8e8c5a7a3f01f2f7b226098df71ce4b89e9/readme.csv",
+      "size": 473,
+      "content": "Initiated,Number,Type,Total_Gross_Actual,Total_Gross_Estimate\n08/01/2004,1,type_1,9263.34,20085\n08/01/2004,3,type_2,357600.16,330674\n08/01/2004,5,type_3,59244.87,222000\n08/01/2004,6,type_4,6608.93,47100\n08/01/2004,7,type_4,16774.64,32025\n08/01/2004,8,type_5,3078.9,29555\n08/01/2004,9,type_6,0,31500\n08/01/2004,4,type_2,31121.37,133925\n08/01/2004,10,type_6,20860.47,372670\n08/01/2004,2,type_1,1070.05,14420\n16/01/2004,11,type_3,632017.16,633029\n16/01/2004,12,type_5,0,40000\n",
+      "language": null
+    }
+  },
+  "updated_at": "2012-09-09T08:52:32Z",
+  "url": "https://api.github.com/gists/2724323",
+  "git_pull_url": "git://gist.github.com/2724323.git",
+  "id": "2724323"
+}

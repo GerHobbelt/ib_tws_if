@@ -1,0 +1,67 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "d06b945fbc1fc412cf1b33c9972f64c3",
+    "login": "jeffpflueger",
+    "avatar_url": "https://secure.gravatar.com/avatar/d06b945fbc1fc412cf1b33c9972f64c3?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/jeffpflueger",
+    "id": 1116896
+  },
+  "history": [
+    {
+      "user": null,
+      "version": "5a94f40988f95e0166e9155f24f7c8fff5670188",
+      "change_status": {
+        "total": 13,
+        "additions": 1,
+        "deletions": 12
+      },
+      "url": "https://api.github.com/gists/1275654/5a94f40988f95e0166e9155f24f7c8fff5670188",
+      "committed_at": "2011-10-10T15:57:12Z"
+    },
+    {
+      "user": null,
+      "version": "dda119eedd2f4b6efc904ac9ec66704a36e27a55",
+      "change_status": {
+        "total": 6,
+        "additions": 4,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1275654/dda119eedd2f4b6efc904ac9ec66704a36e27a55",
+      "committed_at": "2011-10-10T15:52:14Z"
+    },
+    {
+      "user": null,
+      "version": "251bed94877a7bcb2b8fc5d79497b086ee54cb36",
+      "change_status": {
+        "total": 79,
+        "additions": 79,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1275654/251bed94877a7bcb2b8fc5d79497b086ee54cb36",
+      "committed_at": "2011-10-10T15:48:51Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1275654.git",
+  "description": "Experiments with d3 and svgweb",
+  "html_url": "https://gist.github.com/1275654",
+  "comments": 0,
+  "created_at": "2011-10-10T15:48:51Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1275654/c9f77a501cc46cb0f253bed9e47a013587e9fd59/index.html",
+      "size": 1673,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.27.2\"></script>\n    <style type=\"text/css\">\n\npath {\n  fill: none;\n  stroke: #000;\n  stroke-width: 7px;\n}\n\ncircle {\n  fill: #ccc;\n  stroke: #777;\n  stroke-width: 1px;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    n = 4,\n    m = 64,\n    x = d3.scale.linear().domain([0, m - 1]).range([0, w]),\n    y = d3.scale.linear().range([h - 20, 20]),\n    z = d3.scale.linear().domain([0, Math.PI / 2, Math.PI]).range([\"#0f0\", \"#777\", \"#f00\"]);\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvar line = d3.svg.line()\n    .x(function(d) { return x(d[0]); })\n    .y(function(d) { return y(d[1]); });\n\nd3.json(\"series.json\", function(series) {\n  y.domain([0, d3.max(d3.merge(series))]);\n\n  var g = svg.selectAll(\"g\")\n      .data(series)\n    .enter().append(\"svg:g\");\n\n  var path = g.selectAll(\"path\")\n      .data(segments)\n    .enter().append(\"svg:path\")\n      .attr(\"d\", line)\n      .style(\"stroke\", function(d) { return z(Math.atan2(d[1][0] - d[0][0], d[1][1] - d[0][1])); });\n\n  var circle = g.selectAll(\"circle\")\n      .data(Object)\n    .enter().append(\"svg:circle\")\n      .attr(\"cx\", function(d, i) { return x(i); })\n      .attr(\"cy\", function(d, i) { return y(d); })\n      .attr(\"r\", 3);\n});\n\n// Produce an array of two-element arrays [x,y] for each segment of values.\nfunction segments(values) {\n  var segments = [], i = 0, n = values.length\n  while (++i < n) segments.push([[i - 1, values[i - 1]], [i, values[i]]]);\n  return segments;\n}\n\n    </script>\n  </body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-10-10T16:30:29Z",
+  "url": "https://api.github.com/gists/1275654",
+  "id": "1275654",
+  "git_pull_url": "git://gist.github.com/1275654.git"
+}

@@ -1,0 +1,253 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "506d1c51192be184eea0d612f7255bd0",
+        "login": "mnel",
+        "avatar_url": "https://secure.gravatar.com/avatar/506d1c51192be184eea0d612f7255bd0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mnel",
+        "id": 402025
+      },
+      "created_at": "2012-07-02T04:07:58Z",
+      "updated_at": "2012-07-02T04:20:35Z",
+      "url": "https://api.github.com/gists/3031023",
+      "id": "3031023"
+    },
+    {
+      "user": {
+        "gravatar_id": "f442d83bf8b706286cf442145f581099",
+        "login": "timelyportfolio",
+        "avatar_url": "https://secure.gravatar.com/avatar/f442d83bf8b706286cf442145f581099?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/timelyportfolio",
+        "id": 837910
+      },
+      "created_at": "2012-08-01T15:37:46Z",
+      "updated_at": "2012-08-01T15:37:46Z",
+      "url": "https://api.github.com/gists/3227939",
+      "id": "3227939"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-06-28T20:43:38Z",
+      "version": "c76ef2553debfb76880a12922d3eb5e9cc884cca",
+      "url": "https://api.github.com/gists/1483226/c76ef2553debfb76880a12922d3eb5e9cc884cca"
+    },
+    {
+      "change_status": {
+        "total": 10,
+        "additions": 4,
+        "deletions": 6
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-06-28T20:42:24Z",
+      "version": "3c7bf9c330d370285b81ecd21f3e6a233790ba10",
+      "url": "https://api.github.com/gists/1483226/3c7bf9c330d370285b81ecd21f3e6a233790ba10"
+    },
+    {
+      "change_status": {
+        "total": 18,
+        "additions": 14,
+        "deletions": 4
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-06-28T20:37:48Z",
+      "version": "a38a603a6e0a0f9a141cc36a2c1309eefd018e4d",
+      "url": "https://api.github.com/gists/1483226/a38a603a6e0a0f9a141cc36a2c1309eefd018e4d"
+    },
+    {
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-06-28T20:26:07Z",
+      "version": "2d51a7528f88fbf16ba5d52e300c5bff2d7c1abb",
+      "url": "https://api.github.com/gists/1483226/2d51a7528f88fbf16ba5d52e300c5bff2d7c1abb"
+    },
+    {
+      "change_status": {
+        "total": 272,
+        "additions": 231,
+        "deletions": 41
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-06-28T20:25:41Z",
+      "version": "60e26e6318e025469c65817594bc9c7c0fe10643",
+      "url": "https://api.github.com/gists/1483226/60e26e6318e025469c65817594bc9c7c0fe10643"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-12-15T22:34:16Z",
+      "version": "dfb139f7bddb749713b3904fd8fbbaf272d8cf30",
+      "url": "https://api.github.com/gists/1483226/dfb139f7bddb749713b3904fd8fbbaf272d8cf30"
+    },
+    {
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-12-15T22:33:30Z",
+      "version": "bf01e7063c149680ad8bb9298c6d0680aee393cc",
+      "url": "https://api.github.com/gists/1483226/bf01e7063c149680ad8bb9298c6d0680aee393cc"
+    },
+    {
+      "change_status": {
+        "total": 33,
+        "additions": 9,
+        "deletions": 24
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-12-15T22:32:45Z",
+      "version": "43096f7ad55feb42470ef73d99a742a7fef94a52",
+      "url": "https://api.github.com/gists/1483226/43096f7ad55feb42470ef73d99a742a7fef94a52"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-12-15T22:29:36Z",
+      "version": "38c3266b33f64d7d447cab384128466615e7fe6b",
+      "url": "https://api.github.com/gists/1483226/38c3266b33f64d7d447cab384128466615e7fe6b"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-12-15T22:28:31Z",
+      "version": "6ad9882dcf5f4e0b0fa1a684d9b465b3621b8ce3",
+      "url": "https://api.github.com/gists/1483226/6ad9882dcf5f4e0b0fa1a684d9b465b3621b8ce3"
+    }
+  ],
+  "description": "Horizon Chart",
+  "html_url": "https://gist.github.com/1483226",
+  "comments": 0,
+  "created_at": "2011-12-15T22:27:51Z",
+  "git_pull_url": "git://gist.github.com/1483226.git",
+  "public": true,
+  "files": {
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/1483226/abe865cdc32d461dd7354b725dda2a3038c773fb/README.md",
+      "size": 366,
+      "content": "Horizon charts combine position and color to reduce vertical space. Start with a standard area chart, then **mirror** negative values (in blue) or **offset** them vertically. Click the **+ button** above to increase the number of bands, turning the area into a horizon.\n\nImplemented with the [d3.horizon](https://github.com/d3/d3-plugins/tree/master/horizon) plugin.",
+      "language": "Markdown"
+    },
+    "unemployment.json": {
+      "type": "application/json",
+      "filename": "unemployment.json",
+      "raw_url": "https://gist.github.com/raw/1483226/78dbd11f68ad49c917d3ea9d9374da08c3f21fe4/unemployment.json",
+      "size": 1383,
+      "content": "{\"year\":[2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2000,2001,2001,2001,2001,2001,2001,2001,2001,2001,2001,2001,2001,2002,2002,2002,2002,2002,2002,2002,2002,2002,2002,2002,2002,2003,2003,2003,2003,2003,2003,2003,2003,2003,2003,2003,2003,2004,2004,2004,2004,2004,2004,2004,2004,2004,2004,2004,2004,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2005,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2006,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2007,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2008,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2009,2010,2010],\"month\":[1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2,3,4,5,6,7,8,9,10,11,12,1,2],\"rate\":[4.5,4.4,4.3,3.7,3.8,4.1,4.2,4.1,3.8,3.6,3.7,3.7,4.7,4.6,4.5,4.2,4.1,4.7,4.7,4.9,4.7,5,5.3,5.4,6.3,6.1,6.1,5.7,5.5,6,5.9,5.7,5.4,5.3,5.6,5.7,6.5,6.4,6.2,5.8,5.8,6.5,6.3,6,5.8,5.6,5.6,5.4,6.3,6,6,5.4,5.3,5.8,5.7,5.4,5.1,5.1,5.2,5.1,5.7,5.8,5.4,4.9,4.9,5.2,5.2,4.9,4.8,4.6,4.8,4.6,5.1,5.1,4.8,4.5,4.4,4.8,5,4.6,4.4,4.1,4.3,4.3,5,4.9,4.5,4.3,4.3,4.7,4.9,4.6,4.5,4.4,4.5,4.8,5.4,5.2,5.2,4.8,5.2,5.7,6,6.1,6,6.1,6.5,7.1,8.5,8.9,9,8.6,9.1,9.7,9.7,9.6,9.5,9.5,9.4,9.7,10.6,10.4]}",
+      "language": "JSON"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1483226/2db22d7c887bf15b2600a79d2b9e97ed2ac2e35a/index.html",
+      "size": 1923,
+      "content": "<style>\n\nbody {\n  font-family: sans-serif;\n}\n\nsvg {\n  position: absolute;\n  top: 0;\n}\n\n#horizon-controls {\n  position: absolute;\n  width: 940px;\n  padding: 10px;\n  z-index: 1;\n}\n\n#horizon-bands {\n  float: right;\n}\n\n</style>\n<div id=\"horizon-controls\">\n  <input name=\"mode\" type=\"radio\" value=\"mirror\" id=\"horizon-mode-mirror\" checked><label for=\"horizon-mode-mirror\"> Mirror</label>\n  <input name=\"mode\" type=\"radio\" value=\"offset\" id=\"horizon-mode-offset\"><label for=\"horizon-mode-offset\"> Offset</label>\n  <span id=\"horizon-bands\"><span id=\"horizon-bands-value\">1</span> <button class=\"first\">&#x2212;</button><button class=\"last\">+</button></span>\n</div>\n<div id=\"horizon-chart\"></div>\n<script src=\"http://d3js.org/d3.v2.js?2.9.5\"></script>\n<script src=\"horizon.js?0.0.1\"></script>\n<script>\n\nvar width = 960,\n    height = 500;\n\nvar chart = d3.horizon()\n    .width(width)\n    .height(height)\n    .bands(1)\n    .mode(\"mirror\")\n    .interpolate(\"basis\");\n\nvar svg = d3.select(\"body\").append(\"svg\")\n    .attr(\"width\", width)\n    .attr(\"height\", height);\n\nd3.json(\"unemployment.json\", function(data) {\n\n  // Offset so that positive is above-average and negative is below-average.\n  var mean = data.rate.reduce(function(p, v) { return p + v; }, 0) / data.rate.length;\n\n  // Transpose column values to rows.\n  data = data.rate.map(function(rate, i) {\n    return [Date.UTC(data.year[i], data.month[i] - 1), rate - mean];\n  });\n\n  // Render the chart.\n  svg.data([data]).call(chart);\n\n  // Enable mode buttons.\n  d3.selectAll(\"#horizon-controls input[name=mode]\").on(\"change\", function() {\n    svg.call(chart.duration(0).mode(this.value));\n  });\n\n  // Enable bands buttons.\n  d3.selectAll(\"#horizon-bands button\").data([-1, 1]).on(\"click\", function(d) {\n    var n = Math.max(1, chart.bands() + d);\n    d3.select(\"#horizon-bands-value\").text(n);\n    svg.call(chart.duration(1000).bands(n).height(height / n));\n  });\n});\n\n</script>",
+      "language": "HTML"
+    },
+    "horizon.js": {
+      "type": "application/javascript",
+      "filename": "horizon.js",
+      "raw_url": "https://gist.github.com/raw/1483226/468c14cd5ed5378201c7b8b429f4f11f5ea6aa59/horizon.js",
+      "size": 5293,
+      "content": "(function() {\n  d3.horizon = function() {\n    var bands = 1, // between 1 and 5, typically\n        mode = \"offset\", // or mirror\n        interpolate = \"linear\", // or basis, monotone, step-before, etc.\n        x = d3_horizonX,\n        y = d3_horizonY,\n        w = 960,\n        h = 40,\n        duration = 0;\n\n    var color = d3.scale.linear()\n        .domain([-1, 0, 0, 1])\n        .range([\"#08519c\", \"#bdd7e7\", \"#bae4b3\", \"#006d2c\"]);\n\n    // For each small multiple…\n    function horizon(g) {\n      g.each(function(d, i) {\n        var g = d3.select(this),\n            n = 2 * bands + 1,\n            xMin = Infinity,\n            xMax = -Infinity,\n            yMax = -Infinity,\n            x0, // old x-scale\n            y0, // old y-scale\n            id; // unique id for paths\n\n        // Compute x- and y-values along with extents.\n        var data = d.map(function(d, i) {\n          var xv = x.call(this, d, i),\n              yv = y.call(this, d, i);\n          if (xv < xMin) xMin = xv;\n          if (xv > xMax) xMax = xv;\n          if (-yv > yMax) yMax = -yv;\n          if (yv > yMax) yMax = yv;\n          return [xv, yv];\n        });\n\n        // Compute the new x- and y-scales, and transform.\n        var x1 = d3.scale.linear().domain([xMin, xMax]).range([0, w]),\n            y1 = d3.scale.linear().domain([0, yMax]).range([0, h * bands]),\n            t1 = d3_horizonTransform(bands, h, mode);\n\n        // Retrieve the old scales, if this is an update.\n        if (this.__chart__) {\n          x0 = this.__chart__.x;\n          y0 = this.__chart__.y;\n          t0 = this.__chart__.t;\n          id = this.__chart__.id;\n        } else {\n          x0 = x1.copy();\n          y0 = y1.copy();\n          t0 = t1;\n          id = ++d3_horizonId;\n        }\n\n        // We'll use a defs to store the area path and the clip path.\n        var defs = g.selectAll(\"defs\")\n            .data([null]);\n\n        // The clip path is a simple rect.\n        defs.enter().append(\"defs\").append(\"clipPath\")\n            .attr(\"id\", \"d3_horizon_clip\" + id)\n          .append(\"rect\")\n            .attr(\"width\", w)\n            .attr(\"height\", h);\n\n        defs.select(\"rect\").transition()\n            .duration(duration)\n            .attr(\"width\", w)\n            .attr(\"height\", h);\n\n        // We'll use a container to clip all horizon layers at once.\n        g.selectAll(\"g\")\n            .data([null])\n          .enter().append(\"g\")\n            .attr(\"clip-path\", \"url(#d3_horizon_clip\" + id + \")\");\n\n        // Instantiate each copy of the path with different transforms.\n        var path = g.select(\"g\").selectAll(\"path\")\n            .data(d3.range(-1, -bands - 1, -1).concat(d3.range(1, bands + 1)), Number);\n\n        var d0 = d3_horizonArea\n            .interpolate(interpolate)\n            .x(function(d) { return x0(d[0]); })\n            .y0(h * bands)\n            .y1(function(d) { return h * bands - y0(d[1]); })\n            (data);\n\n        var d1 = d3_horizonArea\n            .x(function(d) { return x1(d[0]); })\n            .y1(function(d) { return h * bands - y1(d[1]); })\n            (data);\n\n        path.enter().append(\"path\")\n            .style(\"fill\", color)\n            .attr(\"transform\", t0)\n            .attr(\"d\", d0);\n\n        path.transition()\n            .duration(duration)\n            .style(\"fill\", color)\n            .attr(\"transform\", t1)\n            .attr(\"d\", d1);\n\n        path.exit().transition()\n            .duration(duration)\n            .attr(\"transform\", t1)\n            .attr(\"d\", d1)\n            .remove();\n\n        // Stash the new scales.\n        this.__chart__ = {x: x1, y: y1, t: t1, id: id};\n      });\n      d3.timer.flush();\n    }\n\n    horizon.duration = function(x) {\n      if (!arguments.length) return duration;\n      duration = +x;\n      return horizon;\n    };\n\n    horizon.bands = function(x) {\n      if (!arguments.length) return bands;\n      bands = +x;\n      color.domain([-bands, 0, 0, bands]);\n      return horizon;\n    };\n\n    horizon.mode = function(x) {\n      if (!arguments.length) return mode;\n      mode = x + \"\";\n      return horizon;\n    };\n\n    horizon.colors = function(x) {\n      if (!arguments.length) return color.range();\n      color.range(x);\n      return horizon;\n    };\n\n    horizon.interpolate = function(x) {\n      if (!arguments.length) return interpolate;\n      interpolate = x + \"\";\n      return horizon;\n    };\n\n    horizon.x = function(z) {\n      if (!arguments.length) return x;\n      x = z;\n      return horizon;\n    };\n\n    horizon.y = function(z) {\n      if (!arguments.length) return y;\n      y = z;\n      return horizon;\n    };\n\n    horizon.width = function(x) {\n      if (!arguments.length) return w;\n      w = +x;\n      return horizon;\n    };\n\n    horizon.height = function(x) {\n      if (!arguments.length) return h;\n      h = +x;\n      return horizon;\n    };\n\n    return horizon;\n  };\n\n  var d3_horizonArea = d3.svg.area(),\n      d3_horizonId = 0;\n\n  function d3_horizonX(d) {\n    return d[0];\n  }\n\n  function d3_horizonY(d) {\n    return d[1];\n  }\n\n  function d3_horizonTransform(bands, h, mode) {\n    return mode == \"offset\"\n        ? function(d) { return \"translate(0,\" + (d + (d < 0) - bands) * h + \")\"; }\n        : function(d) { return (d < 0 ? \"scale(1,-1)\" : \"\") + \"translate(0,\" + (d - bands) * h + \")\"; };\n  }\n})();\n",
+      "language": "JavaScript"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1483226.git",
+  "updated_at": "2012-06-28T20:43:58Z",
+  "url": "https://api.github.com/gists/1483226",
+  "id": "1483226"
+}

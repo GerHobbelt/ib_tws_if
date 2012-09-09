@@ -1,0 +1,273 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "93bd250c06436d254229792b44b2d677",
+        "login": "mnutt",
+        "avatar_url": "https://secure.gravatar.com/avatar/93bd250c06436d254229792b44b2d677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mnutt",
+        "id": 3705
+      },
+      "created_at": "2011-08-27T00:26:20Z",
+      "updated_at": "2011-08-27T00:26:20Z",
+      "url": "https://api.github.com/gists/1174768",
+      "id": "1174768"
+    },
+    {
+      "user": {
+        "gravatar_id": "f2b154e0cc9d4767e8f3f3163e7c99d2",
+        "login": "Dirtwright",
+        "avatar_url": "https://secure.gravatar.com/avatar/f2b154e0cc9d4767e8f3f3163e7c99d2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Dirtwright",
+        "id": 1231370
+      },
+      "created_at": "2011-11-30T18:01:16Z",
+      "updated_at": "2011-11-30T18:01:16Z",
+      "url": "https://api.github.com/gists/1410046",
+      "id": "1410046"
+    },
+    {
+      "user": {
+        "gravatar_id": "4e96e258e9d3bd640f9917d0ebda2639",
+        "login": "reconbot",
+        "avatar_url": "https://secure.gravatar.com/avatar/4e96e258e9d3bd640f9917d0ebda2639?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/reconbot",
+        "id": 25966
+      },
+      "created_at": "2012-03-28T13:52:38Z",
+      "updated_at": "2012-03-28T13:52:38Z",
+      "url": "https://api.github.com/gists/2226372",
+      "id": "2226372"
+    },
+    {
+      "user": {
+        "gravatar_id": "ccc36bd2f846618e0c3d56e0402c3313",
+        "login": "tayf",
+        "avatar_url": "https://secure.gravatar.com/avatar/ccc36bd2f846618e0c3d56e0402c3313?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/tayf",
+        "id": 1587699
+      },
+      "created_at": "2012-03-30T04:32:46Z",
+      "updated_at": "2012-03-30T04:32:46Z",
+      "url": "https://api.github.com/gists/2246502",
+      "id": "2246502"
+    },
+    {
+      "user": {
+        "gravatar_id": "8c1a274439e449b25300c8f9edf427ee",
+        "login": "sagemintblue",
+        "avatar_url": "https://secure.gravatar.com/avatar/8c1a274439e449b25300c8f9edf427ee?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/sagemintblue",
+        "id": 440162
+      },
+      "created_at": "2012-04-17T01:01:02Z",
+      "updated_at": "2012-04-17T01:13:33Z",
+      "url": "https://api.github.com/gists/2402666",
+      "id": "2402666"
+    },
+    {
+      "user": {
+        "gravatar_id": "5c188b7d2777e82537a0c7569343c320",
+        "login": "pajp",
+        "avatar_url": "https://secure.gravatar.com/avatar/5c188b7d2777e82537a0c7569343c320?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/pajp",
+        "id": 68399
+      },
+      "created_at": "2012-05-03T11:38:12Z",
+      "updated_at": "2012-05-03T11:38:12Z",
+      "url": "https://api.github.com/gists/2585129",
+      "id": "2585129"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "created_at": "2012-05-15T23:41:31Z",
+      "updated_at": "2012-05-15T23:46:02Z",
+      "url": "https://api.github.com/gists/2706022",
+      "id": "2706022"
+    },
+    {
+      "user": {
+        "gravatar_id": "f1c822dba2b215d7fa02b4ab562abc95",
+        "login": "timbresmith",
+        "avatar_url": "https://secure.gravatar.com/avatar/f1c822dba2b215d7fa02b4ab562abc95?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/timbresmith",
+        "id": 389782
+      },
+      "created_at": "2012-06-05T07:51:16Z",
+      "updated_at": "2012-06-05T07:52:27Z",
+      "url": "https://api.github.com/gists/2873404",
+      "id": "2873404"
+    },
+    {
+      "user": {
+        "gravatar_id": "d390a0b22b684675c6127d81b025f94e",
+        "login": "kr1sp1n",
+        "avatar_url": "https://secure.gravatar.com/avatar/d390a0b22b684675c6127d81b025f94e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/kr1sp1n",
+        "id": 64247
+      },
+      "created_at": "2012-06-21T05:41:07Z",
+      "updated_at": "2012-06-21T05:41:07Z",
+      "url": "https://api.github.com/gists/2964065",
+      "id": "2964065"
+    },
+    {
+      "user": {
+        "gravatar_id": "d463e2f4727c35bda3106945cdb28eea",
+        "login": "stev47",
+        "avatar_url": "https://secure.gravatar.com/avatar/d463e2f4727c35bda3106945cdb28eea?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stev47",
+        "id": 227427
+      },
+      "created_at": "2012-07-27T22:00:50Z",
+      "updated_at": "2012-07-27T22:00:50Z",
+      "url": "https://api.github.com/gists/3190677",
+      "id": "3190677"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "e93aee51819c41bd3050a83ef178dd9ccfbff812",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1153292/e93aee51819c41bd3050a83ef178dd9ccfbff812",
+      "committed_at": "2011-08-18T04:39:17Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "387c1034274dbfe30ba6715b2133440de06f2da6",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1153292/387c1034274dbfe30ba6715b2133440de06f2da6",
+      "committed_at": "2011-08-18T04:28:58Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "82dcc2277d62622adf769372cfb6c3c6384d0921",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1153292/82dcc2277d62622adf769372cfb6c3c6384d0921",
+      "committed_at": "2011-08-18T04:28:21Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "5e56761b383157ea8e6eb36b0b0e1c138193d2d2",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1153292/5e56761b383157ea8e6eb36b0b0e1c138193d2d2",
+      "committed_at": "2011-08-18T04:27:21Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "9d41f065923187f3de7cc90cb864d0b73b73c8e5",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1153292/9d41f065923187f3de7cc90cb864d0b73b73c8e5",
+      "committed_at": "2011-08-18T04:26:50Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "04b9ebb6c885b1d5a028a3c29cf75bae07b11f9b",
+      "change_status": {
+        "total": 174,
+        "additions": 174,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1153292/04b9ebb6c885b1d5a028a3c29cf75bae07b11f9b",
+      "committed_at": "2011-08-18T04:26:38Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1153292.git",
+  "description": "Mobile Patent Suits",
+  "html_url": "https://gist.github.com/1153292",
+  "comments": 0,
+  "created_at": "2011-08-18T04:26:38Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1153292/0d0e7d9fc661e9c8fce8c0268ab615a58b9ff127/index.html",
+      "size": 4940,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n    <title>Mobile Patent Suits</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.29.1\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.js?1.29.1\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?1.29.1\"></script>\n    <style type=\"text/css\">\n\npath.link {\n  fill: none;\n  stroke: #666;\n  stroke-width: 1.5px;\n}\n\nmarker#licensing {\n  fill: green;\n}\n\npath.link.licensing {\n  stroke: green;\n}\n\npath.link.resolved {\n  stroke-dasharray: 0,2 1;\n}\n\ncircle {\n  fill: #ccc;\n  stroke: #333;\n  stroke-width: 1.5px;\n}\n\ntext {\n  font: 10px sans-serif;\n  pointer-events: none;\n}\n\ntext.shadow {\n  stroke: #fff;\n  stroke-width: 3px;\n  stroke-opacity: .8;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\n// http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/\nvar links = [\n  {source: \"Microsoft\", target: \"Amazon\", type: \"licensing\"},\n  {source: \"Microsoft\", target: \"HTC\", type: \"licensing\"},\n  {source: \"Samsung\", target: \"Apple\", type: \"suit\"},\n  {source: \"Motorola\", target: \"Apple\", type: \"suit\"},\n  {source: \"Nokia\", target: \"Apple\", type: \"resolved\"},\n  {source: \"HTC\", target: \"Apple\", type: \"suit\"},\n  {source: \"Kodak\", target: \"Apple\", type: \"suit\"},\n  {source: \"Microsoft\", target: \"Barnes & Noble\", type: \"suit\"},\n  {source: \"Microsoft\", target: \"Foxconn\", type: \"suit\"},\n  {source: \"Oracle\", target: \"Google\", type: \"suit\"},\n  {source: \"Apple\", target: \"HTC\", type: \"suit\"},\n  {source: \"Microsoft\", target: \"Inventec\", type: \"suit\"},\n  {source: \"Samsung\", target: \"Kodak\", type: \"resolved\"},\n  {source: \"LG\", target: \"Kodak\", type: \"resolved\"},\n  {source: \"RIM\", target: \"Kodak\", type: \"suit\"},\n  {source: \"Sony\", target: \"LG\", type: \"suit\"},\n  {source: \"Kodak\", target: \"LG\", type: \"resolved\"},\n  {source: \"Apple\", target: \"Nokia\", type: \"resolved\"},\n  {source: \"Qualcomm\", target: \"Nokia\", type: \"resolved\"},\n  {source: \"Apple\", target: \"Motorola\", type: \"suit\"},\n  {source: \"Microsoft\", target: \"Motorola\", type: \"suit\"},\n  {source: \"Motorola\", target: \"Microsoft\", type: \"suit\"},\n  {source: \"Huawei\", target: \"ZTE\", type: \"suit\"},\n  {source: \"Ericsson\", target: \"ZTE\", type: \"suit\"},\n  {source: \"Kodak\", target: \"Samsung\", type: \"resolved\"},\n  {source: \"Apple\", target: \"Samsung\", type: \"suit\"},\n  {source: \"Kodak\", target: \"RIM\", type: \"suit\"},\n  {source: \"Nokia\", target: \"Qualcomm\", type: \"suit\"}\n];\n\nvar nodes = {};\n\n// Compute the distinct nodes from the links.\nlinks.forEach(function(link) {\n  link.source = nodes[link.source] || (nodes[link.source] = {name: link.source});\n  link.target = nodes[link.target] || (nodes[link.target] = {name: link.target});\n});\n\nvar w = 960,\n    h = 500;\n\nvar force = d3.layout.force()\n    .nodes(d3.values(nodes))\n    .links(links)\n    .size([w, h])\n    .linkDistance(60)\n    .charge(-300)\n    .on(\"tick\", tick)\n    .start();\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\n// Per-type markers, as they don't inherit styles.\nsvg.append(\"svg:defs\").selectAll(\"marker\")\n    .data([\"suit\", \"licensing\", \"resolved\"])\n  .enter().append(\"svg:marker\")\n    .attr(\"id\", String)\n    .attr(\"viewBox\", \"0 -5 10 10\")\n    .attr(\"refX\", 15)\n    .attr(\"refY\", -1.5)\n    .attr(\"markerWidth\", 6)\n    .attr(\"markerHeight\", 6)\n    .attr(\"orient\", \"auto\")\n  .append(\"svg:path\")\n    .attr(\"d\", \"M0,-5L10,0L0,5\");\n\nvar path = svg.append(\"svg:g\").selectAll(\"path\")\n    .data(force.links())\n  .enter().append(\"svg:path\")\n    .attr(\"class\", function(d) { return \"link \" + d.type; })\n    .attr(\"marker-end\", function(d) { return \"url(#\" + d.type + \")\"; });\n\nvar circle = svg.append(\"svg:g\").selectAll(\"circle\")\n    .data(force.nodes())\n  .enter().append(\"svg:circle\")\n    .attr(\"r\", 6)\n    .call(force.drag);\n\nvar text = svg.append(\"svg:g\").selectAll(\"g\")\n    .data(force.nodes())\n  .enter().append(\"svg:g\");\n\n// A copy of the text with a thick white stroke for legibility.\ntext.append(\"svg:text\")\n    .attr(\"x\", 8)\n    .attr(\"y\", \".31em\")\n    .attr(\"class\", \"shadow\")\n    .text(function(d) { return d.name; });\n\ntext.append(\"svg:text\")\n    .attr(\"x\", 8)\n    .attr(\"y\", \".31em\")\n    .text(function(d) { return d.name; });\n\n// Use elliptical arc path segments to doubly-encode directionality.\nfunction tick() {\n  path.attr(\"d\", function(d) {\n    var dx = d.target.x - d.source.x,\n        dy = d.target.y - d.source.y,\n        dr = Math.sqrt(dx * dx + dy * dy);\n    return \"M\" + d.source.x + \",\" + d.source.y + \"A\" + dr + \",\" + dr + \" 0 0,1 \" + d.target.x + \",\" + d.target.y;\n  });\n\n  circle.attr(\"transform\", function(d) {\n    return \"translate(\" + d.x + \",\" + d.y + \")\";\n  });\n\n  text.attr(\"transform\", function(d) {\n    return \"translate(\" + d.x + \",\" + d.y + \")\";\n  });\n}\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/1153292/923b77921530ce21d5f77761fce8894e08d24017/readme.md",
+      "size": 775,
+      "content": "**Click to drag nodes.** Dashed links are resolved suits; green links are licensing.\n\nThomson Reuters published a rather [abysmal infographic](http://blog.thomsonreuters.com/index.php/mobile-patent-suits-graphic-of-the-day/) showing the \"bowl of spaghetti\" that is current flurry of patent-related suits in the mobile communications industry. So, inspired by [a comment](https://twitter.com/#!/jfire/status/104008561436270593) by John Firebaugh, I remade the visualization to better convey the network. That company in the center? Yeah, it's the [world's largest](http://www.businessweek.com/news/2011-08-09/apple-briefly-passes-exxon-as-world-s-largest-company.html), so little wonder it has the most incoming suits.\n\nImplemented in [D3.js](http://mbostock.github.com/d3/).\n",
+      "language": "Markdown"
+    }
+  },
+  "updated_at": "2011-08-18T04:26:38Z",
+  "url": "https://api.github.com/gists/1153292",
+  "id": "1153292",
+  "git_pull_url": "git://gist.github.com/1153292.git"
+}

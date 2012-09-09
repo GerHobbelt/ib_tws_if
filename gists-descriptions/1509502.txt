@@ -1,0 +1,168 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "e6d77b3a490453a78df078627414e0f7",
+    "login": "cpudney",
+    "url": "https://api.github.com/users/cpudney",
+    "avatar_url": "https://secure.gravatar.com/avatar/e6d77b3a490453a78df078627414e0f7?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 1069553
+  },
+  "history": [
+    {
+      "user": null,
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "version": "96e4daf5ba74b83752a0288d2a4275d833dd61ea",
+      "committed_at": "2012-03-08T08:34:40Z",
+      "url": "https://api.github.com/gists/1509502/96e4daf5ba74b83752a0288d2a4275d833dd61ea"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "79e9c5789972591bac5f752b368f04ea0d8850ff",
+      "committed_at": "2012-03-08T08:33:28Z",
+      "url": "https://api.github.com/gists/1509502/79e9c5789972591bac5f752b368f04ea0d8850ff"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 25,
+        "additions": 0,
+        "deletions": 25
+      },
+      "version": "8e7a694279c77605e9e4518c5bddb69217220947",
+      "committed_at": "2012-03-08T08:29:57Z",
+      "url": "https://api.github.com/gists/1509502/8e7a694279c77605e9e4518c5bddb69217220947"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 11,
+        "additions": 6,
+        "deletions": 5
+      },
+      "version": "5749b6939f0ba98034b928cb1c15f3a0fc6d2bba",
+      "committed_at": "2012-03-06T06:27:35Z",
+      "url": "https://api.github.com/gists/1509502/5749b6939f0ba98034b928cb1c15f3a0fc6d2bba"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 2,
+        "additions": 0,
+        "deletions": 2
+      },
+      "version": "0e387ebe80e5becf420c5c6327cd8954e411ec65",
+      "committed_at": "2012-03-06T06:07:58Z",
+      "url": "https://api.github.com/gists/1509502/0e387ebe80e5becf420c5c6327cd8954e411ec65"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 43,
+        "additions": 37,
+        "deletions": 6
+      },
+      "version": "cb33b03e162a4f44baaf32d88555b86f5df0dbd5",
+      "committed_at": "2012-02-27T01:24:55Z",
+      "url": "https://api.github.com/gists/1509502/cb33b03e162a4f44baaf32d88555b86f5df0dbd5"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 264,
+        "additions": 136,
+        "deletions": 128
+      },
+      "version": "7c3f6524cd31853284b000fec80d7ddbfded28a2",
+      "committed_at": "2012-02-24T10:25:45Z",
+      "url": "https://api.github.com/gists/1509502/7c3f6524cd31853284b000fec80d7ddbfded28a2"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 144,
+        "additions": 100,
+        "deletions": 44
+      },
+      "version": "41e8fbdffb04134d3df395e719fbea030fdc24cc",
+      "committed_at": "2012-02-21T00:54:53Z",
+      "url": "https://api.github.com/gists/1509502/41e8fbdffb04134d3df395e719fbea030fdc24cc"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "version": "5d46967aa947f432ebbd1cec3c3408da4cbd8a61",
+      "committed_at": "2012-02-20T01:33:38Z",
+      "url": "https://api.github.com/gists/1509502/5d46967aa947f432ebbd1cec3c3408da4cbd8a61"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 117,
+        "additions": 81,
+        "deletions": 36
+      },
+      "version": "de6c7aeea5d5f9440f4defb467695c3cf1d1133b",
+      "committed_at": "2012-02-20T01:32:40Z",
+      "url": "https://api.github.com/gists/1509502/de6c7aeea5d5f9440f4defb467695c3cf1d1133b"
+    }
+  ],
+  "description": "D3 Lap Chart",
+  "comments": 0,
+  "created_at": "2011-12-22T08:27:17Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1509502",
+  "git_pull_url": "git://gist.github.com/1509502.git",
+  "files": {
+    "2010au.json": {
+      "type": "application/json",
+      "filename": "2010au.json",
+      "size": 6608,
+      "raw_url": "https://gist.github.com/raw/1509502/5a0ff91ae40cb348af05662a6e7be14fe709b0aa/2010au.json",
+      "content": "{\n    \"lapCount\": 58,\n\n    \"laps\": [\n        {\n            \"name\": \"Sebastian Vettel\",\n            \"placing\": [1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],\n            \"pitstops\": [9],\n            \"mechanical\": [25]\n        },\n        {\n            \"name\": \"Mark Webber\",\n            \"placing\": [2, 3, 3, 3, 3, 3, 2, 2, 2, 1, 1, 6, 6, 6, 6, 6, 8, 8, 8, 8, 8, 8, 7, 7, 7, 7, 6, 6, 5, 5, 5, 5, 7, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 8, 9, 9],\n            \"pitstops\": [10, 32, 56]\n        },\n        {\n            \"name\": \"Fernando Alonso\",\n            \"placing\": [3, 18, 18, 18, 18, 15, 13, 13, 15, 13, 10, 10, 10, 9, 8, 8, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7, 6, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],\n            \"pitstops\": [8],\n            \"accident\": [0]\n        },\n        {\n            \"name\": \"Jenson Button\",\n            \"placing\": [4, 6, 6, 6, 6, 6, 19, 19, 12, 4, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],\n            \"pitstops\": [6, 34],\n            \"accident\": [0]\n        },\n        {\n            \"name\": \"Felipe Massa\",\n            \"placing\": [5, 2, 2, 2, 2, 2, 3, 3, 9, 7, 6, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 5, 5, 6, 6, 6, 6, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3],\n            \"pitstops\": [8]\n        },\n        {\n            \"name\": \"Nico Rosberg\",\n            \"placing\": [6, 5, 5, 5, 5, 5, 5, 5, 7, 6, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 5, 5, 5],\n            \"pitstops\": [8, 33]\n        },\n        {\n            \"name\": \"Michael Schumacher\",\n            \"placing\": [7],\n            \"accident\": [0]\n        },\n        {\n            \"name\": \"Rubens Barrichello\",\n            \"placing\": [8, 9, 9, 9, 9, 9, 8, 7, 10, 8, 7, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 8, 8],\n            \"pitstops\": [8, 31],\n            \"accident\": [55]\n        },\n        {\n            \"name\": \"Robert Kubica\",\n            \"placing\": [9, 4, 4, 4, 4, 4, 4, 4, 6, 5, 4, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],\n            \"pitstops\": [8]\n        },\n        {\n            \"name\": \"Adrian Sutil\",\n            \"placing\": [10, 8, 8, 8, 8, 8, 7, 9, 5, 2],\n            \"mechanical\": [9]\n        },\n        {\n            \"name\": \"Lewis Hamilton\",\n            \"placing\": [11, 7, 7, 7, 7, 7, 6, 6, 11, 11, 8, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 3, 3, 3, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6],\n            \"pitstops\": [8, 34],\n            \"accident\": [55]\n        },\n        {\n            \"name\": \"Sebastien Buemi\",\n            \"placing\": [12],\n            \"accident\": [0]\n        },\n        {\n            \"name\": \"Vitantonio Liuzzi\",\n            \"placing\": [13, 12, 12, 12, 12, 12, 11, 11, 3, 9, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 7],\n            \"pitstops\": [9]\n        },\n        {\n            \"name\": \"Pedro De La Rosa\",\n            \"placing\": [14, 11, 11, 11, 11, 11, 10, 10, 13, 12, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 12, 12],\n            \"pitstops\": [8]\n        },\n        {\n            \"name\": \"Nico Hulkenberg\",\n            \"placing\": [15],\n            \"accident\": [0]\n        },\n        {\n            \"name\": \"Kamui Kobayashi\",\n            \"placing\": [16],\n            \"accident\": [0]\n        },\n        {\n            \"name\": \"Jaime Alguersuari\",\n            \"placing\": [17, 13, 13, 13, 13, 13, 12, 12, 4, 10, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 12, 12, 12, 12, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 11, 11],\n            \"pitstops\": [9, 27]\n        },\n        {\n            \"name\": \"Vitaly Petrov\",\n            \"placing\": [18, 10, 10, 10, 10, 10, 9, 8, 14, 14],\n            \"pitstops\": [8],\n            \"accident\": [9]\n        },\n        {\n            \"name\": \"Heikki Kovalainen\",\n            \"placing\": [19, 15, 15, 15, 14, 14, 14, 15, 18, 18, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13],\n            \"pitstops\": [8]\n        },\n        {\n            \"name\": \"Jarno Trulli\",\n            \"placing\": [20, 20, 20, 20, 20, 17, 15, 14, 17, 15, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 12, 12, 12, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 11, 11, 11, 11, 10, 10],\n            \"pitstops\": [1, 8, 29],\n            \"mechanical\": [0]\n        },\n        {\n            \"name\": \"Bruno Senna\",\n            \"placing\": [21, 14, 14, 14, 15],\n            \"mechanical\": [4]\n        },\n        {\n            \"name\": \"Karun Chandock\",\n            \"placing\": [22, 16, 16, 16, 16, 19, 18, 18, 19, 19, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 17, 17, 17, 17, 17, 16, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14],\n            \"pitstops\": [8, 46]\n        },\n        {\n            \"name\": \"Timo Glock\",\n            \"placing\": [23, 17, 17, 17, 17, 16, 16, 16, 8, 17, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14],\n            \"pitstops\": [8, 9],\n            \"mechanical\": [41]\n        },\n        {\n            \"name\": \"Luca di Grassi\",\n            \"placing\": [24, 19, 19, 19, 19, 18, 17, 17, 16, 16, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 16, 16, 16, 16, 16, 17, 16],\n            \"pitstops\": [10, 25],\n            \"mechanical\": [26]\n        }\n    ],\n    \"lapped\": [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 17, 17, 16, 16, 16, 16, 16, 16, 16,15, 15, 15, 14, 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13 , 13],\n    \"safety\": [1, 2, 3, 4]\n}",
+      "language": "JSON"
+    },
+    "style.css": {
+      "type": "text/css",
+      "filename": "style.css",
+      "size": 839,
+      "raw_url": "https://gist.github.com/raw/1509502/172487a550b11951367846b369b4cda058b149b0/style.css",
+      "content": "body {\n    margin: 0;\n    padding: 0;\n    background-color: #000000;\n    font-family: sans-serif;\n    font-size: 12px;\n    color: #666666;\n    overflow: hidden;\n}\n\na:link {\n    color: #ccccff;\n}\na:visited {\n    color: #cccccc;\n}\na:active {\n    color: #ffccff;\n}\na.hover {\n    color: #ffcccc;\n}\n\n.title {\n    float: left;\n    font-size: 14px;\n    font-weight: bold;\n    color: #ffffff;\n}\n\n.attrib {\n    float: right;\n    font-size: 14px;\n    color: #ffffff;\n}\n\ntext.lap {\n    fill: #999999;\n}\n\ntext.label {\n    fill: #000000;\n}\n\ntext.label.marker {\n    font-weight: bold;\n}\n\npolyline.placing {\n    fill: none;\n    stroke-width: 5;\n}\n\nline.tickLine {\n    stroke: #999999;\n}\n\n.lapped {\n    background-color: #333333;\n    stroke: #333333;\n    fill: #333333;\n}\n\n.safety{\n    background-color: #330000;\n    stroke: #330000;\n    fill: #330000;\n}\n",
+      "language": "CSS"
+    },
+    "lap-chart.js": {
+      "type": "application/javascript",
+      "filename": "lap-chart.js",
+      "size": 16040,
+      "raw_url": "https://gist.github.com/raw/1509502/a62bf7d2aa6ee3fc1c3ca5c49bd1d640d3de4320/lap-chart.js",
+      "content": "// Dimensions.\nconst DIMENSIONS = getWindowDimensions();\nconst WIDTH = DIMENSIONS.width;\nconst HEIGHT = DIMENSIONS.height - 100;\n\n// Insets.\nconst INSETS = {'left': 150, 'right': 150, 'top': 30, 'bottom': 30};\n\n// Padding.\nconst PADDING = {'left': 20, 'right': 20, 'top': 15, 'bottom': 15};\n\n// Tick-mark length.\nconst TICK_MARK_LENGTH = 8;\n\n// Marker radius.\nconst MARKER_RADIUS = 12;\n\n// Scales.\nconst SCALES = {};\n\n// Opacity of dimmed objects.\nvar DIMMED_OPACITY = 0.3;\nvar HIGHLIGHT_OPACITY = 1.0;\n\n// Visualize when document has loaded.\n//\nwindow.onload = function() {\n\n    // Load data.\n    d3.json(\"2010au.json\", function(data) {\n\n        // Check integrity.\n        integrityCheck(data);\n\n        // Sort laps on finishing order.\n        data.laps.sort(function(a, b) {\n\n            var aLaps = a.placing.length;\n            var bLaps = b.placing.length;\n            return aLaps == bLaps ? a.placing[aLaps - 1] - b.placing[bLaps - 1] : bLaps - aLaps;\n        });\n\n        // Process lap markers..\n        data.pitstops = processLapMarkers(data, \"pitstops\");\n        data.mechanical = processLapMarkers(data, \"mechanical\");\n        data.accident = processLapMarkers(data, \"accident\");\n\n        // Visualize the data.\n        visualize(data);\n    });\n};\n\n// Check data.\n//\n// data: the data to check.\n//\nfunction integrityCheck(data) {\n\n    var laps = data.laps;\n    var lapCount = data.lapCount;\n\n    // Check lap data.\n    checkLaps(laps, lapCount);\n\n    // Check lapped data.\n    checkLapped(data.lapped, lapCount, laps.length);\n\n    // Check safety car data.\n    checkSafetyCar(data.safety, lapCount);\n}\n\n// Check lap data.\n//\n// laps: the lap data.\n// lapCount: number of laps.\n//\nfunction checkLaps(laps, lapCount) {\n\n    for (var j = 0;\n         j < laps.length;\n         j++) {\n\n        // Has name?\n        var name = laps[j].name;\n        if (name == undefined || name.length == 0) {\n\n            alert(\"Warning: invalid name for element \" + j);\n        }\n\n        // Has placings?\n        var places = laps[j].placing;\n        if (places == undefined) {\n\n            alert(\"Warning: missing placings for element \" + j + \" (\" + name + \")\");\n        }\n        else if (places.length == 0 || places.length > lapCount + 1) {\n\n            alert(\"Warning: invalid number of placings (\" + places.length + \") for element \" + j +\n                \" (\" + name + \") - expected between 1 and \" + (lapCount - 1));\n        }\n\n        // Check markers.\n        var maxLaps = places.length;\n        checkMarker(laps[j].pitstops, \"pitstop\", maxLaps, j, name);\n        checkMarker(laps[j].mechanical, \"mechanical\", maxLaps, j, name);\n        checkMarker(laps[j].accident, \"accident\", maxLaps, j, name);\n    }\n\n    for (var i = 0;\n         i < lapCount;\n         i++) {\n\n        var positions = [];\n        for (j = 0;\n             j < laps.length;\n             j++) {\n\n            places = laps[j].placing;\n            if (places.length > i) {\n\n                // Valid placing?\n                var placing = places[i];\n                if (isNaN(placing) || placing < 1 || placing % 1 != 0) {\n\n                    alert(\"Warning: invalid placing '\" + placing + \"' for \" + laps[j].name)\n                }\n                else {\n\n                    var count = positions[placing];\n                    positions[placing] = isNaN(count) ? 1 : count + 1\n                }\n            }\n        }\n\n        // Check for duplicate/missing positions.\n        for (j = 1;\n             j < positions.length;\n             j++) {\n\n            count = positions[j];\n            if (count != 1) {\n\n                alert(\"Warning: data inconsistent: lap \" + i + \", position \" + j + \", count \" + count);\n            }\n        }\n    }\n}\n\n// Check integrity of marker data.\n//\n// marker: marker data.\n// name: driver name.\n// type: text description of marker.\n// max: maximum allowed lap value of marker.\n// index: index of driver in list.\n//\nfunction checkMarker(marker, type, max, index, name) {\n\n    if (marker != undefined) {\n\n        // Check marker.\n        for (var i = 0;\n             i < marker.length;\n             i++) {\n\n            var stop = marker[i];\n            if (isNaN(stop) || stop < 0 || stop >= max || stop % 1 != 0) {\n\n                alert(\"Warning: invalid \" + type + \" (\" + stop + \") for element \" + index + \" (\" + name + \")\");\n            }\n        }\n    }\n}\n\n// Check lapped data.\n//\n// lapped: the lapped data.\n// lapCount: number of laps.\n// driverCount: number of drivers.\n//\nfunction checkLapped(lapped, lapCount, driverCount) {\n\n    if (lapped != undefined) {\n\n        var lappedLength = lapped.length;\n        if (lappedLength != lapCount) {\n\n            alert(\"Lapped array length (\" + lappedLength + \") incorrect - expected length \" + lapCount);\n        }\n\n        for (var j = 1;\n             j < lappedLength;\n             j++) {\n\n            // Valid position.\n            var position = lapped[j];\n            if (isNaN(position) || position % 1 != 0 || position < -1 || position > driverCount) {\n\n                alert(\"Invalid lapped position: element \" + j + \" (\" + position\n                    + \"); expected integer between -1 and \" + driverCount);\n            }\n        }\n    }\n}\n\n// Check safety car data.\n//\n// safety: safety car data.\n// lapCount: number of laps.\n//\nfunction checkSafetyCar(safety, lapCount) {\n\n    if (safety != undefined) {\n\n        for (var i = 0;\n             i < safety.length;\n             i++) {\n\n            // Valid lap?\n            var lap = safety[i];\n            if (isNaN(lap) || lap < 0 || lap % 1 != 0 || lap > lapCount) {\n\n                alert(\"Invalid safety car lap: element \" + i + \" (\" + lap\n                    + \"); expected integer between 0 and \" + lapCount);\n            }\n        }\n    }\n}\n\n// Process lap markers.\n//\n// data: lap data.\n// key: marker key.\n//\nfunction processLapMarkers(data, key) {\n\n    var markers = [];\n    var p = 0;\n    for (var i = 0;\n         i < data.laps.length;\n         i++) {\n\n        var lapData = data.laps[i];\n        var laps = lapData[key];\n        if (laps != undefined) {\n            for (var j = 0;\n                 j < laps.length;\n                 j++) {\n\n                var lap = laps[j];\n                var marker = {};\n                marker.start = lapData.placing[0];\n                marker.lap = lap;\n                marker.placing = lapData.placing[lap];\n                marker.name = lapData.name;\n\n                markers[p++] = marker;\n            }\n        }\n    }\n    return markers;\n}\n\n// Create the visualization.\n//\n// data the lap data object.\n//\nfunction visualize(data) {\n\n    // Configure scales.\n    configureScales(data);\n\n    // Root panel.\n    var vis = d3.select('#chart')\n        .append('svg:svg')\n        .attr('width', WIDTH)\n        .attr('height', HEIGHT);\n\n    // Add safety car element.\n    addSafetyElement(vis, data.safety);\n\n    // Add lapped element.\n    addLappedElement(vis, data.lapped);\n\n    // Lap tick-lines.\n    addLapTickLines(vis, data.lapCount);\n\n    // Lap labels.\n    addLapLabels(vis, data.lapCount, SCALES.y.range()[0] - PADDING.bottom, '0.0em', 'top');\n    addLapLabels(vis, data.lapCount, SCALES.y.range()[1] + PADDING.top, '0.35em', 'bottom');\n\n    // Add placings poly-lines.\n    addPlacingsLines(vis, data.laps);\n\n    // Add name labels.\n    addDriverLabels(vis, data.laps, 'pole', SCALES.x(0) - PADDING.right, 'end')\n        .attr('y', function (d) {\n\n            return SCALES.y(d.placing[0] - 1);\n        });\n    addDriverLabels(vis, data.laps, 'flag', SCALES.x(data.lapCount) + PADDING.left, 'start')\n            .attr('y', function (d, i) {\n\n            return SCALES.y(i);\n        });\n\n    // Add markers.\n    addMarkers(vis, data.pitstops, \"pitstop\", \"P\");\n    addMarkers(vis, data.mechanical, \"mechanical\", \"M\");\n    addMarkers(vis, data.accident, \"accident\", \"X\");\n}\n\n// Configure the scales.\n//\n// data: data set.\n//\nfunction configureScales(data) {\n\n    SCALES.x = d3.scale.linear()\n        .domain([0, data.lapCount])\n        .range([INSETS.left, WIDTH - INSETS.right]);\n\n    SCALES.y = d3.scale.linear()\n        .domain([0, data.laps.length - 1])\n        .range([INSETS.top, HEIGHT - INSETS.bottom]);\n\n    SCALES.clr = d3.scale.category20();\n}\n\n// Highlight driver.\n//\n// vis: the data visualization root.\n// index: index of driver to highlight.\n//\nfunction highlight(vis, name) {\n\n    // Dim others.\n    vis.selectAll('polyline')\n        .style('opacity', function(d) {\n\n            return d.name == name ? HIGHLIGHT_OPACITY : DIMMED_OPACITY;\n        });\n\n    vis.selectAll('circle')\n        .style('opacity', function(d) {\n\n            return d.name == name ? HIGHLIGHT_OPACITY : DIMMED_OPACITY;\n        });\n\n    vis.selectAll('text.label')\n        .style('opacity', function(d) {\n\n            return d.name == name ? HIGHLIGHT_OPACITY : DIMMED_OPACITY;\n        });\n}\n\n// Remove highlights.\n//\n// vis: the data visualization root.\n//\nfunction unhighlight(vis) {\n\n    // Reset opacity.\n    vis.selectAll('polyline')\n        .style('opacity', HIGHLIGHT_OPACITY);\n    vis.selectAll('circle')\n        .style('opacity', HIGHLIGHT_OPACITY);\n    vis.selectAll('text.label')\n        .style('opacity', HIGHLIGHT_OPACITY);\n}\n\n// Add safety car laps (rectanle elements).\n//\n// vis: the data visualization root.\n// data: safety car laps.\n//\nfunction addSafetyElement(vis, data) {\n\n    if (data != undefined) {\n\n        var y = SCALES.y.range()[0];\n        var height = SCALES.y.range()[1] - y;\n        var width = SCALES.x(1) - SCALES.x(0);\n\n        vis.selectAll('rect.safety')\n            .data(data)\n            .enter()\n            .append('svg:rect')\n            .attr('class', 'safety')\n            .attr('x', function(d) {\n\n                return SCALES.x(d - 0.5);\n            })\n            .attr('y', function() {\n\n                return y;\n            })\n            .attr('height', function() {\n\n                return height;\n            })\n            .attr('width', function() {\n\n                return width;\n            });\n    }\n}\n\n// Add lapped rectangle elements.\n//\n// vis: the data visualization root.\n// data: the lapped data.\n//\nfunction addLappedElement(vis, data) {\n\n    if (data != undefined) {\n\n        var width = SCALES.x(1) - SCALES.x(0);\n\n        vis.selectAll('rect.lapped')\n            .data(data)\n            .enter()\n            .append('svg:rect')\n            .attr('class', 'lapped')\n            .attr('x', function(d, i) {\n\n                return SCALES.x(i + 0.5);\n            })\n            .attr('y', function(d) {\n\n                return SCALES.y(d > 0 ? d - 1.5 : 0);\n            })\n            .attr('height', function(d) {\n\n                return d > 0 ? SCALES.y.range()[1] - SCALES.y(d - 1.5) : 0;\n            })\n            .attr('width', function(d) {\n\n                return d > 0 ? width : 0;\n            });\n    }\n}\n// Add lap tick-lines.\n//\n// vis: the data visualization root.\n// lapCount: number of laps.\n//\nfunction addLapTickLines(vis, lapCount) {\n\n    vis.selectAll('line.tickLine')\n        .data(SCALES.x.ticks(lapCount))\n        .enter().append('svg:line')\n        .attr('class', 'tickLine')\n        .attr('x1', function(d) {\n\n            return SCALES.x(d + 0.5);\n        })\n        .attr('x2', function(d) {\n\n            return SCALES.x(d + 0.5);\n        })\n        .attr('y1', SCALES.y.range()[0] - TICK_MARK_LENGTH)\n        .attr('y2', SCALES.y.range()[1] + TICK_MARK_LENGTH)\n        .attr('visibility', function(d) {\n\n            return d <= lapCount ? 'visible' : 'hidden'\n        });\n}\n\n// Add lap labels.\n//\n// vis: the data visualization root.\n// data: lap data.\n// y: y position of labels.\n// dy: y offset.\n// cssClass: CSS class id.\n//\nfunction addLapLabels(vis, data, y, dy, cssClass) {\n\n    vis.selectAll('text.lap.' + cssClass)\n        .data(SCALES.x.ticks(data))\n        .enter().append('svg:text')\n        .attr('class', 'lap ' + cssClass)\n        .attr('x', function(d) {\n\n            return SCALES.x(d);\n        })\n        .attr('y', y)\n        .attr('dy', dy)\n        .attr('text-anchor', 'middle')\n        .text(function(d, i) {\n\n            return i > 0 ? i : '';\n        });\n}\n\n// Add placings polyline elements.\n//\n// vis: the visualization root.\n// laps: lap data.\n//\nfunction addPlacingsLines(vis, laps) {\n\n    vis.selectAll('polyline.placing')\n        .data(laps)\n        .enter()\n        .append('svg:polyline')\n        .attr('class', 'placing')\n        .attr('points', function(d) {\n\n            var points = [];\n            for (var i = 0;\n                 i < d.placing.length;\n                 i++) {\n\n                points[i] = SCALES.x(i) + ',' + SCALES.y(d.placing[i] - 1);\n            }\n\n            if (points.length > 0)\n                points.push(SCALES.x(i - 0.5) + ',' + SCALES.y(d.placing[i - 1] - 1));\n\n            return points.join(' ');\n        })\n        .style('stroke', function(d) {\n\n            return SCALES.clr(d.placing[0]);\n        })\n        .on('mouseover', function(d) {\n\n            highlight(vis, d.name);\n        })\n        .on('mouseout', function() {\n\n            unhighlight(vis);\n        });\n}\n\n// Add driver name labels.\n//\n// vis: the data visualization root.\n// laps: the lap data.\n// cssClass: CSS class id.\n// textAnchor: text-anchor value.\n//\nfunction addDriverLabels(vis, laps, cssClass, x, textAnchor) {\n\n    return vis.selectAll('text.label.' + cssClass)\n        .data(laps)\n        .enter()\n        .append('svg:text')\n        .attr('class', 'label ' + cssClass)\n        .attr('x', x)\n        .attr('dy', '0.35em')\n        .attr('text-anchor', textAnchor)\n        .text(function(d) {\n\n            return d.name;\n        })\n        .style('fill', function(d) {\n\n            return SCALES.clr(d.placing[0]);\n        })\n        .on('mouseover', function(d) {\n\n            highlight(vis, d.name);\n        })\n        .on('mouseout', function() {\n\n            unhighlight(vis);\n        });\n}\n\n// Add markers.\n//\n// vis: the visualization root.\n// data: marker data.\n// class: marker sub-class.\n// label: marker label.\n//\nfunction addMarkers(vis, data, cssClass, label) {\n    label = label || \"P\";\n\n    // Place circle glyph.\n    vis.selectAll(\"circle.marker.\" + cssClass)\n        .data(data)\n        .enter()\n        .append(\"svg:circle\")\n        .attr(\"class\", \"marker \" + cssClass)\n        .attr(\"cx\", function(d) {\n\n            return SCALES.x(d.lap);\n        })\n        .attr(\"cy\", function(d) {\n\n            return SCALES.y(d.placing - 1);\n        })\n        .attr(\"r\", MARKER_RADIUS)\n        .style(\"fill\", function(d) {\n\n            return SCALES.clr(d.start);\n        })\n        .on('mouseover', function(d) {\n\n            highlight(vis, d.name);\n        })\n        .on('mouseout', function() {\n\n            unhighlight(vis);\n        });\n\n    // Place text.\n    vis.selectAll(\"text.label.marker\" + cssClass)\n        .data(data)\n        .enter()\n        .append(\"svg:text\")\n        .attr(\"class\", \"label marker\" + cssClass)\n        .attr(\"x\", function(d) {\n\n            return SCALES.x(d.lap);\n        })\n        .attr(\"y\", function(d) {\n\n            return SCALES.y(d.placing - 1);\n        })\n        .attr(\"dy\", \"0.35em\")\n        .attr(\"text-anchor\", \"middle\")\n        .text(label)\n        .on('mouseover', function(d) {\n\n            highlight(vis, d.name);\n        })\n        .on('mouseout', function() {\n\n            unhighlight(vis);\n        });\n}\n\n// Gets the window dimensions.\n//\nfunction getWindowDimensions() {\n\n    var width = 630;\n    var height = 460;\n    if (document.body && document.body.offsetWidth) {\n\n        width = document.body.offsetWidth;\n        height = document.body.offsetHeight;\n    }\n\n    if (document.compatMode == 'CSS1Compat' && document.documentElement && document.documentElement.offsetWidth) {\n\n        width = document.documentElement.offsetWidth;\n        height = document.documentElement.offsetHeight;\n    }\n\n    if (window.innerWidth && window.innerHeight) {\n\n        width = window.innerWidth;\n        height = window.innerHeight;\n    }\n\n    return {'width': width, 'height': height};\n}",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1141,
+      "raw_url": "https://gist.github.com/raw/1509502/fc2e4b2c749a6851249301bbfd7c339ce36297cf/index.html",
+      "content": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\n        \"http://www.w3.org/TR/html4/loose.dtd\">\n<html>\n<head>\n    <title>Formula 1 Lap Chart</title>\n\n    <link href=\"style.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\"/>\n\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.7.0\"></script>\n\n</head>\n<body>\n<span class=\"title\">Australian Formula 1 Grand Prix, 2010\n    <a href=\"http://creativecommons.org/licenses/by-sa/3.0/\" target=\"_blank\"><img align=\"top\"\n                                                                                  alt=\"Creative Commons License\"\n                                                                                  src=\"http://i.creativecommons.org/l/by-sa/3.0/80x15.png\"/></a>\n</span>\n<span class=\"attrib\">By <a href=\"http://vislives.com/\" target=\"_blank\">Chris Pudney</a></span>\n\n<div id=\"chart\"></div>\n<span class=\"legend\">M = mechanical failure | P = pit stop | X = accident |  <span\n        class=\"safety\">safety-car deployed</span> | <span class=\"lapped\">lapped</span></span>\n<script src=\"lap-chart.js\" type=\"text/javascript\"></script>\n</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1509502.git",
+  "updated_at": "2011-12-22T08:27:17Z",
+  "url": "https://api.github.com/gists/1509502",
+  "id": "1509502"
+}

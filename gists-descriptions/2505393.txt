@@ -1,0 +1,264 @@
+{
+  "forks": [
+
+  ],
+  "updated_at": "2012-09-09T08:50:02Z",
+  "public": true,
+  "files": {
+    "treemap-svg.js": {
+      "type": "application/javascript",
+      "filename": "treemap-svg.js",
+      "language": "JavaScript",
+      "content": "var w = window.innerWidth-25,\n    h = window.innerHeight-25,\n    color = d3.scale.category20c();\n\nw = 2000;\nh = 400;\n\nvar treemap = d3.layout.treemap()\n    .padding(0)\n    .size([w, h])\n\t.sort(function(a, b) { return a.size - b.size; }) \n    .value(function(d) { return d.size; });\n\n// Tool tip implementatoin\n\nvar tooltip = d3.select(\"body\")\n\t.append(\"div\")\n\t//.style(\"position\", \"absolute\")\n\t.style(\"position\", \"absolute\")\n\t.style(\"height\", \"60px\")\n\t.style(\"width\", \"140px\")\n\t.style(\"background-color\", \"white\")\n\t.style(\"z-index\", \"100\")\n\t.style(\"visibility\", \"hidden\")\n\t.text(\"a simple tooltip\");\n\n// http://stackoverflow.com/questions/288699/get-the-position-of-a-div-span-tag\n// dirty hack/fixes for FireFox (code barfed on FF with NaN/NaN)\nfunction getNodePos(el) \n{\n    var body = d3.select('body').node();\n\n    for (var lx = 0, ly = 0;\n         el != null && el != body;\n         lx += (el.offsetLeft || el.clientLeft), ly += (el.offsetTop || el.clientTop), el = (el.offsetParent || el.parentNode))\n        ;\n    return {x: lx, y: ly};\n}\n\nvar svg = d3.select(\"body\")\n.append(\"svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"g\")\n   .attr(\"transform\", \"translate(-.5,-.5)\");\n\n   \nd3.json(\"flare.json\", function(json) {\n  var cell = svg.data([json]).selectAll(\"g\")\n        .data(treemap.nodes(json).filter(function(d) { return !d.children; }))\n\t\t//.sort(function(a, b) { return a.size - b.size; }) \n   .enter().append(\"g\")\n     .attr(\"class\", \"cell\")\n      .attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; });\n\n             // calculate most of the coordinates for tooltipping just once:\n             var root = d3.select(\"svg\"); // WARNING: only works when the first SVG in the page is us!\n             var scr = { x: window.scrollX, y: window.scrollY, w: window.innerWidth, h: window.innerHeight };\n             // it's jolly rotten but <body> width/height can be smaller than the SVG it's carrying inside! :-((\n             var body_sel = d3.select('body');\n             // this is browser-dependent, but screw that for now!\n             var body = { w: body_sel.node().offsetWidth, h: body_sel.node().offsetHeight };\n             var doc = { w: document.width, h: document.height };\n             var svgpos = getNodePos(root.node());\n             var dist = { x: 10, y: 10 };\n\t  \n\t  \n\t  //if node returns null for children, display, else display:none;\n\t  \n cell.append(\"rect\")\n     .attr(\"width\", function(d) { return d.dx; })\n     .attr(\"height\", function(d ) { return d.dy; })\n\t .style(\"stroke-width\", 2)\n\t .style(\"stroke\", \"blue\")\n\t .style(\"fill\", function(d) { return d.color})\n\t //.style(\"fill-opacity\", .5)\n\t .on(\"mousemove\", function(){\n             var m = d3.mouse(root.node());\n             scr.x = window.scrollX;\n             scr.y = window.scrollY;\n             m[0] += svgpos.x;\n             m[1] += svgpos.y;\n                 tooltip.style(\"right\", \"\");\n                 tooltip.style(\"left\", \"\");\n                 tooltip.style(\"bottom\", \"\");\n                 tooltip.style(\"top\", \"\");\n             console.log('coordinates: doc/body/scr/svgpos/mouse: ', doc, body, scr, svgpos, m);\n             if (m[0] > scr.x + scr.w / 2) {\n                 tooltip.style(\"right\", (body.w - m[0] + dist.x) + \"px\");\n             }\n             else {\n                 tooltip.style(\"left\", (m[0] + dist.x) + \"px\");\n             }\n\n             if (m[1] > scr.y + scr.h / 2) {\n                 tooltip.style(\"bottom\", (body.h - m[1] + dist.y) + \"px\");\n             }\n             else {\n                 tooltip.style(\"top\", (m[1] + dist.y) + \"px\");\n             }\n             tooltip.style(\"visibility\", \"visible\");\n         })\n\t .on(\"mouseout\", function(){\n             tooltip.style(\"visibility\", \"hidden\");\n         });\n\t/*.on(\"mouseover\",  function() { \n\t\td3.select(this).style(\"fill-opacity\", .5).style(\"stroke-width\", 4);\n\t\t//d3.select(\"rect\").attr(\"visibility\", \"visible\");\n\t})\n\t.on(\"mouseout\",  function() {\n\t\td3.select(this).style(\"fill\",function(d) { return d.color}).style(\"fill-opacity\", 1).style(\"stroke-width\", 2);\n\t//d3.select(\"text\").attr(\"visibility\", \"hidden\");\n\t});\n\t*/\n\t //.style(\"fill\", function(d) { return d.children ? color(d.data.name) : null; })\n\t \n\t \n\n  cell.append(\"text\")\n      .attr(\"x\", function(d) { return d.dx /2; })\n\t  .attr(\"y\", function(d ) { return d.dy/2; })\n      //.attr(\"dy\", \".35em\")\n\t  .attr(\"font-size\", 10)\n\t  .attr(\"font-family\", \"Georgia\")\n      .attr(\"text-anchor\", \"middle\")\n\t  //.attr(\"visibility\", \"hidden\")\n\t  .attr(\"fill\", \"white\")\n\t//  .style(\"stroke\", \"white\") .style(\"stroke-width\", .5)\n\t//.text(\"hello\");\n      .text(function(d) { return d.name; });\n\t  \n\t/*\n\t  .each(function(d) {\n        var box,\n            area = d.dx * d.dy,\n            w = d.dx,\n            t = d3.select(this);\n        do {\n          t.style(\"font-size\", w-- + \"px\");\n          box = this.getBBox();\n        } while (norm2(box.x, box.y) > area\n          || norm2(box.x + box.width, box.y) > area\n          || norm2(box.x + box.width, box.y + box.height) > area\n          || norm2(box.x, box.y + box.height) > area);\n      });\n\t  */\n\t  \n\t  \n});\n\n\n\n\n",
+      "raw_url": "https://gist.github.com/raw/2505393/4c926a9196f04629cf6c2dbdeb542a79a570284e/treemap-svg.js",
+      "size": 5135
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "language": null,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "raw_url": "https://gist.github.com/raw/2505393/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.9.0\"></script>\n    <style type=\"text/css\">\n       body\n       {\n          position: relative;  /* http://www.barelyfitz.com/screencast/html-training/css/positioning/ */\n       }\n\n/*       \n       svg \n       { \n          margin-left: 33px;\n          margin-top: 17px;\n       }\n*/\n    </style>\n  </head>\n  <body onResize=\"window.location=window.location;\">\n    <script type=\"text/javascript\" src=\"treemap-svg.js\"></script>\n  </body>\n</html>",
+      "raw_url": "https://gist.github.com/raw/2505393/c32a722d5b022bd86c87a5846b1d748a53916a4b/index.html",
+      "size": 549
+    },
+    "flare.json": {
+      "type": "application/json",
+      "filename": "flare.json",
+      "language": "JSON",
+      "content": "{\n \"name\": \"flare\",\n \"children\": [\n  {\n   \"name\": \"vis\",\n   \"children\": [\n    {\n     \"name\": \"events\",\n     \"children\": [\n      {\"name\": \"DataEvent\", \"size\": 2200, \n\t  \"children\": [\n      {\"name\": \"DataEvent\", \"size\": 800,  \"color\" : \"red\"},\n      {\"name\": \"SelectionEvent\", \"size\": 600,  \"color\" : \"red\"},\n      {\"name\": \"TooltipEvent\", \"size\": 300,  \"color\" : \"red\"},\n      {\"name\": \"VisualizationEvent\", \"size\": 250,  \"color\" : \"red\"},\n\t  {\"name\": \"TooltipEvent\", \"size\": 250,  \"color\" : \"red\"},\n\t  {\"name\": \"DataEvent\", \"size\": 525,  \"color\" : \"red\"},\n      {\"name\": \"SelectionEvent\", \"size\": 375,  \"color\" : \"red\"},\n      {\"name\": \"TooltipEvent\", \"size\": 265,  \"color\" : \"red\"},\n      {\"name\": \"VisualizationEvent\", \"size\": 136,  \"color\" : \"red\"},\n\t  {\"name\": \"TooltipEvent\", \"size\": 100,  \"color\" : \"red\"}\n     ]\n\t  \n\t  \n\t  },\n      {\"name\": \"SelectionEvent\", \"size\": 1400, \n\t   \"children\": [\n      {\"name\": \"DataEvent\", \"size\": 525,  \"color\" : \"aqua\"},\n      {\"name\": \"SelectionEvent\", \"size\": 375,  \"color\" : \"aqua\"},\n      {\"name\": \"TooltipEvent\", \"size\": 265,  \"color\" : \"aqua\"},\n      {\"name\": \"VisualizationEvent\", \"size\": 136,  \"color\" : \"aqua\"},\n\t  {\"name\": \"TooltipEvent\", \"size\": 100,  \"color\" : \"aqua\"}\n     ]},\n      {\"name\": \"TooltipEvent\", \"size\": 1200,  \"color\" : \"green\"},\n      {\"name\": \"VisualizationEvent\", \"size\": 825,  \"color\" : \"blue\"},\n\t  {\"name\": \"TooltipEvent\", \"size\": 400,  \"color\" : \"purple\"}\n     ]\n    }\n   ]\n  }\n ]\n}",
+      "raw_url": "https://gist.github.com/raw/2505393/23d649d8cb87c3660658c87fd0a047b3e87eb28d/flare.json",
+      "size": 1453
+    }
+  },
+  "git_pull_url": "git://gist.github.com/2505393.git",
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "login": "GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 46,
+        "deletions": 0,
+        "additions": 46
+      },
+      "version": "19785d02b29b37e4508ccf3aae1ff64af1e11307",
+      "committed_at": "2012-09-09T08:44:26Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/19785d02b29b37e4508ccf3aae1ff64af1e11307"
+    },
+    {
+      "change_status": {
+        "total": 0,
+        "deletions": 0,
+        "additions": 0
+      },
+      "version": "1c2565c645063566441b3d65b1a423e758ee4bae",
+      "committed_at": "2012-04-27T05:16:58Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/1c2565c645063566441b3d65b1a423e758ee4bae"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "deletions": 1,
+        "additions": 3
+      },
+      "version": "ce457f9122f18659328639f9f0d2986f9638aff5",
+      "committed_at": "2012-04-27T05:14:36Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/ce457f9122f18659328639f9f0d2986f9638aff5"
+    },
+    {
+      "change_status": {
+        "total": 3,
+        "deletions": 1,
+        "additions": 2
+      },
+      "version": "db6b78cc857d0fb27d9d2022b958665d357e4f78",
+      "committed_at": "2012-04-27T05:12:14Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/db6b78cc857d0fb27d9d2022b958665d357e4f78"
+    },
+    {
+      "change_status": {
+        "total": 12,
+        "deletions": 6,
+        "additions": 6
+      },
+      "version": "7da3c78069fe42ab4f7ab6e5e6bc5f5970cb7377",
+      "committed_at": "2012-04-27T05:03:53Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/7da3c78069fe42ab4f7ab6e5e6bc5f5970cb7377"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 0,
+        "additions": 2
+      },
+      "version": "942568b4c029271d7fff1c7603b0cd4d57d49c0a",
+      "committed_at": "2012-04-27T05:01:57Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/942568b4c029271d7fff1c7603b0cd4d57d49c0a"
+    },
+    {
+      "change_status": {
+        "total": 39,
+        "deletions": 18,
+        "additions": 21
+      },
+      "version": "999f5551386d88c91c6fe12a0ddfffa49a8e8d0e",
+      "committed_at": "2012-04-27T04:59:20Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/999f5551386d88c91c6fe12a0ddfffa49a8e8d0e"
+    },
+    {
+      "change_status": {
+        "total": 5,
+        "deletions": 0,
+        "additions": 5
+      },
+      "version": "27902fcf68085bfa2b09d143ef48bea366ff2707",
+      "committed_at": "2012-04-27T04:51:27Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/27902fcf68085bfa2b09d143ef48bea366ff2707"
+    },
+    {
+      "change_status": {
+        "total": 7,
+        "deletions": 2,
+        "additions": 5
+      },
+      "version": "2bf4cc3657be29628902ee0f212fcf80f0ffb8d8",
+      "committed_at": "2012-04-27T04:41:23Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/2bf4cc3657be29628902ee0f212fcf80f0ffb8d8"
+    },
+    {
+      "change_status": {
+        "total": 3,
+        "deletions": 1,
+        "additions": 2
+      },
+      "version": "22a11b9b4546e0f9d7377ce972a21b99971519af",
+      "committed_at": "2012-04-27T04:28:15Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/2505393/22a11b9b4546e0f9d7377ce972a21b99971519af"
+    }
+  ],
+  "html_url": "https://gist.github.com/2505393",
+  "git_push_url": "git@gist.github.com:2505393.git",
+  "url": "https://api.github.com/gists/2505393",
+  "description": "d3.js: show tooltip in absolutely positioned DIV, which position is calculated taking screen size+scroll into consideration",
+  "id": "2505393",
+  "fork_of": {
+    "updated_at": "2012-04-02T16:36:27Z",
+    "public": true,
+    "files": {
+      "treemap-svg.js": {
+        "type": "application/javascript",
+        "filename": "treemap-svg.js",
+        "language": "JavaScript",
+        "raw_url": "https://gist.github.com/raw/2284843/035e10aeb0286c81632036ea1f70dfd6019ce77d/treemap-svg.js",
+        "size": 2952
+      },
+      "treemap-svg.html": {
+        "type": "text/html",
+        "filename": "treemap-svg.html",
+        "language": "HTML",
+        "raw_url": "https://gist.github.com/raw/2284843/ea414007205a9fe94f37563ee162c0cbf8d73e76/treemap-svg.html",
+        "size": 282
+      },
+      "flare.json": {
+        "type": "application/json",
+        "filename": "flare.json",
+        "language": "JSON",
+        "raw_url": "https://gist.github.com/raw/2284843/23d649d8cb87c3660658c87fd0a047b3e87eb28d/flare.json",
+        "size": 1453
+      }
+    },
+    "git_pull_url": "git://gist.github.com/2284843.git",
+    "user": null,
+    "html_url": "https://gist.github.com/2284843",
+    "git_push_url": "git@gist.github.com:2284843.git",
+    "url": "https://api.github.com/gists/2284843",
+    "description": "",
+    "id": "2284843",
+    "comments": 0,
+    "created_at": "2012-04-02T16:36:27Z"
+  },
+  "comments": 0,
+  "created_at": "2012-04-27T03:19:01Z"
+}

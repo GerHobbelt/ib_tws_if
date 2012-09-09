@@ -1,0 +1,223 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-09-09T08:44:27Z",
+      "version": "6524efb4071ab482734c1adf25c424594caf80c3",
+      "url": "https://api.github.com/gists/2512177/6524efb4071ab482734c1adf25c424594caf80c3"
+    },
+    {
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-04-27T20:30:37Z",
+      "version": "1d3bcd2c5c6fedac38aa83ed316460f6132a1d06",
+      "url": "https://api.github.com/gists/2512177/1d3bcd2c5c6fedac38aa83ed316460f6132a1d06"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-04-27T20:28:47Z",
+      "version": "e6c7a7644435f43159f3b877bcd01948bf3d29ba",
+      "url": "https://api.github.com/gists/2512177/e6c7a7644435f43159f3b877bcd01948bf3d29ba"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-04-27T20:21:30Z",
+      "version": "fb98ccbfed13f965071d2c4b191203e43211d482",
+      "url": "https://api.github.com/gists/2512177/fb98ccbfed13f965071d2c4b191203e43211d482"
+    },
+    {
+      "change_status": {
+        "total": 11,
+        "additions": 7,
+        "deletions": 4
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-04-27T20:16:34Z",
+      "version": "66af571b27c0c12662fca24d48b591daa3593e7e",
+      "url": "https://api.github.com/gists/2512177/66af571b27c0c12662fca24d48b591daa3593e7e"
+    },
+    {
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-04-27T19:43:38Z",
+      "version": "7cb5accffd996f2ae83e73d9ddabeb0b33b3b58d",
+      "url": "https://api.github.com/gists/2512177/7cb5accffd996f2ae83e73d9ddabeb0b33b3b58d"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-04-27T19:37:44Z",
+      "version": "b253ca10ecfc69b569bac669f5714bcc140faa4d",
+      "url": "https://api.github.com/gists/2512177/b253ca10ecfc69b569bac669f5714bcc140faa4d"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-04-27T19:36:09Z",
+      "version": "725c62512337ca92814b66356cb5f1ebe99411fd",
+      "url": "https://api.github.com/gists/2512177/725c62512337ca92814b66356cb5f1ebe99411fd"
+    },
+    {
+      "change_status": {
+        "total": 47,
+        "additions": 47,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-04T19:24:00Z",
+      "version": "b53da03b94537625e2281a3513a8db19e0411ed3",
+      "url": "https://api.github.com/gists/2512177/b53da03b94537625e2281a3513a8db19e0411ed3"
+    }
+  ],
+  "description": "Chained Transitions",
+  "html_url": "https://gist.github.com/2512177",
+  "comments": 0,
+  "created_at": "2012-04-27T19:35:07Z",
+  "git_pull_url": "git://gist.github.com/2512177.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/2512177/b45e6ab622bdc8e6f98205a371c291b992e7b1da/index.html",
+      "size": 1018,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.9.1\"></script>\n    <style type=\"text/css\">\n\ncircle {\n  fill: #ccc;\n  fill-opacity: .5;\n  stroke: #999;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    y = d3.scale.ordinal().domain(d3.range(50)).rangePoints([20, h - 20]),\n    t0 = Date.now(),\n    d = y.domain();\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvar circle = svg.selectAll(\"circle\")\n    .data(d)\n  .enter().append(\"svg:circle\")\n    .attr(\"r\", 16)\n    .attr(\"cx\", 20)\n    .attr(\"cy\", y)\n    .each(slide(20, w - 20));\n\nvar el_count = d3.max(d) - d3.min(d) + 1;\n\nfunction slide(x0, x1, t) {\n  return function(d, i, j) {\n    t0 += 50;\n    t = t || t0;\n    t += 50 * el_count;\n    d3.select(this).transition()\n        .duration(t - Date.now())\n        .attr(\"cx\", x1)\n        .each(\"end\", slide(x1, x0, t));\n  };\n}\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/2512177/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    }
+  },
+  "git_push_url": "git@gist.github.com:2512177.git",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mbostock",
+      "id": 230541
+    },
+    "description": "Chained Transitions",
+    "html_url": "https://gist.github.com/1125997",
+    "comments": 0,
+    "created_at": "2011-08-04T19:23:59Z",
+    "git_pull_url": "git://gist.github.com/1125997.git",
+    "public": true,
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/1125997/bd0c18853aac69659f98c66cad9397437c0670f0/index.html",
+        "size": 907,
+        "language": "HTML"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1125997.git",
+    "updated_at": "2011-08-04T19:23:59Z",
+    "url": "https://api.github.com/gists/1125997",
+    "id": "1125997"
+  },
+  "updated_at": "2012-09-09T08:50:36Z",
+  "url": "https://api.github.com/gists/2512177",
+  "id": "2512177"
+}

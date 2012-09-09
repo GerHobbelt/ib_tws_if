@@ -1,0 +1,79 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "a858a54895a4242c16f7f43f92fd343d",
+        "login": "nkhine",
+        "avatar_url": "https://secure.gravatar.com/avatar/a858a54895a4242c16f7f43f92fd343d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/nkhine",
+        "id": 85080
+      },
+      "created_at": "2012-07-10T07:16:11Z",
+      "updated_at": "2012-07-10T07:16:11Z",
+      "url": "https://api.github.com/gists/3081761",
+      "id": "3081761"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_push_url": "git@gist.github.com:1020902.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "9cbfe3a46de6069d06becd8f6675d467abb76702",
+      "change_status": {
+        "total": 169,
+        "additions": 169,
+        "deletions": 0
+      },
+      "committed_at": "2011-06-11T20:12:57Z",
+      "url": "https://api.github.com/gists/1020902/9cbfe3a46de6069d06becd8f6675d467abb76702"
+    }
+  ],
+  "description": "Superformula Tweening (Christophe Viau)",
+  "comments": 0,
+  "created_at": "2011-06-11T20:12:57Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1020902",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1020902/491df6d156da5c6b373263174dd75b320340cd85/index.html",
+      "size": 1517,
+      "content": "<!DOCTYPE html>\n  <html>\n  <head>\n    <title>Superformula</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <script type=\"text/javascript\" src=\"superformula.js\"></script>\n    <style type=\"text/css\">\n\npath {\n  stroke-width: 1.5px;\n}\n\npath.small {\n  fill: steelblue;\n}\n\npath.big {\n  stroke: #666;\n  fill: #ddd;\n}\n\npath.small:hover {\n  stroke: steelblue;\n  fill: lightsteelblue;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar size = 1000;\n\nvar x = d3.scale.ordinal()\n    .domain(superformulaTypes)\n    .rangePoints([0, 960], 1);\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", 960)\n    .attr(\"height\", 500);\n\nvar small = superformula()\n    .type(String)\n    .size(size);\n\nvar big = superformula()\n    .type(\"square\")\n    .size(size * 50)\n    .segments(360);\n\nsvg.selectAll(\"a\")\n    .data(superformulaTypes)\n  .enter().append(\"svg:a\")\n    .attr(\"xlink:title\", String)\n    .attr(\"transform\", function(d, i) { return \"translate(\"+ x(d) + \",40)\"; })\n  .append(\"svg:path\")\n    .attr(\"class\", \"small\")\n    .attr(\"d\", small)\n    .on(\"mousedown\", function() { d3.select(this).style(\"fill\", \"aliceblue\"); })\n    .on(\"mouseup\", function() { d3.select(this).style(\"fill\", null); })\n    .on(\"click\", function(d) { d3.select(\".big\").transition().duration(500).attr(\"d\", big.type(d)); });\n\nsvg.append(\"svg:path\")\n    .attr(\"class\", \"big\")\n    .attr(\"transform\", \"translate(450,250)\")\n    .attr(\"d\", big);\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/1020902/f4d522e6d791d357582b53277e91a6ac35c47094/README.md",
+      "size": 349,
+      "content": "[Christophe Viau](http://christopheviau.com/) implemented a new shape type for [D3.js](http://mbostock.github.com/d3/) based on [superformulas](http://en.wikipedia.org/wiki/Superformula). One nice property of these shapes is that you can easily tween between two shapes by simply interpolating the control points. Click on the blue shapes to try it!",
+      "language": "Markdown"
+    },
+    "superformula.js": {
+      "type": "application/javascript",
+      "filename": "superformula.js",
+      "raw_url": "https://gist.github.com/raw/1020902/cebb25cf6b5f449bc8cff88a504111203002eca2/superformula.js",
+      "size": 3227,
+      "content": "(function() {\n  var _symbol = d3.svg.symbol(),\n      _line = d3.svg.line();\n\n  superformula = function() {\n    var type = _symbol.type(),\n        size = _symbol.size(),\n        segments = size,\n        params = {};\n\n    function superformula(d, i) {\n      var n, p = _superformulaTypes[type.call(this, d, i)];\n      for (n in params) p[n] = params[n].call(this, d, i);\n      return _superformulaPath(p, segments.call(this, d, i), Math.sqrt(size.call(this, d, i)));\n    }\n\n    superformula.type = function(x) {\n      if (!arguments.length) return type;\n      type = d3.functor(x);\n      return superformula;\n    };\n\n    superformula.param = function(name, value) {\n      if (arguments.length < 2) return params[name];\n      params[name] = d3.functor(value);\n      return superformula;\n    };\n\n    // size of superformula in square pixels\n    superformula.size = function(x) {\n      if (!arguments.length) return size;\n      size = d3.functor(x);\n      return superformula;\n    };\n\n    // number of discrete line segments\n    superformula.segments = function(x) {\n      if (!arguments.length) return segments;\n      segments = d3.functor(x);\n      return superformula;\n    };\n\n    return superformula;\n  };\n\n  function _superformulaPath(params, n, diameter) {\n    var i = -1,\n        dt = 2 * Math.PI / n,\n        t,\n        r = 0,\n        x,\n        y,\n        points = [];\n\n    while (++i < n) {\n      t = params.m * (i * dt - Math.PI) / 4;\n      t = Math.pow(Math.abs(Math.pow(Math.abs(Math.cos(t) / params.a), params.n2)\n        + Math.pow(Math.abs(Math.sin(t) / params.b), params.n3)), -1 / params.n1);\n      if (t > r) r = t;\n      points.push(t);\n    }\n\n    r = diameter * Math.SQRT1_2 / r;\n    i = -1; while (++i < n) {\n      x = (t = points[i] * r) * Math.cos(i * dt);\n      y = t * Math.sin(i * dt);\n      points[i] = [Math.abs(x) < 1e-6 ? 0 : x, Math.abs(y) < 1e-6 ? 0 : y];\n    }\n\n    return _line(points) + \"Z\";\n  }\n\n  var _superformulaTypes = {\n    asterisk: {m: 12, n1: .3, n2: 0, n3: 10, a: 1, b: 1},\n    bean: {m: 2, n1: 1, n2: 4, n3: 8, a: 1, b: 1},\n    butterfly: {m: 3, n1: 1, n2: 6, n3: 2, a: .6, b: 1},\n    circle: {m: 4, n1: 2, n2: 2, n3: 2, a: 1, b: 1},\n    clover: {m: 6, n1: .3, n2: 0, n3: 10, a: 1, b: 1},\n    cloverFour: {m: 8, n1: 10, n2: -1, n3: -8, a: 1, b: 1},\n    cross: {m: 8, n1: 1.3, n2: .01, n3: 8, a: 1, b: 1},\n    diamond: {m: 4, n1: 1, n2: 1, n3: 1, a: 1, b: 1},\n    drop: {m: 1, n1: .5, n2: .5, n3: .5, a: 1, b: 1},\n    ellipse: {m: 4, n1: 2, n2: 2, n3: 2, a: 9, b: 6},\n    gear: {m: 19, n1: 100, n2: 50, n3: 50, a: 1, b: 1},\n    heart: {m: 1, n1: .8, n2: 1, n3: -8, a: 1, b: .18},\n    heptagon: {m: 7, n1: 1000, n2: 400, n3: 400, a: 1, b: 1},\n    hexagon: {m: 6, n1: 1000, n2: 400, n3: 400, a: 1, b: 1},\n    malteseCross: {m: 8, n1: .9, n2: .1, n3: 100, a: 1, b: 1},\n    pentagon: {m: 5, n1: 1000, n2: 600, n3: 600, a: 1, b: 1},\n    rectangle: {m: 4, n1: 100, n2: 100, n3: 100, a: 2, b: 1},\n    roundedStar: {m: 5, n1: 2, n2: 7, n3: 7, a: 1, b: 1},\n    square: {m: 4, n1: 100, n2: 100, n3: 100, a: 1, b: 1},\n    star: {m: 5, n1: 30, n2: 100, n3: 100, a: 1, b: 1},\n    triangle: {m: 3, n1: 100, n2: 200, n3: 200, a: 1, b: 1}\n  };\n\n  superformulaTypes = d3.keys(_superformulaTypes);\n})();\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-06-11T20:13:36Z",
+  "url": "https://api.github.com/gists/1020902",
+  "git_pull_url": "git://gist.github.com/1020902.git",
+  "id": "1020902"
+}

@@ -1,0 +1,228 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+    "login": "mehlah",
+    "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mehlah",
+    "id": 224928
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-26T10:52:31Z",
+      "version": "f97920ddcab26a239472c1c9a565f53d7255c315",
+      "url": "https://api.github.com/gists/1163659/f97920ddcab26a239472c1c9a565f53d7255c315",
+      "change_status": {
+        "total": 6,
+        "additions": 0,
+        "deletions": 6
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-23T22:25:00Z",
+      "version": "23f66e0c1493911d7ea36efe1067175e140a1105",
+      "url": "https://api.github.com/gists/1163659/23f66e0c1493911d7ea36efe1067175e140a1105",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-23T15:20:42Z",
+      "version": "2ea68fb2304d94b4ce4001875d399be1be4c95ca",
+      "url": "https://api.github.com/gists/1163659/2ea68fb2304d94b4ce4001875d399be1be4c95ca",
+      "change_status": {
+        "total": 23,
+        "additions": 0,
+        "deletions": 23
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-23T00:06:50Z",
+      "version": "5138ffabe28ffe9a718b924825d86188ba133df8",
+      "url": "https://api.github.com/gists/1163659/5138ffabe28ffe9a718b924825d86188ba133df8",
+      "change_status": {
+        "total": 5,
+        "additions": 2,
+        "deletions": 3
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-22T23:59:50Z",
+      "version": "56b60ca68428c22d00e7e0eeaaa3688c95d483df",
+      "url": "https://api.github.com/gists/1163659/56b60ca68428c22d00e7e0eeaaa3688c95d483df",
+      "change_status": {
+        "total": 25,
+        "additions": 19,
+        "deletions": 6
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-22T23:43:34Z",
+      "version": "39a2344eea752282fe9ea89f7369763973c6b93e",
+      "url": "https://api.github.com/gists/1163659/39a2344eea752282fe9ea89f7369763973c6b93e",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-22T23:40:04Z",
+      "version": "18621755672b81e6e73215d8651de63f3de1c79e",
+      "url": "https://api.github.com/gists/1163659/18621755672b81e6e73215d8651de63f3de1c79e",
+      "change_status": {
+        "total": 66,
+        "additions": 44,
+        "deletions": 22
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-22T21:36:03Z",
+      "version": "d88c6fe67f2ac5622d48c28feeb2cbb1068e67e4",
+      "url": "https://api.github.com/gists/1163659/d88c6fe67f2ac5622d48c28feeb2cbb1068e67e4",
+      "change_status": {
+        "total": 30,
+        "additions": 15,
+        "deletions": 15
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-22T21:35:20Z",
+      "version": "f872de68f699d6d1cc583e68e7ebba4b5b2a22ae",
+      "url": "https://api.github.com/gists/1163659/f872de68f699d6d1cc583e68e7ebba4b5b2a22ae",
+      "change_status": {
+        "total": 106,
+        "additions": 105,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "c74bdcd3fa7c3d3f23290f46430b1463",
+        "login": "mehlah",
+        "avatar_url": "https://secure.gravatar.com/avatar/c74bdcd3fa7c3d3f23290f46430b1463?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mehlah",
+        "id": 224928
+      },
+      "committed_at": "2011-08-22T21:32:25Z",
+      "version": "b2ab0fc2736a4f882ffde17a7d7b7b188fc2161e",
+      "url": "https://api.github.com/gists/1163659/b2ab0fc2736a4f882ffde17a7d7b7b188fc2161e",
+      "change_status": {
+        "total": 55,
+        "additions": 55,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "D3 Pack Layout",
+  "comments": 0,
+  "created_at": "2011-08-22T21:32:25Z",
+  "git_pull_url": "git://gist.github.com/1163659.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1163659",
+  "git_push_url": "git@gist.github.com:1163659.git",
+  "files": {
+    "pack.css": {
+      "type": "text/css",
+      "filename": "pack.css",
+      "raw_url": "https://gist.github.com/raw/1163659/a315b97b8e105e34ae80c7c323c99f130a20ac3b/pack.css",
+      "size": 198,
+      "content": "circle {\n  fill: rgb(31, 119, 180);\n  fill-opacity: .25;\n  stroke: rgb(31, 119, 180);\n  stroke-width: 1px;\n}\n\n.leaf circle {\n  fill: #ff7f0e;\n  fill-opacity: 1;\n}\n\ntext {\n  font: 10px sans-serif;\n}\n",
+      "language": "CSS"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1163659/10cce393a6d73c32da294c655407aba199e88012/index.html",
+      "size": 581,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Circle Packing</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.29.1\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?1.29.1\"></script>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"pack.css\"/>\n  </head>\n  <body>\n  \t<button id=\"travel\" class=\"first active\">Time travel</button>\n    <div id=\"chart\"></div>\n    <script type=\"text/javascript\" src=\"pack.js\"></script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "data.json": {
+      "type": "application/json",
+      "filename": "data.json",
+      "raw_url": "https://gist.github.com/raw/1163659/678269bdc817b20a54fb1b251753d67e0e81b581/data.json",
+      "size": 1881,
+      "content": "{\n\t\"name\": \"EDF\",\n\t\"children\":\n\t[\n\t\t{\n\t\t\t\"name\": \"Stratégie et développement\",\n\t\t\t\"children\":\n\t\t\t[\n\t\t\t\t{\"name\": \"Univers concurrentiel\", \"size\": 764, \"size2\": 1000},\n\t\t\t\t{\"name\": \"Développement économique\", \"size\": 283, \"size2\": 298},\n\t\t\t\t{\"name\": \"Développement économique\", \"size\": 1484, \"size2\": 1432},\n\t\t\t\t{\"name\": \"Difficultés économiques\", \"size\": 647, \"size2\": 654},\n\t\t\t\t{\"name\": \"Innovation, R&D\", \"size\": 321, \"size2\": 320},\n\t\t\t\t{\"name\": \"Santé financière\", \"size\": 3282, \"size2\": 3260},\n\t\t\t\t{\"name\": \"Image boursière\", \"size\": 988, \"size2\": 900}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Nucléaire\",\n\t\t\t\"children\":\n\t\t\t[\n\t\t\t\t{\"name\": \"Sûreté\", \"size\": 2764, \"size2\": 3000},\n\t\t\t\t{\"name\": \"Critiques\", \"size\": 2764, \"size2\": 2890}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Actions pour l'environnement\",\n\t\t\t\"children\":\n\t\t\t[\n\t\t\t\t{\"name\": \"Préserver l'envirionnement\", \"size\": 2284, \"size2\": 2100},\n\t\t\t\t{\"name\": \"Energie renouvelables\", \"size\": 600, \"size2\": 788}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Mission de Service public\",\n\t\t\t\"children\":\n\t\t\t[\n\t\t\t\t{\"name\": \"Mission de service public\", \"size\": 6374, \"size2\": 6300}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Les métiers d'EDF\",\n\t\t\t\"children\":\n\t\t\t[\n\t\t\t\t{\"name\": \"qualité du service\", \"size\": 645, \"size2\": 900}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Relation client\",\n\t\t\t\"children\":\n\t\t\t[\n\t\t\t\t{\"name\": \"Prix\", \"size\": 645, \"size2\": 800},\n\t\t\t\t{\"name\": \"Incident facturation\", \"size\": 3200, \"size2\": 3234},\n\t\t\t\t{\"name\": \"Qualité de la relation client\", \"size\": 4321, \"size2\": 4322},\n\t\t\t\t{\"name\": \"Optimiser la consommation\", \"size\": 645, \"size2\": 780}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Comminucation\",\n\t\t\t\"children\":\n\t\t\t[\n\t\t\t\t{\"name\": \"Sponsoring / Mécénat\", \"size\": 345, \"size2\": 345}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"name\": \"Climat social\",\n\t\t\t\"children\":\n\t\t\t[\n\t\t\t\t{\"name\": \"Institutions sociales\", \"size\": 2284, \"size2\": 2345},\n\t\t\t\t{\"name\": \"Climat social\", \"size\": 600, \"size2\": 800}\n\t\t\t]\n\t\t}\n\t]\n}",
+      "language": "JSON"
+    },
+    "pack.js": {
+      "type": "application/javascript",
+      "filename": "pack.js",
+      "raw_url": "https://gist.github.com/raw/1163659/bbf3a85833f9eafe26b6eae117e1d8ccb8b62a05/pack.js",
+      "size": 1573,
+      "content": "var w = 600,\n\th = 600,\n\tformat = d3.format(\",d\");\n\nvar pack = d3.layout.pack()\n\t.size([w - 4, h - 4])\n\t.value(function(d) { return d.size; });\n\t\t\n\n\nvar vis = d3.select(\"#chart\").append(\"svg:svg\")\n\t.attr(\"width\", w)\n    .attr(\"height\", h)\n\t.attr(\"class\", \"pack\")\n\t.append(\"svg:g\")\n\t.attr(\"transform\", \"translate(2, 2)\");\n\nd3.json(\"data.json\", function(json) {\t\n    \n    var node = vis.data([json]).selectAll(\"g.node\")\n\t\t.data(pack.nodes)\n\t\t.enter().append(\"svg:g\")\n\t\t.attr(\"class\", function(d) { return d.children ? \"node\" : \"leaf node\"; })\n\t\t.attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; });\n\t\t\t\n\t\tnode.append(\"svg:circle\")\n\t\t\t.attr(\"r\", function(d) { return d.r; });\n\t\t\n\t\tnode.filter(function(d) { return !d.children; }).append(\"svg:text\")\n\t\t\t.attr(\"text-anchor\", \"middle\")\n\t\t\t.attr(\"dy\", \".3em\")\n\t\t\t.text(function(d) { return d.name.substring(0, d.r / 3); });\n\t\t\t\n\tvar dimensions = [\"size\", \"size2\"];\n\n\tvar index = 0; \n\t\n\tsetInterval(function() {\n\t\n    \tvar dimension = dimensions[index++]; \n    \tif (index >= dimensions.length) index = 0; \n    \t// update the layout's value function \n    \tpack.value(function(d) { return d[dimension]; });\n    \t\n    \tnode.data([json]).selectAll(\"g.node\")\n\t\t\t.data(pack.nodes)\n\t\t\t.transition()\n\t\t\t.duration(1000)\n\t\t\t.attr(\"class\", function(d) { return d.children ? \"node\" : \"leaf node\"; })\n\t\t\t.attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; });\n\t\t\t\n\t\tnode.selectAll(\"circle\")\n\t\t\t.transition()\n\t\t\t.duration(1000)\n\t\t\t.attr(\"r\", function(d) { return d.r; });\n\n  }, 1000); \n\n\n});\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-08-22T21:32:25Z",
+  "url": "https://api.github.com/gists/1163659",
+  "id": "1163659"
+}

@@ -1,0 +1,97 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/583229.git",
+  "history": [
+    {
+      "user": null,
+      "version": "af0f8625b119722201d126ef7d8d29a2b5ded36d",
+      "change_status": {
+        "total": 9,
+        "additions": 9,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/583229/af0f8625b119722201d126ef7d8d29a2b5ded36d",
+      "committed_at": "2010-09-20T04:40:26Z"
+    },
+    {
+      "user": null,
+      "version": "562e1fba10a575938ce258c10d5ea31360bb8837",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/583229/562e1fba10a575938ce258c10d5ea31360bb8837",
+      "committed_at": "2010-09-19T06:42:26Z"
+    },
+    {
+      "user": null,
+      "version": "4be124345fc4351230d00f4187212f8cbc61ac7d",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/583229/4be124345fc4351230d00f4187212f8cbc61ac7d",
+      "committed_at": "2010-09-17T02:56:22Z"
+    },
+    {
+      "user": null,
+      "version": "dfff891832b56524ab72988c0eaeb16143968dd2",
+      "change_status": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/583229/dfff891832b56524ab72988c0eaeb16143968dd2",
+      "committed_at": "2010-09-17T02:54:57Z"
+    },
+    {
+      "user": null,
+      "version": "1d98baccf00fe75a757074dc4c535bb6155c8bea",
+      "change_status": {
+        "total": 37,
+        "additions": 37,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/583229/1d98baccf00fe75a757074dc4c535bb6155c8bea",
+      "committed_at": "2010-09-16T21:46:31Z"
+    }
+  ],
+  "description": "Pale Dawn",
+  "html_url": "https://gist.github.com/583229",
+  "git_push_url": "git@gist.github.com:583229.git",
+  "comments": 0,
+  "created_at": "2010-09-16T21:46:31Z",
+  "public": true,
+  "files": {
+    "readme.mkd": {
+      "raw_url": "https://gist.github.com/raw/583229/4fd6c59ad3c2c410d35704014f1458a41685b38f/readme.mkd",
+      "type": "text/plain",
+      "filename": "readme.mkd",
+      "size": 646,
+      "content": "The &ldquo;Pale Dawn&rdquo; tileset has a calm, restrained style designed to work well with lots of data points. It&rsquo;s less about the geographical information as such, and more about providing a suitable background to foreground information.\n\nThis map is constructed using a single [image](http://polymaps.org/docs/#image) layer of [CloudMade](http://www.cloudmade.com/) tiles. The tiles are in spherical mercator coordinates, and the map has standard interaction controls, so this basic example is a useful starting point for customization. Register a [developer account](http://cloudmade.com/register) with CloudMade for your own API key.\n",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/583229/9266c2775247b5f370a7e95855a9171f15762ed7/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1110,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.2.0/polymaps.min.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/simplegeo/polymaps/raw/v2.2.0/examples/example.css\");\n\nhtml, body {\n  height: 100%;\n}\n\nsvg {\n  display: block;\n}\n\n    </style>\n  </head>\n  <body id=\"map\">\n    <script type=\"text/javascript\">\n\nvar po = org.polymaps;\n\nvar map = po.map()\n    .container(document.getElementById(\"map\").appendChild(po.svg(\"svg\")))\n    .add(po.interact())\n    .add(po.hash());\n\nmap.add(po.image()\n    .url(po.url(\"http://{S}tile.cloudmade.com\"\n    + \"/1a1b06b230af4efdbb989ea99e9841af\" // http://cloudmade.com/register\n    + \"/998/256/{Z}/{X}/{Y}.png\")\n    .hosts([\"a.\", \"b.\", \"c.\", \"\"])));\n\nmap.add(po.compass()\n    .pan(\"none\"));\n\n    </script>\n    <span id=\"copy\">\n      &copy; 2010\n      <a href=\"http://www.cloudmade.com/\">CloudMade</a>,\n      <a href=\"http://www.openstreetmap.org/\">OpenStreetMap</a> contributors,\n      <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CCBYSA</a>.\n    </span>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2010-09-20T04:40:26Z",
+  "url": "https://api.github.com/gists/583229",
+  "id": "583229"
+}

@@ -1,0 +1,116 @@
+{
+  "git_push_url": "git@gist.github.com:584742.git",
+  "forks": [
+
+  ],
+  "updated_at": "2010-09-18T16:46:02Z",
+  "public": true,
+  "html_url": "https://gist.github.com/584742",
+  "files": {
+    "button.css": {
+      "type": "text/css",
+      "filename": "button.css",
+      "language": "CSS",
+      "raw_url": "https://gist.github.com/raw/584742/ecc15dc2df715de76310107db3ff510eab9dbfc4/button.css",
+      "content": "button {\n  background: #222 url(http://bost.ocks.org/button-overlay.png) repeat-x;\n  color: #fff;\n  text-rendering: optimizeLegibility;\n  text-shadow: 0 -1px 1px #222;\n  padding: 6px 10px 6px 10px;\n  border: 0;\n  border-bottom: 1px solid #222;\n  -moz-border-radius: 5px;\n  -moz-box-shadow: 0 1px 3px #999;\n  -moz-transition: background-color 250ms linear;\n  -webkit-border-radius: 5px;\n  -webkit-box-shadow: 0 1px 3px #999;\n  -webkit-transition: background-color 250ms linear;\n}\n\nbutton:hover {\n  background-color: #555;\n}\n\nbutton.confirm {\n  background-color: brown;\n  -webkit-animation-name: pulse;\n  -webkit-animation-iteration-count: infinite;\n  -webkit-animation-delay: 250ms;\n  -webkit-animation-duration: 1000ms;\n  -webkit-animation-direction: alternate;\n}\n\n@-webkit-keyframes pulse {\n  0% { background-color: brown; }\n  100% { background-color: red; }\n}",
+      "size": 861
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "raw_url": "https://gist.github.com/raw/584742/15a7138c6cc028adfb953106c1795d3f890f1019/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>CSS3 Modal Button</title>\n    <style type=\"text/css\">\n\n@import url(\"button.css\");\n\nbody {\n  margin: 0;\n}\n\ncenter {\n  position: relative;\n  top: 250px;\n}\n\n#button {\n  position: relative;\n  bottom: 1em;\n  font: 16px Helvetica Neue;\n  width: 200px;\n}\n\n    </style>\n  </head>\n  <body>\n    <center>\n      <button id=\"button\">Launch missile!</button>\n    </center>\n    <script type=\"text/javascript\">\n\nvar button = document.getElementById(\"button\");\nbutton.addEventListener(\"click\", confirm(button), false);\n\nfunction confirm(button) {\n  var className = button.getAttribute(\"class\"),\n      html = button.innerHTML,\n      then,\n      state = 0;\n\n  button.addEventListener(\"mouseout\", function() {\n    if (state == 1) cancel();\n  }, false);\n\n  function cancel() {\n    state = 0;\n    button.setAttribute(\"class\", className);\n    button.innerHTML = html;\n  }\n\n  return function() {\n    if (state) {\n      if (new Date() - then > 500) {\n        state = 2; // launched\n        button.innerHTML = \"Missile launched!\";\n        setTimeout(cancel, 5000); // reset\n      }\n    } else {\n      state = 1; // confirming\n      then = +new Date();\n      button.setAttribute(\"class\", className + \" confirm\");\n      button.innerHTML = \"Are you sure?\";\n    }\n  };\n}\n\n    </script>\n  </body>\n</html>",
+      "size": 1316
+    },
+    "README.mkd": {
+      "type": "text/plain",
+      "filename": "README.mkd",
+      "language": "Markdown",
+      "raw_url": "https://gist.github.com/raw/584742/0dc5993eecc6be5db61d1d7a4953837796a04823/README.mkd",
+      "content": "A frequent challenge in user interface design is how to avoid accidental destructive actions. *Destructive* actions are non-undoable; for example, you might want to allow the user to delete a file, and once deleted the file cannot be restored. JavaScript provides some simple facilities for this, such as the `confirm` dialog box, but modal interfaces are annoying and disruptive: they force the user to confirm or cancel the prompt before doing anything else, even accessing another browser tab or window.\n\nTaking a queue from the elegant solution in iOS, here is a modal button. The button serves as its own confirmation dialog by asking &ldquo;Are you sure?&rdquo; on the first click. If the user clicks again, then the action is performed. Otherwise, the user can simply mouseout to cancel. CSS3 transitions and animations (in WebKit) are used to draw visual attention to confirmation. Note that unlike popup dialog boxes, the user conveniently does not need to move the mouse to confirm the action.\n\nOne subtlety in the implementation: users may inadvertently double-click on the button. This should not be interpreted as confirmation, so the click handler forces a 500ms delay before allowing confirmation.",
+      "size": 1212
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "url": "https://api.github.com/users/mbostock",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "version": "32affa22f9ea6d6bf4289c9f94cc4388cf3c93af",
+      "change_status": {
+        "total": 3,
+        "deletions": 2,
+        "additions": 1
+      },
+      "committed_at": "2010-09-18T16:46:02Z",
+      "user": null,
+      "url": "https://api.github.com/gists/584742/32affa22f9ea6d6bf4289c9f94cc4388cf3c93af"
+    },
+    {
+      "version": "ef3836191d00b2e2824b5d1703149783c1b35cae",
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "committed_at": "2010-09-18T16:44:55Z",
+      "user": null,
+      "url": "https://api.github.com/gists/584742/ef3836191d00b2e2824b5d1703149783c1b35cae"
+    },
+    {
+      "version": "ac2f5ac9dff2c0eb4e09d9f6574cd01f94363516",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-17T19:48:34Z",
+      "user": null,
+      "url": "https://api.github.com/gists/584742/ac2f5ac9dff2c0eb4e09d9f6574cd01f94363516"
+    },
+    {
+      "version": "6cafaf21313e6845f16a391ee4cadf023abc790a",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-17T19:11:19Z",
+      "user": null,
+      "url": "https://api.github.com/gists/584742/6cafaf21313e6845f16a391ee4cadf023abc790a"
+    },
+    {
+      "version": "aefe59690a24cbd7928a0b196ab70238169fa4c6",
+      "change_status": {
+        "total": 5,
+        "deletions": 5,
+        "additions": 0
+      },
+      "committed_at": "2010-09-17T19:02:34Z",
+      "user": null,
+      "url": "https://api.github.com/gists/584742/aefe59690a24cbd7928a0b196ab70238169fa4c6"
+    },
+    {
+      "version": "1fd5d728f6e8648a14bb300aa847d683804d35aa",
+      "change_status": {
+        "total": 113,
+        "deletions": 0,
+        "additions": 113
+      },
+      "committed_at": "2010-09-17T19:00:53Z",
+      "user": null,
+      "url": "https://api.github.com/gists/584742/1fd5d728f6e8648a14bb300aa847d683804d35aa"
+    }
+  ],
+  "url": "https://api.github.com/gists/584742",
+  "description": "CSS3 Modal Button",
+  "git_pull_url": "git://gist.github.com/584742.git",
+  "id": "584742",
+  "comments": 0,
+  "created_at": "2010-09-17T19:00:49Z"
+}

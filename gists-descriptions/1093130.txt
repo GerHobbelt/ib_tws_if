@@ -1,0 +1,127 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 13,
+        "additions": 7,
+        "deletions": 6
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-07-19T17:21:58Z",
+      "version": "a29fc9e5a82bd619ab5594197889a71cf7758907",
+      "url": "https://api.github.com/gists/1093130/a29fc9e5a82bd619ab5594197889a71cf7758907"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-07-19T17:21:18Z",
+      "version": "2a77256d0185c3ace182640977b59dd131680031",
+      "url": "https://api.github.com/gists/1093130/2a77256d0185c3ace182640977b59dd131680031"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-07-19T17:20:58Z",
+      "version": "27103651ca5af3454907e3485e0e3f3b46952cea",
+      "url": "https://api.github.com/gists/1093130/27103651ca5af3454907e3485e0e3f3b46952cea"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-07-19T17:20:22Z",
+      "version": "d4e048bd1d7e1674e13f6c66f26758bdc0d20345",
+      "url": "https://api.github.com/gists/1093130/d4e048bd1d7e1674e13f6c66f26758bdc0d20345"
+    },
+    {
+      "change_status": {
+        "total": 182,
+        "additions": 182,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-07-19T17:18:14Z",
+      "version": "72c240371200a85816ced3507a6aac5fbb9ae2d3",
+      "url": "https://api.github.com/gists/1093130/72c240371200a85816ced3507a6aac5fbb9ae2d3"
+    }
+  ],
+  "description": "Force Layout (Collapsible, with Labels)",
+  "html_url": "https://gist.github.com/1093130",
+  "comments": 0,
+  "created_at": "2011-07-19T17:18:14Z",
+  "git_pull_url": "git://gist.github.com/1093130.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1093130/68e1881deeaffd1033b5ef3794a60ae51a76a881/index.html",
+      "size": 3580,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.27.2\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.js?1.27.2\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?1.27.2\"></script>\n    <style type=\"text/css\">\n\n.node circle {\n  cursor: pointer;\n  stroke: #3182bd;\n  stroke-width: 1.5px;\n}\n\n.node text {\n  font: 10px sans-serif;\n  pointer-events: none;\n}\n\nline.link {\n  fill: none;\n  stroke: #9ecae1;\n  stroke-width: 1.5px;\n}\n\n    </style>\n  </head>\n  <body>\n    <div id=\"chart\"></div>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    root;\n\nvar force = d3.layout.force()\n    .linkDistance(80)\n    .charge(-120)\n    .gravity(.05)\n    .size([w, h]);\n\nvar vis = d3.select(\"#chart\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nd3.json(\"graph.json\", function(json) {\n  root = json;\n  update();\n});\n\nfunction update() {\n  var nodes = flatten(root),\n      links = d3.layout.tree().links(nodes);\n\n  // Restart the force layout.\n  force\n      .nodes(nodes)\n      .links(links)\n      .start();\n\n  // Update the links…\n  var link = vis.selectAll(\"line.link\")\n      .data(links, function(d) { return d.target.id; });\n\n  // Enter any new links.\n  link.enter().insert(\"svg:line\", \".node\")\n      .attr(\"class\", \"link\")\n      .attr(\"x1\", function(d) { return d.source.x; })\n      .attr(\"y1\", function(d) { return d.source.y; })\n      .attr(\"x2\", function(d) { return d.target.x; })\n      .attr(\"y2\", function(d) { return d.target.y; });\n\n  // Exit any old links.\n  link.exit().remove();\n\n  // Update the nodes…\n  var node = vis.selectAll(\"g.node\")\n      .data(nodes, function(d) { return d.id; })\n\n  node.select(\"circle\")\n      .style(\"fill\", color);\n\n  // Enter any new nodes.\n  var nodeEnter = node.enter().append(\"svg:g\")\n      .attr(\"class\", \"node\")\n      .attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; })\n      .on(\"click\", click)\n      .call(force.drag);\n\n  nodeEnter.append(\"svg:circle\")\n      .attr(\"r\", function(d) { return Math.sqrt(d.size) / 10 || 4.5; })\n      .style(\"fill\", color);\n\n  nodeEnter.append(\"svg:text\")\n      .attr(\"text-anchor\", \"middle\")\n      .attr(\"dy\", \".35em\")\n      .text(function(d) { return d.name; });\n\n  // Exit any old nodes.\n  node.exit().remove();\n\n  // Re-select for update.\n  link = vis.selectAll(\"line.link\");\n  node = vis.selectAll(\"g.node\");\n\n  force.on(\"tick\", function() {\n    link.attr(\"x1\", function(d) { return d.source.x; })\n        .attr(\"y1\", function(d) { return d.source.y; })\n        .attr(\"x2\", function(d) { return d.target.x; })\n        .attr(\"y2\", function(d) { return d.target.y; });\n\n    node.attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; });\n  });\n}\n\n// Color leaf nodes orange, and packages white or blue.\nfunction color(d) {\n  return d._children ? \"#3182bd\" : d.children ? \"#c6dbef\" : \"#fd8d3c\";\n}\n\n// Toggle children on click.\nfunction click(d) {\n  if (d.children) {\n    d._children = d.children;\n    d.children = null;\n  } else {\n    d.children = d._children;\n    d._children = null;\n  }\n  update();\n}\n\n// Returns a list of all nodes under the root.\nfunction flatten(root) {\n  var nodes = [], i = 0;\n\n  function recurse(node) {\n    if (node.children) node.children.forEach(recurse);\n    if (!node.id) node.id = ++i;\n    nodes.push(node);\n  }\n\n  recurse(root);\n  return nodes;\n}\n\n    </script>\n  </body>\n</html>",
+      "language": "HTML"
+    },
+    "graph.json": {
+      "type": "application/json",
+      "filename": "graph.json",
+      "raw_url": "https://gist.github.com/raw/1093130/9de036e90f1fb108517de13410d26913dd42e913/graph.json",
+      "size": 774,
+      "content": "{\n \"name\": \"flare\",\n \"children\": [\n  {\n   \"name\": \"analytics\",\n   \"children\": [\n    {\n     \"name\": \"cluster\",\n     \"children\": [\n      {\"name\": \"AgglomerativeCluster\", \"size\": 3938},\n      {\"name\": \"CommunityStructure\", \"size\": 3812},\n      {\"name\": \"HierarchicalCluster\", \"size\": 6714},\n      {\"name\": \"MergeEdge\", \"size\": 743}\n     ]\n    },\n    {\n     \"name\": \"graph\",\n     \"children\": [\n      {\"name\": \"BetweennessCentrality\", \"size\": 3534},\n      {\"name\": \"LinkDistance\", \"size\": 5731},\n      {\"name\": \"MaxFlowMinCut\", \"size\": 7840},\n      {\"name\": \"ShortestPaths\", \"size\": 5914},\n      {\"name\": \"SpanningTree\", \"size\": 3416}\n     ]\n    },\n    {\n     \"name\": \"optimization\",\n     \"children\": [\n      {\"name\": \"AspectRatioBanker\", \"size\": 7074}\n     ]\n    }\n   ]\n  }\n ]\n}",
+      "language": "JSON"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1093130.git",
+  "updated_at": "2011-07-19T17:18:14Z",
+  "url": "https://api.github.com/gists/1093130",
+  "id": "1093130"
+}

@@ -1,0 +1,84 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/johan",
+        "id": 2459
+      },
+      "created_at": "2011-10-26T01:37:11Z",
+      "updated_at": "2011-10-26T01:37:11Z",
+      "url": "https://api.github.com/gists/1315145",
+      "id": "1315145"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "created_at": "2012-01-30T18:38:08Z",
+      "updated_at": "2012-01-30T18:38:08Z",
+      "url": "https://api.github.com/gists/1705868",
+      "id": "1705868"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-10-25T19:01:58Z",
+      "version": "a2dbb004fccfc7785cae3510a0282adea7047c59",
+      "url": "https://api.github.com/gists/1313857/a2dbb004fccfc7785cae3510a0282adea7047c59",
+      "change_status": {
+        "total": 70,
+        "additions": 70,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Point-Along-Path Interpolation",
+  "comments": 0,
+  "created_at": "2011-10-25T19:01:57Z",
+  "git_pull_url": "git://gist.github.com/1313857.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1313857",
+  "git_push_url": "git@gist.github.com:1313857.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1313857/a1d6940714aa74c8bb0420da7c53b4f61daacfbf/index.html",
+      "size": 1483,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n    <title>Point-Along-Path Interpolation</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.4.6\"></script>\n    <style type=\"text/css\">\n\npath {\n  cursor: pointer;\n  fill: #eee;\n  stroke: #666;\n  stroke-width: 1.5px;\n}\n\ncircle {\n  fill: steelblue;\n  stroke: white;\n  stroke-width: 1.5px;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500;\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + w / 2 + \",\" + h / 2 + \")\");\n\nvar path = svg.append(\"svg:path\")\n    .attr(\"d\", d3.svg.arc()\n    .innerRadius(h / 4)\n    .outerRadius(h / 3)\n    .startAngle(0)\n    .endAngle(Math.PI));\n\nvar circle = svg.append(\"svg:circle\")\n    .attr(\"r\", 6.5)\n    .attr(\"transform\", \"translate(0,\" + -h / 3 + \")\");\n\nfunction transition() {\n  circle.transition()\n      .duration(5000)\n      .attrTween(\"transform\", translateAlong(path.node()))\n      .each(\"end\", transition);\n}\n\ntransition();\n\n// Returns an attrTween for translating along the specified path element.\nfunction translateAlong(path) {\n  var l = path.getTotalLength();\n  return function(d, i, a) {\n    return function(t) {\n      var p = path.getPointAtLength(t * l);\n      return \"translate(\" + p.x + \",\" + p.y + \")\";\n    };\n  };\n}\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/1313857/8bd630f6f787ee4f45ac9a87045978e7842716a9/readme.md",
+      "size": 344,
+      "content": "Demonstrates how to use the [getTotalLength](http://www.w3.org/TR/SVG/paths.html#__svg__SVGPathElement__getTotalLength) and [getPointAtLength](http://www.w3.org/TR/SVG/paths.html#__svg__SVGPathElement__getPointAtLength) methods on SVG path elements to interpolate a point along an existing path. Built with [D3](http://mbostock.github.com/d3/).",
+      "language": "Markdown"
+    }
+  },
+  "updated_at": "2011-10-25T19:01:57Z",
+  "url": "https://api.github.com/gists/1313857",
+  "id": "1313857"
+}

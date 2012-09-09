@@ -1,0 +1,51 @@
+{
+  "forks": [
+
+  ],
+  "updated_at": "2011-08-21T18:04:59Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.29.6\"></script>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", 960)\n    .attr(\"height\", 500);\n\nvar text = svg.append(\"svg:text\")\n    .attr(\"x\", 480)\n    .attr(\"y\", 250)\n    .attr(\"dy\", \".35em\")\n    .attr(\"text-anchor\", \"middle\")\n    .style(\"font\", \"300 128px Helvetica Neue\")\n    .text(\"Hello, getBBox!\");\n\nvar bbox = text.node().getBBox();\n\nvar rect = svg.append(\"svg:rect\")\n    .attr(\"x\", bbox.x)\n    .attr(\"y\", bbox.y)\n    .attr(\"width\", bbox.width)\n    .attr(\"height\", bbox.height)\n    .style(\"fill\", \"#ccc\")\n    .style(\"fill-opacity\", \".3\")\n    .style(\"stroke\", \"#666\")\n    .style(\"stroke-width\", \"1.5px\");\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1160929/1e3cfa635fb159fba9d1e60e45319a130a3ae63d/index.html",
+      "size": 829
+    }
+  },
+  "git_pull_url": "git://gist.github.com/1160929.git",
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 35,
+        "deletions": 0,
+        "additions": 35
+      },
+      "version": "2548f67d89a5c4afbd53a980bb5d240528054e9d",
+      "committed_at": "2011-08-21T18:04:59Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1160929/2548f67d89a5c4afbd53a980bb5d240528054e9d"
+    }
+  ],
+  "html_url": "https://gist.github.com/1160929",
+  "git_push_url": "git@gist.github.com:1160929.git",
+  "url": "https://api.github.com/gists/1160929",
+  "description": "getBBox",
+  "id": "1160929",
+  "comments": 0,
+  "created_at": "2011-08-21T18:04:59Z"
+}

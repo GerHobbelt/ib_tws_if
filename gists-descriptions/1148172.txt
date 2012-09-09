@@ -1,0 +1,85 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+    "login": "benjchristensen",
+    "url": "https://api.github.com/users/benjchristensen",
+    "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 813492
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "login": "benjchristensen",
+        "url": "https://api.github.com/users/benjchristensen",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 813492
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "4b1673df52ce0fdeae98fa1fad7f985c664529d2",
+      "committed_at": "2012-04-02T16:37:29Z",
+      "url": "https://api.github.com/gists/1148172/4b1673df52ce0fdeae98fa1fad7f985c664529d2"
+    },
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "login": "benjchristensen",
+        "url": "https://api.github.com/users/benjchristensen",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 813492
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "0379a608102fbbb2a1910ad015b8a532c773b7c7",
+      "committed_at": "2011-08-16T02:52:24Z",
+      "url": "https://api.github.com/gists/1148172/0379a608102fbbb2a1910ad015b8a532c773b7c7"
+    },
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "login": "benjchristensen",
+        "url": "https://api.github.com/users/benjchristensen",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 813492
+      },
+      "change_status": {
+        "total": 87,
+        "additions": 87,
+        "deletions": 0
+      },
+      "version": "1cd314cfa4a31624487303667eba31583232f640",
+      "committed_at": "2011-08-15T23:59:50Z",
+      "url": "https://api.github.com/gists/1148172/1cd314cfa4a31624487303667eba31583232f640"
+    }
+  ],
+  "description": "Animated Sparkline using SVG Path and d3.js",
+  "comments": 1,
+  "created_at": "2011-08-15T23:59:49Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1148172",
+  "git_pull_url": "git://gist.github.com/1148172.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 3726,
+      "raw_url": "https://gist.github.com/raw/1148172/b0059c21ee981c9b10e3fcdbb6047fcb72e155b1/index.html",
+      "content": "<html>\n\t<head>\n\t\t<title>Animated Sparkline using SVG Path and d3.js</title>\n\t\t<script src=\"http://mbostock.github.com/d3/d3.v2.js\"></script>\n\t\t<style>\n\t\t\t/* tell the SVG path to be a thin blue line without any area fill */\n\t\t\tpath {\n\t\t\t\tstroke: steelblue;\n\t\t\t\tstroke-width: 1;\n\t\t\t\tfill: none;\n\t\t\t}\n\t\t</style>\n\t</head>\n\t<body>\n\n\n\t<div id=\"graph\" class=\"aGraph\" style=\"position:absolute;top:10px;left:10px; float:left; width:300px; height:30px;\"></div>\n\n\n\t<script>\n\t\n\t\t// create an SVG element inside the #graph div that fills 100% of the div\n\t\tvar graph = d3.select(\"#graph\").append(\"svg:svg\").attr(\"width\", \"100%\").attr(\"height\", \"100%\");\n\n\t\t// create a simple data array that we'll plot with a line (this array represents only the Y values, X will just be the index location)\n\t\tvar data = [3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 2, 7, 5, 2, 1, 3, 8, 9, 2, 5, 9, 3, 6, 2, 7, 5, 2, 1, 3, 8, 9, 2, 9];\n\n\t\t// X scale will fit values from 0-10 within pixels 0-100\n\t\tvar x = d3.scale.linear().domain([0, 48]).range([-5, 300]); // starting point is -5 so the first value doesn't show and slides off the edge as part of the transition\n\t\t// Y scale will fit values from 0-10 within pixels 0-100\n\t\tvar y = d3.scale.linear().domain([0, 10]).range([0, 30]);\n\n\t\t// create a line object that represents the SVN line we're creating\n\t\tvar line = d3.svg.line()\n\t\t\t// assign the X function to plot our line as we wish\n\t\t\t.x(function(d,i) { \n\t\t\t\t// verbose logging to show what's actually being done\n\t\t\t\t//console.log('Plotting X value for data point: ' + d + ' using index: ' + i + ' to be at: ' + x(i) + ' using our xScale.');\n\t\t\t\t// return the X coordinate where we want to plot this datapoint\n\t\t\t\treturn x(i); \n\t\t\t})\n\t\t\t.y(function(d) { \n\t\t\t\t// verbose logging to show what's actually being done\n\t\t\t\t//console.log('Plotting Y value for data point: ' + d + ' to be at: ' + y(d) + \" using our yScale.\");\n\t\t\t\t// return the Y coordinate where we want to plot this datapoint\n\t\t\t\treturn y(d); \n\t\t\t})\n\t\t\t.interpolate(\"basis\")\n\t\n\t\t\t// display the line by appending an svg:path element with the data line we created above\n\t\t\tgraph.append(\"svg:path\").attr(\"d\", line(data));\n\t\t\t// or it can be done like this\n\t\t\t//graph.selectAll(\"path\").data([data]).enter().append(\"svg:path\").attr(\"d\", line);\n\t\t\t\n\t\t\t\n\t\t\tfunction redrawWithAnimation() {\n\t\t\t\t// update with animation\n\t\t\t\tgraph.selectAll(\"path\")\n\t\t\t\t\t.data([data]) // set the new data\n\t\t\t\t\t.attr(\"transform\", \"translate(\" + x(1) + \")\") // set the transform to the right by x(1) pixels (6 for the scale we've set) to hide the new value\n\t\t\t\t\t.attr(\"d\", line) // apply the new data values ... but the new value is hidden at this point off the right of the canvas\n\t\t\t\t\t.transition() // start a transition to bring the new value into view\n\t\t\t\t\t.ease(\"linear\")\n\t\t\t\t\t.duration(1000) // for this demo we want a continual slide so set this to the same as the setInterval amount below\n\t\t\t\t\t.attr(\"transform\", \"translate(\" + x(0) + \")\"); // animate a slide to the left back to x(0) pixels to reveal the new value\n\t\t\t\t\t\n\t\t\t\t\t/* thanks to 'barrym' for examples of transform: https://gist.github.com/1137131 */\n\t\t\t}\n\t\t\t\n\t\t\tfunction redrawWithoutAnimation() {\n\t\t\t\t// static update without animation\n\t\t\t\tgraph.selectAll(\"path\")\n\t\t\t\t\t.data([data]) // set the new data\n\t\t\t\t\t.attr(\"d\", line); // apply the new data values\n\t\t\t}\n\t\t\t\n\t\t\tsetInterval(function() {\n\t\t\t   var v = data.shift(); // remove the first element of the array\n\t\t\t   data.push(v); // add a new element to the array (we're just taking the number we just shifted off the front and appending to the end)\n\t\t\t   redrawWithAnimation();\n\t\t\t   //redrawWithoutAnimation();\n\t\t\t}, 1000);\n\t\t\n\t</script>\n\n\t</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1148172.git",
+  "updated_at": "2011-08-15T23:59:49Z",
+  "url": "https://api.github.com/gists/1148172",
+  "id": "1148172"
+}

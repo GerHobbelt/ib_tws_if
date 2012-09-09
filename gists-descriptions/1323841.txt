@@ -1,0 +1,220 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+    "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "SanjayKairam",
+    "url": "https://api.github.com/users/SanjayKairam",
+    "id": 1134165
+  },
+  "git_pull_url": "git://gist.github.com/1323841.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "de66a2af97651838732b9977ea246fa647e05a7c",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1323841/de66a2af97651838732b9977ea246fa647e05a7c",
+      "committed_at": "2011-10-29T04:16:26Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "f133ff1d65e6c3ad4e809060656377f461125796",
+      "change_status": {
+        "total": 2,
+        "additions": 0,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1323841/f133ff1d65e6c3ad4e809060656377f461125796",
+      "committed_at": "2011-10-29T04:15:43Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "13e0785f7f54bf9d9832cfb127165cbf7036b49e",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1323841/13e0785f7f54bf9d9832cfb127165cbf7036b49e",
+      "committed_at": "2011-10-29T04:14:40Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "daae9b78990fce32c2ceb00e05c57169b39c3d65",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1323841/daae9b78990fce32c2ceb00e05c57169b39c3d65",
+      "committed_at": "2011-10-29T03:37:05Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "c3d6778c112dbdb3fa443547c11da26b1ba9aa3a",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1323841/c3d6778c112dbdb3fa443547c11da26b1ba9aa3a",
+      "committed_at": "2011-10-29T03:34:57Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "e24387bb929e15d1fc467ce2886b58abe89ca83d",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1323841/e24387bb929e15d1fc467ce2886b58abe89ca83d",
+      "committed_at": "2011-10-29T03:34:31Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "466dfdabb5aadcb2be3b486518287f1c4c76bd1f",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1323841/466dfdabb5aadcb2be3b486518287f1c4c76bd1f",
+      "committed_at": "2011-10-29T03:34:03Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "ac9ce4d576d3fad4068445dc9f332e092c49f42b",
+      "change_status": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1323841/ac9ce4d576d3fad4068445dc9f332e092c49f42b",
+      "committed_at": "2011-10-29T03:22:32Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "ab730aacdf7d72bacb92e32cf0ae39c3daa1fecf",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1323841/ab730aacdf7d72bacb92e32cf0ae39c3daa1fecf",
+      "committed_at": "2011-10-29T03:20:49Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a6fe9e16cfe9be8606e8ef76cbaf4333",
+        "avatar_url": "https://secure.gravatar.com/avatar/a6fe9e16cfe9be8606e8ef76cbaf4333?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "SanjayKairam",
+        "url": "https://api.github.com/users/SanjayKairam",
+        "id": 1134165
+      },
+      "version": "a16edaa0bd565a414c43e48974dea4e5094dbbc7",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1323841/a16edaa0bd565a414c43e48974dea4e5094dbbc7",
+      "committed_at": "2011-10-29T03:19:54Z"
+    }
+  ],
+  "description": "SF Parking (D3 + Polymaps)",
+  "html_url": "https://gist.github.com/1323841",
+  "git_push_url": "git@gist.github.com:1323841.git",
+  "comments": 0,
+  "created_at": "2011-10-28T23:29:28Z",
+  "public": true,
+  "files": {
+    "parkingmap.js": {
+      "type": "application/javascript",
+      "filename": "parkingmap.js",
+      "size": 3981,
+      "content": "\n// ====================\n// CONSTANTS AND SCALES\n// ====================\n\nvar map_w = 650,\n\tinfo_w = 310,\n\th = 500,\n\theader_h = 80,\n\ttext_h = 300,\n\tpadding = 10;\n\nvar fillCol = d3.scale.linear()\n\t.domain([0, 1])\n\t.range([\"green\", \"red\"]);\n\nvar dotSize = d3.scale.linear()\n\t.domain([0, 1, 10, 100, 1000])\n\t.range([4, 6, 8, 9, 12]);\n\n// ===================\n// POLLING SFPARK DATA\n// cf: http://javascriptweblog.wordpress.com/2010/11/29/json-and-jsonp/\n// ===================\nvar reqURL = 'http://api.sfpark.org/sfpark/rest/availabilityservice?lat=37.79&long=-122.41&radius=3&uom=mile&response=json&jsoncallback=addGarages&pricing=yes';\n\nvar scriptTag = document.createElement('SCRIPT');\nscriptTag.src = reqURL;\n\ndocument.getElementsByTagName('HEAD')[0].appendChild(scriptTag);\n\n// =========================\n// DRAWING MAIN MAP ELEMENTS\n// cf: http://blockses.appspot.com/899670\n// =========================\nvar po = org.polymaps;\n\nvar map = po.map()\n\t.container(d3.select(\"#map\").append(\"svg:svg\").node())\n\t.center({lat:37.779, lon:-122.425})\n\t.zoom(13)\n\t.add(po.drag())\n\t.add(po.wheel().smooth(false))\n\t.add(po.dblclick())\n\t.add(po.arrow());\n\nmap.add(po.image()\n    .url(po.url(\"http://{S}tile.cloudmade.com\"\n    + \"/83a0ee76ff0049748b22c0c831ab5f73\" // CloudMade Developer API Key\n    + \"/998/256/{Z}/{X}/{Y}.png\")\n    .hosts([\"a.\", \"b.\", \"c.\", \"\"])));\n\nmap.add(po.compass()\n\t.pan(\"none\"));\n\nvar infobox = d3.select(\"#detail\")\n\t.append(\"svg:svg\");\n\nvar header = infobox.append(\"svg:g\")\n\t.attr(\"id\", \"info-header\")\n\t.attr(\"width\", info_w - (2 * padding))\n\t.attr(\"height\", header_h)\n\t.attr(\"transform\", \"translate(\" + padding + \",\" + padding + \")\")\n\t.style(\"stroke\", \"#333\")\n\t.style(\"fill\", \"#ddd\");\n\nheader.append(\"svg:text\")\n\t.text(\"Check it out.\");\n\nvar locations = [];\n\n// ===========================================================\n// CALLBACK FUNCTION WHICH PROCESSES DATA RETURNED FROM SFPARK\n// ===========================================================\nvar addGarages = function(data) {\n\tvar num_records = data.NUM_RECORDS;\n\tvar records = data.AVL;\n\n\tfor (var i = 0 ; i < num_records ; i++) {\n\t\tlocObj = new LocationObject(records[i]);\n\t\tlocations.push(locObj);\n\t}\n\t\n\tvar layer = d3.select(\"#map svg\")\n\t\t.insert(\"svg:g\", \".compass\");\n\n\tvar marker = layer.selectAll(\"g\")\n\t\t.data(locations)\n\t\t.enter().append(\"svg:g\")\n\t\t.attr(\"transform\", transform);\n\t\n\tmarker.append(\"svg:circle\")\n\t\t.attr(\"class\", \"garage\")\n\t\t.attr(\"r\", circleSize)\n\t\t.style(\"fill\", fillColor)\n\t\t.on(\"mouseover\", displayInfo);\n\t\n\tmarker.append(\"svg:title\")\n\t\t.attr(\"x\", 7)\n\t\t.attr(\"dy\", \".31em\")\n\t\t.text(function(d) {return d.info.oper + \" spaces, \" + (d.info.oper - d.info.occ) + \" open.\"; });\n\t\t\n\tmap.on(\"move\", function() {\n\t\tlayer.selectAll(\"g\").attr(\"transform\", transform);\n\t});\n\t\n\tfunction fillColor(d) {\n\t\treturn ((d.info.oper > 0) && (d.info.occ >= 0)) ? fillCol(d.info.occ / d.info.oper) : \"gray\";\n\t}\n\t\n\tfunction circleSize(d) {\n\t\treturn ((d.info.oper > 0) && (d.info.occ >= 0)) ? dotSize(d.info.oper - d.info.occ) : 7;\n\t}\n\t\n\tfunction displayInfo(d) {\n\t\t\n\t}\n\t\n\t// HELPER FUNCTIONS FOR ADDGARAGES\n\tfunction LocationObject(record) {\n\t\tvar locData = record.LOC.split(\",\");\n\t\tthis.longitude = parseFloat(locData[0]);\n\t\tthis.latitude = parseFloat(locData[1]);\n\n\t\tthis.info = new InfoObject(record);\n\t\tthis.ophrs = ((record.OPHRS == undefined) ? -1 : record.OPHRS);\t\t// Get back to these.\n\t\tthis.rates = ((record.RATES == undefined) ? -1 : record.RATES);\t\t// Get back to these.\n\n\t}\n\n\tfunction InfoObject(record) {\n\t\tthis.type = record.TYPE;\n\t\tthis.name = record.NAME;\n\t\tthis.desc = record.DESC;\n\t\tthis.inter = record.INTER;\n\t\tthis.tel = record.TEL;\n\t\tthis.occ = ((record.OCC == undefined) ? -1 : parseInt(record.OCC));\t\t// Store -1 if data not available\n\t\tthis.oper = ((record.OPER == undefined) ? -1 : parseInt(record.OPER));\t// Store -1 if data not available\n\t}\n\n\n\tfunction transform(d) {\n\t\td = map.locationPoint({lon: d.longitude, lat: d.latitude})\n\t\treturn \"translate(\" + d.x + \",\" + d.y + \")\";\n\t}\n}",
+      "raw_url": "https://gist.github.com/raw/1323841/8876b94778640277f3f8e7ce706e052350a1da0f/parkingmap.js",
+      "language": "JavaScript"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "size": 1002,
+      "content": "<p>Small project that I used as a tutorial for learning <a href=\"http://mbostock.github.com/d3/\">D3</a>, <a href=\"http://polymaps.org/\">Polymaps</a>, and how to request and process data from other domains using JSONP.</p>\n\n<p>This map displays information from <a href=\"http://sfpark.org/\">SFPark</a> about available parking (on-street and off-street) in SF. Facilities for which the number of occupied/operational spaces are available are displayed using colored dots, where colors indicate availability (red = full, green = empty) and dot sizes indicated the total number of available parking spaces. Facilities without availability information are represented using gray dots of constant size.</p>\n\n<p>I plan to update this a great deal in the future as I keep learning but hopefully this helps you in your mapping endeavors.</p>\n\nMade using by <a href=\"http://sanjaykairam.com/\">Sanjay Kairam</a> using <a href=\"http://mbostock.github.com/d3/\">D3</a> and <a href=\"http://polymaps.org/\">Polymaps</a>",
+      "raw_url": "https://gist.github.com/raw/1323841/1ab5f90784d05137e413d37bec5488f26c203a4a/readme.md",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 922,
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n\t<title>SF Parking (D3 + Polymaps)</title>\n\t<meta name=\"author\" content=\"Sanjay Kairam\">\n        <script type ='text/javascript' src=\"http://mbostock.github.com/d3/d3.js?2.4.6\"></script>\n        <script type ='text/javascript' src=\"http://polymaps.org/polymaps.min.js?2.5.0\"></script>\n\n\t<style type=\"text/css\">\n@import url(\"http://polymaps.org/style.css\");\n\n\thtml, body {\n\t\theight: 100%;\n\t\tbackground: #E6E6E6;\n\t\tmargin: 0;\n\t\tfont: 10px sans-serif;\n\t}\n\t\n\tsvg {\n\t\tdisplay: block;\n\t}\n\t\n\t#map {\n\t\twidth: 650px;\n\t\theight: 500px;\n\t\tfloat: left;\n\t}\n\t\n\t#detail {\n\t\tbackground: #CCCCCC;\n\t\tfloat: left;\n\t}\n\t\n\tcircle.garage {\n\t\tfill-opacity: .5;\n\t\tstroke: white;\n\t\t\n\t}\n\n\t</style>\n</head>\n<body>\n\t<div id=\"map\">\n\t</div>\n\t<div id=\"detail\">\n\t</div>\n\t<script type=\"text/javascript\" src=\"parkingmap.js\"></script>\n</body>\n</html>",
+      "raw_url": "https://gist.github.com/raw/1323841/ed1b6c544d1e6238de0c3f3c4e926a902786b9b0/index.html",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-10-28T23:29:28Z",
+  "url": "https://api.github.com/gists/1323841",
+  "id": "1323841"
+}

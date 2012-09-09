@@ -1,0 +1,270 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "580e00312773d30472c21660f69eb0da",
+    "login": "johan",
+    "url": "https://api.github.com/users/johan",
+    "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 2459
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "825c198e359df2473120470fdfd56c2a07315a05",
+      "committed_at": "2011-10-24T05:29:50Z",
+      "url": "https://api.github.com/gists/1308400/825c198e359df2473120470fdfd56c2a07315a05"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 24,
+        "additions": 14,
+        "deletions": 10
+      },
+      "version": "3532244d317fff7b015723c6c49240f8744162c0",
+      "committed_at": "2011-10-24T05:20:12Z",
+      "url": "https://api.github.com/gists/1308400/3532244d317fff7b015723c6c49240f8744162c0"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 1128,
+        "additions": 565,
+        "deletions": 563
+      },
+      "version": "ec2733bb44cfde3f88274e38d310271e6cd4c952",
+      "committed_at": "2011-10-24T05:06:24Z",
+      "url": "https://api.github.com/gists/1308400/ec2733bb44cfde3f88274e38d310271e6cd4c952"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "version": "eabdb0deb7e29c198f27825332320759c7dbbd1d",
+      "committed_at": "2011-10-01T20:21:01Z",
+      "url": "https://api.github.com/gists/1308400/eabdb0deb7e29c198f27825332320759c7dbbd1d"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 13,
+        "additions": 12,
+        "deletions": 1
+      },
+      "version": "2fa905770e20a33994f46ceaca16d3fd181061f0",
+      "committed_at": "2011-10-01T20:13:06Z",
+      "url": "https://api.github.com/gists/1308400/2fa905770e20a33994f46ceaca16d3fd181061f0"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "version": "2195af8e1fcfe205d7de6d245b998e16733f9763",
+      "committed_at": "2011-10-01T20:09:41Z",
+      "url": "https://api.github.com/gists/1308400/2195af8e1fcfe205d7de6d245b998e16733f9763"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "version": "77b1c571aa2246e56f046eed1857ff4a8db06bfd",
+      "committed_at": "2011-10-01T20:07:37Z",
+      "url": "https://api.github.com/gists/1308400/77b1c571aa2246e56f046eed1857ff4a8db06bfd"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "version": "33ade0dd095be256efd40ef8bcfba8a4c6309825",
+      "committed_at": "2011-10-01T20:06:37Z",
+      "url": "https://api.github.com/gists/1308400/33ade0dd095be256efd40ef8bcfba8a4c6309825"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "version": "d396938088ec01d173aa0e3d867dc09cc8ae7b0c",
+      "committed_at": "2011-10-01T20:04:46Z",
+      "url": "https://api.github.com/gists/1308400/d396938088ec01d173aa0e3d867dc09cc8ae7b0c"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "version": "c4144e431d2900619ff834599e494a813ad50503",
+      "committed_at": "2011-10-01T20:02:14Z",
+      "url": "https://api.github.com/gists/1308400/c4144e431d2900619ff834599e494a813ad50503"
+    }
+  ],
+  "description": "D3 Show Reel",
+  "comments": 0,
+  "created_at": "2011-10-24T04:53:34Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1308400",
+  "git_pull_url": "git://gist.github.com/1308400.git",
+  "files": {
+    "stocks.csv": {
+      "type": "text/csv",
+      "filename": "stocks.csv",
+      "size": 9727,
+      "raw_url": "https://gist.github.com/raw/1308400/2574f15fcd2d93e9f6bc64936c20d32572bd9b76/stocks.csv",
+      "content": "symbol,date,price\nMSFT,Jan 2000,39.81\nMSFT,Feb 2000,36.35\nMSFT,Mar 2000,43.22\nMSFT,Apr 2000,28.37\nMSFT,May 2000,25.45\nMSFT,Jun 2000,32.54\nMSFT,Jul 2000,28.4\nMSFT,Aug 2000,28.4\nMSFT,Sep 2000,24.53\nMSFT,Oct 2000,28.02\nMSFT,Nov 2000,23.34\nMSFT,Dec 2000,17.65\nMSFT,Jan 2001,24.84\nMSFT,Feb 2001,24\nMSFT,Mar 2001,22.25\nMSFT,Apr 2001,27.56\nMSFT,May 2001,28.14\nMSFT,Jun 2001,29.7\nMSFT,Jul 2001,26.93\nMSFT,Aug 2001,23.21\nMSFT,Sep 2001,20.82\nMSFT,Oct 2001,23.65\nMSFT,Nov 2001,26.12\nMSFT,Dec 2001,26.95\nMSFT,Jan 2002,25.92\nMSFT,Feb 2002,23.73\nMSFT,Mar 2002,24.53\nMSFT,Apr 2002,21.26\nMSFT,May 2002,20.71\nMSFT,Jun 2002,22.25\nMSFT,Jul 2002,19.52\nMSFT,Aug 2002,19.97\nMSFT,Sep 2002,17.79\nMSFT,Oct 2002,21.75\nMSFT,Nov 2002,23.46\nMSFT,Dec 2002,21.03\nMSFT,Jan 2003,19.31\nMSFT,Feb 2003,19.34\nMSFT,Mar 2003,19.76\nMSFT,Apr 2003,20.87\nMSFT,May 2003,20.09\nMSFT,Jun 2003,20.93\nMSFT,Jul 2003,21.56\nMSFT,Aug 2003,21.65\nMSFT,Sep 2003,22.69\nMSFT,Oct 2003,21.45\nMSFT,Nov 2003,21.1\nMSFT,Dec 2003,22.46\nMSFT,Jan 2004,22.69\nMSFT,Feb 2004,21.77\nMSFT,Mar 2004,20.46\nMSFT,Apr 2004,21.45\nMSFT,May 2004,21.53\nMSFT,Jun 2004,23.44\nMSFT,Jul 2004,23.38\nMSFT,Aug 2004,22.47\nMSFT,Sep 2004,22.76\nMSFT,Oct 2004,23.02\nMSFT,Nov 2004,24.6\nMSFT,Dec 2004,24.52\nMSFT,Jan 2005,24.11\nMSFT,Feb 2005,23.15\nMSFT,Mar 2005,22.24\nMSFT,Apr 2005,23.28\nMSFT,May 2005,23.82\nMSFT,Jun 2005,22.93\nMSFT,Jul 2005,23.64\nMSFT,Aug 2005,25.35\nMSFT,Sep 2005,23.83\nMSFT,Oct 2005,23.8\nMSFT,Nov 2005,25.71\nMSFT,Dec 2005,24.29\nMSFT,Jan 2006,26.14\nMSFT,Feb 2006,25.04\nMSFT,Mar 2006,25.36\nMSFT,Apr 2006,22.5\nMSFT,May 2006,21.19\nMSFT,Jun 2006,21.8\nMSFT,Jul 2006,22.51\nMSFT,Aug 2006,24.13\nMSFT,Sep 2006,25.68\nMSFT,Oct 2006,26.96\nMSFT,Nov 2006,27.66\nMSFT,Dec 2006,28.13\nMSFT,Jan 2007,29.07\nMSFT,Feb 2007,26.63\nMSFT,Mar 2007,26.35\nMSFT,Apr 2007,28.3\nMSFT,May 2007,29.11\nMSFT,Jun 2007,27.95\nMSFT,Jul 2007,27.5\nMSFT,Aug 2007,27.34\nMSFT,Sep 2007,28.04\nMSFT,Oct 2007,35.03\nMSFT,Nov 2007,32.09\nMSFT,Dec 2007,34\nMSFT,Jan 2008,31.13\nMSFT,Feb 2008,26.07\nMSFT,Mar 2008,27.21\nMSFT,Apr 2008,27.34\nMSFT,May 2008,27.25\nMSFT,Jun 2008,26.47\nMSFT,Jul 2008,24.75\nMSFT,Aug 2008,26.36\nMSFT,Sep 2008,25.78\nMSFT,Oct 2008,21.57\nMSFT,Nov 2008,19.66\nMSFT,Dec 2008,18.91\nMSFT,Jan 2009,16.63\nMSFT,Feb 2009,15.81\nMSFT,Mar 2009,17.99\nMSFT,Apr 2009,19.84\nMSFT,May 2009,20.59\nMSFT,Jun 2009,23.42\nMSFT,Jul 2009,23.18\nMSFT,Aug 2009,24.43\nMSFT,Sep 2009,25.49\nMSFT,Oct 2009,27.48\nMSFT,Nov 2009,29.27\nMSFT,Dec 2009,30.34\nMSFT,Jan 2010,28.05\nMSFT,Feb 2010,28.67\nMSFT,Mar 2010,28.8\nAMZN,Jan 2000,64.56\nAMZN,Feb 2000,68.87\nAMZN,Mar 2000,67\nAMZN,Apr 2000,55.19\nAMZN,May 2000,48.31\nAMZN,Jun 2000,36.31\nAMZN,Jul 2000,30.12\nAMZN,Aug 2000,41.5\nAMZN,Sep 2000,38.44\nAMZN,Oct 2000,36.62\nAMZN,Nov 2000,24.69\nAMZN,Dec 2000,15.56\nAMZN,Jan 2001,17.31\nAMZN,Feb 2001,10.19\nAMZN,Mar 2001,10.23\nAMZN,Apr 2001,15.78\nAMZN,May 2001,16.69\nAMZN,Jun 2001,14.15\nAMZN,Jul 2001,12.49\nAMZN,Aug 2001,8.94\nAMZN,Sep 2001,5.97\nAMZN,Oct 2001,6.98\nAMZN,Nov 2001,11.32\nAMZN,Dec 2001,10.82\nAMZN,Jan 2002,14.19\nAMZN,Feb 2002,14.1\nAMZN,Mar 2002,14.3\nAMZN,Apr 2002,16.69\nAMZN,May 2002,18.23\nAMZN,Jun 2002,16.25\nAMZN,Jul 2002,14.45\nAMZN,Aug 2002,14.94\nAMZN,Sep 2002,15.93\nAMZN,Oct 2002,19.36\nAMZN,Nov 2002,23.35\nAMZN,Dec 2002,18.89\nAMZN,Jan 2003,21.85\nAMZN,Feb 2003,22.01\nAMZN,Mar 2003,26.03\nAMZN,Apr 2003,28.69\nAMZN,May 2003,35.89\nAMZN,Jun 2003,36.32\nAMZN,Jul 2003,41.64\nAMZN,Aug 2003,46.32\nAMZN,Sep 2003,48.43\nAMZN,Oct 2003,54.43\nAMZN,Nov 2003,53.97\nAMZN,Dec 2003,52.62\nAMZN,Jan 2004,50.4\nAMZN,Feb 2004,43.01\nAMZN,Mar 2004,43.28\nAMZN,Apr 2004,43.6\nAMZN,May 2004,48.5\nAMZN,Jun 2004,54.4\nAMZN,Jul 2004,38.92\nAMZN,Aug 2004,38.14\nAMZN,Sep 2004,40.86\nAMZN,Oct 2004,34.13\nAMZN,Nov 2004,39.68\nAMZN,Dec 2004,44.29\nAMZN,Jan 2005,43.22\nAMZN,Feb 2005,35.18\nAMZN,Mar 2005,34.27\nAMZN,Apr 2005,32.36\nAMZN,May 2005,35.51\nAMZN,Jun 2005,33.09\nAMZN,Jul 2005,45.15\nAMZN,Aug 2005,42.7\nAMZN,Sep 2005,45.3\nAMZN,Oct 2005,39.86\nAMZN,Nov 2005,48.46\nAMZN,Dec 2005,47.15\nAMZN,Jan 2006,44.82\nAMZN,Feb 2006,37.44\nAMZN,Mar 2006,36.53\nAMZN,Apr 2006,35.21\nAMZN,May 2006,34.61\nAMZN,Jun 2006,38.68\nAMZN,Jul 2006,26.89\nAMZN,Aug 2006,30.83\nAMZN,Sep 2006,32.12\nAMZN,Oct 2006,38.09\nAMZN,Nov 2006,40.34\nAMZN,Dec 2006,39.46\nAMZN,Jan 2007,37.67\nAMZN,Feb 2007,39.14\nAMZN,Mar 2007,39.79\nAMZN,Apr 2007,61.33\nAMZN,May 2007,69.14\nAMZN,Jun 2007,68.41\nAMZN,Jul 2007,78.54\nAMZN,Aug 2007,79.91\nAMZN,Sep 2007,93.15\nAMZN,Oct 2007,89.15\nAMZN,Nov 2007,90.56\nAMZN,Dec 2007,92.64\nAMZN,Jan 2008,77.7\nAMZN,Feb 2008,64.47\nAMZN,Mar 2008,71.3\nAMZN,Apr 2008,78.63\nAMZN,May 2008,81.62\nAMZN,Jun 2008,73.33\nAMZN,Jul 2008,76.34\nAMZN,Aug 2008,80.81\nAMZN,Sep 2008,72.76\nAMZN,Oct 2008,57.24\nAMZN,Nov 2008,42.7\nAMZN,Dec 2008,51.28\nAMZN,Jan 2009,58.82\nAMZN,Feb 2009,64.79\nAMZN,Mar 2009,73.44\nAMZN,Apr 2009,80.52\nAMZN,May 2009,77.99\nAMZN,Jun 2009,83.66\nAMZN,Jul 2009,85.76\nAMZN,Aug 2009,81.19\nAMZN,Sep 2009,93.36\nAMZN,Oct 2009,118.81\nAMZN,Nov 2009,135.91\nAMZN,Dec 2009,134.52\nAMZN,Jan 2010,125.41\nAMZN,Feb 2010,118.4\nAMZN,Mar 2010,128.82\nIBM,Jan 2000,100.52\nIBM,Feb 2000,92.11\nIBM,Mar 2000,106.11\nIBM,Apr 2000,99.95\nIBM,May 2000,96.31\nIBM,Jun 2000,98.33\nIBM,Jul 2000,100.74\nIBM,Aug 2000,118.62\nIBM,Sep 2000,101.19\nIBM,Oct 2000,88.5\nIBM,Nov 2000,84.12\nIBM,Dec 2000,76.47\nIBM,Jan 2001,100.76\nIBM,Feb 2001,89.98\nIBM,Mar 2001,86.63\nIBM,Apr 2001,103.7\nIBM,May 2001,100.82\nIBM,Jun 2001,102.35\nIBM,Jul 2001,94.87\nIBM,Aug 2001,90.25\nIBM,Sep 2001,82.82\nIBM,Oct 2001,97.58\nIBM,Nov 2001,104.5\nIBM,Dec 2001,109.36\nIBM,Jan 2002,97.54\nIBM,Feb 2002,88.82\nIBM,Mar 2002,94.15\nIBM,Apr 2002,75.82\nIBM,May 2002,72.97\nIBM,Jun 2002,65.31\nIBM,Jul 2002,63.86\nIBM,Aug 2002,68.52\nIBM,Sep 2002,53.01\nIBM,Oct 2002,71.76\nIBM,Nov 2002,79.16\nIBM,Dec 2002,70.58\nIBM,Jan 2003,71.22\nIBM,Feb 2003,71.13\nIBM,Mar 2003,71.57\nIBM,Apr 2003,77.47\nIBM,May 2003,80.48\nIBM,Jun 2003,75.42\nIBM,Jul 2003,74.28\nIBM,Aug 2003,75.12\nIBM,Sep 2003,80.91\nIBM,Oct 2003,81.96\nIBM,Nov 2003,83.08\nIBM,Dec 2003,85.05\nIBM,Jan 2004,91.06\nIBM,Feb 2004,88.7\nIBM,Mar 2004,84.41\nIBM,Apr 2004,81.04\nIBM,May 2004,81.59\nIBM,Jun 2004,81.19\nIBM,Jul 2004,80.19\nIBM,Aug 2004,78.17\nIBM,Sep 2004,79.13\nIBM,Oct 2004,82.84\nIBM,Nov 2004,87.15\nIBM,Dec 2004,91.16\nIBM,Jan 2005,86.39\nIBM,Feb 2005,85.78\nIBM,Mar 2005,84.66\nIBM,Apr 2005,70.77\nIBM,May 2005,70.18\nIBM,Jun 2005,68.93\nIBM,Jul 2005,77.53\nIBM,Aug 2005,75.07\nIBM,Sep 2005,74.7\nIBM,Oct 2005,76.25\nIBM,Nov 2005,82.98\nIBM,Dec 2005,76.73\nIBM,Jan 2006,75.89\nIBM,Feb 2006,75.09\nIBM,Mar 2006,77.17\nIBM,Apr 2006,77.05\nIBM,May 2006,75.04\nIBM,Jun 2006,72.15\nIBM,Jul 2006,72.7\nIBM,Aug 2006,76.35\nIBM,Sep 2006,77.26\nIBM,Oct 2006,87.06\nIBM,Nov 2006,86.95\nIBM,Dec 2006,91.9\nIBM,Jan 2007,93.79\nIBM,Feb 2007,88.18\nIBM,Mar 2007,89.44\nIBM,Apr 2007,96.98\nIBM,May 2007,101.54\nIBM,Jun 2007,100.25\nIBM,Jul 2007,105.4\nIBM,Aug 2007,111.54\nIBM,Sep 2007,112.6\nIBM,Oct 2007,111\nIBM,Nov 2007,100.9\nIBM,Dec 2007,103.7\nIBM,Jan 2008,102.75\nIBM,Feb 2008,109.64\nIBM,Mar 2008,110.87\nIBM,Apr 2008,116.23\nIBM,May 2008,125.14\nIBM,Jun 2008,114.6\nIBM,Jul 2008,123.74\nIBM,Aug 2008,118.16\nIBM,Sep 2008,113.53\nIBM,Oct 2008,90.24\nIBM,Nov 2008,79.65\nIBM,Dec 2008,82.15\nIBM,Jan 2009,89.46\nIBM,Feb 2009,90.32\nIBM,Mar 2009,95.09\nIBM,Apr 2009,101.29\nIBM,May 2009,104.85\nIBM,Jun 2009,103.01\nIBM,Jul 2009,116.34\nIBM,Aug 2009,117\nIBM,Sep 2009,118.55\nIBM,Oct 2009,119.54\nIBM,Nov 2009,125.79\nIBM,Dec 2009,130.32\nIBM,Jan 2010,121.85\nIBM,Feb 2010,127.16\nIBM,Mar 2010,125.55\nAAPL,Jan 2000,25.94\nAAPL,Feb 2000,28.66\nAAPL,Mar 2000,33.95\nAAPL,Apr 2000,31.01\nAAPL,May 2000,21\nAAPL,Jun 2000,26.19\nAAPL,Jul 2000,25.41\nAAPL,Aug 2000,30.47\nAAPL,Sep 2000,12.88\nAAPL,Oct 2000,9.78\nAAPL,Nov 2000,8.25\nAAPL,Dec 2000,7.44\nAAPL,Jan 2001,10.81\nAAPL,Feb 2001,9.12\nAAPL,Mar 2001,11.03\nAAPL,Apr 2001,12.74\nAAPL,May 2001,9.98\nAAPL,Jun 2001,11.62\nAAPL,Jul 2001,9.4\nAAPL,Aug 2001,9.27\nAAPL,Sep 2001,7.76\nAAPL,Oct 2001,8.78\nAAPL,Nov 2001,10.65\nAAPL,Dec 2001,10.95\nAAPL,Jan 2002,12.36\nAAPL,Feb 2002,10.85\nAAPL,Mar 2002,11.84\nAAPL,Apr 2002,12.14\nAAPL,May 2002,11.65\nAAPL,Jun 2002,8.86\nAAPL,Jul 2002,7.63\nAAPL,Aug 2002,7.38\nAAPL,Sep 2002,7.25\nAAPL,Oct 2002,8.03\nAAPL,Nov 2002,7.75\nAAPL,Dec 2002,7.16\nAAPL,Jan 2003,7.18\nAAPL,Feb 2003,7.51\nAAPL,Mar 2003,7.07\nAAPL,Apr 2003,7.11\nAAPL,May 2003,8.98\nAAPL,Jun 2003,9.53\nAAPL,Jul 2003,10.54\nAAPL,Aug 2003,11.31\nAAPL,Sep 2003,10.36\nAAPL,Oct 2003,11.44\nAAPL,Nov 2003,10.45\nAAPL,Dec 2003,10.69\nAAPL,Jan 2004,11.28\nAAPL,Feb 2004,11.96\nAAPL,Mar 2004,13.52\nAAPL,Apr 2004,12.89\nAAPL,May 2004,14.03\nAAPL,Jun 2004,16.27\nAAPL,Jul 2004,16.17\nAAPL,Aug 2004,17.25\nAAPL,Sep 2004,19.38\nAAPL,Oct 2004,26.2\nAAPL,Nov 2004,33.53\nAAPL,Dec 2004,32.2\nAAPL,Jan 2005,38.45\nAAPL,Feb 2005,44.86\nAAPL,Mar 2005,41.67\nAAPL,Apr 2005,36.06\nAAPL,May 2005,39.76\nAAPL,Jun 2005,36.81\nAAPL,Jul 2005,42.65\nAAPL,Aug 2005,46.89\nAAPL,Sep 2005,53.61\nAAPL,Oct 2005,57.59\nAAPL,Nov 2005,67.82\nAAPL,Dec 2005,71.89\nAAPL,Jan 2006,75.51\nAAPL,Feb 2006,68.49\nAAPL,Mar 2006,62.72\nAAPL,Apr 2006,70.39\nAAPL,May 2006,59.77\nAAPL,Jun 2006,57.27\nAAPL,Jul 2006,67.96\nAAPL,Aug 2006,67.85\nAAPL,Sep 2006,76.98\nAAPL,Oct 2006,81.08\nAAPL,Nov 2006,91.66\nAAPL,Dec 2006,84.84\nAAPL,Jan 2007,85.73\nAAPL,Feb 2007,84.61\nAAPL,Mar 2007,92.91\nAAPL,Apr 2007,99.8\nAAPL,May 2007,121.19\nAAPL,Jun 2007,122.04\nAAPL,Jul 2007,131.76\nAAPL,Aug 2007,138.48\nAAPL,Sep 2007,153.47\nAAPL,Oct 2007,189.95\nAAPL,Nov 2007,182.22\nAAPL,Dec 2007,198.08\nAAPL,Jan 2008,135.36\nAAPL,Feb 2008,125.02\nAAPL,Mar 2008,143.5\nAAPL,Apr 2008,173.95\nAAPL,May 2008,188.75\nAAPL,Jun 2008,167.44\nAAPL,Jul 2008,158.95\nAAPL,Aug 2008,169.53\nAAPL,Sep 2008,113.66\nAAPL,Oct 2008,107.59\nAAPL,Nov 2008,92.67\nAAPL,Dec 2008,85.35\nAAPL,Jan 2009,90.13\nAAPL,Feb 2009,89.31\nAAPL,Mar 2009,105.12\nAAPL,Apr 2009,125.83\nAAPL,May 2009,135.81\nAAPL,Jun 2009,142.43\nAAPL,Jul 2009,163.39\nAAPL,Aug 2009,168.21\nAAPL,Sep 2009,185.35\nAAPL,Oct 2009,188.5\nAAPL,Nov 2009,199.91\nAAPL,Dec 2009,210.73\nAAPL,Jan 2010,192.06\nAAPL,Feb 2010,204.62\nAAPL,Mar 2010,223.02\n",
+      "language": null
+    },
+    "demo.js": {
+      "type": "application/javascript",
+      "filename": "demo.js",
+      "size": 16231,
+      "raw_url": "https://gist.github.com/raw/1308400/8f3ee82129b28d184e3c767fc99761830511c145/demo.js",
+      "content": "var m = [20, 20, 30, 20]\n  , w = 960 - m[1] - m[3]\n  , h = 500 - m[0] - m[2]\n\n  , x\n  , y\n  , duration = 1500\n  , delay = 500\n\n  , color = d3.scale.category10()\n\n  , svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w + m[1] + m[3])\n    .attr(\"height\", h + m[0] + m[2])\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + m[3] + \",\" + m[0] + \")\")\n\n  , stocks, symbols, c\n\n// A line generator, for the dark stroke.\n  , line = d3.svg.line()\n    .interpolate(\"basis\")\n    .x(function(d) { return x(d.date); })\n    .y(function(d) { return y(d.price); })\n\n// A line generator, for the dark stroke.\n  , axis = d3.svg.line()\n    .interpolate(\"basis\")\n    .x(function(d) { return x(d.date); })\n    .y(h)\n\n// A area generator, for the dark stroke.\n  , area = d3.svg.area()\n    .interpolate(\"basis\")\n    .x(function(d) { return x(d.date); })\n    .y1(function(d) { return y(d.price); })\n  ;\n\nd3.csv(\"stocks.csv\", function(data) {\n  var parse = d3.time.format(\"%b %Y\").parse;\n\n  // Nest stock values by symbol.\n  symbols = d3.nest()\n      .key(function(d) { return d.symbol; })\n      .entries(stocks = data);\n\n  // Lots of things in this vis fork off into one per symbol.\n  c = symbols.length;\n\n  // Parse dates and numbers. We assume values are sorted by date.\n  // Also compute the maximum price per symbol, needed for the y-domain.\n  symbols.forEach(function(s) {\n    s.values.forEach(function(d) { d.date = parse(d.date); d.price = +d.price; });\n    s.maxPrice = d3.max(s.values, function(d) { return d.price; });\n    s.sumPrice = d3.sum(s.values, function(d) { return d.price; });\n  });\n\n  // Sort by maximum price, descending.\n  symbols.sort(function(a, b) { return b.maxPrice - a.maxPrice; });\n\n  var g = svg.selectAll(\"g\")\n      .data(symbols)\n    .enter().append(\"svg:g\")\n      .attr(\"class\", \"symbol\");\n\n  setTimeout(lines, duration);\n});\n\nfunction lines() {\n  x = d3.time.scale().range([0, w - 60]);\n  y = d3.scale.linear().range([h / c - 20, 0]);\n\n  // Compute the minimum and maximum date across symbols.\n  x.domain([\n    d3.min(symbols, function(d) { return d.values[0].date; }),\n    d3.max(symbols, function(d) { return d.values[d.values.length - 1].date; })\n  ]);\n\n  var g = svg.selectAll(\".symbol\")\n      .attr(\"transform\", function(d, i) {\n        return \"translate(0,\" + (i * h / c + 10) + \")\";\n      });\n\n  g.each(function(d) {\n    var e = d3.select(this);\n\n    e.append(\"svg:path\")\n        .attr(\"class\", \"line\");\n\n    e.append(\"svg:circle\")\n        .attr(\"r\", 5)\n        .style(\"fill\", function(d) { return color(d.key); })\n        .style(\"stroke\", \"#000\")\n        .style(\"stroke-width\", \"2px\");\n\n    e.append(\"svg:text\")\n        .attr(\"x\", 12)\n        .attr(\"dy\", \".31em\")\n        .text(d.key);\n  });\n\n  function draw(k) {\n    g.each(function(d) {\n      var e = d3.select(this);\n      y.domain([0, d.maxPrice]);\n\n      e.select(\"path\")\n          .attr(\"d\", function(d) { return line(d.values.slice(0, k + 1)); });\n\n      e.selectAll(\"circle, text\")\n          .data(function(d) { return [d.values[k], d.values[k]]; })\n          .attr(\"transform\", function(d) { return \"translate(\" + x(d.date) + \",\" + y(d.price) + \")\"; });\n    });\n  }\n\n  var k = 1, n = symbols[0].values.length;\n  d3.timer(function() {\n    draw(k);\n    if ((k += 2) >= n - 1) {\n      draw(n - 1);\n      setTimeout(horizons, delay);\n      return true;\n    }\n    return false;\n  });\n}\n\nfunction horizons() {\n  svg.insert(\"svg:defs\", \".symbol\")\n    .append(\"svg:clipPath\")\n      .attr(\"id\", \"clip\")\n    .append(\"svg:rect\")\n      .attr(\"width\", w)\n      .attr(\"height\", h / c - 20);\n\n  var color = d3.scale.ordinal()\n      .range([\"#c6dbef\", \"#9ecae1\", \"#6baed6\"]);\n\n  var g = svg.selectAll(\".symbol\")\n      .attr(\"clip-path\", \"url(#clip)\");\n\n  area\n      .y0(h / c - 20);\n\n  g.select(\"circle\").transition()\n      .duration(duration)\n      .attr(\"transform\", function(d) { return \"translate(\" + (w - 60) + \",\" + (-h / c) + \")\"; })\n      .remove();\n\n  g.select(\"text\").transition()\n      .duration(duration)\n      .attr(\"transform\", function(d) { return \"translate(\" + (w - 60) + \",\" + (h / c - 20) + \")\"; })\n      .attr(\"dy\", \"0em\");\n\n  g.each(function(d) {\n    y.domain([0, d.maxPrice]);\n\n    d3.select(this).selectAll(\".area\")\n        .data(d3.range(3))\n      .enter().insert(\"svg:path\", \".line\")\n        .attr(\"class\", \"area\")\n        .attr(\"transform\", function(d) { return \"translate(0,\" + (d * (h / c - 20)) + \")\"; })\n        .attr(\"d\", area(d.values))\n        .style(\"fill\", function(d, i) { return color(i); })\n        .style(\"fill-opacity\", 1e-6);\n\n    y.domain([0, d.maxPrice / 3]);\n\n    d3.select(this).selectAll(\".line\").transition()\n        .duration(duration)\n        .attr(\"d\", line(d.values))\n        .style(\"stroke-opacity\", 1e-6);\n\n    d3.select(this).selectAll(\".area\").transition()\n        .duration(duration)\n        .style(\"fill-opacity\", 1)\n        .attr(\"d\", area(d.values))\n        .each(\"end\", function() { d3.select(this).style(\"fill-opacity\", null); });\n  });\n\n  setTimeout(areas, duration + delay);\n}\n\nfunction areas() {\n  var g = svg.selectAll(\".symbol\");\n\n  axis\n      .y(h / c - 21);\n\n  g.select(\".line\")\n      .attr(\"d\", function(d) { return axis(d.values); });\n\n  g.each(function(d) {\n    y.domain([0, d.maxPrice]);\n\n    d3.select(this).select(\".line\").transition()\n        .duration(duration)\n        .style(\"stroke-opacity\", 1)\n        .each(\"end\", function() { d3.select(this).style(\"stroke-opacity\", null); });\n\n    d3.select(this).selectAll(\".area\")\n        .filter(function(d, i) { return i; })\n      .transition()\n        .duration(duration)\n        .style(\"fill-opacity\", 1e-6)\n        .attr(\"d\", area(d.values))\n        .remove();\n\n    d3.select(this).selectAll(\".area\")\n        .filter(function(d, i) { return !i; })\n      .transition()\n        .duration(duration)\n        .style(\"fill\", color(d.key))\n        .attr(\"d\", area(d.values));\n  });\n\n  svg.select(\"defs\").transition()\n      .duration(duration)\n      .remove();\n\n  g.transition()\n      .duration(duration)\n      .each(\"end\", function() { d3.select(this).attr(\"clip-path\", null); });\n\n  setTimeout(stackedArea, duration + delay);\n}\n\nfunction stackedArea() {\n  var stack = d3.layout.stack()\n      .values(function(d) { return d.values; })\n      .x(function(d) { return d.date; })\n      .y(function(d) { return d.price; })\n      .out(function(d, y0, y) { d.price0 = y0; })\n      .order(\"reverse\");\n\n  stack(symbols);\n\n  y\n      .domain([0, d3.max(symbols[0].values.map(function(d) { return d.price + d.price0; }))])\n      .range([h, 0]);\n\n  line\n      .y(function(d) { return y(d.price0); });\n\n  area\n      .y0(function(d) { return y(d.price0); })\n      .y1(function(d) { return y(d.price0 + d.price); });\n\n  var t = svg.selectAll(\".symbol\").transition()\n      .duration(duration)\n      .attr(\"transform\", \"translate(0,0)\")\n      .each(\"end\", function() { d3.select(this).attr(\"transform\", null); });\n\n  t.select(\"path.area\")\n      .attr(\"d\", function(d) { return area(d.values); });\n\n  t.select(\"path.line\")\n      .style(\"stroke-opacity\", function(d, i) { return i < 3 ? 1e-6 : 1; })\n      .attr(\"d\", function(d) { return line(d.values); });\n\n  t.select(\"text\")\n      .attr(\"transform\", function(d) { d = d.values[d.values.length - 1]; return \"translate(\" + (w - 60) + \",\" + y(d.price / 2 + d.price0) + \")\"; });\n\n  setTimeout(streamgraph, duration + delay);\n}\n\nfunction streamgraph() {\n  var stack = d3.layout.stack()\n      .values(function(d) { return d.values; })\n      .x(function(d) { return d.date; })\n      .y(function(d) { return d.price; })\n      .out(function(d, y0, y) { d.price0 = y0; })\n      .order(\"reverse\")\n      .offset(\"wiggle\");\n\n  stack(symbols);\n\n  line\n      .y(function(d) { return y(d.price0); });\n\n  var t = svg.selectAll(\".symbol\").transition()\n      .duration(duration);\n\n  t.select(\"path.area\")\n      .attr(\"d\", function(d) { return area(d.values); });\n\n  t.select(\"path.line\")\n      .style(\"stroke-opacity\", 1e-6)\n      .attr(\"d\", function(d) { return line(d.values); });\n\n  t.select(\"text\")\n      .attr(\"transform\", function(d) { d = d.values[d.values.length - 1]; return \"translate(\" + (w - 60) + \",\" + y(d.price / 2 + d.price0) + \")\"; });\n\n  setTimeout(overlappingArea, duration + delay);\n}\n\nfunction overlappingArea() {\n  var g = svg.selectAll(\".symbol\");\n\n  line\n      .y(function(d) { return y(d.price0 + d.price); });\n\n  g.select(\".line\")\n      .attr(\"d\", function(d) { return line(d.values); });\n\n  y\n      .domain([0, d3.max(symbols.map(function(d) { return d.maxPrice; }))])\n      .range([h, 0]);\n\n  area\n      .y0(h)\n      .y1(function(d) { return y(d.price); });\n\n  line\n      .y(function(d) { return y(d.price); });\n\n  var t = g.transition()\n      .duration(duration);\n\n  t.select(\".line\")\n      .style(\"stroke-opacity\", 1)\n      .attr(\"d\", function(d) { return line(d.values); });\n\n  t.select(\".area\")\n      .style(\"fill-opacity\", .5)\n      .attr(\"d\", function(d) { return area(d.values); });\n\n  t.select(\"text\")\n      .attr(\"dy\", \".31em\")\n      .attr(\"transform\", function(d) { d = d.values[d.values.length - 1]; return \"translate(\" + (w - 60) + \",\" + y(d.price) + \")\"; });\n\n  svg.append(\"svg:line\")\n      .attr(\"class\", \"line\")\n      .attr(\"x1\", 0)\n      .attr(\"x2\", w - 60)\n      .attr(\"y1\", h)\n      .attr(\"y2\", h)\n      .style(\"stroke-opacity\", 1e-6)\n    .transition()\n      .duration(duration)\n      .style(\"stroke-opacity\", 1);\n\n  setTimeout(groupedBar, duration + delay);\n}\n\nfunction groupedBar() {\n  x = d3.scale.ordinal()\n      .domain(symbols[0].values.map(function(d) { return d.date; }))\n      .rangeBands([0, w - 60], .1);\n\n  var x1 = d3.scale.ordinal()\n      .domain(symbols.map(function(d) { return d.key; }))\n      .rangeBands([0, x.rangeBand()]);\n\n  var g = svg.selectAll(\".symbol\");\n\n  var t = g.transition()\n      .duration(duration);\n\n  t.select(\".line\")\n      .style(\"stroke-opacity\", 1e-6)\n      .remove();\n\n  t.select(\".area\")\n      .style(\"fill-opacity\", 1e-6)\n      .remove();\n\n  g.each(function(p, j) {\n    d3.select(this).selectAll(\"rect\")\n        .data(function(d) { return d.values; })\n      .enter().append(\"svg:rect\")\n        .attr(\"x\", function(d) { return x(d.date) + x1(p.key); })\n        .attr(\"y\", function(d) { return y(d.price); })\n        .attr(\"width\", x1.rangeBand())\n        .attr(\"height\", function(d) { return h - y(d.price); })\n        .style(\"fill\", color(p.key))\n        .style(\"fill-opacity\", 1e-6)\n      .transition()\n        .duration(duration)\n        .style(\"fill-opacity\", 1);\n  });\n\n  setTimeout(stackedBar, duration + delay);\n}\n\nfunction stackedBar() {\n  x.rangeRoundBands([0, w - 60], .1);\n\n  var stack = d3.layout.stack()\n      .values(function(d) { return d.values; })\n      .x(function(d) { return d.date; })\n      .y(function(d) { return d.price; })\n      .out(function(d, y0, y) { d.price0 = y0; })\n      .order(\"reverse\");\n\n  var g = svg.selectAll(\".symbol\");\n\n  stack(symbols);\n\n  y\n      .domain([0, d3.max(symbols[0].values.map(function(d) { return d.price + d.price0; }))])\n      .range([h, 0]);\n\n  var t = g.transition()\n      .duration(duration / 2);\n\n  t.select(\"text\")\n      .delay(symbols[0].values.length * 10)\n      .attr(\"transform\", function(d) { d = d.values[d.values.length - 1]; return \"translate(\" + (w - 60) + \",\" + y(d.price / 2 + d.price0) + \")\"; });\n\n  t.selectAll(\"rect\")\n      .delay(function(d, i) { return i * 10; })\n      .attr(\"y\", function(d) { return y(d.price0 + d.price); })\n      .attr(\"height\", function(d) { return h - y(d.price); })\n      .each(\"end\", function() {\n        d3.select(this)\n            .style(\"stroke\", \"#fff\")\n            .style(\"stroke-opacity\", 1e-6)\n          .transition()\n            .duration(duration / 2)\n            .attr(\"x\", function(d) { return x(d.date); })\n            .attr(\"width\", x.rangeBand())\n            .style(\"stroke-opacity\", 1);\n      });\n\n  setTimeout(transposeBar, duration + symbols[0].values.length * 10 + delay);\n}\n\nfunction transposeBar() {\n  x\n    .domain(symbols.map(function(d) { return d.key; }))\n    .rangeRoundBands([0, w], .2);\n\n  y\n    .domain([0, d3.max(symbols.map(function(d) { return d3.sum(d.values.map(function(d) { return d.price; })); }))]);\n\n  var stack = d3.layout.stack()\n      .x(function(d, i) { return i; })\n      .y(function(d) { return d.price; })\n      .out(function(d, y0, y) { d.price0 = y0; });\n\n  // transpose!\n  stack(d3.zip.apply(null, symbols.map(function(d) { return d.values; })));\n\n  var g = svg.selectAll(\".symbol\");\n\n  var t = g.transition()\n      .duration(duration / 2);\n\n  t.selectAll(\"rect\")\n      .delay(function(d, i) { return i * 10; })\n      .attr(\"y\", function(d) { return y(d.price0 + d.price) - 1; })\n      .attr(\"height\", function(d) { return h - y(d.price) + 1; })\n      .attr(\"x\", function(d) { return x(d.symbol); })\n      .attr(\"width\", x.rangeBand())\n      .style(\"stroke-opacity\", 1e-6);\n\n  t.select(\"text\")\n      .attr(\"x\", 0)\n      .attr(\"transform\", function(d) { return \"translate(\" + (x(d.key) + x.rangeBand() / 2) + \",\" + h + \")\"; })\n      .attr(\"dy\", \"1.31em\")\n      .each(\"end\", function() { d3.select(this).attr(\"x\", null).attr(\"text-anchor\", \"middle\"); });\n\n  svg.select(\"line\").transition()\n      .duration(duration)\n      .attr(\"x2\", w);\n\n  setTimeout(donut, duration / 2 + symbols[0].values.length * 10 + delay);\n}\n\nfunction donut() {\n  var g = svg.selectAll(\".symbol\");\n\n  g.selectAll(\"rect\").remove();\n\n  var pie = d3.layout.pie()\n      .value(function(d) { return d.sumPrice; });\n\n  var arc = d3.svg.arc();\n\n  g.append(\"svg:path\")\n      .style(\"fill\", function(d) { return color(d.key); })\n      .data(function() { return pie(symbols); })\n    .transition()\n      .duration(duration)\n      .tween(\"arc\", arcTween);\n\n  g.select(\"text\").transition()\n      .duration(duration)\n      .attr(\"dy\", \".31em\");\n\n  svg.select(\"line\").transition()\n      .duration(duration)\n      .attr(\"y1\", 2 * h)\n      .attr(\"y2\", 2 * h)\n      .remove();\n\n  function arcTween(d) {\n    var path = d3.select(this)\n      , text = d3.select(this.parentNode.appendChild(this.previousSibling))\n      , x0 = x(d.data.key)\n      , y0 = h - y(d.data.sumPrice);\n\n    return function(t) {\n      var r = h / 2 / Math.min(1, t + 1e-3)\n        , a = Math.cos(t * Math.PI / 2)\n        , xx = (-r + (a) * (x0 + x.rangeBand()) + (1 - a) * (w + h) / 2)\n        , yy = ((a) * h + (1 - a) * h / 2)\n        , f = { innerRadius: r - x.rangeBand() / (2 - a)\n              , outerRadius: r\n              , startAngle: a * (Math.PI / 2 - y0 / r) + (1 - a) * d.startAngle\n              , endAngle: a * (Math.PI / 2) + (1 - a) * d.endAngle\n              };\n\n      path.attr(\"transform\", \"translate(\" + xx + \",\" + yy + \")\");\n      path.attr(\"d\", arc(f));\n      text.attr(\"transform\", \"translate(\" + arc.centroid(f)\n                           + \")translate(\" + xx + \",\" + yy\n                           + \")rotate(\" + ((f.startAngle + f.endAngle) / 2\n                                           + 3 * Math.PI / 2) * 180 / Math.PI\n                           + \")\");\n    };\n  }\n\n  setTimeout(donutExplode, duration + delay);\n}\n\nfunction donutExplode() {\n  var r0a = h / 2 - x.rangeBand() / 2\n    , r1a = h / 2\n    , r0b = 2 * h - x.rangeBand() / 2\n    , r1b = 2 * h\n    , arc = d3.svg.arc();\n\n  svg.selectAll(\".symbol path\")\n      .each(transitionExplode);\n\n  function transitionExplode(d, i) {\n    d.innerRadius = r0a;\n    d.outerRadius = r1a;\n    d3.select(this).transition()\n        .duration(duration / 2)\n        .tween(\"arc\", tweenArc({ innerRadius: r0b\n                               , outerRadius: r1b\n                               }));\n  }\n\n  function tweenArc(b) {\n    return function(a) {\n      var path = d3.select(this)\n        , text = d3.select(this.nextSibling)\n        , i = d3.interpolate(a, b);\n      for (var key in b) a[key] = b[key]; // update data\n      return function(t) {\n        var a = i(t);\n        path.attr(\"d\", arc(a));\n        text.attr(\"transform\", \"translate(\" + arc.centroid(a) + \")translate(\" + w / 2 + \",\" + h / 2 +\")rotate(\" + ((a.startAngle + a.endAngle) / 2 + 3 * Math.PI / 2) * 180 / Math.PI + \")\");\n      };\n    };\n  }\n\n  setTimeout(function() {\n    svg.selectAll(\"*\").remove();\n    svg.selectAll(\"g\").data(symbols).enter().append(\"svg:g\").attr(\"class\", \"symbol\");\n    lines();\n  }, duration);\n}\n",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 698,
+      "raw_url": "https://gist.github.com/raw/1308400/fca07e7112dd043f269b0a34be7b976cf13ef8df/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.3.0\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.csv.js?2.3.0\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.3.0\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.time.js?2.3.0\"></script>\n    <style type=\"text/css\">\nhtml, body { margin: 0; }\n\nsvg {\n  font-family: \"Helvetica Neue\", Helvetica;\n}\n\n.line {\n  fill: none;\n  stroke: #000;\n  stroke-width: 2px;\n}\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\" src=\"demo.js\"></script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 928,
+      "raw_url": "https://gist.github.com/raw/1308400/b04df8f7e9e4aef6cb941759ebd88c21980f01dd/README.md",
+      "content": "The first 15 seconds of the D3 show reel. See full video at <http://vimeo.com/29862153>. Includes seamless transitions between the following visualization types:\n\n* lines\n* horizons\n* areas\n* stacked areas\n* streamgraph\n* overlapping areas\n* grouped bars\n* stacked bars\n* bars\n* donut\n\nAdmittedly, these aren’t the most useful visualizations; their purpose is not to inform but to demonstrate D3’s capability for producing dynamic visualizations with custom transitions. They *do* show real data (the monthly closing price for ten years’ worth of stock data), but I didn’t include axes for date or price. See the [axis component](http://bl.ocks.org/1166403) for a better example. Also, the stacked visualizations aren’t especially meaningful, unless you imagine owning a portfolio with equal parts AAPL, AMZN, IBM and MSFT. Similarly, the bars and donuts represent the *average* price (or sum) during this time period.",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1308400.git",
+  "updated_at": "2011-10-24T04:53:34Z",
+  "url": "https://api.github.com/gists/1308400",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "url": "https://api.github.com/users/mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 230541
+    },
+    "description": "D3 Show Reel",
+    "comments": 0,
+    "created_at": "2011-10-01T19:57:22Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1256572",
+    "git_pull_url": "git://gist.github.com/1256572.git",
+    "files": {
+      "stocks.csv": {
+        "type": "text/csv",
+        "filename": "stocks.csv",
+        "size": 9727,
+        "raw_url": "https://gist.github.com/raw/1256572/2574f15fcd2d93e9f6bc64936c20d32572bd9b76/stocks.csv",
+        "language": null
+      },
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 16645,
+        "raw_url": "https://gist.github.com/raw/1256572/4778e3d4f9ac9d6ddbb4d50bc7e7a58bfd806abc/index.html",
+        "language": "HTML"
+      },
+      "README.md": {
+        "type": "text/plain",
+        "filename": "README.md",
+        "size": 928,
+        "raw_url": "https://gist.github.com/raw/1256572/b04df8f7e9e4aef6cb941759ebd88c21980f01dd/README.md",
+        "language": "Markdown"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1256572.git",
+    "updated_at": "2011-10-01T19:57:22Z",
+    "url": "https://api.github.com/gists/1256572",
+    "id": "1256572"
+  },
+  "id": "1308400"
+}

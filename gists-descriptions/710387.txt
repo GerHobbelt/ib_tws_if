@@ -1,0 +1,232 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_push_url": "git@gist.github.com:710387.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "e7a15f6e9da9ed2b780316209ea70578c9c77964",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2010-11-22T18:36:09Z",
+      "url": "https://api.github.com/gists/710387/e7a15f6e9da9ed2b780316209ea70578c9c77964"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "79467cbd4eb9f8bc65987a5917ce9cbda331ef15",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2010-11-22T18:35:40Z",
+      "url": "https://api.github.com/gists/710387/79467cbd4eb9f8bc65987a5917ce9cbda331ef15"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "a22fe4d01f93ce490cc10615f2e9f99509b704aa",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2010-11-22T18:33:17Z",
+      "url": "https://api.github.com/gists/710387/a22fe4d01f93ce490cc10615f2e9f99509b704aa"
+    },
+    {
+      "user": {
+        "gravatar_id": "cdbbd9f4eb292633e9c4897f16150f44",
+        "login": "mager",
+        "avatar_url": "https://secure.gravatar.com/avatar/cdbbd9f4eb292633e9c4897f16150f44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mager",
+        "id": 17733
+      },
+      "version": "da1a83b7c894fee4fade9f90e38575f150b406f5",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2010-11-22T17:47:38Z",
+      "url": "https://api.github.com/gists/710387/da1a83b7c894fee4fade9f90e38575f150b406f5"
+    },
+    {
+      "user": {
+        "gravatar_id": "cdbbd9f4eb292633e9c4897f16150f44",
+        "login": "mager",
+        "avatar_url": "https://secure.gravatar.com/avatar/cdbbd9f4eb292633e9c4897f16150f44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mager",
+        "id": 17733
+      },
+      "version": "8514bd04cf55938ce1ef051596eac82bee6f36c6",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2010-11-22T17:46:04Z",
+      "url": "https://api.github.com/gists/710387/8514bd04cf55938ce1ef051596eac82bee6f36c6"
+    },
+    {
+      "user": {
+        "gravatar_id": "cdbbd9f4eb292633e9c4897f16150f44",
+        "login": "mager",
+        "avatar_url": "https://secure.gravatar.com/avatar/cdbbd9f4eb292633e9c4897f16150f44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mager",
+        "id": 17733
+      },
+      "version": "b69fbc8c17549c6fbb84db6ba4d7bd642d9af94e",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2010-11-11T18:49:16Z",
+      "url": "https://api.github.com/gists/710387/b69fbc8c17549c6fbb84db6ba4d7bd642d9af94e"
+    },
+    {
+      "user": {
+        "gravatar_id": "cdbbd9f4eb292633e9c4897f16150f44",
+        "login": "mager",
+        "avatar_url": "https://secure.gravatar.com/avatar/cdbbd9f4eb292633e9c4897f16150f44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mager",
+        "id": 17733
+      },
+      "version": "58857a0a92a8d309c1804ef50691f90e635bcdfc",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2010-11-11T18:47:52Z",
+      "url": "https://api.github.com/gists/710387/58857a0a92a8d309c1804ef50691f90e635bcdfc"
+    },
+    {
+      "user": {
+        "gravatar_id": "cdbbd9f4eb292633e9c4897f16150f44",
+        "login": "mager",
+        "avatar_url": "https://secure.gravatar.com/avatar/cdbbd9f4eb292633e9c4897f16150f44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mager",
+        "id": 17733
+      },
+      "version": "b17e27ac432f12a12db87412af5c69fc5d1848f5",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2010-11-11T18:42:32Z",
+      "url": "https://api.github.com/gists/710387/b17e27ac432f12a12db87412af5c69fc5d1848f5"
+    },
+    {
+      "user": {
+        "gravatar_id": "cdbbd9f4eb292633e9c4897f16150f44",
+        "login": "mager",
+        "avatar_url": "https://secure.gravatar.com/avatar/cdbbd9f4eb292633e9c4897f16150f44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mager",
+        "id": 17733
+      },
+      "version": "11da082f684acd7407d28dc524b941f08246d763",
+      "change_status": {
+        "total": 11,
+        "additions": 7,
+        "deletions": 4
+      },
+      "committed_at": "2010-09-23T16:12:34Z",
+      "url": "https://api.github.com/gists/710387/11da082f684acd7407d28dc524b941f08246d763"
+    },
+    {
+      "user": {
+        "gravatar_id": "cdbbd9f4eb292633e9c4897f16150f44",
+        "login": "mager",
+        "avatar_url": "https://secure.gravatar.com/avatar/cdbbd9f4eb292633e9c4897f16150f44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mager",
+        "id": 17733
+      },
+      "version": "e9fd6df85a6c69a1d1b8ca3669931739a3389b1c",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2010-09-23T15:56:08Z",
+      "url": "https://api.github.com/gists/710387/e9fd6df85a6c69a1d1b8ca3669931739a3389b1c"
+    }
+  ],
+  "fork_of": {
+    "user": {
+      "gravatar_id": "cdbbd9f4eb292633e9c4897f16150f44",
+      "login": "mager",
+      "avatar_url": "https://secure.gravatar.com/avatar/cdbbd9f4eb292633e9c4897f16150f44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mager",
+      "id": 17733
+    },
+    "git_push_url": "git@gist.github.com:593838.git",
+    "description": "This is a zoomed in map of Russian Hill, showing 100 photos from Flickr nearest to my apartment. Uses Polymaps and SimpleGeo.",
+    "comments": 0,
+    "created_at": "2010-09-23T15:48:05Z",
+    "public": true,
+    "html_url": "https://gist.github.com/593838",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/593838/9cc20bd1392978c93c6ec684e53901afedb81ac4/index.html",
+        "size": 1495,
+        "language": "HTML"
+      }
+    },
+    "updated_at": "2010-12-30T21:12:01Z",
+    "url": "https://api.github.com/gists/593838",
+    "git_pull_url": "git://gist.github.com/593838.git",
+    "id": "593838"
+  },
+  "description": "Polymaps / Andrew Mager",
+  "comments": 0,
+  "created_at": "2010-11-22T18:33:07Z",
+  "public": true,
+  "html_url": "https://gist.github.com/710387",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/710387/8007200b6ccea9cacc4e985b4e75d8e28f112477/index.html",
+      "size": 1490,
+      "content": "<!DOCTYPE html> \n<html> \n<head> \n    \n<style type=\"text/css\"> \n    @import url(\"http://github.com/simplegeo/polymaps/raw/v2.2.0/examples/example.css\");\n \n    html, body {height: 100%;}\n    svg {display: block;}\n    .layer circle {fill: #aaa;stroke: #000;stroke-width: 2px;}\n</style> \n<script type=\"text/javascript\" src=\"http://cdn.simplegeo.com/js/latest/simplegeo.js\"></script> \n<script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/polymaps.js\"></script> \n \n</head> \n \n<body> \n<script type=\"text/javascript\"> \n    var client = new simplegeo.Client('j2RpV7pQueUht9L7eSktaF2jW2ahUARU');\n \n    var lat = 37.797933;\n    var lon = -122.423937;\n \n    client.getNearby('com.simplegeo.global.flickr', lat, lon, {\"limit\":100}, displayData);\n        \n    var po = org.polymaps;\n \n    var map = po.map()\n        .container(document.body.appendChild(po.svg(\"svg\")))\n        .center({lat: lat, lon: lon})\n        .zoom(17)\n        .zoomRange([12, 16])\n        .add(po.interact());\n \n    map.add(po.image()\n        .url(po.url(\"http://{S}tile.cloudmade.com\"\n        + \"/5814d279db61404b9e52115b06b9e7b3\" // http://cloudmade.com/register\n        + \"/1714/256/{Z}/{X}/{Y}.png\")\n        .hosts([\"a.\", \"b.\", \"c.\", \"\"])));\n    \n    var geoJson = po.geoJson()\n        .features([]);\n \n    map.add(geoJson);\n \n    map.add(po.compass()\n        .pan(\"none\"));\n    \n    function displayData(error, data) {\n        geoJson.features(data.features)\n    }\n \n</script> \n</body> \n</html> ",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2010-11-24T22:32:04Z",
+  "url": "https://api.github.com/gists/710387",
+  "git_pull_url": "git://gist.github.com/710387.git",
+  "id": "710387"
+}

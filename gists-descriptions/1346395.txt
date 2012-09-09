@@ -1,0 +1,190 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "created_at": "2011-11-07T22:28:10Z",
+      "updated_at": "2011-11-07T22:28:20Z",
+      "url": "https://api.github.com/gists/1346410",
+      "id": "1346410"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1346395.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "7508c58c15f34cf706802b768224d0c93bda7a11",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1346395/7508c58c15f34cf706802b768224d0c93bda7a11",
+      "committed_at": "2011-11-07T22:54:40Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "a90bc8525119555e0990d91f73221da1a6083f5a",
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1346395/a90bc8525119555e0990d91f73221da1a6083f5a",
+      "committed_at": "2011-11-07T22:53:27Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "f8f3b903f1fe9a68300abe64126d79d52b152f9e",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1346395/f8f3b903f1fe9a68300abe64126d79d52b152f9e",
+      "committed_at": "2011-11-07T22:52:30Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "089df8df2dc01ac51ba15faf2e72160c7f9d47c2",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1346395/089df8df2dc01ac51ba15faf2e72160c7f9d47c2",
+      "committed_at": "2011-11-07T22:27:45Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "3b84f6d15fc6c99cc6b95e531f43822b270ec479",
+      "change_status": {
+        "total": 7,
+        "additions": 4,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/1346395/3b84f6d15fc6c99cc6b95e531f43822b270ec479",
+      "committed_at": "2011-11-07T22:26:42Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "03043293ab93609e268c025ca40dc70b79e45877",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1346395/03043293ab93609e268c025ca40dc70b79e45877",
+      "committed_at": "2011-11-07T22:25:33Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "a2edb40d8b22ed67299dedcab25eaed2fc05ee00",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1346395/a2edb40d8b22ed67299dedcab25eaed2fc05ee00",
+      "committed_at": "2011-11-07T22:24:24Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "021af63b87eb1e24f0ef28eb989b627d905b9f66",
+      "change_status": {
+        "total": 49,
+        "additions": 49,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1346395/021af63b87eb1e24f0ef28eb989b627d905b9f66",
+      "committed_at": "2011-11-07T22:23:54Z"
+    }
+  ],
+  "description": "How-To: Update a Pie Chart (Part 1)",
+  "html_url": "https://gist.github.com/1346395",
+  "git_push_url": "git@gist.github.com:1346395.git",
+  "comments": 0,
+  "created_at": "2011-11-07T22:23:54Z",
+  "public": true,
+  "files": {
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 70,
+      "content": "Click to change datasets.\n\nNext: [Part 2](http://bl.ocks.org/1346410).",
+      "raw_url": "https://gist.github.com/raw/1346395/c85c37d3595d33ec20498dab8c3215b6b8e89fad/README.md",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1261,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Pie Chart</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.5.0\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.5.0\"></script>\n    <style type=\"text/css\">\n\nbody {\n  font: 10px sans-serif;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar data1 = [53245, 28479, 19697, 24037, 40245],\n    data2 = [200, 200, 200, 200, 200],\n    data = data1;\n\nvar w = 960,\n    h = 500,\n    r = Math.min(w, h) / 2,\n    color = d3.scale.category20(),\n    donut = d3.layout.pie().sort(null),\n    arc = d3.svg.arc().innerRadius(r - 100).outerRadius(r - 20);\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + w / 2 + \",\" + h / 2 + \")\");\n\nvar arcs = svg.selectAll(\"path\")\n    .data(donut(data))\n  .enter().append(\"svg:path\")\n    .attr(\"fill\", function(d, i) { return color(i); })\n    .attr(\"d\", arc);\n\nd3.select(window).on(\"click\", function() {\n  data = data === data1 ? data2 : data1; // swap the data\n  arcs = arcs.data(donut(data)); // update the data\n  arcs.attr(\"d\", arc); // redraw the arcs\n});\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1346395/2da0ea9a57a4c75b00490f60b000bfd9a89cedaa/index.html",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-11-07T22:27:45Z",
+  "url": "https://api.github.com/gists/1346395",
+  "id": "1346395"
+}

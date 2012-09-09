@@ -1,0 +1,97 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "c8f50904773abc5a7d39741f690662e0",
+        "login": "jcromartie",
+        "avatar_url": "https://secure.gravatar.com/avatar/c8f50904773abc5a7d39741f690662e0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/jcromartie",
+        "id": 7810
+      },
+      "created_at": "2012-06-04T15:51:42Z",
+      "updated_at": "2012-06-04T15:51:42Z",
+      "url": "https://api.github.com/gists/2869164",
+      "id": "2869164"
+    }
+  ],
+  "user": {
+    "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+    "login": "benjchristensen",
+    "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/benjchristensen",
+    "id": 813492
+  },
+  "git_push_url": "git@gist.github.com:1488375.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "login": "benjchristensen",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/benjchristensen",
+        "id": 813492
+      },
+      "version": "4ed4e18bb8e2882e3ef92f72b399cf9d3bed5977",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-04-02T16:39:03Z",
+      "url": "https://api.github.com/gists/1488375/4ed4e18bb8e2882e3ef92f72b399cf9d3bed5977"
+    },
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "login": "benjchristensen",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/benjchristensen",
+        "id": 813492
+      },
+      "version": "424963a1a7e76da6c4ef73b0db94468bd0e27b36",
+      "change_status": {
+        "total": 32,
+        "additions": 17,
+        "deletions": 15
+      },
+      "committed_at": "2011-12-20T00:13:43Z",
+      "url": "https://api.github.com/gists/1488375/424963a1a7e76da6c4ef73b0db94468bd0e27b36"
+    },
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "login": "benjchristensen",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/benjchristensen",
+        "id": 813492
+      },
+      "version": "8717600e82268ef96a2ea6a2c824f3236cc48d26",
+      "change_status": {
+        "total": 200,
+        "additions": 200,
+        "deletions": 0
+      },
+      "committed_at": "2011-12-16T22:45:23Z",
+      "url": "https://api.github.com/gists/1488375/8717600e82268ef96a2ea6a2c824f3236cc48d26"
+    }
+  ],
+  "description": "Dynamic Stacked Bar Chart using d3.js",
+  "comments": 2,
+  "created_at": "2011-12-16T22:45:23Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1488375",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1488375/9d02865c21bfcefbf9be5755eb35fd32d9b63664/index.html",
+      "size": 6744,
+      "content": "<html>\n\t<head>\n\t\t<title>Dynamic Stacked Bar Chart using d3.js</title>\n\t\t<script src=\"http://mbostock.github.com/d3/d3.v2.js\"></script>\n\t\t<style>\n\t\t\trect.a {\n\t\t\t\tfill: green;\n\t\t\t}\n\t\t\trect.b {\n\t\t\t\tfill: orange;\n\t\t\t}\n\t\t\trect.c {\n\t\t\t\tfill: red;\n\t\t\t}\n\n\t\t</style>\n\n\t</head>\n\t<body>\n\n\t<div id=\"graph\" class=\"aBarchart\" style=\"width:1000px; height:200px;\"></div>\n\n\t<script>\n\n\t// capture the height/width defined in the div so we only have it defined in one place\n\tvar chartHeight = parseInt(document.getElementById('graph').style.height);\n\tvar chartWidth = parseInt(document.getElementById('graph').style.width);\n\n\t// TODO we need a ceiling value\n\tvar ceiling = 200;\n\t// Y scale will fit values from 0-10 within pixels 0 - height\n\tvar y = d3.scale.linear().domain([0, ceiling]).range([0, chartHeight]);\n\n\t/**\n\t* Create an empty shell of a chart that bars can be added to\n\t*/\n\tfunction displayStackedChart(chartId) {\n\t\t// create an SVG element inside the div that fills 100% of the div\n\t\tvar vis = d3.select(\"#\" + chartId).append(\"svg:svg\").attr(\"width\", \"100%\").attr(\"height\", \"100%\")\n\t\t// transform down to simulate making the origin bottom-left instead of top-left\n\t\t// we will then need to always make Y values negative\n\t\t.append(\"g\").attr(\"class\",\"barChart\").attr(\"transform\", \"translate(0, \" + chartHeight + \")\"); \n\t}\n\n\t/* the property names on the data objects that we'll get data from */\n\tvar propertyNames = [\"a\", \"b\", \"c\"];\n\n\t/**\n\t* Add or update a bar of data in the given chart\n\t*\n\t* The data object expects to have an 'id' property to identify itself (id == a single bar)\n\t* and have object properties with numerical values for each property in the 'propertyNames' array.\n\t*/\n\tfunction addData(chartId, data) {\n\n\t\t// if data already exists for this data ID, update it instead of adding it\n\t\tvar existingBarNode = document.querySelectorAll(\"#\" + chartId + \"_\" + data.id);\n\t\tif(existingBarNode.length > 0) {\n\t\t\tvar existingBar = d3.select(existingBarNode.item());\n\t\t\t// reset the decay since we received an update\n\t\t\texistingBar.transition().duration(100)\n\t\t\t\t.attr(\"style\", \"opacity:1.0\");\n\t\t\t// update the data on each data point defined by 'propertyNames'\n\t\t\tfor(index in propertyNames) {\n\t\t\t\texistingBar.select(\"rect.\" + propertyNames[index])\n\t\t\t\t\t.transition().ease(\"linear\").duration(300)\n\t\t\t\t\t.attr(\"y\", barY(data, propertyNames[index])) \n\t\t\t\t\t.attr(\"height\", barHeight(data, propertyNames[index])); \n\t\t\t}\n\t\t} else {\n\t\t\t// it's new data so add a bar\n\t\t\tvar barDimensions = updateBarWidthsAndPlacement(chartId);\n\n\t\t\t// select the chart and add the new bar\n\t\t\tvar barGroup = d3.select(\"#\" + chartId).selectAll(\"g.barChart\")\n\t\t\t\t.append(\"g\")\n\t\t\t\t\t.attr(\"class\", \"bar\")\n\t\t\t\t\t.attr(\"id\", chartId + \"_\" + data.id)\n\t\t\t\t\t.attr(\"style\", \"opacity:1.0\");\n\n\t\t\t// now add each data point to the stack of this bar\n\t\t\tfor(index in propertyNames) {\n\t\t\t\tbarGroup.append(\"rect\")\n\t\t\t\t\t.attr(\"class\", propertyNames[index])\n\t\t\t\t    .attr(\"width\", (barDimensions.barWidth-1)) \n\t\t\t\t    .attr(\"x\", function () { return (barDimensions.numBars-1) * barDimensions.barWidth;})\n\t\t\t\t    .attr(\"y\", barY(data, propertyNames[index])) \n\t\t\t\t    .attr(\"height\", barHeight(data, propertyNames[index])); \n\t\t\t}\n\n\t\t\t// setup an interval timer for this bar that will decay the coloring\n\t\t\tbarGroup.styleInterval = setInterval(function() {\n\t\t\t\t\tvar theBar = document.getElementById(chartId + \"_\" + data.id);\n\t\t\t\t\tif(theBar == undefined) {\n\t\t\t\t\t\tclearInterval(barGroup.styleInterval);\n\t\t\t\t\t} else {\n\t\t\t\t\t\tif(theBar.style.opacity > 0.2) {\n\t\t\t\t\t\t\ttheBar.style.opacity = theBar.style.opacity - 0.05;\t\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}, 1000);\n\t\t\t\t\t\t//console.log(\"set interval: \" + barGroup.styleInterval);\n\t\t}\n\t}\n\n\t/**\n\t* Remove a bar of data in the given chart\n\t*\n\t* The data object expects to have an 'id' property to identify itself (id == a single bar)\n\t* and have object properties with numerical values for each property in the 'propertyNames' array.\n\t*/\n\tfunction removeData(chartId, barId) {\n\t\tvar existingBarNode = document.querySelectorAll(\"#\" + chartId + \"_\" + barId);\n\t\tif(existingBarNode.length > 0) {\n\t\t\t// bar exists so we'll remove it\n\t\t\tvar barGroup = d3.select(existingBarNode.item());\n\t\t\tbarGroup\n\t\t\t\t.transition().duration(200)\n\t\t\t\t.remove();\n\t\t}\n\t}\n\n\t/**\n\t* Update the bar widths and x positions based on the number of bars.\n\t* @returns {barWidth: X, numBars:Y}\n\t*/\n\tfunction updateBarWidthsAndPlacement(chartId) {\n\t\t/**\n\t\t* Since we dynamically add/remove bars we can't use data indexes but must determine how\n\t\t* many bars we have already in the graph to calculate x-axis placement\n\t\t*/\n\t\tvar numBars = document.querySelectorAll(\"#\" + chartId + \" g.bar\").length + 1;\n\n\t\t// determine what the width of all bars should be\n\t\tvar barWidth = chartWidth/numBars;\n\t\tif(barWidth > 50) {\n\t\t\tbarWidth=50;\n\t\t}\n\n\t\t// reset the width and x position of each bar to fit\n\t\tvar barNodes = document.querySelectorAll((\"#\" + chartId + \" g.barChart g.bar\"));\n\t\tfor(var i=0; i < barNodes.length; i++) {\n\t\t\td3.select(barNodes.item(i)).selectAll(\"rect\")\n\t\t\t\t//.transition().duration(10) // animation makes the display choppy, so leaving it out\n\t\t\t\t.attr(\"x\", i * barWidth)\n\t\t\t\t.attr(\"width\", (barWidth-1));\n\t\t}\n\n\t\treturn {\"barWidth\":barWidth, \"numBars\":numBars};\n\t}\n\n\t/*\n\t* Function to calculate the Y position of a bar\n\t*/\n\tfunction barY(data, propertyOfDataToDisplay) {\n\t\t/*\n\t\t* Determine the baseline by summing the previous values in the data array.\n\t\t* There may be a cleaner way of doing this with d3.layout.stack() but it\n\t\t* wasn't obvious how to do so while playing with it.\n\t\t*/\n\t\tvar baseline = 0;\n\t\tfor(var j=0; j < index; j++) {\n\t\t\tbaseline = baseline + data[propertyNames[j]];\n\t\t}\n\t\t// make the y value negative 'height' instead of 0 due to origin moved to bottom-left\n\t\treturn -y(baseline + data[propertyOfDataToDisplay]);\n\t}\n\n\t/*\n\t* Function to calculate height of a bar\n\t*/\n\tfunction barHeight(data, propertyOfDataToDisplay) {\n\t\treturn data[propertyOfDataToDisplay];\n\t}\n\n\t// used to populate random data for testing\n\tfunction randomInt(magnitude) {\n\t\treturn Math.floor(Math.random()*magnitude);\n\t}\n\n\t/* initialize the chart without any data */\n\tdisplayStackedChart(\"graph\");\n\n\t/* kick off a continual interval timer to simulate the ongoing addition and update of data */\n\tsetInterval(function() {\n\t\t\taddData(\"graph\", {\"id\":\"v\"+randomInt(150), \"a\":(randomInt(50)+100), \"b\":randomInt(50), \"c\":randomInt(40)});\n\t\t}, 20);\n\n\t/* kick off a continual interval timer to simulate the occasional removal of data */\n\tsetInterval(function() {\n\t\t// we want removals to be somewhat bursty, so we'll randomize how many we remove\n\t\tvar numToRemove = randomInt(20);\n\t\tfor(var r=0; r<numToRemove; r++) {\n\t\t\tremoveData(\"graph\", \"v\"+randomInt(150));\n\t\t}\n\t\t}, 5000);\n\n\n\t</script>\n\n\t</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-12-16T22:45:23Z",
+  "url": "https://api.github.com/gists/1488375",
+  "git_pull_url": "git://gist.github.com/1488375.git",
+  "id": "1488375"
+}

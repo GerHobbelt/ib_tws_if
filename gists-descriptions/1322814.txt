@@ -1,0 +1,153 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 11,
+        "additions": 7,
+        "deletions": 4
+      },
+      "version": "be7c27e1235eecb637e8773d676ff30edc38c492",
+      "committed_at": "2011-10-28T17:39:03Z",
+      "url": "https://api.github.com/gists/1322814/be7c27e1235eecb637e8773d676ff30edc38c492"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "710b174802820d1c9c274aac51e43e5fd178d736",
+      "committed_at": "2011-10-28T17:37:53Z",
+      "url": "https://api.github.com/gists/1322814/710b174802820d1c9c274aac51e43e5fd178d736"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 9,
+        "additions": 5,
+        "deletions": 4
+      },
+      "version": "5acbacd7c5b1dc03b2259e93daf8ca16f756bb16",
+      "committed_at": "2011-10-28T17:37:26Z",
+      "url": "https://api.github.com/gists/1322814/5acbacd7c5b1dc03b2259e93daf8ca16f756bb16"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 32,
+        "additions": 23,
+        "deletions": 9
+      },
+      "version": "51827d172209bf840c84e7b0009bda2ea5e81acf",
+      "committed_at": "2011-10-28T17:35:56Z",
+      "url": "https://api.github.com/gists/1322814/51827d172209bf840c84e7b0009bda2ea5e81acf"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "version": "ee3fc2c1fb96acab4e75518272a2118e179bdc10",
+      "committed_at": "2011-10-28T17:30:56Z",
+      "url": "https://api.github.com/gists/1322814/ee3fc2c1fb96acab4e75518272a2118e179bdc10"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 33,
+        "additions": 24,
+        "deletions": 9
+      },
+      "version": "b004f1e6389fd03ca46607ec713874a4b7d86e3b",
+      "committed_at": "2011-10-28T17:30:34Z",
+      "url": "https://api.github.com/gists/1322814/b004f1e6389fd03ca46607ec713874a4b7d86e3b"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 24,
+        "additions": 24,
+        "deletions": 0
+      },
+      "version": "98ffdb97a60eb0907960f82b454be859f402cb2e",
+      "committed_at": "2011-10-28T17:22:59Z",
+      "url": "https://api.github.com/gists/1322814/98ffdb97a60eb0907960f82b454be859f402cb2e"
+    }
+  ],
+  "description": "Case-Sensitivity and SVG-in-HTML",
+  "comments": 0,
+  "created_at": "2011-10-28T17:22:59Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1322814",
+  "git_pull_url": "git://gist.github.com/1322814.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1689,
+      "raw_url": "https://gist.github.com/raw/1322814/17e79d10af4e00091db2b64ff3229ef31c76c2eb/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <style type=\"text/css\">\n\nsvg {\n  position: absolute;\n}\n\nbody {\n  white-space: pre;\n  font: 12px Courier;\n}\n\n    </style>\n  </head>\n  <body><script type=\"text/javascript\">\n\nvar ns = \"http://www.w3.org/2000/svg\",\n    svg = document.body.appendChild(document.createElementNS(ns, \"svg\")),\n    text = svg.appendChild(document.createElementNS(ns, \"textPath\"));\n\nwrite(document, \"querySelector\", \"textPath\"); // fail\nwrite(document, \"querySelector\", \"textpath\"); // fail\nwriteAll(document, \"querySelectorAll\", \"textPath\"); // fail\nwriteAll(document, \"querySelectorAll\", \"textpath\"); // fail\nwriteAll(document, \"getElementsByTagName\", \"textPath\"); // fail\nwriteAll(document, \"getElementsByTagName\", \"textpath\"); // fail\n\nwrite(svg, \"querySelector\", \"textPath\"); // fail\nwrite(svg, \"querySelector\", \"textpath\"); // fail\nwriteAll(svg, \"querySelectorAll\", \"textPath\"); // fail\nwriteAll(svg, \"querySelectorAll\", \"textpath\"); // fail\nwriteAll(svg, \"getElementsByTagName\", \"textPath\"); // fail\nwriteAll(svg, \"getElementsByTagName\", \"textpath\"); // fail\n\nwrite(svg, \"querySelector\", \"*\"); // success!\n\nfunction write(element, method, selector) {\n  var result = element[method](selector);\n  document.write(element + \" \" + method + \"(\" + selector + \"): \");\n  if (result) document.write(result);\n  document.writeln(\"\");\n}\n\nfunction writeAll(element, method, selector) {\n  var results = element[method](selector),\n      i = -1,\n      n = results.length;\n  document.write(element + \" \" + method + \"(\" + selector + \"): \");\n  while (++i < n) {\n    document.write(results[i]);\n    if (i < n - 1) document.write(\", \");\n  }\n  document.writeln(\"\");\n}\n\n  </script></body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1322814.git",
+  "updated_at": "2011-10-28T17:22:59Z",
+  "url": "https://api.github.com/gists/1322814",
+  "id": "1322814"
+}

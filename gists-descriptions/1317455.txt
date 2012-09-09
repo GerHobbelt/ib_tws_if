@@ -1,0 +1,76 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+    "login": "ZJONSSON",
+    "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/ZJONSSON",
+    "id": 1082488
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "id": 1082488
+      },
+      "committed_at": "2011-10-26T20:21:50Z",
+      "version": "79129e8fce0a69e30c4593cc9637424036142301",
+      "url": "https://api.github.com/gists/1317455/79129e8fce0a69e30c4593cc9637424036142301",
+      "change_status": {
+        "total": 46,
+        "additions": 30,
+        "deletions": 16
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "id": 1082488
+      },
+      "committed_at": "2011-10-26T19:10:01Z",
+      "version": "47eb60e4496e1745384fd3ea8691480167dc2f38",
+      "url": "https://api.github.com/gists/1317455/47eb60e4496e1745384fd3ea8691480167dc2f38",
+      "change_status": {
+        "total": 526,
+        "additions": 526,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Basic contours in D3",
+  "comments": 0,
+  "created_at": "2011-10-26T19:10:01Z",
+  "git_pull_url": "git://gist.github.com/1317455.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1317455",
+  "git_push_url": "git@gist.github.com:1317455.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1317455/2a73854fbb668dfe11c1c852105f932cad201a48/index.html",
+      "size": 2996,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n<script type=\"text/javascript\" src=\"multiplot.js\"></script>\n</head>\n<body></body>\n    \n<script type=\"text/javascript\">\n\n\nArray.prototype.unique = function() {\n    var o = {}, i, l = this.length, r = [];\n    for(i=0; i<l;i+=1) o[this[i]] = this[i];\n    for(i in o) r.push(o[i]);\n    return r;\n};\n\n// Simplified version of calculating contours based on triangular mesh between each set of 4 points.\n// Contour segments are \"unconnected\" and therefore not suitable for filling (yet)\n// Based on CONREC by Paul Bourke http://paulbourke.net/papers/conrec/\n\nfunction contour(data,level) {\n    var lines = [],x=0,y=0;\n    \n    function checkTriangle(c,x0,y0,z0,x1,y1,z1,x2,y2,z2) {\n        var points = []\n    \n        function checkLine(c,x0,y0,z0,x1,y1,z1) {\n            if (z0==z1 && z1==c) { lines.push([[x0,y0],[x1,y1]]) }  // if flat add line directly\n            else if ((c>=Math.min(z0,z1)) && (c<= Math.max(z0,z1))) {\n                var fraction=(c-z0)/(z1-z0)\n                points.push([x0+fraction*(x1-x0),y0+fraction*(y1-y0)])\n            }\n        }\n        \n        if ((c>=Math.min(z0,z1,z2)) && (c<= Math.max(z0,z1,z2)) ) {\n            checkLine(c,x0,y0,z0,x1,y1,z1)\n            checkLine(c,x0,y0,z0,x2,y2,z2)\n            checkLine(c,x1,y1,z1,x2,y2,z2)\n        }\n        if (points.unique().length ==2) lines.push(points.unique())           \n    }\n            \n    for(x=0;x<data.length-1;x++) {\n        for (y=0;y<data[0].length-1;y++) {\n            var middle = (data[x][y]+data[x+1][y]+data[x][y+1]+data[x+1][y+1])/4\n            checkTriangle(level,x,y,data[x][y],x+1,y,data[x+1][y],x+0.5,y+0.5,middle)\n            checkTriangle(level,x+1,y,data[x+1][y],x+1,y+1,data[x+1][y+1],x+0.5,y+0.5,middle)\n            checkTriangle(level,x,y+1,data[x][y+1],x+1,y+1,data[x+1][y+1],x+0.5,y+0.5,middle)\n            checkTriangle(level,x,y,data[x][y],x,y+1,data[x][y+1],x+0.5,y+0.5,middle)\n        }\n    }\n   return lines.unique()\n  \n}\n\n\n// Lets take it for a spin\n\n\nxs = d3.range(0, data[0].length),\nys = d3.range(0, data.length),\nw = 500, h = 500;\nx=d3.scale.linear().range([0,w]).domain([0,data[0].length]),\nyy=d3.scale.linear().range([0,h]).domain([0,data.length]),         \n\nsvg=d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\",w)\n    .attr(\"height\",h)\n\n\nvar current=-0,step=0.1;\nsetInterval(plotContour,50)\n\nfunction plotContour() {\n    if (current > 1) {step = -0.1} \n    if (current <-3.5) {step = 0.1};\n    current +=step\n    svg.selectAll(\"path\").remove()\n    path = svg.selectAll(\"path\").data(contour(data,current))\n    \n    path.exit().remove()\n    path.enter()\n        .append(\"svg:path\")\n            .style(\"fill\",\"black\")\n            .style(\"stroke\",\"black\")                            \n    path.attr(\"d\",d3.svg.line()\n            .x(function(d) { return x(d[0])})\n            .y(function(d) { return yy(d[1])})\n            )    \n}\n          \n</SCRIPT>\n</html>",
+      "language": "HTML"
+    },
+    "multiplot.js": {
+      "type": "application/javascript",
+      "filename": "multiplot.js",
+      "raw_url": "https://gist.github.com/raw/1317455/ffa79df15315aaaca5a1a20a12929ad15334cf11/multiplot.js",
+      "size": 4538,
+      "content": "/**\n * Originally from http://www2.warwick.ac.uk/fac/sci/moac/currentstudents/peter_cock/r/matrix_contour/\n */\nvar data = [\n  [\n    0.4, \n    0.4, \n    0.7, \n    -1.0, \n    -0.1, \n    0.6, \n    -0.4, \n    0.6, \n    -0.4, \n    1.3, \n    0.7, \n    -0.4, \n    1.1, \n    1.3, \n    0.6, \n    0.1, \n    -0.0, \n    -0.8, \n    -0.8, \n    -1.0\n  ], \n  [\n    0.4, \n    -0.4, \n    0.4, \n    -1.2, \n    -0.7, \n    0.4, \n    -0.9, \n    0.5, \n    -0.9, \n    1.2, \n    0.5, \n    -1.0, \n    1.3, \n    1.1, \n    0.5, \n    -0.0, \n    -0.1, \n    -1.2, \n    -1.0, \n    -0.9\n  ], \n  [\n    0.7, \n    0.4, \n    0.1, \n    -1.2, \n    -0.2, \n    0.5, \n    -0.6, \n    0.6, \n    -0.2, \n    0.9, \n    0.6, \n    -0.5, \n    1.1, \n    0.8, \n    0.6, \n    0.1, \n    -0.4, \n    -0.9, \n    -0.7, \n    -0.8\n  ], \n  [\n    -1.0, \n    -1.2, \n    -1.2, \n    -4.4, \n    -1.9, \n    -0.8, \n    -2.2, \n    -1.0, \n    -2.2, \n    0.0, \n    -0.3, \n    -2.0, \n    -0.2, \n    0.2, \n    -0.8, \n    -1.6, \n    -1.9, \n    -2.4, \n    -2.3, \n    -2.6\n  ], \n  [\n    -0.1, \n    -0.7, \n    -0.2, \n    -1.9, \n    -2.0, \n    -0.5, \n    -1.9, \n    -0.3, \n    -1.7, \n    0.4, \n    -0.2, \n    -1.9, \n    0.3, \n    0.4, \n    -0.3, \n    -0.8, \n    -0.9, \n    -2.1, \n    -1.8, \n    -2.0\n  ], \n  [\n    0.6, \n    0.4, \n    0.5, \n    -0.8, \n    -0.5, \n    -0.1, \n    -0.8, \n    0.6, \n    -0.5, \n    1.0, \n    0.5, \n    -0.7, \n    0.8, \n    1.0, \n    0.5, \n    0.1, \n    -0.3, \n    -0.9, \n    -0.7, \n    -1.1\n  ], \n  [\n    -0.4, \n    -0.9, \n    -0.6, \n    -2.2, \n    -1.9, \n    -0.8, \n    -2.7, \n    -0.6, \n    -2.0, \n    0.3, \n    -0.3, \n    -2.3, \n    -0.0, \n    -0.0, \n    -0.6, \n    -1.1, \n    -1.3, \n    -2.4, \n    -2.0, \n    -2.2\n  ], \n  [\n    0.6, \n    0.5, \n    0.6, \n    -1.0, \n    -0.3, \n    0.6, \n    -0.6, \n    0.1, \n    -0.8, \n    1.3, \n    0.8, \n    -0.8, \n    1.1, \n    1.3, \n    0.4, \n    0.1, \n    0.1, \n    -0.8, \n    -1.0, \n    -1.0\n  ], \n  [\n    -0.4, \n    -0.9, \n    -0.2, \n    -2.2, \n    -1.7, \n    -0.5, \n    -2.0, \n    -0.8, \n    -2.9, \n    0.3, \n    -0.4, \n    -2.2, \n    -0.0, \n    -0.0, \n    -0.7, \n    -0.7, \n    -1.3, \n    -2.4, \n    -2.1, \n    -2.6\n  ], \n  [\n    1.3, \n    1.2, \n    0.9, \n    0.0, \n    0.4, \n    1.0, \n    0.3, \n    1.3, \n    0.3, \n    1.1, \n    1.0, \n    0.2, \n    0.7, \n    1.9, \n    0.9, \n    -0.2, \n    0.3, \n    0.1, \n    -0.4, \n    -0.2\n  ], \n  [\n    0.7, \n    0.5, \n    0.6, \n    -0.3, \n    -0.2, \n    0.5, \n    -0.3, \n    0.8, \n    -0.4, \n    1.0, \n    0.3, \n    -0.3, \n    1.0, \n    1.1, \n    0.6, \n    0.1, \n    0.3, \n    -0.7, \n    -0.5, \n    -0.6\n  ], \n  [\n    -0.4, \n    -1.0, \n    -0.5, \n    -2.0, \n    -1.9, \n    -0.7, \n    -2.3, \n    -0.8, \n    -2.2, \n    0.2, \n    -0.3, \n    -2.7, \n    0.0, \n    -0.0, \n    -0.6, \n    -1.0, \n    -1.1, \n    -2.3, \n    -2.1, \n    -2.4\n  ], \n  [\n    1.1, \n    1.3, \n    1.1, \n    -0.2, \n    0.3, \n    0.8, \n    -0.0, \n    1.1, \n    -0.0, \n    0.7, \n    1.0, \n    0.0, \n    1.6, \n    0.8, \n    1.0, \n    0.8, \n    0.7, \n    -0.2, \n    -0.2, \n    -0.2\n  ], \n  [\n    1.3, \n    1.1, \n    0.8, \n    0.2, \n    0.4, \n    1.0, \n    -0.0, \n    1.3, \n    -0.0, \n    1.9, \n    1.1, \n    -0.0, \n    0.8, \n    1.2, \n    1.1, \n    0.0, \n    0.2, \n    -0.1, \n    -0.4, \n    0.0\n  ], \n  [\n    0.6, \n    0.5, \n    0.6, \n    -0.8, \n    -0.3, \n    0.5, \n    -0.6, \n    0.4, \n    -0.7, \n    0.9, \n    0.6, \n    -0.6, \n    1.0, \n    1.1, \n    -0.2, \n    0.1, \n    -0.0, \n    -0.9, \n    -0.6, \n    -1.2\n  ], \n  [\n    0.1, \n    -0.0, \n    0.1, \n    -1.6, \n    -0.8, \n    0.1, \n    -1.1, \n    0.1, \n    -0.7, \n    -0.2, \n    0.1, \n    -1.0, \n    0.8, \n    0.0, \n    0.1, \n    -0.6, \n    -0.4, \n    -1.2, \n    -1.3, \n    -1.4\n  ], \n  [\n    -0.0, \n    -0.1, \n    -0.4, \n    -1.9, \n    -0.9, \n    -0.3, \n    -1.3, \n    0.1, \n    -1.3, \n    0.3, \n    0.3, \n    -1.1, \n    0.7, \n    0.2, \n    -0.0, \n    -0.4, \n    -1.3, \n    -1.4, \n    -1.6, \n    -1.9\n  ], \n  [\n    -0.8, \n    -1.2, \n    -0.9, \n    -2.4, \n    -2.1, \n    -0.9, \n    -2.4, \n    -0.8, \n    -2.4, \n    0.1, \n    -0.7, \n    -2.3, \n    -0.2, \n    -0.1, \n    -0.9, \n    -1.2, \n    -1.4, \n    -3.0, \n    -2.3, \n    -2.5\n  ], \n  [\n    -0.8, \n    -1.0, \n    -0.7, \n    -2.3, \n    -1.8, \n    -0.7, \n    -2.0, \n    -1.0, \n    -2.1, \n    -0.4, \n    -0.5, \n    -2.1, \n    -0.2, \n    -0.4, \n    -0.6, \n    -1.3, \n    -1.6, \n    -2.3, \n    -2.3, \n    -2.4\n  ], \n  [\n    -1.0, \n    -0.9, \n    -0.8, \n    -2.6, \n    -2.0, \n    -1.1, \n    -2.2, \n    -1.0, \n    -2.6, \n    -0.2, \n    -0.6, \n    -2.4, \n    -0.2, \n    0.0, \n    -1.2, \n    -1.4, \n    -1.9, \n    -2.5, \n    -2.4, \n    -3.3\n  ]\n]",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-10-26T19:10:01Z",
+  "url": "https://api.github.com/gists/1317455",
+  "id": "1317455"
+}

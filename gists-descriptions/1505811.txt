@@ -1,0 +1,232 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "e22032806340bb50646069e7c77758c0",
+    "login": "mhawksey",
+    "avatar_url": "https://secure.gravatar.com/avatar/e22032806340bb50646069e7c77758c0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mhawksey",
+    "id": 204892
+  },
+  "history": [
+    {
+      "user": null,
+      "committed_at": "2011-12-21T13:21:47Z",
+      "version": "245fa056eb735269dc2ca980744e2d2be056fce6",
+      "url": "https://api.github.com/gists/1505811/245fa056eb735269dc2ca980744e2d2be056fce6",
+      "change_status": {
+        "total": 58,
+        "additions": 29,
+        "deletions": 29
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-12-21T13:15:27Z",
+      "version": "2dbe6a15be793f7eb0970ee86a635816b2b8572e",
+      "url": "https://api.github.com/gists/1505811/2dbe6a15be793f7eb0970ee86a635816b2b8572e",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-12-21T13:14:15Z",
+      "version": "1862388bc4f9f392e68fbd70c560f47c088a91d0",
+      "url": "https://api.github.com/gists/1505811/1862388bc4f9f392e68fbd70c560f47c088a91d0",
+      "change_status": {
+        "total": 58,
+        "additions": 29,
+        "deletions": 29
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-12-21T13:13:10Z",
+      "version": "2a8d26ed7e0a0dc156397beb8b4c0546f90ebb0b",
+      "url": "https://api.github.com/gists/1505811/2a8d26ed7e0a0dc156397beb8b4c0546f90ebb0b",
+      "change_status": {
+        "total": 58,
+        "additions": 29,
+        "deletions": 29
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-12-21T13:10:27Z",
+      "version": "3c6d5a43e4fa5c011792be01db72a7699797ebb4",
+      "url": "https://api.github.com/gists/1505811/3c6d5a43e4fa5c011792be01db72a7699797ebb4",
+      "change_status": {
+        "total": 249,
+        "additions": 29,
+        "deletions": 220
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-06-25T20:25:50Z",
+      "version": "53c2d231663397a099ca0dea0e15014b09fccd61",
+      "url": "https://api.github.com/gists/1505811/53c2d231663397a099ca0dea0e15014b09fccd61",
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-06-25T20:25:24Z",
+      "version": "e256006ed8089c509ba43d6e856b7c1eb4195183",
+      "url": "https://api.github.com/gists/1505811/e256006ed8089c509ba43d6e856b7c1eb4195183",
+      "change_status": {
+        "total": 4,
+        "additions": 1,
+        "deletions": 3
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-06-25T18:05:59Z",
+      "version": "edae48c4046ee387887c5ceb727eafeba3ce4b70",
+      "url": "https://api.github.com/gists/1505811/edae48c4046ee387887c5ceb727eafeba3ce4b70",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-06-25T17:59:52Z",
+      "version": "3c6cca215d6cb4a791b448712c351eb5136acbd8",
+      "url": "https://api.github.com/gists/1505811/3c6cca215d6cb4a791b448712c351eb5136acbd8",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-06-25T17:54:56Z",
+      "version": "bf6e991f6a28b532655c7cff4bbf08c0f7f34378",
+      "url": "https://api.github.com/gists/1505811/bf6e991f6a28b532655c7cff4bbf08c0f7f34378",
+      "change_status": {
+        "total": 335,
+        "additions": 335,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Dependency Chord Diagram (D3)",
+  "comments": 0,
+  "created_at": "2011-12-21T12:14:44Z",
+  "git_pull_url": "git://gist.github.com/1505811.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1505811",
+  "git_push_url": "git@gist.github.com:1505811.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1505811/052bb044c2aa798a2a4501e2343ce6405915cb39/index.html",
+      "size": 2922,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n    <title>Chord Diagram</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.22.1\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?1.22.1\"></script>\n    <style type=\"text/css\">\n\nbody {\n  font: 10px sans-serif;\n}\n\npath.chord {\n  fill-opacity: .67;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar r1 = 960 / 2,\n    r0 = r1 - 120;\n\nvar fill = d3.scale.category20c();\n\nvar chord = d3.layout.chord()\n    .padding(.04)\n    .sortSubgroups(d3.descending)\n    .sortChords(d3.descending);\n\nvar arc = d3.svg.arc()\n    .innerRadius(r0)\n    .outerRadius(r0 + 20);\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", r1 * 2)\n    .attr(\"height\", r1 * 2)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + r1 + \",\" + r1 + \")\");\n\nd3.json(\"readme.json\", function(imports) {\n  var indexByName = {},\n      nameByIndex = {},\n      matrix = [],\n      n = 0;\n\n  // Returns the Flare package name for the given class name.\n  function name(name) {\n    return name;\n  }\n\n  // Compute a unique index for each package name.\n  imports.forEach(function(d) {\n    d = name(d.name);\n    if (!(d in indexByName)) {\n      nameByIndex[n] = d;\n      indexByName[d] = n++;\n    }\n  });\n\n  // Construct a square matrix counting package imports.\n  imports.forEach(function(d) {\n    var source = indexByName[name(d.name)],\n        row = matrix[source];\n    if (!row) {\n     row = matrix[source] = [];\n     for (var i = -1; ++i < n;) row[i] = 0;\n    }\n    d.imports.forEach(function(d) { row[indexByName[name(d)]]++; });\n  });\n\n  chord.matrix(matrix);\n\n  var g = svg.selectAll(\"g.group\")\n      .data(chord.groups)\n    .enter().append(\"svg:g\")\n      .attr(\"class\", \"group\");\n\n  g.append(\"svg:path\")\n      .style(\"fill\", function(d) { return fill(d.index); })\n      .style(\"stroke\", function(d) { return fill(d.index); })\n      .attr(\"d\", arc);\n\n  g.append(\"svg:text\")\n      .each(function(d) { d.angle = (d.startAngle + d.endAngle) / 2; })\n      .attr(\"dy\", \".35em\")\n      .attr(\"text-anchor\", function(d) { return d.angle > Math.PI ? \"end\" : null; })\n      .attr(\"transform\", function(d) {\n        return \"rotate(\" + (d.angle * 180 / Math.PI - 90) + \")\"\n            + \"translate(\" + (r0 + 26) + \")\"\n            + (d.angle > Math.PI ? \"rotate(180)\" : \"\");\n      })\n      .text(function(d) { return nameByIndex[d.index]; });\n\n  svg.selectAll(\"path.chord\")\n      .data(chord.chords)\n    .enter().append(\"svg:path\")\n      .attr(\"class\", \"chord\")\n      .style(\"stroke\", function(d) { return d3.rgb(fill(d.source.index)).darker(); })\n      .style(\"fill\", function(d) { return fill(d.source.index); })\n      .attr(\"d\", d3.svg.chord().radius(r0));\n\n});\n\nd3.select(self.frameElement).style(\"height\", \"960px\");\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/1505811/f9cb6cec50b33152e2bd17c5a1f7123e74b13736/readme.md",
+      "size": 531,
+      "content": "A *chord diagram* in [D3.js](http://mbostock.github.com/d3/), showing dependencies between classes in a software class hierarchy. Dependencies are grouped according to the source and target packages. Although this diagram does not show class-level detail visible with [hierarchical edge bundling](http://bl.ocks.org/1044242), it better reveals the total number of imports between and within packages. Note, for example, the circular dependency between *vis.data* and *vis.events*. Colors by [ColorBrewer](http://colorbrewer2.org/).",
+      "language": "Markdown"
+    },
+    "readme.json": {
+      "type": "application/json",
+      "filename": "readme.json",
+      "raw_url": "https://gist.github.com/raw/1505811/3cce88b3297414e20e95ba38afe929e076f0dff7/readme.json",
+      "size": 6239,
+      "content": "[\n{\"name\":\"HE - Education\",\"size\":225,\"imports\":[\"University of Nottingham\",\"Loughborough University\",\"York St John University\",\"Leeds Metropolitan University\",\"University of Leicester\",\"Manchester Metropolitan University\",\"University of Bolton\",\"Staffordshire University\",\"University of Westminster\",\"University of Exeter\",\"The Open University\",\"Aston University\",\"Southampton Solent University\",\"University of Bath\",\"University of Glamorgan\",\"University of Dundee\",\"Plymouth University \",\"University of Derby\",\"University of Wolverhampton\"]},\n{\"name\":\"FE - Engineering\",\"size\":7,\"imports\":[\"University of Sheffield\",\"University of York\",\"Leeds Metropolitan University\"]},\n{\"name\":\"HE - Engineering\",\"size\":1077,\"imports\":[\"University of Sheffield\",\"University of Wales\",\"University of Hertfordshire\",\"University of Portsmouth\",\"University of Liverpool\",\"University of Manchester\",\"Loughborough University\",\"University of Nottingham\",\"University of Birmingham\",\"Engineering Subject Centre\",\"University of Cambridge\",\"University of Leeds\",\"University of York\",\"Leeds Metropolitan University\",\"University of Bath\"]},\n{\"name\":\"HE - Mathematical and Computer Sciences\",\"size\":766,\"imports\":[\"University of Sheffield\",\"Subject Centre for Information and Computer Sciences\",\"Staffordshire University\",\"University of Nottingham\",\"University of Exeter\",\"Leeds Metropolitan University\",\"University of Derby\",\"University of Wolverhampton\"]},\n{\"name\":\"FE - Education / Training / Teaching\",\"size\":76,\"imports\":[\"Leeds Metropolitan University\",\"University of Leicester\",\"University of Bolton\"]},\n{\"name\":\"HE - Social studies\",\"size\":133,\"imports\":[\"University of Leicester\",\"University of Bolton\",\"University of Nottingham\",\"Manchester Metropolitan University\",\"Aston University\",\"University of Ulster\",\"Keele University\",\"Coventry University\",\"University of Portsmouth\",\"Leeds Metropolitan University\",\"Oxford University\",\"Plymouth University \",\"University of Wolverhampton\"]},\n{\"name\":\"HE - Technologies\",\"size\":15,\"imports\":[\"University of Leicester\",\"University of Westminster\",\"University of York\",\"University of Bath\"]},\n{\"name\":\"HE - Biological Sciences\",\"size\":144,\"imports\":[\"University of Leeds\",\"Oxford University\",\"The Open University\",\"University of Glasgow\",\"De Montfort University\",\"University of Bath\",\"University of Manchester\",\"University of Nottingham\",\"University of Gloucestershire\",\"Leeds Metropolitan University\",\"University of Derby\",\"UK Centre for Bioscience\"]},\n{\"name\":\"HE - Subjects allied to Medicine\",\"size\":55,\"imports\":[\"Bournemouth University\",\"Oxford University\",\"Brunel University\",\"University of Bedfordshire\",\"University of Nottingham\",\"Leeds Metropolitan University\",\"University of Leicester\",\"Sheffield Hallam University\",\"De Montfort University\",\"University of Derby\",\"University of Wolverhampton\"]},\n{\"name\":\"HE - Veterinary Sciences, Agriculture and related subjects\",\"size\":839,\"imports\":[\"Oxford University\",\"University of Nottingham\",\"Newcastle University\"]},\n{\"name\":\"HE - Medicine and Dentistry\",\"size\":70,\"imports\":[\"Oxford University\",\"Newcastle University\",\"University of Aberdeen\",\"University of Southampton\",\"Queen’s University Belfast\",\"University of London\",\"University of Nottingham\",\"Leeds Metropolitan University\"]},\n{\"name\":\"HE - Creative Arts and Design\",\"size\":4067,\"imports\":[\"University of the Arts London\",\"Staffordshire University\",\"University of Cumbria\",\"University College Falmouth\",\"Leeds Metropolitan University\",\"Oxford University\",\"University of Derby\",\"University of Wolverhampton\"]},\n{\"name\":\"HE - Mass Communications and Documentation\",\"size\":18,\"imports\":[\"University of the Arts London\",\"University of Birmingham\"]},\n{\"name\":\"HE - Physical Sciences\",\"size\":384,\"imports\":[\"The Open University\",\"University of Leicester\",\"University of Wales\",\"University of Reading\",\"Keele University\",\"Staffordshire University\",\"University of Nottingham\",\"University of Southampton\",\"University of Exeter\",\"Loughborough University\",\"Leeds Metropolitan University\",\"University of Lincoln\",\"UK Physical Sciences Centre\",\"University of Hull\",\"University of Liverpool\",\"Oxford University\",\"University of Derby\",\"University of Wolverhampton\"]},\n{\"name\":\"FE - Information Technology & Information\",\"size\":3,\"imports\":[\"University of Edinburgh\",\"University of Westminster\",\"University of York\"]},\n{\"name\":\"HE - Business and Administrative studies\",\"size\":133,\"imports\":[\"University of Nottingham\",\"University of Exeter\",\"Leeds Metropolitan University\",\"Coventry University\",\"Plymouth University \",\"University of Liverpool\",\"University of Derby\",\"University of Wolverhampton\"]},\n{\"name\":\"HE - European Languages, Literature and related subjects\",\"size\":53,\"imports\":[\"University of Nottingham\",\"Oxford University\"]},\n{\"name\":\"HE - Law\",\"size\":12,\"imports\":[\"University of Nottingham\",\"University of Exeter\",\"Staffordshire University\",\"University of Strathclyde\",\"University of Derby\"]},\n{\"name\":\"HE - Eastern, Asiatic, African, American and Australasian Languages, Literature and related subjects\",\"size\":6,\"imports\":[\"University of Nottingham\"]},\n{\"name\":\"HE - Historical and Philosophical studies\",\"size\":139,\"imports\":[\"University of Nottingham\",\"University of Exeter\",\"Oxford University\"]},\n{\"name\":\"HE - Architecture, Building and Planning\",\"size\":51,\"imports\":[\"University of Nottingham\",\"Leeds Metropolitan University\"]},\n{\"name\":\"FE - Humanities (History / Archaeology / Religious Studies / Philosophy)\",\"size\":1,\"imports\":[\"University of Exeter\"]},\n{\"name\":\"FE - Catering / Food / Leisure Services / Tourism\",\"size\":21,\"imports\":[\"Leeds Metropolitan University\"]},\n{\"name\":\"FE - Sciences & Mathematics\",\"size\":3,\"imports\":[\"Leeds Metropolitan University\"]},\n{\"name\":\"FE - Sales Marketing & Retailing\",\"size\":4,\"imports\":[\"Leeds Metropolitan University\"]},\n{\"name\":\"FE - Politics / Economics / Law / Social Sciences\",\"size\":4,\"imports\":[\"Leeds Metropolitan University\"]},\n{\"name\":\"FE - Construction & Property (Built Environment)\",\"size\":49,\"imports\":[\"Leeds Metropolitan University\"]},\n{\"name\":\"FE - Agriculture Horticulture & Animal Care\",\"size\":1,\"imports\":[\"University of Leicester\"]},\n{\"name\":\"FE - Business / Management / Office Studies\",\"size\":7,\"imports\":[\"University of Bath\"]}\n]",
+      "language": "JSON"
+    }
+  },
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mbostock",
+      "id": 230541
+    },
+    "description": "Dependency Chord Diagram (D3)",
+    "comments": 0,
+    "created_at": "2011-06-25T17:54:56Z",
+    "git_pull_url": "git://gist.github.com/1046712.git",
+    "public": true,
+    "html_url": "https://gist.github.com/1046712",
+    "git_push_url": "git@gist.github.com:1046712.git",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/1046712/4b2ee57f03015169997378fba5abdb6889da667d/index.html",
+        "size": 2971,
+        "language": "HTML"
+      },
+      "readme.md": {
+        "type": "text/plain",
+        "filename": "readme.md",
+        "raw_url": "https://gist.github.com/raw/1046712/f9cb6cec50b33152e2bd17c5a1f7123e74b13736/readme.md",
+        "size": 531,
+        "language": "Markdown"
+      },
+      "readme.json": {
+        "type": "application/json",
+        "filename": "readme.json",
+        "raw_url": "https://gist.github.com/raw/1046712/6e714c048c23c409b255bf9fb68c4ae7d0f62330/readme.json",
+        "size": 34320,
+        "language": "JSON"
+      }
+    },
+    "updated_at": "2011-06-25T17:54:56Z",
+    "url": "https://api.github.com/gists/1046712",
+    "id": "1046712"
+  },
+  "updated_at": "2011-12-21T12:14:44Z",
+  "url": "https://api.github.com/gists/1505811",
+  "id": "1505811"
+}

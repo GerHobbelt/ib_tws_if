@@ -1,0 +1,214 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "31ed0754babeeb9dbf19fd055926a313",
+        "login": "sampablokuper",
+        "url": "https://api.github.com/users/sampablokuper",
+        "avatar_url": "https://secure.gravatar.com/avatar/31ed0754babeeb9dbf19fd055926a313?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 85394
+      },
+      "created_at": "2012-07-12T19:33:51Z",
+      "updated_at": "2012-07-12T19:33:51Z",
+      "url": "https://api.github.com/gists/3100370",
+      "id": "3100370"
+    }
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 402462
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "version": "d0b7b85118ed307b551ffdb8bd0dd6f2c6f10477",
+      "committed_at": "2012-09-09T08:44:28Z",
+      "url": "https://api.github.com/gists/2653660/d0b7b85118ed307b551ffdb8bd0dd6f2c6f10477"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 216,
+        "additions": 108,
+        "deletions": 108
+      },
+      "version": "208bb4203d7b667f594c7ebb176edc6a406eba68",
+      "committed_at": "2012-05-10T20:00:38Z",
+      "url": "https://api.github.com/gists/2653660/208bb4203d7b667f594c7ebb176edc6a406eba68"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "f7112fefd0c5295dff756b2d28e71a97e61b85b8",
+      "committed_at": "2012-05-10T17:42:20Z",
+      "url": "https://api.github.com/gists/2653660/f7112fefd0c5295dff756b2d28e71a97e61b85b8"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 7,
+        "additions": 7,
+        "deletions": 0
+      },
+      "version": "f7526c45880d674b25553eda5315c707f043e600",
+      "committed_at": "2012-05-10T17:41:03Z",
+      "url": "https://api.github.com/gists/2653660/f7526c45880d674b25553eda5315c707f043e600"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 6,
+        "additions": 5,
+        "deletions": 1
+      },
+      "version": "6c9222ec926de62d3fa37bd8adac86d9e77f1874",
+      "committed_at": "2012-05-10T17:36:54Z",
+      "url": "https://api.github.com/gists/2653660/6c9222ec926de62d3fa37bd8adac86d9e77f1874"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 167,
+        "additions": 86,
+        "deletions": 81
+      },
+      "version": "51857d88af7a8186e3f46001d87dca1b3a56c129",
+      "committed_at": "2012-05-10T17:34:16Z",
+      "url": "https://api.github.com/gists/2653660/51857d88af7a8186e3f46001d87dca1b3a56c129"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 484,
+        "additions": 437,
+        "deletions": 47
+      },
+      "version": "89a8df28946903292bb5871e08eecccdf8bfe8c1",
+      "committed_at": "2012-05-10T17:14:52Z",
+      "url": "https://api.github.com/gists/2653660/89a8df28946903292bb5871e08eecccdf8bfe8c1"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 53,
+        "additions": 53,
+        "deletions": 0
+      },
+      "version": "39f27485d870ee5729adc5b2784c8e00ac28ab82",
+      "committed_at": "2012-05-10T14:50:14Z",
+      "url": "https://api.github.com/gists/2653660/39f27485d870ee5729adc5b2784c8e00ac28ab82"
+    }
+  ],
+  "description": "D3.js: click on TEXT node in SVG graph to edit its contents",
+  "comments": 0,
+  "created_at": "2012-05-10T14:50:14Z",
+  "public": true,
+  "html_url": "https://gist.github.com/2653660",
+  "git_pull_url": "git://gist.github.com/2653660.git",
+  "files": {
+    "bullet.js": {
+      "type": "application/javascript",
+      "filename": "bullet.js",
+      "size": 12487,
+      "raw_url": "https://gist.github.com/raw/2653660/a2a7ebf43e62f336a7a237f1864191a08e12a135/bullet.js",
+      "content": "var width = 960,\n    height = 50,\n    margin = {top: 5, right: 40, bottom: 20, left: 120};\n\nvar chart = bulletChart()\n    .width(width - margin.right - margin.left)\n    .height(height - margin.top - margin.bottom);\n\nd3.json(\"readme.json\", function(data) {\n\n  var vis = d3.select(\"#chart\").selectAll(\"svg\")\n      .data(data)\n    .enter().append(\"svg\")\n      .attr(\"class\", \"bullet\")\n      .attr(\"width\", width)\n      .attr(\"height\", height)\n    .append(\"g\")\n      .attr(\"transform\", \"translate(\" + margin.left + \",\" + margin.top + \")\")\n      .call(chart);\n\n  var title = vis.append(\"g\")\n      .attr(\"text-anchor\", \"end\")\n      .attr(\"transform\", \"translate(-6,\" + (height - margin.top - margin.bottom) / 2 + \")\");\n\n  title.append(\"text\")\n      .attr(\"class\", \"title\")\n      .text(function(d) { return d.title; })\n      .call(make_editable, \"title\");\n\n  title.append(\"text\")\n      .attr(\"class\", \"subtitle\")\n      .attr(\"dy\", \"1em\")\n      .text(function(d) { return d.subtitle; })\n      .call(make_editable, \"subtitle\");\n\n  chart.duration(1000);\n  window.transition = function() {\n    vis.datum(randomize).call(chart);\n  };\n});\n\nfunction randomize(d) {\n  if (!d.randomizer) d.randomizer = randomizer(d);\n  d.ranges = d.ranges.map(d.randomizer);\n  d.markers = d.markers.map(d.randomizer);\n  d.measures = d.measures.map(d.randomizer);\n  return d;\n}\n\nfunction randomizer(d) {\n  var k = d3.max(d.ranges) * .2;\n  return function(d) {\n    return Math.max(0, d + k * (Math.random() - .5));\n  };\n}\n\n// Chart design based on the recommendations of Stephen Few. Implementation\n// based on the work of Clint Ivy, Jamie Love, and Jason Davies.\n// http://projects.instantcognition.com/protovis/bulletchart/\nfunction bulletChart() {\n  var orient = \"left\", // TODO top & bottom\n      reverse = false,\n      duration = 0,\n      ranges = bulletRanges,\n      markers = bulletMarkers,\n      measures = bulletMeasures,\n      width = 380,\n      height = 30,\n      tickFormat = null;\n\n  // For each small multiple?\n  function bullet(g) {\n    g.each(function(d, i) {\n      var rangez = ranges.call(this, d, i).slice().sort(d3.descending),\n          markerz = markers.call(this, d, i).slice().sort(d3.descending),\n          measurez = measures.call(this, d, i).slice().sort(d3.descending),\n          g = d3.select(this);\n\n      // Compute the new x-scale.\n      var x1 = d3.scale.linear()\n          .domain([0, Math.max(rangez[0], markerz[0], measurez[0])])\n          .range(reverse ? [width, 0] : [0, width]);\n\n      // Retrieve the old x-scale, if this is an update.\n      var x0 = this.__chart__ || d3.scale.linear()\n          .domain([0, Infinity])\n          .range(x1.range());\n\n      // Stash the new scale.\n      this.__chart__ = x1;\n\n      // Derive width-scales from the x-scales.\n      var w0 = bulletWidth(x0),\n          w1 = bulletWidth(x1);\n\n      // Update the range rects.\n      var range = g.selectAll(\"rect.range\")\n          .data(rangez);\n\n      range.enter().append(\"svg:rect\")\n          .attr(\"class\", function(d, i) { return \"range s\" + i; })\n          .attr(\"width\", w0)\n          .attr(\"height\", height)\n          .attr(\"x\", reverse ? x0 : 0)\n        .transition()\n          .duration(duration)\n          .attr(\"width\", w1)\n          .attr(\"x\", reverse ? x1 : 0);\n\n      range.transition()\n          .duration(duration)\n          .attr(\"x\", reverse ? x1 : 0)\n          .attr(\"width\", w1)\n          .attr(\"height\", height);\n\n      // Update the measure rects.\n      var measure = g.selectAll(\"rect.measure\")\n          .data(measurez);\n\n      measure.enter().append(\"svg:rect\")\n          .attr(\"class\", function(d, i) { return \"measure s\" + i; })\n          .attr(\"width\", w0)\n          .attr(\"height\", height / 3)\n          .attr(\"x\", reverse ? x0 : 0)\n          .attr(\"y\", height / 3)\n        .transition()\n          .duration(duration)\n          .attr(\"width\", w1)\n          .attr(\"x\", reverse ? x1 : 0);\n\n      measure.transition()\n          .duration(duration)\n          .attr(\"width\", w1)\n          .attr(\"height\", height / 3)\n          .attr(\"x\", reverse ? x1 : 0)\n          .attr(\"y\", height / 3);\n\n      // Update the marker lines.\n      var marker = g.selectAll(\"line.marker\")\n          .data(markerz);\n\n      marker.enter().append(\"svg:line\")\n          .attr(\"class\", \"marker\")\n          .attr(\"x1\", x0)\n          .attr(\"x2\", x0)\n          .attr(\"y1\", height / 6)\n          .attr(\"y2\", height * 5 / 6)\n        .transition()\n          .duration(duration)\n          .attr(\"x1\", x1)\n          .attr(\"x2\", x1);\n\n      marker.transition()\n          .duration(duration)\n          .attr(\"x1\", x1)\n          .attr(\"x2\", x1)\n          .attr(\"y1\", height / 6)\n          .attr(\"y2\", height * 5 / 6);\n\n      // Compute the tick format.\n      var format = tickFormat || x1.tickFormat(8);\n\n      // Update the tick groups.\n      var tick = g.selectAll(\"g.tick\")\n          .data(x1.ticks(8), function(d) {\n            return this.textContent || format(d);\n          });\n\n      // Initialize the ticks with the old scale, x0.\n      var tickEnter = tick.enter().append(\"svg:g\")\n          .attr(\"class\", \"tick\")\n          .attr(\"transform\", bulletTranslate(x0))\n          .style(\"opacity\", 1e-6);\n\n      tickEnter.append(\"svg:line\")\n          .attr(\"y1\", height)\n          .attr(\"y2\", height * 7 / 6);\n\n      tickEnter.append(\"svg:text\")\n          .attr(\"text-anchor\", \"middle\")\n          .attr(\"dy\", \"1em\")\n          .attr(\"y\", height * 7 / 6)\n          .text(format);\n\n      // Transition the entering ticks to the new scale, x1.\n      tickEnter.transition()\n          .duration(duration)\n          .attr(\"transform\", bulletTranslate(x1))\n          .style(\"opacity\", 1);\n\n      // Transition the updating ticks to the new scale, x1.\n      var tickUpdate = tick.transition()\n          .duration(duration)\n          .attr(\"transform\", bulletTranslate(x1))\n          .style(\"opacity\", 1);\n\n      tickUpdate.select(\"line\")\n          .attr(\"y1\", height)\n          .attr(\"y2\", height * 7 / 6);\n\n      tickUpdate.select(\"text\")\n          .attr(\"y\", height * 7 / 6);\n\n      // Transition the exiting ticks to the new scale, x1.\n      tick.exit().transition()\n          .duration(duration)\n          .attr(\"transform\", bulletTranslate(x1))\n          .style(\"opacity\", 1e-6)\n          .remove();\n    });\n    d3.timer.flush();\n  }\n\n  // left, right, top, bottom\n  bullet.orient = function(x) {\n    if (!arguments.length) return orient;\n    orient = x;\n    reverse = orient == \"right\" || orient == \"bottom\";\n    return bullet;\n  };\n\n  // ranges (bad, satisfactory, good)\n  bullet.ranges = function(x) {\n    if (!arguments.length) return ranges;\n    ranges = x;\n    return bullet;\n  };\n\n  // markers (previous, goal)\n  bullet.markers = function(x) {\n    if (!arguments.length) return markers;\n    markers = x;\n    return bullet;\n  };\n\n  // measures (actual, forecast)\n  bullet.measures = function(x) {\n    if (!arguments.length) return measures;\n    measures = x;\n    return bullet;\n  };\n\n  bullet.width = function(x) {\n    if (!arguments.length) return width;\n    width = x;\n    return bullet;\n  };\n\n  bullet.height = function(x) {\n    if (!arguments.length) return height;\n    height = x;\n    return bullet;\n  };\n\n  bullet.tickFormat = function(x) {\n    if (!arguments.length) return tickFormat;\n    tickFormat = x;\n    return bullet;\n  };\n\n  bullet.duration = function(x) {\n    if (!arguments.length) return duration;\n    duration = x;\n    return bullet;\n  };\n\n  return bullet;\n};\n\nfunction bulletRanges(d) {\n  return d.ranges;\n}\n\nfunction bulletMarkers(d) {\n  return d.markers;\n}\n\nfunction bulletMeasures(d) {\n  return d.measures;\n}\n\nfunction bulletTranslate(x) {\n  return function(d) {\n    return \"translate(\" + x(d) + \",0)\";\n  };\n}\n\nfunction bulletWidth(x) {\n  var x0 = x(0);\n  return function(d) {\n    return Math.abs(x(d) - x0);\n  };\n}\n\nfunction test()\n{\n    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');\n\tsvg.setAttribute('width', 200);\n\tsvg.setAttribute('height', 200);\n\n\t// Should appear behind green rectangle\n\tvar rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');\n    rect.setAttribute('x', 10);\n    rect.setAttribute('y', 20);\n    rect.setAttribute('width', 50);\n    rect.setAttribute('height', 20);\n    rect.style.fill = 'red';\n    \n    svg.appendChild(rect);\n\n    var fo = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject')\n\tfo.setAttribute('width', '120');\n\tfo.setAttribute('height', '20');\n\tfo.setAttribute('x', '10');\n\tfo.setAttribute('y', '10');\n\t\n\tvar body = document.createElementNS('http://www.w3.org/1999/xhtml', 'body');\n    \n    var div = document.createElement('div');\n    div.style.background = 'green';\n    div.style.width = '100%';\n    div.style.height = '100%';\n    div.appendChild(document.createTextNode('Hello, World!'))\n    \n    body.appendChild(div);\n    fo.appendChild(body);\n    svg.appendChild(fo);\n    document.body.appendChild(svg);\n}\n\nfunction make_editable(d, field)\n{\n    console.log(\"make_editable\", arguments);\n    \n    this\n      .on(\"mouseover\", function() {\n        d3.select(this).style(\"fill\", \"red\");\n      })\n      .on(\"mouseout\", function() {\n        d3.select(this).style(\"fill\", null);\n      })\n      .on(\"click\", function(d) {\n        var p = this.parentNode;\n        console.log(this, arguments);\n        \n        // inject a HTML form to edit the content here...\n        \n        // bug in the getBBox logic here, but don't know what I've done wrong here;\n        // anyhow, the coordinates are completely off & wrong. :-((\n        var xy = this.getBBox();\n        var p_xy = p.getBBox();\n        \n        xy.x -= p_xy.x;\n        xy.y -= p_xy.y;\n\n        var el = d3.select(this);\n        var p_el = d3.select(p);\n        \n        var frm = p_el.append(\"foreignObject\");\n        \n        var inp = frm\n            .attr(\"x\", xy.x)\n            .attr(\"y\", xy.y)\n            .attr(\"width\", 300)\n            .attr(\"height\", 25)\n            .append(\"xhtml:form\")\n                    .append(\"input\")\n                        .attr(\"value\", function() {\n                            // nasty spot to place this call, but here we are sure that the <input> tag is available\n                            // and is handily pointed at by 'this':\n                            this.focus();\n                            \n                            return d[field];\n                        })\n                        .attr(\"style\", \"width: 294px;\")\n                        // make the form go away when you jump out (form looses focus) or hit ENTER:\n                        .on(\"blur\", function() {\n                            console.log(\"blur\", this, arguments);\n    \n                            var txt = inp.node().value;\n                            \n                            d[field] = txt;\n                            el\n                                .text(function(d) { return d[field]; });\n                            \n                            // Note to self: frm.remove() will remove the entire <g> group! Remember the D3 selection logic!\n                            p_el.select(\"foreignObject\").remove();\n                        })\n                        .on(\"keypress\", function() {\n                            console.log(\"keypress\", this, arguments);\n                            \n                            // IE fix\n                            if (!d3.event)\n                                d3.event = window.event;\n\n                            var e = d3.event;\n                            if (e.keyCode == 13)\n                            {\n                                if (typeof(e.cancelBubble) !== 'undefined') // IE\n                                  e.cancelBubble = true;\n                                if (e.stopPropagation)\n                                  e.stopPropagation();\n                                e.preventDefault();\n        \n                                var txt = inp.node().value;\n                                \n                                d[field] = txt;\n                                el\n                                    .text(function(d) { return d[field]; });\n                                \n                                // odd. Should work in Safari, but the debugger crashes on this instead.\n                                // Anyway, it SHOULD be here and it doesn't hurt otherwise.\n                                p_el.select(\"foreignObject\").remove();\n                            }\n                        });\n      });\n}\n",
+      "language": "JavaScript"
+    },
+    "readme.json": {
+      "type": "application/json",
+      "filename": "readme.json",
+      "size": 543,
+      "raw_url": "https://gist.github.com/raw/2653660/97cb1c1b466ccaae9cb87510740d5a164fb535d1/readme.json",
+      "content": "[\n  {\"title\":\"Revenue\",\"subtitle\":\"US$, in thousands\",\"ranges\":[150,225,300],\"measures\":[220,270],\"markers\":[250]},\n  {\"title\":\"Profit\",\"subtitle\":\"%\",\"ranges\":[20,25,30],\"measures\":[21,23],\"markers\":[26]},\n  {\"title\":\"Order Size\",\"subtitle\":\"US$, average\",\"ranges\":[350,500,600],\"measures\":[100,320],\"markers\":[550]},\n  {\"title\":\"New Customers\",\"subtitle\":\"count\",\"ranges\":[1400,2000,2500],\"measures\":[1000,1650],\"markers\":[2100]},\n  {\"title\":\"Satisfaction\",\"subtitle\":\"out of 5\",\"ranges\":[3.5,4.25,5],\"measures\":[3.2,4.7],\"markers\":[4.4]}\n]\n",
+      "language": "JSON"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "size": 623,
+      "raw_url": "https://gist.github.com/raw/2653660/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 897,
+      "raw_url": "https://gist.github.com/raw/2653660/05a759a8297775f38178cbf008c485b73e992f16/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Bullet Layout</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.v2.js?2.9.1\"></script>\n    <!--<script type=\"text/javascript\" src=\"../../js/d3/d3.latest.js?2.9.1\"></script>-->\n    <style>\n.bullet { font: 10px sans-serif; }\n.bullet .marker { stroke: #000; stroke-width: 2px; }\n.bullet .tick line { stroke: #666; stroke-width: .5px; }\n.bullet .range.s0 { fill: #eee; }\n.bullet .range.s1 { fill: #ddd; }\n.bullet .range.s2 { fill: #ccc; }\n.bullet .measure.s0 { fill: lightsteelblue; }\n.bullet .measure.s1 { fill: steelblue; }\n.bullet .title { font-size: 14px; font-weight: bold; }\n.bullet .subtitle { fill: #999; }\n\n.bullet .title { cursor: pointer; }\n.bullet .subtitle { cursor: pointer; }\n    </style>\n  </head>\n  <body>\n\n    <div id=\"chart\"></div>\n    <script type=\"text/javascript\" src=\"bullet.js\"></script>\n</body>\n</html>",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 334,
+      "raw_url": "https://gist.github.com/raw/2653660/120e3eeb6d4c7d4aaf90d0e4bf9540edf6b55dea/README.md",
+      "content": "* Editable -> SVG foreignObject + XHTML\n\nShowcases using a SVG foreignObject to contruct temporary, minimal forms to allow editing of arbitrary D3 data (in this case: titles and subtitles)\n\n** Notes\n\nThe code isn't the cleanest that could be: the 'blur' and 'keypress' event handlers share copy&pasted code which could be refactored.\n",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:2653660.git",
+  "updated_at": "2012-09-09T08:52:00Z",
+  "url": "https://api.github.com/gists/2653660",
+  "id": "2653660"
+}

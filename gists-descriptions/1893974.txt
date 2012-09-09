@@ -1,0 +1,88 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "created_at": "2012-03-12T12:38:09Z",
+      "updated_at": "2012-03-12T12:38:09Z",
+      "url": "https://api.github.com/gists/2021552",
+      "id": "2021552"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "950639db98133fe985bd1e75681b9eb310c0f5be",
+      "committed_at": "2012-02-23T17:47:21Z",
+      "url": "https://api.github.com/gists/1893974/950639db98133fe985bd1e75681b9eb310c0f5be"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 75,
+        "additions": 75,
+        "deletions": 0
+      },
+      "version": "76e5e9c29f291362b2e636c7f079bc715d4c6152",
+      "committed_at": "2012-02-23T17:41:34Z",
+      "url": "https://api.github.com/gists/1893974/76e5e9c29f291362b2e636c7f079bc715d4c6152"
+    }
+  ],
+  "description": "Mitchell's Best-Candidate",
+  "comments": 0,
+  "created_at": "2012-02-23T17:41:34Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1893974",
+  "git_pull_url": "git://gist.github.com/1893974.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 2203,
+      "raw_url": "https://gist.github.com/raw/1893974/df46b99cadbcae8a0c3d5c2f818cd472c66031e1/index.html",
+      "content": "<!DOCTYPE html>\n<meta charset=\"utf-8\">\n<body>\n<script src=\"http://mbostock.github.com/d3/d3.v2.js?2.7.5\"></script>\n<script>\n\nvar radius = 32,\n    margin = {top: -radius, right: -radius, bottom: -radius, left: -radius},\n    width = 960 - margin.left - margin.right,\n    height = 500 - margin.top - margin.bottom;\n\nvar svg = d3.select(\"body\").append(\"svg\")\n    .attr(\"width\", width)\n    .attr(\"height\", height)\n  .append(\"g\")\n    .attr(\"transform\", \"translate(\" + margin.left + \",\" + margin.top + \")\");\n\nvar quadtree = d3.geom.quadtree([], 0, 0, width, height),\n    findClosest = finder(quadtree, radius * 2);\n\nd3.timer(add(5, 2500, 50));\n\n// Add m new circles per tick, stopping when we have n circles.\n// When adding a circle, pick the best of k candidates.\nfunction add(m, n, k) {\n  return function() {\n    for (var j = 0; j < m && --n >= 0; ++j) {\n      var best = null;\n\n      // Create k candidates, picking the best (farthest away).\n      for (var i = 0; i < k; ++i) {\n        var candidate = {x: Math.random() * width, y: Math.random() * height};\n        findClosest(candidate);\n        if (!best || candidate.radius > best.radius) best = candidate;\n      }\n\n      best.radius = Math.min(radius, (Math.random() + 1) / 2 * best.radius);\n\n      quadtree.add(best);\n\n      svg.append(\"circle\")\n          .attr(\"cx\", best.x)\n          .attr(\"cy\", best.y)\n          .style(\"fill-opacity\", (Math.random() + .5) / 2)\n        .transition()\n          .attr(\"r\", best.radius);\n    }\n    return !n;\n  };\n}\n\n// Find the closest circle to the candidate, searching at most r away.\nfunction finder(quadtree, r) {\n  return function(candidate) {\n    var rx1 = candidate.x - r,\n        rx2 = candidate.x + r,\n        ry1 = candidate.y - r,\n        ry2 = candidate.y + r;\n\n    candidate.radius = Infinity;\n\n    quadtree.visit(function(quad, x1, y1, x2, y2) {\n      if (quad.point) {\n        var dx = candidate.x - quad.point.x,\n            dy = candidate.y - quad.point.y,\n            radius = Math.max(0, Math.sqrt(dx * dx + dy * dy) - quad.point.radius);\n        if (radius < candidate.radius) candidate.radius = radius;\n      }\n      return x1 > rx2 || x2 < rx1 || y1 > ry2 || y2 < ry1;\n    });\n  };\n}\n\n</script>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 390,
+      "raw_url": "https://gist.github.com/raw/1893974/14aa9168d50f9d7155516f6637f5ca9344fad878/README.md",
+      "content": "Mitchell's best-candidate algorithm generates a new random sample by creating *k* candidate samples, and picking the best of *k*. Here the \"best\" sample is defined as the sample that is farthest away from previous samples. The algorithm approximates Poisson-disc sampling, producing a much more natural appearance (better \"blue noise\" spectral characteristics) than uniform random sampling.",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1893974.git",
+  "updated_at": "2012-02-23T17:41:34Z",
+  "url": "https://api.github.com/gists/1893974",
+  "id": "1893974"
+}

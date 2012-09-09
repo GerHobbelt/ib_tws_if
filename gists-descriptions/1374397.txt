@@ -1,0 +1,145 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "1c1b6b1eb0eb9effcd28c9552ff49a44",
+    "login": "maxott",
+    "avatar_url": "https://secure.gravatar.com/avatar/1c1b6b1eb0eb9effcd28c9552ff49a44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/maxott",
+    "id": 726959
+  },
+  "git_pull_url": "git://gist.github.com/1374397.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "1c1b6b1eb0eb9effcd28c9552ff49a44",
+        "login": "maxott",
+        "avatar_url": "https://secure.gravatar.com/avatar/1c1b6b1eb0eb9effcd28c9552ff49a44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/maxott",
+        "id": 726959
+      },
+      "version": "8404d348d9c76f8944fa67362c3184742bd07241",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1374397/8404d348d9c76f8944fa67362c3184742bd07241",
+      "committed_at": "2011-11-28T11:45:37Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "1c1b6b1eb0eb9effcd28c9552ff49a44",
+        "login": "maxott",
+        "avatar_url": "https://secure.gravatar.com/avatar/1c1b6b1eb0eb9effcd28c9552ff49a44?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/maxott",
+        "id": 726959
+      },
+      "version": "2cb494a491c801ec78bf52a9b332c988c9a4c98b",
+      "change_status": {
+        "total": 190,
+        "additions": 101,
+        "deletions": 89
+      },
+      "url": "https://api.github.com/gists/1374397/2cb494a491c801ec78bf52a9b332c988c9a4c98b",
+      "committed_at": "2011-11-28T11:23:46Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "453ec4fd52806d310b557bbc55d1d4a3ac24150b",
+      "change_status": {
+        "total": 19,
+        "additions": 12,
+        "deletions": 7
+      },
+      "url": "https://api.github.com/gists/1374397/453ec4fd52806d310b557bbc55d1d4a3ac24150b",
+      "committed_at": "2011-08-04T16:15:55Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "4eb838df25e5ecd95d2a33d58a4c0e9e4afc7097",
+      "change_status": {
+        "total": 93,
+        "additions": 93,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1374397/4eb838df25e5ecd95d2a33d58a4c0e9e4afc7097",
+      "committed_at": "2011-04-02T18:03:45Z"
+    }
+  ],
+  "description": "SHowing all unassigned resources in an AM",
+  "html_url": "https://gist.github.com/1374397",
+  "git_push_url": "git@gist.github.com:1374397.git",
+  "comments": 0,
+  "created_at": "2011-11-17T20:22:47Z",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mbostock",
+      "id": 230541
+    },
+    "git_pull_url": "git://gist.github.com/899711.git",
+    "description": "Google Maps + D3",
+    "html_url": "https://gist.github.com/899711",
+    "git_push_url": "git@gist.github.com:899711.git",
+    "comments": 3,
+    "created_at": "2011-04-02T18:03:45Z",
+    "public": true,
+    "files": {
+      "stations.json": {
+        "raw_url": "https://gist.github.com/raw/899711/f5b132f98e3d30bfe193c5e9c5bc5fc6b75aba5f/stations.json",
+        "type": "application/json",
+        "filename": "stations.json",
+        "size": 2098,
+        "language": "JSON"
+      },
+      "index.html": {
+        "raw_url": "https://gist.github.com/raw/899711/c32a6ef92dab913b99f556386bd6c6abd7852ee4/index.html",
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 2468,
+        "language": "HTML"
+      }
+    },
+    "updated_at": "2011-04-02T18:03:45Z",
+    "url": "https://api.github.com/gists/899711",
+    "id": "899711"
+  },
+  "public": true,
+  "files": {
+    "network.js": {
+      "raw_url": "https://gist.github.com/raw/1374397/75f031e3829113f88c4622577f77870da712f736/network.js",
+      "type": "application/javascript",
+      "filename": "network.js",
+      "size": 2163,
+      "content": "var w = 960,\n    h = 500,\n    fill = d3.scale.category20();\n\nvar vis = d3.select(\"#chart\")\n  .append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nd3.json(\"http://0.0.0.0:8001/resources?json\", function(json) {\n  var resources = json['resources_response']['resources']\n  var i2n = {};\n  var nodes = _.filter(resources, function(n) {\n\tif (n['sfa_class'] == \"node\") {\n\t\t _.each(n['interfaces'], function(i) {\n\t\t\t i2n[i['href']] = n;\n\t\t });\n\t\t return true;\n\t}\n\treturn false;\n  });\n  \n  var links = _.filter(resources, function(l) {\n    if (l['sfa_class'] == \"link\") {\n    \tvar src = l.interfaces[0].href;\n    \tvar tgt = l.interfaces[1].href;\n    \tl.source = i2n[src];\n    \tl.target = i2n[tgt];\n    \treturn l.source && l.target;\n    } \n    return false;\n  });\n  \n  var force = d3.layout.force()\n      .charge(-1000)\n      .distance(100)\n      .nodes(nodes)\n      .links(links)\n      .size([w, h])\n      .start();\n\n  var link = vis.selectAll(\"line.link\")\n      .data(links)\n    .enter().append(\"svg:line\")\n      .attr(\"class\", \"link\")\n      .attr(\"x1\", function(d) { \n    \t  return d.source.x; \n       })\n      .attr(\"y1\", function(d) { return d.source.y; })\n      .attr(\"x2\", function(d) { return d.target.x; })\n      .attr(\"y2\", function(d) { return d.target.y; });\n\n  var node = vis.selectAll(\"circle.node\")\n      .data(nodes)\n    .enter().append(\"svg:circle\")\n      .attr(\"class\", \"node\")\n      .attr(\"cx\", function(d) { return d.x; })\n      .attr(\"cy\", function(d) { return d.y; })\n      .attr(\"r\", 20)\n      .style(\"fill\", function(d) { return fill(d.group); })\n      .call(force.drag);\n\n  node.append(\"svg:title\")\n      .text(function(d) { \n    \t  return d.component_name; \n      });\n\n  vis.style(\"opacity\", 1e-6)\n    .transition()\n      .duration(1000)\n      .style(\"opacity\", 1);\n\n  force.on(\"tick\", function() {\n    link.attr(\"x1\", function(d) { return d.source.x; })\n        .attr(\"y1\", function(d) { return d.source.y; })\n        .attr(\"x2\", function(d) { return d.target.x; })\n        .attr(\"y2\", function(d) { return d.target.y; });\n\n    node.attr(\"cx\", function(d) { return d.x; })\n        .attr(\"cy\", function(d) { return d.y; });\n  });\n});\n",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/1374397/9cc4f0ffea41ad300395792e1b178c32b3bfb4a9/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 846,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Available Resources</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.6.0s\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.js\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js\"></script>\n    <script type=\"text/javascript\" src=\"http://documentcloud.github.com/underscore/underscore.js\"></script>\n    \n    <style type=\"text/css\">\n      circle.node {\n        stroke: #fff;\n        stroke-width: 1.5px;\n      }\n      \n      line.link {\n        stroke: #999;\n        stroke-opacity: .6;\n        stroke-width: 2px;\n\n      }\n    </style>\n  </head>\n  <body>\n    <div id=\"chart\"></div>\n    <script type=\"text/javascript\" src=\"http://0.0.0.:8001/assets/network.js\"></script>\n  </body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-11-28T11:45:37Z",
+  "url": "https://api.github.com/gists/1374397",
+  "id": "1374397"
+}

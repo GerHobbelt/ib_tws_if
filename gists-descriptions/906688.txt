@@ -1,0 +1,114 @@
+{
+  "git_push_url": "git@gist.github.com:906688.git",
+  "forks": [
+    {
+      "updated_at": "2011-04-07T15:55:41Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/908051",
+      "id": "908051",
+      "created_at": "2011-04-07T15:53:41Z"
+    }
+  ],
+  "updated_at": "2011-04-07T18:33:07Z",
+  "public": true,
+  "html_url": "https://gist.github.com/906688",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "raw_url": "https://gist.github.com/raw/906688/04fb0c73fa03252398b31585c29c8f96d2c05ee5/index.html",
+      "content": "<!DOCTYPE html>\n<html><head><script type=\"text/javascript\" src=\"https://github.com/mbostock/d3/raw/master/d3.js\"></script></head><body>\n\n<script lang=\"text/javascript\">\nwindow.onload = function() {\n    // Create a red rectangle\n    d3.select(\"body\").append(\"svg:svg\")\n        .attr(\"width\", \"100\").attr(\"height\", \"100\")\n      .append(\"svg:rect\")\n        .attr(\"id\", \"myrectangle\")\n        .style(\"fill\", \"red\")\n        .attr(\"width\", \"100\").attr(\"height\", \"100\");\n\n    // Now turn the rectangle blue, via an ID selector\n    setTimeout(function() {\n      d3.selectAll(\"#myrectangle\").style(\"fill\", \"blue\"); \n    }, 2000);\n}\n</script></body></html>",
+      "size": 646
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/a1c0e0c3b1a5147ae7742a76b93a2225?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "a1c0e0c3b1a5147ae7742a76b93a2225",
+    "url": "https://api.github.com/users/NelsonMinar",
+    "login": "NelsonMinar",
+    "id": 382136
+  },
+  "history": [
+    {
+      "version": "4b5dc41e43e90c92f9320d880311a2f9cb9c245b",
+      "change_status": {
+        "total": 11,
+        "deletions": 6,
+        "additions": 5
+      },
+      "committed_at": "2011-04-07T18:33:07Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/a1c0e0c3b1a5147ae7742a76b93a2225?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "a1c0e0c3b1a5147ae7742a76b93a2225",
+        "url": "https://api.github.com/users/NelsonMinar",
+        "login": "NelsonMinar",
+        "id": 382136
+      },
+      "url": "https://api.github.com/gists/906688/4b5dc41e43e90c92f9320d880311a2f9cb9c245b"
+    },
+    {
+      "version": "2114d4cb62784398413654952a1e09f07b0510a2",
+      "change_status": {
+        "total": 21,
+        "deletions": 9,
+        "additions": 12
+      },
+      "committed_at": "2011-04-07T14:20:30Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/a1c0e0c3b1a5147ae7742a76b93a2225?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "a1c0e0c3b1a5147ae7742a76b93a2225",
+        "url": "https://api.github.com/users/NelsonMinar",
+        "login": "NelsonMinar",
+        "id": 382136
+      },
+      "url": "https://api.github.com/gists/906688/2114d4cb62784398413654952a1e09f07b0510a2"
+    },
+    {
+      "version": "289eb92d8a4b20956d92f1fc190574aba70df94d",
+      "change_status": {
+        "total": 34,
+        "deletions": 17,
+        "additions": 17
+      },
+      "committed_at": "2011-04-06T22:35:23Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/a1c0e0c3b1a5147ae7742a76b93a2225?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "a1c0e0c3b1a5147ae7742a76b93a2225",
+        "url": "https://api.github.com/users/NelsonMinar",
+        "login": "NelsonMinar",
+        "id": 382136
+      },
+      "url": "https://api.github.com/gists/906688/289eb92d8a4b20956d92f1fc190574aba70df94d"
+    },
+    {
+      "version": "c5d672dae1d2e6becb26221251627260c4d6326d",
+      "change_status": {
+        "total": 17,
+        "deletions": 0,
+        "additions": 17
+      },
+      "committed_at": "2011-04-06T22:34:43Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/a1c0e0c3b1a5147ae7742a76b93a2225?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "a1c0e0c3b1a5147ae7742a76b93a2225",
+        "url": "https://api.github.com/users/NelsonMinar",
+        "login": "NelsonMinar",
+        "id": 382136
+      },
+      "url": "https://api.github.com/gists/906688/c5d672dae1d2e6becb26221251627260c4d6326d"
+    }
+  ],
+  "url": "https://api.github.com/gists/906688",
+  "description": "D3 id selection example",
+  "git_pull_url": "git://gist.github.com/906688.git",
+  "id": "906688",
+  "comments": 0,
+  "created_at": "2011-04-06T22:34:43Z"
+}

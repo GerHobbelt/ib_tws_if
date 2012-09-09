@@ -1,0 +1,102 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "0ec64625084efbe824108abaf93ba4dc15505d47",
+      "committed_at": "2011-04-23T04:39:25Z",
+      "url": "https://api.github.com/gists/938288/0ec64625084efbe824108abaf93ba4dc15505d47"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "52d9004b090871cef579fb7c06c07e49291651c3",
+      "committed_at": "2011-04-23T04:38:46Z",
+      "url": "https://api.github.com/gists/938288/52d9004b090871cef579fb7c06c07e49291651c3"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 7,
+        "additions": 3,
+        "deletions": 4
+      },
+      "version": "66dffd02dfd232b118850b0de528388d46d21e2f",
+      "committed_at": "2011-04-23T04:38:28Z",
+      "url": "https://api.github.com/gists/938288/66dffd02dfd232b118850b0de528388d46d21e2f"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 47,
+        "additions": 47,
+        "deletions": 0
+      },
+      "version": "f3075a9f571244fca9ab92a1d6967b211357f8bb",
+      "committed_at": "2011-04-23T04:37:33Z",
+      "url": "https://api.github.com/gists/938288/f3075a9f571244fca9ab92a1d6967b211357f8bb"
+    }
+  ],
+  "description": "Arcs Around",
+  "comments": 0,
+  "created_at": "2011-04-23T04:37:33Z",
+  "public": true,
+  "html_url": "https://gist.github.com/938288",
+  "git_pull_url": "git://gist.github.com/938288.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 976,
+      "raw_url": "https://gist.github.com/raw/938288/e32614f1c4370713a48bbbff19cd6695a092e48f/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"https://github.com/mbostock/d3/raw/master/d3.min.js\"></script>\n    <style type=\"text/css\">\n\nhtml, body {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n\npath {\n  fill: lightsteelblue;\n  stroke: steelblue;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    data = d3.range(20),\n    angle = d3.scale.ordinal().domain(data).rangeBands([0, 2 * Math.PI]);\n\nvar vis = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + w / 2 + \",\" + h / 2 + \")\");\n\nvis.selectAll(\"path\")\n    .data(data)\n  .enter().append(\"svg:path\")\n    .attr(\"d\", d3.svg.arc()\n    .innerRadius(h / 2 - 20)\n    .outerRadius(h / 2 - 10)\n    .startAngle(function(d) { return angle(d); })\n    .endAngle(function(d) { return angle(d) + angle.rangeBand() / 2; }));\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:938288.git",
+  "updated_at": "2011-04-23T04:38:28Z",
+  "url": "https://api.github.com/gists/938288",
+  "id": "938288"
+}

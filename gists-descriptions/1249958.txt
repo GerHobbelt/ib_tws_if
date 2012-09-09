@@ -1,0 +1,164 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "bunkat",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "created_at": "2012-05-04T16:25:12Z",
+      "updated_at": "2012-05-04T16:25:12Z",
+      "url": "https://api.github.com/gists/2595899",
+      "id": "2595899"
+    }
+  ],
+  "user": {
+    "gravatar_id": "c923ccc7759451faddbc47537382950e",
+    "avatar_url": "https://secure.gravatar.com/avatar/c923ccc7759451faddbc47537382950e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "adamgreenhall",
+    "url": "https://api.github.com/users/adamgreenhall",
+    "id": 704919
+  },
+  "git_pull_url": "git://gist.github.com/1249958.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "c923ccc7759451faddbc47537382950e",
+        "avatar_url": "https://secure.gravatar.com/avatar/c923ccc7759451faddbc47537382950e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "adamgreenhall",
+        "url": "https://api.github.com/users/adamgreenhall",
+        "id": 704919
+      },
+      "version": "68dda6f4d5c8dc4f5cafdec019d771f18b69c1a4",
+      "change_status": {
+        "total": 15,
+        "additions": 3,
+        "deletions": 12
+      },
+      "url": "https://api.github.com/gists/1249958/68dda6f4d5c8dc4f5cafdec019d771f18b69c1a4",
+      "committed_at": "2011-09-29T04:45:33Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "c923ccc7759451faddbc47537382950e",
+        "avatar_url": "https://secure.gravatar.com/avatar/c923ccc7759451faddbc47537382950e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "adamgreenhall",
+        "url": "https://api.github.com/users/adamgreenhall",
+        "id": 704919
+      },
+      "version": "bae265c5f728b4fef7cb2a9549315bf8cefad41a",
+      "change_status": {
+        "total": 41,
+        "additions": 41,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1249958/bae265c5f728b4fef7cb2a9549315bf8cefad41a",
+      "committed_at": "2011-09-29T04:41:23Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "c923ccc7759451faddbc47537382950e",
+        "avatar_url": "https://secure.gravatar.com/avatar/c923ccc7759451faddbc47537382950e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "adamgreenhall",
+        "url": "https://api.github.com/users/adamgreenhall",
+        "id": 704919
+      },
+      "version": "28795e15ffe6cb852dbcb3956a1102ce3a1422f8",
+      "change_status": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1249958/28795e15ffe6cb852dbcb3956a1102ce3a1422f8",
+      "committed_at": "2011-09-29T04:34:06Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "c923ccc7759451faddbc47537382950e",
+        "avatar_url": "https://secure.gravatar.com/avatar/c923ccc7759451faddbc47537382950e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "adamgreenhall",
+        "url": "https://api.github.com/users/adamgreenhall",
+        "id": 704919
+      },
+      "version": "40e384b21662d1625c117bc90338bb1be68a7ecc",
+      "change_status": {
+        "total": 79,
+        "additions": 43,
+        "deletions": 36
+      },
+      "url": "https://api.github.com/gists/1249958/40e384b21662d1625c117bc90338bb1be68a7ecc",
+      "committed_at": "2011-09-29T04:33:12Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "c923ccc7759451faddbc47537382950e",
+        "avatar_url": "https://secure.gravatar.com/avatar/c923ccc7759451faddbc47537382950e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "adamgreenhall",
+        "url": "https://api.github.com/users/adamgreenhall",
+        "id": 704919
+      },
+      "version": "56a6de487c166a745e72a3f1d8940497b2a799cf",
+      "change_status": {
+        "total": 40,
+        "additions": 36,
+        "deletions": 4
+      },
+      "url": "https://api.github.com/gists/1249958/56a6de487c166a745e72a3f1d8940497b2a799cf",
+      "committed_at": "2011-09-29T04:31:14Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "c923ccc7759451faddbc47537382950e",
+        "avatar_url": "https://secure.gravatar.com/avatar/c923ccc7759451faddbc47537382950e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "adamgreenhall",
+        "url": "https://api.github.com/users/adamgreenhall",
+        "id": 704919
+      },
+      "version": "255e571f0100abf9afb4e8acceec1c4b155d523b",
+      "change_status": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1249958/255e571f0100abf9afb4e8acceec1c4b155d523b",
+      "committed_at": "2011-09-29T04:15:21Z"
+    }
+  ],
+  "description": "d3 time with custom range (for simple time scatter plot)",
+  "html_url": "https://gist.github.com/1249958",
+  "git_push_url": "git@gist.github.com:1249958.git",
+  "comments": 0,
+  "created_at": "2011-09-29T04:15:21Z",
+  "public": true,
+  "files": {
+    "scatterchart.js.coffee": {
+      "type": "text/coffescript",
+      "filename": "scatterchart.js.coffee",
+      "size": 911,
+      "content": "data = [246, 245, 241, 240.5]\ntimes_raw = [\"Aug-3\", \"Aug-4\", \"Aug-5\", \"Aug-6\"]\nformat = d3.time.format(\"%b-%d\")\ntimes = (format.parse(t) for t in times_raw)\n\nchart_width=640\nchart_height=240\nchart_axis_margin=20\n\nx = d3.time.scale()\n    .domain(times)\n    .range([ 0 + chart_axis_margin, chart_width - chart_axis_margin ])\n\ny = d3.scale.linear()\n\t.domain([ 200, 255 ])\n\t.range([ 0 + chart_axis_margin, chart_height - chart_axis_margin ])\n\n\nvis = d3.select(\".content\")\n    .append(\"svg:svg\")\n        .attr(\"class\", \"chart\")\n        .attr(\"width\", chart_width)\n        .attr(\"height\", chart_height)\n\ng = vis.append(\"svg:g\")\n    .attr(\"transform\", 'translate(0,'+chart_height+')') #flip the graph over the yaxis\n\n\ng.selectAll(\"scatter-dots\")\n  .data(data)\n  .enter().append(\"svg:circle\")\n      .attr(\"cy\", (d)   -> flipy(y(d))  )\n      .attr(\"cx\", (d,i) -> x(i) )\n      .attr(\"r\", 2)\n      .style(\"opacity\", 0.6)\n\n",
+      "raw_url": "https://gist.github.com/raw/1249958/ea536a7a52096224639f70060d235470d6d7961b/scatterchart.js.coffee",
+      "language": "CoffeeScript"
+    },
+    "scatterchart.js": {
+      "type": "application/javascript",
+      "filename": "scatterchart.js",
+      "size": 1100,
+      "content": "var chart_axis_margin, chart_height, chart_width, data, format, g, t, times, times_raw, vis, x, y;\ndata = [246, 245, 241, 240.5];\ntimes_raw = [\"Aug-3\", \"Aug-4\", \"Aug-5\", \"Aug-6\"];\nformat = d3.time.format(\"%b-%d\");\ntimes = (function() {\n  var _i, _len, _results;\n  _results = [];\n  for (_i = 0, _len = times_raw.length; _i < _len; _i++) {\n    t = times_raw[_i];\n    _results.push(format.parse(t));\n  }\n  return _results;\n})();\nchart_width = 640;\nchart_height = 240;\nchart_axis_margin = 20;\nx = d3.time.scale().domain(times).range([0 + chart_axis_margin, chart_width - chart_axis_margin]);\ny = d3.scale.linear().domain([200, 255]).range([0 + chart_axis_margin, chart_height - chart_axis_margin]);\nvis = d3.select(\".content\").append(\"svg:svg\").attr(\"class\", \"chart\").attr(\"width\", chart_width).attr(\"height\", chart_height);\ng = vis.append(\"svg:g\").attr(\"transform\", 'translate(0,' + chart_height + ')');\ng.selectAll(\"scatter-dots\").data(data).enter().append(\"svg:circle\").attr(\"cy\", function(d) {\n  return flipy(y(d));\n}).attr(\"cx\", function(d, i) {\n  return x(i);\n}).attr(\"r\", 2).style(\"opacity\", 0.6);",
+      "raw_url": "https://gist.github.com/raw/1249958/1c756e384a4eeef9a1b8ab1c89e8be023f6c089d/scatterchart.js",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 659,
+      "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html lang='en'>\n  <head>\n    <title>The d3 test</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.time.js\"></script>\n  </head>\n  <body>\n    <script type=\"text/javascript\" src=\"scatterchart.js\"></script>\n    <h1>here's the chart</h1>\n    <div class='content'>\n      <!-- /the chart goes here -->\n    </div>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1249958/f7de887b2d9302c4fea2fd3dc6ee10bf7a3efc36/index.html",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-09-29T04:31:15Z",
+  "url": "https://api.github.com/gists/1249958",
+  "id": "1249958"
+}

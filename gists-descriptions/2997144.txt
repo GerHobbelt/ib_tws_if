@@ -1,0 +1,248 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 402462
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "version": "c6c903e075753e8fbeab2f6ff9b0a41af9ecaa2f",
+      "committed_at": "2012-09-09T08:52:58Z",
+      "url": "https://api.github.com/gists/2997144/c6c903e075753e8fbeab2f6ff9b0a41af9ecaa2f"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "version": "7ae723c43a396765fd0198bf688d9f2731649aea",
+      "committed_at": "2012-09-09T08:44:30Z",
+      "url": "https://api.github.com/gists/2997144/7ae723c43a396765fd0198bf688d9f2731649aea"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 34,
+        "additions": 24,
+        "deletions": 10
+      },
+      "version": "6c8ed0fd619a6397234fdc9885c20a5ac4c680d3",
+      "committed_at": "2012-09-09T08:42:22Z",
+      "url": "https://api.github.com/gists/2997144/6c8ed0fd619a6397234fdc9885c20a5ac4c680d3"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "version": "25a5abc857f574b0fe1e496a4952750a35efa3d8",
+      "committed_at": "2012-09-04T15:43:55Z",
+      "url": "https://api.github.com/gists/2997144/25a5abc857f574b0fe1e496a4952750a35efa3d8"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "version": "96f608dfcf95defa309a7ae2f4736b823658ae87",
+      "committed_at": "2012-09-04T15:33:12Z",
+      "url": "https://api.github.com/gists/2997144/96f608dfcf95defa309a7ae2f4736b823658ae87"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "version": "cd50a4856986d2e4732b02998eeeefcdec449df1",
+      "committed_at": "2012-09-04T15:29:27Z",
+      "url": "https://api.github.com/gists/2997144/cd50a4856986d2e4732b02998eeeefcdec449df1"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "23a1e402802af46b2d1716e6f6343c5eed710e06",
+      "committed_at": "2012-09-04T15:23:58Z",
+      "url": "https://api.github.com/gists/2997144/23a1e402802af46b2d1716e6f6343c5eed710e06"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "09dc7feb3b24504ee300487c24fdf98f9c860b85",
+      "committed_at": "2012-09-04T15:21:15Z",
+      "url": "https://api.github.com/gists/2997144/09dc7feb3b24504ee300487c24fdf98f9c860b85"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 10,
+        "additions": 1,
+        "deletions": 9
+      },
+      "version": "855eac8e56cecda394d9b8711a54f3cf8ff05a29",
+      "committed_at": "2012-09-04T14:51:47Z",
+      "url": "https://api.github.com/gists/2997144/855eac8e56cecda394d9b8711a54f3cf8ff05a29"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 8,
+        "additions": 8,
+        "deletions": 0
+      },
+      "version": "4681a6ccfc523674628c80740682ee04b3520319",
+      "committed_at": "2012-09-04T14:46:39Z",
+      "url": "https://api.github.com/gists/2997144/4681a6ccfc523674628c80740682ee04b3520319"
+    }
+  ],
+  "description": "d3.js: positive/negative stacked bar chart with sum line / bar (flex layout)",
+  "comments": 0,
+  "created_at": "2012-06-26T17:03:46Z",
+  "public": true,
+  "html_url": "https://gist.github.com/2997144",
+  "git_pull_url": "git://gist.github.com/2997144.git",
+  "files": {
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "size": 623,
+      "raw_url": "https://gist.github.com/raw/2997144/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 7910,
+      "raw_url": "https://gist.github.com/raw/2997144/3c776d0dae28c820c42c0cf6e192ec86f3c89e20/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n<script src=\"http://mbostock.github.com/d3/d3.v2.js\"></script>\n<script src=\"Adobe.ASE.load.js\"></script>\n<title>barStack with sum line (cummulative=consolidated revenue as line + components' profit/loss as bars)</title>\n<style>\n.axis text {\n  font: 10px sans-serif;\n}\n.axis path {\n  fill: none;\n  stroke: black;\n  stroke-width:4;\n  shape-rendering: crispEdges;\n}\n\n.axis line {\n  /* display: none; */\n}\n\nlabel {\n}\n\ninput[type=\"radio\"] {\n  width: 1em;\n  float: left;\n}\n\n</style>\n</head>\n<body>\n<svg>\n</svg>\n<script type=\"text/javascript\" src=\"http://gerhobbelt.github.com/bl.ocks.org-hack/fixit.js\" ></script>\n\n<script type=\"text/javascript\" >\n\nfunction barStack(d) {\n    var l = d[0].length;\n    while (l--) {\n        var posBase = 0, negBase = 0, sum = 0;\n        d.forEach(function(d) {\n            d=d[l]\n            sum += d.y;\n            d.size = Math.abs(d.y);\n            if (d.y < 0) {\n                d.y0 = negBase;\n                negBase -= d.size;\n            } else {\n                posBase += d.size;\n                d.y0 = posBase;\n            }\n        });\n        d[0][l].sum = sum;\n    }\n    d.extent = d3.extent(d3.merge(d3.merge(d.map(function(e) {\n        return e.map(function(f) {\n            return [f.y0, f.y0 - f.size]\n        })\n    })),d[0].map(function(e) {\n        return e.sum;\n    })));\n    return d\n}\n\n/* Here is an example */\n\nvar data = [[{x:1,y:-33},{x:2,y:6},{x:3,y:-3},{x:4,y:1}],\n            [{x:1,y:4},{x:2,y:-2},{x:3,y:-9},{x:4,y:-11}],\n            [{x:1,y:10},{x:2,y:-3},{x:3,y:4},{x:4,y:26}]]\n\n\nvar  h=500\n    ,w=500\n    ,margin=20\n    ,color = d3.scale.category10()\n    //,color = d3.scale.ordinal().range(d3_category10); -- what we really want is feed this bugger some ASE file...\n\n    ,x = d3.scale.ordinal()\n        .domain(d3.range(1, data[0].length + 1))\n        .rangeRoundBands([margin, w - margin], .1)\n\n    ,y = d3.scale.linear()\n        .range([h - margin, 0 + margin])\n\n    ,xAxis = d3.svg.axis().scale(x).orient(\"bottom\").tickSize(6, 0)\n    ,yAxis = d3.svg.axis().scale(y).orient(\"left\");\n\nbarStack(data);\ny.domain(data.extent);\n\n// I want the green and red color from the palette for the sum-lines!\nfor (i = 0; i < 2; i++) color(i); // we know our own data indexes run from 0..M (M = 2 ~ data.length-1)\ncolor(-1); color(-2);\nfor (i = 2; i < 8; i++) color(i); // we know our own data indexes run from 0..M (M = 2 ~ data.length-1)\n\nsvg = d3.select(\"svg\")\n    .attr(\"height\",h)\n    .attr(\"width\",w);\n\nsvg.selectAll(\".series\").data(data)\n    .enter().append(\"g\").classed(\"series\",true).style(\"fill\", function(d,i) {\n              return color(i)\n        })\n        .selectAll(\"rect\").data(Object)\n        .enter().append(\"rect\");\n        \nvar sums_g = svg.selectAll(\".sums\").data([0])\n    .enter().append(\"g\").classed(\"sums\",true).style(\"fill\", \"none\")\n        .style(\"stroke-width\", \"3\")\n        .style(\"stroke-dasharray\", \"5 3\")\n        .selectAll(\"rect\").data(data[0])\n        .enter()\n            sums_g.append(\"rect\");\n            \nsvg.append(\"g\").attr(\"class\",\"axis x\")\nsvg.append(\"g\").attr(\"class\",\"axis y\")\n\n// If we have an ASE swatch set available, have that one override the default color set:\nadobe.ase.load(\"kuler.adobe/Streetlamp.ase\", function(swatches) {\n\tvar cs = [\"red\", \"green\"].concat(swatches);\n\tcolor = d3.scale.ordinal().range(swatches);\n\t\n\t// I want the green and red color from the palette for the sum-lines!\n\tfor (i = 0; i < cs.length - 2; i++) color(i); // we know our own data indexes run from 0..M (M = 2 ~ data.length-1)\n\tcolor(-1); color(-2);\n\t\n\tsvg.selectAll(\".series\")\n\t\t.style(\"fill\", function(d,i) {\n              return color(i)\n        });\n\tredraw(null, 1);\n});\n\n\nvar layout = 1, dur = 0;\nredraw(null, 1);\ndur = 1500;\n\n\nfunction redraw(d, i) {\n    if (!d) {\n        // flip button clicked or redraw() called?\n        if (!i)\n            layout = !layout;\n    } else {\n        // one of the Q radios is clicked:\n        \n    }\n    \n    if (layout) {\n        /* Readjust the range to width and height */\n        x.rangeRoundBands([margin, w - margin], .1);\n        y.range([h - margin, 0 + margin]);\n        \n        /* Reposition and redraw axis */\n        svg.select(\".x.axis\")\n            .transition().duration(dur)\n            .attr(\"transform\",\"translate (0 \"+y(0)+\")\")\n            .call(xAxis.orient(\"bottom\"));\n        svg.select(\".y.axis\")\n            .transition().duration(dur)\n            .attr(\"transform\",\"translate (\"+x(1)+\" 0)\")\n            .call(yAxis.orient(\"left\"));\n\n        /* Reposition the elements */\n        svg.selectAll(\".series rect\")\n            .transition().duration(dur)\n            .attr(\"x\",function(d,i) { return x(d.x); })\n            .attr(\"y\",function(d) { return y(d.y0); })\n            .attr(\"height\",function(d) { return y(0) - y(d.size); })\n            .attr(\"width\",x.rangeBand());\n\n        svg.selectAll(\".sums rect\")\n            .transition().duration(dur)\n                .style(\"stroke\", function(d,i) {\n                    return color(-2 + (d.sum >= 0));\n                })\n                .attr(\"x\",function(d,i) {\n                    return x(d.x) - x.rangeBand() * 0.05 / 2;\n                })\n                .attr(\"y\",function(d, i) {\n                    return y(d.sum);\n                })\n                .attr(\"width\",function(d,i) {\n                    return x.rangeBand() * 1.05;\n                })\n                .attr(\"height\",\"0.01\");\n    } else {\n        /* Readjust the range to width and height */\n        x.rangeRoundBands([h - margin, 0 + margin], .1);\n        y.range([margin, w - margin]);\n        \n        /* Reposition and redraw axis */\n        svg.select(\".x.axis\")\n            .transition().duration(dur)\n            .attr(\"transform\",\"translate (\"+y(0)+\" 0)\")\n            .call(xAxis.orient(\"left\"));\n        svg.select(\".y.axis\")\n            .transition().duration(dur)\n            .attr(\"transform\",\"translate (0 \"+(x(1) + x.rangeBand() /* (x(2) - x(1)) */ )+\")\")\n            .call(yAxis.orient(\"bottom\"));\n\n        /* Reposition the elements */\n        svg.selectAll(\".series rect\")\n            .transition().duration(dur)\n            .attr(\"y\",function(d,i) { return x(d.x); })\n            .attr(\"x\",function(d) { return y(d.y0 - d.size); })\n            .attr(\"width\",function(d) { return y(d.size) - y(0); })\n            .attr(\"height\",x.rangeBand());\n\n        svg.selectAll(\".sums rect\")\n            .transition().duration(dur)\n                .style(\"stroke\", function(d,i) {\n                    return color(-2 + (d.sum >= 0));\n                })\n                .attr(\"y\",function(d,i) {\n                    return x(d.x) - x.rangeBand() * 0.05 / 2;\n                })\n                .attr(\"x\",function(d, i) {\n                    return y(d.sum);\n                })\n                .attr(\"height\",function(d,i) {\n                    return x.rangeBand() * 1.05;\n                })\n                .attr(\"width\",\"0.01\");\n    }\n}\n\nd3.select(\"body\").append(\"button\")\n    .attr(\"type\",\"button\")\n    .text(\"Flip Layout\")\n    .style(\"position\",\"absolute\")\n    .style(\"left\",\"5px\")\n    .style(\"top\",\"5px\")\n    .on(\"click\",redraw);\n    \nd3.select(\"body\").append(\"div\").selectAll(\"input\")\n    .data([{text: \"Q1+Q2\", q: 1, onClick: redraw},\n           {text: \"Q3\",    q: 3, onClick: redraw},\n           {text: \"Q4\",    q: 4, onClick: redraw},\n           {text: \"Q5+Q6\", q: 5, onClick: redraw}])\n    .enter()\n        .append(\"label\")\n        .style(\"position\",\"absolute\")\n        .style(\"left\", function(d, i) {\n            return (10 + i * 5) + \"em\";\n        })\n        .style(\"top\",\"5px\")\n        .text(function(d, i) {\n            return d.text;\n        })\n            .append(\"input\")\n            .attr(\"type\",\"radio\")\n            .attr(\"name\",\"question\") // group the buggers\n            .on(\"click\", function(d, i) {\n                    return d.onClick(d, i);\n                })\n\n\n</script>\n</body>\n</html>",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 8698,
+      "raw_url": "https://gist.github.com/raw/2997144/d9a8f84219a4c6b5478e1ccb891a1a84fbbb9b29/README.md",
+      "content": "TODO …… <a href=\"http://bl.ocks.org/2997144\" title=\"view this gist via bl.ocks.org\">∆</a> <a href=\"http://bl.ocks.org/GerHobbelt\" title=\"view a list of all my gists at bl.ocks.org\">∞</a>\n====\n\n- implement Q1...Qn data transitions.\n- which includes adding 'sales data' next to the current 'P&L' data.\n- the colors suck like a Hoover --> add ASE support (because I want it and heck, it gotta happen some day)\n\n\nUsage\n=====\n\nClick the radio buttons for Q1+Q2, Q3, Q4, ... to see various stacked bar renderings of the data.\n\n> Note that Q3, Q4, ... imply that the data has a different *meaning* than for Q1+Q2: read the text below\n> to understand which questions are asked (Q1, Q2, Q3, etc.) and try to answer those questions while\n> the graph for another Q question is shown: this might be an easy or a hard task. You'll find out.\n\n\nStacked bar charts with positive and negative values: their usefulness\n======================================================================\n\nQuestion: When are stacked bar charts with both negative and positive blocks (components) useful?\n\nAnswer: one example is when looking at P&L (profit and loss) numbers on a per-region or\nper-quarter basis. Here we'll assume that we want to look at components on a quarterly basis,\ni.e. our X axis represents time.\n\n> **Note**: for the latter scenario (looking at the numbers per region) X would represent\n> (geo)location, but that doesn't change anything in this story. And, yes, we're aware that\n> one can flip the graph: 'X' isn't always equal to 'horizontal' that way.\n\nThe questions\n-------------\n\nSay you want to answer these questions quickly:\n\n- **Q1**: which components made a profit or a loss in which quarter?\n  How much of a loss (or profit)? &#8658; **stacked bars**\n\n- **Q2**: How much loss and profit do we have on a quarterly basis and how does it pan out,\n  consolidated? I.e. what's the number at the bottom line ~ do our profitable components\n  balance out the losing ones every quarter?\n  Do we achieve anything here? &#8658; **cummulative / sum line**\n\n\nForum problem: I want to see the total height of the stacked bar (pos+neg)\n--------------------------------------------------------------------------\n\nI can't come up with a real-life scenario where one would want that, or rather: where\nthat would be an intuitive way to communicate information. Not just in the financial\ndomain but anywhere.\n\nGiven the financial reporting scenario above, there's very little information, if any\nat all, in the sum of the absolute P&L numbers. The only place where I expect to encounter\nsuch numbers is in spreadsheets, where they are employed as col-vs-row *checksums*, i.e.\nas *pure* *technical* *tools* to help assure quality of manual input / internal operation.\n\nWhat you really want to know is the sum of the *actual* values, because that answers,\nat a consolidated level, our **Q2:** *did we gain anything after all?*\n\n\nThoughts on positive and negative values and a 'sum of the absolute values'\n---------------------------------------------------------------------------\n\nThe scenario I can come up with where you want to recognize\npositive and negative values and yet want to see a stacked bar starting at zero\nand only going up, thus having the 'sum of the absolute values' immediately visible,\nis when your positive and negative *signs* convey another information dimension\nthan the *value* that comes with it. (**I cannot, after some pondering, think of any\nuse** where you want the Q1+Q2 pos+neg stacked bars, yet also want the sum of the\n*absolute* values depicted in those stacked bars. We'll continue here with a viable\nscenario where the 'sum of absolute values' is an important datum to see in the graph,\nthough that's mostly due to the numbers contributing to the sum being naturally\npositive, rather then there being any need for `Math.abs` there.)\n\nSay you want to know the **total sales**, while you also want to see the measure\nhow much each sales' component contributed in terms of **sales** (*not* P&L!)\n*and* you want to know whether these components contributed a *loss* or a *profit*\nto the *revenue* figures each.\n**Technically**, you're treating 'profit or loss' as a *boolean* parameter here\n(whether you agree or not, you're looking at a 3D chart anyway, because you're\nlooking at _time_ vs. _sales_ vs. _P&L_ = *3* dimensions instead of *2* as in the original\nscanario ( _time_ vs. _P&L_) and this fact has considerable impact on your\nvisualization anyhow: which dimensions are you going to emphasize when you stick\nto the requirement that this has to fit in a bar chart, which is a rather 2D-ish\nvisualisation type?\n\nIn this scenario, where we need to stick with a (stacked) bar chart for whatever reason,\none might think positive and negative stacks are an answer, but you're hard pressed\nto produce the sum of the absolute values of profit and loss by simply looking at it.\n(Take the Q1+Q2 graph, then try to answer the question how much the absolute sum is. You'll\nneed to go and calculate the sum of the height of the negative stack and the positive stack.\nNot 'easy'.)\n\nOf course, you can repurpose the 'sum line', but IMHO that's rather counter-intuitive,\nas is placing the bars themselves in either the negative or positive stack, because\nthe components' height **now represents sales instead of profit/loss** and there's no\nsuch thing as a 'negative sales'. (Unless your CFO is way too smart for your good;\nit's similar to the notorious `negative cash` and all it'll get you is all the wrong\npeople perking up and taking an unhealthy interest in your activities. _Mme. Zodiac_ says:\n\"_You will experience the pleasure of wearing some very nice cuffs in your near future._\"\n(If you understand Dutch and are a bit curious: step 3, item 6 in\n[Checklist for (fiscal) due diligence](http://www.jongbloed-fiscaaljuristen.nl/overeenkomsten/checklisten/fiscaal/boekenonderzoek_fiscus/)\nmight be a lesson there.\nI'm sorry I don't know the English jargon; pull this one through Google Translate for\na good laugh, some head scratching and remember that the Dutch 'kas' is the English\n'cash box', but we Dutch like to repurpose so Google calls it 'cash' one time and\na 'greenhouse' another time; each correct when considered completely out of context,\nbut in context this will offer you *Close Encounters Of The Bablefish Kind*.\n\nAnyway, given that negative values in a *sales* graph are ludicrous, one _might_ use\nthe negative *sign* as a *boolean signal* to tell the world that this component right here\ncontributed a *loss* (without saying how _much_ of a *loss*) while positive values\nwould then tell us that we're looking at a profitable component instead.\n\nVisualizing that +/- *boolean* would be better done using color or other styling,\ne.g. boxing the component in a red border box when it's a loss and no border when\nit's the 'desirable kind': a sales component which produces a profit.\n\nHence when we ask Q3 below, we should change the stacked bar chart to a single-sided one.\n\n- **Q3**: what's our total sales figure each quarter, how much did each component contribute\n  in terms of sales and do we have components which produced a nett loss rather than a profit?\n\n\nFurther thoughts\n----------------\n\nOne might want to give 'sales' and 'P&L' dimensions an equal measure of attention;\nhere we ponder what it would bring us when we combine these by 'floating the zero level\nfor the P&L bars' - though that's the bottom-up tech wording of the problem of wanting\nto see these numbers and coming up with the possible solution of _floating_ the stacks.\nThis is useful when we ask:\n\n- **Q4**: how does our revenue develop over time and how much does each of the components\n  contribute to each annual quater? &#8658; each P&L +/- stacked bars combo is _offset_\n  against the *revenue-to-date* (here: accrued revenue till start of annual quarter)\n  _base bar_.\n\nThis would allow us to see the revenue develop, hence might assist in the _prognosis_ of\nour annual revenue, and it will show us the quarterly impact of the individual sales\ncomponents. Hence we might wonder:\n\n- **Q5**: are we on target? How much do we depend on Summer / Christmas Sales?\n  ( _Horeca_ and _retail_ business respectively: _horeca_ ~ hotel, restaurant or cafe)\n  \nSince we are really considering _change of focus_ here, there's also the _diving into\nthe details_ focus where one wishes to have a closer look at a particular (recurring?)\ncomponent:\n\n- **Q _?_**: how does component A contribute over time? &#8658; **click on a component bar to\n  _shift_ it in the stack** so it ends up at the _baseline_ ('zero line') to ease reading\n  off the values for each quarter for this particular component.",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:2997144.git",
+  "updated_at": "2012-09-09T08:53:03Z",
+  "url": "https://api.github.com/gists/2997144",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "d9fba6d190cedee6f21571b5226f0f65",
+      "login": "milroc",
+      "url": "https://api.github.com/users/milroc",
+      "avatar_url": "https://secure.gravatar.com/avatar/d9fba6d190cedee6f21571b5226f0f65?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 542959
+    },
+    "description": "barStack (flex layout)",
+    "comments": 0,
+    "created_at": "2012-06-25T21:56:26Z",
+    "public": true,
+    "html_url": "https://gist.github.com/2991587",
+    "git_pull_url": "git://gist.github.com/2991587.git",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 3902,
+        "raw_url": "https://gist.github.com/raw/2991587/44e72552e24d1fda7c9ee2ec01b6b32b51f9f1c2/index.html",
+        "language": "HTML"
+      }
+    },
+    "git_push_url": "git@gist.github.com:2991587.git",
+    "updated_at": "2012-06-25T21:56:26Z",
+    "url": "https://api.github.com/gists/2991587",
+    "id": "2991587"
+  },
+  "id": "2997144"
+}

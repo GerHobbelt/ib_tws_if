@@ -1,0 +1,204 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+    "login": "Guerino1",
+    "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/Guerino1",
+    "id": 1558275
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-04-07T14:52:47Z",
+      "version": "541adbaa95509e99dda0f2e7cdfa1036c8444c12",
+      "url": "https://api.github.com/gists/2164562/541adbaa95509e99dda0f2e7cdfa1036c8444c12",
+      "change_status": {
+        "total": 96,
+        "additions": 56,
+        "deletions": 40
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-04-05T19:45:01Z",
+      "version": "2f20d7139ccdb9e589c59bb60d3d1f29ffdf3780",
+      "url": "https://api.github.com/gists/2164562/2f20d7139ccdb9e589c59bb60d3d1f29ffdf3780",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-03-31T13:28:00Z",
+      "version": "2f6b027f9a01b89e2fdbb1336cb64b640241e1df",
+      "url": "https://api.github.com/gists/2164562/2f6b027f9a01b89e2fdbb1336cb64b640241e1df",
+      "change_status": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-03-31T04:02:21Z",
+      "version": "c2008940b5ff28ab70dacbf17516a9f41fe766e8",
+      "url": "https://api.github.com/gists/2164562/c2008940b5ff28ab70dacbf17516a9f41fe766e8",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-03-31T03:40:50Z",
+      "version": "c19492c0d67f245e2ad1cc7f4eb8e67243344534",
+      "url": "https://api.github.com/gists/2164562/c19492c0d67f245e2ad1cc7f4eb8e67243344534",
+      "change_status": {
+        "total": 14,
+        "additions": 8,
+        "deletions": 6
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-03-30T15:34:44Z",
+      "version": "9ceebe3ca90d5cd0abbf61282151b01bf0e17736",
+      "url": "https://api.github.com/gists/2164562/9ceebe3ca90d5cd0abbf61282151b01bf0e17736",
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-03-30T15:13:11Z",
+      "version": "50d9fb96c4e339e6555a75be8fda1364b08803ad",
+      "url": "https://api.github.com/gists/2164562/50d9fb96c4e339e6555a75be8fda1364b08803ad",
+      "change_status": {
+        "total": 123,
+        "additions": 77,
+        "deletions": 46
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-03-25T15:52:11Z",
+      "version": "49c1d7643899dbb0a4222c543879bbb1264e788f",
+      "url": "https://api.github.com/gists/2164562/49c1d7643899dbb0a4222c543879bbb1264e788f",
+      "change_status": {
+        "total": 15,
+        "additions": 10,
+        "deletions": 5
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-03-25T15:42:06Z",
+      "version": "a2f3d2594600c327609608ed129a5a511cffbea7",
+      "url": "https://api.github.com/gists/2164562/a2f3d2594600c327609608ed129a5a511cffbea7",
+      "change_status": {
+        "total": 27,
+        "additions": 24,
+        "deletions": 3
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-03-23T17:24:04Z",
+      "version": "770a0a46df592431653c850519d0f6589cb0cf9f",
+      "url": "https://api.github.com/gists/2164562/770a0a46df592431653c850519d0f6589cb0cf9f",
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      }
+    }
+  ],
+  "description": "Multiple D3 Vertical Bar Charts Mixed In With Common HTML Layout Constructs",
+  "comments": 0,
+  "created_at": "2012-03-22T21:05:57Z",
+  "git_pull_url": "git://gist.github.com/2164562.git",
+  "public": true,
+  "html_url": "https://gist.github.com/2164562",
+  "git_push_url": "git@gist.github.com:2164562.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/2164562/862f0d4fd7e05ec1a78961e6429f4683de9cb079/index.html",
+      "size": 19816,
+      "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n<html  xmlns=\"http://www.w3.org/1999/xhtml\"\n       xml:lang=\"en-US\"\n       lang=\"en-US\">\n  <head profile=\"http://www.w3.org/2005/10/profile\">\n    <title>IF4IT Sample Charts Web Page</title>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\" />\n    <meta name=\"Description\" content=\"This page tries to mix charts with html formatting and layout constructs.\" />\n    <meta http-equiv=\"pragma\" content=\"no-cache\" />\n    <meta http-equiv=\"cache-control\" content=\"no-cache\" />\n    <meta http-equiv=\"expires\" content=\"-l\" />\n\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.4.5\"></script>\n\n\n    <script type=\"text/javascript\">\n    \n    // This example draws vertical bar charts...\n    // Created by Frank Guerino : \"http://www.guerino.net\"\n\n    // Data Used for this example...\n    var dataSet1 = [\n      {xCoordinate: \"Legend String 1\", magnitude: 54, link: \"http://www.if4it.com\"},\n      {xCoordinate: \"Legend String 2\", magnitude: 21, link: \"http://www.if4it.com/glossary.html\"},\n      {xCoordinate: \"Legend String 3\", magnitude: 31, link: \"http://www.if4it.com/resources.html\"},\n      {xCoordinate: \"Legend String 4\", magnitude: 14, link: \"http://www.if4it.com/taxonomy.html\"},\n      {xCoordinate: \"Legend String 5\", magnitude: 19, link: \"http://www.if4it.com/disciplines.html\"},\n      {xCoordinate: \"Legend String 6\", magnitude: 47, link: \"http://www.if4it.com\"},\n      {xCoordinate: \"Legend String 7\", magnitude: 27, link: \"http://www.if4it.com/glossary.html\"}];\n\n    var dataSet2 = [\n      {xCoordinate: \"Legend String 8\", magnitude: 31, link: \"http://www.if4it.com/glossary.html\"},\n      {xCoordinate: \"Legend String 9\", magnitude: 54, link: \"http://www.if4it.com/resources.html\"},\n      {xCoordinate: \"Legend String 10\", magnitude: 21, link: \"http://www.if4it.com\"},\n      {xCoordinate: \"Legend String 11\", magnitude: 31, link: \"http://www.if4it.com/taxonomy.html\"},\n      {xCoordinate: \"Legend String 12\", magnitude: 54, link: \"http://www.if4it.com/glossary.html\"},\n      {xCoordinate: \"Legend String 13\", magnitude: 14, link: \"http://www.if4it.com/resources.html\"},\n      {xCoordinate: \"Legend String 14\", magnitude: 14, link: \"http://www.if4it.com/disciplines.html\"},\n      {xCoordinate: \"Legend String 15\", magnitude: 27, link: \"http://www.if4it.com/glossary.html\"}];\n\n    var dataSet3 = [\n      {xCoordinate: \"Legend String 16\", magnitude: 21, link: \"http://www.if4it.com\"},\n      {xCoordinate: \"Legend String 17\", magnitude: 41, link: \"http://www.if4it.com/resources.html\"},\n      {xCoordinate: \"Legend String 18\", magnitude: 34, link: \"http://www.if4it.com/glossary.html\"},\n      {xCoordinate: \"Legend String 19\", magnitude: 9, link: \"http://www.if4it.com/taxonomy.html\"},\n      {xCoordinate: \"Legend String 20\", magnitude: 47, link: \"http://www.if4it.com/glossary.html\"},\n      {xCoordinate: \"Legend String 21\", magnitude: 17, link: \"http://www.if4it.com/resources.html\"},\n      {xCoordinate: \"Legend String 22\", magnitude: 47, link: \"http://www.if4it.com/glossary.html\"},\n      {xCoordinate: \"Legend String 23\", magnitude: 37, link: \"http://www.if4it.com/disciplines.html\"},\n      {xCoordinate: \"Legend String 24\", magnitude: 47, link: \"http://www.if4it.com/resources.html\"},\n      {xCoordinate: \"Legend String 25\", magnitude: 4, link: \"http://www.if4it.com/glossary.html\"},\n      {xCoordinate: \"Legend String 26\", magnitude: 18, link: \"http://www.if4it.com\"},\n      {xCoordinate: \"Legend String 27\", magnitude: 41, link: \"http://www.if4it.com/resources.html\"},\n      {xCoordinate: \"Legend String 28\", magnitude: 37, link: \"http://www.if4it.com/glossary.html\"},\n      {xCoordinate: \"Legend String 29\", magnitude: 27, link: \"http://www.if4it.com\"}];\n\n    function drawVerticalBarChart(chartID, dataSet, selectString, colors) {\n\n      // chartID => A unique drawing identifier that has no spaces, no \".\" and no \"#\" characters.\n      // dataSet => Input Data for the chart, itself.\n      // selectString => String that allows you to pass in\n      //           a D3 select string.\n      // colors => String to set color scale.  Values can be...\n      //           => \"colorScale10\"\n      //           => \"colorScale20\"\n      //           => \"colorScale20b\"\n      //           => \"colorScale20c\"\n\n      var canvasWidth = 700;\n      var barsWidthTotal = 300\n      var barWidth = barsWidthTotal / dataSet.length;\n      //var canvasHeight = 200;\n      var canvasHeight = dataSet.length * 20 + 40;\n      var legendOffset = 30;\n      var legendBulletOffset = 30;\n      var legendTextOffset = 20;\n\n      var x = d3.scale.linear().domain([0, dataSet.length]).range([0, barsWidthTotal]);\n      var y = d3.scale.linear().domain([0, d3.max(dataSet, function(d) { return d.magnitude; })]).rangeRound([0, canvasHeight]);\n\n\n      //document.writeln(selectString);\n\n      // Color Scale Handling...\n      var colorScale = d3.scale.category20c();\n      switch (colors)\n      {\n        case \"colorScale10\":\n          colorScale = d3.scale.category10();\n          break;\n        case \"colorScale20\":\n          colorScale = d3.scale.category20();\n          break;\n        case \"colorScale20b\":\n          colorScale = d3.scale.category20b();\n          break;\n        case \"colorScale20c\":\n          colorScale = d3.scale.category20c();\n          break;\n        default:\n          colorScale = d3.scale.category20c();\n      };\n\n      var synchronizedMouseOver = function() {\n        var bar = d3.select(this);\n        var indexValue = bar.attr(\"index_value\");\n\n        var barSelector = \".\" + \"bars-\" + chartID + \"-bar-\" + indexValue;\n        var selectedBar = d3.selectAll(barSelector);\n        selectedBar.style(\"fill\", \"Maroon\");\n\n        var bulletSelector = \".\" + \"bars-\" + chartID + \"-legendBullet-\" + indexValue;\n        var selectedLegendBullet = d3.selectAll(bulletSelector);\n        selectedLegendBullet.style(\"fill\", \"Maroon\");\n\n        var textSelector = \".\" + \"bars-\" + chartID + \"-legendText-\" + indexValue;\n        var selectedLegendText = d3.selectAll(textSelector);\n        selectedLegendText.style(\"fill\", \"Maroon\");\n      };\n\n      var synchronizedMouseOut = function() {\n        var bar = d3.select(this);\n        var indexValue = bar.attr(\"index_value\");\n\n        var barSelector = \".\" + \"bars-\" + chartID + \"-bar-\" + indexValue;\n        var selectedBar = d3.selectAll(barSelector);\n        var colorValue = selectedBar.attr(\"color_value\");\n        selectedBar.style(\"fill\", colorValue);\n\n        var bulletSelector = \".\" + \"bars-\" + chartID + \"-legendBullet-\" + indexValue;\n        var selectedLegendBullet = d3.selectAll(bulletSelector);\n        var colorValue = selectedLegendBullet.attr(\"color_value\");\n        selectedLegendBullet.style(\"fill\", colorValue);\n\n        var textSelector = \".\" + \"bars-\" + chartID + \"-legendText-\" + indexValue;\n        var selectedLegendText = d3.selectAll(textSelector);\n        selectedLegendText.style(\"fill\", \"Blue\");\n      };\n\n      // Create the svg drawing canvas...\n      var canvas = d3.select(selectString)\n        .append(\"svg:svg\")\n          //.style(\"background-color\", \"yellow\")\n          .attr(\"width\", canvasWidth)\n          .attr(\"height\", canvasHeight);\n\n      // Draw individual hyper text enabled bars...\n      canvas.selectAll(\"rect\")\n        .data(dataSet)\n        .enter().append(\"svg:a\")\n          .attr(\"xlink:href\", function(d) { return d.link; })\n          .append(\"svg:rect\")\n            .attr(\"x\", function(d, i) { return x(i); })\n            // NOTE: The following \"+15\" adds an offset that ensures some space\n            // between the top of the canvas and the top of the highest bar, so\n            // that text can be added in that space, later.\n            .on('mouseover', synchronizedMouseOver)\n            .on(\"mouseout\", synchronizedMouseOut)\n            .attr(\"y\", function(d) { return canvasHeight - y(d.magnitude) + 15; })\n            .attr(\"height\", function(d) { return y(d.magnitude); })\n            .attr(\"width\", barWidth)\n            .style(\"fill\", \"White\" )\n            .style(\"stroke\", \"White\" )\n            .transition()\n              .duration(150)\n              .delay(function(d, i) { return i * 100; })\n            .style(\"fill\", function(d, i) { colorVal = colorScale(i); return colorVal; } )\n            .attr(\"index_value\", function(d, i) { return \"index-\" + i; })\n            .attr(\"class\", function(d, i) { return \"bars-\" + chartID + \"-bar-index-\" + i; })\n            .attr(\"color_value\", function(d, i) { return colorScale(i); }) // Bar fill color...\n            .style(\"stroke\", \"white\"); // Bar border color...\n\n\n      // Create text values that go at top of each bar...\n      canvas.selectAll(\"text\")\n        .data(dataSet) // Instruct to bind dataSet to text elements\n        .enter().append(\"svg:text\") // Append text elements\n\t  // Identify root coordinate (x,y)\n          //.attr(\"x\", function(d, i) { return x(i) + barWidth; }) // <-- Can't use because of bug in FireFox\n          .attr(\"x\", function(d, i) { return x(i) + barWidth / 2; }) // <-- Using because of bug in Firefox\n\t  // Note: the following \"+1\" offset places value above bar in\n\t  // Space between the top of the bar and the top of the canvas.\n\t  .attr(\"y\", function(d) {\n\t    return canvasHeight - y(d.magnitude ); })\n          //.attr(\"dx\", -barWidth/2) // <-------------- Can't use because of bug in FireFox\n          .attr(\"dy\", \"1em\") // Controls padding to place text above bars\n          .attr(\"text-anchor\", \"middle\")\n          .text(function(d) { return d.magnitude;})\n          .attr(\"fill\", \"Black\");\n\n      // Plot the bullet circles...\n      canvas.selectAll(\"circle\")\n        .data(dataSet).enter().append(\"svg:circle\") // Append circle elements\n          .attr(\"cx\", barsWidthTotal + legendBulletOffset)\n\t  .attr(\"cy\", function(d, i) { return legendOffset + i*20; } )\n          .attr(\"stroke-width\", \".5\")\n          .style(\"fill\", function(d, i) { return colorScale(i); }) // Bar fill color\n          .attr(\"index_value\", function(d, i) { return \"index-\" + i; })\n          .attr(\"class\", function(d, i) { return \"bars-\" + chartID + \"-legendBullet-index-\" + i; })\n          .attr(\"r\", 5)\n          .attr(\"color_value\", function(d, i) { return colorScale(i); }) // Bar fill color...\n          .on('mouseover', synchronizedMouseOver)\n\t  .on(\"mouseout\", synchronizedMouseOut);\n\n      // Create hyper linked text at right that acts as label key...\n      canvas.selectAll(\"a.legend_link\")\n        .data(dataSet) // Instruct to bind dataSet to text elements\n        .enter().append(\"svg:a\") // Append legend elements\n\t  .attr(\"xlink:href\", function(d) { return d.link; })\n\t    .append(\"text\")\n              .attr(\"text-anchor\", \"left\")\n              .attr(\"x\", barsWidthTotal + legendBulletOffset + legendTextOffset)\n\t      .attr(\"y\", function(d, i) { return legendOffset + i*20 - 10; })\n              .attr(\"dx\", 0)\n              .attr(\"dy\", \"1em\") // Controls padding to place text above bars\n              .text(function(d) { return d.xCoordinate;})\n              .style(\"fill\", \"Blue\")\n              .attr(\"index_value\", function(d, i) { return \"index-\" + i; })\n              .attr(\"class\", function(d, i) { return \"bars-\" + chartID + \"-legendText-index-\" + i; })\n              .on('mouseover', synchronizedMouseOver)\n\t      .on(\"mouseout\", synchronizedMouseOut);\n\n    };\n\n\n    </script>\n\n\n    <STYLE type=\"text/css\">\n      div.div_Header {\n\twidth: 100%;\n\tborder:2px solid White;\n\tborder-radius:7px;\n\tbackground: WhiteSmoke;\n\tfont: bold 14px Arial;\n\tfont-family:Arial, Helvetica, sans-serif;\n\ttext-align:center;\n      }\n      h1.h1_BodyHeader {\n\ttext-align:center;\n\tfont: bold 1.5em Arial;\n      }\n      h2.h2_LeftMenuHeader {\n\ttext-align:center;\n\tfont: bold 1.2em Arial;\n      }\n      h3.h3_Body {\n\ttext-align:center;\n      }\n      p.p_Red {\n\tcolor:Red;\n      }\n      table.table_Header {\n\twidth: 100%;\n\ttext-align:center;\n      }\n      td.td_HeaderLeft {\n\ttext-align:left;\n      }\n      td.td_HeaderRight {\n\ttext-align:right;\n      }\n      div.div_Menu {\n\twidth: 100%;\n\tborder:2px solid White;\n\tborder-radius:7px;\n\tbackground: MidnightBlue;\n\tfont: bold 14px Arial;\n\tfont-family:Arial, Helvetica, sans-serif;\n\tcolor:White;\n\ttext-align:center;\n      }\n      p.p_Left {\n\tfont-family:Arial, Helvetica, sans-serif;\n\tcolor:Black;\n\ttext-align:left;\n\tpadding-left: 5px;\n\tfont: normal 14px Arial;\n      }\n      table.table_Body {\n\twidth: 100%;\n\theight: 100%;\n\tpadding: 0;\n      }\n      td.td_BodyLeft {\n\twidth: 250px;\n\theight: 100%;\n\tpadding: 0;\n      }\n      li.li_LeftMenu {\n\ttext-align:left;\n\tfont: normal 14px Arial;\n      }\n      a.a_LeftMenuNoUnderLine {\n\ttext-decoration:  none;\n      }\n      div.div_Body {\n\theight: 100%;\n\twidth: 100%;\n\tposition: relative;\n\tborder:2px solid White;\n\tborder-radius:7px;\n\tbackground: WhiteSmoke;\n\tfont: bold 14px Arial;\n\tfont-family:Arial, Helvetica, sans-serif;\n\tcolor:Black;\n\ttext-align:center;\n      }\n      div.div_Footer {\n\twidth: 100%;\n\tborder:2px solid White;\n\tborder-radius:7px;\n\tbackground: MidnightBlue;\n\tfont: bold 14px Arial;\n\tfont-family:Arial, Helvetica, sans-serif;\n\tcolor:White;\n\ttext-align:center;\n      }\n      p.p_if4itMessage {\n\twidth: 100%;\n\tbackground: White;\n\tfont: bold .75em Arial;\n\tfont-family:Arial, Helvetica, sans-serif;\n\tcolor:GoldenRod;\n\ttext-align:center;\n      }\n      .menuButton{\n        background-color: MidnightBlue;\n      }\n      .menuButton li{\n\theight: 100%;\n\tlist-style: none;\n\tdisplay: inline;\n      }\n      .menuButton li a{\n\theight: 100%;\n\tpadding: 3px 0.5em;\n\ttext-decoration: none;\n\tcolor: White;\n\tbackground-color: MidnightBlue;\n\tborder: 2px solid MidnightBlue;\n      }\n      .menuButton li a:hover{\n\theight: 100%;\n\tcolor: MidnightBlue;\n\tbackground-color: White;\n\tborder-style: outset;\n\tbackground-color: White;\n      }\n      .menuButton li a:active{\n        height: 100%;\n        border-style: inset;\n        color: MidnightBlue;\n        background-color: White;\n      }\n      .menuButton li a.disabled{\n        height: 100%;\n        padding: 3px 0.5em;\n        text-decoration: none;\n        color: MidnightBlue;\n        background-color: White;\n        border: 2px solid MidnightBlue;\n        border-style: inset;\n        border-color: White;\n      }\n    </STYLE>\n\n    <STYLE type=\"text/css\">\n      div.div_RootBody {\n\tposition: relative;\n\tborder:2px solid White;\n\tborder-radius:7px;\n\tbackground: WhiteSmoke;\n\tfont: normal 14px Arial;\n\tfont-family:Arial, Helvetica, sans-serif;\n\tcolor:Black;\n\tpadding: 0px 1em;\n\ttext-align:left;\n      }\n    </STYLE>\n\n    <!--[if gt IE 7]>\n      <style>body { overflow-y:scroll; } </style>\n    <![endif]-->\n\n  </head>\n\n  <body>\n\n    <p id=\"dateString\"></p>\n\n      <div>\n\t<h1 style=\"text-align:center; font: bold 1.7em Arial;\"><a href=\"http://www.if4it.com\">The International Foundation for Information Technology (IF4IT)</a></h1>\n      </div>\n\n      <div class=\"div_Menu\">\n        <ul class=\"menuButton\">\n          <li><a href=\"http://www.if4it.com\">HOME</a></li>\n          <li><a href=\"http://www.if4it.com/resources.html\">RESOURCES</a></li>\n          <li><a href=\"http://www.if4it.com\">PRODUCTS</a></li>\n          <li><a href=\"http://www.if4it.com\">SERVICES</a></li>\n          <li><a href=\"http://www.if4it.com\">SUPPORT</a></li>\n          <li><a href=\"http://www.if4it.com\">HELP</a></li>\n        </ul>\n      </div>\n      <table class=\"table_Body\">\n        <tr>\n          <td class=\"td_BodyLeft\">\n            <div class=\"div_Body\">\n              <h2 class=\"h2_LeftMenuHeader\">Sample Left Menu Links</h2>\n              <ul>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com\">IF4IT Home</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/disciplines.html\">IF4IT Disciplines</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/glossary.html\">IF4IT Glossary</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/taxonomy.html\">IF4IT Taxonomies</a></li>\n              </ul>\n\t      <p class=\"p_Left\">This is dummy paragraph 1 text that would go in this section of the page.</p>\n\t      <p class=\"p_Left\">This is dummy paragraph 2 text that would go in this section of the page.</p>\n\t      <p class=\"p_Left\">This is dummy paragraph 3 text that would go in this section of the page.</p>\n\t      <p class=\"p_Left\">This is dummy paragraph 4 text that would go in this section of the page.</p>\n\t      <p class=\"p_Left\">This is dummy paragraph 5 text that would go in this section of the page.</p>\n              <ul>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com\">IF4IT Home</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/disciplines.html\">IF4IT Disciplines</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/glossary.html\">IF4IT Glossary</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/taxonomy.html\">IF4IT Taxonomies</a></li>\n              </ul>\n\t      <p class=\"p_Left\">This is dummy paragraph 1 text that would go in this section of the page.</p>\n\t      <p class=\"p_Left\">This is dummy paragraph 2 text that would go in this section of the page.</p>\n\t      <p class=\"p_Left\">This is dummy paragraph 3 text that would go in this section of the page.</p>\n\t      <p class=\"p_Left\">This is dummy paragraph 4 text that would go in this section of the page.</p>\n\t      <p class=\"p_Left\">This is dummy paragraph 5 text that would go in this section of the page.</p>\n            </div>\n          </td>\n          <td>\n            <div class=\"div_RootBody\">\n              <h1 style=\"text-align:center; font: bold 1.5em Arial;\">Multiple Interactive D3 Vertical Bar Charts on an HTML Page</h1> \n            </div>\n            <div class=\"div_RootBody\">\n\t      <h3 class=\"h3_Body\">Example Description</h3>\n                <p class=\"p_Red\">This example shows how to mix multiple interactive D3 based Bar Charts with multiple common HTML page layout constructs. Cut, paste, and run the code into your own index.html file to see the multiple charts.</p>\n            </div>\n            <div class=\"div_RootBody\" id=\"bar_chart_1\">\n\t      <h3 class=\"h3_Body\">Bar Chart Number 1</h3>\n              <div class=\"chart\"></div>\n            </div>\n            <div class=\"div_RootBody\" id=\"bar_chart_2\">\n\t      <h3 class=\"h3_Body\">Bar Chart Number 2</h3>\n              <div class=\"chart\"></div>\n            </div>\n            <div class=\"div_RootBody\">\n\t      <h3 class=\"h3_Body\">Content Section: No Charts Here</h3>\n\t      <p>This is dummy paragraph 1 text that would go in this section of the page.</p>\n\t      <p>This is dummy paragraph 2 text that would go in this section of the page.</p>\n            </div>\n            <div class=\"div_RootBody\" id=\"bar_chart_3\">\n\t      <h3 class=\"h3_Body\">Bar Chart Number 3</h3>\n              <div class=\"chart\"></div>\n            </div>\n          </td>\n        </tr>\n      </table>\n\n      <div class=\"div_Footer\"><p><p>This is the IF4IT Footer Message for this web page.</p></p></div>\n\n      <div><p class=\"p_if4itMessage\">This Site Has Been Created and Published by The International Foundation for Information Technology (IF4IT).</p></div>\n\n      <script type=\"text/javascript\">\n        drawVerticalBarChart(\"Bars1\", dataSet1, \"#bar_chart_1 .chart\", \"colorScale20b\");\n        drawVerticalBarChart(\"Bars2\", dataSet2, \"#bar_chart_2 .chart\", \"colorScale10\");\n        drawVerticalBarChart(\"Bars3\", dataSet3, \"#bar_chart_3 .chart\", \"colorScale20c\");\n      </script>\n\n    </body>\n\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2012-04-05T19:45:01Z",
+  "url": "https://api.github.com/gists/2164562",
+  "id": "2164562"
+}

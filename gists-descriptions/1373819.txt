@@ -1,0 +1,211 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+    "login": "Gozala",
+    "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/Gozala",
+    "id": 21236
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+        "login": "Gozala",
+        "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Gozala",
+        "id": 21236
+      },
+      "version": "d6767094cd83e410564dc8a2f1c868d1111ba656",
+      "change_status": {
+        "total": 7,
+        "additions": 4,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/1373819/d6767094cd83e410564dc8a2f1c868d1111ba656",
+      "committed_at": "2011-11-17T17:56:02Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+        "login": "Gozala",
+        "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Gozala",
+        "id": 21236
+      },
+      "version": "a31ee17d6716ffce4584b5be8ce00b83f1a417b4",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1373819/a31ee17d6716ffce4584b5be8ce00b83f1a417b4",
+      "committed_at": "2011-11-17T17:52:59Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+        "login": "Gozala",
+        "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Gozala",
+        "id": 21236
+      },
+      "version": "90cc5bef6faac513f2db132b076db329652315ce",
+      "change_status": {
+        "total": 9,
+        "additions": 4,
+        "deletions": 5
+      },
+      "url": "https://api.github.com/gists/1373819/90cc5bef6faac513f2db132b076db329652315ce",
+      "committed_at": "2011-11-17T17:51:42Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+        "login": "Gozala",
+        "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Gozala",
+        "id": 21236
+      },
+      "version": "1ecaabf204f6cf90aed6885d428fe1b99fe4146a",
+      "change_status": {
+        "total": 57,
+        "additions": 6,
+        "deletions": 51
+      },
+      "url": "https://api.github.com/gists/1373819/1ecaabf204f6cf90aed6885d428fe1b99fe4146a",
+      "committed_at": "2011-11-17T17:50:05Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+        "login": "Gozala",
+        "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Gozala",
+        "id": 21236
+      },
+      "version": "2f2ad81baa48de8cc098f54e31e97d29877c9ded",
+      "change_status": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/1373819/2f2ad81baa48de8cc098f54e31e97d29877c9ded",
+      "committed_at": "2011-11-17T17:43:47Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+        "login": "Gozala",
+        "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Gozala",
+        "id": 21236
+      },
+      "version": "49506572ddd8ccaf646cb38d7fe45968ec008af3",
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1373819/49506572ddd8ccaf646cb38d7fe45968ec008af3",
+      "committed_at": "2011-11-17T17:42:17Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+        "login": "Gozala",
+        "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Gozala",
+        "id": 21236
+      },
+      "version": "980596f8fcf60e88b4cc709a5273a9110c7d11bd",
+      "change_status": {
+        "total": 197,
+        "additions": 126,
+        "deletions": 71
+      },
+      "url": "https://api.github.com/gists/1373819/980596f8fcf60e88b4cc709a5273a9110c7d11bd",
+      "committed_at": "2011-11-17T17:39:02Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+        "login": "Gozala",
+        "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Gozala",
+        "id": 21236
+      },
+      "version": "e59332ae3b31cdf35fc71a21c256ff4718068c7d",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1373819/e59332ae3b31cdf35fc71a21c256ff4718068c7d",
+      "committed_at": "2011-11-17T17:26:49Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "9289db62d5c34afb4f277a5215e05c83",
+        "login": "Gozala",
+        "avatar_url": "https://secure.gravatar.com/avatar/9289db62d5c34afb4f277a5215e05c83?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Gozala",
+        "id": 21236
+      },
+      "version": "5aef4ba3a73b52a69b9f35f7a73b0d5e7793d88c",
+      "change_status": {
+        "total": 91,
+        "additions": 91,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1373819/5aef4ba3a73b52a69b9f35f7a73b0d5e7793d88c",
+      "committed_at": "2011-11-17T17:24:19Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1373819.git",
+  "description": "GistView: d3.js ~ Streamgraph",
+  "html_url": "https://gist.github.com/1373819",
+  "comments": 0,
+  "created_at": "2011-11-17T17:24:19Z",
+  "public": true,
+  "files": {
+    "stream.css": {
+      "type": "text/css",
+      "filename": "stream.css",
+      "raw_url": "https://gist.github.com/raw/1373819/b109390a3299b76b8e1a777713927da0fe5ae2a2/stream.css",
+      "size": 72,
+      "content": "html, body {\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  width: 100%;\n}",
+      "language": "CSS"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1373819/a405c225a4cee20dbf5bedffaf2855736639738d/index.html",
+      "size": 628,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n    <title>d3.js ~ Streamgraph</title>\n    <!-- absolute url -->\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.5.1\"></script>\n    <script type='text/javascript' src='http://mbostock.github.com/d3/d3.layout.js?2.5.1'></script>\n    <!-- relative urls -->\n    <link href='stream.css' rel='stylesheet' type='text/css'/>\n    <script src='stream_layers.js' type='text/javascript'></script>\n  </head>\n  <body id='chart'>\n    <script src='stream.js' type='text/javascript'></script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "stream_layers.js": {
+      "type": "application/javascript",
+      "filename": "stream_layers.js",
+      "raw_url": "https://gist.github.com/raw/1373819/13cacdb141247414d72a9264bfcccbaf48e71357/stream_layers.js",
+      "size": 920,
+      "content": "/* Inspired by Lee Byron's test data generator. */\nfunction stream_layers(n, m, o) {\n  if (arguments.length < 3) o = 0;\n  function bump(a) {\n    var x = 1 / (.1 + Math.random()),\n        y = 2 * Math.random() - .5,\n        z = 10 / (.1 + Math.random());\n    for (var i = 0; i < m; i++) {\n      var w = (i / m - y) * z;\n      a[i] += x * Math.exp(-w * w);\n    }\n  }\n  return d3.range(n).map(function() {\n      var a = [], i;\n      for (i = 0; i < m; i++) a[i] = o + o * Math.random();\n      for (i = 0; i < 5; i++) bump(a);\n      return a.map(stream_index);\n    });\n}\n\n/* Another layer generator using gamma distributions. */\nfunction stream_waves(n, m) {\n  return d3.range(n).map(function(i) {\n    return d3.range(m).map(function(j) {\n        var x = 20 * j / m - i / 3;\n        return 2 * x * Math.exp(-.5 * x);\n      }).map(stream_index);\n    });\n}\n\nfunction stream_index(d, i) {\n  return {x: i, y: Math.max(0, d)};\n}\n",
+      "language": "JavaScript"
+    },
+    "stream.js": {
+      "type": "application/javascript",
+      "filename": "stream.js",
+      "raw_url": "https://gist.github.com/raw/1373819/8e55d8d34f5c37305c6f20744632294a86c61db4/stream.js",
+      "size": 1138,
+      "content": "var n = 20, // number of layers\n    m = 200, // number of samples per layer\n    data0 = d3.layout.stack().offset(\"wiggle\")(stream_layers(n, m)),\n    data1 = d3.layout.stack().offset(\"wiggle\")(stream_layers(n, m)),\n    color = d3.interpolateRgb(\"#aad\", \"#556\");\n\n\nvar w = document.body.clientWidth,\n    h = document.body.clientHeight,\n    mx = m - 1,\n    my = d3.max(data0.concat(data1), function(d) {\n      return d3.max(d, function(d) {\n        return d.y0 + d.y;\n      });\n    });\n\nvar area = d3.svg.area()\n    .x(function(d) { return d.x * w / mx; })\n    .y0(function(d) { return h - d.y0 * h / my; })\n    .y1(function(d) { return h - (d.y + d.y0) * h / my; });\n\nvar vis = d3.select(\"#chart\")\n  .append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvis.selectAll(\"path\")\n    .data(data0)\n  .enter().append(\"svg:path\")\n    .style(\"fill\", function() { return color(Math.random()); })\n    .attr(\"d\", area);\n\nfunction transition() {\n  d3.selectAll(\"path\")\n      .data(function() {\n        var d = data1;\n        data1 = data0;\n        return data0 = d;\n      })\n    .transition()\n      .duration(2500)\n      .attr(\"d\", area);\n}",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-11-17T17:57:29Z",
+  "url": "https://api.github.com/gists/1373819",
+  "id": "1373819",
+  "git_pull_url": "git://gist.github.com/1373819.git"
+}

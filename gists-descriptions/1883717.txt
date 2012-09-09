@@ -1,0 +1,212 @@
+{
+  "git_push_url": "git@gist.github.com:1883717.git",
+  "forks": [
+
+  ],
+  "updated_at": "2012-09-09T08:48:08Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1883717",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "raw_url": "https://gist.github.com/raw/1883717/512783419cb329a3da79096f745374bce1a20580/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Multiple Bar Charts showcasing various scale methods and data offset-ing technique</title>\n    <script type=\"text/javascript\" src=\"https://raw.github.com/GerHobbelt/d3/master/d3.latest.js\"></script>\n    <!--<script type=\"text/javascript\" src=\"../../../../js/d3/d3.latest.js\"></script>-->\n\t<style>\ncircle {\n  stroke: #fff;\n  stroke-width: 1.5px;\n}\n\nbody, p {\n  font: 12px sans-serif;\n}\n\ntext {\n  font: 10px sans-serif;\n}\n\n#chart\n{\n\t/* bl.ocks.org sizes: */\n\twidth: 950px;\n\theight: 400px;\n\toverflow: auto;\n}\n\n.chart rect \n{\n   stroke: white;\n   fill: #4682B4;\n}\t\n\n.chart text.bar\n{\n   /* stroke: #4682B4; */\n   fill: #89b6db;\n}\t\n\t</style>\n  </head>\n  <body>\n\t<p>Select your offset by dragging this slider:</p>\n\t\t<input type=\"range\" id=\"graph_offset\" name=\"offset\" min=\"0\" max=\"1000\" value=\"0\" onchange=\"redraw_on_offset_change();\" style=\"width: 900px;\">\n\t<p>Offset: <span id=\"graph_offset_perc\"></span>% <span style=\"color: #888;\">(0% means no offset is applied to the data; 100% means the minimum value of the data range is mapped to an almost-zero value)</span></p>\n\t\n    <div id=\"chart\"></div>\n    <!-- <script type=\"text/javascript\" src=\"bubble.js\"></script> -->\n\t<script type=\"text/javascript\">\n\nvar data_series = [\n\t{name: 'basic', power: 1, values: [4, 8, 12, 16, 20, 24, 28, 32] },\n\t{name: 'small', power: 3, values: [2,5,20,50,100,500,2000,2900] },\n\t{name: 'huge', power: 8, values: [10000,20000,100000,1000000,10000000,100000000,250000000] }\n];\n\nvar x_scales = [\n\t{name: 'linear', scale: d3.scale.linear(), x_min: 0, tick_mult: 1},\n\t{name: 'pow(2)', scale: d3.scale.pow().exponent(2), x_min: 0, tick_mult: 1},\n\t{name: 'sqrt', scale: d3.scale.sqrt(), x_min: 0, tick_mult: 1},\n\t{name: 'pow(1/4)', scale: d3.scale.pow().exponent(1/4), x_min: 0, tick_mult: 1},\n\t{name: 'log10', scale: d3.scale.log(), x_min: 1, tick_mult: 0.2},\n\t{name: 'log10', scale: d3.scale.log(), x_min: 1e4, tick_mult: 0.2}\n];\n\t\nvar graph_dims = {\n\twidth: 250,\n\theight: 100,\n\tx_offset: 5,\n\ty_offset: 15,\n\t\n\tx_gutter: 50,\n\ty_gutter: 30,\n\tx_left_margin: 30\n};\n\n// create the SVG node so we can select it in the draw_bar_chart() function:\nd3.select(\"#chart\")\n\t.append(\"svg\")\n\t.attr(\"class\", \"chart\")\n\t.attr(\"width\", 930)\n\t.attr(\"height\", 1050);\n\nplot_all_sample_graphs(0);\n\t\nfunction plot_all_sample_graphs(offset_perunage)\n{\t\n\tvar graph_x_px_consumption = (graph_dims.width + graph_dims.x_offset + graph_dims.x_gutter);\n\tvar graph_y_px_consumption = (graph_dims.height + graph_dims.y_offset + graph_dims.y_gutter);\n\tvar xcnt = Math.floor(950 / graph_x_px_consumption);\n\tvar i, j;\n\tvar l = data_series.length;\n\tvar s = x_scales.length;\n\t\n\t// print the offset as a percentage:\n\td3.select('#graph_offset_perc').text(d3.format('.1f')(offset_perunage * 100));\n\t\n\tfor (j = 0; j < s; j++)\n\t{\n\t\tfor (i = 0; i < l; i++)\n\t\t{\n\t\t\tvar pos = {\n\t\t\t\tx: (i % xcnt) * graph_x_px_consumption + graph_dims.x_left_margin,\n\t\t\t\ty: Math.floor(i / xcnt + j * l / xcnt) * graph_y_px_consumption\n\t\t\t};\n\t\t\t\n\t\t\tvar offset = Math.max(0, offset_perunage * d3.min(data_series[i].values) - 1e-9);\n\t\t\t\n\t\t\tdraw_bar_chart(data_series[i], x_scales[j], pos, offset, i + j * l);\n\t\t}\n\t}\n}\n\n\t\nfunction draw_bar_chart(data_series, x_scale, position, graphing_offset, graph_num)\n{\t\n\t// nuke existing graph if it exists; turning this into an animating is left as an exercise for the reader ;-)\n\td3.select('#chart #graph-' + graph_num).remove();\n\t\n\tvar offset = {\n\t\tdo_it: function(d) {\n\t\t\treturn d - graphing_offset;\n\t\t},\n\t\tundo: function(d) {\n\t\t\treturn d + graphing_offset;\n\t\t}\n\t};\n\t\n\tvar data = data_series.values.map(offset.do_it);\n\t\n\tvar fixed_format = d3.format(\".0f\");\n\tvar scientific_format = d3.format(\".1e\");\n\tvar offset_format = d3.format(\"f\");\n\n\t/*\n\t as the log scale (and possibly a few others) can produce negative 'x' numbers for\n\t our (shifted) domain, while we are only interested to see the original input values\n\t as 'all positive', we first create a 'intermediate' x scale function for our domain, just\n\t so that we can see where we would land range-wise, and then we map that output \n\t onto our graph pixel range in a second scale transform.\n\t*/\n\tvar inter_x = x_scale.scale\n\t\t.domain([d3.min(data), d3.max(data)])\n\t\t.range([0, 1]);\n\tvar x_0 = inter_x.invert(-9); // --> total span 10x size of domain dynamic in graph\n\t\n\t// we play a bit nasty when it comes to scale.log when determining the minimum value:\n\t// as we like to see a thickness for the smallest data value as long as possible, we \n\t// check here what's the lower limit here if we don't want NaN's from Math.log():\n\tvar x_lower_bound = Math.max(1e-308 /* log NaN protection */, x_0, Math.min(offset.do_it(x_scale.x_min), d3.min(data)));\n\t\n\t// use the new lower bound / smallest in-data-range non-zero double value instead of zero itself so log scales don't b0rk with NaN all over the place as log(0) == NaN\n\tvar x = x_scale.scale\n\t\t.domain([x_lower_bound, d3.max(data)])\n\t\t.range([0, graph_dims.width]);\n\tif (graph_num >= 12) console.log('G'+ graph_num + ': domain / range = ', x.domain(), x.range(), x_lower_bound, x(x.domain()[0]), x(x.domain()[1]), data, [offset.do_it(x_scale.x_min) /* d3.min(data) */, d3.max(data)], data.map(x));\n\n\t/*\n\tWARNING: \n\t\n\tas 'x.ticks()' does all sorts of smart stuff with the domain data \n\tto determine where the 'good looking' ticks should end up, we MUST\n\tfeed .ticks() the ORIGINAL data series (we can't easily patch\n\toffset.undo() in them there internals ;-) ), so this complicates\n\tthing a bit: where you would otherwise have used 'x.ticks()',\n\twe now also carry a 'orig_x' which has the unadulterated, \n\toriginal data domain in mint condition.\n\t\n\tIt is used ONLY for the ticks placement calculus; everybody else\n\tis forced to rely on the offset back&forth via offset.do_it/undo.\n\t\n\tNB: as 'ticks placement' is about calculating the SET OF TICKS,\n\t    which must be done in 'original data' space, but the plotting\n\t\tof all that data is based on the offsetted data, we next\n\t\tneed to offset those tick positions too: hence the \n\t\t.map(offset.do_it) over there.\n\t\t\n\tThe code does NOT take care of ticks at negative/out-of-graph positions.\n\tAn extra .filter() would be used for that: pass_only_sensible_ticks()\n\t\n\t\n\tWARNING #2: Took me a couple of hours pulling hair to find out that \n\t            the domain/range of the scale are nuked due to them being\n\t\t\t\t'overwritten' in the next bit, so it is mandatory to CLONE\n\t\t\t\tTHE SCALE FIRST: .copy() !  (I should've guessed but \n\t\t\t\tsometimes I get stuck like that. :-(( )\n\t\t\t\t\n\t\t\t\tWhen you remove the .copy() you'll note that the whole\n\t\t\t\toffset business around here is completely b0rked graphically.\n\t*/\n\tvar orig_x = x_scale.scale.copy()\n\t\t.domain([offset.undo(x_lower_bound) /* d3.min(data_series.values) */, d3.max(data_series.values)])\n\t\t.range([0, graph_dims.width]);\n\tif (graph_num >= 12) console.log('G'+ graph_num + ': original domain / range = ', orig_x.domain(), orig_x.range());\n\t \n\t\n\tvar y = d3.scale.ordinal()\n\t\t.domain(data)\n\t\t.rangeBands([0, graph_dims.height]);\n\t\t\n\t// position the new graph in the encompassing <svg> area:\n\tvar chart = d3.select(\"#chart svg\")\n\t\t//.attr(\"width\", graph_dims.width + graph_dims.x_offset)\n\t\t//.attr(\"height\", graph_dims.height + graph_dims.y_offset)\n\t  .append(\"g\")\n\t\t.attr('id', 'graph-' + graph_num)\n\t\t.attr(\"transform\", \"translate(\" + (graph_dims.x_offset + position.x) + \",\" + (graph_dims.y_offset + position.y) + \")\");\n\n\tvar tickcount_advise = 6 * x_scale.tick_mult;\n\tvar pass_only_sensible_ticks = function(d, i) {\n\t\t// only allow x-coordinates >= 0 to make it through:\n\t\tvar c = x(d);\n\t\treturn (c >= 0);\n\t};\n\tvar tick_collection = orig_x.ticks(tickcount_advise).map(offset.do_it).filter(pass_only_sensible_ticks);\n\tif (graph_num >= 12) console.log('G'+ graph_num + ': tick collection = ', tick_collection, x(d3.min(tick_collection)));\n\n\t\n\tchart.selectAll(\"line\")\n\t\t.data(tick_collection /* x.ticks(...) */ )\n\t  .enter().append(\"line\")\n\t\t.attr(\"x1\", x)\n\t\t.attr(\"x2\", x)\n\t\t.attr(\"y1\", 0)\n\t\t.attr(\"y2\", graph_dims.height)\n\t\t.style(\"stroke\", \"#ccc\");\n\n\tvar last_tick_x = -666;\n\t\n\tchart.selectAll(\".rule\")\n\t\t.data(tick_collection /* x.ticks(...) */ )\n\t  .enter().append(\"text\")\n\t\t.attr(\"x\", x)\n\t\t.attr(\"y\", 0)\n\t\t.attr(\"dy\", -3)\n\t\t.attr(\"text-anchor\", \"middle\")\n\t\t.text(function(d, i) {\n\t\t\td = offset.undo(d);\n\t\t\t/*\n\t\t\theuristic for log scale et al: only draw text when it's far enough apart.\n\t\t\t\n\t\t\tWe track the x coordinate for that.\n\t\t\t*/\n\t\t\tvar tx = x(d);\n\t\t\t// always 'print' the first tick and every power of ten! UNLESS the previous one was a power-of-10 too, then we tolerate a skip...\n\t\t\tvar pow_ten_check = Math.log(d) / Math.LN10 + 1e-6 /* epsilon FP fix */;\n\t\t\tpow_ten_check = (pow_ten_check - Math.floor(pow_ten_check) < 0.02);\n\t\t\tif (tx - last_tick_x < 40 /* pixels */ && i != 0)\n\t\t\t{\n\t\t\t\tif (!pow_ten_check)\n\t\t\t\t{\n\t\t\t\t\treturn '';\n\t\t\t\t}\n\t\t\t}\n\t\t\tlast_tick_x = tx;\n\t\t\t\n\t\t\tif (d < 1000)\n\t\t\t{\n\t\t\t\treturn fixed_format(d);\n\t\t\t}\n\t\t\treturn scientific_format(d);\n\t\t});\n\n\tchart.selectAll(\"rect\")\n\t\t.data(data)\n\t  .enter().append(\"rect\")\n\t\t.attr(\"y\", y)\n\t\t.attr(\"width\", function(d, i) {\n\t\t\tvar v = x(d);\n\t\t\tif (v < 0) console.log('negative width for d = ', d, i, v, x.domain(), x.range(), x(x.domain()[0]), x(x.domain()[1]));\n\t\t\treturn v;\n\t\t})\n\t\t.attr(\"height\", y.rangeBand());\n\n\tchart.selectAll(\".bar\")\n\t\t.data(data)\n\t  .enter().append(\"text\")\n\t\t.attr(\"class\", \"bar\")\n\t\t.attr(\"x\", x)\n\t\t.attr(\"y\", function(d) { return y(d) + y.rangeBand() / 2; })\n\t\t.attr(\"dx\", -3)\n\t\t.attr(\"dy\", \".35em\")\n\t\t.attr(\"text-anchor\", \"end\")\n\t\t.text(function(d) {\n\t\t\td = offset.undo(d);\n\t\t\treturn fixed_format(d);\n\t\t});\n\n\tchart.append(\"line\")\n\t\t.attr(\"y1\", 0)\n\t\t.attr(\"y2\", graph_dims.height)\n\t\t.style(\"stroke\", \"#000\");\n\t\t\n\tchart.append(\"text\")\n\t\t.attr(\"x\", graph_dims.width / 2)\n\t\t.attr(\"y\", graph_dims.height + graph_dims.y_offset)\n\t\t.attr(\"dy\", -3)\n\t\t.attr(\"text-anchor\", \"middle\")\n\t\t.text(data_series.name + ' @ scale: ' + x_scale.name + ', offset: ' + offset_format(graphing_offset) + ', min: ' + offset_format(x_lower_bound));\n}\n\n\nfunction redraw_on_offset_change()\n{\n\tvar input = d3.select('#graph_offset');\n\t//var v = input.attr('value');\n\tvar v = input.node().value;\n\tv = +v;\n\t\n\tplot_all_sample_graphs(v / 1000);\n}\n\n\t</script>\n\t\n  </body>\n</html>\n",
+      "size": 10298
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "language": null,
+      "raw_url": "https://gist.github.com/raw/1883717/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "size": 623
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "login": "GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "version": "d3c87601c5dca055dc187ff3b3af42c0bd97213f",
+      "change_status": {
+        "total": 46,
+        "deletions": 0,
+        "additions": 46
+      },
+      "committed_at": "2012-09-09T08:44:24Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/d3c87601c5dca055dc187ff3b3af42c0bd97213f"
+    },
+    {
+      "version": "a1fa501c01ab17a13184c5e75d7ae749f57c3d53",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2012-02-22T16:29:28Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/a1fa501c01ab17a13184c5e75d7ae749f57c3d53"
+    },
+    {
+      "version": "ef0235981899f598301f10b2f9a4987788ad14e6",
+      "change_status": {
+        "total": 122,
+        "deletions": 121,
+        "additions": 1
+      },
+      "committed_at": "2012-02-22T16:26:37Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/ef0235981899f598301f10b2f9a4987788ad14e6"
+    },
+    {
+      "version": "b63e822fdfadb2e56c872d61be4583855bfcaa1a",
+      "change_status": {
+        "total": 12,
+        "deletions": 2,
+        "additions": 10
+      },
+      "committed_at": "2012-02-22T15:43:42Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/b63e822fdfadb2e56c872d61be4583855bfcaa1a"
+    },
+    {
+      "version": "dfe9a3f8678fb4ac04f43eac15e472656d9863d3",
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "committed_at": "2012-02-22T15:41:00Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/dfe9a3f8678fb4ac04f43eac15e472656d9863d3"
+    },
+    {
+      "version": "e0857c38e68f16452beeec53415859f7020535c1",
+      "change_status": {
+        "total": 304,
+        "deletions": 4,
+        "additions": 300
+      },
+      "committed_at": "2012-02-22T15:39:14Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/e0857c38e68f16452beeec53415859f7020535c1"
+    },
+    {
+      "version": "6110ef1ed79744ecfb7f438ee8845989f7e7d423",
+      "change_status": {
+        "total": 320,
+        "deletions": 317,
+        "additions": 3
+      },
+      "committed_at": "2012-02-22T10:08:37Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/6110ef1ed79744ecfb7f438ee8845989f7e7d423"
+    },
+    {
+      "version": "c98e0d31a67257dce139b8799f61d34437b4bce4",
+      "change_status": {
+        "total": 380,
+        "deletions": 0,
+        "additions": 380
+      },
+      "committed_at": "2012-02-22T10:04:47Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/c98e0d31a67257dce139b8799f61d34437b4bce4"
+    },
+    {
+      "version": "1db7afde1809ff190de3c3fb08a4becdcc5cefc6",
+      "change_status": {
+        "total": 68,
+        "deletions": 1,
+        "additions": 67
+      },
+      "committed_at": "2012-02-22T09:59:12Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/1db7afde1809ff190de3c3fb08a4becdcc5cefc6"
+    },
+    {
+      "version": "c74d3bf852c1133457f12b55ea4c138ccfddff78",
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "committed_at": "2012-02-22T09:56:15Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/1883717/c74d3bf852c1133457f12b55ea4c138ccfddff78"
+    }
+  ],
+  "url": "https://api.github.com/gists/1883717",
+  "description": "d3.js: high dynamic range in the data where you want it by picking a suitable log() offset",
+  "git_pull_url": "git://gist.github.com/1883717.git",
+  "id": "1883717",
+  "comments": 0,
+  "created_at": "2012-02-22T09:56:15Z"
+}

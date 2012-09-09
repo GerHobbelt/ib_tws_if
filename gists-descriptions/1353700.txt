@@ -1,0 +1,289 @@
+{
+  "forks": [
+    {
+      "updated_at": "2012-07-02T18:15:40Z",
+      "user": {
+        "gravatar_id": "5220b2e54da72fa57b32842e4fd06ba1",
+        "avatar_url": "https://secure.gravatar.com/avatar/5220b2e54da72fa57b32842e4fd06ba1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/vsvprasad",
+        "login": "vsvprasad",
+        "id": 1302070
+      },
+      "url": "https://api.github.com/gists/3034682",
+      "id": "3034682",
+      "created_at": "2012-07-02T18:15:40Z"
+    },
+    {
+      "updated_at": "2012-07-21T00:38:02Z",
+      "user": {
+        "gravatar_id": "17a5235e86d243deed7073fc6a80c55b",
+        "avatar_url": "https://secure.gravatar.com/avatar/17a5235e86d243deed7073fc6a80c55b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/gramki",
+        "login": "gramki",
+        "id": 91813
+      },
+      "url": "https://api.github.com/gists/3154035",
+      "id": "3154035",
+      "created_at": "2012-07-21T00:38:02Z"
+    },
+    {
+      "updated_at": "2012-07-26T03:51:05Z",
+      "user": {
+        "gravatar_id": "64399a68c59494ce83e446dd5b7e596d",
+        "avatar_url": "https://secure.gravatar.com/avatar/64399a68c59494ce83e446dd5b7e596d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/andytruong",
+        "login": "andytruong",
+        "id": 41143
+      },
+      "url": "https://api.github.com/gists/3180134",
+      "id": "3180134",
+      "created_at": "2012-07-26T03:51:05Z"
+    },
+    {
+      "updated_at": "2012-08-29T04:18:06Z",
+      "user": {
+        "gravatar_id": "08692695b9ec86c5caf3c5309f058541",
+        "avatar_url": "https://secure.gravatar.com/avatar/08692695b9ec86c5caf3c5309f058541?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/crazytaurus",
+        "login": "crazytaurus",
+        "id": 1888389
+      },
+      "url": "https://api.github.com/gists/3506787",
+      "id": "3506787",
+      "created_at": "2012-08-29T04:18:06Z"
+    },
+    {
+      "updated_at": "2012-08-30T18:35:15Z",
+      "user": {
+        "gravatar_id": "97648b701743f2326bae55c3dc5a95eb",
+        "avatar_url": "https://secure.gravatar.com/avatar/97648b701743f2326bae55c3dc5a95eb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/kordless",
+        "login": "kordless",
+        "id": 90237
+      },
+      "url": "https://api.github.com/gists/3536943",
+      "id": "3536943",
+      "created_at": "2012-08-30T18:35:15Z"
+    },
+    {
+      "updated_at": "2012-09-04T19:59:41Z",
+      "user": {
+        "gravatar_id": "158d2b4e8fe7786549b07017a178ab31",
+        "avatar_url": "https://secure.gravatar.com/avatar/158d2b4e8fe7786549b07017a178ab31?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/koendc",
+        "login": "koendc",
+        "id": 813800
+      },
+      "url": "https://api.github.com/gists/3625687",
+      "id": "3625687",
+      "created_at": "2012-09-04T19:54:50Z"
+    }
+  ],
+  "updated_at": "2012-06-29T03:07:29Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n    <style type=\"text/css\">\n\nbody {\n  font: 300 13px \"Helvetica Neue\", Helvetica;\n}\n\nform {\n  padding: 1em;\n}\n\nform, svg {\n  position: absolute;\n}\n\npath {\n  fill-rule: evenodd;\n  stroke: #333;\n  stroke-width: 2px;\n}\n\n.sun path {\n  fill: #6baed6;\n}\n\n.planet path {\n  fill: #9ecae1;\n}\n\n.ring path {\n  fill: #c6dbef;\n}\n\n    </style>\n  </head>\n  <body>\n    <form>\n      Frame of Reference:<br>\n      <input type=\"radio\" name=\"reference\" id=\"ref-ring\">\n      <label for=\"ref-ring\">Annulus</label><br>\n      <input type=\"radio\" name=\"reference\" id=\"ref-planet\" checked>\n      <label for=\"ref-planet\">Planets</label><br>\n      <input type=\"radio\" name=\"reference\" id=\"ref-sun\">\n      <label for=\"ref-sun\">Sun</label>\n    </form>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.5.0\"></script>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    r = 80,\n    x = Math.sin(2 * Math.PI / 3),\n    y = Math.cos(2 * Math.PI / 3),\n    speed = 4,\n    start = Date.now();\n\nvar svg = d3.select(\"body\").insert(\"svg:svg\", \"form\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + w / 2 + \",\" + h / 2 + \")scale(.55)\")\n  .append(\"svg:g\")\n    .data([{radius: Infinity}]);\n\nsvg.append(\"svg:g\")\n    .attr(\"class\", \"ring\")\n    .data([{teeth: 80, radius: -r * 5, ring: true}])\n  .append(\"svg:path\")\n    .attr(\"d\", gear);\n\nsvg.append(\"svg:g\")\n    .attr(\"class\", \"sun\")\n    .data([{teeth: 16, radius: r}])\n  .append(\"svg:path\")\n    .attr(\"d\", gear);\n\nsvg.append(\"svg:g\")\n    .attr(\"class\", \"planet\")\n    .attr(\"transform\", \"translate(0,-\" + r * 3 + \")\")\n    .data([{teeth: 32, radius: -r * 2}])\n  .append(\"svg:path\")\n    .attr(\"d\", gear);\n\nsvg.append(\"svg:g\")\n    .attr(\"class\", \"planet\")\n    .attr(\"transform\", \"translate(\" + -r * 3 * x + \",\" + -r * 3 * y + \")\")\n    .data([{teeth: 32, radius: -r * 2}])\n  .append(\"svg:path\")\n    .attr(\"d\", gear);\n\nsvg.append(\"svg:g\")\n    .attr(\"class\", \"planet\")\n    .attr(\"transform\", \"translate(\" + r * 3 * x + \",\" + -r * 3 * y + \")\")\n    .data([{teeth: 32, radius: -r * 2}])\n  .append(\"svg:path\")\n    .attr(\"d\", gear);\n\nd3.selectAll(\"input[name=reference]\")\n    .data([r * 5, Infinity, -r])\n    .on(\"change\", function(d) { svg.data([{radius: d}]); });\n\nd3.selectAll(\"input[name=speed]\")\n    .on(\"change\", function() { speed = +this.value; });\n\nfunction gear(d) {\n  var n = d.teeth,\n      r2 = Math.abs(d.radius),\n      r0 = r2 - 8,\n      r1 = r2 + 8,\n      r3 = d.ring ? (r3 = r0, r0 = r1, r1 = r3, r2 + 20) : 20,\n      da = Math.PI / n,\n      a0 = -Math.PI / 2 + (d.ring ? Math.PI / n : 0),\n      i = -1,\n      path = [\"M\", r0 * Math.cos(a0), \",\", r0 * Math.sin(a0)];\n  while (++i < n) path.push(\n      \"A\", r0, \",\", r0, \" 0 0,1 \", r0 * Math.cos(a0 += da), \",\", r0 * Math.sin(a0),\n      \"L\", r2 * Math.cos(a0), \",\", r2 * Math.sin(a0),\n      \"L\", r1 * Math.cos(a0 += da / 3), \",\", r1 * Math.sin(a0),\n      \"A\", r1, \",\", r1, \" 0 0,1 \", r1 * Math.cos(a0 += da / 3), \",\", r1 * Math.sin(a0),\n      \"L\", r2 * Math.cos(a0 += da / 3), \",\", r2 * Math.sin(a0),\n      \"L\", r0 * Math.cos(a0), \",\", r0 * Math.sin(a0));\n  path.push(\"M0,\", -r3, \"A\", r3, \",\", r3, \" 0 0,0 0,\", r3, \"A\", r3, \",\", r3, \" 0 0,0 0,\", -r3, \"Z\");\n  return path.join(\"\");\n}\n\nd3.timer(function() {\n  var angle = (Date.now() - start) * speed,\n      transform = function(d) { return \"rotate(\" + angle / d.radius + \")\"; };\n  svg.selectAll(\"path\").attr(\"transform\", transform);\n  svg.attr(\"transform\", transform); // frame of reference\n});\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1353700/57084c23e989b5c6f23f6f295be482e4f0498399/index.html",
+      "size": 3638
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "language": "Markdown",
+      "content": "From [Wikipedia](http://en.wikipedia.org/wiki/Epicyclic_gearing): **Epicyclic gearing** or **planetary gearing** is a gear system consisting of one or more outer gears, or *planet* gears, revolving about a central, or *sun* gear. … Epicyclic gearing systems also incorporate the use of an outer ring gear or *annulus*, which meshes with the planet gears.\n\nBuilt with [D3.js](http://mbostock.github.com/d3/).",
+      "raw_url": "https://gist.github.com/raw/1353700/4395ceb53591ae69b42fc5ac43275da185239da2/README.md",
+      "size": 409
+    }
+  },
+  "git_pull_url": "git://gist.github.com/1353700.git",
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 6,
+        "deletions": 3,
+        "additions": 3
+      },
+      "version": "2e57ad2ea8bbb4157155b25653ba5a739aa88b2f",
+      "committed_at": "2011-11-10T16:15:47Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/2e57ad2ea8bbb4157155b25653ba5a739aa88b2f"
+    },
+    {
+      "change_status": {
+        "total": 34,
+        "deletions": 3,
+        "additions": 31
+      },
+      "version": "217669d5f0cc1ea35d2062ce0ae303379bd99125",
+      "committed_at": "2011-11-10T16:14:57Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/217669d5f0cc1ea35d2062ce0ae303379bd99125"
+    },
+    {
+      "change_status": {
+        "total": 10,
+        "deletions": 4,
+        "additions": 6
+      },
+      "version": "8a753edaf038742cea300b2aca937f33b6edb588",
+      "committed_at": "2011-11-10T01:08:31Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/8a753edaf038742cea300b2aca937f33b6edb588"
+    },
+    {
+      "change_status": {
+        "total": 3,
+        "deletions": 0,
+        "additions": 3
+      },
+      "version": "05d58ab0f65d87de50dc42d1f66bbd85416037a4",
+      "committed_at": "2011-11-10T01:04:31Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/05d58ab0f65d87de50dc42d1f66bbd85416037a4"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "version": "6fef9478b7e786f02b7e263aac9986a2f4d6af7a",
+      "committed_at": "2011-11-10T01:01:03Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/6fef9478b7e786f02b7e263aac9986a2f4d6af7a"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "version": "5dab9c9c8fc87b6a291325effef15a4f19c56e29",
+      "committed_at": "2011-11-10T00:58:57Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/5dab9c9c8fc87b6a291325effef15a4f19c56e29"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "version": "09ac6b0afdad2a6e697ee30a0515533849656c7d",
+      "committed_at": "2011-11-10T00:58:32Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/09ac6b0afdad2a6e697ee30a0515533849656c7d"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "version": "646a852552100567cca77191df02cd54fb63b3c1",
+      "committed_at": "2011-11-10T00:58:17Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/646a852552100567cca77191df02cd54fb63b3c1"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "version": "801db7e81e810b2ef469b49a0109e319a96e5b9f",
+      "committed_at": "2011-11-10T00:57:57Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/801db7e81e810b2ef469b49a0109e319a96e5b9f"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "version": "bf150a100dc7a2b2a3c76693709a404f932b0226",
+      "committed_at": "2011-11-10T00:55:11Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1353700/bf150a100dc7a2b2a3c76693709a404f932b0226"
+    }
+  ],
+  "html_url": "https://gist.github.com/1353700",
+  "git_push_url": "git@gist.github.com:1353700.git",
+  "url": "https://api.github.com/gists/1353700",
+  "description": "Epicyclic Gearing",
+  "id": "1353700",
+  "comments": 0,
+  "created_at": "2011-11-10T00:39:13Z"
+}

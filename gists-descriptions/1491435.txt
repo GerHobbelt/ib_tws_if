@@ -1,0 +1,51 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "e32c3a3986d42596677fffe2f24fd3a8",
+    "login": "micahasmith",
+    "avatar_url": "https://secure.gravatar.com/avatar/e32c3a3986d42596677fffe2f24fd3a8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/micahasmith",
+    "id": 959902
+  },
+  "git_push_url": "git@gist.github.com:1491435.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "e32c3a3986d42596677fffe2f24fd3a8",
+        "login": "micahasmith",
+        "avatar_url": "https://secure.gravatar.com/avatar/e32c3a3986d42596677fffe2f24fd3a8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/micahasmith",
+        "id": 959902
+      },
+      "version": "ac54f8193571734da06be1fdbef8a9652e1bc682",
+      "change_status": {
+        "total": 14,
+        "additions": 14,
+        "deletions": 0
+      },
+      "committed_at": "2011-12-17T21:19:55Z",
+      "url": "https://api.github.com/gists/1491435/ac54f8193571734da06be1fdbef8a9652e1bc682"
+    }
+  ],
+  "description": "d3.js enter example",
+  "comments": 0,
+  "created_at": "2011-12-17T21:19:55Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1491435",
+  "files": {
+    "d3-js-enter.js": {
+      "type": "application/javascript",
+      "filename": "d3-js-enter.js",
+      "raw_url": "https://gist.github.com/raw/1491435/ea9036bb16f4f61240bef6344f204eefa0cb5e41/d3-js-enter.js",
+      "size": 562,
+      "content": "//so there's two divs on the page for this to select\nd3.select('body')\n    .selectAll('div')\n    .data([\"hello\",\"there\",\"world\"])\n    //this will map \"hello\" and \"there\" to the only two divs\n    .html(function(d){return d;})\n    //but theres 3 pieces of data...?\n    //this is why d3 has the enter() function\n    //think of it as \"withTheLeftOverDataAfterMapping()\" instead of \"enter()\"\n    .enter()\n        //so now we can do something with the leftover data,\n        //how about create another div?\n        .append('div')\n        .html(function(d){return d;});",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-12-17T21:19:55Z",
+  "url": "https://api.github.com/gists/1491435",
+  "git_pull_url": "git://gist.github.com/1491435.git",
+  "id": "1491435"
+}

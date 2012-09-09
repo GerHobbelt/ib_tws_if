@@ -1,0 +1,138 @@
+{
+  "git_push_url": "git@gist.github.com:1368205.git",
+  "forks": [
+
+  ],
+  "updated_at": "2011-11-15T20:21:09Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1368205",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "raw_url": "https://gist.github.com/raw/1368205/b21599d3e05e32c97639af9f3b6fa301979b9d5a/index.html",
+      "content": "<html>\n<head>\n<style>\n  text { font-family: serif; font-size: 40; }\n</style>\n</head>\n<body>\n<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.5.0\"></script>\n<script type=\"text/javascript\" src=\"gradient.js\"></script>\n</body>\n</html>",
+      "size": 255
+    },
+    "gradient.js": {
+      "type": "application/javascript",
+      "filename": "gradient.js",
+      "language": "JavaScript",
+      "raw_url": "https://gist.github.com/raw/1368205/24cd86419d1d4a6e45b58ddeeaa487622b3e88fa/gradient.js",
+      "content": "var svg = d3.select(\"body\")\n  .append(\"svg:svg\")\n  .attr(\"width\", 256)\n  .attr(\"height\", 256);\n\nvar defs = svg.append('svg:defs');\n\ndefs.append('svg:linearGradient')\n  .attr('gradientUnits', 'userSpaceOnUse')\n  .attr('x1', 0).attr('y1', 0).attr('x2', 20).attr('y2', 0)\n  .attr('id', 'master').call(\n      function(gradient) {\n        gradient.append('svg:stop').attr('offset', '0%').attr('style', 'stop-color:rgb(0,0,0);stop-opacity:1');\n        gradient.append('svg:stop').attr('offset', '100%').attr('style', 'stop-color:rgb(0,0,0);stop-opacity:0');\n      });\n\nvar data = [[0, 30], [1, 60], [2, 180], [3, 70], [4, 42], [5, 64]];\nvar text = \"xyzzy xyzzy xyzzy xyzzy xyzzy\";\n\ndefs.selectAll('.gradient').data(data)\n  .enter().append('svg:linearGradient')\n  .attr('id', function(d, i) { return 'gradient' + i; })\n  .attr('class', 'gradient')\n  .attr('xlink:href', '#master')\n  .attr('gradientTransform', function(d) { return 'translate(' + d[1] + ')'; });\n\nsvg.selectAll('text').data(data)\n  .enter().append('svg:text')\n  .attr('fill', function(d, i) { return 'url(#gradient' + i + ')'; })\n  .attr('x', 0)\n  .attr('y', function(d, i) { return (i+1) * 20; })\n  .text(text);",
+      "size": 1171
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/087bc3a6b2fe0dbbf39ca49f40e2bac1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "087bc3a6b2fe0dbbf39ca49f40e2bac1",
+    "url": "https://api.github.com/users/dholth",
+    "login": "dholth",
+    "id": 208018
+  },
+  "history": [
+    {
+      "version": "49273f34dfb6b9693bfb6b365330c3db05fc57e6",
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "committed_at": "2011-11-15T21:46:12Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/087bc3a6b2fe0dbbf39ca49f40e2bac1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "087bc3a6b2fe0dbbf39ca49f40e2bac1",
+        "url": "https://api.github.com/users/dholth",
+        "login": "dholth",
+        "id": 208018
+      },
+      "url": "https://api.github.com/gists/1368205/49273f34dfb6b9693bfb6b365330c3db05fc57e6"
+    },
+    {
+      "version": "95bf8c78c4ed7712ecc3ec434a17be332fd51dbd",
+      "change_status": {
+        "total": 49,
+        "deletions": 13,
+        "additions": 36
+      },
+      "committed_at": "2011-11-15T21:44:26Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/087bc3a6b2fe0dbbf39ca49f40e2bac1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "087bc3a6b2fe0dbbf39ca49f40e2bac1",
+        "url": "https://api.github.com/users/dholth",
+        "login": "dholth",
+        "id": 208018
+      },
+      "url": "https://api.github.com/gists/1368205/95bf8c78c4ed7712ecc3ec434a17be332fd51dbd"
+    },
+    {
+      "version": "6652e6ca744e8b2e416a4a8b5a410b7cd9e5062d",
+      "change_status": {
+        "total": 4,
+        "deletions": 3,
+        "additions": 1
+      },
+      "committed_at": "2011-11-15T20:38:12Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/087bc3a6b2fe0dbbf39ca49f40e2bac1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "087bc3a6b2fe0dbbf39ca49f40e2bac1",
+        "url": "https://api.github.com/users/dholth",
+        "login": "dholth",
+        "id": 208018
+      },
+      "url": "https://api.github.com/gists/1368205/6652e6ca744e8b2e416a4a8b5a410b7cd9e5062d"
+    },
+    {
+      "version": "2b3029c00967f69d560a588180b8eb81efc3a495",
+      "change_status": {
+        "total": 13,
+        "deletions": 1,
+        "additions": 12
+      },
+      "committed_at": "2011-11-15T20:34:12Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/087bc3a6b2fe0dbbf39ca49f40e2bac1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "087bc3a6b2fe0dbbf39ca49f40e2bac1",
+        "url": "https://api.github.com/users/dholth",
+        "login": "dholth",
+        "id": 208018
+      },
+      "url": "https://api.github.com/gists/1368205/2b3029c00967f69d560a588180b8eb81efc3a495"
+    },
+    {
+      "version": "e4f1b9f692de5420c179f452cedb76835662e578",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2011-11-15T20:22:38Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/087bc3a6b2fe0dbbf39ca49f40e2bac1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "087bc3a6b2fe0dbbf39ca49f40e2bac1",
+        "url": "https://api.github.com/users/dholth",
+        "login": "dholth",
+        "id": 208018
+      },
+      "url": "https://api.github.com/gists/1368205/e4f1b9f692de5420c179f452cedb76835662e578"
+    },
+    {
+      "version": "568c05686b12a3d78ea35e5a88395e66d3835f61",
+      "change_status": {
+        "total": 10,
+        "deletions": 0,
+        "additions": 10
+      },
+      "committed_at": "2011-11-15T20:20:58Z",
+      "user": null,
+      "url": "https://api.github.com/gists/1368205/568c05686b12a3d78ea35e5a88395e66d3835f61"
+    }
+  ],
+  "url": "https://api.github.com/gists/1368205",
+  "description": "d3.js + svg gradients",
+  "git_pull_url": "git://gist.github.com/1368205.git",
+  "id": "1368205",
+  "comments": 0,
+  "created_at": "2011-11-15T20:20:58Z"
+}

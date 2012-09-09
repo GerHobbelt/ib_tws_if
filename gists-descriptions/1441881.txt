@@ -1,0 +1,51 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "f8ec7f90daf8b1defb8e318d663c0f17",
+    "login": "rstacruz",
+    "avatar_url": "https://secure.gravatar.com/avatar/f8ec7f90daf8b1defb8e318d663c0f17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/rstacruz",
+    "id": 74385
+  },
+  "git_pull_url": "git://gist.github.com/1441881.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "f8ec7f90daf8b1defb8e318d663c0f17",
+        "login": "rstacruz",
+        "avatar_url": "https://secure.gravatar.com/avatar/f8ec7f90daf8b1defb8e318d663c0f17?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/rstacruz",
+        "id": 74385
+      },
+      "version": "ae043760d614aa3d1d0645245e56ee78ca395bf8",
+      "change_status": {
+        "total": 53,
+        "additions": 53,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1441881/ae043760d614aa3d1d0645245e56ee78ca395bf8",
+      "committed_at": "2011-12-07T07:34:42Z"
+    }
+  ],
+  "description": "D3 bubbles",
+  "html_url": "https://gist.github.com/1441881",
+  "git_push_url": "git@gist.github.com:1441881.git",
+  "comments": 0,
+  "created_at": "2011-12-07T07:34:42Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/1441881/3a771becbe2472c9c4c95556a33c11d785e224f3/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1272,
+      "content": "<script src=\"https://raw.github.com/mbostock/d3/master/d3.js\"></script>\n<script src=\"https://raw.github.com/mbostock/d3/master/d3.layout.js\"></script>\n<div id=\"area\"></div>\n<style>\n#area { background: #eee; width: 600px; height: 400px; }\ncircle { fill: #933; stroke-width: 2px; stroke: #fff; }\n</style>\n<script>\nvar canvas = d3.select(\"#area\")\n    .append(\"svg:svg\")\n    .attr(\"width\", 600)\n    .attr(\"height\", 400);\n\nfunction getData() {\n  return d3.range(30).map(function() {\n    return {\n      x: Math.random()*600,\n      y: Math.random()*400,\n      r: Math.random()*60\n    };\n  });\n}\n\nsetInterval(function() {\n  var data  = getData();\n  var nodes = canvas.selectAll('g.node').data(data);\n  \n  console.log(data);\n  \n  // On change\n  nodes.select('circle')\n    .transition()\n      .duration(400)\n      .ease('bounce-in')\n      .attr('r', function(d) { return d.r; })\n      .attr('cx', function(d) { return d.x; })\n      .attr('cy', function(d) { return d.y; });\n    \n  // On enter\n  nodes.enter()\n    .append('svg:g')\n    .attr('class', 'node')\n    \n    .append('svg:circle')\n      .attr('r', function(d) { return d.r; })\n      .attr('cx', function(d) { return d.x; })\n      .attr('cy', function(d) { return d.y; });\n  \n  nodes.exit()\n    .remove();\n\n}, 1000);\n</script>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-12-07T07:34:42Z",
+  "url": "https://api.github.com/gists/1441881",
+  "id": "1441881"
+}

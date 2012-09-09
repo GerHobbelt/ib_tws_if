@@ -1,0 +1,110 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "aeacaa79409a2cb9ded407e4343500b1",
+    "login": "rmarimon",
+    "avatar_url": "https://secure.gravatar.com/avatar/aeacaa79409a2cb9ded407e4343500b1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/rmarimon",
+    "id": 777872
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "aeacaa79409a2cb9ded407e4343500b1",
+        "login": "rmarimon",
+        "avatar_url": "https://secure.gravatar.com/avatar/aeacaa79409a2cb9ded407e4343500b1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/rmarimon",
+        "id": 777872
+      },
+      "version": "a21bc9133cbd638b58d58589a9f15dc6912519ca",
+      "change_status": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/1179647/a21bc9133cbd638b58d58589a9f15dc6912519ca",
+      "committed_at": "2011-08-30T01:19:48Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "aeacaa79409a2cb9ded407e4343500b1",
+        "login": "rmarimon",
+        "avatar_url": "https://secure.gravatar.com/avatar/aeacaa79409a2cb9ded407e4343500b1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/rmarimon",
+        "id": 777872
+      },
+      "version": "ffcc8edbcecc02b4dd8c23a005083d8289566f97",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1179647/ffcc8edbcecc02b4dd8c23a005083d8289566f97",
+      "committed_at": "2011-08-30T01:19:16Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "aeacaa79409a2cb9ded407e4343500b1",
+        "login": "rmarimon",
+        "avatar_url": "https://secure.gravatar.com/avatar/aeacaa79409a2cb9ded407e4343500b1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/rmarimon",
+        "id": 777872
+      },
+      "version": "4b4f0f12c1a0d97497b018c67151aadd18764d25",
+      "change_status": {
+        "total": 106,
+        "additions": 106,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1179647/4b4f0f12c1a0d97497b018c67151aadd18764d25",
+      "committed_at": "2011-08-30T01:17:31Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "aeacaa79409a2cb9ded407e4343500b1",
+        "login": "rmarimon",
+        "avatar_url": "https://secure.gravatar.com/avatar/aeacaa79409a2cb9ded407e4343500b1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/rmarimon",
+        "id": 777872
+      },
+      "version": "e81a290e1bb238e1bacd3f8bdc07dd694dc8b0bd",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1179647/e81a290e1bb238e1bacd3f8bdc07dd694dc8b0bd",
+      "committed_at": "2011-08-29T23:02:08Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1179647.git",
+  "description": "Drag Axis",
+  "html_url": "https://gist.github.com/1179647",
+  "comments": 0,
+  "created_at": "2011-08-29T23:02:08Z",
+  "public": true,
+  "files": {
+    "README": {
+      "type": "text/plain",
+      "filename": "README",
+      "raw_url": "https://gist.github.com/raw/1179647/a0b759aa1f5c4746620d5195946fb054879f7e14/README",
+      "size": 67,
+      "content": "Click on the x axis line and drag to change the scale of the graph.",
+      "language": null
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1179647/4e7b3fbe6abe08980d67edec8c698950529cd2eb/index.html",
+      "size": 2813,
+      "content": "<!doctype html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />\n    <title>bar</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <style type=\"text/css\">\n      #chart {\n        font-size: 12px;\n      }\n      #chart line.data {\n        stroke: steelblue;\n        stroke-width: 6px;\n      }\n      #chart .xaxis {\n        stroke: black;\n        stroke-width: 6px;\n      }\n    </style>\n  </head>\n<body>\n  <div id=\"chart\"></div>\n  <script type=\"text/javascript\">\n\n    var w = 960,\n        h = 320,\n        m = [ 15, 5, 15, 5 ], // top, right, bottom, left (ala css)\n        mw = w - m[1] - m[3],\n        mh = h - m[0] - m[2],\n        data = [ { x: 1, y: 10 }, { x: 3, y: 12 }, { x: 4, y: 14 }, { x: 9, y: 16 } ];\n\n    var x = d3.scale.linear()\n          .domain([d3.min(data, function(d) { return d.x; }), d3.max(data, function(d) { return d.x; })])\n          .range([0, mw]),\n        y = d3.scale.linear()\n          .domain([Math.min(0, d3.min(data, function(d) { return d.y; })), d3.max(data, function(d) { return d.y; })])\n          .range([0, mh]);\n\n    var vis = d3.select(\"#chart\")\n      .append(\"svg:svg\")\n        .attr(\"width\", w)\n        .attr(\"height\", h)\n        .attr(\"pointer-events\", \"all\")\n      .append(\"svg:g\")\n        .attr(\"transform\", \"translate(\" + m[3] + \",\" + m[0] + \")\");\n\n    draw();\n\n    function draw() {\n\n      var lines = vis.selectAll(\"line.data\")\n          .data(data);\n      lines.exit().remove();\n      lines.enter()\n        .append(\"svg:line\")\n          .attr(\"class\", \"data\");\n      lines\n          .attr(\"x1\", function(d) { return x(d.x); })\n          .attr(\"x2\", function(d) { return x(d.x); })\n          .attr(\"y1\", function(d) { return mh - y(0); })\n          .attr(\"y2\", function(d) { return mh - y(d.y); });\n\n    }\n\n    // drag x-axis logic\n\n    var downx = Math.NaN;\n    var downscalex;\n    \n    // attach the mousedown to the line\n    \n    vis.append(\"svg:line\")\n      .attr(\"class\", \"xaxis\")\n      .attr(\"x1\", 0)\n      .attr(\"x2\", mw)\n      .attr(\"y1\", mh - y(0))\n      .attr(\"y2\", mh - y(0))\n      .on(\"mousedown\", function(d) {\n        var p = d3.svg.mouse(vis[0][0]);\n        downx = x.invert(p[0]);\n        downscalex = x;\n      });\n      \n    // attach the mousemove and mouseup to the body\n    // in case one wonders off the axis line\n    \n    d3.select('body')\n      .on(\"mousemove\", function(d) {\n        if (!isNaN(downx)) {\n          var p = d3.svg.mouse(vis[0][0]), rupx = p[0];\n          if (rupx != 0) {\n            x.domain([downscalex.domain()[0],  mw * (downx - downscalex.domain()[0]) / rupx + downscalex.domain()[0]]);\n          }\n          draw();\n        }\n      })\n      .on(\"mouseup\", function(d) {\n        downx = Math.NaN;\n      });\n\n  </script>\n</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-08-29T23:02:08Z",
+  "url": "https://api.github.com/gists/1179647",
+  "id": "1179647",
+  "git_pull_url": "git://gist.github.com/1179647.git"
+}

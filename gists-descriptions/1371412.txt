@@ -1,0 +1,68 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "db0b014afce24442808bc3de4524ce68a62d5f9e",
+      "change_status": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "url": "https://api.github.com/gists/1371412/db0b014afce24442808bc3de4524ce68a62d5f9e",
+      "committed_at": "2011-11-16T21:17:52Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "7d8fe52dadbecfe51693f1aacf77fc1e981e806a",
+      "change_status": {
+        "total": 52,
+        "additions": 52,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1371412/7d8fe52dadbecfe51693f1aacf77fc1e981e806a",
+      "committed_at": "2011-11-16T21:10:53Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1371412.git",
+  "description": "Circles",
+  "html_url": "https://gist.github.com/1371412",
+  "comments": 0,
+  "created_at": "2011-11-16T21:10:53Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1371412/b8cd121f323c4a90ecc4997a5452cf9f4a8e7361/index.html",
+      "size": 1273,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n  </head>\n  <body>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.5.0\"></script>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500;\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvar circle = svg.selectAll(\"circle\")\n    .data(d3.range(1000).map(function() {\n      return {\n        x: w * Math.random(),\n        y: h * Math.random(),\n        dx: Math.random() - .5,\n        dy: Math.random() - .5\n      };\n    }))\n  .enter().append(\"svg:circle\")\n    .attr(\"r\", 2.5);\n\nvar text = svg.append(\"svg:text\")\n    .attr(\"x\", 20)\n    .attr(\"y\", 20);\n\nvar start = Date.now(),\n    frames = 0;\n\nd3.timer(function() {\n\n  // Update the FPS meter.\n  var now = Date.now(), duration = now - start;\n  text.text(~~(++frames * 1000 / duration));\n  if (duration >= 1000) frames = 0, start = now;\n\n  // Update the circle positions.\n  circle\n      .attr(\"cx\", function(d) { d.x += d.dx; if (d.x > w) d.x -= w; else if (d.x < 0) d.x += w; return d.x; })\n      .attr(\"cy\", function(d) { d.y += d.dy; if (d.y > h) d.y -= h; else if (d.y < 0) d.y += h; return d.y; });\n\n});\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-11-16T21:10:53Z",
+  "url": "https://api.github.com/gists/1371412",
+  "id": "1371412",
+  "git_pull_url": "git://gist.github.com/1371412.git"
+}

@@ -1,0 +1,228 @@
+{
+  "forks": [
+
+  ],
+  "updated_at": "2012-09-09T08:56:27Z",
+  "public": true,
+  "files": {
+    "style000.css": {
+      "type": "text/css",
+      "filename": "style000.css",
+      "language": "CSS",
+      "content": "body {\n  overflow: hidden;\n  margin: 0;\n  font: 14px \"Helvetica Neue\";\n}\n\nsvg {\n  width: 1280px;\n  height: 800px;\n}\n\n#chart, #header {\n  position: absolute;\n  top: 0;\n}\n\n#header {\n  z-index: 1;\n  display: block;\n}\n\n#header {\n  top: 80px;\n  left: 140px;\n  font: 300 36px \"Helvetica Neue\";\n}\n\nrect {\n  fill: none;\n  pointer-events: all;\n}\n\npre {\n  font-size: 18px;\n}\n\nline {\n  stroke: #000;\n  stroke-width: 1.5px;\n}\n\n.string, .regexp {\n  color: #f39;\n}\n\n.keyword {\n  color: #00c;\n}\n\n.comment {\n  color: #555;\n}\n\n.number {\n  color: #369;\n}\n\n.class, .special {\n  color: #1181B8;\n}\n",
+      "raw_url": "https://gist.github.com/raw/3125600/9a21e75b1e815f7d844b2b88b3dd85a0959a858d/style000.css",
+      "size": 577
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "language": null,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "raw_url": "https://gist.github.com/raw/3125600/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">\n<head>\n\n    <title>Force Layouts - Quantitative Foci</title>\n    <script src=\"http://d3js.org/d3.v2.js\"></script>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"style000.css\">\n    <style type=\"text/css\">\n\ncircle {\n  stroke: #fff;\n}\nrect {\n  stroke: #777;\n}\n\n    </style>\n  </head>\n  <body>\n    <div id=\"body\">\n      <div id=\"chart\"></div>\n      <div id=\"header\">quantitative foci</div>\n    </div>\n    <script type=\"text/javascript\">\n\nvar w = 900,\n    h = 500;\n\nvar color = d3.scale.linear()\n    .domain([h * h / 4, 10000])\n    .range([\"hsl(180,100%,10%)\", \"hsl(210,100%,90%)\"])\n    .interpolate(d3.interpolateHsl);\n\nvar force = d3.layout.force()\n    .gravity(0)\n    .charge(0)\n    .size([w, h]);\n\nvar nodes = force.nodes();\n\nvar svg = d3.select(\"#chart\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nsvg.append(\"svg:rect\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nforce.on(\"tick\", function(e) {\n  var k = e.alpha * .1;\n  nodes.forEach(function(node) {\n    var dx, dy, ratio;\n\n    dx = node.x - w / 2;\n    dy = node.y - h / 2;\n    ratio = node.r2 / (dx * dx + dy * dy + 0.1);\n    ratio = (ratio - 1) / 3 + 1;\n    dx = dx * ratio + w / 2;\n    dy = dy * ratio + h / 2;\n    node.x += (dx - node.x) * k;\n    node.y += (dy - node.y) * k;\n    /*\n    Why does the above code work? Without Math.sqrt() or ...\n\n    From the Utterly basic towards the slightly wicked stuff:\n    --------------------------------------------------------\n\n    To calculate the 'destination' for any random starting point, we\n    calculate the point (dx, dy) relative to the center of the radial.\n\n    To calculate the angle, we could do a `Math.atan2()`, but that takes\n    time when done in bulk and we don't need polar coordinates: all\n    we need to answer is: 'are we far enough away from the center?' because\n    when we are, then we're at our designated spot (at distance `Math.sqrt(node.r2))`\n    from center, in the direction we started out with when the node was born.\n\n    For the above, all we need is a ratio, telling us how far to move both\n    x and y from the center (same factor means we remain going in the same\n    direction). Thus we can end up at the designated target spot (dx, dy)\n    after ratio has been applied. (where we need the ratio in radial distance,\n    i.e. `ratio = Math.sqrt(node.r2 / (dx * dx + dy * dy)`\n\n    But `Math.sqrt()` is relative costly too, and we can arrive at the same result\n    if we take into consideration that we've got many iterations (force.ticks)\n    before we've got to get there: we can then approximate the square root by\n    taking the ratio of the squared distances and divide it by a constant.\n    Seat of the pants would put '2' there, but that will result in serious\n    overshoot during the iteration (you get something like a damped oscillation\n    around the final target at `distance = Math.sqrt(node.r2))`.\n\n    In the code we use the constant divisor '3' to reduce ratio overshoot caused\n    by not rooting the squares; we can handle the larger\n    undershoot for different values this will cause at the same time: we still\n    have many iterations to fix that one up.\n\n\n    Tweak the constant or replace by the 'correct' formula to see the difference\n    in behaviour.\n\n    This minimization of the number of calls to Math.atan2/cos/sin (the very\n    naive way to do this radial distribution) and Math.sqrt(), having them\n    replaced by just a few multiplications and the minimal number of divisions\n    is the start to optimize such algorithms for speed.\n\n    The current code still has several invariants (w/2, h/2) which can be extracted.\n\n    And the why of the 0.1 in there is left as an exercise for the reader. ;-)\n    */\n  });\n\n  svg.selectAll(\"circle\")\n      .attr(\"cx\", function(d) { return d.x; })\n      .attr(\"cy\", function(d) { return d.y; });\n});\n\nvar p0;\n\nsvg.on(\"mousemove\", function() {\n  var p1 = d3.svg.mouse(this);\n\n  var node = {\n    x: p1[0],\n    y: p1[1],\n    px: (p0 || (p0 = p1))[0],\n    py: p0[1],\n    r2: Math.max(Math.random() * h * h / 4, 10000)\n  };\n\n  p0 = p1;\n\n  svg.append(\"svg:circle\")\n      .data([node])\n      .attr(\"cx\", function(d) { return d.x; })\n      .attr(\"cy\", function(d) { return d.y; })\n      .attr(\"r\", 15)\n      .style(\"fill\", function(d) { return color(d.r2); })\n    .transition()\n      .delay(3000)\n      .attr(\"r\", 1e-6)\n      .each(\"end\", function() { nodes.shift(); })\n      .remove();\n\n  nodes.push(node);\n  force.start();\n});\n\n    </script>\n  </body>\n</html>\n\n<!-- This document saved from http://mbostock.github.com/d3/talk/20110921/quantitative-foci.html -->\n",
+      "raw_url": "https://gist.github.com/raw/3125600/a4491f3bb7c8001e2a788b6440ea69e73c789156/index.html",
+      "size": 4678
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "language": "Markdown",
+      "content": "Radial foci\n===========\n\nDerived from of [http://mbostock.github.com/d3/talk/20110921/quantitative-foci.html](http://mbostock.github.com/d3/talk/20110921/quantitative-foci.html).\n\nMouse movement generates nodes and randomly assigns them a focus 'ring' position (radial foci ~ radial distance from center); node color represents their 'ring'.\n\n(Mike's original is also available as [gist 3116650](http://bl.ocks.org/3116650).)\n\n",
+      "raw_url": "https://gist.github.com/raw/3125600/18d4f2a6bd4fb51aa328d779440d11debe5756d7/README.md",
+      "size": 427
+    }
+  },
+  "git_pull_url": "git://gist.github.com/3125600.git",
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "login": "GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 46,
+        "deletions": 0,
+        "additions": 46
+      },
+      "version": "b27d842350b15c9021fc707397b46aa9f7a5dd62",
+      "committed_at": "2012-09-09T08:44:34Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/b27d842350b15c9021fc707397b46aa9f7a5dd62"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "version": "e13da081556edb916894f08fc77c78eb3f769cc4",
+      "committed_at": "2012-07-17T00:28:26Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/e13da081556edb916894f08fc77c78eb3f769cc4"
+    },
+    {
+      "change_status": {
+        "total": 8,
+        "deletions": 4,
+        "additions": 4
+      },
+      "version": "bdcd52b0ce23911f638b85338ccfe15bb7882934",
+      "committed_at": "2012-07-17T00:27:29Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/bdcd52b0ce23911f638b85338ccfe15bb7882934"
+    },
+    {
+      "change_status": {
+        "total": 6,
+        "deletions": 1,
+        "additions": 5
+      },
+      "version": "28729f6253775638b26cb90fb13be49d27ba5a95",
+      "committed_at": "2012-07-17T00:26:54Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/28729f6253775638b26cb90fb13be49d27ba5a95"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "version": "89444f989030060bfc0d9e97bce09e93aaef517f",
+      "committed_at": "2012-07-17T00:13:35Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/89444f989030060bfc0d9e97bce09e93aaef517f"
+    },
+    {
+      "change_status": {
+        "total": 41,
+        "deletions": 41,
+        "additions": 0
+      },
+      "version": "7c6f7d6b67c2b3a48b482eed09f20ba24f9e4f72",
+      "committed_at": "2012-07-17T00:08:30Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/7c6f7d6b67c2b3a48b482eed09f20ba24f9e4f72"
+    },
+    {
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "version": "690425bb5aed433a55091d6962d026cfcbdaed1d",
+      "committed_at": "2012-07-17T00:06:40Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/690425bb5aed433a55091d6962d026cfcbdaed1d"
+    },
+    {
+      "change_status": {
+        "total": 156,
+        "deletions": 53,
+        "additions": 103
+      },
+      "version": "9fe7a188232c4b1a6c368031aa37002444ef7a97",
+      "committed_at": "2012-07-17T00:03:43Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/9fe7a188232c4b1a6c368031aa37002444ef7a97"
+    },
+    {
+      "change_status": {
+        "total": 65,
+        "deletions": 6,
+        "additions": 59
+      },
+      "version": "1a41859d15f9b1eb7debe71b3a061bd813ca17c6",
+      "committed_at": "2012-07-16T23:57:13Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/1a41859d15f9b1eb7debe71b3a061bd813ca17c6"
+    },
+    {
+      "change_status": {
+        "total": 0,
+        "deletions": 0,
+        "additions": 0
+      },
+      "version": "5dbc76d9f7ab8c1f5cb6595bfa7dccd2f0e403d4",
+      "committed_at": "2012-07-16T22:57:30Z",
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "login": "GerHobbelt",
+        "id": 402462
+      },
+      "url": "https://api.github.com/gists/3125600/5dbc76d9f7ab8c1f5cb6595bfa7dccd2f0e403d4"
+    }
+  ],
+  "html_url": "https://gist.github.com/3125600",
+  "git_push_url": "git@gist.github.com:3125600.git",
+  "url": "https://api.github.com/gists/3125600",
+  "description": "d3.js: quantitative foci (radial)",
+  "id": "3125600",
+  "comments": 0,
+  "created_at": "2012-07-16T22:55:50Z"
+}

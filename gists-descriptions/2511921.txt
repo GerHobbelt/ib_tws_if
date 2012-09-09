@@ -1,0 +1,278 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "GerHobbelt",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "git_pull_url": "git://gist.github.com/2511921.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "30e0a4420767a163b17c2d4c5e2ea5fc6cf08a1b",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/2511921/30e0a4420767a163b17c2d4c5e2ea5fc6cf08a1b",
+      "committed_at": "2012-09-09T08:44:26Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "2ddee2309586e3308800e01e390589155af854cb",
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/2511921/2ddee2309586e3308800e01e390589155af854cb",
+      "committed_at": "2012-04-27T23:53:26Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "8f13ade923a206fae4d045738b3059ef49bd0906",
+      "change_status": {
+        "total": 8,
+        "additions": 8,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/2511921/8f13ade923a206fae4d045738b3059ef49bd0906",
+      "committed_at": "2012-04-27T23:51:36Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "e1c5240bfca644939414f7b94cd63faff3a208df",
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/2511921/e1c5240bfca644939414f7b94cd63faff3a208df",
+      "committed_at": "2012-04-27T23:46:57Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "e87c09dcb4fcf5ed68ae9dc893fbae01862111c3",
+      "change_status": {
+        "total": 9,
+        "additions": 7,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/2511921/e87c09dcb4fcf5ed68ae9dc893fbae01862111c3",
+      "committed_at": "2012-04-27T23:08:19Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "f1110add7ebb506833735a9a139b0545f52c480c",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/2511921/f1110add7ebb506833735a9a139b0545f52c480c",
+      "committed_at": "2012-04-27T23:05:32Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "33a84823c2b0ea63e726caca3bc8626351bb3c65",
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/2511921/33a84823c2b0ea63e726caca3bc8626351bb3c65",
+      "committed_at": "2012-04-27T23:04:37Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "368be80b7253bc6850ec58d9f2fb4b165bc867de",
+      "change_status": {
+        "total": 13,
+        "additions": 6,
+        "deletions": 7
+      },
+      "url": "https://api.github.com/gists/2511921/368be80b7253bc6850ec58d9f2fb4b165bc867de",
+      "committed_at": "2012-04-27T23:00:22Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "9849f5643a21bfe40a5c6b041c80212e02ec8304",
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/2511921/9849f5643a21bfe40a5c6b041c80212e02ec8304",
+      "committed_at": "2012-04-27T22:54:33Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "518e39df98fdde2f0610b0ce5358358518a10fea",
+      "change_status": {
+        "total": 27,
+        "additions": 21,
+        "deletions": 6
+      },
+      "url": "https://api.github.com/gists/2511921/518e39df98fdde2f0610b0ce5358358518a10fea",
+      "committed_at": "2012-04-27T22:52:07Z"
+    }
+  ],
+  "description": "Force tree transition chaining (incrementally showing nodes and links in a force graph)",
+  "html_url": "https://gist.github.com/2511921",
+  "git_push_url": "git@gist.github.com:2511921.git",
+  "comments": 0,
+  "created_at": "2012-04-27T19:05:27Z",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "f3ee36abd9165ab7f53a16545365c85e",
+      "avatar_url": "https://secure.gravatar.com/avatar/f3ee36abd9165ab7f53a16545365c85e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "bery",
+      "url": "https://api.github.com/users/bery",
+      "id": 1456931
+    },
+    "git_pull_url": "git://gist.github.com/2509019.git",
+    "description": "Force tree transition chaining",
+    "html_url": "https://gist.github.com/2509019",
+    "git_push_url": "git@gist.github.com:2509019.git",
+    "comments": 0,
+    "created_at": "2012-04-27T13:04:45Z",
+    "public": true,
+    "files": {
+      "miserables.json": {
+        "type": "application/json",
+        "filename": "miserables.json",
+        "size": 11535,
+        "raw_url": "https://gist.github.com/raw/2509019/8ac84377f78fb62ccb574ddf9d5af42b5c21d0a4/miserables.json",
+        "language": "JSON"
+      },
+      "force.js": {
+        "type": "application/javascript",
+        "filename": "force.js",
+        "size": 1754,
+        "raw_url": "https://gist.github.com/raw/2509019/16f08f64255d88dd86e52326cf952f6812939384/force.js",
+        "language": "JavaScript"
+      },
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 425,
+        "raw_url": "https://gist.github.com/raw/2509019/4f20b9bca3c821ebf3421cf4fe336395f2b4a9ee/index.html",
+        "language": "HTML"
+      }
+    },
+    "updated_at": "2012-04-27T13:04:45Z",
+    "url": "https://api.github.com/gists/2509019",
+    "id": "2509019"
+  },
+  "public": true,
+  "files": {
+    "miserables.json": {
+      "type": "application/json",
+      "filename": "miserables.json",
+      "size": 11535,
+      "content": "{\"nodes\":[{\"name\":\"Myriel\",\"group\":1},{\"name\":\"Napoleon\",\"group\":1},{\"name\":\"Mlle.Baptistine\",\"group\":1},{\"name\":\"Mme.Magloire\",\"group\":1},{\"name\":\"CountessdeLo\",\"group\":1},{\"name\":\"Geborand\",\"group\":1},{\"name\":\"Champtercier\",\"group\":1},{\"name\":\"Cravatte\",\"group\":1},{\"name\":\"Count\",\"group\":1},{\"name\":\"OldMan\",\"group\":1},{\"name\":\"Labarre\",\"group\":2},{\"name\":\"Valjean\",\"group\":2},{\"name\":\"Marguerite\",\"group\":3},{\"name\":\"Mme.deR\",\"group\":2},{\"name\":\"Isabeau\",\"group\":2},{\"name\":\"Gervais\",\"group\":2},{\"name\":\"Tholomyes\",\"group\":3},{\"name\":\"Listolier\",\"group\":3},{\"name\":\"Fameuil\",\"group\":3},{\"name\":\"Blacheville\",\"group\":3},{\"name\":\"Favourite\",\"group\":3},{\"name\":\"Dahlia\",\"group\":3},{\"name\":\"Zephine\",\"group\":3},{\"name\":\"Fantine\",\"group\":3},{\"name\":\"Mme.Thenardier\",\"group\":4},{\"name\":\"Thenardier\",\"group\":4},{\"name\":\"Cosette\",\"group\":5},{\"name\":\"Javert\",\"group\":4},{\"name\":\"Fauchelevent\",\"group\":0},{\"name\":\"Bamatabois\",\"group\":2},{\"name\":\"Perpetue\",\"group\":3},{\"name\":\"Simplice\",\"group\":2},{\"name\":\"Scaufflaire\",\"group\":2},{\"name\":\"Woman1\",\"group\":2},{\"name\":\"Judge\",\"group\":2},{\"name\":\"Champmathieu\",\"group\":2},{\"name\":\"Brevet\",\"group\":2},{\"name\":\"Chenildieu\",\"group\":2},{\"name\":\"Cochepaille\",\"group\":2},{\"name\":\"Pontmercy\",\"group\":4},{\"name\":\"Boulatruelle\",\"group\":6},{\"name\":\"Eponine\",\"group\":4},{\"name\":\"Anzelma\",\"group\":4},{\"name\":\"Woman2\",\"group\":5},{\"name\":\"MotherInnocent\",\"group\":0},{\"name\":\"Gribier\",\"group\":0},{\"name\":\"Jondrette\",\"group\":7},{\"name\":\"Mme.Burgon\",\"group\":7},{\"name\":\"Gavroche\",\"group\":8},{\"name\":\"Gillenormand\",\"group\":5},{\"name\":\"Magnon\",\"group\":5},{\"name\":\"Mlle.Gillenormand\",\"group\":5},{\"name\":\"Mme.Pontmercy\",\"group\":5},{\"name\":\"Mlle.Vaubois\",\"group\":5},{\"name\":\"Lt.Gillenormand\",\"group\":5},{\"name\":\"Marius\",\"group\":8},{\"name\":\"BaronessT\",\"group\":5},{\"name\":\"Mabeuf\",\"group\":8},{\"name\":\"Enjolras\",\"group\":8},{\"name\":\"Combeferre\",\"group\":8},{\"name\":\"Prouvaire\",\"group\":8},{\"name\":\"Feuilly\",\"group\":8},{\"name\":\"Courfeyrac\",\"group\":8},{\"name\":\"Bahorel\",\"group\":8},{\"name\":\"Bossuet\",\"group\":8},{\"name\":\"Joly\",\"group\":8},{\"name\":\"Grantaire\",\"group\":8},{\"name\":\"MotherPlutarch\",\"group\":9},{\"name\":\"Gueulemer\",\"group\":4},{\"name\":\"Babet\",\"group\":4},{\"name\":\"Claquesous\",\"group\":4},{\"name\":\"Montparnasse\",\"group\":4},{\"name\":\"Toussaint\",\"group\":5},{\"name\":\"Child1\",\"group\":10},{\"name\":\"Child2\",\"group\":10},{\"name\":\"Brujon\",\"group\":4},{\"name\":\"Mme.Hucheloup\",\"group\":8}],\"links\":[{\"source\":1,\"target\":0,\"value\":1},{\"source\":2,\"target\":0,\"value\":8},{\"source\":3,\"target\":0,\"value\":10},{\"source\":3,\"target\":2,\"value\":6},{\"source\":4,\"target\":0,\"value\":1},{\"source\":5,\"target\":0,\"value\":1},{\"source\":6,\"target\":0,\"value\":1},{\"source\":7,\"target\":0,\"value\":1},{\"source\":8,\"target\":0,\"value\":2},{\"source\":9,\"target\":0,\"value\":1},{\"source\":11,\"target\":10,\"value\":1},{\"source\":11,\"target\":3,\"value\":3},{\"source\":11,\"target\":2,\"value\":3},{\"source\":11,\"target\":0,\"value\":5},{\"source\":12,\"target\":11,\"value\":1},{\"source\":13,\"target\":11,\"value\":1},{\"source\":14,\"target\":11,\"value\":1},{\"source\":15,\"target\":11,\"value\":1},{\"source\":17,\"target\":16,\"value\":4},{\"source\":18,\"target\":16,\"value\":4},{\"source\":18,\"target\":17,\"value\":4},{\"source\":19,\"target\":16,\"value\":4},{\"source\":19,\"target\":17,\"value\":4},{\"source\":19,\"target\":18,\"value\":4},{\"source\":20,\"target\":16,\"value\":3},{\"source\":20,\"target\":17,\"value\":3},{\"source\":20,\"target\":18,\"value\":3},{\"source\":20,\"target\":19,\"value\":4},{\"source\":21,\"target\":16,\"value\":3},{\"source\":21,\"target\":17,\"value\":3},{\"source\":21,\"target\":18,\"value\":3},{\"source\":21,\"target\":19,\"value\":3},{\"source\":21,\"target\":20,\"value\":5},{\"source\":22,\"target\":16,\"value\":3},{\"source\":22,\"target\":17,\"value\":3},{\"source\":22,\"target\":18,\"value\":3},{\"source\":22,\"target\":19,\"value\":3},{\"source\":22,\"target\":20,\"value\":4},{\"source\":22,\"target\":21,\"value\":4},{\"source\":23,\"target\":16,\"value\":3},{\"source\":23,\"target\":17,\"value\":3},{\"source\":23,\"target\":18,\"value\":3},{\"source\":23,\"target\":19,\"value\":3},{\"source\":23,\"target\":20,\"value\":4},{\"source\":23,\"target\":21,\"value\":4},{\"source\":23,\"target\":22,\"value\":4},{\"source\":23,\"target\":12,\"value\":2},{\"source\":23,\"target\":11,\"value\":9},{\"source\":24,\"target\":23,\"value\":2},{\"source\":24,\"target\":11,\"value\":7},{\"source\":25,\"target\":24,\"value\":13},{\"source\":25,\"target\":23,\"value\":1},{\"source\":25,\"target\":11,\"value\":12},{\"source\":26,\"target\":24,\"value\":4},{\"source\":26,\"target\":11,\"value\":31},{\"source\":26,\"target\":16,\"value\":1},{\"source\":26,\"target\":25,\"value\":1},{\"source\":27,\"target\":11,\"value\":17},{\"source\":27,\"target\":23,\"value\":5},{\"source\":27,\"target\":25,\"value\":5},{\"source\":27,\"target\":24,\"value\":1},{\"source\":27,\"target\":26,\"value\":1},{\"source\":28,\"target\":11,\"value\":8},{\"source\":28,\"target\":27,\"value\":1},{\"source\":29,\"target\":23,\"value\":1},{\"source\":29,\"target\":27,\"value\":1},{\"source\":29,\"target\":11,\"value\":2},{\"source\":30,\"target\":23,\"value\":1},{\"source\":31,\"target\":30,\"value\":2},{\"source\":31,\"target\":11,\"value\":3},{\"source\":31,\"target\":23,\"value\":2},{\"source\":31,\"target\":27,\"value\":1},{\"source\":32,\"target\":11,\"value\":1},{\"source\":33,\"target\":11,\"value\":2},{\"source\":33,\"target\":27,\"value\":1},{\"source\":34,\"target\":11,\"value\":3},{\"source\":34,\"target\":29,\"value\":2},{\"source\":35,\"target\":11,\"value\":3},{\"source\":35,\"target\":34,\"value\":3},{\"source\":35,\"target\":29,\"value\":2},{\"source\":36,\"target\":34,\"value\":2},{\"source\":36,\"target\":35,\"value\":2},{\"source\":36,\"target\":11,\"value\":2},{\"source\":36,\"target\":29,\"value\":1},{\"source\":37,\"target\":34,\"value\":2},{\"source\":37,\"target\":35,\"value\":2},{\"source\":37,\"target\":36,\"value\":2},{\"source\":37,\"target\":11,\"value\":2},{\"source\":37,\"target\":29,\"value\":1},{\"source\":38,\"target\":34,\"value\":2},{\"source\":38,\"target\":35,\"value\":2},{\"source\":38,\"target\":36,\"value\":2},{\"source\":38,\"target\":37,\"value\":2},{\"source\":38,\"target\":11,\"value\":2},{\"source\":38,\"target\":29,\"value\":1},{\"source\":39,\"target\":25,\"value\":1},{\"source\":40,\"target\":25,\"value\":1},{\"source\":41,\"target\":24,\"value\":2},{\"source\":41,\"target\":25,\"value\":3},{\"source\":42,\"target\":41,\"value\":2},{\"source\":42,\"target\":25,\"value\":2},{\"source\":42,\"target\":24,\"value\":1},{\"source\":43,\"target\":11,\"value\":3},{\"source\":43,\"target\":26,\"value\":1},{\"source\":43,\"target\":27,\"value\":1},{\"source\":44,\"target\":28,\"value\":3},{\"source\":44,\"target\":11,\"value\":1},{\"source\":45,\"target\":28,\"value\":2},{\"source\":47,\"target\":46,\"value\":1},{\"source\":48,\"target\":47,\"value\":2},{\"source\":48,\"target\":25,\"value\":1},{\"source\":48,\"target\":27,\"value\":1},{\"source\":48,\"target\":11,\"value\":1},{\"source\":49,\"target\":26,\"value\":3},{\"source\":49,\"target\":11,\"value\":2},{\"source\":50,\"target\":49,\"value\":1},{\"source\":50,\"target\":24,\"value\":1},{\"source\":51,\"target\":49,\"value\":9},{\"source\":51,\"target\":26,\"value\":2},{\"source\":51,\"target\":11,\"value\":2},{\"source\":52,\"target\":51,\"value\":1},{\"source\":52,\"target\":39,\"value\":1},{\"source\":53,\"target\":51,\"value\":1},{\"source\":54,\"target\":51,\"value\":2},{\"source\":54,\"target\":49,\"value\":1},{\"source\":54,\"target\":26,\"value\":1},{\"source\":55,\"target\":51,\"value\":6},{\"source\":55,\"target\":49,\"value\":12},{\"source\":55,\"target\":39,\"value\":1},{\"source\":55,\"target\":54,\"value\":1},{\"source\":55,\"target\":26,\"value\":21},{\"source\":55,\"target\":11,\"value\":19},{\"source\":55,\"target\":16,\"value\":1},{\"source\":55,\"target\":25,\"value\":2},{\"source\":55,\"target\":41,\"value\":5},{\"source\":55,\"target\":48,\"value\":4},{\"source\":56,\"target\":49,\"value\":1},{\"source\":56,\"target\":55,\"value\":1},{\"source\":57,\"target\":55,\"value\":1},{\"source\":57,\"target\":41,\"value\":1},{\"source\":57,\"target\":48,\"value\":1},{\"source\":58,\"target\":55,\"value\":7},{\"source\":58,\"target\":48,\"value\":7},{\"source\":58,\"target\":27,\"value\":6},{\"source\":58,\"target\":57,\"value\":1},{\"source\":58,\"target\":11,\"value\":4},{\"source\":59,\"target\":58,\"value\":15},{\"source\":59,\"target\":55,\"value\":5},{\"source\":59,\"target\":48,\"value\":6},{\"source\":59,\"target\":57,\"value\":2},{\"source\":60,\"target\":48,\"value\":1},{\"source\":60,\"target\":58,\"value\":4},{\"source\":60,\"target\":59,\"value\":2},{\"source\":61,\"target\":48,\"value\":2},{\"source\":61,\"target\":58,\"value\":6},{\"source\":61,\"target\":60,\"value\":2},{\"source\":61,\"target\":59,\"value\":5},{\"source\":61,\"target\":57,\"value\":1},{\"source\":61,\"target\":55,\"value\":1},{\"source\":62,\"target\":55,\"value\":9},{\"source\":62,\"target\":58,\"value\":17},{\"source\":62,\"target\":59,\"value\":13},{\"source\":62,\"target\":48,\"value\":7},{\"source\":62,\"target\":57,\"value\":2},{\"source\":62,\"target\":41,\"value\":1},{\"source\":62,\"target\":61,\"value\":6},{\"source\":62,\"target\":60,\"value\":3},{\"source\":63,\"target\":59,\"value\":5},{\"source\":63,\"target\":48,\"value\":5},{\"source\":63,\"target\":62,\"value\":6},{\"source\":63,\"target\":57,\"value\":2},{\"source\":63,\"target\":58,\"value\":4},{\"source\":63,\"target\":61,\"value\":3},{\"source\":63,\"target\":60,\"value\":2},{\"source\":63,\"target\":55,\"value\":1},{\"source\":64,\"target\":55,\"value\":5},{\"source\":64,\"target\":62,\"value\":12},{\"source\":64,\"target\":48,\"value\":5},{\"source\":64,\"target\":63,\"value\":4},{\"source\":64,\"target\":58,\"value\":10},{\"source\":64,\"target\":61,\"value\":6},{\"source\":64,\"target\":60,\"value\":2},{\"source\":64,\"target\":59,\"value\":9},{\"source\":64,\"target\":57,\"value\":1},{\"source\":64,\"target\":11,\"value\":1},{\"source\":65,\"target\":63,\"value\":5},{\"source\":65,\"target\":64,\"value\":7},{\"source\":65,\"target\":48,\"value\":3},{\"source\":65,\"target\":62,\"value\":5},{\"source\":65,\"target\":58,\"value\":5},{\"source\":65,\"target\":61,\"value\":5},{\"source\":65,\"target\":60,\"value\":2},{\"source\":65,\"target\":59,\"value\":5},{\"source\":65,\"target\":57,\"value\":1},{\"source\":65,\"target\":55,\"value\":2},{\"source\":66,\"target\":64,\"value\":3},{\"source\":66,\"target\":58,\"value\":3},{\"source\":66,\"target\":59,\"value\":1},{\"source\":66,\"target\":62,\"value\":2},{\"source\":66,\"target\":65,\"value\":2},{\"source\":66,\"target\":48,\"value\":1},{\"source\":66,\"target\":63,\"value\":1},{\"source\":66,\"target\":61,\"value\":1},{\"source\":66,\"target\":60,\"value\":1},{\"source\":67,\"target\":57,\"value\":3},{\"source\":68,\"target\":25,\"value\":5},{\"source\":68,\"target\":11,\"value\":1},{\"source\":68,\"target\":24,\"value\":1},{\"source\":68,\"target\":27,\"value\":1},{\"source\":68,\"target\":48,\"value\":1},{\"source\":68,\"target\":41,\"value\":1},{\"source\":69,\"target\":25,\"value\":6},{\"source\":69,\"target\":68,\"value\":6},{\"source\":69,\"target\":11,\"value\":1},{\"source\":69,\"target\":24,\"value\":1},{\"source\":69,\"target\":27,\"value\":2},{\"source\":69,\"target\":48,\"value\":1},{\"source\":69,\"target\":41,\"value\":1},{\"source\":70,\"target\":25,\"value\":4},{\"source\":70,\"target\":69,\"value\":4},{\"source\":70,\"target\":68,\"value\":4},{\"source\":70,\"target\":11,\"value\":1},{\"source\":70,\"target\":24,\"value\":1},{\"source\":70,\"target\":27,\"value\":1},{\"source\":70,\"target\":41,\"value\":1},{\"source\":70,\"target\":58,\"value\":1},{\"source\":71,\"target\":27,\"value\":1},{\"source\":71,\"target\":69,\"value\":2},{\"source\":71,\"target\":68,\"value\":2},{\"source\":71,\"target\":70,\"value\":2},{\"source\":71,\"target\":11,\"value\":1},{\"source\":71,\"target\":48,\"value\":1},{\"source\":71,\"target\":41,\"value\":1},{\"source\":71,\"target\":25,\"value\":1},{\"source\":72,\"target\":26,\"value\":2},{\"source\":72,\"target\":27,\"value\":1},{\"source\":72,\"target\":11,\"value\":1},{\"source\":73,\"target\":48,\"value\":2},{\"source\":74,\"target\":48,\"value\":2},{\"source\":74,\"target\":73,\"value\":3},{\"source\":75,\"target\":69,\"value\":3},{\"source\":75,\"target\":68,\"value\":3},{\"source\":75,\"target\":25,\"value\":3},{\"source\":75,\"target\":48,\"value\":1},{\"source\":75,\"target\":41,\"value\":1},{\"source\":75,\"target\":70,\"value\":1},{\"source\":75,\"target\":71,\"value\":1},{\"source\":76,\"target\":64,\"value\":1},{\"source\":76,\"target\":65,\"value\":1},{\"source\":76,\"target\":66,\"value\":1},{\"source\":76,\"target\":63,\"value\":1},{\"source\":76,\"target\":62,\"value\":1},{\"source\":76,\"target\":48,\"value\":1},{\"source\":76,\"target\":58,\"value\":1}]}",
+      "raw_url": "https://gist.github.com/raw/2511921/8ac84377f78fb62ccb574ddf9d5af42b5c21d0a4/miserables.json",
+      "language": "JSON"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 502,
+      "content": "Force graph with node-link show up through chaining\n===================================================\n\nDerived from [gist 1125997](http://bl.ocks.org/1125997), but now shows the nodes appear incrementally.\n\nThis variant also chains the display of the links; links are only shown once their nodes are visible; then they are faded in all at once.\n\nThe alternative, which fades in all relevant links one by one (by chaining) for each node which shows up, see [gist 2514183](http://bl.ocks.org/2514183).\n",
+      "raw_url": "https://gist.github.com/raw/2511921/74f7e64dcf69bc52c6214f4ac2426d99c9659013/README.md",
+      "language": "Markdown"
+    },
+    "force.js": {
+      "type": "application/javascript",
+      "filename": "force.js",
+      "size": 3222,
+      "content": "var width = 960,\n    height = 500;\nvar color = d3.scale.category20();\n\nvar force = d3.layout.force()\n    .charge(-120)\n    .linkDistance(30)\n    .size([width, height]);\n\nvar svg = d3.select(\"#chart\").append(\"svg\")\n    .attr(\"width\", width)\n    .attr(\"height\", height);\n\nd3.json(\"miserables.json\", function(json) {\n  var t = Date.now(); // set start time to moment when data has actually loaded, so animation doesn't start as if already running for a while\n\n  force\n      .nodes(json.nodes)\n      .links(json.links)\n      .start();\n\n  var link = svg.selectAll(\"line.link\")\n      .data(json.links)\n    .enter().append(\"line\")\n      .attr(\"class\", \"link\")\n      .attr(\"opacity\",1e-6)\n      .style(\"stroke-width\", function(d) {return Math.sqrt(d.value);})\n      .each(function(d, i, j) {\n         //d.pending = 1;     // add 'pending' member to each enter()ed link object\n      });\n      //.each(appear());\n\n  var node = svg.selectAll(\"circle.node\")\n      .data(json.nodes);\n  var nodeEnter = node.enter().append(\"circle\")\n      .attr(\"class\", \"node\")\n      .attr(\"r\", 5)\n      .attr(\"opacity\",1e-6)\n      .attr(\"id\",function(d,i){return \"c_\"+i.toString()})\n      .style(\"fill\", function(d) {return color(d.group);})\n      .each(appear())\n      .call(force.drag);\n      \n      \n          \n  node.append(\"title\")\n      .text(function(d) {return d.name;});\n\n  force.on(\"tick\", function() {\n    link.attr(\"x1\", function(d) {return d.source.x;})\n        .attr(\"y1\", function(d) {return d.source.y;})\n        .attr(\"x2\", function(d) {return d.target.x;})\n        .attr(\"y2\", function(d) {return d.target.y;});\n\n    node.attr(\"cx\", function(d) {return d.x;})\n        .attr(\"cy\", function(d) {return d.y;});\n  });\n\n  function appear() {\n    return function(d, i, j) {\n      d.pending = 1;     // add 'pending' member to each enter()ed node object\n      t += 200;\n        d3.select(this).transition()\n          .duration(1000)  \n          .delay(t - Date.now())\n          .attr(\"opacity\", 1)\n          .each(\"end\", function(d, idx) {\n             //console.log('end: ', d, idx, this, t);\n             d.pending = 0;\n        \n             // select the links for this node:\n             var nodes = json.nodes;\n             var links = json.links;\n             var neighbors;\n             var i, j, n = nodes.length, m = links.length;\n\n             //console.log('nodes: ', n, m);\n             // we know that the FORCE LAYOUT adds the field 'index' to each node. \n             // We use that 'internals' knowledge here to match links with node d.\n             link.each(function(lnk, a, b) {\n               //console.log('link check: ', this, lnk, a, b);\n\n               // only show those links which have both endpoints (nodes) already showing.\n               //\n               // Note: this condition is sufficient to ensure all links are shown \n               //       once all the nodes are shown.\n               if ((lnk.source == d || lnk.target == d) && !lnk.source.pending && !lnk.target.pending) {\n                 //lnk.pending = 0;\n                 d3.select(this).transition()\n                     .duration(1000)  \n                     .attr(\"opacity\", 1);\n               }\n             });\n          });\n    };\n  }\n});\n",
+      "raw_url": "https://gist.github.com/raw/2511921/822e79dc97c56b94b08cac1af107a417fc66e56d/force.js",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 425,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Force-Directed Layout</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.v2.js?2.9.1\"></script>\n    <style>\ncircle.node {\n  stroke: #fff;\n  stroke-width: 1.5px;\n}\n\nline.link {\n  stroke: #999;\n  stroke-opacity: .6;\n}\n    </style>\n  </head>\n  <body>\n    <div id=\"chart\"></div>\n    <script type=\"text/javascript\" src=\"force.js\"></script>\n  </body>\n</html>",
+      "raw_url": "https://gist.github.com/raw/2511921/4f20b9bca3c821ebf3421cf4fe336395f2b4a9ee/index.html",
+      "language": "HTML"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "raw_url": "https://gist.github.com/raw/2511921/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "language": null
+    }
+  },
+  "updated_at": "2012-09-09T08:50:19Z",
+  "url": "https://api.github.com/gists/2511921",
+  "id": "2511921"
+}

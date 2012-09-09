@@ -1,0 +1,153 @@
+{
+  "git_pull_url": "git://gist.github.com/1075123.git",
+  "forks": [
+
+  ],
+  "git_push_url": "git@gist.github.com:1075123.git",
+  "updated_at": "2011-07-11T00:19:50Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Scale Graph</title>\n</head>\n<body>\n    <div id=\"demoContainer\">\n        <div id=\"option\">\n            <input name=\"updateButton\" type=\"button\" value=\"Update\" onclick=\"updateData()\" />\n        </div>\n        <div id=\"mainGraph\">\n        </div>\n    </div>  \n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.27.1\"></script>\n    <script type=\"text/javascript\">\n    /* Global variables */\n    \n    /* Definition code */\n    function randomData() {\n        return d3.range(10).map(function(i) {\n            return {x: i / 9, y: Math.random()};\n        });\n    } \n    \n    function reDomain(maxValue) {\n        var dy = Math.pow(10, Math.round(Math.log(maxValue) / Math.log(10)) - 1);\n        return Math.ceil(maxValue / dy) * dy;\n    }\n\n    function updateData() {\n        var data = randomData();\n        var newMaxY = d3.max(data, function(d) {return d.y;});\n        var newCeilY = reDomain(newMaxY);\n        \n        var w = 450,\n            h = 450,\n            x = d3.scale.linear().domain([0, 1]).range([0, w]),\n            y = d3.scale.linear().domain([0, newCeilY]).range([h, 0]);\n        \n        var vis = d3.select(\"#mainGraph svg g\");\n        \n        var yrule = vis.selectAll(\"g.y\")\n            .data(y.ticks(10));\n            \n        // yRule Enter\n        var newrule = yrule.enter().append(\"svg:g\")\n            .attr(\"class\", \"y\");\n        \n        newrule.append(\"svg:line\")\n            .attr(\"class\", \"yLine\")\n            .style(\"stroke\", \"#ccc\")\n            .style(\"shape-rendering\", \"crispEdges\")\n            .attr(\"x1\", 0)\n            .attr(\"x2\", w)\n            .attr(\"y1\", 0)\n            .attr(\"y2\", 0)\n            .transition()\n            .duration(2000)\n            .attr(\"y1\", y)\n            .attr(\"y2\", y);\n        \n        newrule.append(\"svg:text\")\n            .attr(\"class\", \"yText\")\n            .attr(\"x\", -3)\n            .attr(\"dy\", \".35em\")\n            .attr(\"text-anchor\", \"end\")\n            .attr(\"y\", 0)\n            .transition()\n            .duration(2000)\n            .attr(\"y\", y)\n            .text(y.tickFormat(10));        \n        \n        // yLine Update\n        yrule.select(\"line.yLine\")\n            .transition()\n            .duration(2000)\n            .attr(\"y1\", y)\n            .attr(\"y2\", y);\n        \n        // yText Update\n        yrule.select(\"text.yText\")\n            .transition()\n            .duration(2000)\n            .attr(\"y\", y)\n            .text(y.tickFormat(10));\n            \n        // yrule Remove\n        var oldrule = yrule.exit();\n        \n        oldrule.select(\"line.yLine\")\n            .transition()\n            .duration(2000)\n            .attr(\"y1\", 0)\n            .attr(\"y2\", 0)\n            .remove();    \n        \n        \n        oldrule.select(\"text.yText\")\n            .transition()\n            .duration(2000)\n            .attr(\"y\", 0)\n            .remove();  \n        \n        oldrule.transition()\n            .duration(2000).remove();    \n        \n        // Dots\n        var node = vis.selectAll(\"path.dot\")\n            .data(data)\n            .transition()\n            .duration(2000)\n            .attr(\"transform\", function(d) { return \"translate(\" + x(d.x) + \",\" + y(d.y) + \")\"; });\n            \n        node.select(\"title.dotTitle\")\n            .text(function(d) { return \"X: \" + d.x.toFixed(3) + \", Y: \" + d.y.toFixed(3); });\n            \n    }\n\n    var initData = function() {\n        var data = randomData();\n        var newMaxY = d3.max(data, function(d) {return d.y;});\n        var newCeilY = reDomain(newMaxY);\n        \n        var w = 450,\n            h = 450,\n            p = 50,\n            x = d3.scale.linear().domain([0, 1]).range([0, w]),\n            y = d3.scale.linear().domain([0, newCeilY]).range([h, 0]);\n        \n        var chart = d3.select(\"#mainGraph\")\n            .append(\"svg:svg\")\n            .attr(\"width\", w + p * 2)\n            .attr(\"height\", h + p * 2);\n        \n        var vis = chart.append(\"svg:g\")\n            .attr(\"transform\", \"translate(\" + p + \",\" + p + \")\");\n\n        var xrule = vis.selectAll(\"g.x\")\n            .data(x.ticks(10))\n            .enter().append(\"svg:g\")\n            .attr(\"class\", \"x\");\n\n        xrule.append(\"svg:line\")\n            .style(\"stroke\", \"#ccc\")\n            .style(\"shape-rendering\", \"crispEdges\")\n            .attr(\"x1\", x)\n            .attr(\"x2\", x)\n            .attr(\"y1\", 0)\n            .attr(\"y2\", h);\n\n        xrule.append(\"svg:text\")\n            .attr(\"x\", x)\n            .attr(\"y\", h + 3)\n            .attr(\"dy\", \".71em\")\n            .attr(\"text-anchor\", \"middle\")\n            .text(x.tickFormat(10));\n\n        var yrule = vis.selectAll(\"g.y\")\n            .data(y.ticks(10))\n            .enter().append(\"svg:g\")\n            .attr(\"class\", \"y\");\n\n        yrule.append(\"svg:line\")\n            .attr(\"class\", \"yLine\")\n            .style(\"stroke\", \"#ccc\")\n            .style(\"shape-rendering\", \"crispEdges\")\n            .attr(\"x1\", 0)\n            .attr(\"x2\", w)\n            .attr(\"y1\", y)\n            .attr(\"y2\", y);\n\n        yrule.append(\"svg:text\")\n            .attr(\"class\", \"yText\")\n            .attr(\"x\", -3)\n            .attr(\"y\", y)\n            .attr(\"dy\", \".35em\")\n            .attr(\"text-anchor\", \"end\")\n            .text(y.tickFormat(10));\n    \n        var node = vis.selectAll(\"path.dot\")\n                .data(data)\n                .enter().append(\"svg:path\")\n                .attr(\"class\", \"dot\")\n                .style(\"fill\", \"white\")\n                .style(\"stroke-width\", \"1.5px\")\n                .attr(\"stroke\", \"#9acd32\")\n                .attr(\"transform\", function(d) { return \"translate(\" + x(d.x) + \",\" + y(d.y) + \")\"; })\n                .attr(\"d\", d3.svg.symbol())\n                .on(\"mouseover\", function(d,i) { \n                    d3.select(this).transition().duration(300).style(\"fill\",\"#00ffff\"); }) \n                .on(\"mouseout\", function(d,i) { \n                    d3.select(this).transition().duration(300).style(\"fill\",\"white\"); });\n                \n        node.append(\"svg:title\")\n            .attr(\"class\", \"dotTitle\")\n            .text(function(d) { return \"X: \" + d.x.toFixed(3) + \", Y: \" + d.y.toFixed(3); });\n    }\n\n    /* UI Events */\n    /* Execution code */\n    initData();    \n    </script>\n</body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1075123/277ab44f7c8cc2cc9ede138161cbd5828f269fee/index.html",
+      "size": 6279
+    }
+  },
+  "user": {
+    "gravatar_id": "96ffe9693921b9c30731157bdf206289",
+    "url": "https://api.github.com/users/ivanteoh",
+    "avatar_url": "https://secure.gravatar.com/avatar/96ffe9693921b9c30731157bdf206289?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "ivanteoh",
+    "id": 900434
+  },
+  "history": [
+    {
+      "version": "9d5d57cffbaac0af406853b67c905fb90d44074e",
+      "user": {
+        "gravatar_id": "96ffe9693921b9c30731157bdf206289",
+        "url": "https://api.github.com/users/ivanteoh",
+        "avatar_url": "https://secure.gravatar.com/avatar/96ffe9693921b9c30731157bdf206289?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "ivanteoh",
+        "id": 900434
+      },
+      "url": "https://api.github.com/gists/1075123/9d5d57cffbaac0af406853b67c905fb90d44074e",
+      "change_status": {
+        "total": 14,
+        "deletions": 10,
+        "additions": 4
+      },
+      "committed_at": "2011-07-11T11:07:12Z"
+    },
+    {
+      "version": "40a526cc879ec324ef2a0223f8b0874c68117061",
+      "user": {
+        "gravatar_id": "96ffe9693921b9c30731157bdf206289",
+        "url": "https://api.github.com/users/ivanteoh",
+        "avatar_url": "https://secure.gravatar.com/avatar/96ffe9693921b9c30731157bdf206289?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "ivanteoh",
+        "id": 900434
+      },
+      "url": "https://api.github.com/gists/1075123/40a526cc879ec324ef2a0223f8b0874c68117061",
+      "change_status": {
+        "total": 13,
+        "deletions": 8,
+        "additions": 5
+      },
+      "committed_at": "2011-07-11T05:48:03Z"
+    },
+    {
+      "version": "809f5810f7e9be02ec72b0b96a564f0d4085eba8",
+      "user": {
+        "gravatar_id": "96ffe9693921b9c30731157bdf206289",
+        "url": "https://api.github.com/users/ivanteoh",
+        "avatar_url": "https://secure.gravatar.com/avatar/96ffe9693921b9c30731157bdf206289?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "ivanteoh",
+        "id": 900434
+      },
+      "url": "https://api.github.com/gists/1075123/809f5810f7e9be02ec72b0b96a564f0d4085eba8",
+      "change_status": {
+        "total": 3,
+        "deletions": 2,
+        "additions": 1
+      },
+      "committed_at": "2011-07-11T05:31:19Z"
+    },
+    {
+      "version": "cab5addaca9fdd0d340e44c581f5ebc9c9ec10d9",
+      "user": {
+        "gravatar_id": "96ffe9693921b9c30731157bdf206289",
+        "url": "https://api.github.com/users/ivanteoh",
+        "avatar_url": "https://secure.gravatar.com/avatar/96ffe9693921b9c30731157bdf206289?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "ivanteoh",
+        "id": 900434
+      },
+      "url": "https://api.github.com/gists/1075123/cab5addaca9fdd0d340e44c581f5ebc9c9ec10d9",
+      "change_status": {
+        "total": 14,
+        "deletions": 8,
+        "additions": 6
+      },
+      "committed_at": "2011-07-11T05:14:46Z"
+    },
+    {
+      "version": "ea5681293113e821c0626b5965e34fe33f28a3d9",
+      "user": {
+        "gravatar_id": "96ffe9693921b9c30731157bdf206289",
+        "url": "https://api.github.com/users/ivanteoh",
+        "avatar_url": "https://secure.gravatar.com/avatar/96ffe9693921b9c30731157bdf206289?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "ivanteoh",
+        "id": 900434
+      },
+      "url": "https://api.github.com/gists/1075123/ea5681293113e821c0626b5965e34fe33f28a3d9",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2011-07-11T00:41:27Z"
+    },
+    {
+      "version": "277b77a443f1fd00c5c1336e215b148838f41c9b",
+      "user": {
+        "gravatar_id": "96ffe9693921b9c30731157bdf206289",
+        "url": "https://api.github.com/users/ivanteoh",
+        "avatar_url": "https://secure.gravatar.com/avatar/96ffe9693921b9c30731157bdf206289?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "ivanteoh",
+        "id": 900434
+      },
+      "url": "https://api.github.com/gists/1075123/277b77a443f1fd00c5c1336e215b148838f41c9b",
+      "change_status": {
+        "total": 9,
+        "deletions": 5,
+        "additions": 4
+      },
+      "committed_at": "2011-07-11T00:38:32Z"
+    },
+    {
+      "version": "70c460769b30eecd5a7185fe372be82d2f401b94",
+      "user": {
+        "gravatar_id": "96ffe9693921b9c30731157bdf206289",
+        "url": "https://api.github.com/users/ivanteoh",
+        "avatar_url": "https://secure.gravatar.com/avatar/96ffe9693921b9c30731157bdf206289?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "ivanteoh",
+        "id": 900434
+      },
+      "url": "https://api.github.com/gists/1075123/70c460769b30eecd5a7185fe372be82d2f401b94",
+      "change_status": {
+        "total": 217,
+        "deletions": 0,
+        "additions": 217
+      },
+      "committed_at": "2011-07-11T00:19:50Z"
+    }
+  ],
+  "html_url": "https://gist.github.com/1075123",
+  "url": "https://api.github.com/gists/1075123",
+  "description": "Scale graph using D3.js",
+  "id": "1075123",
+  "comments": 0,
+  "created_at": "2011-07-11T00:19:50Z"
+}

@@ -1,0 +1,93 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 51,
+        "additions": 51,
+        "deletions": 0
+      },
+      "version": "150632316a48def83aeea40f36119c1ec31cabe4",
+      "committed_at": "2012-04-12T16:28:59Z",
+      "url": "https://api.github.com/gists/2368837/150632316a48def83aeea40f36119c1ec31cabe4"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 4,
+        "deletions": 0
+      },
+      "version": "6833eaafe155a0212941640af3582d0dc26c4d8d",
+      "committed_at": "2012-04-12T16:27:38Z",
+      "url": "https://api.github.com/gists/2368837/6833eaafe155a0212941640af3582d0dc26c4d8d"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 69,
+        "additions": 69,
+        "deletions": 0
+      },
+      "version": "9b1081869e08ef32ae133cfa4fbe14af9e585356",
+      "committed_at": "2012-04-12T16:27:10Z",
+      "url": "https://api.github.com/gists/2368837/9b1081869e08ef32ae133cfa4fbe14af9e585356"
+    }
+  ],
+  "description": "Bar Chart with Negative Values",
+  "comments": 0,
+  "created_at": "2012-04-12T16:27:09Z",
+  "public": true,
+  "html_url": "https://gist.github.com/2368837",
+  "git_pull_url": "git://gist.github.com/2368837.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1699,
+      "raw_url": "https://gist.github.com/raw/2368837/7d50a804c55c0fd478850d5c725fbbc31a6fceee/index.html",
+      "content": "<!DOCTYPE html>\n<meta charset=\"utf-8\">\n<title>Bar Chart with Negative Values</title>\n<style>\n\n.bar.positive {\n  fill: steelblue;\n}\n\n.bar.negative {\n  fill: brown;\n}\n\n.axis text {\n  font: 10px sans-serif;\n}\n\n.axis path, .axis line {\n  fill: none;\n  stroke: #000;\n  shape-rendering: crispEdges;\n}\n\n</style>\n<body>\n<script src=\"http://mbostock.github.com/d3/d3.v2.js?2.8.1\"></script>\n<script>\n\nvar data = [-15, -20, -22, -18, 2, 6, -26, -18];\n\nvar margin = {top: 30, right: 10, bottom: 10, left: 10},\n    width = 960 - margin.left - margin.right,\n    height = 500 - margin.top - margin.bottom;\n\nvar x0 = Math.max(-d3.min(data), d3.max(data));\n\nvar x = d3.scale.linear()\n    .domain([-x0, x0])\n    .range([0, width])\n    .nice();\n\nvar y = d3.scale.ordinal()\n    .domain(d3.range(data.length))\n    .rangeRoundBands([0, height], .2);\n\nvar svg = d3.select(\"body\").append(\"svg\")\n    .attr(\"width\", width + margin.left + margin.right)\n    .attr(\"height\", height + margin.top + margin.bottom)\n  .append(\"g\")\n    .attr(\"transform\", \"translate(\" + margin.left + \",\" + margin.top + \")\");\n\nsvg.selectAll(\".bar\")\n    .data(data)\n  .enter().append(\"rect\")\n    .attr(\"class\", function(d, i) { return d < 0 ? \"bar negative\" : \"bar positive\"; })\n    .attr(\"x\", function(d, i) { return x(Math.min(0, d)); })\n    .attr(\"y\", function(d, i) { return y(i); })\n    .attr(\"width\", function(d, i) { return Math.abs(x(d) - x(0)); })\n    .attr(\"height\", y.rangeBand());\n\nsvg.append(\"g\")\n    .attr(\"class\", \"x axis\")\n    .call(d3.svg.axis().scale(x).orient(\"top\"));\n\nsvg.append(\"g\")\n    .attr(\"class\", \"y axis\")\n  .append(\"line\")\n    .attr(\"x1\", x(0))\n    .attr(\"x2\", x(0))\n    .attr(\"y1\", 0)\n    .attr(\"y2\", height);\n\n</script>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 3155,
+      "raw_url": "https://gist.github.com/raw/2368837/bd26a803b13915e83d30896cd33819390ffc6094/README.md",
+      "content": "OK, let's say you have an array of numbers as your dataset, and this includes some positive and negative values:\n\n    var data = [-15, -20, -22, -18, 2, 6, -26, -18];\n\nYou'll want two scales to construct a bar chart. You need one quantitative scale (typically a [linear scale][1]) to compute the bar positions along the *x*-axis, and a second [ordinal scale][2] to compute the bar positions along the *y*-axis. \n\nFor the quantitative scale, you typically need to compute the domain of your data, which is based on the minimum and maximum value. An easy way to do that is via [d3.extent][3]:\n\n    var x = d3.scale.linear()\n        .domain(d3.extent(data))\n        .range([0, width]);\n\nYou might also want to [nice][4] the scale to round the extent slightly. As another example, sometimes you want the zero-value to be centered in the middle of the canvas, in which case you'll want to take the greater of the minimum and maximum value:\n\n    var x0 = Math.max(-d3.min(data), d3.max(data));\n\n    var x = d3.scale.linear()\n        .domain([-x0, x0])\n        .range([0, width])\n        .nice();\n\nAlternatively, you can hard-code whatever domain you want.\n\n    var x = d3.scale.linear()\n        .domain([-30, 30])\n        .range([0, width]);\n\nFor the *y*-axis, you'll want to use [rangeRoundBands][5] to divide the vertical space into bands for each bar. This also lets you specify the amount of padding between bars. Often an ordinal scale is used with some identifying data—such as a name or a unique id. However, you can also use ordinal scales in conjunction with the data's index:\n\n    var y = d3.scale.ordinal()\n        .domain(d3.range(data.length))\n        .rangeRoundBands([0, height], .2);\n\nNow that you've got your two scales, you can create the rect elements to display the bars. The one tricky part is that in SVG, rects are positioned (the `x` and `y` attributes) based on their top-left corner. So we need to use the *x*- and *y*-scales to compute the position of the top-left corner, and that depends on whether the associated value is positive or negative: if the value is positive, then the data value determines the right edge of the bar, while if it's negative, it determines the left edge of the bar. Hence the conditionals here:\n\n    svg.selectAll(\".bar\")\n        .data(data)\n      .enter().append(\"rect\")\n        .attr(\"class\", \"bar\")\n        .attr(\"x\", function(d, i) { return x(Math.min(0, d)); })\n        .attr(\"y\", function(d, i) { return y(i); })\n        .attr(\"width\", function(d, i) { return Math.abs(x(d) - x(0)); })\n        .attr(\"height\", y.rangeBand());\n\nLastly, you can add an axis to display tick marks on top. You might also compute a fill style (or even a gradient) to alter the differentiate the appearance of positive and negative values. \n\n  [1]: https://github.com/mbostock/d3/wiki/Quantitative-Scales#wiki-linear\n  [2]: https://github.com/mbostock/d3/wiki/Ordinal-Scales#wiki-ordinal\n  [3]: https://github.com/mbostock/d3/wiki/Arrays#wiki-d3_extent\n  [4]: https://github.com/mbostock/d3/wiki/Quantitative-Scales#wiki-linear_nice\n  [5]: https://github.com/mbostock/d3/wiki/Ordinal-Scales#wiki-ordinal_rangeRoundBands\n",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:2368837.git",
+  "updated_at": "2012-04-12T16:27:09Z",
+  "url": "https://api.github.com/gists/2368837",
+  "id": "2368837"
+}

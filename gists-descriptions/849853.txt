@@ -1,0 +1,63 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "177c4c76a8009306af6a47445aaa0f51",
+        "login": "rainzoo",
+        "avatar_url": "https://secure.gravatar.com/avatar/177c4c76a8009306af6a47445aaa0f51?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/rainzoo",
+        "id": 589490
+      },
+      "created_at": "2012-08-10T13:51:53Z",
+      "updated_at": "2012-08-10T13:51:53Z",
+      "url": "https://api.github.com/gists/3314340",
+      "id": "3314340"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 77,
+        "additions": 77,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-03-01T20:42:01Z",
+      "version": "6482077ea3743cf9a6acca5ab8f87c35c580eb50",
+      "url": "https://api.github.com/gists/849853/6482077ea3743cf9a6acca5ab8f87c35c580eb50"
+    }
+  ],
+  "description": "Circular Layout (Raindrops)",
+  "html_url": "https://gist.github.com/849853",
+  "comments": 0,
+  "created_at": "2011-03-01T20:42:01Z",
+  "git_pull_url": "git://gist.github.com/849853.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/849853/b111b9d5388cca5d5f3c924fefc2178c34ff8bff/index.html",
+      "size": 1875,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Raindrops</title>\n    <script type=\"text/javascript\" src=\"https://github.com/mbostock/d3/raw/v1.4.0/d3.js\"></script>\n    <style type=\"text/css\">\n\nbody {\n  background: #012;\n}\n\npath {\n  stroke: #fff;\n  stroke-opacity: .5;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500;\n\nvar svg = d3.select(\"body\")\n  .append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + w / 2 + \",\" + h / 2 + \")\");\n\nvar gradient = svg.append(\"svg:defs\")\n  .append(\"svg:linearGradient\")\n    .attr(\"id\", \"gradient\")\n    .attr(\"x1\", \"0%\")\n    .attr(\"y1\", \"20%\")\n    .attr(\"x2\", \"20%\")\n    .attr(\"y2\", \"100%\");\n\ngradient.append(\"svg:stop\")\n    .attr(\"offset\", \"20%\")\n    .attr(\"stop-color\", \"#ccf\");\n\ngradient.append(\"svg:stop\")\n    .attr(\"offset\", \"50%\")\n    .attr(\"stop-color\", \"#1C425C\");\n\ngradient.append(\"svg:stop\")\n    .attr(\"offset\", \"100%\")\n    .attr(\"stop-color\", \"#19162B\");\n\n// could use transparent gradient overlay to vary raindrop color\nsvg.selectAll(\"path\")\n    .data(d3.range(0, 358, 1))\n  .enter().append(\"svg:path\")\n    .attr(\"fill\", \"url(#gradient)\")\n    .attr(\"d\", function() { return raindrop(10 + Math.random() * 200); })\n    .attr(\"transform\", function(d) {\n      return \"rotate(\" + d + \")\"\n          + \"translate(\" + (h / 4 + Math.random() * h / 6) + \",0)\"\n          + \"rotate(90)\";\n    });\n\n// size is linearly proportional to square pixels (not exact, yet)\nfunction raindrop(size) {\n  var r = Math.sqrt(size / Math.PI);\n  return \"M\" + r + \",0\"\n      + \"A\" + r + \",\" + r + \" 0 1,1 \" + -r + \",0\"\n      + \"C\" + -r + \",\" + -r + \" 0,\" + -r + \" 0,\" + -3*r\n      + \"C0,\" + -r + \" \" + r + \",\" + -r + \" \" + r + \",0\"\n      + \"Z\";\n}\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:849853.git",
+  "updated_at": "2011-03-01T20:42:01Z",
+  "url": "https://api.github.com/gists/849853",
+  "id": "849853"
+}

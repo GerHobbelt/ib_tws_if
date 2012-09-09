@@ -1,0 +1,152 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "d4d28bd014f9e7324bad99dcc3b0d390",
+        "login": "RichMorin",
+        "url": "https://api.github.com/users/RichMorin",
+        "avatar_url": "https://secure.gravatar.com/avatar/d4d28bd014f9e7324bad99dcc3b0d390?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 31372
+      },
+      "created_at": "2012-03-09T19:04:35Z",
+      "updated_at": "2012-03-09T19:16:25Z",
+      "url": "https://api.github.com/gists/2008120",
+      "id": "2008120"
+    },
+    {
+      "user": {
+        "gravatar_id": "0f16376294116d6319340752e30a1e94",
+        "login": "syntagmatic",
+        "url": "https://api.github.com/users/syntagmatic",
+        "avatar_url": "https://secure.gravatar.com/avatar/0f16376294116d6319340752e30a1e94?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 156229
+      },
+      "created_at": "2012-03-13T11:30:08Z",
+      "updated_at": "2012-03-13T11:32:13Z",
+      "url": "https://api.github.com/gists/2028224",
+      "id": "2028224"
+    }
+  ],
+  "user": {
+    "gravatar_id": "0f16376294116d6319340752e30a1e94",
+    "login": "syntagmatic",
+    "url": "https://api.github.com/users/syntagmatic",
+    "avatar_url": "https://secure.gravatar.com/avatar/0f16376294116d6319340752e30a1e94?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 156229
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "0f16376294116d6319340752e30a1e94",
+        "login": "syntagmatic",
+        "url": "https://api.github.com/users/syntagmatic",
+        "avatar_url": "https://secure.gravatar.com/avatar/0f16376294116d6319340752e30a1e94?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 156229
+      },
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "version": "1fee51a632d797ccc61ce0478e0c330d7e3e791c",
+      "committed_at": "2012-03-09T10:48:16Z",
+      "url": "https://api.github.com/gists/2005817/1fee51a632d797ccc61ce0478e0c330d7e3e791c"
+    },
+    {
+      "user": {
+        "gravatar_id": "0f16376294116d6319340752e30a1e94",
+        "login": "syntagmatic",
+        "url": "https://api.github.com/users/syntagmatic",
+        "avatar_url": "https://secure.gravatar.com/avatar/0f16376294116d6319340752e30a1e94?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 156229
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "6eb13ba83888516db6c307dbac6d3f11c22d437c",
+      "committed_at": "2012-03-09T10:33:04Z",
+      "url": "https://api.github.com/gists/2005817/6eb13ba83888516db6c307dbac6d3f11c22d437c"
+    },
+    {
+      "user": {
+        "gravatar_id": "0f16376294116d6319340752e30a1e94",
+        "login": "syntagmatic",
+        "url": "https://api.github.com/users/syntagmatic",
+        "avatar_url": "https://secure.gravatar.com/avatar/0f16376294116d6319340752e30a1e94?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 156229
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "54869c82eb8f5bdf8b6f3ab355645947b6e85e27",
+      "committed_at": "2012-03-09T09:31:02Z",
+      "url": "https://api.github.com/gists/2005817/54869c82eb8f5bdf8b6f3ab355645947b6e85e27"
+    },
+    {
+      "user": {
+        "gravatar_id": "0f16376294116d6319340752e30a1e94",
+        "login": "syntagmatic",
+        "url": "https://api.github.com/users/syntagmatic",
+        "avatar_url": "https://secure.gravatar.com/avatar/0f16376294116d6319340752e30a1e94?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 156229
+      },
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "version": "13024968b37224bf78be33a2c6bf0e8aa04bea97",
+      "committed_at": "2012-03-09T09:27:37Z",
+      "url": "https://api.github.com/gists/2005817/13024968b37224bf78be33a2c6bf0e8aa04bea97"
+    },
+    {
+      "user": {
+        "gravatar_id": "0f16376294116d6319340752e30a1e94",
+        "login": "syntagmatic",
+        "url": "https://api.github.com/users/syntagmatic",
+        "avatar_url": "https://secure.gravatar.com/avatar/0f16376294116d6319340752e30a1e94?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 156229
+      },
+      "change_status": {
+        "total": 146,
+        "additions": 146,
+        "deletions": 0
+      },
+      "version": "ef6266038f707a86dc437b9ee97989ff52c70b50",
+      "committed_at": "2012-03-09T09:22:20Z",
+      "url": "https://api.github.com/gists/2005817/ef6266038f707a86dc437b9ee97989ff52c70b50"
+    }
+  ],
+  "description": "Albers to Azimuthal",
+  "comments": 0,
+  "created_at": "2012-03-09T09:22:19Z",
+  "public": true,
+  "html_url": "https://gist.github.com/2005817",
+  "git_pull_url": "git://gist.github.com/2005817.git",
+  "files": {
+    "site.js": {
+      "type": "application/javascript",
+      "filename": "site.js",
+      "size": 2295,
+      "raw_url": "https://gist.github.com/raw/2005817/bdf7aecb0a01f743703b70eb9f2873d27098bc3f/site.js",
+      "content": "// set multiple attrs with an object\nvar set_attrs = function(object, hash) {\n  for (var key in hash) {\n   object.attr(key, hash[key]);\n }\n};\n\nwindow.onload = function() {\n  merc = d3.geo.mercator()\n    .scale(400)\n    .translate([200, 200]);\n\n  albers = d3.geo.albers()\n    .scale(60)\n    .translate([180, 250]);\n\n  ortho = d3.geo.azimuthal()\n      .scale(140)\n      .origin([-71.03, 0])\n      .mode(\"orthographic\")\n      .translate([600, 200]);\n\n  var merc_path = d3.geo.path()\n    .projection(merc);\n\n  var albers_path = d3.geo.path()\n    .projection(albers);\n\n  var ortho_path = d3.geo.path()\n    .projection(ortho);\n\n  var merc_attrs = {\n    'class': 'merc',\n    r: 1,\n    transform: function(d) { return 'translate(' + merc(d).join(',') + ')'; }\n  };\n\n  var albers_attrs = {\n    'class': 'albers',\n    r: 1,\n    transform: function(d) { return 'translate(' + albers(d).join(',') + ')'; }\n  };\n\n  var ortho_attrs = {\n    'class': 'ortho',\n    r: 1,\n    transform: function(d) { return 'translate(' + ortho(d).join(',') + ')'; }\n  };\n\n  var connection_attrs = {\n    'class': 'connect',\n    'd': function(d) { return 'M' + albers(d).join(' ') + 'L' + ortho(d).join(' ') +  'z'; }\n  };\n\n  var w = 780,\n      h = 500;\n\n  var svg = d3.select(\"#chart\").append(\"svg:svg\")\n    .attr(\"width\",  w)\n    .attr(\"height\", h);\n\n  var points = [];\n  for (var lon = -180; lon < 180; lon += 10) {\n      for (var lat = -90; lat < 90; lat += 10) {\n          points.push([lon, lat]);\n      }\n  }\n\n  svg.selectAll(\"circle.merc\")\n    .data(points)\n    .enter()\n    .append('svg:circle')\n    .call(set_attrs, albers_attrs);\n\n  var ortho_drawn = svg.selectAll(\"circle.ortho\")\n    .data(points)\n    .enter()\n    .append('svg:circle')\n    .call(set_attrs, ortho_attrs);\n\n  var connections = svg.selectAll(\"path.connect\")\n    .data(points)\n    .enter()\n    .append('svg:path')\n    .call(set_attrs, connection_attrs);\n\n  svg.on('mousemove', function() {\n    var x = ((d3.event.pageX / w) * 360) - 180;\n    var y = ((d3.event.pageY / h) * 360) - 180;\n\n    ortho.origin([x, y]);\n\n    ortho_drawn.attr('transform', function(d) {\n      return 'translate(' + ortho(d).join(',') + ')';\n    });\n    connections.attr('d', function(d) {\n      return 'M' + albers(d).join(' ') + 'L' + ortho(d).join(' ') +  'z';\n    });\n  });\n\n};",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1263,
+      "raw_url": "https://gist.github.com/raw/2005817/0801fdaa11bc9255a4ad18a4dbefa90062d79e47/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Projection Demo</title>\n    <script type='text/javascript' src='http://mbostock.github.com/d3/d3.v2.js'></script>\n    <style type='text/css'>\n      body {\n        margin:5px auto;\n      }\n      h1 {\n        font:20px/20px \"Helvetica Neue\";\n        margin:0;\n      }\n      p {\n        color:#333;\n        font:12px/15px \"Helvetica Neue\";\n      }\n\n      circle.albers {\n        fill:#005982;\n      }\n\n      circle.ortho {\n        fill:#971c20;\n      }\n\n      path.connect {\n        fill:none;\n        stroke-width:0.2;\n        stroke:#aaa;\n      }\n    </style>\n  </head>\n  <body>\n    <h2><span id='account-name'></span></h2>\n    <h1>Albers to Orthographic Projection</h1>\n    <p>Map projections are transformations between one shape to another,\n    often a 2d surface like a screen or printout. Below is an albers projection\n    alongside an orthographic (azimuthal) projection, and a mapping of points -\n    every 10 degrees latitude and longitude, between the two.. This is made with <a href='http://mbostock.github.com/d3/'>d3</a>. Adapted from <a href=\"http://bl.ocks.org/1653763\">Mercator to Orthographic</a></p>\n\n    <div id='chart'></div>\n    <script type='text/javascript' src='site.js'></script>\n  </body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:2005817.git",
+  "updated_at": "2012-03-09T09:22:19Z",
+  "url": "https://api.github.com/gists/2005817",
+  "id": "2005817"
+}

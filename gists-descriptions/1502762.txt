@@ -1,0 +1,232 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+    "login": "wimdows",
+    "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/wimdows",
+    "id": 1142762
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+        "login": "wimdows",
+        "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wimdows",
+        "id": 1142762
+      },
+      "version": "a1221877202bdc4771c69b05a3533d5570672f26",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1502762/a1221877202bdc4771c69b05a3533d5570672f26",
+      "committed_at": "2011-12-22T12:32:39Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+        "login": "wimdows",
+        "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wimdows",
+        "id": 1142762
+      },
+      "version": "62604e336c7a6338f6bb7c68cee488147bae5e34",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1502762/62604e336c7a6338f6bb7c68cee488147bae5e34",
+      "committed_at": "2011-12-22T12:31:58Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+        "login": "wimdows",
+        "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wimdows",
+        "id": 1142762
+      },
+      "version": "8b74d41971d00b61fc6525391035548877c33a2d",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1502762/8b74d41971d00b61fc6525391035548877c33a2d",
+      "committed_at": "2011-12-22T12:26:50Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+        "login": "wimdows",
+        "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wimdows",
+        "id": 1142762
+      },
+      "version": "7b28d9d8d3a1ba44481aed7cfad1a89ae4fc24cc",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1502762/7b28d9d8d3a1ba44481aed7cfad1a89ae4fc24cc",
+      "committed_at": "2011-12-22T12:25:21Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+        "login": "wimdows",
+        "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wimdows",
+        "id": 1142762
+      },
+      "version": "593e98f9478b835913e3c209dd12656f7b8ed85b",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1502762/593e98f9478b835913e3c209dd12656f7b8ed85b",
+      "committed_at": "2011-12-22T12:21:18Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+        "login": "wimdows",
+        "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wimdows",
+        "id": 1142762
+      },
+      "version": "0e5e9bc05bd19ce4ca758d83702d31c030fb4ece",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1502762/0e5e9bc05bd19ce4ca758d83702d31c030fb4ece",
+      "committed_at": "2011-12-22T12:20:27Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+        "login": "wimdows",
+        "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wimdows",
+        "id": 1142762
+      },
+      "version": "fbd3fe8d8abe554e506dc1f5a22a8786f674e0c9",
+      "change_status": {
+        "total": 33,
+        "additions": 21,
+        "deletions": 12
+      },
+      "url": "https://api.github.com/gists/1502762/fbd3fe8d8abe554e506dc1f5a22a8786f674e0c9",
+      "committed_at": "2011-12-22T12:14:05Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+        "login": "wimdows",
+        "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wimdows",
+        "id": 1142762
+      },
+      "version": "413185bfa7a653694852a4213744de36ae2ddcb4",
+      "change_status": {
+        "total": 23,
+        "additions": 23,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1502762/413185bfa7a653694852a4213744de36ae2ddcb4",
+      "committed_at": "2011-12-20T19:00:49Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "a43950073653694f939632745382e2bdc1a86e59",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1502762/a43950073653694f939632745382e2bdc1a86e59",
+      "committed_at": "2011-07-03T17:02:50Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "4ec2dee45f731dcb8d2bd29b54d4aba4c87ef789",
+      "change_status": {
+        "total": 14,
+        "additions": 12,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1502762/4ec2dee45f731dcb8d2bd29b54d4aba4c87ef789",
+      "committed_at": "2011-07-03T17:00:58Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1502762.git",
+  "description": "Force-Directed Symbols (D3)",
+  "html_url": "https://gist.github.com/1502762",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mbostock",
+      "id": 230541
+    },
+    "git_push_url": "git@gist.github.com:1062383.git",
+    "description": "Force-Directed Symbols (D3)",
+    "html_url": "https://gist.github.com/1062383",
+    "comments": 0,
+    "created_at": "2011-07-03T16:59:03Z",
+    "public": true,
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/1062383/0abae611cd9cc5c06e6be911a7ca3a9e4de60980/index.html",
+        "size": 1490,
+        "language": "HTML"
+      }
+    },
+    "updated_at": "2011-07-03T16:59:03Z",
+    "url": "https://api.github.com/gists/1062383",
+    "id": "1062383",
+    "git_pull_url": "git://gist.github.com/1062383.git"
+  },
+  "comments": 0,
+  "created_at": "2011-12-20T18:57:15Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1502762/b68b1cc4d506acbd65fec1390764a950a58cb2e3/index.html",
+      "size": 2512,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Force-Directed Symbols</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.25.0\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.js?1.25.0\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?1.25.0\"></script>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    nodes = [],\n    node;\n\nvar vis = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n   \n createDefs(vis.append('svg:defs'));\n\nvar force = d3.layout.force()\n    .nodes(nodes)\n    .links([])\n    .size([w, h]);\n\nforce.on(\"tick\", function(e) {\n  vis.selectAll(\"path\")\n      .attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; });\n});\n\nsetInterval(function(){\n\n  // Add a new random shape.\n  nodes.push({\n    type: d3.svg.symbolTypes[~~(Math.random() * d3.svg.symbolTypes.length)],\n    size: Math.random() * 300 + 100\n  });\n\n  // Restart the layout.\n  force.start();\n\n  vis.selectAll(\"path\")\n      .data(nodes)\n    .enter().append(\"svg:path\")\n      .attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; })\n      .attr(\"d\", d3.svg.symbol()\n      .size(function(d) { return d.size; })\n      .type(function(d) { return d.type; }))\n      .style(\"fill\", \"rgb(\" + Math.floor(Math.random()*256) + \",\" + Math.floor(Math.random()*256) + \",\" + Math.floor(Math.random()*256) + \")\")\n      .style(\"stroke\", \"steelblue\")\n      .style(\"stroke-width\", \"1.5px\")\n      .attr('filter', 'url(#dropShadow)')\n      .call(force.drag);\n\n}, 1000);\n\n\nfunction createDefs(defs) {\n\nvar dropShadowFilter = defs.append('svg:filter')\n      .attr('id', 'dropShadow')\n\t  .attr('filterUnits', \"userSpaceOnUse\")\n\t  .attr('width', '250%')\n\t  .attr('height', '250%');\n    dropShadowFilter.append('svg:feGaussianBlur')\n      .attr('in', 'SourceGraphic') \n      .attr('stdDeviation', 2)\n      .attr('result', 'blur-out'); \n    dropShadowFilter.append('svg:feColorMatrix')\n      .attr('in', 'blur-out') \n\t  .attr('type', 'hueRotate')\n\t  .attr('values', 180)\t\n      .attr('result', 'color-out'); \n    dropShadowFilter.append('svg:feOffset')\n\t  .attr('in', 'color-out')\n      .attr('dx', 3)\n      .attr('dy', 3)\n      .attr('result', 'the-shadow');\n    dropShadowFilter.append('svg:feBlend')\n      .attr('in', 'SourceGraphic')\n      .attr('in2', 'the-shadow')\n\t  .attr('mode', 'normal');\n\n}\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-12-20T18:57:15Z",
+  "url": "https://api.github.com/gists/1502762",
+  "id": "1502762",
+  "git_pull_url": "git://gist.github.com/1502762.git"
+}

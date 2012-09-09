@@ -1,0 +1,79 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "c9653602a8ec74789b08adecc0a3fc07",
+        "login": "idibidiart",
+        "avatar_url": "https://secure.gravatar.com/avatar/c9653602a8ec74789b08adecc0a3fc07?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/idibidiart",
+        "id": 1288823
+      },
+      "created_at": "2012-07-31T03:58:08Z",
+      "updated_at": "2012-07-31T03:58:08Z",
+      "url": "https://api.github.com/gists/3213416",
+      "id": "3213416"
+    }
+  ],
+  "user": {
+    "gravatar_id": "da94c6fde621290011bfbd979108960f",
+    "login": "sfrdmn",
+    "avatar_url": "https://secure.gravatar.com/avatar/da94c6fde621290011bfbd979108960f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/sfrdmn",
+    "id": 590570
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "da94c6fde621290011bfbd979108960f",
+        "login": "sfrdmn",
+        "avatar_url": "https://secure.gravatar.com/avatar/da94c6fde621290011bfbd979108960f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/sfrdmn",
+        "id": 590570
+      },
+      "version": "4f383186e7622b95d609a795d2a76f3c6741507b",
+      "change_status": {
+        "total": 268,
+        "additions": 268,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1469438/4f383186e7622b95d609a795d2a76f3c6741507b",
+      "committed_at": "2011-12-12T22:29:01Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1469438.git",
+  "description": "Bubble chart w/ mouse over",
+  "html_url": "https://gist.github.com/1469438",
+  "comments": 0,
+  "created_at": "2011-12-12T22:29:01Z",
+  "public": true,
+  "files": {
+    "data.csv": {
+      "type": "text/csv",
+      "filename": "data.csv",
+      "raw_url": "https://gist.github.com/raw/1469438/108985659bf22009d80e717de0a7e6506a04a9f0/data.csv",
+      "size": 2889,
+      "content": "state,murder,forcible_rape,robbery,aggravated_assault,burglary,larceny_theft,motor_vehicle_theft,population\nAlabama,8.2,34.3,141.4,247.8,953.8,2650,288.3,4545049\nAlaska,4.8,81.1,80.9,465.1,622.5,2599.1,391,669488\nArizona,7.5,33.8,144.4,327.4,948.4,2965.2,924.4,5974834\nArkansas,6.7,42.9,91.1,386.8,1084.6,2711.2,262.1,2776221\nCalifornia,6.9,26,176.1,317.3,693.3,1916.5,712.8,35795255\nColorado,3.7,43.4,84.6,264.7,744.8,2735.2,559.5,4660780\nConnecticut,2.9,20,113,138.6,437.1,1824.1,296.8,3477416\nDelaware,4.4,44.7,154.8,428.2,688.9,2144,278.5,839906\nFlorida,5,37.1,169.4,496.6,926.3,2658.3,423.3,17783868\nGeorgia,6.2,23.6,154.8,264.3,931,2751.1,490.2,9097428\nHawaii,1.9,26.9,78.5,147.8,767.9,3308.4,716.4,1266117\nIdaho,2.4,40.4,18.6,195.4,564.4,1931.7,201.8,1425862\nIllinois,6,33.7,181.7,330.2,606.9,2164.8,308.6,12674452\nIndiana,5.7,29.6,108.6,179.9,697.6,2412,346.7,6253120\nIowa,1.3,27.9,38.9,223.3,606.4,2042.7,184.6,2949450\nKansas,3.7,38.4,65.3,280,689.2,2758.1,339.6,2741771\nKentucky,4.6,34,88.4,139.8,634,1685.8,210.8,4182293\nLouisiana,9.9,31.4,118,435.1,870.6,2494.5,318.1,4497691\nMaine,1.4,24.7,24.4,61.7,478.5,1832.6,102,1311631\nMaryland,9.9,22.6,256.7,413.8,641.4,2294.3,608.4,5582520\nMassachusetts,2.7,27.1,119,308.1,541.1,1527.4,295.1,6453031\nMichigan,6.1,51.3,131.8,362.9,696.8,1917.8,476.5,10090554\nMinnesota,2.2,44,92,158.7,578.9,2226.9,278.2,5106560\nMississippi,7.3,39.3,82.3,149.4,919.7,2083.9,256.5,2900116\nMissouri,6.9,28,124.1,366.4,738.3,2746.2,443.1,5806639\nMontana,1.9,32.2,18.9,228.5,389.2,2543,210.7,934801\nNebraska,2.5,32.9,59.1,192.5,532.4,2574.3,316.5,1751721\nNevada,8.5,42.1,194.7,361.5,972.4,2153.9,1115.2,2408804\nNew Hampshire,1.4,30.9,27.4,72.3,317,1377.3,102.1,1301415\nNew Jersey,4.8,13.9,151.6,184.4,447.1,1568.4,317.5,8621837\nNew Mexico,7.4,54.1,98.7,541.9,1093.9,2639.9,414.5,1916538\nNew York,4.5,18.9,182.7,239.7,353.3,1569.6,185.6,19330891\nNorth Carolina,6.7,26.5,145.5,289.4,1201.1,2546.2,327.8,8669452\nNorth Dakota,1.1,24.2,7.4,65.5,311.9,1500.3,166,635365\nOhio,5.1,39.8,163.1,143.4,872.8,2429,360.9,11475262\nOklahoma,5.3,41.7,91,370.5,1006,2644.2,391.8,3532769\nOregon,2.2,34.8,68.1,181.8,758.6,3112.2,529,3617869\nPennsylvania,6.1,28.9,154.6,235,451.6,1729.1,236.5,12418161\nRhode Island,3.2,29.8,72.1,146.1,494.2,1816,408.7,1064989\nSouth Carolina,7.4,42.5,132.1,579,1000.9,2954.1,384.4,4256199\nSouth Dakota,2.3,46.7,18.6,108.1,324.4,1343.7,108.4,780084\nTennessee,7.2,36.4,167.3,541.9,1026.9,2828.1,420.6,5995748\nTexas,6.2,37.2,156.6,329.8,961.6,2961.7,408.7,22801920\nUtah,2.3,37.3,44.3,143.4,606.2,2918.8,343.9,2499637\nVermont,1.3,23.3,11.7,83.5,491.8,1686.1,102.9,618814\nVirginia,6.1,22.7,99.2,154.8,392.1,2035,211.1,7563887\nWashington,3.3,44.7,92.1,205.8,959.7,3149.5,783.9,6261282\nWest Virginia,4.4,17.7,44.6,206.1,621.2,1794,210,1803920\nWisconsin,3.5,20.6,82.2,135.2,440.8,1992.8,226.6,5541443\nWyoming,2.7,24,15.3,188.1,476.3,2533.9,145.1,506242",
+      "language": null
+    },
+    "bubble.js": {
+      "type": "application/javascript",
+      "filename": "bubble.js",
+      "raw_url": "https://gist.github.com/raw/1469438/49356aefc4736db29f904fcfe0a66da1fa47cb11/bubble.js",
+      "size": 6543,
+      "content": "/*\n                ____________________________________\n               I___|___|___|___|___|__|____|___|__|_I\n               I_|___|___|               |___|___|__I\n         )\\    I___|__ | ..,a@@@a,a@@@a,.. |___|____I      /(\n        ( ))   I_|__  .,;*;;@@@@@a@@@@@;;;;,. ___|__I     (( )\n         :     I__|  ;;;;;;;;;a@@^@@a;;;*;;;;;  __|_I       :\n        ,uU    I_|  ;;;;*;;;a@@@   @@@a;;;;*;;;  |__I      Uu.\n        :Uu    I__|;;;;;;;a@@@@   .@@@@@;;;;;;;; __|I      uU:\n        | |    I_| ;;*;;;a@@@@@   @@'`@@@;;;;;*; _|_I      | |\n        |_|    I__ ;;;;;;@@;;@@   `@  `@;;;*;;;; ___I      |_|\n     _ (___) _ I_|_ ;;;*;;@;;;;@;;;;;*;;;;;;;;; _|__I___  (___)\n   ,-' )   (   ~~~~~ `;;;;;;*;;;;;;;;;;;*;;;;'  ~~~~~     )   (`-.\n ,-____=====_____________`;;;;;;;;*;;;;;;;'_______________=====___`.\n |~~|  _________________________________________________/o\\___   |~~|\n |_||  ||____|____|____|____|____|____|____|____|____|_/ /,\\__|  ||_|\n |__|  |___|____|____|____|____|____|____|____|____|__/ /,,,\\||  ||_|\n |_||__||____|____|____|____|____|____|____|____|____|\\/,,,,,\\|__|__|\n |____|____|____|____|____|____|____|____|____|____|___\\,,,,,,\\___|_|\n |_|____|__I####I..........  /%%%%%%%%%%%\\ ..........I##\\,,,,( )|___|\n |____|____I####I.......... .%%%%%( )%%%%%. .........I###\\,,,,\\/__|_|\n |_|____|__I####I.......... @@%%%%0%0%%%%@@  ........I## /,,,,/_|___|\n |____|____I####I.......... `@@@@@@@@@@@@@@' ........I# /,,,,/____|_|\n |_|____|__I####I............ \\\\\\\\\\\\\\\\\\\\\\\\\\) ........I ( \\,,/___|___|\n |____|____I####I.............  `\\\\\\\\\\\\\\\\\\\\) ........I  \\_)/_|____|_|\n |_|____|__I####I............  A   `\\\\\\\\\\\\\\' ..   .. I#  :_|____|___|\n |____|____I####I.........    AAA  .. `\\\\\\' ..  A.  .I###I___|____|_|\n |_|____|__I####I......   .A  `AAA ....  *  ..  AAA. I ##I_|____|___|\n |____|____I####I....    AAA  AA;AA  ...   ...  `AAA.I ##I___|____|_|\n |_|____|__I####/~~~,-.A;;A'-A;;;;;A-----A-----,A;;;A  ##I_|____|___|\n |____|____I###/    I.;;;;;  ;;;;;;;   AAA     I;;;A'\\###I___|____|_|\n |_|____|__I##/     I;;;;;; ;;;;;;;   A;;;A    I;;;;  \\##I_|____|___|\n |____|____I#/     !~;;;;;;~~~~~~~~~~~;;;;;;~~~~~!;'   \\#I___|____|_|\n |_|____|__I/______!  ::::;;           ;;;;;;    !______\\I_|____|___|\n ~~~~~~~~~/       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~       \\~~~~~~~~~~\n         /_______________________________________________\\\n                        /\\____/\\    __\n                      .'  \"\"\"\"  `,-'  `--.__\n                 __,- :   -  -  ;  \" ::     `-. -.__\n              ,-sssss `._  `' _,'\"     ,'~~~::`.sssss-.\n             |ssssss ,' ,_`--'_    __,' ::  `  `.ssssss|\n            |sssssss `-._____~ `,,'_______,---_;; ssssss|\n             |ssssssssss     `--'~{__   ____   ,'ssssss|\n              `-ssssssssssssssssss ~~~~~~~~~~~~ ssss.-'\n                   `---.sssssssssssssssssssss.---'\n\n*/\n\nvar\tw = 800;\t\t\t\t// width\t\nvar\th = 600; \t\t\t\t// height\nvar margin = 100;\t\t\t// margin\t\nvar xlabel = \"murder\";\t\t// what we want on the x axis\nvar ylabel = \"robbery\";\t\t// what we want on the y axis\nvar rlabel = \"population\";\t// what we want for the bubble area\n\nd3.select(\".container\").append(\"svg:svg\")\n\t.attr(\"width\", w+margin)\n\t.attr(\"height\", h+margin)\n\t.attr(\"class\",\"chart\");\n\nvar chart = d3.select(\".chart\").append(\"svg:g\")\t\t\n\t.attr(\"class\",\"content\")\n\t.attr(\"transform\", \"translate(\" + margin/2 + \",\" + margin/2 + \")\");\t\t// The transform with trasnlate will shift our group down and to the right\t\n\n\n/*\n\tThe following statement creates a line for our x axis\n*/\n\nchart.append(\"svg:line\")\n\t.attr(\"stroke-width\", 1)\n\t.attr( \"stroke\",\"gray\")\n\t.attr(\"x1\", 0)\n\t.attr(\"y1\", h)\n\t.attr(\"x2\", w)\n\t.attr(\"y2\", h); \n\n/*\n\tThe following statement creates a line for our y axis\n*/\n\nchart.append(\"svg:line\")\n\t.attr(\"stroke-width\", 1)\n\t.attr( \"stroke\",\"gray\")\n\t.attr(\"x1\", 1)\n\t.attr(\"y1\", 0)\n\t.attr(\"x2\", 1)\n\t.attr(\"y2\", h-1); \n\nd3.csv( \"data.csv\", function(csv) {\n\n\tvar xMax = d3.max( csv.map( function(d) {\n        \treturn parseFloat(d[xlabel]);\n    \t}));\n\tvar yMax = d3.max( csv.map( function(d) {\n\t\treturn parseFloat( d[ylabel] );\n\t}));\n\t\n\tvar xgrid = d3.scale.linear()\n\t\t.domain([0.0,xMax])\t\t// range of data\n\t\t.range([0.0,w]);\t\t// range of width\n\t\t// 0 in, 0 out\n\t\t// 10 in, w out\n\n\tvar ygrid = d3.scale.linear()\n\t\t.domain([0.0,yMax]) \t// range of data\n\t\t.range([h,0.0]); \t\t// range of height\n\t\t// 0 in, h out\n\t\t// 260 in, 0 out\n\t\t\n\t// I didn't want mine to change colors, but left this here for just in case \n\tvar colorScale = d3.scale.linear()\n\t\t.domain([0,500])\n\t\t.range([\"steelblue\", \"steelblue\"]);\n\t\n\tvar radius = function(d,i) {\n\t\treturn Math.sqrt( d[rlabel] ) / 150; // FUN FACT: we could use another scale function here instead of arbitrarily using 150\n\t}\n\n\tvar xpos = function(d,i) {\n\t\treturn xgrid( d[xlabel] );\t// d.murder in, corresponding x value out\n\t}\n\n\tvar ypos = function(d,i) {\n\t\treturn ygrid( d[ylabel] );\t// d.robbery in, corresponding x value out\n\t}\n\t\n\tvar color = function(d,i) {\n\t\treturn colorScale( d[\"aggravated_assault\"] );\n\t}\n\t\n\n\tvar mouseMove = function() {\n\t\tvar infobox = d3.select(\".infobox\");\n\t\tvar coord = d3.svg.mouse(this)\n                // now we just position the infobox roughly where our mouse is\n                infobox.style(\"left\", coord[0] + 15  + \"px\" );\n                infobox.style(\"top\", coord[1] + \"px\");\n\t}\n\n\tvar mouseOver = function(d) {\n\t\tvar bubble = d3.select(this);\n\t\tbubble.attr(\"stroke\", \"#000\")\n\t\t\t.attr(\"stroke-width\", 4 );\n\t\tvar infobox = d3.select(\".infobox\")\n\t\t\t.style(\"display\", \"block\" );\n\t\tinfobox.select(\"p.state\")\n\t\t\t.text( d.state );\n\t\tinfobox.select(\"p.xdata\")\n\t\t\t.text( xlabel + \": \" + d[xlabel] );\n\t\tinfobox.select(\"p.ydata\")\n\t\t\t.text( ylabel + \": \" + d[ylabel] );\n\t}\n\n\tvar mouseOut = function() {\n\t\tvar infobox = d3.select(\".infobox\");\n\t\tinfobox.style(\"display\", \"none\" )\n\t\tvar bubble = d3.select(this);\n\t\tbubble.attr(\"stroke\", \"none\")\n\t}\n\n\t// attach function to run when mouse is moved anywhere on svg\n\td3.select(\"svg\")\n\t\t.on(\"mousemove\", mouseMove );\n\n\t// add <p> elements to our infobox. later we will enter our crime data there\n\tvar infobox = d3.select(\".infobox\");\n\tinfobox.append(\"p\")\n\t\t.attr(\"class\", \"state\" );\n\tinfobox.append(\"p\")\n\t\t.attr(\"class\", \"xdata\" );\n\tinfobox.append(\"p\")\n\t\t.attr(\"class\", \"ydata\" );\n\n\t// append bubbles and attach function to run when bubbles moused over and moused out\n\tchart.selectAll(\"circle.bubble\").data(csv)\n\t\t.enter().append(\"svg:circle\")\n\t\t.attr(\"class\", \"bubble\")\n\t\t.attr(\"cx\", xpos )\n\t\t.attr(\"cy\", ypos )\t\t\t\n\t\t.attr(\"r\", radius )\t\t\t\n\t\t.attr(\"fill\", color )\n\t\t.on( \"mouseover\", mouseOver )\n\t\t.on( \"mouseout\", mouseOut );\t\n\t\t\n});\n",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1469438/f0f5411b97b4b628b51b380e57c246c3f1009282/index.html",
+      "size": 695,
+      "content": "<!doctype html>\n<html>\n\t<head>\n\t\t<meta charset=\"utf-8\">\n\t\t<title>Bubble Chart</title>\n\t\t<script type=\"text/javascript\" src=\"https://github.com/mbostock/d3/raw/master/d3.js\"></script>\n\t\t<script type=\"text/javascript\" src=\"https://github.com/mbostock/d3/raw/master/d3.csv.js\"></script>\n\t\t<style type=\"text/css\">\n\t\t\t.container {\n\t\t\t\tposition: relative;\n\t\t\t}\n\t\t\t.infobox {\n\t\t\t\tposition: absolute;\n\t\t\t\tdisplay: none;\n\t\t\t\tbackground-color: rgba(255,255,255,.75);\n\t\t\t\twidth: 200px;\n\t\t\t\tpadding: 10px;\n\t\t\t}\t\n\t\t\tp {\n\t\t\t\tmargin: 0;\n\t\t\t}\n\t\t</style>\n\t</head>\n\t<body>\n\t<div class=\"container\">\n\t\t<div class=\"infobox\">\n\t\t</div>\n\t</div>\n\t</body>\n\t<script type=\"text/javascript\" src=\"bubble.js\"></script>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-12-12T22:29:01Z",
+  "url": "https://api.github.com/gists/1469438",
+  "id": "1469438",
+  "git_pull_url": "git://gist.github.com/1469438.git"
+}

@@ -1,0 +1,206 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-09-09T08:44:33Z",
+      "version": "f6eb91bee00fbbf5723cbec9d5ee446e66412e1b",
+      "url": "https://api.github.com/gists/3125020/f6eb91bee00fbbf5723cbec9d5ee446e66412e1b",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-07-16T21:01:31Z",
+      "version": "b152efd0aefe1d8149a570ac1bb7a819e17d7e26",
+      "url": "https://api.github.com/gists/3125020/b152efd0aefe1d8149a570ac1bb7a819e17d7e26",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-01-03T22:50:06Z",
+      "version": "277a1a0990f88e7c9a89ce74a8e22bac2ddddcdd",
+      "url": "https://api.github.com/gists/3125020/277a1a0990f88e7c9a89ce74a8e22bac2ddddcdd",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-01-03T22:48:49Z",
+      "version": "1e52a7f50832e873da6c4e4f979ec630f0ab867f",
+      "url": "https://api.github.com/gists/3125020/1e52a7f50832e873da6c4e4f979ec630f0ab867f",
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-01-03T22:47:56Z",
+      "version": "6c5ae710da127b3d8cd1de0bec4d69cabe3c1f32",
+      "url": "https://api.github.com/gists/3125020/6c5ae710da127b3d8cd1de0bec4d69cabe3c1f32",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-01-03T22:47:26Z",
+      "version": "b3c0cc8b22c6fbcea51a22707b4ae47d750dba89",
+      "url": "https://api.github.com/gists/3125020/b3c0cc8b22c6fbcea51a22707b4ae47d750dba89",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-01-03T22:46:55Z",
+      "version": "2a77fa9123762f53d517ad32773740d9821bec06",
+      "url": "https://api.github.com/gists/3125020/2a77fa9123762f53d517ad32773740d9821bec06",
+      "change_status": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2012-01-03T22:46:48Z",
+      "version": "828620af53e63d90f71208c42026f39f45e6c59e",
+      "url": "https://api.github.com/gists/3125020/828620af53e63d90f71208c42026f39f45e6c59e",
+      "change_status": {
+        "total": 43,
+        "additions": 43,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Drag Multiples",
+  "comments": 0,
+  "created_at": "2012-07-16T21:00:13Z",
+  "git_pull_url": "git://gist.github.com/3125020.git",
+  "public": true,
+  "html_url": "https://gist.github.com/3125020",
+  "git_push_url": "git@gist.github.com:3125020.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/3125020/0d92c5789d65b39ea55775eba8c06081207b7d31/index.html",
+      "size": 891,
+      "content": "<!DOCTYPE html>\n<meta charset=\"utf-8\">\n<style>\n\nsvg {\n  float: left;\n  border: solid 1px #aaa;\n}\n\n</style>\n<script src=\"http://mbostock.github.com/d3/d3.js\"></script>\n<body>\n<script>\n\nvar width = 238,\n    height = 123,\n    radius = 20;\n\nvar drag = d3.behavior.drag()\n    .origin(Object)\n    .on(\"drag\", dragmove);\n\nvar svg = d3.select(\"body\").selectAll(\"svg\")\n    .data(d3.range(16).map(function() { return {x: width / 2, y: height / 2}; }))\n  .enter().append(\"svg\")\n    .attr(\"width\", width)\n    .attr(\"height\", height);\n\nsvg.append(\"circle\")\n    .attr(\"r\", radius)\n    .attr(\"cx\", function(d) { return d.x; })\n    .attr(\"cy\", function(d) { return d.y; })\n    .call(drag);\n\nfunction dragmove(d) {\n  d3.select(this)\n      .attr(\"cx\", d.x = Math.max(radius, Math.min(width - radius, d3.event.x)))\n      .attr(\"cy\", d.y = Math.max(radius, Math.min(height - radius, d3.event.y)));\n}\n\n</script>\n",
+      "language": "HTML"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/3125020/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    }
+  },
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mbostock",
+      "id": 230541
+    },
+    "description": "Drag Multiples",
+    "comments": 0,
+    "created_at": "2012-01-03T22:46:48Z",
+    "git_pull_url": "git://gist.github.com/1557377.git",
+    "public": true,
+    "html_url": "https://gist.github.com/1557377",
+    "git_push_url": "git@gist.github.com:1557377.git",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/1557377/ce729f04fb67372bb6eeffea74820651eb8561c3/index.html",
+        "size": 897,
+        "language": "HTML"
+      }
+    },
+    "updated_at": "2012-01-03T22:46:48Z",
+    "url": "https://api.github.com/gists/1557377",
+    "id": "1557377"
+  },
+  "updated_at": "2012-09-09T08:55:44Z",
+  "url": "https://api.github.com/gists/3125020",
+  "id": "3125020"
+}

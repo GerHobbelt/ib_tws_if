@@ -1,0 +1,67 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1341679.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "28f9173aec21ffc191ff35c28d4010388ddebd8e",
+      "change_status": {
+        "total": 107,
+        "additions": 107,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1341679/28f9173aec21ffc191ff35c28d4010388ddebd8e",
+      "committed_at": "2011-11-05T15:41:36Z"
+    }
+  ],
+  "description": "Oliver Rolle / Logarithmic Line Chart",
+  "html_url": "https://gist.github.com/1341679",
+  "git_push_url": "git@gist.github.com:1341679.git",
+  "comments": 0,
+  "created_at": "2011-11-05T15:41:36Z",
+  "public": true,
+  "files": {
+    "results.csv": {
+      "type": "text/csv",
+      "filename": "results.csv",
+      "size": 559,
+      "content": "xDim,yDim,steps,time\n100,100,100,82\n100,100,1000,343\n100,100,10000,3737\n100,1000,100,201\n100,1000,1000,1789\n100,1000,10000,17441\n100,5000,100,1096\n100,5000,1000,8413\n100,5000,10000,82820\n1000,100,100,313\n1000,100,1000,2960\n1000,100,10000,29513\n1000,1000,100,2184\n1000,1000,1000,17163\n1000,1000,10000,167370\n1000,5000,100,9204\n1000,5000,1000,83656\n1000,5000,10000,830391\n5000,100,100,1537\n5000,100,1000,14504\n5000,100,10000,143669\n5000,1000,100,9298\n5000,1000,1000,83579\n5000,1000,10000,830194\n5000,5000,100,46237\n5000,5000,1000,419391\n5000,5000,10000,4164435\n",
+      "raw_url": "https://gist.github.com/raw/1341679/0fcd83245f89e50114cf9d2e239f8844925e89cf/results.csv",
+      "language": null
+    },
+    "results.js": {
+      "type": "application/javascript",
+      "filename": "results.js",
+      "size": 1672,
+      "content": "d3.csv(\"results.csv\", function(data) {\n       var xDimMax=0, yDimMax=0, stepsMax=0, timeMax=0;\n\n data.forEach(function(d) {\n   d.xDim = +d.xDim;\n   d.yDim = +d.yDim;\n   d.steps = +d.steps;\n       d.time = +d.time;\n\n       xDimMax = xDimMax<d.xDim? d.xDim : xDimMax;\n       yDimMax = yDimMax<d.yDim? d.yDim : yDimMax;\n       stepsMax = stepsMax<d.steps? d.steps : stepsMax;\n       timeMax = timeMax<d.time? d.time : timeMax;\n });\n\n var w = 600,\n   h = 300,\n   p = 50,\n   x = d3.scale.log().domain([1, xDimMax * yDimMax]).range([0, w]),\n   y = d3.scale.log().domain([1, timeMax]).range([h, 0]);\n\n var vis = d3.select(\"body\")\n   .data(data)\n .append(\"svg:svg\")\n   .attr(\"width\", w + p * 2)\n   .attr(\"height\", h + p * 2)\n .append(\"svg:g\")\n   .attr(\"transform\", \"translate(\" + p + \",\" + p + \")\");\n\n       var rules = vis.selectAll(\"g.rule\")\n   .data(x.ticks(10))\n .enter().append(\"svg:g\")\n   .attr(\"class\", \"rule\");\n\nrules.append(\"svg:line\")\n   .attr(\"x1\", x)\n   .attr(\"x2\", x)\n   .attr(\"y1\", 0)\n   .attr(\"y2\", h - 1);\n\nrules.append(\"svg:line\")\n   .attr(\"class\", function(d) { return d ? null : \"axis\"; })\n   .attr(\"y1\", y)\n   .attr(\"y2\", y)\n   .attr(\"x1\", 0)\n   .attr(\"x2\", w + 1);\n\nrules.append(\"svg:text\")\n   .attr(\"x\", x)\n   .attr(\"y\", h + 3)\n   .attr(\"dy\", \".71em\")\n   .attr(\"text-anchor\", \"middle\")\n   .text(x.tickFormat(10));\n\nrules.append(\"svg:text\")\n   .attr(\"y\", y)\n   .attr(\"x\", -3)\n   .attr(\"dy\", \".35em\")\n   .attr(\"text-anchor\", \"end\")\n   .text(y.tickFormat(10));\n\nvis.append(\"svg:path\")\n   .attr(\"class\", \"line\")\n   .attr(\"d\", d3.svg.line()   // Problem caused here\n   .x(function(d) { return x(d.xDim * d.yDim); })\n   .y(function(d) { return y(d.time); }));\n});\n",
+      "raw_url": "https://gist.github.com/raw/1341679/d58951cd00391419aeecadd973e32b2af4347293/results.js",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 403,
+      "content": "<!DOCTYPE html>\n<html>\n <head>\n   <title>Line Chart</title>\n   <link type=\"text/css\" rel=\"stylesheet\" href=\"line.css\"/>\n   <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.5.0\"></script>\n   <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.csv.js?2.5.0\"></script>\n </head>\n <body>\n   <script type=\"text/javascript\" src=\"results.js\"></script>\n </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1341679/a64e7e661595bc526dcc3eca7f5c996125efee7f/index.html",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-11-05T15:41:36Z",
+  "url": "https://api.github.com/gists/1341679",
+  "id": "1341679"
+}

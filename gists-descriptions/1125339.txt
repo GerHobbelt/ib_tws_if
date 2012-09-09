@@ -1,0 +1,113 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "1359f4b8cdd38927a92181bfe08ae90a",
+        "login": "bcambel",
+        "avatar_url": "https://secure.gravatar.com/avatar/1359f4b8cdd38927a92181bfe08ae90a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bcambel",
+        "id": 144385
+      },
+      "created_at": "2012-06-08T23:42:47Z",
+      "updated_at": "2012-06-08T23:42:47Z",
+      "url": "https://api.github.com/gists/2898709",
+      "id": "2898709"
+    }
+  ],
+  "user": {
+    "gravatar_id": "ba940b433c2695635d32d2c4aec00540",
+    "login": "ralphbean",
+    "avatar_url": "https://secure.gravatar.com/avatar/ba940b433c2695635d32d2c4aec00540?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/ralphbean",
+    "id": 331338
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "ba940b433c2695635d32d2c4aec00540",
+        "login": "ralphbean",
+        "avatar_url": "https://secure.gravatar.com/avatar/ba940b433c2695635d32d2c4aec00540?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ralphbean",
+        "id": 331338
+      },
+      "committed_at": "2011-08-04T15:42:14Z",
+      "version": "ac7ff36229ddc4dce2fc660ca9865c05e6f3fca4",
+      "url": "https://api.github.com/gists/1125339/ac7ff36229ddc4dce2fc660ca9865c05e6f3fca4",
+      "change_status": {
+        "total": 127,
+        "additions": 91,
+        "deletions": 36
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "ba940b433c2695635d32d2c4aec00540",
+        "login": "ralphbean",
+        "avatar_url": "https://secure.gravatar.com/avatar/ba940b433c2695635d32d2c4aec00540?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ralphbean",
+        "id": 331338
+      },
+      "committed_at": "2011-08-04T14:52:10Z",
+      "version": "ca60c0aeb1cd8c24e521279b4ba2a6a08afd9ac9",
+      "url": "https://api.github.com/gists/1125339/ca60c0aeb1cd8c24e521279b4ba2a6a08afd9ac9",
+      "change_status": {
+        "total": 30,
+        "additions": 15,
+        "deletions": 15
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "ba940b433c2695635d32d2c4aec00540",
+        "login": "ralphbean",
+        "avatar_url": "https://secure.gravatar.com/avatar/ba940b433c2695635d32d2c4aec00540?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ralphbean",
+        "id": 331338
+      },
+      "committed_at": "2011-08-04T14:51:39Z",
+      "version": "6fad586c736824307df4a6fbee3dadfb65a61cfc",
+      "url": "https://api.github.com/gists/1125339/6fad586c736824307df4a6fbee3dadfb65a61cfc",
+      "change_status": {
+        "total": 223,
+        "additions": 223,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "d3 viz for narcissus",
+  "comments": 0,
+  "created_at": "2011-08-04T14:51:39Z",
+  "git_pull_url": "git://gist.github.com/1125339.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1125339",
+  "git_push_url": "git@gist.github.com:1125339.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1125339/8053027b0026058f3c1e665f51b3afaf351b149e/index.html",
+      "size": 695,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Proof of concept for d3 viz + narcissus</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"spider.css\"></style>\n  <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.min.js\"></script>\n  <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.min.js\"></script>\n  <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.min.js\"></script>\n  <script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js\"></script>\n  <script type=\"text/javascript\" src=\"spider.js\"></script>\n</head>\n<body>\n  <div id=\"wrapper\"><div id=\"container\"></div></div>\n</body>\n</html>",
+      "language": "HTML"
+    },
+    "spider.css": {
+      "type": "text/css",
+      "filename": "spider.css",
+      "raw_url": "https://gist.github.com/raw/1125339/ff6d7d3d7d2024a2dbc2d457b8809e8d7bc576a8/spider.css",
+      "size": 363,
+      "content": "html, body {\n        width: 100%;\n        height: 100%;\n        margin: 0;\n        padding: 0;\n}\n\nrect {\n        fill: white;\n}\n\n.transient {\n        fill: #2BAC82;\n}\n.country {\n        fill: #2F6AAB;\n}\n.distro {\n        fill: #C28931;\n}\n.link {\n        stroke: gray;\n}\n\n#wrapper {\n        width: 100%;\n}\n#container {\n        width: 960px;\n        margin: auto;\n}",
+      "language": "CSS"
+    },
+    "spider.js": {
+      "type": "application/javascript",
+      "filename": "spider.js",
+      "raw_url": "https://gist.github.com/raw/1125339/7c8ec7df470dbb7c51b92a88f97ef5e04e4a67f8/spider.js",
+      "size": 8258,
+      "content": "$(document).ready(function() {\n        var counter = 0; \n        var lifetime = 3000;\n        var base_radius = 1;\n        var bonus = 1;\n\n        var w = 960\n        var h = 700;\n\n        // Setup a 'center width' and 'center height'\n        var cw = w/2;\n        var ch = h/2;\n\n        // Just some constants for setting up dummy nodes.\n        var distros = [\n                \"Fedora\", \"Ubuntu\", \"Slackjaw Linux\", \"Mooseknuckle\"\n        ];\n        var countries = [\n                \"United States\", \"China\", \"Brazil\", \"The Congo\",\n                \"France\", \"Germany\", \"United Kingdom\", \"Greece\", \"Spain\",\n                \"Portugal\", \"Ireland\", \"Italy\", \"Mexico\",\n        ];\n\n        var fill = d3.scale.category20();\n        var nodes = [];\n        var links = [];\n\n        var vis = d3.select(\"#container\").append(\"svg:svg\")\n        .attr(\"width\", w)\n        .attr(\"height\", h);\n\n        vis.append(\"svg:rect\")\n        .attr(\"width\", w)\n        .attr(\"height\", h);\n\n        var force = d3.layout.force()\n        .charge(-70)\n        .linkStrength(0.001)\n        .linkDistance(1000)\n        .nodes(nodes)\n        .links(links)\n        .size([w, h]);\n\n        force.on(\"tick\", function() {\n                vis.selectAll(\"line.link\")\n                .attr(\"x1\", function(d) { return d.source.x; })\n                .attr(\"y1\", function(d) { return d.source.y; })\n                .attr(\"x2\", function(d) { return d.target.x; })\n                .attr(\"y2\", function(d) { return d.target.y; });\n\n                vis.selectAll(\"circle.node\")\n                .attr(\"cx\", function(d) { return d.x; })\n                .attr(\"cy\", function(d) { return d.y; });\n        });\n\n\n        function remove_links_for_node(node) {\n                for ( var i=0; i < links.length; i++ ) {\n                        if ( links[i].source == node || links[i].target == node ) {\n                                var link = links[i];\n                                links.splice(i, 1);\n\n                                link.source.r -= bonus;\n                                link.target.r -= bonus;\n\n                                // Assume that if the source or target, either,\n                                // have a base_radius now, then they are\n                                // isolated vertices with no links.  Remove\n                                // them!\n                                if ( link.source.r == base_radius ) {\n                                        remove_node(link.source);\n                                }\n                                if ( link.target.r == base_radius ) {\n                                        remove_node(link.target);\n                                }\n\n                                return true;\n                        }\n                }\n                return false;\n        }\n\n        function remove_node(node) {\n                for ( var i=0; i < nodes.length; i++ ) {\n                        if ( nodes[i] == node ) {\n                                nodes.splice(i, 1);\n                                return true;\n                        }\n                }\n                for ( var i=0; i < nodes.length; i++ ) {\n                        if ( nodes[i] == node ) {\n                                nodes.splice(i, 1);\n                                return true;\n                        }\n                }\n\n                while (remove_links_for_node(node)) {}\n\n                restart();\n                return false;\n        }\n\n        function find_node_by_id(id) {\n                for ( var i = 0; i < nodes.length; i++ ) {\n                        if ( nodes[i].id == id ) {\n                                return nodes[i];\n                        }\n                }\n                return null;\n        }\n\n        function make_link(a, b) {\n                if ( a == b ) { return; }\n                link = {source: a, target: b};\n                links.push(link);\n                a.r += bonus;\n                b.r += bonus;\n        }\n\n        function make_transient(country, distro) {\n                // Find the country and distro nodes.  If DNE, then create them.\n                var c_node = find_node_by_id(country);\n                var d_node = find_node_by_id(distro);\n                if ( c_node == null ) {\n                        c_node = make_node(0, 0, \"country\", country);\n                }\n                if ( d_node == null ) {\n                        d_node = make_node(0, 0, \"distro\", distro);\n                }\n\n                // Make this new hit node.\n                t_node = make_node(cw, ch, \"transient\", null);\n\n                // Make links between this node and its parents.\n                make_link(t_node, c_node);\n                make_link(t_node, d_node);\n\n        }\n\n        function make_node(x, y, cls, id) {\n\n                // Add the node\n                if ( id == null ) { id = counter; }\n\n                var node = {\n                        x: x,\n                        y: y,\n                        r: base_radius,\n                        id: id,\n                        cls: cls,\n                        ttl: lifetime,\n                };\n                nodes.push(node);\n                counter++;\n\n                // add links randomly\n                if (cls != \"country\" && cls != \"distro\" ) {\n                        var targets = [\"country\", \"distro\"];\n                        for ( var j = 0; j < targets.length; j++ ) {\n                                var indices = [];\n                                for ( var i = 0; i < nodes.length; i++ ) {\n                                        if ( nodes[i].cls == targets[j] ) {\n                                                indices.push(i);\n                                        }\n                                }\n                                i = Math.floor(Math.random()*indices.length);\n                                var target = nodes[indices[i]];\n                                make_link(node, target);\n                        }\n                }\n\n                // schedule the removal of the node we just added\n                if ( cls == \"transient\" ) {\n                        setTimeout(\n                                function(){while(remove_node(node)){}}, node.ttl\n                        );\n                }\n\n                return node;\n        }\n\n        function restart() {\n                var p;\n\n                // Handle the links\n                p = vis.selectAll(\"line.link\")\n                .data(links,\n                        function(d) { return d.source.id + \"_\" + d.target.id }\n                );\n\n                p.enter().insert(\"svg:line\", \"circle.node\")\n                .attr(\"class\", \"link\")\n                .attr(\"x1\", function(d) { return d.source.x; })\n                .attr(\"y1\", function(d) { return d.source.y; })\n                .attr(\"x2\", function(d) { return d.target.x; })\n                .attr(\"y2\", function(d) { return d.target.y; });\n\n                p.exit().remove();\n\n\n                // Handle the nodes\n                p = vis.selectAll(\"circle.node\")\n                .data(nodes, function(d) { return d.id });\n\n                p.attr(\"r\", function(d) { return d.r; })\n\n                p.enter().insert(\"svg:circle\", \"circle.cursor\")\n                .attr(\"class\", function(d) { return \"node \" + d.cls; })\n                .attr(\"cx\", function(d) { return d.x; })\n                .attr(\"cy\", function(d) { return d.y; })\n                .on(\"mouseover\", function(d) {d.r += 5*bonus;})\n                .on(\"mouseout\", function(d) {d.r -= 5*bonus;})\n                .call(force.drag);\n\n                p.append(\"svg:title\")\n                .text(function(d) { return d.id });\n\n                p.exit().remove();\n\n                // This is expensive, if we can avoid it doing it so much.\n                force.start();\n        }\n\n        // Trigger random creation of \"server hits\".  To be replace by orbited.\n        setInterval(\n                function() {\n                        var i = Math.floor(Math.random()*countries.length);\n                        var j = Math.floor(Math.random()*distros.length);\n                        make_transient(countries[i], distros[j]);\n                        restart();\n                }, 100);\n        });\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-08-04T14:51:39Z",
+  "url": "https://api.github.com/gists/1125339",
+  "id": "1125339"
+}

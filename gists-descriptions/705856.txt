@@ -1,0 +1,85 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-11-18T23:10:27Z",
+      "version": "f0c54de813dc02cede6e05eb400d240857e5ab78",
+      "url": "https://api.github.com/gists/705856/f0c54de813dc02cede6e05eb400d240857e5ab78"
+    },
+    {
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-11-18T23:09:08Z",
+      "version": "09b54165cdeddc8191d66e02d12189652bc55716",
+      "url": "https://api.github.com/gists/705856/09b54165cdeddc8191d66e02d12189652bc55716"
+    },
+    {
+      "change_status": {
+        "total": 43,
+        "additions": 43,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-11-18T23:08:07Z",
+      "version": "3956574866264ec26a56f2afcdedea15f3294572",
+      "url": "https://api.github.com/gists/705856/3956574866264ec26a56f2afcdedea15f3294572"
+    }
+  ],
+  "description": "stroke-dasharray",
+  "html_url": "https://gist.github.com/705856",
+  "comments": 0,
+  "created_at": "2010-11-18T23:08:06Z",
+  "git_pull_url": "git://gist.github.com/705856.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/705856/a8940bd25fba75f5a351ae782736f227d2b080be/index.html",
+      "size": 890,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Voronoi Tesselation</title>\n    <script type=\"text/javascript\" src=\"http://github.com/mbostock/d3/raw/35ec68a74eaa35b2b770\n/d3.min.js\"></script>\n    <style type=\"text/css\">\n\nsvg {\n  display: block;\n}\n\nline {\n  stroke: #000;\n  stroke-width: 15px;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 958,\n    h = 498;\n\nvar svg = d3.select(\"body\")\n  .append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nsvg.selectAll(\"line\")\n    .data(d3.range(10))\n  .enter(\"svg:line\")\n    .attr(\"x1\", \"0%\")\n    .attr(\"x2\", \"100%\")\n    .attr(\"y1\", function(d) { return h * (d + .5) / 10; })\n    .attr(\"y2\", function(d) { return h * (d + .5) / 10; })\n    .attr(\"stroke-dasharray\", function(d) { return (d + 1) + \",5\"; });\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:705856.git",
+  "updated_at": "2010-11-18T23:10:27Z",
+  "url": "https://api.github.com/gists/705856",
+  "id": "705856"
+}

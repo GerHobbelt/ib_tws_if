@@ -1,0 +1,207 @@
+{
+  "git_push_url": "git@gist.github.com:625531.git",
+  "forks": [
+    {
+      "updated_at": "2011-07-07T23:37:19Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/f9dd9f4c2b8d081b67fe34769e24808e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "f9dd9f4c2b8d081b67fe34769e24808e",
+        "url": "https://api.github.com/users/jasondavies",
+        "login": "jasondavies",
+        "id": 31223
+      },
+      "url": "https://api.github.com/gists/1070797",
+      "id": "1070797",
+      "created_at": "2011-07-07T23:37:19Z"
+    }
+  ],
+  "updated_at": "2010-10-14T03:52:06Z",
+  "public": true,
+  "html_url": "https://gist.github.com/625531",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "raw_url": "https://gist.github.com/raw/625531/512b5a0f1e2539d84965fc9a65bbffa3f1a330e3/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/polymaps.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/lib/crimespotting/crimespotting.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/protovis/protovis/raw/v3.3.1/examples/jquery-1.4.2.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/protovis/protovis/raw/v3.3.1/examples/slider/jquery-ui-1.8rc3.custom.min.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/simplegeo/polymaps/raw/v2.3.0/examples/example.css\");\n@import url(\"http://github.com/protovis/protovis/raw/v3.3.1/examples/slider/ui-lightness/jquery-ui-1.8rc3.custom.css\");\n\nhtml, body {\n  height: 100%;\n  background: #E6E6E6;\n}\n\nsvg {\n  display: block;\n}\n\n.layer circle {\n  fill: lightcoral;\n  fill-opacity: .5;\n  stroke: brown;\n}\n\n#slider {\n  position: absolute;\n  top: 10px;\n  left: 10px;\n  width: 300px;\n  height: 20px;\n  display: block;\n  background: #ccc;\n}\n\n.ui-slider {\n  font-size: 10px;\n  margin-top: 5px;\n}\n\n.ui-state-focus {\n  outline: none;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar po = org.polymaps;\n\nvar r = 4.5;\n\nvar map = po.map()\n    .container(document.body.appendChild(po.svg(\"svg\")))\n    .center({lat: 37.787, lon: -122.228})\n    .zoomRange([10, 16])\n    .add(po.interact());\n\nmap.add(po.image()\n    .url(po.url(\"http://{S}tile.cloudmade.com\"\n    + \"/1a1b06b230af4efdbb989ea99e9841af\" // http://cloudmade.com/register\n    + \"/998/256/{Z}/{X}/{Y}.png\")\n    .hosts([\"a.\", \"b.\", \"c.\", \"\"])));\n\nmap.add(geoJson = po.geoJson()\n    .url(crimespotting(\"http://oakland.crimespotting.org\"\n        + \"/crime-data\"\n        + \"?count=100\"\n        + \"&format=json\"\n        + \"&bbox={B}\"\n        + \"&dstart=2010-04-01\"\n        + \"&dend=2010-04-01\"))\n    .on(\"show\", show)\n    .clip(false)\n    .scale(\"fixed\")\n    .zoom(12));\n\n/* Resize the GeoJSON points! */\nfunction show(e) {\n  for (var i = 0; i < e.features.length; i++) {\n    e.features[i].element.setAttribute(\"r\", r);\n  }\n}\n\n    </script>\n    <div id=\"slider\"></div>\n    <script type=\"text/javascript\">\n\n$(\"#slider\").slider({\n  min: 0, max: 1000, value: r * r, slide: function(e, ui) {\n    r = Math.sqrt(ui.value);\n    geoJson.reshow();\n  }\n});\n\n    </script>\n    <span id=\"copy\">\n      &copy; 2010\n      <a href=\"http://www.cloudmade.com/\">CloudMade</a>,\n      <a href=\"http://www.openstreetmap.org/\">OpenStreetMap</a> contributors,\n      <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CCBYSA</a>.\n    </span>\n  </body>\n</html>",
+      "size": 2649
+    },
+    "README.mkd": {
+      "type": "text/plain",
+      "filename": "README.mkd",
+      "language": "Markdown",
+      "raw_url": "https://gist.github.com/raw/625531/a8fceafa3609443755c57cabbfcc29fa101a1d23/README.mkd",
+      "content": "A quick example demonstrating the use of \"show\" event handlers and [reshow](http://polymaps.org/docs/geoJson.html#reshow), which allows you to restyle GeoJSON features dynamically from an external event. In this example, you can use the jQuery UI slider in the top-left corner to resize the points.",
+      "size": 298
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "url": "https://api.github.com/users/mbostock",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "version": "8677301084a335309759bcd15c65db171e54265c",
+      "change_status": {
+        "total": 2,
+        "deletions": 0,
+        "additions": 2
+      },
+      "committed_at": "2011-07-07T20:31:31Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/625531/8677301084a335309759bcd15c65db171e54265c"
+    },
+    {
+      "version": "9ba2e92d5676b6981175121e641957cf00085063",
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "committed_at": "2011-07-07T20:30:56Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/625531/9ba2e92d5676b6981175121e641957cf00085063"
+    },
+    {
+      "version": "1688c1c20db1255efcd1d468e1781671c00eacf6",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-10-14T03:52:06Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/625531/1688c1c20db1255efcd1d468e1781671c00eacf6"
+    },
+    {
+      "version": "0617d9092703167d98d60e11b3a9afa52993fcd6",
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "committed_at": "2010-10-14T03:51:19Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/625531/0617d9092703167d98d60e11b3a9afa52993fcd6"
+    },
+    {
+      "version": "dcbaa5c40b46f81a5c3145844a09e23be8a7abf4",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-10-14T03:50:55Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/625531/dcbaa5c40b46f81a5c3145844a09e23be8a7abf4"
+    },
+    {
+      "version": "2f91f7ebefaba7dc00a347d94682f77fda198254",
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "committed_at": "2010-10-14T03:50:25Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/625531/2f91f7ebefaba7dc00a347d94682f77fda198254"
+    },
+    {
+      "version": "684c99b2e98cae4b70648e4ef80c1d95e5bf7e8e",
+      "change_status": {
+        "total": 6,
+        "deletions": 3,
+        "additions": 3
+      },
+      "committed_at": "2010-10-14T03:47:32Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/625531/684c99b2e98cae4b70648e4ef80c1d95e5bf7e8e"
+    },
+    {
+      "version": "717f9440be0c36d571e0519bdf151b2c155b0dee",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-10-14T03:46:50Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/625531/717f9440be0c36d571e0519bdf151b2c155b0dee"
+    },
+    {
+      "version": "303f903bd1f2bc39c4d2bdeea8417a9d3f4b6d4a",
+      "change_status": {
+        "total": 104,
+        "deletions": 0,
+        "additions": 104
+      },
+      "committed_at": "2010-10-14T03:45:58Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/625531/303f903bd1f2bc39c4d2bdeea8417a9d3f4b6d4a"
+    }
+  ],
+  "url": "https://api.github.com/gists/625531",
+  "description": "Resizable Markers",
+  "git_pull_url": "git://gist.github.com/625531.git",
+  "id": "625531",
+  "comments": 0,
+  "created_at": "2010-10-14T03:45:58Z"
+}

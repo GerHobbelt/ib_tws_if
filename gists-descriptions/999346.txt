@@ -1,0 +1,105 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "ab632128da84da2c230ea23accb0963c",
+        "login": "sim0nf",
+        "avatar_url": "https://secure.gravatar.com/avatar/ab632128da84da2c230ea23accb0963c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/sim0nf",
+        "id": 1092974
+      },
+      "created_at": "2012-08-10T20:42:12Z",
+      "updated_at": "2012-08-10T20:42:12Z",
+      "url": "https://api.github.com/gists/3317686",
+      "id": "3317686"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_push_url": "git@gist.github.com:999346.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "07715c5705acc414f184adb3aa5242f8650c3b1e",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-05-30T19:38:16Z",
+      "url": "https://api.github.com/gists/999346/07715c5705acc414f184adb3aa5242f8650c3b1e"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "3d16573ba86c17a98a69c4f96126aea04ee94f6b",
+      "change_status": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "committed_at": "2011-05-30T19:28:28Z",
+      "url": "https://api.github.com/gists/999346/3d16573ba86c17a98a69c4f96126aea04ee94f6b"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "f26858cddcf13ed8022046091cb3efb0f1fde910",
+      "change_status": {
+        "total": 119,
+        "additions": 119,
+        "deletions": 0
+      },
+      "committed_at": "2011-05-30T19:18:14Z",
+      "url": "https://api.github.com/gists/999346/f26858cddcf13ed8022046091cb3efb0f1fde910"
+    }
+  ],
+  "description": "Dynamic Node-Link Tree (D3)",
+  "comments": 0,
+  "created_at": "2011-05-30T19:18:14Z",
+  "public": true,
+  "html_url": "https://gist.github.com/999346",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/999346/9def84e58a879cf29c63c2af067ad1d02bb593e1/index.html",
+      "size": 2835,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Node-Link Tree</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js\"></script>\n    <style type=\"text/css\">\n\n.node {\n  stroke: #fff;\n  stroke-width: 2px;\n}\n\n.link {\n  fill: none;\n  stroke: #000;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    root = {},\n    data = [root],\n    tree = d3.layout.tree().size([w - 20, h - 20]),\n    diagonal = d3.svg.diagonal(),\n    duration = 750,\n    timer = setInterval(update, duration);\n\nvar vis = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(10, 10)\");\n\nvis.selectAll(\"circle\")\n    .data(tree(root))\n  .enter().append(\"svg:circle\")\n    .attr(\"class\", \"node\")\n    .attr(\"r\", 3.5)\n    .attr(\"cx\", x)\n    .attr(\"cy\", y);\n\nfunction update() {\n  if (data.length >= 500) return clearInterval(timer);\n\n  // Add a new datum to a random parent.\n  var d = {id: data.length}, parent = data[~~(Math.random() * data.length)];\n  if (parent.children) parent.children.push(d); else parent.children = [d];\n  data.push(d);\n\n  // Compute the new tree layout. We'll stash the old layout in the data.\n  var nodes = tree(root);\n\n  // Update the nodes…\n  var node = vis.selectAll(\"circle.node\")\n      .data(nodes, nodeId);\n\n  // Enter any new nodes at the parent's previous position.\n  node.enter().append(\"svg:circle\")\n      .attr(\"class\", \"node\")\n      .attr(\"r\", 3.5)\n      .attr(\"cx\", function(d) { return d.parent.data.x0; })\n      .attr(\"cy\", function(d) { return d.parent.data.y0; })\n    .transition()\n      .duration(duration)\n      .attr(\"cx\", x)\n      .attr(\"cy\", y);\n\n  // Transition nodes to their new position.\n  node.transition()\n      .duration(duration)\n      .attr(\"cx\", x)\n      .attr(\"cy\", y);\n\n  // Update the links…\n  var link = vis.selectAll(\"path.link\")\n      .data(tree.links(nodes), linkId);\n\n  // Enter any new links at the parent's previous position.\n  link.enter().insert(\"svg:path\", \"circle\")\n      .attr(\"class\", \"link\")\n      .attr(\"d\", function(d) {\n        var o = {x: d.source.data.x0, y: d.source.data.y0};\n        return diagonal({source: o, target: o});\n      })\n    .transition()\n      .duration(duration)\n      .attr(\"d\", diagonal);\n\n  // Transition links to their new position.\n  link.transition()\n      .duration(duration)\n      .attr(\"d\", diagonal);\n}\n\nfunction linkId(d) {\n  return d.source.data.id + \"-\" + d.target.data.id;\n}\n\nfunction nodeId(d) {\n  return d.data.id;\n}\n\nfunction x(d) {\n  return d.data.x0 = d.x;\n}\n\nfunction y(d) {\n  return d.data.y0 = d.y;\n}\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/999346/fbc654cc52203f9569d4b180c35ba595db83efb4/README.md",
+      "size": 504,
+      "content": "This is an example of building a tree layout using the Reingold-Tilford \"tidy\" algorithm, as described in [\"Tidier Drawings of Trees\"](http://emr.cs.iit.edu/~reingold/tidier-drawings.pdf). As each new element is added to the graph, it animates in, starting at the previous position of the parent node. Thus, the existing nodes and the new node transition smoothly to their new positions. The animation stops when 500 nodes have been added to the tree.\n\nBuilt with [D3.js](http://mbostock.github.com/d3/).",
+      "language": "Markdown"
+    }
+  },
+  "updated_at": "2011-05-30T19:38:16Z",
+  "url": "https://api.github.com/gists/999346",
+  "git_pull_url": "git://gist.github.com/999346.git",
+  "id": "999346"
+}

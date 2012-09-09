@@ -1,0 +1,85 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "version": "6c24b206b027a6bb55ed746190a7c91feb1127d2",
+      "committed_at": "2010-10-14T06:02:32Z",
+      "url": "https://api.github.com/gists/625657/6c24b206b027a6bb55ed746190a7c91feb1127d2"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 12,
+        "additions": 9,
+        "deletions": 3
+      },
+      "version": "e70d8923f1ce7264cdefa223a38e2b39c73b9179",
+      "committed_at": "2010-10-14T06:01:59Z",
+      "url": "https://api.github.com/gists/625657/e70d8923f1ce7264cdefa223a38e2b39c73b9179"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 72,
+        "additions": 72,
+        "deletions": 0
+      },
+      "version": "8e256ec572c32f97bbea789929150f87847421c6",
+      "committed_at": "2010-10-14T06:00:22Z",
+      "url": "https://api.github.com/gists/625657/8e256ec572c32f97bbea789929150f87847421c6"
+    }
+  ],
+  "description": "Polymaps / CSS Hover",
+  "comments": 0,
+  "created_at": "2010-10-14T06:00:21Z",
+  "public": true,
+  "html_url": "https://gist.github.com/625657",
+  "git_pull_url": "git://gist.github.com/625657.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1887,
+      "raw_url": "https://gist.github.com/raw/625657/60f51c109fe998822a102e96db24dac4597adba7/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/polymaps.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/lib/crimespotting/crimespotting.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/simplegeo/polymaps/raw/v2.3.0/examples/example.css\");\n\nhtml, body {\n  height: 100%;\n  background: #E6E6E6;\n}\n\nsvg {\n  display: block;\n}\n\n.datapoint {\n  fill: lightsteelblue;\n  fill-opacity: .5;\n  stroke: steelblue;\n}\n\n.datapoint:hover {\n  fill: lightcoral;\n  stroke: brown;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar po = org.polymaps;\n\nvar map = po.map()\n    .container(document.body.appendChild(po.svg(\"svg\")))\n    .center({lat: 37.787, lon: -122.228})\n    .zoomRange([10, 16])\n    .add(po.interact());\n\nmap.add(po.image()\n    .url(po.url(\"http://{S}tile.cloudmade.com\"\n    + \"/1a1b06b230af4efdbb989ea99e9841af\" // http://cloudmade.com/register\n    + \"/998/256/{Z}/{X}/{Y}.png\")\n    .hosts([\"a.\", \"b.\", \"c.\", \"\"])));\n\nmap.add(geoJson = po.geoJson()\n    .url(crimespotting(\"http://oakland.crimespotting.org\"\n        + \"/crime-data\"\n        + \"?count=100\"\n        + \"&format=json\"\n        + \"&bbox={B}\"\n        + \"&dstart=2010-04-01\"\n        + \"&dend=2010-04-01\"))\n    .clip(false)\n    .scale(\"fixed\")\n    .on(\"load\", load)\n    .zoom(12));\n\nfunction load(e) {\n  for (var i = 0; i < e.features.length; i++) {\n    var c = e.features[i].element;\n    c.setAttribute(\"class\", \"datapoint\");\n    c.setAttribute(\"r\", 12);\n  }\n}\n\n    </script>\n    <span id=\"copy\">\n      &copy; 2010\n      <a href=\"http://www.cloudmade.com/\">CloudMade</a>,\n      <a href=\"http://www.openstreetmap.org/\">OpenStreetMap</a> contributors,\n      <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CCBYSA</a>.\n    </span>\n  </body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:625657.git",
+  "updated_at": "2010-10-14T06:02:32Z",
+  "url": "https://api.github.com/gists/625657",
+  "id": "625657"
+}

@@ -1,0 +1,143 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+    "login": "ZJONSSON",
+    "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/ZJONSSON",
+    "id": 1082488
+  },
+  "git_pull_url": "git://gist.github.com/1263239.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "id": 1082488
+      },
+      "version": "ccb58da83609b0718dc4ef2b6eb97480396564de",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1263239/ccb58da83609b0718dc4ef2b6eb97480396564de",
+      "committed_at": "2011-10-05T19:30:05Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "id": 1082488
+      },
+      "version": "1db6851d9c7b8582730645a65c8ed735e5100e22",
+      "change_status": {
+        "total": 11,
+        "additions": 11,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1263239/1db6851d9c7b8582730645a65c8ed735e5100e22",
+      "committed_at": "2011-10-05T00:35:22Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "id": 1082488
+      },
+      "version": "976f1907eb6cb2b771e6b8ead574c89b023bcf78",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1263239/976f1907eb6cb2b771e6b8ead574c89b023bcf78",
+      "committed_at": "2011-10-05T00:22:46Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "id": 1082488
+      },
+      "version": "fcb676536360a59a01c16982b4047ca68f787c79",
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1263239/fcb676536360a59a01c16982b4047ca68f787c79",
+      "committed_at": "2011-10-05T00:21:11Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "id": 1082488
+      },
+      "version": "3c87a5185e136cae1dfa0fc4c8a823832e86e885",
+      "change_status": {
+        "total": 144,
+        "additions": 144,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1263239/3c87a5185e136cae1dfa0fc4c8a823832e86e885",
+      "committed_at": "2011-10-05T00:20:40Z"
+    }
+  ],
+  "description": "SVG slippy map using Viewbox with D3",
+  "html_url": "https://gist.github.com/1263239",
+  "git_push_url": "git@gist.github.com:1263239.git",
+  "comments": 0,
+  "created_at": "2011-10-05T00:20:39Z",
+  "public": true,
+  "files": {
+    "svg_map.js": {
+      "raw_url": "https://gist.github.com/raw/1263239/32a8c3addfb79ec5766c3ab5767b62d4a9232cc1/svg_map.js",
+      "type": "application/javascript",
+      "filename": "svg_map.js",
+      "size": 3425,
+      "content": "function lng2map(lon) { return (((lon+180)/360*Math.pow(2,0))); }\nfunction lat2map(lat)  { return (((1-Math.log(Math.tan(lat*Math.PI/180) + 1/Math.cos(lat*Math.PI/180))/Math.PI)/2 *Math.pow(2,0))); }\n\nfunction svg_map(svg,p) { return new svg_map_obj(svg,p)  }\n\nfunction svg_map_obj(svg,p) {\n    var p = p ? p : {},\n        x0 = p.x0 ? p.x0 : 0.1286,  // default x start location [0,1]\n        y0 = p.y0 ? p.y0 : 0.33066,  // default y start location [0,1]\n        zoom = p.zoom ? p.zoom : 6,  // default zoom at 6\n        update_delay = p.update_freq ? p.update_freq :  50,   // How fast we look for new tiles\n        zoom_delay = p.zoom_delay ? p.zoom_delay : 1000,      // How long we keep old tiles when zooming\n        tiles = [], keepTiles = [],  // variables holding the tile ids\n        mapLayer = svg.append(\"svg:g\").attr(\"class\",\"mapLayer\"),\n        viewBox = svg[0][0].viewBox.baseVal;\n    \n    function PixelWidthSVG()  { return svg[0][0].clientWidth ? svg[0][0].clientWidth  : svg[0][0].parentNode.clientWidth;}\n    function PixelHeightSVG() { return svg[0][0].clientHeight ? svg[0][0].clientHeight : svg[0][0].parentNode.clientHeight;}\n\n    function resize() {\n        new_zoom = Math.floor(checkZoom());\n        viewBox.width  = PixelWidthSVG() / (Math.pow(2,new_zoom)*256);\n        viewBox.height = PixelHeightSVG()  / (Math.pow(2,new_zoom)*256);\n        loadTiles();\n    }\n        \n    checkZoom = function() {\n            return Math.min(Math.max(Math.log(PixelWidthSVG()/(viewBox.width*256))/Math.log(2),0),18);\n    }\n\n    loadTiles = function() {\n        new_zoom = Math.floor(checkZoom());\n        if (zoom != new_zoom) {\n            zoom = new_zoom;\n            if (keepTiles.length == 0) {\n                keepTiles = tiles.slice();\n                setTimeout(function (){ keepTiles = []},1000)\n            }\n        }\n        no_x = Math.floor(PixelWidthSVG()  / 256)+3;\n        no_y = Math.floor(PixelHeightSVG()  / 256)+3;\n\n        firstX = Math.max(Math.floor(viewBox.x * Math.pow(2,zoom)-1),0);\n        firstY = Math.max(Math.floor(viewBox.y * Math.pow(2,zoom)-1),0);\n      \n        tiles = [];\n        \n        for (x=Math.max(firstX,0); x<Math.min(firstX+no_x,Math.pow(2,zoom));x++) {\n            for (y=Math.max(firstY,0); y <Math.min(firstY+no_y,Math.pow(2,zoom));y++) {\n                tiles.push({x:x,y:y,zoom:zoom});\n            };\n        };\n        \n        images = mapLayer.selectAll(\"image\").data(tiles.concat(keepTiles),function(d) { return d.zoom+\"/\"+d.x+\"/\"+d.y;});\n        images.enter()\n            .append(\"svg:image\")\n            .attr(\"x\",function(d) { return (d.x) / Math.pow(2,zoom);})\n            .attr(\"y\",function(d) { return (d.y)/ Math.pow(2,zoom);})\n            .attr(\"height\",1/Math.pow(2,zoom))\n            .attr(\"width\",1/Math.pow(2,zoom))\n            .property(\"shape-rendering\",\"crispEdges\")\n            .attr(\"xlink:href\",function(d) { \n                    return \"http://b.tile.cloudmade.com/\"+p.api_key+\"/1/256/\"+zoom+\"/\"+d.x+\"/\"+d.y+\".png\";})\n                    \n        images.exit().remove();\n    }\n    svg.attr(\"viewBox\",x0+\" \"+y0+\" \"+\"0.1 0.1\")\n        .attr(\"preserveAspectRatio\", \"xMinYMin meet\");  // Ensure a viewbox exists with fixed aspect ratio\n    resize();\n    setInterval(loadTiles,update_delay);  // Keep looking for new tiles and discard old\n    svg.svg_map = {checkZoom:checkZoom,resize:resize,loadTiles:loadTiles};\n    return svg.map_data;\n}\n",
+      "language": "JavaScript"
+    },
+    "readme.md": {
+      "raw_url": "https://gist.github.com/raw/1263239/fabe9c35032fdfb66db51443fa84a7e034987a14/readme.md",
+      "type": "text/plain",
+      "filename": "readme.md",
+      "size": 1085,
+      "content": "(hold shift when scrolling the mouse-wheel for now)\n\nThis is a simple slippy map that keeps the absolute coordinates of all tiles/location static, but moves the SVG viewbox as the user pans and zooms around.  We can then draw SVG objects directly on the coordinate system and do not have to update location when the viewBox is changed.\n\nThere are two components to this, both standalone.\n\n1)  svg_interact: provides pan and zoom to any svg-object by moving the viewBox\n2)  svg_map:   a tiler that watches the viewbox location and size at regular intervals and fetches the appropriate cloudmake tiles to cover the viewbox with some extra padding.   This tiler uses the .data() method to enter and exit tiles.  Another alternative might be to keep an array and push old items out as new come in.  We need to discard old tiles as number of visible tiles affects performance.  The graphic contents are however automatically cached by the browser.\n\nI would really appreciate helpful hints on making this better and more d3 compatible (i.e. using pv.behavior to get better mouse functions)\n\n",
+      "language": "Markdown"
+    },
+    "svg_interact.js": {
+      "raw_url": "https://gist.github.com/raw/1263239/152d37a51987ba3478656d3b1496bce93f6b9c27/svg_interact.js",
+      "type": "application/javascript",
+      "filename": "svg_interact.js",
+      "size": 1647,
+      "content": "function svg_interact(svg,p) {\n    return new svg_interactObj(svg,p);\n}\n\nfunction svg_interactObj(svg,p) {  \n    var p = p ? p : {},\n        zoom_speed = p.zoom_speed ? p.zoom_speed : 1.15,\n        viewBox = svg[0][0].viewBox.baseVal;\n        panning = null, \n        current_mouse = null;\n        \n\n    /* Panning moves the viewbox */\n\n    function mousemove(){\n        current_mouse = d3.svg.mouse(this);\n        if (panning)  {\n            viewBox.x +=(panning[0] -current_mouse[0]);\n            viewBox.y += (panning[1] - current_mouse[1]);\n        }\n    };\n\n    svg.on(\"mousemove\",mousemove)\n    svg.on(\"mousedown\", function() { panning = d3.svg.mouse(this)});\n    d3.select(window).on(\"mouseup\",function () { panning = null;})\n    svg[0][0].ondragstart = function() { return false }  // Firefox fix\n\n\n    /* Zoom with mousewheel - keeping mouse position in same location*/\n\n    function wheel(event) {\n        var delta = 0;\n        if (!event) event = window.event;\n        if (event.wheelDelta) {\n            delta = event.wheelDelta/120; \n        } else if (event.detail) {\n            delta = -event.detail/3;\n        }\n        move = (delta<0) ? -delta * zoom_speed : 1/(delta*zoom_speed);\n    \n        viewBox.x=(current_mouse[0]-(current_mouse[0]-viewBox.x)*move);\n        viewBox.y=(current_mouse[1]-(current_mouse[1]-viewBox.y)*move); \n        viewBox.height = viewBox.height * move;\n        viewBox.width = viewBox.width * move;\n        };\n      \n  \n    svg[0][0].addEventListener('DOMMouseScroll', wheel, false);\n    svg[0][0].onmousewheel = wheel;\n    document.onmousewheel = function () { return null};\n\n\n     \n    return svg;\n}",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/1263239/13e031db48518b1c563e6c4aeed4e25684b3dd38/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 542,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n<script type=\"text/javascript\" src=\"svg_interact.js\"></script>\n<script type=\"text/javascript\" src=\"svg_map.js\"></script>\n</head>\n\n<body></body>\n\n<script type=\"text/javascript\">\n  svg=d3.select(\"body\").append(\"svg:svg\").attr(\"height\",\"900\").attr(\"width\",\"100%\")\n  svg.call(svg_interact,{zoom_speed:1.15});\n  svg.call(svg_map,{api_key:\"3eb45b95929d472d8fe4a2a5dafbd314\"});  // Please get API key at cloudmake.com\n</script>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-10-05T00:21:11Z",
+  "url": "https://api.github.com/gists/1263239",
+  "id": "1263239"
+}

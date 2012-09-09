@@ -1,0 +1,101 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_push_url": "git@gist.github.com:1389927.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "b201bc0d825c24efbd6e73cf505704122ef4da02",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-11-23T21:44:52Z",
+      "url": "https://api.github.com/gists/1389927/b201bc0d825c24efbd6e73cf505704122ef4da02"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "f976a3a388ba800bffa8de8e2e933da07560610c",
+      "change_status": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "committed_at": "2011-11-23T21:14:52Z",
+      "url": "https://api.github.com/gists/1389927/f976a3a388ba800bffa8de8e2e933da07560610c"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "c1f9a39f28ae001efb7f13d75215bfab6083b9ab",
+      "change_status": {
+        "total": 154,
+        "additions": 154,
+        "deletions": 0
+      },
+      "committed_at": "2011-11-23T21:11:57Z",
+      "url": "https://api.github.com/gists/1389927/c1f9a39f28ae001efb7f13d75215bfab6083b9ab"
+    }
+  ],
+  "description": "A Bar Chart",
+  "comments": 0,
+  "created_at": "2011-11-23T21:11:57Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1389927",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1389927/59ddbb8b15f82a530aee9360b82f8da764de8d4b/index.html",
+      "size": 2255,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Bar Chart</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.6.0\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.csv.js?2.6.0\"></script>\n    <style type=\"text/css\">\n\nbody {\n  font: 10px sans-serif;\n}\n\n.bar rect {\n  fill: steelblue;\n}\n\n.bar text.value {\n  fill: white;\n}\n\n.axis {\n  shape-rendering: crispEdges;\n}\n\n.axis path {\n  fill: none;\n}\n\n.x.axis line {\n  stroke: #fff;\n  stroke-opacity: .8;\n}\n\n.y.axis path {\n  stroke: black;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar m = [30, 10, 10, 30],\n    w = 960 - m[1] - m[3],\n    h = 930 - m[0] - m[2];\n\nvar format = d3.format(\",.0f\");\n\nvar x = d3.scale.linear().range([0, w]),\n    y = d3.scale.ordinal().rangeRoundBands([0, h], .1);\n\nvar xAxis = d3.svg.axis().scale(x).orient(\"top\").tickSize(-h),\n    yAxis = d3.svg.axis().scale(y).orient(\"left\").tickSize(0);\n\nvar svg = d3.select(\"body\").append(\"svg\")\n    .attr(\"width\", w + m[1] + m[3])\n    .attr(\"height\", h + m[0] + m[2])\n  .append(\"g\")\n    .attr(\"transform\", \"translate(\" + m[3] + \",\" + m[0] + \")\");\n\nd3.csv(\"sample-data.csv\", function(data) {\n\n  // Parse numbers, and sort by value.\n  data.forEach(function(d) { d.value = +d.value; });\n  data.sort(function(a, b) { return b.value - a.value; });\n\n  // Set the scale domain.\n  x.domain([0, d3.max(data, function(d) { return d.value; })]);\n  y.domain(data.map(function(d) { return d.name; }));\n\n  var bar = svg.selectAll(\"g.bar\")\n      .data(data)\n    .enter().append(\"g\")\n      .attr(\"class\", \"bar\")\n      .attr(\"transform\", function(d) { return \"translate(0,\" + y(d.name) + \")\"; });\n\n  bar.append(\"rect\")\n      .attr(\"width\", function(d) { return x(d.value); })\n      .attr(\"height\", y.rangeBand());\n\n  bar.append(\"text\")\n      .attr(\"class\", \"value\")\n      .attr(\"x\", function(d) { return x(d.value); })\n      .attr(\"y\", y.rangeBand() / 2)\n      .attr(\"dx\", -3)\n      .attr(\"dy\", \".35em\")\n      .attr(\"text-anchor\", \"end\")\n      .text(function(d) { return format(d.value); });\n\n  svg.append(\"g\")\n      .attr(\"class\", \"x axis\")\n      .call(xAxis);\n\n  svg.append(\"g\")\n      .attr(\"class\", \"y axis\")\n      .call(yAxis);\n});\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/1389927/df34d3e2439c41ae7e18f00e44418c31d23589b9/README.md",
+      "size": 560,
+      "content": "This simple bar chart demonstrates two new features of [D3 2.6](http://github.com/mbostock/d3):\n\n* Namespaces are now optional! You can now append an SVG element by just saying `append(\"svg\")`, without specifying the namespace explicitly as \"svg:svg\". Adding an element whose name is a known prefix (in d3.ns.prefix) implies a namespace; similarly, appending or inserting an element will inherit the namespace from its parent.\n\n* The axis component now supports ordinal scales. The labels on the left side of the bar chart are rendered with the axis component.",
+      "language": "Markdown"
+    },
+    "sample-data.csv": {
+      "type": "text/csv",
+      "filename": "sample-data.csv",
+      "raw_url": "https://gist.github.com/raw/1389927/bff541fb9503abec17aee142dd209512aeae62d7/sample-data.csv",
+      "size": 582,
+      "content": "name,value\nAL,4708708\nAK,698473\nAZ,6595778\nAR,2889450\nCA,36961664\nCO,5024748\nCT,3518288\nDE,885122\nDC,599657\nFL,18537969\nGA,9829211\nHI,1295178\nID,1545801\nIL,12910409\nIN,6423113\nIA,3007856\nKS,2818747\nKY,4314113\nLA,4492076\nME,1318301\nMD,5699478\nMA,6593587\nMI,9969727\nMN,5266214\nMS,2951996\nMO,5987580\nMT,974989\nNE,1796619\nNV,2643085\nNH,1324575\nNJ,8707739\nNM,2009671\nNY,19541453\nNC,9380884\nND,646844\nOH,11542645\nOK,3687050\nOR,3825657\nPA,12604767\nRI,1053209\nSC,4561242\nSD,812383\nTN,6296254\nTX,24782302\nUT,2784572\nVT,621760\nVA,7882590\nWA,6664195\nWV,1819777\nWI,5654774\nWY,544270\nPR,3967288\n",
+      "language": null
+    }
+  },
+  "updated_at": "2011-11-23T21:11:57Z",
+  "url": "https://api.github.com/gists/1389927",
+  "git_pull_url": "git://gist.github.com/1389927.git",
+  "id": "1389927"
+}

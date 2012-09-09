@@ -1,0 +1,51 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+    "login": "enjalot",
+    "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/enjalot",
+    "id": 96189
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "committed_at": "2011-11-18T23:56:01Z",
+      "version": "feb1bb8ce2ed756bdc79d3c05805cf3562379b3b",
+      "url": "https://api.github.com/gists/1378144/feb1bb8ce2ed756bdc79d3c05805cf3562379b3b",
+      "change_status": {
+        "total": 157,
+        "additions": 157,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "d3 behavior.drag example",
+  "comments": 1,
+  "created_at": "2011-11-18T23:56:01Z",
+  "git_pull_url": "git://gist.github.com/1378144.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1378144",
+  "git_push_url": "git@gist.github.com:1378144.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1378144/98576a82944a5601b540b03ba0098aa854116b19/index.html",
+      "size": 4681,
+      "content": "<!DOCTYPE html>\n<html>\n <head>\n   <title>Chernoff Smileys</title>\n   <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.5.0\"></script>\n   <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.5.0\"></script>\n   <style type=\"text/css\">\n\n   </style>\n </head>\n <body>\n\n     <p>Click a Smiley<p>\n\n   <script type=\"text/javascript\">\n\n\n    var drag = d3.behavior.drag()\n        .on(\"drag\", function(d,i) {\n            d.x += d3.event.dx\n            d.y += d3.event.dy\n            d3.select(this).attr(\"transform\", function(d,i){\n                return \"translate(\" + [ d.x,d.y ] + \")\"\n            })\n        });\n\n\n    function face_factory(classname, data, x, y, r)\n    { \n        //data format\n        //{ \"x\": 0 - 1 , \"y\": 0 -1, \"z\": 0-1 }\n        //color could be made a parameter\n        //var arc = d3.svg.arc().outerRadius(r)\n        //var donut = d3.layout.pie();\n\n        var face = d3.select(\"#charts\")\n            .append(\"svg:g\")\n                //.data([data.sort(d3.descending)])\n                //.data([data])\n                .data([ {\"x\":x, \"y\":y} ])\n                .attr(\"class\", classname)\n                .attr(\"transform\", \"translate(\" + x + \",\" + y + \")\")\n                .call(drag);\n\n\n        console.log(\"make head\");\n        var head_color = d3.scale.linear()\n            .domain([0, 1])\n            .interpolate(d3.interpolateRgb)\n            .range([\"#ff0000\", \"#0000ff\"]);\n\n        var head = face.append(\"svg:circle\")\n                .attr(\"class\", \"head\")\n                .attr(\"fill\", function(d){ return head_color(data.x); })\n                .attr(\"fill-opacity\", .8)\n                .attr(\"stroke\", \"#000\")\n                .attr(\"stroke-width\", 4)\n                .attr(\"r\", r);\n\n        console.log(\"make mouth\");\n        var mouth_x = [0, .5, 1];\n\n        var mouth_x_range = d3.scale.linear()\n            .domain([0, 1])\n            .range([-r/2, r/2]);\n\n\n        var mouth_y_range = d3.scale.linear()\n            .domain([0, 1])\n            .range([-r/2, r/2]);\n\n        var mouth_y = [.5, data.y, .5];\n        console.log(mouth_y)\n\n        var mouth_line = d3.svg.line()\n            .x(function(d,i) {\n                return mouth_x_range(mouth_x[i]);\n            })\n            .y(function(d,i) {\n                return mouth_y_range(mouth_y[i]);\n            })\n            .interpolate(\"basis\");\n\n        /*\n        var mouth = face.append(\"svg:path\")\n                .attr(\"class\", \"mouth\")\n                .attr(\"stroke\", \"#000\")\n                .attr(\"stroke-width\", 4)\n                .attr(\"fill\", \"none\")\n                .attr(\"transform\", \"translate(\" + [0, r/3] + \")\")\n                .attr(\"d\", mouth_line(mouth_x));\n                */\n\n        console.log(\"create eyes\")\n        var eyer = r/10 + data.z * (r/3);\n        console.log(eyer);\n        var left_eye = face.append(\"svg:circle\")\n            .attr(\"class\", \"eyes\")\n            .attr(\"stroke\", \"#000\")\n            .attr(\"fill\", \"none\")\n            .attr(\"stroke-width\", 4)\n            .attr(\"transform\", \"translate(\" + [-r/2.5, -r/3] + \")\")\n            .attr(\"r\", eyer);\n\n        //eyer = r/10 + data.w * (r/3);\n        var right_eye = face.append(\"svg:circle\")\n            .attr(\"class\", \"eyes\")\n            .attr(\"stroke\", \"#000\")\n            .attr(\"fill\", \"none\")\n            .attr(\"stroke-width\", 4)\n            .attr(\"transform\", \"translate(\" + [r/2.5, -r/3] + \")\")\n            .attr(\"r\", eyer);\n\n        var text = face.append(\"svg:text\")\n            .text(\"SMILE!\")\n            .attr(\"y\", \".5em\")\n            .attr(\"transform\", \"translate(\" + [0, r/3] + \")\")\n            .attr(\"text-anchor\", \"middle\")\n            .attr(\"font-weight\", 700)\n            .attr(\"font-family\", \"Helvetica\")\n            .attr(\"fill\", \"#ff0\")\n            .attr(\"stroke\", \"none\")\n            .attr(\"pointer-events\", \"none\") \n\n    }\n\n    var w = 700;\n    var h = 400;\n\n    //setup svg canvas\n    d3.select(\"body\")\n        .append(\"svg:svg\")\n            .attr(\"width\", w)\n            .attr(\"height\", h)\n            .attr(\"id\", \"charts\")\n            //.on(\"click\", clickypie)\n            .append(\"svg:rect\")\n                .attr(\"width\", \"100%\")\n                .attr(\"height\", \"100%\")\n                .attr(\"stroke\", \"#000\")\n                .attr(\"stroke-width\", 3)\n                .attr(\"fill\", \"none\")\n\n    //r = 100;\n    for(i = 0; i < 20; i++)\n    {\n        var r = 20 + Math.random() * 50;\n        var data = { \"x\":Math.random(), \"y\":Math.random(), \"z\":Math.random(), \"w\":Math.random() };\n        x = Math.random() * w\n        y = Math.random() * h\n        face_factory(\"face\"+i, data, x, y, r);\n    }\n    \n   \n   </script>\n </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-11-18T23:56:01Z",
+  "url": "https://api.github.com/gists/1378144",
+  "id": "1378144"
+}

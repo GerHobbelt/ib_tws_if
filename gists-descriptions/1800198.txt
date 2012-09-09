@@ -1,0 +1,135 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-09-09T08:44:23Z",
+      "version": "8267a269212107f61825a188f62fc609b9b21358",
+      "url": "https://api.github.com/gists/1800198/8267a269212107f61825a188f62fc609b9b21358"
+    },
+    {
+      "change_status": {
+        "total": 17,
+        "additions": 17,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-02-11T15:03:23Z",
+      "version": "6146cd4843fa7b33828ecdd37961ada99cb482eb",
+      "url": "https://api.github.com/gists/1800198/6146cd4843fa7b33828ecdd37961ada99cb482eb"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-02-11T15:00:59Z",
+      "version": "2c68af689549ab4f9a04618af9ff79ffaa624c27",
+      "url": "https://api.github.com/gists/1800198/2c68af689549ab4f9a04618af9ff79ffaa624c27"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-02-11T14:49:48Z",
+      "version": "78e41e80f425537071ed459447f4d10c4db3d926",
+      "url": "https://api.github.com/gists/1800198/78e41e80f425537071ed459447f4d10c4db3d926"
+    },
+    {
+      "change_status": {
+        "total": 63,
+        "additions": 63,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-02-11T14:46:26Z",
+      "version": "fd8c9a6b0cac219cfc2584c266da50d720b938f5",
+      "url": "https://api.github.com/gists/1800198/fd8c9a6b0cac219cfc2584c266da50d720b938f5"
+    }
+  ],
+  "description": "showcase non-integer pixel sizes reported by FireFox (and how mootools struggles with those)",
+  "html_url": "https://gist.github.com/1800198",
+  "comments": 0,
+  "created_at": "2012-02-11T14:46:26Z",
+  "git_pull_url": "git://gist.github.com/1800198.git",
+  "public": true,
+  "files": {
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/1800198/c581bd3dfa30ffb39d0c9d64f6e4afcdf2a71749/README.md",
+      "size": 78,
+      "content": "# The issue & showcase\n\n...\n\n\n## Test #1\n\n...\n\n\n## Test #2\n\n...\n\n\n## Test #3\n\n",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1800198/c7c19d2a7e681b3cbb5fd88db0bba9899edeac7c/index.html",
+      "size": 3707,
+      "content": "<html>\n<head>\n  <script src=\"http://mootools.net/download/get/mootools-core-1.4.4-full-nocompat.js\" type=\"text/javascript\"></script>\n\n... load styles to show floating divs and their borders and such...\n</head>\n<body style=\"overflow: auto;\">\n  <h1>Test #1</h1>\n  <p>Number One exhibits the failure of mootools to cope with non-integer pixel sizes. Both Henry's are dimensioned to be 'pixel perfect', i.e. together, they occupy all the width' pixels available in the red container DIV.\n  </p>\n  <div id=\"container-1\">\n\n    <div class=\"first\">\n      <h1>Henry The First</h1>\n      <p>Here I am, jiggle that CTRL+scroll-wheel of yours and here I am not... <strong>occasionally</strong>. Or rather, when you zoom out (i.e. when I become smaller) I'll be a goner for sure!</p>\n    </div>\n    <div class=\"right\">\n      <h2>Right-Wing Henry</h2>\n      <p>All I do is borderline!</p>\n    </div>\n  </div>\n  <hr />\n  <h1>Test #2</h1>\n  <p>Number Two exhibits the artifacts of mootools' integer processing - and hence accumulating rounddown losses - of said non-integer pixel sizes.</p>\n  <p>Since we assume you to be a crafty little bugger, you'll have seen the issue of Number One and 'fixed' it by allowing that extra spare pixel in between Henry's. When it is still a 'spare', it'll show in agony green.</p>\n  <p>Note, however, that -1px 'correction hack' isn't covering worst-case as you CTRL-scrollwheel / zoom out: Henry the First will still be pushed out at some zoom levels. This is due to the accumulation of rounddown errors in the <code>getComputedSize()</code> method: it is not at fault per se, it's just that this call shows that you need to analyze the internals of your JS framework (moo, jq, whatever) to determine the correct rounddown 'error expression'; and thus 'worst-case error compensation value': we're better off with -2px correction here, as Number Three will prove, below.\n  </p>\n  <div id=\"container-2\">\n    <div class=\"first\">\n      <h1>Henry The First</h1>\n      <p>Here I am, jiggle that CTRL+scroll-wheel of yours and here I am not... <strong>occasionally</strong>. Or rather, when you zoom out (i.e. when I become smaller) I'll be a goner for sure!</p>\n    </div>\n    <div class=\"right\">\n      <h2>Right-Wing Henry</h2>\n      <p>All I do is borderline!</p>\n    </div>\n  </div>\n  <hr />\n  <h1>Test #3</h1>\n  <p>Number Three comes with 2px spare agony green space between both Henry's.\n  </p>\n  <p>The lesson to take away from all this is not that getComputedSize() is wrong, but that:</p>\n  <ul>\n    <li>don't blame getComputedSize(); when you look into the mootools code, you'll see a plethora of .toInt() invocations in there, it's just that I picked out getComputedSize() as that was the one that led me to this. Blame (most of) the .toInt() calls in there instead.</li>\n    <li>CSS dimensions should be treated as float values, rather than integers, to make sure that the error component in any subsequent calculations will, with extremely high probability, remain 1px or less - I won't ever say it'll be (0)zero as that is plain wrong, given that floating point calculations are implicitly inaccurate all by themselves.</li>\n  <div id=\"container-3\">\n    <div class=\"first\">\n      <h1>Henry The First</h1>\n      <p>Here I am, jiggle that CTRL+scroll-wheel of yours and here I am not... <strong>occasionally</strong>. Or rather, when you zoom out (i.e. when I become smaller) I'll be a goner for sure!</p>\n    </div>\n    <div class=\"right\">\n      <h2>Right-Wing Henry</h2>\n      <p>All I do is borderline!</p>\n    </div>\n  </div>\n  <hr />\n  <h1>Values as reported by our mootools test code</h1>\n  <div id=\"js-report\">\n  ... display measured values here...\n  </div>\n</body>\n</html>\n\n",
+      "language": "HTML"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/1800198/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    }
+  },
+  "git_push_url": "git@gist.github.com:1800198.git",
+  "updated_at": "2012-09-09T08:47:35Z",
+  "url": "https://api.github.com/gists/1800198",
+  "id": "1800198"
+}

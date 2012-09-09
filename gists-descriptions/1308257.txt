@@ -1,0 +1,188 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "a858a54895a4242c16f7f43f92fd343d",
+        "login": "nkhine",
+        "avatar_url": "https://secure.gravatar.com/avatar/a858a54895a4242c16f7f43f92fd343d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/nkhine",
+        "id": 85080
+      },
+      "created_at": "2012-07-10T10:34:22Z",
+      "updated_at": "2012-07-10T10:34:22Z",
+      "url": "https://api.github.com/gists/3082578",
+      "id": "3082578"
+    },
+    {
+      "user": null,
+      "created_at": "2012-08-27T15:19:43Z",
+      "updated_at": "2012-08-27T15:19:43Z",
+      "url": "https://api.github.com/gists/3489433",
+      "id": "3489433"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1308257.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "2c6413e7f119d68195b883d3319a5c7647c6b571",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1308257/2c6413e7f119d68195b883d3319a5c7647c6b571",
+      "committed_at": "2011-10-28T23:19:26Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "59b41f5618b96964df7b727f07f6b2b047f8115b",
+      "change_status": {
+        "total": 7,
+        "additions": 5,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1308257/59b41f5618b96964df7b727f07f6b2b047f8115b",
+      "committed_at": "2011-10-28T23:19:04Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "9b3b8a52e0c5efb90aabe606d7f90f0f46c51771",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1308257/9b3b8a52e0c5efb90aabe606d7f90f0f46c51771",
+      "committed_at": "2011-10-24T13:08:40Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "fded2c264ceccbaa128e271880108d1c712223ab",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1308257/fded2c264ceccbaa128e271880108d1c712223ab",
+      "committed_at": "2011-10-24T03:07:13Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "02fc82d97b507b65d0636294603a95f6745c4fb9",
+      "change_status": {
+        "total": 37,
+        "additions": 25,
+        "deletions": 12
+      },
+      "url": "https://api.github.com/gists/1308257/02fc82d97b507b65d0636294603a95f6745c4fb9",
+      "committed_at": "2011-10-24T03:04:46Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "3bfd70df5354da1676e47c568bcf62f1b07cf60e",
+      "change_status": {
+        "total": 6,
+        "additions": 4,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1308257/3bfd70df5354da1676e47c568bcf62f1b07cf60e",
+      "committed_at": "2011-10-24T02:53:50Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "1b67569b598525efad854978eced78ee74eec158",
+      "change_status": {
+        "total": 198,
+        "additions": 198,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1308257/1b67569b598525efad854978eced78ee74eec158",
+      "committed_at": "2011-10-24T02:49:01Z"
+    }
+  ],
+  "description": "The Euro Debt Crisis",
+  "html_url": "https://gist.github.com/1308257",
+  "git_push_url": "git@gist.github.com:1308257.git",
+  "comments": 0,
+  "created_at": "2011-10-24T02:49:01Z",
+  "public": true,
+  "files": {
+    "readme.md": {
+      "raw_url": "https://gist.github.com/raw/1308257/072cb7c45689382f9542c6b9d695d91ee014c665/readme.md",
+      "type": "text/plain",
+      "filename": "readme.md",
+      "size": 1024,
+      "content": "Bill Marsh created a nice [visual guide to the Euro debt crisis](http://www.nytimes.com/interactive/2011/10/23/sunday-review/an-overview-of-the-euro-crisis.html) in today’s *New York Times* using a custom graph layout with directed edges. An alternative approach to visualizing asymmetric relationships among a group of entities is a [chord diagram](http://mbostock.github.com/d3/ex/chord.html). Chord diagrams don’t show indirect relationships as well, but they better convey the magnitudes of the debt for each country.\n\nThis visualization uses two chord diagrams. The diagram on the left emphasizes how much each country lends (**creditors**); you can see Japan and France are the biggest lenders, but France is also the most exposed by its risky debts to Italy and Greece. The diagram on the right emphasizes how much each country owes (**debtors**); the United States has by far the largest debt, nearly three times the size of the next-largest debtor, Britain!\n\nBuilt with [D3.js](http://mbostock.github.com/d3/).\n",
+      "language": "Markdown"
+    },
+    "debt.csv": {
+      "raw_url": "https://gist.github.com/raw/1308257/82d0000caea1bb88c55287833060975c7405cb54/debt.csv",
+      "type": "text/csv",
+      "filename": "debt.csv",
+      "size": 1037,
+      "content": "creditor,debtor,amount,risk\nBritain,France,22.4,3\nBritain,Greece,0.55,0\nBritain,Italy,26,0\nBritain,Portugal,19.4,0\nBritain,United States,345,1\nFrance,Germany,53.8,1\nFrance,Greece,53.9,0\nFrance,Ireland,17.3,0\nFrance,Italy,366,0\nFrance,Japan,7.73,1\nFrance,Portugal,18.3,0\nFrance,Spain,118,2\nFrance,United States,322,1\nGermany,Britain,321,1\nGermany,Greece,19.3,0\nGermany,Ireland,48.9,0\nGermany,Portugal,32.5,0\nGermany,Spain,57.6,2\nGermany,United States,324,1\nIreland,Britain,12,1\nIreland,Greece,0.34,0\nIreland,Spain,6.38,2\nItaly,Germany,111,1\nItaly,Greece,3.22,0\nItaly,Ireland,2.83,0\nItaly,Portugal,0.87,0\nJapan,Britain,28.2,1\nJapan,Germany,88.5,1\nJapan,Greece,1.37,0\nJapan,Ireland,18.9,0\nJapan,Italy,38.8,0\nJapan,Portugal,2.18,0\nJapan,Spain,25.9,2\nJapan,United States,796,1\nPortugal,Greece,10.1,0\nPortugal,Ireland,3.77,0\nPortugal,United States,0.52,1\nSpain,Britain,326,1\nSpain,Greece,0.78,0\nSpain,Italy,9.79,0\nSpain,Portugal,62,0\nSpain,United States,163,1\nUnited States,Greece,3.1,0\nUnited States,Ireland,11.1,0\nUnited States,Italy,3.16,0\n",
+      "language": null
+    },
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/1308257/6d35bfe9eebcf43eb92cc5868afb9dc49502ad69/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 4778,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n    <title>The Euro Debt Crisis</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.4.6\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.4.6\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.csv.js?2.4.6\"></script>\n    <style type=\"text/css\">\n\n.group text {\n  font: 11px sans-serif;\n  pointer-events: none;\n}\n\n.group path {\n  stroke: #000;\n}\n\npath.chord {\n  stroke-width: .75;\n  fill-opacity: .75;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\n// Chart dimensions.\nvar w = 480,\n    h = 500,\n    r1 = Math.min(w, h) / 2 - 4,\n    r0 = r1 - 20,\n    format = d3.format(\",.3r\");\n\n// Square matrices, asynchronously loaded; credits is the transpose of debits.\nvar debits = [],\n    credits = [];\n\n// The chord layout, for computing the angles of chords and groups.\nvar layout = d3.layout.chord()\n    .sortGroups(d3.descending)\n    .sortSubgroups(d3.descending)\n    .sortChords(d3.descending)\n    .padding(.04);\n\n// The color scale, for different categories of \"worrisome\" risk.\nvar fill = d3.scale.ordinal()\n    .domain([0, 1, 2])\n    .range([\"#DB704D\", \"#D2D0C6\", \"#ECD08D\", \"#F8EDD3\"]);\n\n// The arc generator, for the groups.\nvar arc = d3.svg.arc()\n    .innerRadius(r0)\n    .outerRadius(r1);\n\n// The chord generator (quadratic Bézier), for the chords.\nvar chord = d3.svg.chord()\n    .radius(r0);\n\n// Add an SVG element for each diagram, and translate the origin to the center.\nvar svg = d3.select(\"body\").selectAll(\"div\")\n    .data([debits, credits])\n  .enter().append(\"div\")\n    .style(\"display\", \"inline-block\")\n    .style(\"width\", w + \"px\")\n    .style(\"height\", h + \"px\")\n  .append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + w / 2 + \",\" + h / 2 + \")\");\n\n// Load our data file…\nd3.csv(\"debt.csv\", function(data) {\n  var countries = {},\n      array = [],\n      n = 0;\n\n  // Compute a unique id for each country.\n  data.forEach(function(d) {\n    d.creditor = country(d.creditor);\n    d.debtor = country(d.debtor);\n    d.debtor.risk = d.risk;\n    d.valueOf = value; // convert object to number implicitly\n  });\n\n  // Initialize a square matrix of debits and credits.\n  for (var i = 0; i < n; i++) {\n    debits[i] = [];\n    credits[i] = [];\n    for (var j = 0; j < n; j++) {\n      debits[i][j] = 0;\n      credits[i][j] = 0;\n    }\n  }\n\n  // Populate the matrices, and stash a map from id to country.\n  data.forEach(function(d) {\n    debits[d.creditor.id][d.debtor.id] = d;\n    credits[d.debtor.id][d.creditor.id] = d;\n    array[d.creditor.id] = d.creditor;\n    array[d.debtor.id] = d.debtor;\n  });\n\n  // For each diagram…\n  svg.each(function(matrix, j) {\n    var svg = d3.select(this);\n\n    // Compute the chord layout.\n    layout.matrix(matrix);\n\n    // Add chords.\n    svg.selectAll(\"path.chord\")\n        .data(layout.chords)\n      .enter().append(\"svg:path\")\n        .attr(\"class\", \"chord\")\n        .style(\"fill\", function(d) { return fill(d.source.value.risk); })\n        .style(\"stroke\", function(d) { return d3.rgb(fill(d.source.value.risk)).darker(); })\n        .attr(\"d\", chord)\n      .append(\"svg:title\")\n        .text(function(d) { return d.source.value.debtor.name + \" owes \" + d.source.value.creditor.name + \" $\" + format(d.source.value) + \"B.\"; });\n\n    // Add groups.\n    var g = svg.selectAll(\"g.group\")\n        .data(layout.groups)\n      .enter().append(\"svg:g\")\n        .attr(\"class\", \"group\");\n\n    // Add the group arc.\n    g.append(\"svg:path\")\n        .style(\"fill\", function(d) { return fill(array[d.index].risk); })\n        .attr(\"id\", function(d, i) { return \"group\" + d.index + \"-\" + j; })\n        .attr(\"d\", arc)\n      .append(\"svg:title\")\n        .text(function(d) { return array[d.index].name + \" \" + (j ? \"owes\" : \"is owed\") + \" $\" + format(d.value) + \"B.\"; });\n\n    // Add the group label (but only for large groups, where it will fit).\n    // An alternative labeling mechanism would be nice for the small groups.\n    g.append(\"svg:text\")\n        .attr(\"x\", 6)\n        .attr(\"dy\", 15)\n        .filter(function(d) { return d.value > 110; })\n      .append(\"svg:textPath\")\n        .attr(\"xlink:href\", function(d) { return \"#group\" + d.index + \"-\" + j; })\n        .text(function(d) { return array[d.index].name; });\n  });\n\n  // Memoize the specified country, computing a unique id.\n  function country(d) {\n    return countries[d] || (countries[d] = {\n      name: d,\n      id: n++\n    });\n  }\n\n  // Converts a debit object to its primitive numeric value.\n  function value() {\n    return +this.amount;\n  }\n});\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-10-24T02:49:01Z",
+  "url": "https://api.github.com/gists/1308257",
+  "id": "1308257"
+}

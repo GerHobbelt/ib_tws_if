@@ -1,0 +1,259 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "24caa074abfd65e7ab42cb90fcb26b9d",
+        "login": "ekaty",
+        "url": "https://api.github.com/users/ekaty",
+        "avatar_url": "https://secure.gravatar.com/avatar/24caa074abfd65e7ab42cb90fcb26b9d?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1657762
+      },
+      "created_at": "2012-04-23T19:55:29Z",
+      "updated_at": "2012-04-23T19:55:29Z",
+      "url": "https://api.github.com/gists/2473399",
+      "id": "2473399"
+    }
+  ],
+  "user": {
+    "gravatar_id": "580e00312773d30472c21660f69eb0da",
+    "login": "johan",
+    "url": "https://api.github.com/users/johan",
+    "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 2459
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "version": "3d4ad3c2afc70968e6349cb4ec734c4065e05030",
+      "committed_at": "2011-11-11T10:51:24Z",
+      "url": "https://api.github.com/gists/1357601/3d4ad3c2afc70968e6349cb4ec734c4065e05030"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "53b8ee7d7214a6e7178079032d8eec60afc44332",
+      "committed_at": "2011-11-11T10:46:21Z",
+      "url": "https://api.github.com/gists/1357601/53b8ee7d7214a6e7178079032d8eec60afc44332"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "version": "15b75e3f4d04ebec09dadf07b222d6507fc44432",
+      "committed_at": "2011-11-11T10:45:43Z",
+      "url": "https://api.github.com/gists/1357601/15b75e3f4d04ebec09dadf07b222d6507fc44432"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "7222127519794acc34da966ee2244a0cd0188e5d",
+      "committed_at": "2011-11-11T10:37:49Z",
+      "url": "https://api.github.com/gists/1357601/7222127519794acc34da966ee2244a0cd0188e5d"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 10,
+        "additions": 6,
+        "deletions": 4
+      },
+      "version": "6b554c97fecf2cea56f4511982d67380d6817611",
+      "committed_at": "2011-11-11T10:35:51Z",
+      "url": "https://api.github.com/gists/1357601/6b554c97fecf2cea56f4511982d67380d6817611"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 9,
+        "additions": 5,
+        "deletions": 4
+      },
+      "version": "0e002ae3a392f6689dfcd0127ffe68bcab63e039",
+      "committed_at": "2011-11-11T10:30:59Z",
+      "url": "https://api.github.com/gists/1357601/0e002ae3a392f6689dfcd0127ffe68bcab63e039"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "16104811b44f3dea26b6de4b368c20d786cb7ba2",
+      "committed_at": "2011-11-11T10:27:59Z",
+      "url": "https://api.github.com/gists/1357601/16104811b44f3dea26b6de4b368c20d786cb7ba2"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "version": "7bca4a680df7770cd1f0f1e5fb997dbda25d0d1f",
+      "committed_at": "2011-11-11T10:27:13Z",
+      "url": "https://api.github.com/gists/1357601/7bca4a680df7770cd1f0f1e5fb997dbda25d0d1f"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 281,
+        "additions": 93,
+        "deletions": 188
+      },
+      "version": "9a2306d7f7cca14cc39f4d58bc3e9ae5a0014873",
+      "committed_at": "2011-11-11T10:20:48Z",
+      "url": "https://api.github.com/gists/1357601/9a2306d7f7cca14cc39f4d58bc3e9ae5a0014873"
+    },
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 2459
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "version": "180712d266cd0ea2a3e9323fe3cc0b78f1d48b87",
+      "committed_at": "2011-11-11T09:31:07Z",
+      "url": "https://api.github.com/gists/1357601/180712d266cd0ea2a3e9323fe3cc0b78f1d48b87"
+    }
+  ],
+  "description": "Google Maps + D3 + USGS",
+  "comments": 0,
+  "created_at": "2011-11-11T09:32:37Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1357601",
+  "git_pull_url": "git://gist.github.com/1357601.git",
+  "files": {
+    "index.js": {
+      "type": "application/javascript",
+      "filename": "index.js",
+      "size": 2712,
+      "raw_url": "https://gist.github.com/raw/1357601/f32cde7f12f63bd8ae3f7b522df854110b23cda5/index.js",
+      "content": "// Create the Google Map…\nvar map = new google.maps.Map\n  ( d3.select(\"#map\").node()\n  , { zoom: 8\n    , center: new google.maps.LatLng(37.76487, -122.41948)\n    , mapTypeId: google.maps.MapTypeId.TERRAIN\n    }\n  );\n\nvar data // populated once we've loaded the csv\n\n  , time_now = new Date\n  , week_ago = new Date(time_now - 864e5 * 7)\n  , colour   = d3.time.scale()\n    .domain([time_now, week_ago])\n    .interpolate(d3.interpolateRgb)\n    .range(['red', 'steelblue'])\n  ;\n\n// Src, Eqid, Version, Datetime, Lat, Lon,\n//   Magnitude, Depth, NST, Region\n// nc,71676251,6,\"Saturday, November  5, 2011 21:52:18 UTC\",37.8460,-122.2407,\n//   3.1,6.00,175,\"San Francisco Bay area, California\"\nd3.csv(\"/d/1356889/earthquakes.csv\", function(d) {\n  function parse(d) {\n    return { id:    d.Eqid, region: d.Region //, v: d.Version\n           , time:  new Date(d.Datetime), nst: d.NST\n           , depth: +d.Depth, magnitude: d.Magnitude\n           , lat:   +d.Lat\n           , lng:   +d.Lon\n           };\n  }\n\n  data = d.filter(function(d) { return d.Src === 'nc'; }).map(parse);\n  var overlay = new google.maps.OverlayView();\n\n  // Add the container when the overlay is added to the map.\n  overlay.onAdd = function() {\n    var layer = d3.select(this.getPanes().overlayLayer).append(\"div\")\n        .attr(\"class\", \"quakes\");\n\n    // Draw each marker as a separate SVG element.\n    // We could use a single SVG, but what size would it have?\n    overlay.draw = function() {\n      var projection = this.getProjection(),\n          padding = 10;\n\n      var marker = layer.selectAll(\"svg\")\n          .data(data)\n          .each(transform) // update existing markers\n        .enter().append(\"svg:svg\")\n          .each(transform)\n          .attr(\"class\", \"marker\")\n        .append('svg:g');\n\n      marker.append('svg:title').text(function(d) {\n        return 'Magnitude '+ d.magnitude +' in '+ d3.region;\n      });\n\n      // Add a circle.\n      marker.append(\"svg:circle\")\n          .attr(\"r\", function(d) { return 1 + 3 * Math.sqrt(+d.magnitude); })\n          .attr(\"cx\", padding)\n          .attr(\"cy\", padding)\n          .attr('fill', function(d) { return colour(d.time); });\n\n      // Add a label.\n      marker.append(\"svg:text\")\n          .attr(\"x\", padding + 7)\n          .attr(\"y\", padding)\n          .attr(\"dy\", \".31em\")\n          .text(function(d) { return d.magnitude; });\n\n      function transform(d) {\n        d = new google.maps.LatLng(d.lat, d.lng);\n        d = projection.fromLatLngToDivPixel(d);\n        return d3.select(this)\n            .style(\"left\", (d.x - padding) + \"px\")\n            .style(\"top\", (d.y - padding) + \"px\");\n      }\n    };\n  };\n\n  // Bind our overlay to the map…\n  overlay.setMap(map);\n});\n",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1376,
+      "raw_url": "https://gist.github.com/raw/1357601/e2db602c1b8276cec584528fe3fd336be48960d7/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta name=\"viewport\" content=\"initial-scale=1.0, user-scalable=no\"/>\n    <title>Earthquakes &gt; 1.0 the past week</title>\n    <script src=\"http://maps.google.com/maps/api/js?sensor=true\"></script>\n    <script src=\"http://mbostock.github.com/d3/d3.js?2.5.0\"></script>\n    <script src=\"http://mbostock.github.com/d3/d3.csv.js?2.5.0\"></script>\n    <script src=\"http://mbostock.github.com/d3/d3.time.js?2.5.0\"></script>\n    <style type=\"text/css\">\n\nhtml, body, #map {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n\n.quakes, .quakes svg {\n  position: absolute;\n}\n\n.quakes svg {\n  width: 60px;\n  height: 20px;\n  padding-right: 100px;\n  font: 10px sans-serif;\n  /* we need rather many text shadows to outline the text in enough contrast */\n  text-shadow: 0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF,\n               0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF,\n               0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF, 0 0 1px #FFF,\n               0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF,\n               0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF;\n}\n\n.quakes circle {\n  stroke: black;\n  stroke-width: 1px;\n}\n\n#ca-zipcodes path {\n  stroke: #fff;\n  stroke-width: .0125px;\n}\n    </style>\n  </head>\n  <body>\n    <div id=\"map\"></div>\n    <script src=\"index.js\"></script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1357601.git",
+  "updated_at": "2011-11-11T09:33:19Z",
+  "url": "https://api.github.com/gists/1357601",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "580e00312773d30472c21660f69eb0da",
+      "login": "johan",
+      "url": "https://api.github.com/users/johan",
+      "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 2459
+    },
+    "description": "Google Maps + D3",
+    "comments": 0,
+    "created_at": "2011-10-28T08:00:49Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1321837",
+    "git_pull_url": "git://gist.github.com/1321837.git",
+    "files": {
+      "stations.json": {
+        "type": "application/json",
+        "filename": "stations.json",
+        "size": 3238,
+        "raw_url": "https://gist.github.com/raw/1321837/d3a200b6cad2d8abbdae60d7e57be00e945e34c9/stations.json",
+        "language": "JSON"
+      },
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 2903,
+        "raw_url": "https://gist.github.com/raw/1321837/d0805a0aa16fec590fe976a067b076c128b94d37/index.html",
+        "language": "HTML"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1321837.git",
+    "updated_at": "2011-10-28T08:00:49Z",
+    "url": "https://api.github.com/gists/1321837",
+    "id": "1321837"
+  },
+  "id": "1357601"
+}

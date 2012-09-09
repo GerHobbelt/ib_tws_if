@@ -1,0 +1,189 @@
+{
+  "git_pull_url": "git://gist.github.com/1457934.git",
+  "forks": [
+
+  ],
+  "git_push_url": "git@gist.github.com:1457934.git",
+  "updated_at": "2011-12-12T22:17:30Z",
+  "fork_of": {
+    "git_pull_url": "git://gist.github.com/1386444.git",
+    "git_push_url": "git@gist.github.com:1386444.git",
+    "updated_at": "2011-11-22T19:05:16Z",
+    "public": true,
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.github.com/raw/1386444/4ec75b70ac298a93d261a501de36e8e68a388f4a/index.html",
+        "size": 1875
+      }
+    },
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "url": "https://api.github.com/users/mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "mbostock",
+      "id": 230541
+    },
+    "html_url": "https://gist.github.com/1386444",
+    "url": "https://api.github.com/gists/1386444",
+    "description": "Square Circle Spiral Illusion",
+    "id": "1386444",
+    "comments": 0,
+    "created_at": "2011-11-22T18:26:46Z"
+  },
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/>\n    <style type=\"text/css\">\n\nbody {\n  background: #333;\n}\n\nrect {\n  stroke-width: 2.5px;\n}\n\n/*\n.square:nth-child(2n + 1) rect {\n}\n*/\n\n    </style>\n  </head>\n  <body>\n      <svg></svg>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.6.0\"></script>\n    <script type=\"text/javascript\" src=\"jwerty.js\"></script>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    start = Date.now();\n\nvar rings = [ ];\nvar lines = [ ];\n\nvar n = 25;\nvar m = 70;\n\nfor (i in d3.range(n))\n{\n    if(i < 3)\n        var speed = (i-3) * 1e-2;\n    else\n        var speed = (i-2) * 1e-2;\n    //var speed = 50e-2 / (i + 1)\n    //var speed = .001 *  n / (.5*i+1)\n    var speed = .001 * i * 4;\n\n    var data = d3.range(m) \n    lines.push({ \n        //radius: 65*i, \n        width: 5, \n        height: 15,\n        speed: speed,\n        //speed: speed_scale(i),\n        index: i,\n        data: data\n    })\n\n}\n\nvar xscale = d3.scale.linear()\n    .domain([0,m])\n    .range([0, w])\n\nvar omega = -.22\nfunction line_maker( data, speed )\n{\n    var freq = Math.PI*.4 + 3 * omega * data.index // * 3000\n    var svgline = d3.svg.line()\n    .x(function(d,i)\n    {\n        return xscale(d);\n    })\n    .y(function(d,i)\n    {\n        var theta = freq * d/m * Math.PI * 4 \n        //console.log(\"sin\", Math.sin(theta), d)\n        var y = data.height * (Math.sin(theta + (n-data.index) * .1 * speed * .18 ));\n        //console.log (\"y\", y)\n        return y\n    })\n    .interpolate(\"basis\")\n    return svgline(data.data);\n}\n\nvar spacing = 26;\nfunction lineEnter(d, i) {\n\n    //console.log(\"line enter\", d)\n  d3.select(this).selectAll(\"path.path\")\n      .data([d])\n      .enter()\n    .append(\"svg:path\")\n      .attr(\"class\", \"path\")\n      //.attr(\"transform\", function(_, i) { return \"translate(\" + [0, h - spacing * d.index] + \")\"; })\n    .attr(\"d\", function(d,i) {\n              return line_maker( d, 0 ) \n            }\n        )\n      .attr(\"stroke-width\", function(e,i) { return e.width;})\n      .attr(\"stroke\", \"#fff\")\n      .attr(\"fill\", \"none\")\n\n    update_spacing()\n}\n\nvar svg = d3.select(\"svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    //.attr(\"transform\", \"translate(\" + w / 2 + \",\" + h / 2 + \")scale(.6)\");\n\nvar line = svg.selectAll(\"g.line\")\n    .data(lines)\n  .enter().append(\"svg:g\")\n    .attr(\"class\", \"line\")\n    .each(lineEnter);\n\n\njwerty.key('a', function () { \n    omega -= .01;\n    console.log(\"omega\", omega)\n});\njwerty.key('d', function () { \n    omega += .01;\n    console.log(\"omega\", omega)\n});\n\nvar pause = false;\njwerty.key('p', function () { \n    pause = !pause;\n});\n\n\nvar sm = .39 \nfunction update_spacing()\n{\n    var th = spacing * n;\n    var hscale = d3.scale.linear()\n        .domain([0, n])\n        .range([0, h])\n\n    //console.log(\"th\", th, hscale(99))\n    console.log(\"spacing\", spacing)\n    d3.selectAll(\"g.line path\")\n        .attr(\"transform\", function(d, i) { \n            //console.log(\"h\",h, spacing, d.index);\n            //return \"translate(\" + [0, th - spacing * d.index] + \")\"; \n            return \"translate(\" + [0, h/2 + th / 2 - spacing * d.index] + \")\"; \n        })\n}\njwerty.key('↑', function () { \n    spacing += 1;\n    update_spacing();\n});\njwerty.key('↓', function () { \n    spacing -= 1;\n    update_spacing();\n});\n//jwerty.key('↑', function () { \njwerty.key('←', function () { \n    sm -= .01;\n    console.log(\"speed multiplier\", sm);\n});\n//jwerty.key('↓', function () { \njwerty.key('→', function () { \n    sm += .01;\n    console.log(\"speed multiplier\", sm);\n});\n\n\nvar color = d3.scale.linear()\n    .domain([-1, 1])\n    .interpolate(d3.interpolateRgb)\n    .range(['#fff', '#000'])\n\nvar opacity = d3.scale.linear()\n    .domain([0, n])\n    .range([1, .4])\n\n\nb = 1;\nd3.timer(function() {\n  if(pause) return false;\n  var elapsed = Date.now() - start\n  var damp = .3\n\n  rotate = function(d,i) { \n  var speed = sm * d.speed * elapsed * .1\n    return \"rotate(\" + speed + \")\"; \n  };\n\n  line = d3.selectAll(\"g.line path\")\n      .attr(\"d\", function(d,i) {\n             //var speed = a * d.speed * elapsed + .01 * d.index\n             var speed = sm * .08 * elapsed + d.index * 4 \n             return line_maker( d, speed ) \n        })\n      .attr(\"stroke-opacity\", function(d,i) { return opacity(d.index);})\n        \n\n});\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1457934/7fd2eb505d8a41565b8578374ea3b9f84b6780f4/index.html",
+      "size": 4432
+    },
+    "jwerty.js": {
+      "type": "application/javascript",
+      "filename": "jwerty.js",
+      "language": "JavaScript",
+      "content": "/*\n * jwerty - Awesome handling of keyboard events\n *\n * jwerty is a JS lib which allows you to bind, fire and assert key combination\n * strings against elements and events. It normalises the poor std api into\n * something easy to use and clear.\n *\n * This code is licensed under the MIT\n * For the full license see: http://keithamus.mit-license.org/\n * For more information see: http://keithamus.github.com/jwerty\n *\n * @author Keith Cirkel ('keithamus') <jwerty@keithcirkel.co.uk>\n * @license http://keithamus.mit-license.org/\n * @copyright Copyright © 2011, Keith Cirkel\n *\n */\n(function (global, exports) {\n    \n    // Helper methods & vars:\n    var $d = global.document\n    ,   $ = (global.jQuery || global.Zepto || global.ender || $d)\n    ,   $$\n    ,   $b\n    ,   ke = 'keydown';\n    \n    function realTypeOf(v, s) {\n        return (v === null) ? s === 'null'\n        : (v === undefined) ? s === 'undefined'\n        : (v.is && v instanceof $) ? s === 'element'\n        : Object.prototype.toString.call(v).toLowerCase().indexOf(s) > 7;\n    }\n    \n    if ($ === $d) {\n        $$ = function (selector, context) {\n            return selector ? $.querySelector(selector, context || $) : $;\n        };\n        \n        $b = function (e, fn) { e.addEventListener(ke, fn, false); };\n        $f = function (e, jwertyEv) {\n            var ret = document.createEvent('Event')\n            ,   i;\n            \n            ret.initEvent(ke, true, true);\n            \n            for (i in jwertyEv) ret[i] = jwertyEv[i];\n            \n            return (e || $).dispatchEvent(ret);\n        }\n    } else {\n        $$ = function (selector, context, fn) { return $(selector || $d, context); };\n        $b = function (e, fn) { $(e).bind(ke + '.jwerty', fn); };\n        $f = function (e, ob) { $(e || $d).trigger($.Event(ke, ob)); };\n    }\n    \n    // Private\n    var _modProps = { 16: 'shiftKey', 17: 'ctrlKey', 18: 'altKey', 91: 'metaKey' };\n    \n    // Generate key mappings for common keys that are not printable.\n    var _keys = {\n        \n        // MOD aka toggleable keys\n        mods: {\n            // Shift key, ⇧\n            '⇧': 16, shift: 16,\n            // CTRL key, on Mac: ⌃\n            '⌃': 17, ctrl: 17,\n            // ALT key, on Mac: ⌥ (Alt)\n            '⌥': 18, alt: 18, option: 18,\n            // META, on Mac: ⌘ (CMD), on Windows (Win), on Linux (Super)\n            '⌘': 91, meta: 91, cmd: 91, 'super': 91, win: 91\n        },\n        \n        // Normal keys\n        keys: {\n            // Backspace key, on Mac: ⌫ (Backspace)\n            '⌫': 8, backspace: 8,\n            // Tab Key, on Mac: ⇥ (Tab), on Windows ⇥⇥\n            '⇥': 9, '⇆': 9, tab: 9,\n            // Return key, ↩\n            '↩': 13, 'return': 13, enter: 13, '⌅': 13,\n            // Pause/Break key\n            'pause': 19, 'pause-break': 19,\n            // Caps Lock key, ⇪\n            '⇪': 20, caps: 20, 'caps-lock': 20,\n            // Escape key, on Mac: ⎋, on Windows: Esc\n            '⎋': 27, escape: 27, esc: 27,\n            // Space key\n            space: 32,\n            // Page-Up key, or pgup, on Mac: ↖\n            '↖': 33, pgup: 33, 'page-up': 33,\n            // Page-Down key, or pgdown, on Mac: ↘\n            '↘': 34, pgdown: 34, 'page-down': 34,\n            // END key, on Mac: ⇟\n            '⇟': 35, end: 35,\n            // HOME key, on Mac: ⇞\n            '⇞': 36, home: 36,\n            // Insert key, or ins\n            ins: 45, insert: 45,\n            // Delete key, on Mac: ⌫ (Delete)\n            del: 45, 'delete': 45,\n            \n            // Left Arrow Key, or ←\n            '←': 37, left: 37, 'arrow-left': 37,\n            // Up Arrow Key, or ↑\n            '↑': 38, up: 38, 'arrow-up': 38,\n            // Right Arrow Key, or →\n            '→': 39, right: 39, 'arrow-right': 39,\n            // Up Arrow Key, or ↓\n            '↓': 40, down: 40, 'arrow-down': 40,\n            \n            // odities, printing characters that come out wrong:\n            // Num-Multiply, or *\n            '*': 106, star: 106, asterisk: 106, multiply: 106,\n            // Num-Plus or +\n            '+': 107, 'plus': 107,\n            // Num-Subtract, or -\n            '-': 109, subtract: 109,\n            //';': 186, //???\n            // = or equals\n            '=': 187, 'equals': 187,\n            // Comma, or ,\n            ',': 188, comma: 188,\n            //'-': 189, //???\n            // Period, or ., or full-stop\n            '.': 190, period: 190, 'full-stop': 190,\n            // Slash, or /, or forward-slash\n            '/': 191, slash: 191, 'forward-slash': 191,\n            // Tick, or `, or back-quote \n            '`': 192, tick: 192, 'back-quote': 192,\n            // Open bracket, or [\n            '[': 219, 'open-bracket': 219,\n            // Back slash, or \\\n            '\\\\': 220, 'back-slash': 220,\n            // Close backet, or ]\n            ']': 221, 'close-bracket': 221,\n            // Apostraphe, or Quote, or '\n            '\\'': 222, quote: 222, apostraphe: 222\n        }\n        \n    };\n    \n    // To minimise code bloat, add all of the NUMPAD 0-9 keys in a loop\n    i = 95, n = 0;\n    while(++i < 106) {\n        _keys.keys['num-' + n] = i;\n        ++n;\n    }\n    \n    // To minimise code bloat, add all of the top row 0-9 keys in a loop\n    i = 47, n = 0;\n    while(++i < 58) {\n        _keys.keys[n] = i;\n        ++n;\n    }\n    \n    // To minimise code bloat, add all of the F1-F25 keys in a loop\n    i = 111, n = 1;\n    while(++i < 136) {\n        _keys.keys['f' + n] = i;\n        ++n;\n    }\n    \n    // To minimise code bloat, add all of the letters of the alphabet in a loop\n    var i = 64;\n    while(++i < 91) {\n        _keys.keys[String.fromCharCode(i).toLowerCase()] = i;\n    }\n    \n    function JwertyCode(jwertyCode) {\n        var i\n        ,   c\n        ,   n\n        ,   z\n        ,   keyCombo\n        ,   optionals\n        ,   jwertyCodeFragment\n        ,   rangeMatches\n        ,   rangeI;\n        \n        // In-case we get called with an instance of ourselves, just return that.\n        if (jwertyCode instanceof JwertyCode) return jwertyCode;\n        \n        // If jwertyCode isn't an array, cast it as a string and split into array.\n        if (!realTypeOf(jwertyCode, 'array')) {\n            jwertyCode = (String(jwertyCode)).replace(/\\s/g, '').toLowerCase().\n                match(/(?:\\+,|[^,])+/g);\n        }\n        \n        // Loop through each key sequence in jwertyCode\n        for (i = 0, c = jwertyCode.length; i < c; ++i) {\n            \n            // If the key combo at this part of the sequence isn't an array,\n            // cast as a string and split into an array.\n            if (!realTypeOf(jwertyCode[i], 'array')) {\n                jwertyCode[i] = String(jwertyCode[i])\n                    .match(/(?:\\+\\/|[^\\/])+/g);\n            }\n            \n            // Parse the key optionals in this sequence\n            optionals = [], n = jwertyCode[i].length;\n            while (n--) {\n                \n                // Begin creating the object for this key combo\n                var jwertyCodeFragment = jwertyCode[i][n];\n                \n                keyCombo = {\n                    jwertyCombo: String(jwertyCodeFragment),\n                    shiftKey: false,\n                    ctrlKey: false,\n                    altKey: false,\n                    metaKey: false\n                }\n                \n                // If jwertyCodeFragment isn't an array then cast as a string\n                // and split it into one.\n                if (!realTypeOf(jwertyCodeFragment, 'array')) {\n                    jwertyCodeFragment = String(jwertyCodeFragment).toLowerCase()\n                        .match(/(?:(?:[^\\+])+|\\+\\+|^\\+$)/g);\n                }\n                \n                z = jwertyCodeFragment.length;\n                while (z--) {\n                    \n                    // Normalise matching errors\n                    if (jwertyCodeFragment[z] === '++') jwertyCodeFragment[z] = '+';\n                    \n                    // Inject either keyCode or ctrl/meta/shift/altKey into keyCombo\n                    if (jwertyCodeFragment[z] in _keys.mods) {\n                        keyCombo[_modProps[_keys.mods[jwertyCodeFragment[z]]]] = true;\n                    } else if(jwertyCodeFragment[z] in _keys.keys) {\n                        keyCombo.keyCode = _keys.keys[jwertyCodeFragment[z]];\n                    } else {\n                        rangeMatches = jwertyCodeFragment[z].match(/^\\[([^-]+\\-?[^-]*)-([^-]+\\-?[^-]*)\\]$/);\n                    }\n                }\n                if (realTypeOf(keyCombo.keyCode, 'undefined')) {\n                    // If we picked up a range match earlier...\n                    if (rangeMatches && (rangeMatches[1] in _keys.keys) && (rangeMatches[2] in _keys.keys)) {\n                        rangeMatches[2] = _keys.keys[rangeMatches[2]];\n                        rangeMatches[1] = _keys.keys[rangeMatches[1]];\n                        \n                        // Go from match 1 and capture all key-comobs up to match 2\n                        for (rangeI = rangeMatches[1]; rangeI < rangeMatches[2]; ++rangeI) {\n                            optionals.push({\n                                altKey: keyCombo.altKey,\n                                shiftKey: keyCombo.shiftKey,\n                                metaKey: keyCombo.metaKey,\n                                ctrlKey: keyCombo.ctrlKey,\n                                keyCode: rangeI,\n                                jwertyCombo: String(jwertyCodeFragment)\n                            });\n                            \n                        }\n                        keyCombo.keyCode = rangeI;\n                    // Inject either keyCode or ctrl/meta/shift/altKey into keyCombo\n                    } else {\n                        keyCombo.keyCode = 0;\n                    }\n                }\n                optionals.push(keyCombo);\n            \n            }\n            this[i] = optionals;\n        }\n        this.length = i;\n        return this;\n    }\n    \n    var jwerty = exports.jwerty = {        \n        /**\n         * jwerty.event\n         *\n         * `jwerty.event` will return a function, which expects the first\n         *  argument to be a key event. When the key event matches `jwertyCode`,\n         *  `callbackFunction` is fired. `jwerty.event` is used by `jwerty.key`\n         *  to bind the function it returns. `jwerty.event` is useful for\n         *  attaching to your own event listeners. It can be used as a decorator\n         *  method to encapsulate functionality that you only want to fire after\n         *  a specific key combo. If `callbackContext` is specified then it will\n         *  be supplied as `callbackFunction`'s context - in other words, the\n         *  keyword `this` will be set to `callbackContext` inside the\n         *  `callbackFunction` function.\n         *\n         *   @param {Mixed} jwertyCode can be an array, or string of key\n         *      combinations, which includes optinals and or sequences\n         *   @param {Function} callbackFucntion is a function (or boolean) which\n         *      is fired when jwertyCode is matched. Return false to\n         *      preventDefault()\n         *   @param {Object} callbackContext (Optional) The context to call\n         *      `callback` with (i.e this)\n         *      \n         */\n        event: function (jwertyCode, callbackFunction, callbackContext /*? this */) {\n            \n            // Construct a function out of callbackFunction, if it is a boolean.\n            if (realTypeOf(callbackFunction, 'boolean')) {\n                var bool = callbackFunction;\n                callbackFunction = function () { return bool; }\n            }\n            \n            jwertyCode = new JwertyCode(jwertyCode);\n            \n            // Initialise in-scope vars.\n            var i = 0\n            ,   c = jwertyCode.length - 1\n            ,   returnValue\n            ,   jwertyCodeIs;\n            \n            // This is the event listener function that gets returned...\n            return function (event) {\n                \n                // if jwertyCodeIs returns truthy (string)...\n                if ((jwertyCodeIs = jwerty.is(jwertyCode, event, i))) {\n                    // ... and this isn't the last key in the sequence,\n                    // incriment the key in sequence to check.\n                    if (i < c) {\n                        ++i;\n                        return;\n                    // ... and this is the last in the sequence (or the only\n                    // one in sequence), then fire the callback\n                    } else {\n                        returnValue = callbackFunction.call(\n                            callbackContext || this, event, jwertyCodeIs);\n                        \n                        // If the callback returned false, then we should run\n                        // preventDefault();\n                        if (returnValue === false) event.preventDefault();\n                        \n                        // Reset i for the next sequence to fire.\n                        i = 0;\n                        return;\n                    }\n                }\n                \n                // If the event didn't hit this time, we should reset i to 0,\n                // that is, unless this combo was the first in the sequence,\n                // in which case we should reset i to 1.\n                i = jwerty.is(jwertyCode, event) ? 1 : 0;\n            }\n        },\n        \n        /**\n         * jwerty.is\n         *\n         * `jwerty.is` will return a boolean value, based on if `event` matches\n         *  `jwertyCode`. `jwerty.is` is called by `jwerty.event` to check\n         *  whether or not to fire the callback. `event` can be a DOM event, or\n         *  a jQuery/Zepto/Ender manufactured event. The properties of\n         *  `jwertyCode` (speficially ctrlKey, altKey, metaKey, shiftKey and\n         *  keyCode) should match `jwertyCode`'s properties - if they do, then\n         *  `jwerty.is` will return `true`. If they don't, `jwerty.is` will\n         *  return `false`.\n         *\n         *   @param {Mixed} jwertyCode can be an array, or string of key\n         *      combinations, which includes optinals and or sequences\n         *   @param {KeyboardEvent} event is the KeyboardEvent to assert against\n         *   @param {Integer} i (Optional) checks the `i` key in jwertyCode\n         *      sequence\n         *      \n         */\n        is: function (jwertyCode, event, i /*? 0*/) {\n            jwertyCode = new JwertyCode(jwertyCode);\n            // Default `i` to 0\n            i = i || 0;\n            // We are only interesting in `i` of jwertyCode;\n            jwertyCode = jwertyCode[i];\n            // jQuery stores the *real* event in `originalEvent`, which we use\n            // because it does annoything stuff to `metaKey`\n            event = event.originalEvent || event;\n            \n            // We'll look at each optional in this jwertyCode sequence...\n            var key\n            ,   n = jwertyCode.length\n            ,   returnValue = false;\n            \n            // Loop through each fragment of jwertyCode\n            while (n--) {\n                returnValue = jwertyCode[n].jwertyCombo;\n                // For each property in the jwertyCode object, compare to `event`\n                for (var p in jwertyCode[n]) {\n                    // ...except for jwertyCode.jwertyCombo...\n                    if (p !== 'jwertyCombo' && event[p] != jwertyCode[n][p]) returnValue = false;\n                }\n                // If this jwertyCode optional wasn't falsey, then we can return early.\n                if (returnValue !== false) return returnValue;\n            }\n            return returnValue;\n        },\n        \n        /**\n         * jwerty.key\n         *\n         *  `jwerty.key` will attach an event listener and fire\n         *   `callbackFunction` when `jwertyCode` matches. The event listener is\n         *   attached to `document`, meaning it will listen for any key events\n         *   on the page (a global shortcut listener). If `callbackContext` is\n         *   specified then it will be supplied as `callbackFunction`'s context\n         *   - in other words, the keyword `this` will be set to\n         *   `callbackContext` inside the `callbackFunction` function.\n         *\n         *   @param {Mixed} jwertyCode can be an array, or string of key\n         *      combinations, which includes optinals and or sequences\n         *   @param {Function} callbackFunction is a function (or boolean) which\n         *      is fired when jwertyCode is matched. Return false to\n         *      preventDefault()\n         *   @param {Object} callbackContext (Optional) The context to call\n         *      `callback` with (i.e this)\n         *   @param {Mixed} selector can be a string, jQuery/Zepto/Ender object,\n         *      or an HTML*Element on which to bind the eventListener\n         *   @param {Mixed} selectorContext can be a string, jQuery/Zepto/Ender\n         *      object, or an HTML*Element on which to scope the selector\n         *  \n         */\n        key: function (jwertyCode, callbackFunction, callbackContext /*? this */, selector /*? document */, selectorContext /*? body */) {\n            // Because callbackContext is optional, we should check if the\n            // `callbackContext` is a string or element, and if it is, then the\n            // function was called without a context, and `callbackContext` is\n            // actually `selector`\n            var realSelector = realTypeOf(callbackContext, 'element') || realTypeOf(callbackContext, 'string') ? callbackContext : selector\n            // If `callbackContext` is undefined, or if we skipped it (and\n            // therefore it is `realSelector`), set context to `global`.\n            ,   realcallbackContext = realSelector === callbackContext ? global : callbackContext\n            // Finally if we did skip `callbackContext`, then shift\n            // `selectorContext` to the left (take it from `selector`)\n            ,    realSelectorContext = realSelector === callbackContext ? selector : selectorContext;\n            \n            // If `realSelector` is already a jQuery/Zepto/Ender/DOM element,\n            // then just use it neat, otherwise find it in DOM using $$()\n            $b(realTypeOf(realSelector, 'element') ?\n               realSelector : $$(realSelector, realSelectorContext)\n            , jwerty.event(jwertyCode, callbackFunction, realcallbackContext));\n        },\n        \n        /**\n         * jwerty.fire\n         *\n         * `jwerty.fire` will construct a keyup event to fire, based on\n         *  `jwertyCode`. The event will be fired against `selector`.\n         *  `selectorContext` is used to search for `selector` within\n         *  `selectorContext`, similar to jQuery's\n         *  `$('selector', 'context')`.\n         *\n         *   @param {Mixed} jwertyCode can be an array, or string of key\n         *      combinations, which includes optinals and or sequences\n         *   @param {Mixed} selector can be a string, jQuery/Zepto/Ender object,\n         *      or an HTML*Element on which to bind the eventListener\n         *   @param {Mixed} selectorContext can be a string, jQuery/Zepto/Ender\n         *      object, or an HTML*Element on which to scope the selector\n         *  \n         */\n        fire: function (jwertyCode, selector /*? document */, selectorContext /*? body */, i) {\n            jwertyCode = new JwertyCode(jwertyCode);\n            var realI = realTypeOf(selectorContext, 'number') ? selectorContext : i;\n            \n            // If `realSelector` is already a jQuery/Zepto/Ender/DOM element,\n            // then just use it neat, otherwise find it in DOM using $$()\n            $f(realTypeOf(selector, 'element') ?\n                selector : $$(selector, selectorContext)\n            , jwertyCode[realI || 0][0]);\n        },\n        \n        KEYS: _keys\n    };\n    \n}(this, (typeof module !== 'undefined' && module.exports ? module.exports : this)));",
+      "raw_url": "https://gist.github.com/raw/1457934/f0d66b3ec7f671d8231c8cd333a7893a361f46e5/jwerty.js",
+      "size": 20150
+    }
+  },
+  "user": {
+    "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+    "url": "https://api.github.com/users/enjalot",
+    "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "enjalot",
+    "id": 96189
+  },
+  "history": [
+    {
+      "version": "b1bcae9c5e50b103e8dd6dfb9c3cc9c057736fc0",
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "id": 96189
+      },
+      "url": "https://api.github.com/gists/1457934/b1bcae9c5e50b103e8dd6dfb9c3cc9c057736fc0",
+      "change_status": {
+        "total": 101,
+        "deletions": 35,
+        "additions": 66
+      },
+      "committed_at": "2011-12-13T06:04:59Z"
+    },
+    {
+      "version": "e89b3713c4e668849b821f3e2e0e2d2bb74c20b9",
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "id": 96189
+      },
+      "url": "https://api.github.com/gists/1457934/e89b3713c4e668849b821f3e2e0e2d2bb74c20b9",
+      "change_status": {
+        "total": 67,
+        "deletions": 62,
+        "additions": 5
+      },
+      "committed_at": "2011-12-11T03:57:10Z"
+    },
+    {
+      "version": "f1c6cfeaa924733a00630129723e892e92a075d2",
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "id": 96189
+      },
+      "url": "https://api.github.com/gists/1457934/f1c6cfeaa924733a00630129723e892e92a075d2",
+      "change_status": {
+        "total": 32,
+        "deletions": 9,
+        "additions": 23
+      },
+      "committed_at": "2011-12-11T03:52:55Z"
+    },
+    {
+      "version": "46e63fc024327cfed9634c4ffdfdd4743666df8e",
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "id": 96189
+      },
+      "url": "https://api.github.com/gists/1457934/46e63fc024327cfed9634c4ffdfdd4743666df8e",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2011-12-11T03:29:58Z"
+    },
+    {
+      "version": "10a4a68f62db5656616e7251bb35b1dd80d9f776",
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "id": 96189
+      },
+      "url": "https://api.github.com/gists/1457934/10a4a68f62db5656616e7251bb35b1dd80d9f776",
+      "change_status": {
+        "total": 638,
+        "deletions": 18,
+        "additions": 620
+      },
+      "committed_at": "2011-12-11T03:28:41Z"
+    },
+    {
+      "version": "cefe07b25ad14702edf8e8773287b90e0613009b",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1457934/cefe07b25ad14702edf8e8773287b90e0613009b",
+      "change_status": {
+        "total": 233,
+        "deletions": 163,
+        "additions": 70
+      },
+      "committed_at": "2011-11-22T19:05:16Z"
+    },
+    {
+      "version": "471009558817d18d9f567e1626e414ca21902600",
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "enjalot",
+        "id": 96189
+      },
+      "url": "https://api.github.com/gists/1457934/471009558817d18d9f567e1626e414ca21902600",
+      "change_status": {
+        "total": 173,
+        "deletions": 0,
+        "additions": 173
+      },
+      "committed_at": "2011-11-20T08:29:18Z"
+    }
+  ],
+  "html_url": "https://gist.github.com/1457934",
+  "url": "https://api.github.com/gists/1457934",
+  "description": "d3.js sin waves",
+  "id": "1457934",
+  "comments": 0,
+  "created_at": "2011-12-11T02:58:21Z"
+}

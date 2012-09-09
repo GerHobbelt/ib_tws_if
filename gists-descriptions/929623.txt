@@ -1,0 +1,195 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "version": "e09b692c5698b649116f373f56c5f4a7c5299c71",
+      "committed_at": "2011-04-25T05:59:17Z",
+      "url": "https://api.github.com/gists/929623/e09b692c5698b649116f373f56c5f4a7c5299c71"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "a25029c65220f6ed842713e7858cc308d8771e19",
+      "committed_at": "2011-04-20T01:06:25Z",
+      "url": "https://api.github.com/gists/929623/a25029c65220f6ed842713e7858cc308d8771e19"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "version": "55a663694ae359173c745b1010dd0f77f0f9f526",
+      "committed_at": "2011-04-19T21:10:50Z",
+      "url": "https://api.github.com/gists/929623/55a663694ae359173c745b1010dd0f77f0f9f526"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 9,
+        "additions": 6,
+        "deletions": 3
+      },
+      "version": "2a0cb4e2f7f349455b7bca2682473c29f45b4512",
+      "committed_at": "2011-04-19T21:03:42Z",
+      "url": "https://api.github.com/gists/929623/2a0cb4e2f7f349455b7bca2682473c29f45b4512"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "version": "ebe0acea18c754a90f608037df0ddd3294605aab",
+      "committed_at": "2011-04-19T21:02:23Z",
+      "url": "https://api.github.com/gists/929623/ebe0acea18c754a90f608037df0ddd3294605aab"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "version": "d9579b31b71a24d05f7c8ebd9549ac7d1868b8e9",
+      "committed_at": "2011-04-19T20:57:35Z",
+      "url": "https://api.github.com/gists/929623/d9579b31b71a24d05f7c8ebd9549ac7d1868b8e9"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "version": "5da8ce5b30d7fcaef32ba056da96fd1f238333c1",
+      "committed_at": "2011-04-19T20:51:43Z",
+      "url": "https://api.github.com/gists/929623/5da8ce5b30d7fcaef32ba056da96fd1f238333c1"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "a83046b986d31c381a206839ed15301c3151e19b",
+      "committed_at": "2011-04-19T20:51:25Z",
+      "url": "https://api.github.com/gists/929623/a83046b986d31c381a206839ed15301c3151e19b"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 117,
+        "additions": 117,
+        "deletions": 0
+      },
+      "version": "b7ef25a86c7b2ea297111442eaba6a748d2775c3",
+      "committed_at": "2011-04-19T20:51:03Z",
+      "url": "https://api.github.com/gists/929623/b7ef25a86c7b2ea297111442eaba6a748d2775c3"
+    }
+  ],
+  "description": "Force-Directed Layout (D3)",
+  "comments": 0,
+  "created_at": "2011-04-19T20:51:03Z",
+  "public": true,
+  "html_url": "https://gist.github.com/929623",
+  "git_pull_url": "git://gist.github.com/929623.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 2765,
+      "raw_url": "https://gist.github.com/raw/929623/015e4b86caca3aa6774d20eb15656865cd36eeae/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Force-Directed Layout (Dynamic)</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.min.js\"></script>\n    <style type=\"text/css\">\n\nhtml, body {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n\nrect {\n  fill: #fff;\n}\n\n.node {\n  fill: #000;\n}\n\n.cursor {\n  fill: none;\n  stroke: brown;\n  pointer-events: none;\n}\n\n.link {\n  stroke: #999;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    fill = d3.scale.category20(),\n    nodes = [],\n    links = [];\n\nvar vis = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvis.append(\"svg:rect\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvar force = d3.layout.force()\n    .nodes(nodes)\n    .links(links)\n    .size([w, h]);\n\nvar cursor = vis.append(\"svg:circle\")\n    .attr(\"r\", 30)\n    .attr(\"transform\", \"translate(-100,-100)\")\n    .attr(\"class\", \"cursor\");\n\nforce.on(\"tick\", function() {\n  vis.selectAll(\"line.link\")\n      .attr(\"x1\", function(d) { return d.source.x; })\n      .attr(\"y1\", function(d) { return d.source.y; })\n      .attr(\"x2\", function(d) { return d.target.x; })\n      .attr(\"y2\", function(d) { return d.target.y; });\n\n  vis.selectAll(\"circle.node\")\n      .attr(\"cx\", function(d) { return d.x; })\n      .attr(\"cy\", function(d) { return d.y; });\n});\n\nvis.on(\"mousemove\", function() {\n  cursor.attr(\"transform\", \"translate(\" + d3.svg.mouse(this) + \")\");\n});\n\nvis.on(\"mousedown\", function() {\n  var point = d3.svg.mouse(this),\n      node = {x: point[0], y: point[1]},\n      n = nodes.push(node);\n\n  // add links to any nearby nodes\n  nodes.forEach(function(target) {\n    var x = target.x - node.x,\n        y = target.y - node.y;\n    if (Math.sqrt(x * x + y * y) < 30) {\n      links.push({source: node, target: target});\n    }\n  });\n\n  restart();\n});\n\nrestart();\n\nfunction restart() {\n\n  vis.selectAll(\"line.link\")\n      .data(links)\n    .enter().insert(\"svg:line\", \"circle.node\")\n      .attr(\"class\", \"link\")\n      .attr(\"x1\", function(d) { return d.source.x; })\n      .attr(\"y1\", function(d) { return d.source.y; })\n      .attr(\"x2\", function(d) { return d.target.x; })\n      .attr(\"y2\", function(d) { return d.target.y; });\n\n  vis.selectAll(\"circle.node\")\n      .data(nodes)\n    .enter().insert(\"svg:circle\", \"circle.cursor\")\n      .attr(\"class\", \"node\")\n      .attr(\"cx\", function(d) { return d.x; })\n      .attr(\"cy\", function(d) { return d.y; })\n      .attr(\"r\", 5)\n      .call(force.drag);\n\n  force.start();\n}\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 549,
+      "raw_url": "https://gist.github.com/raw/929623/0a955e402c576c60d876c52aa5b37049a124a6c5/README.md",
+      "content": "**Click to add nodes!** Any existing nodes within the red circle (that is, within 30px of the cursor) will be linked to the new node.\n\nThis example was implemented in [D3](http://mbostock.github.com/d3/). D3's force-directed layout uses the Barnes-Hut approximation to compute repulsive charge forces between all nodes efficiently. Links are implemented as geometric constraints on top of position Verlet integration, offering greater stability. A virtual spring between each node and the center of the chart prevents nodes from drifting into space.",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:929623.git",
+  "updated_at": "2011-04-20T01:06:26Z",
+  "url": "https://api.github.com/gists/929623",
+  "id": "929623"
+}

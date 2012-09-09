@@ -1,0 +1,194 @@
+{
+  "git_push_url": "git@gist.github.com:1357620.git",
+  "fork_of": {
+    "git_push_url": "git@gist.github.com:1357598.git",
+    "updated_at": "2011-11-11T09:32:20Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1357598",
+    "files": {
+      "gist.html": {
+        "type": "text/html",
+        "filename": "gist.html",
+        "language": "HTML",
+        "raw_url": "https://gist.github.com/raw/1357598/f7e96da7033377a45046bb9390bd37cd2f967bfb/gist.html",
+        "size": 2590
+      }
+    },
+    "user": null,
+    "url": "https://api.github.com/gists/1357598",
+    "description": null,
+    "git_pull_url": "git://gist.github.com/1357598.git",
+    "id": "1357598",
+    "comments": 0,
+    "created_at": "2011-11-11T09:32:20Z"
+  },
+  "forks": [
+
+  ],
+  "updated_at": "2011-11-12T08:41:25Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1357620",
+  "files": {
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "language": "Markdown",
+      "raw_url": "https://gist.github.com/raw/1357620/ab901fd67e2915112662410ab4bee086133188b8/README.md",
+      "content": "# World Generator\n\nThis code creates a Voronoi Diagram of a \nlow-resolution space, generating an \napproximation of regional divisions of an\noverworld map typical of the first Legend\nof Zelda or Link's Awakening. The white \nsquares are randomly generated \"centers\". \n\nhttp://en.wikipedia.org/wiki/Voronoi_diagram",
+      "size": 311
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "raw_url": "https://gist.github.com/raw/1357620/7b1afb50fe5175f6d9f8ef9bea44026b6a34dbfc/index.html",
+      "content": "<html>\n\t<head>\n\t\t<title>World Generator</title>\n\t\t<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n\t</head>\n\t<body>\n\t\t<div id=\"viz\" ></div>\n\t\t<script type=\"text/javascript\">\n\nfunction worldgen(x,y,bc){\n\t//Initialize the array\n\tvar world = new Array(x);\n\tfor(i=0;i<world.length;i++){world[i]=new Array(y);}\n\n\t//Generate some biomes! \n\tvar biomes = [ \"G\", \"M\", \"B\", \"W\", \"F\", \"D\", \"S\" ];\n\tvar centers = new Array(bc);\n\n\tfor(count=0; count<bc; count++){\n\t\tvar cx = parseInt(Math.random() * (x-1));\n\t\tvar cy = parseInt(Math.random() * (y-1));\n\n\t\t//No overwriting\n\t\tif (world[cx][cy] != null) {count--; continue;}\n\t\telse {\n\t\t\tvar nb = biomes[parseInt(Math.random() * (biomes.length -1))];\n\t\t\tworld[cx][cy] = nb;\n\t\t\tcenters.push([cx, cy, world[cx][cy].toLowerCase()]);\n\t\t}\n\t}\n\t//OK, that was the centers.\n\t//Now to fill. \n\t\n\t//Strategy: \n\t//Pick a square. \n\t//Find the closest center (capital letter).\n\t//Fill all squares from the square in question to the capital letter with lowercase.\n\t//continue to next blank square. \n\t\n\tfor(i=0;i<x;i++){\n\t\tfor(j=0;j<y;j++){\n\t\t\t//We only modify empties\n\t\t\tif(world[i][j] != null) continue;\n\t\t\t//Find the closest center - n^2 but we don't care!\n\t\t\tvar mindist = x * y * 100;\n\t\t\tcenters.forEach(function(c){\n\t\t\t\tvar dist = Math.sqrt( Math.pow((c[0] - i),2) + Math.pow((c[1] - j),2));\n\t\t\t\tif (dist < mindist){\n\t\t\t\t\tmindist = dist;\n\t\t\t\t\tworld[i][j] = c[2];\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t}\n\n\t//And output it! \n\tvar newworld = new Array(0);\n\tfor(i=0;i<x;i++){\n\t\tvar row = \"\";\n\t\tfor(j=0;j<y;j++){\n\t\t\trow = row + world[i][j];\n\t\t\tnewworld.push([i, j, world[i][j]]);\n\t\t}\n\t\tconsole.log(row);\n\t}\n\n\treturn newworld;\n\n}\n\nvar map = worldgen(96, 50, 30);\n\nvar w = 960, h = 500;\n\n\tvar v = d3.select(\"#viz\")\n        .append(\"svg:svg\")\n        .attr(\"width\", w)\n        .attr(\"height\", h)\n        .append(\"svg:g\")\n        .attr(\"class\", \"wrapper\");\n\n\tv.selectAll(\"g.box\").data(map).enter()\n\t.append(\"svg:rect\")\n\t.attr(\"x\", function(d){ return 10 * d[0];})\n\t.attr(\"y\", function(d){return 10 * d[1];})\n\t.attr(\"width\", 10)\n\t.attr(\"height\", 10)\n\t.style(\"fill\", function(d){switch (d[2]){\n\t\t\tcase \"w\": return \"blue\";\n\t\t\tcase \"f\": return \"darkgreen\";\n\t\t\tcase \"g\": return \"green\"; \n\t\t\tcase \"b\": return \"orange\";\n\t\t\tcase \"d\": return \"yellow\";\n\t\t\tcase \"s\": return \"purple\";\n\t\t\tcase \"m\": return \"brown\";\n\t\t\tdefault: return \"white\";\n\t\t\t}})\n\n</script>\n\t</body>\n</html>\n",
+      "size": 2393
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/f93c8a055ea603ef33fff3e1b2ea4feb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "f93c8a055ea603ef33fff3e1b2ea4feb",
+    "url": "https://api.github.com/users/polm",
+    "login": "polm",
+    "id": 286278
+  },
+  "history": [
+    {
+      "version": "c44eb01412530038f36181ee77af4cb97ccd0582",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2011-11-12T08:45:48Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/f93c8a055ea603ef33fff3e1b2ea4feb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "f93c8a055ea603ef33fff3e1b2ea4feb",
+        "url": "https://api.github.com/users/polm",
+        "login": "polm",
+        "id": 286278
+      },
+      "url": "https://api.github.com/gists/1357620/c44eb01412530038f36181ee77af4cb97ccd0582"
+    },
+    {
+      "version": "e7e6bf5a1f5358b9f582d41d6ae8973d7d2613fe",
+      "change_status": {
+        "total": 19,
+        "deletions": 7,
+        "additions": 12
+      },
+      "committed_at": "2011-11-12T08:44:39Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/f93c8a055ea603ef33fff3e1b2ea4feb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "f93c8a055ea603ef33fff3e1b2ea4feb",
+        "url": "https://api.github.com/users/polm",
+        "login": "polm",
+        "id": 286278
+      },
+      "url": "https://api.github.com/gists/1357620/e7e6bf5a1f5358b9f582d41d6ae8973d7d2613fe"
+    },
+    {
+      "version": "b912e7b5e29a8126017c8d226b4d04970b44ad2b",
+      "change_status": {
+        "total": 9,
+        "deletions": 2,
+        "additions": 7
+      },
+      "committed_at": "2011-11-12T08:41:25Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/f93c8a055ea603ef33fff3e1b2ea4feb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "f93c8a055ea603ef33fff3e1b2ea4feb",
+        "url": "https://api.github.com/users/polm",
+        "login": "polm",
+        "id": 286278
+      },
+      "url": "https://api.github.com/gists/1357620/b912e7b5e29a8126017c8d226b4d04970b44ad2b"
+    },
+    {
+      "version": "ac2d166562a7afacca604075270bba2be4cb0145",
+      "change_status": {
+        "total": 202,
+        "deletions": 101,
+        "additions": 101
+      },
+      "committed_at": "2011-11-12T08:35:23Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/f93c8a055ea603ef33fff3e1b2ea4feb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "f93c8a055ea603ef33fff3e1b2ea4feb",
+        "url": "https://api.github.com/users/polm",
+        "login": "polm",
+        "id": 286278
+      },
+      "url": "https://api.github.com/gists/1357620/ac2d166562a7afacca604075270bba2be4cb0145"
+    },
+    {
+      "version": "e610cddb8102e004333496bd719053f1c5237e75",
+      "change_status": {
+        "total": 4,
+        "deletions": 3,
+        "additions": 1
+      },
+      "committed_at": "2011-11-11T09:46:35Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/f93c8a055ea603ef33fff3e1b2ea4feb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "f93c8a055ea603ef33fff3e1b2ea4feb",
+        "url": "https://api.github.com/users/polm",
+        "login": "polm",
+        "id": 286278
+      },
+      "url": "https://api.github.com/gists/1357620/e610cddb8102e004333496bd719053f1c5237e75"
+    },
+    {
+      "version": "849c87fe7667f2abaf7dd1b818ee4d46bcfece15",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2011-11-11T09:44:45Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/f93c8a055ea603ef33fff3e1b2ea4feb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "f93c8a055ea603ef33fff3e1b2ea4feb",
+        "url": "https://api.github.com/users/polm",
+        "login": "polm",
+        "id": 286278
+      },
+      "url": "https://api.github.com/gists/1357620/849c87fe7667f2abaf7dd1b818ee4d46bcfece15"
+    },
+    {
+      "version": "edce2f0c7714083af3e9fd663425bd92cd1c3f92",
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "committed_at": "2011-11-11T09:43:35Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/f93c8a055ea603ef33fff3e1b2ea4feb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "f93c8a055ea603ef33fff3e1b2ea4feb",
+        "url": "https://api.github.com/users/polm",
+        "login": "polm",
+        "id": 286278
+      },
+      "url": "https://api.github.com/gists/1357620/edce2f0c7714083af3e9fd663425bd92cd1c3f92"
+    },
+    {
+      "version": "607693901c1abc8739ad6e1f899927559ff811cc",
+      "change_status": {
+        "total": 103,
+        "deletions": 0,
+        "additions": 103
+      },
+      "committed_at": "2011-11-11T09:32:20Z",
+      "user": null,
+      "url": "https://api.github.com/gists/1357620/607693901c1abc8739ad6e1f899927559ff811cc"
+    }
+  ],
+  "url": "https://api.github.com/gists/1357620",
+  "description": "World Generator with d3",
+  "git_pull_url": "git://gist.github.com/1357620.git",
+  "id": "1357620",
+  "comments": 0,
+  "created_at": "2011-11-11T09:42:38Z"
+}

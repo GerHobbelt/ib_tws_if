@@ -1,0 +1,215 @@
+{
+  "forks": [
+
+  ],
+  "updated_at": "2011-12-20T19:36:14Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.25.0\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.time.js?1.25.0\"></script>\n    <script type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js\"></script>\n  </head>\n  <body>\n\n    <div id=\"chart\"></div>\n\n    <script type=\"text/javascript\">\n      var width = 900;\n      var height = 500;\n       String.prototype.format = function() {\n        var formatted = this;\n        for (var i = 0; i < arguments.length; i++) {\n          var regexp = new RegExp('\\\\{'+i+'\\\\}', 'gi');\n          formatted = formatted.replace(regexp, arguments[i]);\n\t}\n\treturn formatted;\n      };\n\n      var end = new Date();\n      var start = new Date(end.getTime() - 1000 * 60 * 60 * 24 * 60);\n      var data = [];\n\n      function min(a, b){ return a < b ? a : b ; }\n      \t\t \t\t     \n      function max(a, b){ return a > b ? a : b; }    \n\n      function buildChart(data){        \n         \n          var margin = 50;\t\t   \n\t\t  \n\t  var chart = d3.select(\"#chart\")\n\t\t  .append(\"svg:svg\")\n\t\t  .attr(\"class\", \"chart\")\n\t\t  .attr(\"width\", width)\n\t\t  .attr(\"height\", height);\n\n\t  var y = d3.scale.linear()\n\t\t  .domain([d3.min(data.map(function(x) {return x[\"Low\"];})), d3.max(data.map(function(x){return x[\"High\"];}))])\n\t\t  .range([height-margin, margin]);\n\t  var x = d3.scale.linear()\n\t\t  .domain([d3.min(data.map(function(d){return d.timestamp;})), d3.max(data.map(function(d){ return d.timestamp;}))])\n\t\t  .range([margin,width-margin]);\n\n          chart.selectAll(\"line.x\")\n           .data(x.ticks(10))\n           .enter().append(\"svg:line\")\n           .attr(\"class\", \"x\")\n           .attr(\"x1\", x)\n           .attr(\"x2\", x)\n           .attr(\"y1\", margin)\n           .attr(\"y2\", height - margin)\n           .attr(\"stroke\", \"#ccc\");\n\n          chart.selectAll(\"line.y\")\n           .data(y.ticks(10))\n           .enter().append(\"svg:line\")\n           .attr(\"class\", \"y\")\n           .attr(\"x1\", margin)\n           .attr(\"x2\", width - margin)\n           .attr(\"y1\", y)\n           .attr(\"y2\", y)\n           .attr(\"stroke\", \"#ccc\");\n\n          chart.selectAll(\"text.xrule\")\n           .data(x.ticks(10))\n           .enter().append(\"svg:text\")\n           .attr(\"class\", \"xrule\")\n           .attr(\"x\", x)\n           .attr(\"y\", height - margin)\n           .attr(\"dy\", 20)\n           .attr(\"text-anchor\", \"middle\")\n           .text(function(d){ var date = new Date(d * 1000);  return (date.getMonth() + 1)+\"/\"+date.getDate(); });\n \n         chart.selectAll(\"text.yrule\")\n          .data(y.ticks(10))\n          .enter().append(\"svg:text\")\n          .attr(\"class\", \"yrule\")\n          .attr(\"x\", width - margin)\n          .attr(\"y\", y)\n          .attr(\"dy\", 0)\n          .attr(\"dx\", 20)\t\t \n          .attr(\"text-anchor\", \"middle\")\n          .text(String);\n\n\tchart.selectAll(\"rect\")\n\t  .data(data)\n\t  .enter().append(\"svg:rect\")\n\t  .attr(\"x\", function(d) { return x(d.timestamp); })\n          .attr(\"y\", function(d) {return y(max(d.Open, d.Close));})\t\t  \n\t  .attr(\"height\", function(d) { return y(min(d.Open, d.Close))-y(max(d.Open, d.Close));})\n\t  .attr(\"width\", function(d) { return 0.5 * (width - 2*margin)/data.length; })\n          .attr(\"fill\",function(d) { return d.Open > d.Close ? \"red\" : \"green\" ;});\n\n        chart.selectAll(\"line.stem\")\n          .data(data)\n          .enter().append(\"svg:line\")\n          .attr(\"class\", \"stem\")\n          .attr(\"x1\", function(d) { return x(d.timestamp) + 0.25 * (width - 2 * margin)/ data.length;})\n          .attr(\"x2\", function(d) { return x(d.timestamp) + 0.25 * (width - 2 * margin)/ data.length;})\t\t    \n          .attr(\"y1\", function(d) { return y(d.High);})\n          .attr(\"y2\", function(d) { return y(d.Low); })\n          .attr(\"stroke\", function(d){ return d.Open > d.Close ? \"red\" : \"green\"; })\n\n      }\t\t  \n\n\n      function appendToData(x){\n\tif(data.length > 0){\n\t    return;\n        }\n        data = x.query.results.quote;\n        for(var i=0;i<data.length;i++){\n          data[i].timestamp = (new Date(data[i].date).getTime() / 1000);\n        }\t\t  \n        data = data.sort(function(x, y){ return x.timestamp - y.timestamp; });\t\t\t\n        buildChart(data);\t\t  \n      }\n\n      function buildQuery(){\n        var symbol = window.location.hash;\n        if(symbol === \"\"){\n           symbol = \"AMZN\";\n        }\n        symbol = symbol.replace(\"#\", \"\");\t\t  \n        var base = \"select * from yahoo.finance.historicaldata where symbol = \\\"{0}\\\" and startDate = \\\"{1}\\\" and endDate = \\\"{2}\\\"\";\n        var getDateString = d3.time.format(\"%Y-%m-%d\");\n        var query = base.format(symbol, getDateString(start), getDateString(end));\n        query = encodeURIComponent(query);\t\t    \n        var url = \"http://query.yahooapis.com/v1/public/yql?q={0}&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=appendToData\".format(query);\n        return url;\n      }\n      function fetchData(){\t\t  \n        url = buildQuery();\t\t  \n        scriptElement = document.createElement(\"SCRIPT\");\n        scriptElement.type = \"text/javascript\";\n        // i add to the url the call back function\n        scriptElement.src = url;\n        document.getElementsByTagName(\"HEAD\")[0].appendChild(scriptElement);\n      }\n\n      $(document).ready(fetchData);\n\n    </script>\n  </body>\n</html>\n\n\n\n\n\n",
+      "raw_url": "https://gist.github.com/raw/1502887/7d0e3341d86d0936409063b172275049859c18af/index.html",
+      "size": 5383
+    }
+  },
+  "git_pull_url": "git://gist.github.com/1502887.git",
+  "user": {
+    "gravatar_id": "c000aec05b841ee72efe11321c473ffb",
+    "avatar_url": "https://secure.gravatar.com/avatar/c000aec05b841ee72efe11321c473ffb?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/agibsonccc",
+    "login": "agibsonccc",
+    "id": 1144306
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "version": "285c0f8f01ea9f6c2272445b711fa4e8750c7652",
+      "committed_at": "2011-07-10T19:30:15Z",
+      "user": {
+        "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+        "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/abeppu",
+        "login": "abeppu",
+        "id": 147250
+      },
+      "url": "https://api.github.com/gists/1502887/285c0f8f01ea9f6c2272445b711fa4e8750c7652"
+    },
+    {
+      "change_status": {
+        "total": 18,
+        "deletions": 15,
+        "additions": 3
+      },
+      "version": "7cc0b6c9cbf2994981de3edc804c2db6a28b7a66",
+      "committed_at": "2011-07-10T19:25:23Z",
+      "user": {
+        "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+        "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/abeppu",
+        "login": "abeppu",
+        "id": 147250
+      },
+      "url": "https://api.github.com/gists/1502887/7cc0b6c9cbf2994981de3edc804c2db6a28b7a66"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "version": "4810f597d52f6f4a7afa8754ca55cdb3c32f0705",
+      "committed_at": "2011-07-09T23:45:10Z",
+      "user": {
+        "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+        "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/abeppu",
+        "login": "abeppu",
+        "id": 147250
+      },
+      "url": "https://api.github.com/gists/1502887/4810f597d52f6f4a7afa8754ca55cdb3c32f0705"
+    },
+    {
+      "change_status": {
+        "total": 1,
+        "deletions": 1,
+        "additions": 0
+      },
+      "version": "d62936cf89775e7d8e41db1c43268793ecb878ec",
+      "committed_at": "2011-07-09T23:44:49Z",
+      "user": {
+        "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+        "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/abeppu",
+        "login": "abeppu",
+        "id": 147250
+      },
+      "url": "https://api.github.com/gists/1502887/d62936cf89775e7d8e41db1c43268793ecb878ec"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "version": "3ee9b99996b464e7625418a696d3562c6bfd6b6b",
+      "committed_at": "2011-07-09T23:29:06Z",
+      "user": {
+        "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+        "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/abeppu",
+        "login": "abeppu",
+        "id": 147250
+      },
+      "url": "https://api.github.com/gists/1502887/3ee9b99996b464e7625418a696d3562c6bfd6b6b"
+    },
+    {
+      "change_status": {
+        "total": 1,
+        "deletions": 1,
+        "additions": 0
+      },
+      "version": "43132cc0d4e0febd70303aaf6c5b705d45e7d34f",
+      "committed_at": "2011-07-09T23:26:21Z",
+      "user": {
+        "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+        "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/abeppu",
+        "login": "abeppu",
+        "id": 147250
+      },
+      "url": "https://api.github.com/gists/1502887/43132cc0d4e0febd70303aaf6c5b705d45e7d34f"
+    },
+    {
+      "change_status": {
+        "total": 1,
+        "deletions": 0,
+        "additions": 1
+      },
+      "version": "1aa6fd86fc7bbafab06ed6d32b864f0c0bc7b6c0",
+      "committed_at": "2011-07-09T23:25:02Z",
+      "user": {
+        "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+        "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/abeppu",
+        "login": "abeppu",
+        "id": 147250
+      },
+      "url": "https://api.github.com/gists/1502887/1aa6fd86fc7bbafab06ed6d32b864f0c0bc7b6c0"
+    },
+    {
+      "change_status": {
+        "total": 5,
+        "deletions": 4,
+        "additions": 1
+      },
+      "version": "2292e94b4fab12a86a80bf35e4f711bfd1efe25f",
+      "committed_at": "2011-07-09T23:23:48Z",
+      "user": {
+        "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+        "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/abeppu",
+        "login": "abeppu",
+        "id": 147250
+      },
+      "url": "https://api.github.com/gists/1502887/2292e94b4fab12a86a80bf35e4f711bfd1efe25f"
+    },
+    {
+      "change_status": {
+        "total": 171,
+        "deletions": 0,
+        "additions": 171
+      },
+      "version": "07844ba224c05022b0bdf530ee027339c35b7539",
+      "committed_at": "2011-07-09T23:22:21Z",
+      "user": {
+        "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+        "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/abeppu",
+        "login": "abeppu",
+        "id": 147250
+      },
+      "url": "https://api.github.com/gists/1502887/07844ba224c05022b0bdf530ee027339c35b7539"
+    }
+  ],
+  "html_url": "https://gist.github.com/1502887",
+  "git_push_url": "git@gist.github.com:1502887.git",
+  "url": "https://api.github.com/gists/1502887",
+  "description": "candlestick charts using d3",
+  "id": "1502887",
+  "fork_of": {
+    "updated_at": "2011-07-09T23:22:21Z",
+    "public": true,
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "language": "HTML",
+        "raw_url": "https://gist.github.com/raw/1074045/7d0e3341d86d0936409063b172275049859c18af/index.html",
+        "size": 5383
+      }
+    },
+    "git_pull_url": "git://gist.github.com/1074045.git",
+    "user": {
+      "gravatar_id": "3acfd82453191e4b6a0fa59306dfd039",
+      "avatar_url": "https://secure.gravatar.com/avatar/3acfd82453191e4b6a0fa59306dfd039?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/abeppu",
+      "login": "abeppu",
+      "id": 147250
+    },
+    "html_url": "https://gist.github.com/1074045",
+    "git_push_url": "git@gist.github.com:1074045.git",
+    "url": "https://api.github.com/gists/1074045",
+    "description": "candlestick charts using d3",
+    "id": "1074045",
+    "comments": 2,
+    "created_at": "2011-07-09T23:22:21Z"
+  },
+  "comments": 0,
+  "created_at": "2011-12-20T19:36:14Z"
+}

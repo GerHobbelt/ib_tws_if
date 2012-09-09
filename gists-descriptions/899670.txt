@@ -1,0 +1,114 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "bef4375324583f5cef705ab7eccaf0f5",
+        "login": "taclab",
+        "avatar_url": "https://secure.gravatar.com/avatar/bef4375324583f5cef705ab7eccaf0f5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/taclab",
+        "id": 147884
+      },
+      "created_at": "2011-11-25T10:14:15Z",
+      "updated_at": "2011-11-25T10:14:15Z",
+      "url": "https://api.github.com/gists/1393200",
+      "id": "1393200"
+    },
+    {
+      "user": {
+        "gravatar_id": "da6ccbbd6255bbb56931b0bac82ecc53",
+        "login": "gouldingken",
+        "avatar_url": "https://secure.gravatar.com/avatar/da6ccbbd6255bbb56931b0bac82ecc53?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/gouldingken",
+        "id": 760010
+      },
+      "created_at": "2012-03-30T16:11:15Z",
+      "updated_at": "2012-03-30T16:22:03Z",
+      "url": "https://api.github.com/gists/2252541",
+      "id": "2252541"
+    },
+    {
+      "user": {
+        "gravatar_id": "7e20a6d903f4b9172343f37689645f07",
+        "login": "kohlmannj",
+        "avatar_url": "https://secure.gravatar.com/avatar/7e20a6d903f4b9172343f37689645f07?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/kohlmannj",
+        "id": 191304
+      },
+      "created_at": "2012-04-27T19:57:42Z",
+      "updated_at": "2012-04-27T19:57:42Z",
+      "url": "https://api.github.com/gists/2512358",
+      "id": "2512358"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-21T07:10:09Z",
+      "version": "ae4a1cea95c259fd9d9ed441e3406d0127f4532d",
+      "url": "https://api.github.com/gists/899670/ae4a1cea95c259fd9d9ed441e3406d0127f4532d",
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-04-02T17:15:47Z",
+      "version": "cddce54a0485826deb052d04898fd6bf47e019fa",
+      "url": "https://api.github.com/gists/899670/cddce54a0485826deb052d04898fd6bf47e019fa",
+      "change_status": {
+        "total": 93,
+        "additions": 93,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Polymaps + D3, Part 2",
+  "comments": 0,
+  "created_at": "2011-04-02T17:15:47Z",
+  "git_pull_url": "git://gist.github.com/899670.git",
+  "public": true,
+  "html_url": "https://gist.github.com/899670",
+  "git_push_url": "git@gist.github.com:899670.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/899670/6c0d7c35774afb504d957dc8e30b127aeeff87d0/index.html",
+      "size": 2068,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.29.5\"></script>\n    <script type=\"text/javascript\" src=\"http://polymaps.org/polymaps.min.js?2.5.0\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://polymaps.org/style.css\");\n\nhtml, body {\n  height: 100%;\n  background: #E6E6E6;\n  margin: 0;\n  font: 10px sans-serif;\n}\n\nsvg {\n  display: block;\n}\n\ncircle {\n  stroke: black;\n  fill: brown;\n  fill-opacity: .5;\n}\n\n#map {\n  width: 960px;\n  height: 500px;\n}\n\n    </style>\n  </head>\n  <body>\n    <div id=\"map\"></div>\n    <script type=\"text/javascript\">\n\nvar po = org.polymaps;\n\n// Create the map object, add it to #map…\nvar map = po.map()\n    .container(d3.select(\"#map\").append(\"svg:svg\").node())\n    .zoom(8)\n    .add(po.interact());\n\n// Add the CloudMade image tiles as a base layer…\nmap.add(po.image()\n    .url(po.url(\"http://{S}tile.cloudmade.com\"\n    + \"/1a1b06b230af4efdbb989ea99e9841af\" // http://cloudmade.com/register\n    + \"/998/256/{Z}/{X}/{Y}.png\")\n    .hosts([\"a.\", \"b.\", \"c.\", \"\"])));\n\n// Add the compass control on top.\nmap.add(po.compass()\n    .pan(\"none\"));\n\n// Load the station data. When the data comes back, display it.\nd3.json(\"stations.json\", function(data) {\n\n  // Insert our layer beneath the compass.\n  var layer = d3.select(\"#map svg\").insert(\"svg:g\", \".compass\");\n\n  // Add an svg:g for each station.\n  var marker = layer.selectAll(\"g\")\n      .data(d3.entries(data))\n    .enter().append(\"svg:g\")\n      .attr(\"transform\", transform);\n\n  // Add a circle.\n  marker.append(\"svg:circle\")\n      .attr(\"r\", 4.5);\n\n  // Add a label.\n  marker.append(\"svg:text\")\n      .attr(\"x\", 7)\n      .attr(\"dy\", \".31em\")\n      .text(function(d) { return d.key; });\n\n  // Whenever the map moves, update the marker positions.\n  map.on(\"move\", function() {\n    layer.selectAll(\"g\").attr(\"transform\", transform);\n  });\n\n  function transform(d) {\n    d = map.locationPoint({lon: d.value[0], lat: d.value[1]});\n    return \"translate(\" + d.x + \",\" + d.y + \")\";\n  }\n});\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "stations.json": {
+      "type": "application/json",
+      "filename": "stations.json",
+      "raw_url": "https://gist.github.com/raw/899670/f5b132f98e3d30bfe193c5e9c5bc5fc6b75aba5f/stations.json",
+      "size": 2098,
+      "content": "{\"KMAE\":[-120.12,36.98,\"MADERA MUNICIPAL AIRPORT\",[26,1,2,5,6,3,2,1,2,7,29,12,3]],\"KSJC\":[-121.92,37.37,\"SAN JOSE INTERNATIONAL  AIRPORT\",[28,1,1,1,6,10,5,3,2,4,14,21,7]],\"KMCE\":[-120.50,37.28,\"MERCED MUNICIPAL AIRPORT\",[29,1,1,3,7,5,2,1,3,6,12,26,5]],\"KMER\":[-120.57,37.37,\"Merced / Castle Air Force Base\",[34,1,1,1,4,5,2,1,1,4,17,22,7]],\"KAPC\":[-122.28,38.20,\"NAPA COUNTY AIRPORT\",[23,2,1,6,3,3,8,18,11,13,4,3,5]],\"KSUU\":[-121.95,38.27,\"Fairfield / Travis Air Force Base\",[13,7,4,3,3,6,4,13,33,4,1,2,7]],\"KSQL\":[-122.25,37.52,\"San Carlos Airport\",[18,3,2,2,3,4,3,2,5,17,16,12,12]],\"KSNS\":[-121.60,36.67,\"SALINAS MUNICIPAL AIRPORT\",[21,1,1,6,12,3,1,2,9,21,17,5,1]],\"KMOD\":[-120.95,37.62,\"MODESTO CITY CO SHAM FLD\",[27,1,1,2,10,5,1,1,1,3,17,24,8]],\"KOAK\":[-122.23,37.72,\"METRO OAKLAND INTERNATIONAL  AIRPORT \",[16,3,3,2,4,6,3,4,9,23,20,6,2]],\"KSCK\":[-121.23,37.90,\"STOCKTON METROPOLITAN AIRPORT \",[21,2,2,3,6,8,2,1,4,15,19,12,4]],\"KCCR\":[-122.05,38.00,\"CONCORD BUCHANAN FIELD\",[24,3,2,1,1,5,17,12,9,9,7,6,4]],\"KMRY\":[-121.85,36.58,\"MONTEREY PENINSULA AIRPORT\",[26,1,2,9,5,3,4,9,13,14,9,4,1]],\"KPAO\":[-122.12,37.47,\"Palo Alto Airport\",[31,3,1,1,2,5,1,1,1,4,10,25,14]],\"KSAC\":[-121.50,38.50,\"SACRAMENTO EXECUTIVE AIRPORT \",[32,1,0,1,3,11,12,16,5,2,4,9,3]],\"KHWD\":[-122.12,37.67,\"HAYWARD AIR TERMINAL\",[20,2,7,2,2,6,3,3,6,23,18,6,2]],\"KSTS\":[-122.82,38.50,\"SANTA ROSA SONOMA COUNTY\",[46,1,0,1,5,13,10,4,3,3,4,6,3]],\"KSMF\":[-121.60,38.70,\"SACRAMENTO INTERNATIONAL  AIRPORT\",[19,2,1,2,4,21,18,8,3,2,5,12,4]],\"KNUQ\":[-122.05,37.43,\"MOFFETT FIELD\",[35,3,1,1,4,7,2,1,2,5,6,17,15]],\"KRHV\":[-121.82,37.33,\"San Jose / Reid / Hillv\",[35,0,0,1,4,4,2,1,1,10,28,11,1]],\"KWVI\":[-121.78,36.93,\"WATSONVILLE MUNICIPAL AIRPORT \",[44,1,2,3,4,5,7,9,8,4,6,5,2]],\"KMHR\":[-121.30,38.55,\"Sacramento, Sacramento Mather Airport\",[21,1,1,2,8,15,12,12,7,4,5,7,3]],\"KVCB\":[-121.95,38.38,\"VACAVILLE NUT TREE AIRPORT\",[36,2,1,1,2,6,10,18,10,2,2,5,6]],\"KSFO\":[-122.37,37.62,\"SAN FRANCISCO INTERNATIONAL  AIRPORT \",[13,3,3,2,3,4,4,4,7,31,20,2,3]],\"KLVK\":[-121.82,37.70,\"LIVERMORE MUNICIPAL AIRPORT \",[32,2,7,3,1,1,2,7,9,17,16,2,1]]}\n",
+      "language": "JSON"
+    }
+  },
+  "updated_at": "2011-04-02T17:15:47Z",
+  "url": "https://api.github.com/gists/899670",
+  "id": "899670"
+}

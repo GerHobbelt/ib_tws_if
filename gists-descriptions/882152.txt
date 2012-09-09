@@ -1,0 +1,187 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_push_url": "git@gist.github.com:882152.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "b8c8fce548819782f29cafd046ce05ff3cff3161",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-03-24T09:18:29Z",
+      "url": "https://api.github.com/gists/882152/b8c8fce548819782f29cafd046ce05ff3cff3161"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "f43a1d3316ab63b8119f8a648c1f40bbc9335568",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-03-24T09:18:10Z",
+      "url": "https://api.github.com/gists/882152/f43a1d3316ab63b8119f8a648c1f40bbc9335568"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "fa4b0b0a8256e28c744000d7b6073349061cc7e8",
+      "change_status": {
+        "total": 12,
+        "additions": 6,
+        "deletions": 6
+      },
+      "committed_at": "2011-03-24T09:17:58Z",
+      "url": "https://api.github.com/gists/882152/fa4b0b0a8256e28c744000d7b6073349061cc7e8"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "3382fd1aea6ba4606ebba4b3f51ba1b4998f4bb4",
+      "change_status": {
+        "total": 7,
+        "additions": 4,
+        "deletions": 3
+      },
+      "committed_at": "2011-03-24T09:16:23Z",
+      "url": "https://api.github.com/gists/882152/3382fd1aea6ba4606ebba4b3f51ba1b4998f4bb4"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "a8be846a7441eb44a078d75430cc209de63608bc",
+      "change_status": {
+        "total": 23,
+        "additions": 11,
+        "deletions": 12
+      },
+      "committed_at": "2011-03-24T09:14:24Z",
+      "url": "https://api.github.com/gists/882152/a8be846a7441eb44a078d75430cc209de63608bc"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "10c12e1d843ce2fd1ddd7b3996801e84cc331666",
+      "change_status": {
+        "total": 4,
+        "additions": 0,
+        "deletions": 4
+      },
+      "committed_at": "2011-03-22T21:53:48Z",
+      "url": "https://api.github.com/gists/882152/10c12e1d843ce2fd1ddd7b3996801e84cc331666"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "b8bca46840eec042b94fbf8cc0ef9d5c1312a93a",
+      "change_status": {
+        "total": 8,
+        "additions": 5,
+        "deletions": 3
+      },
+      "committed_at": "2011-03-22T21:53:10Z",
+      "url": "https://api.github.com/gists/882152/b8bca46840eec042b94fbf8cc0ef9d5c1312a93a"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "162fa9a039e9b0ff4961558ca2c839d315db2199",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-03-22T21:50:38Z",
+      "url": "https://api.github.com/gists/882152/162fa9a039e9b0ff4961558ca2c839d315db2199"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "44534cc47a8da6230816d0700c1dd2c217c60842",
+      "change_status": {
+        "total": 63,
+        "additions": 63,
+        "deletions": 0
+      },
+      "committed_at": "2011-03-22T21:49:56Z",
+      "url": "https://api.github.com/gists/882152/44534cc47a8da6230816d0700c1dd2c217c60842"
+    }
+  ],
+  "description": "Grouped Bar Chart",
+  "comments": 0,
+  "created_at": "2011-03-22T21:49:56Z",
+  "public": true,
+  "html_url": "https://gist.github.com/882152",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/882152/330c262b2be75c90dbf6dab442784fa1b57d25f2/index.html",
+      "size": 1739,
+      "content": "<html>\n  <head>\n    <title>Bar Chart</title>\n    <script type=\"text/javascript\" src=\"http://github.com/mbostock/d3/raw/v1.8.2/d3.js\"></script>\n    <style type=\"text/css\">\n\nbody {\n  font: 10px sans-serif;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar n = 20, // number of samples\n    m = 4, // number of series\n    data = d3.range(m).map(function() { return d3.range(n).map(Math.random); });\n\nvar w = 940,\n    h = 460,\n    x = d3.scale.linear().domain([0, 1]).range([h, 0]),\n    y0 = d3.scale.ordinal().domain(d3.range(n)).rangeBands([0, w], .2),\n    y1 = d3.scale.ordinal().domain(d3.range(m)).rangeBands([0, y0.rangeBand()]),\n    z = d3.scale.category10();\n\nvar vis = d3.select(\"body\")\n  .append(\"svg:svg\")\n    .attr(\"width\", w + 20)\n    .attr(\"height\", h + 40)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(10,10)\");\n\nvar g = vis.selectAll(\"g\")\n    .data(data)\n  .enter().append(\"svg:g\")\n    .attr(\"fill\", function(d, i) { return z(i); })\n    .attr(\"transform\", function(d, i) { return \"translate(\" + y1(i) + \",0)\"; });\n\nvar rect = g.selectAll(\"rect\")\n    .data(Object)\n  .enter().append(\"svg:rect\")\n    .attr(\"transform\", function(d, i) { return \"translate(\" + y0(i) + \",0)\"; })\n    .attr(\"width\", y1.rangeBand())\n    .attr(\"height\", x)\n    .attr(\"y\", function(d) { return h - x(d); });\n\nvar text = vis.selectAll(\"text\")\n    .data(d3.range(n))\n  .enter().append(\"svg:text\")\n    .attr(\"class\", \"group\")\n    .attr(\"transform\", function(d, i) { return \"translate(\" + y0(i) + \",0)\"; })\n    .attr(\"x\", y0.rangeBand() / 2)\n    .attr(\"y\", h + 6)\n    .attr(\"dy\", \".71em\")\n    .attr(\"text-anchor\", \"middle\")\n    .text(function(d, i) { return String.fromCharCode(65 + i); });\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-03-24T09:18:30Z",
+  "url": "https://api.github.com/gists/882152",
+  "git_pull_url": "git://gist.github.com/882152.git",
+  "id": "882152"
+}

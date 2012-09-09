@@ -1,0 +1,114 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+        "login": "wimdows",
+        "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wimdows",
+        "id": 1142762
+      },
+      "created_at": "2011-12-22T12:56:20Z",
+      "updated_at": "2011-12-22T12:56:20Z",
+      "url": "https://api.github.com/gists/1510223",
+      "id": "1510223"
+    }
+  ],
+  "user": {
+    "gravatar_id": "a69965c15b2bdfbc552673feb409dc1e",
+    "login": "mzupan",
+    "avatar_url": "https://secure.gravatar.com/avatar/a69965c15b2bdfbc552673feb409dc1e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mzupan",
+    "id": 205373
+  },
+  "git_pull_url": "git://gist.github.com/1508606.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "a69965c15b2bdfbc552673feb409dc1e",
+        "login": "mzupan",
+        "avatar_url": "https://secure.gravatar.com/avatar/a69965c15b2bdfbc552673feb409dc1e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mzupan",
+        "id": 205373
+      },
+      "version": "e473e5598bd3aaf82c63d49531bca26f51c3d33d",
+      "change_status": {
+        "total": 102,
+        "additions": 61,
+        "deletions": 41
+      },
+      "url": "https://api.github.com/gists/1508606/e473e5598bd3aaf82c63d49531bca26f51c3d33d",
+      "committed_at": "2011-12-28T23:45:26Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a69965c15b2bdfbc552673feb409dc1e",
+        "login": "mzupan",
+        "avatar_url": "https://secure.gravatar.com/avatar/a69965c15b2bdfbc552673feb409dc1e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mzupan",
+        "id": 205373
+      },
+      "version": "1da513cd6ae39b32bb00c48a1b44542c33642672",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1508606/1da513cd6ae39b32bb00c48a1b44542c33642672",
+      "committed_at": "2011-12-22T13:37:06Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a69965c15b2bdfbc552673feb409dc1e",
+        "login": "mzupan",
+        "avatar_url": "https://secure.gravatar.com/avatar/a69965c15b2bdfbc552673feb409dc1e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mzupan",
+        "id": 205373
+      },
+      "version": "6d3bfed26fdc561c861fe93db1768c179e8fd3d9",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1508606/6d3bfed26fdc561c861fe93db1768c179e8fd3d9",
+      "committed_at": "2011-12-22T13:34:49Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "a69965c15b2bdfbc552673feb409dc1e",
+        "login": "mzupan",
+        "avatar_url": "https://secure.gravatar.com/avatar/a69965c15b2bdfbc552673feb409dc1e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mzupan",
+        "id": 205373
+      },
+      "version": "bd1a24136632b1f023db79f0040346d4c2ca80f1",
+      "change_status": {
+        "total": 143,
+        "additions": 143,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1508606/bd1a24136632b1f023db79f0040346d4c2ca80f1",
+      "committed_at": "2011-12-22T02:23:41Z"
+    }
+  ],
+  "description": "transition not working",
+  "html_url": "https://gist.github.com/1508606",
+  "git_push_url": "git@gist.github.com:1508606.git",
+  "comments": 0,
+  "created_at": "2011-12-22T02:23:41Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/1508606/f45d5f8ccdc88042b142a55369b517ab3a4c29e9/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 3536,
+      "content": "\n<!DOCTYPE html>\n<html>\n  <head>\n   <script src=\"https://raw.github.com/mbostock/d3/master/d3.js\"></script>\n    <script src=\"https://raw.github.com/mbostock/d3/master/d3.time.js\"></script>\n    <style type=\"text/css\">\n\nbody {\n  font: 10px sans-serif;\n  margin: 0;\n}\n\npath.line {\n  fill: none;\n  stroke: #666;\n  stroke-width: 1.5px;\n}\n\npath.area {\n  fill: #e7e7e7;\n}\n\n.axis {\n  shape-rendering: crispEdges;\n}\n\n.x.axis line {\n  stroke: #fff;\n}\n\n.x.axis .minor {\n  stroke-opacity: .5;\n}\n\n.x.axis path {\n  display: none;\n}\n\n.y.axis line, .y.axis path {\n  fill: none;\n  stroke: #000;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar m = [20, 40, 20, 20],\n    w = 960 - m[1] - m[3],\n    h = 140 - m[0] - m[2],\n    parse = d3.time.format(\"%b %Y\").parse;\n\n// Scales. Note the inverted domain for the y-scale: bigger is up!\nvar x = d3.time.scale().range([0, w]),\n    y = d3.scale.linear().range([h, 0]);\n\n// Axes.\nvar xAxis = d3.svg.axis().scale(x).tickSize(-h).tickSubdivide(true),\n    yAxis = d3.svg.axis().scale(y).ticks(4).orient(\"right\");\n\n// An area generator, for the light fill.\nvar area = d3.svg.area()\n    .interpolate(\"monotone\")\n    .x(function(d) { return x(d.date); })\n    .y0(h)\n    .y1(function(d) { return y(d.price); });\n\n// A line generator, for the dark stroke.\nvar line = d3.svg.line()\n    .interpolate(\"monotone\")\n    .x(function(d) { return x(d.date); })\n    .y(function(d) { return y(d.price); });\n\n\n\n  var values = []\n  var ts = 1322729460000;\n  count = 0;\n  for (i=0; i<=50; i++) {\n    values.push({\n      date: ts + (i*60000),\n      price: Math.random() * 10\n    });\n    \n    count++;\n  }\n\n  // Compute the minimum and maximum date, and the maximum price.\n  x.domain([values[0].date, values[values.length - 1].date]);\n  y.domain([0, d3.max(values, function(d) { return d.price; })]);\n\n  // Add an SVG element with the desired dimensions and margin.\n  var svg = d3.select(\"body\").append(\"svg\")\n      .attr(\"width\", w + m[1] + m[3])\n      .attr(\"height\", h + m[0] + m[2])\n    .append(\"g\")\n      .attr(\"transform\", \"translate(\" + m[3] + \",\" + m[0] + \")\");\n\n  // Add the clip path.\n  svg.append(\"clipPath\")\n      .attr(\"id\", \"clip\")\n    .append(\"rect\")\n      .attr(\"width\", w)\n      .attr(\"height\", h);\n\n  // Add the x-axis.\n  svg.append(\"g\")\n      .attr(\"class\", \"x axis\")\n      .attr(\"transform\", \"translate(0,\" + h + \")\")\n      .call(xAxis);\n\n  // Add the y-axis.\n  svg.append(\"g\")\n      .attr(\"class\", \"y axis\")\n      .attr(\"transform\", \"translate(\" + w + \",0)\")\n      .call(yAxis);\n\n  // Add the line path.\n  svg.append(\"path\")\n      .attr(\"class\", \"line\")\n      .attr(\"clip-path\", \"url(#clip)\")\n      .attr(\"d\", line(values));\n\n\n  // On click, update the x-axis.\n  svg.on(\"click\", function() {\n    \n\n    /*    \n    var n = values.length - 1,\n        i = Math.floor(Math.random() * n / 2),\n        j = i + Math.floor(Math.random() * n / 2) + 1;\n\n    x.domain([values[i].date, values[j].date]);\n    var t = svg.transition().duration(750);\n    t.select(\".x.axis\").call(xAxis);\n    t.select(\".area\").attr(\"d\", area(values));\n    t.select(\".line\").attr(\"d\", line(values));\n    */\n  });\n\n  setInterval(function() {\n    values.shift(); \n\n    new_ts = ts + (count*60000),\n    values.push({\n      date: new_ts,\n      price: Math.random() * 10\n    });\n    count++;\n\n    x.domain([values[0].date, values[values.length-1].date])\n\n    var t = svg.transition().duration(750);\n    t.select(\".x.axis\").call(xAxis);\n    t.select(\".line\").attr(\"d\", line(values));\n  }, 1000);\n\n    </script>\n  </body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-12-22T02:23:41Z",
+  "url": "https://api.github.com/gists/1508606",
+  "id": "1508606"
+}

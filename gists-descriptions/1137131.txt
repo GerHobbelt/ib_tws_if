@@ -1,0 +1,68 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "1b51d01b6382cbe108f9bc72ef754964",
+    "login": "barrym",
+    "avatar_url": "https://secure.gravatar.com/avatar/1b51d01b6382cbe108f9bc72ef754964?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/barrym",
+    "id": 639
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "1b51d01b6382cbe108f9bc72ef754964",
+        "login": "barrym",
+        "avatar_url": "https://secure.gravatar.com/avatar/1b51d01b6382cbe108f9bc72ef754964?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/barrym",
+        "id": 639
+      },
+      "committed_at": "2011-08-10T15:26:53Z",
+      "version": "cf1049dc4d5cd7d21cf687291c184d5f01062101",
+      "url": "https://api.github.com/gists/1137131/cf1049dc4d5cd7d21cf687291c184d5f01062101",
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "1b51d01b6382cbe108f9bc72ef754964",
+        "login": "barrym",
+        "avatar_url": "https://secure.gravatar.com/avatar/1b51d01b6382cbe108f9bc72ef754964?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/barrym",
+        "id": 639
+      },
+      "committed_at": "2011-08-10T15:26:33Z",
+      "version": "fa2157f0c1b5c3cc662191947792e2d436d87111",
+      "url": "https://api.github.com/gists/1137131/fa2157f0c1b5c3cc662191947792e2d436d87111",
+      "change_status": {
+        "total": 48,
+        "additions": 48,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "d3 scrolling line graph example",
+  "comments": 0,
+  "created_at": "2011-08-10T15:26:33Z",
+  "git_pull_url": "git://gist.github.com/1137131.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1137131",
+  "git_push_url": "git@gist.github.com:1137131.git",
+  "files": {
+    "example.coffee": {
+      "type": "text/coffescript",
+      "filename": "example.coffee",
+      "raw_url": "https://gist.github.com/raw/1137131/e4b9617dc8cf2fbae8b4c378d21cd520dbaf0e6a/example.coffee",
+      "size": 1001,
+      "content": "w = 500\nh = 300\nx = null\ny = null\nintervalTime = 500\n\ndata = d3.range(100).map((n) -> Math.round(Math.random() * 100))\n\nsetInterval(\n\t() ->\n\t\tdata.push(Math.round(Math.random() * 100))\n\t\tdata.shift()\n\t\tcalculate_scales()\n\t\tredraw()\n\t, intervalTime)\n\ncalculate_scales = () ->\n    x = d3.scale.linear().domain([0, data.length - 1]).range([0, w])\n    y = d3.scale.linear().domain([0, d3.max(data)]).range([h, 0])\n\ncalculate_scales()\n\nvis = d3.select(\"body\")\n    .append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n    .append(\"svg:g\")\n\npath = d3.svg.line()\n    .x((d, i) -> x(i))\n    .y((d) -> y(d))\n    .interpolate(\"linear\")\n\nvis.selectAll(\"path\")\n    .data([data])\n    .enter()\n    .append(\"svg:path\")\n    .attr(\"d\", path)\n\nredraw = () ->\n    vis.selectAll(\"path\")\n        .data([data])\n        .attr(\"transform\", \"translate(#{x(1) - x(0)})\")\n        .attr(\"d\", path)\n        .transition()\n        .ease(\"linear\")\n        .duration(intervalTime)\n        .attr(\"transform\", \"translate(0)\")\n",
+      "language": "CoffeeScript"
+    }
+  },
+  "updated_at": "2011-08-10T15:26:53Z",
+  "url": "https://api.github.com/gists/1137131",
+  "id": "1137131"
+}

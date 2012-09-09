@@ -1,0 +1,269 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+    "login": "enjalot",
+    "url": "https://api.github.com/users/enjalot",
+    "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 96189
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "3d145ca94cde2cb693df0d33a4c4f3211601ca1c",
+      "committed_at": "2011-10-07T00:43:48Z",
+      "url": "https://api.github.com/gists/1269004/3d145ca94cde2cb693df0d33a4c4f3211601ca1c"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 10,
+        "additions": 2,
+        "deletions": 8
+      },
+      "version": "3caafec69dc0f6299f113029fce77babce9cddc7",
+      "committed_at": "2011-10-07T00:43:11Z",
+      "url": "https://api.github.com/gists/1269004/3caafec69dc0f6299f113029fce77babce9cddc7"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 17,
+        "additions": 10,
+        "deletions": 7
+      },
+      "version": "b27fb793ef2a8631f6c64a591168137dae2bdaa6",
+      "committed_at": "2011-10-07T00:34:38Z",
+      "url": "https://api.github.com/gists/1269004/b27fb793ef2a8631f6c64a591168137dae2bdaa6"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "version": "72c25f11ca4ec770586c024ff7f529817a82fe61",
+      "committed_at": "2011-10-06T23:44:09Z",
+      "url": "https://api.github.com/gists/1269004/72c25f11ca4ec770586c024ff7f529817a82fe61"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      },
+      "version": "38ee8cc9d049fb0946fa28517d9f73f13c1a8fb9",
+      "committed_at": "2011-10-06T23:42:41Z",
+      "url": "https://api.github.com/gists/1269004/38ee8cc9d049fb0946fa28517d9f73f13c1a8fb9"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "94fcaf8acb7c0448cb2faa5cc5dab61c329cd58f",
+      "committed_at": "2011-10-06T23:42:03Z",
+      "url": "https://api.github.com/gists/1269004/94fcaf8acb7c0448cb2faa5cc5dab61c329cd58f"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 18,
+        "additions": 12,
+        "deletions": 6
+      },
+      "version": "22064015682d6582c29a33430ff272a9b09359be",
+      "committed_at": "2011-10-06T23:41:25Z",
+      "url": "https://api.github.com/gists/1269004/22064015682d6582c29a33430ff272a9b09359be"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 11,
+        "additions": 8,
+        "deletions": 3
+      },
+      "version": "c59673ecbfa02a7250efc13e5de324b87a61a45e",
+      "committed_at": "2011-10-06T23:39:58Z",
+      "url": "https://api.github.com/gists/1269004/c59673ecbfa02a7250efc13e5de324b87a61a45e"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "version": "de03d240d447e1d6c0a30ed6299c8328616bc1bc",
+      "committed_at": "2011-10-06T23:36:42Z",
+      "url": "https://api.github.com/gists/1269004/de03d240d447e1d6c0a30ed6299c8328616bc1bc"
+    },
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "url": "https://api.github.com/users/enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 96189
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "b548ce0eabe247f302e9af6d1700d2209050010c",
+      "committed_at": "2011-10-06T23:35:58Z",
+      "url": "https://api.github.com/gists/1269004/b548ce0eabe247f302e9af6d1700d2209050010c"
+    }
+  ],
+  "description": "",
+  "comments": 0,
+  "created_at": "2011-10-06T23:30:07Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1269004",
+  "git_pull_url": "git://gist.github.com/1269004.git",
+  "files": {
+    "bubble.js": {
+      "type": "application/javascript",
+      "filename": "bubble.js",
+      "size": 2266,
+      "raw_url": "https://gist.github.com/raw/1269004/4337a28e9a10c948e9724db0b85e46e692d09d19/bubble.js",
+      "content": "var r = 480,\n    format = d3.format(\",d\"),\n    fill = d3.scale.category20c();\n\t\nvar keeper;\t\n\nvar bubble = d3.layout.pack()\n    .sort(null)\n    .size([r, r]);\n\nvar vis = d3.select(\"#chart\").append(\"svg:svg\")\n    .attr(\"width\", r)\n    .attr(\"height\", r)\n    .attr(\"class\", \"bubble\");\n\n//d3.json(\"../data/flaretest.json\", function(json) {\n\n//\tkeeper = json;\nconsole.log(keeper);\n  var node = vis.selectAll(\"g.node\")\n      .data(bubble.nodes(classes(keeper))\n      .filter(function(d) { return !d.children; }))\n    .enter().append(\"svg:g\")\n      .attr(\"class\", \"node\")\n      .attr(\"transform\", function(d) { return \"translate(\" + d.x + \",\" + d.y + \")\"; });\n\n  node.append(\"svg:title\")\n      .text(function(d) { return d.className + \": \" + format(d.value); });\n\n  node.append(\"svg:circle\")\n      .attr(\"r\", function(d) { return d.r; })\n      .style(\"fill\", function(d) { return fill(d.packageName); });\n\n  node.append(\"svg:text\")\n      .attr(\"text-anchor\", \"middle\")\n      .attr(\"dy\", \".3em\")\n      .text(function(d) { return d.className.substring(0, d.r / 3); });\n\nconsole.log(node);\t  \n\t  \n\t  \n\t  \nfunction switchIt() {\n    var nodes = bubble.nodes(classes(keeper))\n      .filter(function(d) { return !d.children; });\n    nodes.forEach(function(n,i) {\n        n.r/= 2;\n    }); \n\n\n\t\n  var snode = vis.selectAll(\"g.node\")\n      .data(nodes, function(d,i) { \n           return d.className; });\n\nconsole.log(snode);\n \n  snode.select(\"text\")\n\t .transition()\n\t .delay(100)\n\t .duration(500)\n\t .text(function(d) { \n             var s = d.className + \": \" + format(d.value); \n             console.log(s);\n             return s;\n         });\n\n  snode.select(\"circle\")\n\t .transition()\n\t .delay(100)\n\t .duration(500)\n      .attr(\"r\", function(d) { return d.r; })\n      .style(\"fill\", function(d) { return fill(d.packageName); });\n\n\n};\n\t  \n// Returns a flattened hierarchy containing all leaf nodes under the root.\nfunction classes(root) {\n  var classes = [];\n\n  function recurse(name, node) {\n    if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });\n    else classes.push({packageName: name, className: node.name, value: node.size});\n  }\n\n  recurse(null, root);\n  return {children: classes};\n}\n\nd3.select(\"#knop\").on(\"click\", switchIt);\n\n//});",
+      "language": "JavaScript"
+    },
+    "flaretest.json": {
+      "type": "application/json",
+      "filename": "flaretest.json",
+      "size": 292,
+      "raw_url": "https://gist.github.com/raw/1269004/1e0c6f6d248df7e0e48c6e7ed604844576148b41/flaretest.json",
+      "content": "var keeper = {\n    \"naam\": \"things\",\n    \"children\": [\n        {\n            \"name\": \"bloeb\",\n            \"size\": 310023\n        },\n        {\n            \"name\": \"poef\",\n            \"size\": 1874900\n        },\n        {\n            \"name\": \"dapp\",\n            \"size\": 412440\n        }\n    ]\n}\n",
+      "language": "JSON"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 649,
+      "raw_url": "https://gist.github.com/raw/1269004/37c4423406db6814665c74988713c2a3cf735371/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Bubble Chart</title>\n     <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.3.0\"></script>\n   <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.3.0\"></script>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"bubble.css\"/>\n  </head>\n  <body>\n    <div id=\"chart\"></div>\n\t<input type=\"button\" id=\"knop\" class=\"buttons\" value=\">1>\">\n\n    <script type=\"text/javascript\" src=\"flaretest.json\"></script>\n    <script type=\"text/javascript\" src=\"bubble.js\"></script>\n    \n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1269004.git",
+  "updated_at": "2011-10-06T23:30:07Z",
+  "url": "https://api.github.com/gists/1269004",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "99741b73b7b37461ee2fcb01cb2c3677",
+      "login": "wimdows",
+      "url": "https://api.github.com/users/wimdows",
+      "avatar_url": "https://secure.gravatar.com/avatar/99741b73b7b37461ee2fcb01cb2c3677?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 1142762
+    },
+    "description": "",
+    "comments": 0,
+    "created_at": "2011-10-06T23:18:49Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1268974",
+    "git_pull_url": "git://gist.github.com/1268974.git",
+    "files": {
+      "bubble.css": {
+        "type": "text/css",
+        "filename": "bubble.css",
+        "size": 85,
+        "raw_url": "https://gist.github.com/raw/1268974/d6672925325ee5156726d3e1fa69fcf963c07028/bubble.css",
+        "language": "CSS"
+      },
+      "bubble met transitie.js": {
+        "type": "application/javascript",
+        "filename": "bubble met transitie.js",
+        "size": 2121,
+        "raw_url": "https://gist.github.com/raw/1268974/239772f2b58984ad68209e24d0c26992b4c1385c/bubble met transitie.js",
+        "language": "JavaScript"
+      },
+      "flaretest.json": {
+        "type": "application/json",
+        "filename": "flaretest.json",
+        "size": 279,
+        "raw_url": "https://gist.github.com/raw/1268974/b1bbf2259fb02c1900680ff259b116790d139af2/flaretest.json",
+        "language": "JSON"
+      },
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 588,
+        "raw_url": "https://gist.github.com/raw/1268974/7e53b594d6567d77c977db69d8f30c9f39447885/index.html",
+        "language": "HTML"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1268974.git",
+    "updated_at": "2011-11-16T13:02:30Z",
+    "url": "https://api.github.com/gists/1268974",
+    "id": "1268974"
+  },
+  "id": "1269004"
+}

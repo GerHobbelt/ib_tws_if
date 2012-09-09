@@ -1,0 +1,127 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-10-26T21:49:29Z",
+      "version": "fa406b4cf66464b783787be80155acb4621c056c",
+      "url": "https://api.github.com/gists/647888/fa406b4cf66464b783787be80155acb4621c056c",
+      "change_status": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-10-26T21:49:01Z",
+      "version": "bde1eaa027ca4290fc899c6db888ccfcf90e07ea",
+      "url": "https://api.github.com/gists/647888/bde1eaa027ca4290fc899c6db888ccfcf90e07ea",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-10-26T21:48:40Z",
+      "version": "dfe72556e953bef7581194b55e3bb876e3b36168",
+      "url": "https://api.github.com/gists/647888/dfe72556e953bef7581194b55e3bb876e3b36168",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-10-26T21:48:03Z",
+      "version": "4520725a1365f34876b70d3a4098bb0698a8363b",
+      "url": "https://api.github.com/gists/647888/4520725a1365f34876b70d3a4098bb0698a8363b",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-10-26T21:47:25Z",
+      "version": "24f164ae77e78958d2097f80ac33dbd94f6fb023",
+      "url": "https://api.github.com/gists/647888/24f164ae77e78958d2097f80ac33dbd94f6fb023",
+      "change_status": {
+        "total": 79,
+        "additions": 79,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Image Processing",
+  "comments": 0,
+  "created_at": "2010-10-26T21:47:25Z",
+  "git_pull_url": "git://gist.github.com/647888.git",
+  "public": true,
+  "html_url": "https://gist.github.com/647888",
+  "git_push_url": "git@gist.github.com:647888.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/647888/70fa072668b8b1f65e1976c3ee4eebc0ea91b0d5/index.html",
+      "size": 688,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/polymaps.min.js\"></script>\n    <script type=\"text/javascript\" src=\"canvas.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/simplegeo/polymaps/raw/v2.3.0/examples/example.css\");\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar po = org.polymaps;\n\nvar map = po.map()\n    .container(document.body.appendChild(po.svg(\"svg\")))\n    .tileSize({x: 149, y: 149})\n    .add(po.interact());\n\nmap.add(po.canvas()\n    .url(\"http://bl.ocks.org/forkme.png\"));\n\nmap.add(po.compass()\n    .pan(\"none\"));\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "canvas.js": {
+      "type": "application/javascript",
+      "filename": "canvas.js",
+      "raw_url": "https://gist.github.com/raw/647888/84709ca1fdcad5f6d1d3f59d8d1451d2f1c55325/canvas.js",
+      "size": 1266,
+      "content": "(function() {\n  var po = org.polymaps;\n\n  po.canvas = function() {\n    var canvas = po.layer(load, unload),\n        image = po.svg(\"image\"), // dummy image\n        url;\n\n    function load(tile) {\n      var size = canvas.map().tileSize(),\n          o = tile.element = po.svg(\"foreignObject\"),\n          c = o.appendChild(document.createElement(\"canvas\")),\n          w = size.x,\n          h = size.y;\n\n      o.setAttribute(\"width\", w);\n      o.setAttribute(\"height\", h);\n      c.setAttribute(\"width\", w);\n      c.setAttribute(\"height\", h);\n\n      tile.request = po.queue.image(image, url(tile), function(img) {\n        var g = c.getContext(\"2d\"),\n            d = g.createImageData(w, h),\n            e;\n        delete tile.request;\n        tile.ready = true;\n        g.drawImage(img, 0, 0);\n        e = g.getImageData(0, 0, w, h);\n        for (var i = 0, n = w * h * 4; i < n; i++) d.data[i] = e.data[i] / 2; // e.g.\n        g.putImageData(d, 0, 0);\n        canvas.dispatch({type: \"load\", tile: tile});\n      });\n    }\n\n    function unload(tile) {\n      if (tile.request) tile.request.abort(true);\n    }\n\n    canvas.url = function(x) {\n      if (!arguments.length) return url;\n      url = po.url(x);\n      return canvas.reload();\n    };\n\n    return canvas;\n  };\n})();\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2010-10-26T21:49:29Z",
+  "url": "https://api.github.com/gists/647888",
+  "id": "647888"
+}

@@ -1,0 +1,103 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "bef4375324583f5cef705ab7eccaf0f5",
+    "login": "taclab",
+    "avatar_url": "https://secure.gravatar.com/avatar/bef4375324583f5cef705ab7eccaf0f5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/taclab",
+    "id": 147884
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "bef4375324583f5cef705ab7eccaf0f5",
+        "login": "taclab",
+        "avatar_url": "https://secure.gravatar.com/avatar/bef4375324583f5cef705ab7eccaf0f5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/taclab",
+        "id": 147884
+      },
+      "committed_at": "2011-12-06T17:15:05Z",
+      "version": "881b7f19b090ceae0369fdd0063645cf2eed752e",
+      "url": "https://api.github.com/gists/1439005/881b7f19b090ceae0369fdd0063645cf2eed752e",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-05-26T19:47:56Z",
+      "version": "20940547ea8ca7f75235a754275e39105ccfc872",
+      "url": "https://api.github.com/gists/1439005/20940547ea8ca7f75235a754275e39105ccfc872",
+      "change_status": {
+        "total": 80,
+        "additions": 80,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Histogram (D3)",
+  "comments": 0,
+  "created_at": "2011-12-06T17:14:40Z",
+  "git_pull_url": "git://gist.github.com/1439005.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1439005",
+  "git_push_url": "git@gist.github.com:1439005.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1439005/be3673599f111d0997e024a613d0d0c8f03a91d4/index.html",
+      "size": 1772,
+      "content": "<!DOCTYPE html> \n<html> \n  <head> \n    <title>Histogram</title> \n    <script type=\"text/javascript\" src=\"https://github.com/mbostock/d3/raw/v1.17.0/d3.js\"></script> \n    <script type=\"text/javascript\" src=\"https://github.com/mbostock/d3/raw/v1.17.0/d3.layout.js\"></script> \n    <style type=\"text/css\"> \n \nbody {\n  font: 10px sans-serif;\n}\n \nrect {\n  fill: steelblue;\n  stroke: white;\n}\n \nline {\n  stroke: black;\n  shape-rendering: crispEdges;\n}\n \n    </style> \n  </head> \n  <body> \n    <script type=\"text/javascript\"> \n \nvar n = 10000, // number of trials\n    m = 10,    // number of random variables\n    data = [];\n \n// Generate an Irwin-Hall distribution.\nfor (var i = 0; i < n; i++) {\n  for (var s = 0, j = 0; j < m; j++) {\n    s += Math.random();\n  }\n  data.push(s);\n}\n console.log(data);\nvar w = 400,\n    h = 400;\n \nvar histogram = d3.layout.histogram()\n    (data);\n \nvar x = d3.scale.ordinal()\n    .domain(histogram.map(function(d) { return d.x; }))\n    .rangeRoundBands([0, w]);\n \nvar y = d3.scale.linear()\n    .domain([0, d3.max(histogram, function(d) { return d.y; })])\n    .range([0, h]);\n \nvar vis = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(.5)\");\n \nvis.selectAll(\"rect\")\n    .data(histogram)\n  .enter().append(\"svg:rect\")\n    .attr(\"transform\", function(d) { return \"translate(\" + x(d.x) + \",\" + (h - y(d.y)) + \")\"; })\n    .attr(\"width\", x.rangeBand())\n    .attr(\"y\", function(d) { return y(d.y); })\n    .attr(\"height\", 0)\n  .transition()\n    .duration(750)\n    .attr(\"y\", 0)\n    .attr(\"height\", function(d) { return y(d.y); });\n \nvis.append(\"svg:line\")\n    .attr(\"x1\", 0)\n    .attr(\"x2\", w)\n    .attr(\"y1\", h)\n    .attr(\"y2\", h);\n \n    </script> \n  </body> \n</html> ",
+      "language": "HTML"
+    }
+  },
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mbostock",
+      "id": 230541
+    },
+    "description": "Histogram (Redirect)",
+    "comments": 3,
+    "created_at": "2011-05-26T19:47:56Z",
+    "git_pull_url": "git://gist.github.com/993912.git",
+    "public": true,
+    "html_url": "https://gist.github.com/993912",
+    "git_push_url": "git@gist.github.com:993912.git",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/993912/087939e301e72d35798c509379693bd98859ac66/index.html",
+        "size": 81,
+        "language": "HTML"
+      },
+      "README.md": {
+        "type": "text/plain",
+        "filename": "README.md",
+        "raw_url": "https://gist.github.com/raw/993912/9829fe2c68182f8b106f798d665bd302c119fb7d/README.md",
+        "size": 55,
+        "language": "Markdown"
+      }
+    },
+    "updated_at": "2012-07-04T18:03:28Z",
+    "url": "https://api.github.com/gists/993912",
+    "id": "993912"
+  },
+  "updated_at": "2011-12-06T17:14:40Z",
+  "url": "https://api.github.com/gists/1439005",
+  "id": "1439005"
+}

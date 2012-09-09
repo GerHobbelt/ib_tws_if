@@ -1,0 +1,126 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "git_push_url": "git@gist.github.com:3116713.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "4cda2b651a27df503f315762392b67fa81cf2a16",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "committed_at": "2012-09-09T08:44:32Z",
+      "url": "https://api.github.com/gists/3116713/4cda2b651a27df503f315762392b67fa81cf2a16"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "966a076d57a25d0bdf3d4db0ae6f1daa4dc9fb38",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-07-17T09:21:46Z",
+      "url": "https://api.github.com/gists/3116713/966a076d57a25d0bdf3d4db0ae6f1daa4dc9fb38"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "c0cb97daa5579035d9fe524dd1f405ec44fb14bf",
+      "change_status": {
+        "total": 195,
+        "additions": 195,
+        "deletions": 0
+      },
+      "committed_at": "2012-07-16T22:17:45Z",
+      "url": "https://api.github.com/gists/3116713/c0cb97daa5579035d9fe524dd1f405ec44fb14bf"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "6bbf0b2ea2c098ca4889e460df6f4f1fa5655879",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "committed_at": "2012-07-15T12:54:34Z",
+      "url": "https://api.github.com/gists/3116713/6bbf0b2ea2c098ca4889e460df6f4f1fa5655879"
+    }
+  ],
+  "description": "d3.js: collision detection",
+  "comments": 0,
+  "created_at": "2012-07-15T12:54:34Z",
+  "public": true,
+  "html_url": "https://gist.github.com/3116713",
+  "files": {
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/3116713/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "style000.css": {
+      "type": "text/css",
+      "filename": "style000.css",
+      "raw_url": "https://gist.github.com/raw/3116713/47e83fb694d11d55d90f2c8b5be11d7ceef62696/style000.css",
+      "size": 993,
+      "content": "body {\n  overflow: hidden;\n  margin: 0;\n  font-size: 14px;\n  font-family: \"Helvetica Neue\", Helvetica;\n}\n\n#chart, #header, #footer {\n  position: absolute;\n  top: 0;\n}\n\n#header, #footer {\n  z-index: 1;\n  display: block;\n  font-size: 36px;\n  font-weight: 300;\n  text-shadow: 0 1px 0 #fff;\n}\n\n#header.inverted, #footer.inverted {\n  color: #fff;\n  text-shadow: 0 1px 4px #000;\n}\n\n#header {\n  top: 80px;\n  left: 140px;\n  width: 1000px;\n}\n\n#footer {\n  top: 680px;\n  right: 140px;\n  text-align: right;\n}\n\nrect {\n  fill: none;\n  pointer-events: all;\n}\n\npre {\n  font-size: 18px;\n}\n\nline {\n  stroke: #000;\n  stroke-width: 1.5px;\n}\n\n.string, .regexp {\n  color: #f39;\n}\n\n.keyword {\n  color: #00c;\n}\n\n.comment {\n  color: #777;\n  font-style: oblique;\n}\n\n.number {\n  color: #369;\n}\n\n.class, .special {\n  color: #1181B8;\n}\n\na:link, a:visited {\n  color: #000;\n  text-decoration: none;\n}\n\na:hover {\n  color: #666;\n}\n\n.hint {\n  position: absolute;\n  right: 0;\n  width: 1280px;\n  font-size: 12px;\n  color: #999;\n}",
+      "language": "CSS"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/3116713/adc38fd3099b3152749aaa1e2d4623d20736752d/index.html",
+      "size": 2381,
+      "content": "<!DOCTYPE html>\n<html>\n  \n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">\n<head>\n    \n    <script src=\"http://d3js.org/d3.v2.js\"></script>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"style000.css\">\n    <style type=\"text/css\">\n\ncircle {\n  stroke: #000;\n  stroke-opacity: .5;\n}\n\n    </style>\n  </head>\n  <body>\n    <div id=\"body\">\n      <div id=\"footer\">\n        Collision Detection\n        <div class=\"hint\">move the mouse to repel nodes</div>\n      </div>\n    </div>\n    <script type=\"text/javascript\">\n\nvar w = 1280,\n    h = 800;\n\nvar nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),\n    color = d3.scale.category10();\n\nvar force = d3.layout.force()\n    .gravity(0.05)\n    .charge(function(d, i) { return i ? 0 : -2000; })\n    .nodes(nodes)\n    .size([w, h]);\n\nvar root = nodes[0];\nroot.radius = 0;\nroot.fixed = true;\n\nforce.start();\n\nvar svg = d3.select(\"#body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nsvg.selectAll(\"circle\")\n    .data(nodes.slice(1))\n  .enter().append(\"svg:circle\")\n    .attr(\"r\", function(d) { return d.radius - 2; })\n    .style(\"fill\", function(d, i) { return color(i % 3); });\n\nforce.on(\"tick\", function(e) {\n  var q = d3.geom.quadtree(nodes),\n      i = 0,\n      n = nodes.length;\n\n  while (++i < n) {\n    q.visit(collide(nodes[i]));\n  }\n\n  svg.selectAll(\"circle\")\n      .attr(\"cx\", function(d) { return d.x; })\n      .attr(\"cy\", function(d) { return d.y; });\n});\n\nsvg.on(\"mousemove\", function() {\n  var p1 = d3.svg.mouse(this);\n  root.px = p1[0];\n  root.py = p1[1];\n  force.resume();\n});\n\nfunction collide(node) {\n  var r = node.radius + 16,\n      nx1 = node.x - r,\n      nx2 = node.x + r,\n      ny1 = node.y - r,\n      ny2 = node.y + r;\n  return function(quad, x1, y1, x2, y2) {\n    if (quad.point && (quad.point !== node)) {\n      var x = node.x - quad.point.x,\n          y = node.y - quad.point.y,\n          l = Math.sqrt(x * x + y * y),\n          r = node.radius + quad.point.radius;\n      if (l < r) {\n        l = (l - r) / l * .5;\n        node.x -= x *= l;\n        node.y -= y *= l;\n        quad.point.x += x;\n        quad.point.y += y;\n      }\n    }\n    return x1 > nx2\n        || x2 < nx1\n        || y1 > ny2\n        || y2 < ny1;\n  };\n}\n\n    </script>\n  </body>\n</html>\n\n<!-- This document saved from http://mbostock.github.com/d3/talk/20111018/collision.html -->\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/3116713/a344f5003ac75f91ae5ad3d80a7b88c35034f508/README.md",
+      "size": 128,
+      "content": "copy of [http://mbostock.github.com/d3/talk/20111018/collision.html](http://mbostock.github.com/d3/talk/20111018/collision.html)",
+      "language": "Markdown"
+    }
+  },
+  "updated_at": "2012-09-09T08:54:48Z",
+  "url": "https://api.github.com/gists/3116713",
+  "git_pull_url": "git://gist.github.com/3116713.git",
+  "id": "3116713"
+}

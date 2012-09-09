@@ -1,0 +1,177 @@
+{
+  "git_pull_url": "git://gist.github.com/597287.git",
+  "forks": [
+    {
+      "updated_at": "2010-09-25T21:25:29Z",
+      "user": {
+        "gravatar_id": "a1c0e0c3b1a5147ae7742a76b93a2225",
+        "url": "https://api.github.com/users/NelsonMinar",
+        "avatar_url": "https://secure.gravatar.com/avatar/a1c0e0c3b1a5147ae7742a76b93a2225?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "NelsonMinar",
+        "id": 382136
+      },
+      "url": "https://api.github.com/gists/597316",
+      "id": "597316",
+      "created_at": "2010-09-25T21:24:39Z"
+    },
+    {
+      "updated_at": "2011-08-20T05:24:00Z",
+      "user": {
+        "gravatar_id": "193b7b321269f0fd0781c55054ea5e00",
+        "url": "https://api.github.com/users/mikedouglas",
+        "avatar_url": "https://secure.gravatar.com/avatar/193b7b321269f0fd0781c55054ea5e00?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mikedouglas",
+        "id": 1440
+      },
+      "url": "https://api.github.com/gists/1158709",
+      "id": "1158709",
+      "created_at": "2011-08-20T05:24:00Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:597287.git",
+  "updated_at": "2010-09-26T01:20:27Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/mbostock/polymaps/raw/fcfe7020bf8dfa27c4c7b032d74b6b5e24a18868/polymaps.min.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/mbostock/polymaps/raw/fcfe7020bf8dfa27c4c7b032d74b6b5e24a18868/examples/example.css\");\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nhilbert = (function() {\n  // Adapted from Nick Johnson: http://bit.ly/biWkkq\n  var pairs = [\n    [[0, 3], [1, 0], [3, 1], [2, 0]],\n    [[2, 1], [1, 1], [3, 0], [0, 2]],\n    [[2, 2], [3, 3], [1, 2], [0, 1]],\n    [[0, 0], [3, 2], [1, 3], [2, 3]]\n  ];\n  return function(x, y, z) {\n    var quad = 0,\n        pair,\n        i = 0;\n    while (--z >= 0) {\n      pair = pairs[quad][(x & (1 << z) ? 2 : 0) | (y & (1 << z) ? 1 : 0)];\n      i = (i << 2) | pair[0];\n      quad = pair[1];\n    }\n    return i;\n  };\n})();\n\nvar po = org.polymaps;\n\nvar size = {x: 32, y: 32};\n\nvar map = po.map()\n    .container(document.body.appendChild(po.svg(\"svg\")))\n    .zoomRange([0, 6])\n    .zoom(4)\n    .center({lat: 0, lon: 0})\n    .tileSize(size)\n    .add(po.interact());\n\nmap.add(po.layer(rainbow));\n\nmap.add(po.compass()\n    .pan(\"none\"));\n\nfunction rainbow(tile) {\n  var rect = tile.element = po.svg(\"rect\"),\n      i = hilbert(tile.column, tile.row, tile.zoom),\n      j = ~~(i * 360 / Math.pow(4, tile.zoom)),\n      k = 1 << tile.zoom;\n  if (tile.column < 0 || tile.column >= k) return;\n  rect.setAttribute(\"width\", size.x);\n  rect.setAttribute(\"height\", size.y);\n  rect.setAttribute(\"fill\", hsl(j, 1, .5));\n}\n\nfunction hsl(h, s, l) {\n  var m1,\n      m2;\n\n  /* Some simple corrections for h, s and l. */\n  h = h % 360; if (h < 0) h += 360;\n  s = s < 0 ? 0 : s > 1 ? 1 : s;\n  l = l < 0 ? 0 : l > 1 ? 1 : l;\n\n  /* From FvD 13.37, CSS Color Module Level 3 */\n  m2 = l <= .5 ? l * (1 + s) : l + s - l * s;\n  m1 = 2 * l - m2;\n\n  function v(h) {\n    if (h > 360) h -= 360;\n    else if (h < 0) h += 360;\n    if (h < 60) return m1 + (m2 - m1) * h / 60;\n    if (h < 180) return m2;\n    if (h < 240) return m1 + (m2 - m1) * (240 - h) / 60;\n    return m1;\n  }\n\n  function vv(h) {\n    return Math.round(v(h) * 255);\n  }\n\n  return \"rgb(\" + vv(h + 120) + \",\" + vv(h) + \",\" + vv(h - 120) + \")\";\n}\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/597287/788a7fdc56af2b4d2361ef394dd0716e0a69074f/index.html",
+      "size": 2289
+    },
+    "README.mkd": {
+      "type": "text/plain",
+      "filename": "README.mkd",
+      "language": "Markdown",
+      "content": "Say you have a bunch of things, like thousands of photos from your digital camera. What if you wanted to look at them all at once? A typical user interface might order the photos chronologically by column and then by row, which does a decent job of grouping related photos together... But, if you have thousands of photos, the rows may be hundreds of photos long, and it is impossible to zoom in on a group of related photos!\n\nAn alternative that better preserves locality is a [space-filling curve](http://en.wikipedia.org/wiki/Space-filling_curve), such as the [Hilbert curve](http://en.wikipedia.org/wiki/Hilbert_curve). These curves can be used to place related things next to each other in space, avoiding those huge gaps across rows you see with sequential layout.\n\nThis example demonstrates the effect of using a Hilbert curve for layout with [Polymaps](http://polymaps.org) by generating rainbow-colored tiles. As you can see, each tile is surrounded by its adjacent colors in the rainbow, even as you zoom in and out. In contrast, the [sequential layout](http://bl.ocks.org/597292) only preserves locality in one dimension.",
+      "raw_url": "https://gist.github.com/raw/597287/a4c32f0ae87d7e0a13f2c316efd8acff32880f2e/README.mkd",
+      "size": 1132
+    }
+  },
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "version": "582be1b9d67dc02784df8a2d5be7e3e9b6230da4",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/582be1b9d67dc02784df8a2d5be7e3e9b6230da4",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-26T01:20:27Z"
+    },
+    {
+      "version": "d2cc711950b8b6365a2b8729d2709e0537353b87",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/d2cc711950b8b6365a2b8729d2709e0537353b87",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-26T01:19:48Z"
+    },
+    {
+      "version": "5aafd925873a316af731670a8fcc437b10d7cdfd",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/5aafd925873a316af731670a8fcc437b10d7cdfd",
+      "change_status": {
+        "total": 31,
+        "deletions": 1,
+        "additions": 30
+      },
+      "committed_at": "2010-09-25T21:10:43Z"
+    },
+    {
+      "version": "c684b869cdbe8c02b4f768412469780f67d9ad45",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/c684b869cdbe8c02b4f768412469780f67d9ad45",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-25T21:06:47Z"
+    },
+    {
+      "version": "faf2ab3fecae7c39df264e895742f80d8fb6720d",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/faf2ab3fecae7c39df264e895742f80d8fb6720d",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-25T21:06:14Z"
+    },
+    {
+      "version": "395687a717845762443641dcb1baa8083be1950c",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/395687a717845762443641dcb1baa8083be1950c",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-25T20:58:14Z"
+    },
+    {
+      "version": "3b256a65aa9a7dba8ba32a4d5e0bd07412d209c9",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/3b256a65aa9a7dba8ba32a4d5e0bd07412d209c9",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-25T20:58:00Z"
+    },
+    {
+      "version": "0e188c1578392c31cae149a2f0a5405119c441f8",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/0e188c1578392c31cae149a2f0a5405119c441f8",
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "committed_at": "2010-09-25T20:57:39Z"
+    },
+    {
+      "version": "5d2aeaac9d5a5de6dc6b6bbedaa0aec3d5218de2",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/5d2aeaac9d5a5de6dc6b6bbedaa0aec3d5218de2",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-09-25T20:56:39Z"
+    },
+    {
+      "version": "caba7dcf3846a98017dce1409fcb834eb883f76b",
+      "user": null,
+      "url": "https://api.github.com/gists/597287/caba7dcf3846a98017dce1409fcb834eb883f76b",
+      "change_status": {
+        "total": 5,
+        "deletions": 0,
+        "additions": 5
+      },
+      "committed_at": "2010-09-25T20:54:43Z"
+    }
+  ],
+  "html_url": "https://gist.github.com/597287",
+  "url": "https://api.github.com/gists/597287",
+  "description": "Hilbert Tiles",
+  "id": "597287",
+  "comments": 0,
+  "created_at": "2010-09-25T20:37:51Z"
+}

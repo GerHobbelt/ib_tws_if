@@ -1,0 +1,176 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "97c3a8eea9b7eaa9e1e93ea3cd47399f",
+        "login": "Caged",
+        "url": "https://api.github.com/users/Caged",
+        "avatar_url": "https://secure.gravatar.com/avatar/97c3a8eea9b7eaa9e1e93ea3cd47399f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 25
+      },
+      "created_at": "2011-04-24T22:46:35Z",
+      "updated_at": "2011-04-24T22:46:45Z",
+      "url": "https://api.github.com/gists/939947",
+      "id": "939947"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 6,
+        "additions": 4,
+        "deletions": 2
+      },
+      "version": "9a56e02010615ee18a3cb7ee0725800664083200",
+      "committed_at": "2011-04-24T22:19:59Z",
+      "url": "https://api.github.com/gists/939927/9a56e02010615ee18a3cb7ee0725800664083200"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "version": "b39cc2f386bf4cfce189cc919465ec86e53cf5d7",
+      "committed_at": "2011-04-24T22:19:19Z",
+      "url": "https://api.github.com/gists/939927/b39cc2f386bf4cfce189cc919465ec86e53cf5d7"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 7,
+        "additions": 1,
+        "deletions": 6
+      },
+      "version": "e09775b370100f973cf0987b82d26e88acedf44d",
+      "committed_at": "2011-04-24T22:18:56Z",
+      "url": "https://api.github.com/gists/939927/e09775b370100f973cf0987b82d26e88acedf44d"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 9,
+        "additions": 6,
+        "deletions": 3
+      },
+      "version": "4d91242ea95d170166d9eb46ddb4b177bf3da7c1",
+      "committed_at": "2011-04-24T22:17:36Z",
+      "url": "https://api.github.com/gists/939927/4d91242ea95d170166d9eb46ddb4b177bf3da7c1"
+    },
+    {
+      "user": {
+        "gravatar_id": "97c3a8eea9b7eaa9e1e93ea3cd47399f",
+        "login": "Caged",
+        "url": "https://api.github.com/users/Caged",
+        "avatar_url": "https://secure.gravatar.com/avatar/97c3a8eea9b7eaa9e1e93ea3cd47399f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 25
+      },
+      "change_status": {
+        "total": 160,
+        "additions": 80,
+        "deletions": 80
+      },
+      "version": "d7bf7cd0fde93cd637b875b52b37f6d721a1826e",
+      "committed_at": "2011-04-24T21:39:29Z",
+      "url": "https://api.github.com/gists/939927/d7bf7cd0fde93cd637b875b52b37f6d721a1826e"
+    },
+    {
+      "user": {
+        "gravatar_id": "97c3a8eea9b7eaa9e1e93ea3cd47399f",
+        "login": "Caged",
+        "url": "https://api.github.com/users/Caged",
+        "avatar_url": "https://secure.gravatar.com/avatar/97c3a8eea9b7eaa9e1e93ea3cd47399f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 25
+      },
+      "change_status": {
+        "total": 80,
+        "additions": 80,
+        "deletions": 0
+      },
+      "version": "af5191f27b05130533fe93432cba2a1c494c1e77",
+      "committed_at": "2011-04-24T21:38:20Z",
+      "url": "https://api.github.com/gists/939927/af5191f27b05130533fe93432cba2a1c494c1e77"
+    }
+  ],
+  "description": "",
+  "comments": 0,
+  "created_at": "2011-04-24T22:15:12Z",
+  "public": true,
+  "html_url": "https://gist.github.com/939927",
+  "git_pull_url": "git://gist.github.com/939927.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 2111,
+      "raw_url": "https://gist.github.com/raw/939927/a30d20c051026449882c21553a708d2db48dd50f/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"https://github.com/Caged/d3/raw/master/d3.js\"></script>\n    <style type=\"text/css\">\n\nhtml, body {\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  padding: 0;\n}\n\npath {\n  fill: lightsteelblue;\n  stroke: steelblue;\n}\n\n    </style>\n  </head>\n  <body>\n  <script type=\"text/javascript\">\n    var data = [\n      {name:'bob',  connections: ['jane', 'tom', 'sue']},\n      {name:'jane', connections: ['bob', 'sue']},\n      {name:'sue',  connections: ['tom', 'bob', 'jane', 'tom']},\n      {name: 'tom', connections: []}\n     ]\n\n    var w = 300,\n        h = 300,\n        angle = d3.scale.ordinal().domain(d3.range(0, data.length)).rangeBands([0, 2 * Math.PI]),\n        line = d3.svg.chord()\n        .startAngle(function(d) { return (d.startAngle + d.endAngle) / 2; })\n        .endAngle(function(d) { return (d.startAngle + d.endAngle) / 2; })\n        .radius(h / 2 - 20),\n        angles = {},\n        connections = []\n        \n        \n        data.forEach(function(d, i) {\n          var a = angle(i)\n          angles[d.name] = { \n            startAngle: a, \n            endAngle: a + angle.rangeBand() / 2 \n          }\n        })\n    \n        data.forEach(function(p) {\n          p.connections.forEach(function(c) {\n            connections.push({\n              source: angles[p.name],\n              target: angles[c]\n            })\n          })\n        })\n    \n    \n    var vis = d3.select(\"body\").append(\"svg:svg\")\n        .attr(\"width\", w)\n        .attr(\"height\", h)\n      .append(\"svg:g\")\n        .attr(\"transform\", \"translate(\" + w / 2 + \",\" + h / 2 + \")\");\n\n    vis.selectAll(\"path\")\n        .data(data)\n      .enter().append(\"svg:path\")\n        .attr(\"d\", d3.svg.arc()\n        .innerRadius(h / 2 - 20)\n        .outerRadius(h / 2 - 10)\n        .startAngle(function(d, i) { return angles[d.name].startAngle })\n        .endAngle(function(d, i) { return angles[d.name].endAngle; }));\n\n    vis.selectAll('path.c')\n      .data(connections)\n    .enter().append('svg:path')\n      .attr('d', line)\n      .attr('class', 'c')\n    </script>\n  </body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:939927.git",
+  "updated_at": "2011-04-24T22:16:01Z",
+  "url": "https://api.github.com/gists/939927",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "97c3a8eea9b7eaa9e1e93ea3cd47399f",
+      "login": "Caged",
+      "url": "https://api.github.com/users/Caged",
+      "avatar_url": "https://secure.gravatar.com/avatar/97c3a8eea9b7eaa9e1e93ea3cd47399f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 25
+    },
+    "description": "",
+    "comments": 0,
+    "created_at": "2011-04-24T21:38:19Z",
+    "public": true,
+    "html_url": "https://gist.github.com/939901",
+    "git_pull_url": "git://gist.github.com/939901.git",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 2046,
+        "raw_url": "https://gist.github.com/raw/939901/475fd262e540bd6e68ab7033685af21772d061e9/index.html",
+        "language": "HTML"
+      }
+    },
+    "git_push_url": "git@gist.github.com:939901.git",
+    "updated_at": "2011-04-24T21:38:40Z",
+    "url": "https://api.github.com/gists/939901",
+    "id": "939901"
+  },
+  "id": "939927"
+}

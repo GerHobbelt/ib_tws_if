@@ -1,0 +1,103 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "ecac1924ccb3235499980060002cacbc",
+        "login": "afiore",
+        "avatar_url": "https://secure.gravatar.com/avatar/ecac1924ccb3235499980060002cacbc?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/afiore",
+        "id": 63361
+      },
+      "created_at": "2011-01-04T22:02:41Z",
+      "updated_at": "2011-01-04T22:03:21Z",
+      "url": "https://api.github.com/gists/765527",
+      "id": "765527"
+    },
+    {
+      "user": {
+        "gravatar_id": "6da1b884950fd587614122ab8b1a50bf",
+        "login": "saleiva",
+        "avatar_url": "https://secure.gravatar.com/avatar/6da1b884950fd587614122ab8b1a50bf?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/saleiva",
+        "id": 132149
+      },
+      "created_at": "2011-01-14T18:24:58Z",
+      "updated_at": "2011-01-14T18:25:48Z",
+      "url": "https://api.github.com/gists/779994",
+      "id": "779994"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": null,
+      "committed_at": "2010-10-03T23:45:29Z",
+      "version": "0d4860cfe5ca733a3ea1284d719df52ae23da650",
+      "url": "https://api.github.com/gists/609059/0d4860cfe5ca733a3ea1284d719df52ae23da650",
+      "change_status": {
+        "total": 7,
+        "additions": 6,
+        "deletions": 1
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2010-10-03T23:44:49Z",
+      "version": "9029b1f6c2d24092bc445c8d9fc56ee9bba7102f",
+      "url": "https://api.github.com/gists/609059/9029b1f6c2d24092bc445c8d9fc56ee9bba7102f",
+      "change_status": {
+        "total": 3,
+        "additions": 1,
+        "deletions": 2
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2010-10-03T23:44:18Z",
+      "version": "452ab20dc6d64323c31cd362eb2922f31d0e705c",
+      "url": "https://api.github.com/gists/609059/452ab20dc6d64323c31cd362eb2922f31d0e705c",
+      "change_status": {
+        "total": 2,
+        "additions": 0,
+        "deletions": 2
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2010-10-03T23:43:49Z",
+      "version": "0c4fffbebaffe647b47c88180b31bd05b8dbdd44",
+      "url": "https://api.github.com/gists/609059/0c4fffbebaffe647b47c88180b31bd05b8dbdd44",
+      "change_status": {
+        "total": 78,
+        "additions": 78,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Polymaps / Heatmap",
+  "comments": 0,
+  "created_at": "2010-10-03T23:43:49Z",
+  "git_pull_url": "git://gist.github.com/609059.git",
+  "public": true,
+  "html_url": "https://gist.github.com/609059",
+  "git_push_url": "git@gist.github.com:609059.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/609059/7700a21fa74eb31d9086e9aa0dc6eb60049193a4/index.html",
+      "size": 2249,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.2.0/polymaps.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/mbostock/polymaps/raw/586fbb0346548a5559b6edea8aab76ac51334da5/lib/crimespotting/crimespotting.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/simplegeo/polymaps/raw/v2.2.0/examples/example.css\");\n\nhtml, body {\n  height: 100%;\n  background: #E6E6E6;\n}\n\nsvg {\n  display: block;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar po = org.polymaps;\n\nvar svg = document.body.appendChild(po.svg(\"svg\")),\n    defs = svg.appendChild(po.svg(\"defs\")),\n    rg = defs.appendChild(po.svg(\"radialGradient\")),\n    s0 = rg.appendChild(po.svg(\"stop\")),\n    s1 = rg.appendChild(po.svg(\"stop\"));\n\nrg.setAttribute(\"id\", \"gradient\");\ns0.setAttribute(\"offset\", \"0%\");\ns0.setAttribute(\"stop-color\", \"green\");\ns1.setAttribute(\"offset\", \"100%\");\ns1.setAttribute(\"stop-color\", \"green\");\ns1.setAttribute(\"stop-opacity\", 0);\n\nvar map = po.map()\n    .container(svg)\n    .center({lat: 37.787, lon: -122.228})\n    .zoom(12)\n    .add(po.interact());\n\nmap.add(po.image()\n    .url(po.url(\"http://{S}tile.cloudmade.com\"\n    + \"/1a1b06b230af4efdbb989ea99e9841af\" // http://cloudmade.com/register\n    + \"/998/256/{Z}/{X}/{Y}.png\")\n    .hosts([\"a.\", \"b.\", \"c.\", \"\"])));\n\nmap.add(po.geoJson()\n    .features([\n  {geometry: {coordinates: [-122.258, 37.805], type: \"Point\"}},\n  {geometry: {coordinates: [-122.248, 37.805], type: \"Point\"}},\n  {geometry: {coordinates: [-122.258, 37.815], type: \"Point\"}}\n])\n    .on(\"load\", load));\n\nmap.add(po.compass()\n    .pan(\"none\"));\n\n/** Post-process the GeoJSON points! */\nfunction load(e) {\n  var r = 20 * Math.pow(2, e.tile.zoom - 12);\n  for (var i = 0; i < e.features.length; i++) {\n    var c = e.features[i].element;\n    c.setAttribute(\"r\", r);\n    c.setAttribute(\"fill\", \"url(#gradient)\");\n  }\n}\n\n    </script>\n    <span id=\"copy\">\n      &copy; 2010\n      <a href=\"http://www.cloudmade.com/\">CloudMade</a>,\n      <a href=\"http://www.openstreetmap.org/\">OpenStreetMap</a> contributors,\n      <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CCBYSA</a>.\n    </span>\n  </body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2010-10-10T20:54:11Z",
+  "url": "https://api.github.com/gists/609059",
+  "id": "609059"
+}

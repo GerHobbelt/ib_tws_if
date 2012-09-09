@@ -1,0 +1,68 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "27fd0cfec98c949709955c7ae5bd885b0f5aee03",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1171371/27fd0cfec98c949709955c7ae5bd885b0f5aee03",
+      "committed_at": "2011-08-25T18:24:54Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "c5dcd8c152dc57423d726f7e28d6a3dca562e105",
+      "change_status": {
+        "total": 19,
+        "additions": 19,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1171371/c5dcd8c152dc57423d726f7e28d6a3dca562e105",
+      "committed_at": "2011-08-25T18:24:20Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1171371.git",
+  "description": "Transition End",
+  "html_url": "https://gist.github.com/1171371",
+  "comments": 0,
+  "created_at": "2011-08-25T18:24:20Z",
+  "public": true,
+  "files": {
+    "transition-end.js": {
+      "type": "application/javascript",
+      "filename": "transition-end.js",
+      "raw_url": "https://gist.github.com/raw/1171371/b670dd1608dde48dde3e6047dc51b1466e67fdd9/transition-end.js",
+      "size": 513,
+      "content": "d3_transitionPrototype.end = function() {\n  var subgroups = [],\n      subgroup,\n      subnode,\n      node;\n\n  for (var j = -1, m = this.length; ++j < m;) {\n    subgroups.push(subgroup = []);\n    for (var group = this[j], i = -1, n = group.length; ++i < n;) {\n      if (node = group[i]) {\n        subgroup.push({node: node, delay: node.delay + node.duration, duration: node.duration});\n      } else {\n        subgroup.push(null);\n      }\n    }\n  }\n\n  return d3_transition(subgroups, this.id).ease(this.ease());\n};\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-08-25T18:24:20Z",
+  "url": "https://api.github.com/gists/1171371",
+  "id": "1171371",
+  "git_pull_url": "git://gist.github.com/1171371.git"
+}

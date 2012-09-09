@@ -1,0 +1,135 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-09-09T08:44:25Z",
+      "version": "d2c5e6dd56ad8bc4c32aa175d212a55b6f43bbe6",
+      "url": "https://api.github.com/gists/2037124/d2c5e6dd56ad8bc4c32aa175d212a55b6f43bbe6",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-03-14T17:47:12Z",
+      "version": "f3ebbf3c66e11ab878c373a423ce5bbfa7a88f5e",
+      "url": "https://api.github.com/gists/2037124/f3ebbf3c66e11ab878c373a423ce5bbfa7a88f5e",
+      "change_status": {
+        "total": 174,
+        "additions": 91,
+        "deletions": 83
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-03-14T17:33:01Z",
+      "version": "31f9e0ab5c7be34ae48d1585f6b5b1e148b9c3e4",
+      "url": "https://api.github.com/gists/2037124/31f9e0ab5c7be34ae48d1585f6b5b1e148b9c3e4",
+      "change_status": {
+        "total": 9,
+        "additions": 4,
+        "deletions": 5
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-03-14T17:26:49Z",
+      "version": "ad5a2970ad0a24f0eb029d00981069b0d424912d",
+      "url": "https://api.github.com/gists/2037124/ad5a2970ad0a24f0eb029d00981069b0d424912d",
+      "change_status": {
+        "total": 132,
+        "additions": 110,
+        "deletions": 22
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-03-14T15:11:07Z",
+      "version": "eff88bb8f91215c1aaa4b20bae06be02acaa107d",
+      "url": "https://api.github.com/gists/2037124/eff88bb8f91215c1aaa4b20bae06be02acaa107d",
+      "change_status": {
+        "total": 72,
+        "additions": 72,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "locale semi-agnostic string to float conversion [JavaScript]",
+  "comments": 0,
+  "created_at": "2012-03-14T15:11:07Z",
+  "git_pull_url": "git://gist.github.com/2037124.git",
+  "public": true,
+  "html_url": "https://gist.github.com/2037124",
+  "git_push_url": "git@gist.github.com:2037124.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/2037124/b4f35887368fa499e5ac32dbfe8c939a7cfbb465/index.html",
+      "size": 1170,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n    <meta content=\"text/html; charset=utf-8\">\n    <script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools.js\"></script>\n</head>\n<body>\n    <div id=\"getContent\">\n        <div class=\"article_price\">\n            Preis: <b>99,66</b> &euro;\n            <span>auch mit elektronischer Zeitschaltuhr</span>\n        </div>\n    </div>\n\n    <div class=\"chooseout\">\n        <a class=\"btn-2011 rsblue\" href=\"javascript:void(0);\">\n            <span class=\"btn-2011-glass\"></span>In den Warenkorb\n        </a>\n    </div>\n\n    <div id=\"warentext\" >\n        <p>Leider ist dieser Artikel unverk&auml;uflich denn sie existiert nur\n        virtuell.</p>\n        <p>Dennoch freuen wir uns sehr, dass Du bereit warst, die immense\n        Summe von <span class=\"gespreis\">0</span> Euro f&uuml;r diese\n        Produkte zu bezahlen.\n        Falls Du Dich jetzt fragst: Was soll ich mit den\n        <span class=\"gespreis\">0</span> Euro anfangen, von denen ich mich\n        bereits verabschiedet habe, gibt es einen Vorschlag: SPENDEN</p>\n    </div>\n\n    <script type=\"text/javascript\" src=\"cvt.js\"></script>\n</body>\n</html>\n",
+      "language": "HTML"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/2037124/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "cvt.js": {
+      "type": "application/javascript",
+      "filename": "cvt.js",
+      "raw_url": "https://gist.github.com/raw/2037124/a91fcac612b726ff8b56edb00b7921598be1189b/cvt.js",
+      "size": 5535,
+      "content": "// parseFloat() but now locale aware and trying to be locale agnostic\n//\n// put in closure to cache intel which you don't want to calc each time\n// you convert a string --> float\nfunction StrToFloat() {\n  var decimal_point = (1.1).toLocaleString().substr(1,1);\n  var K_separator = (5000).toLocaleString().substr(1,1);\n  if (K_separator === '0')\n    K_separator = (decimal_point === '.' ? ',' : '.');\n\n  return function(str) {\n    switch (typeof(str)) {\n    case 'float':\n    case 'integer':\n      return str;\n\n    default:\n      str = '' + str; // force str to be string type\n      str = str.match(/[0-9.,eE-]+/);\n      if (str)\n        str = str[0];\n      else\n        return Number.NaN; // VERY illegal number format\n\n      var kp = str.indexOf(',');\n      var dp = str.indexOf('.');\n      var kpl = str.lastIndexOf(',');\n      var dpl = str.lastIndexOf('.');\n      // can we be 'locale agnostic'? We can if both markers are in the input:\n      if (kp > 0 && dp > 0) {\n        if (kp < dp) {\n          // e.g.: 1,000.00\n          if (kpl > dpl || dpl > dp)\n            return Number.NaN; // VERY illegal number format\n          str = str.replace(/,/g, '');\n        } else {\n          // e.g.: 1.000,00\n          if (kpl < dpl || kpl > kp)\n            return Number.NaN; // VERY illegal number format\n          str = str.replace(/\\./g, '').replace(',', '.');\n        }\n      } else {\n        // only one of 'em in there: must we use the detected 'current' locale\n        // or can we 'heuristically determine' what's right here?\n        // We can do the latter if we have either:\n        // - only up to 2 digits following the only separator\n        // - more than 3 digits following the only separator\n        // - one separator only and the number starts with it, e.g. '.45'\n        //\n        // When we have only 3 digits following the last and only sep, we assume the separator\n        // to be a 'thousands marker'.\n        // We COULD fall back to the current locale, but than the ambiguous items receive\n        // different treatment on a possibly incorrect locale setting (e.g. my machines are all\n        // US/metric configured while I live in the Netherlands, but I /despise/ Dutch MS Excel,\n        // for example. Riding the 'locale aware' ticket would definitely screw up my [ambiguous]\n        // numbers. I believe it's better to be consistently wrong than semi-randomly correct.\n        //\n        // examples: 1.000 : 5,00 : 2,999.95 : 2,998 : 7.50 : 0,1791634 : 0.1791634 : .45 : ,32\n        if (dp >= 0 && kp < 0) {\n          // .45, ....\n          if (dp !== 0 && (dpl > dp || str.substr(dp + 1).match(/^[0-9]{3}\\b/)))\n            str = str.replace(/\\./g, '');\n        } else if (kp >= 0 && dp < 0) {\n          // ,32; ....\n          if (kp !== 0 && (kpl > kp || str.substr(kp + 1).match(/^[0-9]{3}\\b/)))\n            str = str.replace(/,/g, '');\n          else\n            str = str.replace(',', '.');\n        } else if (kp < 0 && dp < 0) {\n          // integer value\n        } else {\n          // VERY illegal format, such as '.456,678'\n          return Number.NaN;\n        }\n      }\n      // now str has parseFloat() compliant format with US decimal point\n      // only (iff it has a decimal fraction at all).\n      return parseFloat(str);\n    }\n  };\n}\n\n\n$$('.chooseout a').addEvent('click', function(e) {\n  e.stop();\n  var cvt = StrToFloat();\n  console.log('examples: 1.000 : ', cvt('1.000'));\n  console.log('examples: 1.000.000 : ', cvt('1.000.000'));\n  console.log('examples (India/US): 1.00.000 : ', cvt('1.00.000'));\n  console.log('examples: 5,00 : ', cvt('5,00'));\n  console.log('examples: 2,999.95 : ', cvt('2,999.95'));\n  console.log('examples: 2,999.995 : ', cvt('2,999.995'));\n  console.log('examples: 2.999,95 : ', cvt('2.999,95'));\n  console.log('examples: 2.999,995 : ', cvt('2.999,995'));\n  console.log('examples: 2,998 : ', cvt('2,998'));\n  console.log('examples: 2,999,998 : ', cvt('2,999,998'));\n  console.log('examples (India): 2,99,998 : ', cvt('2,99,998'));\n  console.log('examples: 7.50 : ', cvt('7.50'));\n  console.log('examples: 0,1791634 : ', cvt('0,1791634'));\n  console.log('examples: 0.1791634 : ', cvt('0.1791634'));\n  console.log('examples: .45 : ', cvt('.45'));\n  console.log('examples: ,32 : ', cvt(',32'));\n  console.log('examples: .450 : ', cvt('.450'));\n  console.log('examples: ,320 : ', cvt(',320'));\n\n  console.log('examples FLOAT: 3.1415 : ', cvt(3.1415));\n  console.log('examples INT: 1234 : ', cvt(1234));\n\n  console.log('examples: 1 EUR : ', cvt('1 EUR'));\n\n  console.log('examples BAD: bla : ', cvt('bla'));\n  console.log('examples BAD: .456,678 : ', cvt('.456,678'));\n  console.log('examples BAD: ,456.678 : ', cvt(',456.678'));\n  console.log('examples BAD: .123.456,678 : ', cvt('.123.456,678'));\n  console.log('examples BAD: ,123,456.678 : ', cvt(',123,456.678'));\n  console.log('examples BAD: .456,678.456 : ', cvt('.456,678.456'));\n  console.log('examples BAD: ,456.678,456 : ', cvt(',456.678,456'));\n  console.log('examples BAD: 1.456,678.456 : ', cvt('1.456,678.456'));\n  console.log('examples BAD: 1,456.678,456 : ', cvt('1,456.678,456'));\n\n  var preis_str = $('getContent').getElement('.article_price b').get('text');\n  // BTW: NEVER do a toInt() as you'll lose the fractional part in the price.\n  var preis = cvt(preis_str);\n  var spreis_set = $$(\".gespreis\");\n  var summe = spreis_set[0].get('text');\n  summe = cvt(summe);\n  summe += preis;\n  console.log('summe: ', summe);\n\n  spreis_set.each(function(el) {\n    el.set('text', summe.toFixed(2));\n  });\n});\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2012-09-09T08:48:57Z",
+  "url": "https://api.github.com/gists/2037124",
+  "id": "2037124"
+}

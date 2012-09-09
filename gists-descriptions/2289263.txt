@@ -1,0 +1,147 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "f9dd9f4c2b8d081b67fe34769e24808e",
+        "login": "jasondavies",
+        "url": "https://api.github.com/users/jasondavies",
+        "avatar_url": "https://secure.gravatar.com/avatar/f9dd9f4c2b8d081b67fe34769e24808e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 31223
+      },
+      "created_at": "2012-04-04T10:02:22Z",
+      "updated_at": "2012-04-04T10:02:22Z",
+      "url": "https://api.github.com/gists/2300078",
+      "id": "2300078"
+    }
+  ],
+  "user": {
+    "gravatar_id": "95c3a3b33ea51545229c625bef42e343",
+    "login": "robdodson",
+    "url": "https://api.github.com/users/robdodson",
+    "avatar_url": "https://secure.gravatar.com/avatar/95c3a3b33ea51545229c625bef42e343?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 1066253
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "95c3a3b33ea51545229c625bef42e343",
+        "login": "robdodson",
+        "url": "https://api.github.com/users/robdodson",
+        "avatar_url": "https://secure.gravatar.com/avatar/95c3a3b33ea51545229c625bef42e343?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1066253
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "aafeadcd3a514c44eb8006abc32e3cb30bc7d8e3",
+      "committed_at": "2012-04-03T04:23:45Z",
+      "url": "https://api.github.com/gists/2289263/aafeadcd3a514c44eb8006abc32e3cb30bc7d8e3"
+    },
+    {
+      "user": {
+        "gravatar_id": "95c3a3b33ea51545229c625bef42e343",
+        "login": "robdodson",
+        "url": "https://api.github.com/users/robdodson",
+        "avatar_url": "https://secure.gravatar.com/avatar/95c3a3b33ea51545229c625bef42e343?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1066253
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "5a4df2db35229432229c4a9c29c8f8d69dda7bba",
+      "committed_at": "2012-04-03T04:23:09Z",
+      "url": "https://api.github.com/gists/2289263/5a4df2db35229432229c4a9c29c8f8d69dda7bba"
+    },
+    {
+      "user": {
+        "gravatar_id": "95c3a3b33ea51545229c625bef42e343",
+        "login": "robdodson",
+        "url": "https://api.github.com/users/robdodson",
+        "avatar_url": "https://secure.gravatar.com/avatar/95c3a3b33ea51545229c625bef42e343?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1066253
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "c1558801e81c6816137ad9b35b1af4510b3cca3e",
+      "committed_at": "2012-04-03T04:20:25Z",
+      "url": "https://api.github.com/gists/2289263/c1558801e81c6816137ad9b35b1af4510b3cca3e"
+    },
+    {
+      "user": {
+        "gravatar_id": "95c3a3b33ea51545229c625bef42e343",
+        "login": "robdodson",
+        "url": "https://api.github.com/users/robdodson",
+        "avatar_url": "https://secure.gravatar.com/avatar/95c3a3b33ea51545229c625bef42e343?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1066253
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "f2d84d4e2fb51abf976cf6bdefed7134d98703c5",
+      "committed_at": "2012-04-03T04:19:07Z",
+      "url": "https://api.github.com/gists/2289263/f2d84d4e2fb51abf976cf6bdefed7134d98703c5"
+    },
+    {
+      "user": {
+        "gravatar_id": "95c3a3b33ea51545229c625bef42e343",
+        "login": "robdodson",
+        "url": "https://api.github.com/users/robdodson",
+        "avatar_url": "https://secure.gravatar.com/avatar/95c3a3b33ea51545229c625bef42e343?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1066253
+      },
+      "change_status": {
+        "total": 718,
+        "additions": 718,
+        "deletions": 0
+      },
+      "version": "623827483bc12224e1166b9e626d26f9166e917f",
+      "committed_at": "2012-04-03T04:13:37Z",
+      "url": "https://api.github.com/gists/2289263/623827483bc12224e1166b9e626d26f9166e917f"
+    }
+  ],
+  "description": "D3.js Population Bar Chart",
+  "comments": 0,
+  "created_at": "2012-04-03T04:13:37Z",
+  "public": true,
+  "html_url": "https://gist.github.com/2289263",
+  "git_pull_url": "git://gist.github.com/2289263.git",
+  "files": {
+    "main.css": {
+      "type": "text/css",
+      "filename": "main.css",
+      "size": 247,
+      "raw_url": "https://gist.github.com/raw/2289263/8cc4705c6d279c928e4660d24f542e9edd8b3e04/main.css",
+      "content": ".chart {\n    background-color: #eee;\n}\n\n.chart rect {\n\tstroke: white;\n    fill: steelblue;\n}\n\n.axis {\n    shape-rendering: crispEdges;\n}\n\n.x.axis line {\n    stroke: black;\n}\n\n.y.axis line {\n    stroke: black;\n}\n\n.axis text {\n    font-size: 12px;\n}",
+      "language": "CSS"
+    },
+    "script.js": {
+      "type": "application/javascript",
+      "filename": "script.js",
+      "size": 20468,
+      "raw_url": "https://gist.github.com/raw/2289263/f6b9c3bdb52622ee99a842cd6f48b636e2939811/script.js",
+      "content": "$( function() {\n\n    var json = [\n        {\n            \"Year\": \"1950\",\n            \"Population\": \"2,556,505,579\",\n            \"Annual growth rate (%)\": \"1.45\",\n            \"Population change\": \"37,347,602\"\n        },\n        {\n            \"Year\": \"1951\",\n            \"Population\": \"2,593,853,181\",\n            \"Annual growth rate (%)\": \"1.6\",\n            \"Population change\": \"41,871,643\"\n        },\n        {\n            \"Year\": \"1952\",\n            \"Population\": \"2,635,724,824\",\n            \"Annual growth rate (%)\": \"1.7\",\n            \"Population change\": \"45,323,546\"\n        },\n        {\n            \"Year\": \"1953\",\n            \"Population\": \"2,681,048,370\",\n            \"Annual growth rate (%)\": \"1.78\",\n            \"Population change\": \"48,219,116\"\n        },\n        {\n            \"Year\": \"1954\",\n            \"Population\": \"2,729,267,486\",\n            \"Annual growth rate (%)\": \"1.88\",\n            \"Population change\": \"51,917,512\"\n        },\n        {\n            \"Year\": \"1955\",\n            \"Population\": \"2,781,184,998\",\n            \"Annual growth rate (%)\": \"1.9\",\n            \"Population change\": \"53,250,385\"\n        },\n        {\n            \"Year\": \"1956\",\n            \"Population\": \"2,834,435,383\",\n            \"Annual growth rate (%)\": \"1.96\",\n            \"Population change\": \"56,101,768\"\n        },\n        {\n            \"Year\": \"1957\",\n            \"Population\": \"2,890,537,151\",\n            \"Annual growth rate (%)\": \"1.95\",\n            \"Population change\": \"56,842,854\"\n        },\n        {\n            \"Year\": \"1958\",\n            \"Population\": \"2,947,380,005\",\n            \"Annual growth rate (%)\": \"1.77\",\n            \"Population change\": \"52,643,623\"\n        },\n        {\n            \"Year\": \"1959\",\n            \"Population\": \"3,000,023,628\",\n            \"Annual growth rate (%)\": \"1.4\",\n            \"Population change\": \"42,365,981\"\n        },\n        {\n            \"Year\": \"1960\",\n            \"Population\": \"3,042,389,609\",\n            \"Annual growth rate (%)\": \"1.34\",\n            \"Population change\": \"41,053,737\"\n        },\n        {\n            \"Year\": \"1961\",\n            \"Population\": \"3,083,443,346\",\n            \"Annual growth rate (%)\": \"1.81\",\n            \"Population change\": \"56,201,866\"\n        },\n        {\n            \"Year\": \"1962\",\n            \"Population\": \"3,139,645,212\",\n            \"Annual growth rate (%)\": \"2.2\",\n            \"Population change\": \"69,809,783\"\n        },\n        {\n            \"Year\": \"1963\",\n            \"Population\": \"3,209,454,995\",\n            \"Annual growth rate (%)\": \"2.2\",\n            \"Population change\": \"71,435,095\"\n        },\n        {\n            \"Year\": \"1964\",\n            \"Population\": \"3,280,890,090\",\n            \"Annual growth rate (%)\": \"2.09\",\n            \"Population change\": \"69,261,354\"\n        },\n        {\n            \"Year\": \"1965\",\n            \"Population\": \"3,350,151,444\",\n            \"Annual growth rate (%)\": \"2.08\",\n            \"Population change\": \"70,287,296\"\n        },\n        {\n            \"Year\": \"1966\",\n            \"Population\": \"3,420,438,740\",\n            \"Annual growth rate (%)\": \"2.02\",\n            \"Population change\": \"69,734,541\"\n        },\n        {\n            \"Year\": \"1967\",\n            \"Population\": \"3,490,173,281\",\n            \"Annual growth rate (%)\": \"2.04\",\n            \"Population change\": \"72,054,474\"\n        },\n        {\n            \"Year\": \"1968\",\n            \"Population\": \"3,562,227,755\",\n            \"Annual growth rate (%)\": \"2.08\",\n            \"Population change\": \"74,911,189\"\n        },\n        {\n            \"Year\": \"1969\",\n            \"Population\": \"3,637,138,944\",\n            \"Annual growth rate (%)\": \"2.06\",\n            \"Population change\": \"75,674,674\"\n        },\n        {\n            \"Year\": \"1970\",\n            \"Population\": \"3,712,813,618\",\n            \"Annual growth rate (%)\": \"2.08\",\n            \"Population change\": \"77,855,248\"\n        },\n        {\n            \"Year\": \"1971\",\n            \"Population\": \"3,790,668,866\",\n            \"Annual growth rate (%)\": \"2\",\n            \"Population change\": \"76,494,186\"\n        },\n        {\n            \"Year\": \"1972\",\n            \"Population\": \"3,867,163,052\",\n            \"Annual growth rate (%)\": \"1.94\",\n            \"Population change\": \"75,826,051\"\n        },\n        {\n            \"Year\": \"1973\",\n            \"Population\": \"3,942,989,103\",\n            \"Annual growth rate (%)\": \"1.87\",\n            \"Population change\": \"74,626,636\"\n        },\n        {\n            \"Year\": \"1974\",\n            \"Population\": \"4,017,615,739\",\n            \"Annual growth rate (%)\": \"1.79\",\n            \"Population change\": \"72,591,465\"\n        },\n        {\n            \"Year\": \"1975\",\n            \"Population\": \"4,090,207,204\",\n            \"Annual growth rate (%)\": \"1.73\",\n            \"Population change\": \"71,216,701\"\n        },\n        {\n            \"Year\": \"1976\",\n            \"Population\": \"4,161,423,905\",\n            \"Annual growth rate (%)\": \"1.72\",\n            \"Population change\": \"71,989,405\"\n        },\n        {\n            \"Year\": \"1977\",\n            \"Population\": \"4,233,413,310\",\n            \"Annual growth rate (%)\": \"1.69\",\n            \"Population change\": \"72,083,441\"\n        },\n        {\n            \"Year\": \"1978\",\n            \"Population\": \"4,305,496,751\",\n            \"Annual growth rate (%)\": \"1.73\",\n            \"Population change\": \"74,933,098\"\n        },\n        {\n            \"Year\": \"1979\",\n            \"Population\": \"4,380,429,849\",\n            \"Annual growth rate (%)\": \"1.64\",\n            \"Population change\": \"72,256,895\"\n        },\n        {\n            \"Year\": \"1980\",\n            \"Population\": \"4,452,686,744\",\n            \"Annual growth rate (%)\": \"1.84\",\n            \"Population change\": \"82,712,810\"\n        },\n        {\n            \"Year\": \"1981\",\n            \"Population\": \"4,535,399,554\",\n            \"Annual growth rate (%)\": \"1.75\",\n            \"Population change\": \"79,967,346\"\n        },\n        {\n            \"Year\": \"1982\",\n            \"Population\": \"4,615,366,900\",\n            \"Annual growth rate (%)\": \"1.74\",\n            \"Population change\": \"81,043,957\"\n        },\n        {\n            \"Year\": \"1983\",\n            \"Population\": \"4,696,410,857\",\n            \"Annual growth rate (%)\": \"1.69\",\n            \"Population change\": \"80,166,808\"\n        },\n        {\n            \"Year\": \"1984\",\n            \"Population\": \"4,776,577,665\",\n            \"Annual growth rate (%)\": \"1.69\",\n            \"Population change\": \"81,519,858\"\n        },\n        {\n            \"Year\": \"1985\",\n            \"Population\": \"4,858,097,523\",\n            \"Annual growth rate (%)\": \"1.71\",\n            \"Population change\": \"83,727,559\"\n        },\n        {\n            \"Year\": \"1986\",\n            \"Population\": \"4,941,825,082\",\n            \"Annual growth rate (%)\": \"1.73\",\n            \"Population change\": \"86,219,610\"\n        },\n        {\n            \"Year\": \"1987\",\n            \"Population\": \"5,028,044,692\",\n            \"Annual growth rate (%)\": \"1.71\",\n            \"Population change\": \"86,904,352\"\n        },\n        {\n            \"Year\": \"1988\",\n            \"Population\": \"5,114,949,044\",\n            \"Annual growth rate (%)\": \"1.68\",\n            \"Population change\": \"86,553,193\"\n        },\n        {\n            \"Year\": \"1989\",\n            \"Population\": \"5,201,502,237\",\n            \"Annual growth rate (%)\": \"1.66\",\n            \"Population change\": \"87,326,009\"\n        },\n        {\n            \"Year\": \"1990\",\n            \"Population\": \"5,288,828,246\",\n            \"Annual growth rate (%)\": \"1.56\",\n            \"Population change\": \"82,961,488\"\n        },\n        {\n            \"Year\": \"1991\",\n            \"Population\": \"5,371,789,734\",\n            \"Annual growth rate (%)\": \"1.56\",\n            \"Population change\": \"84,615,734\"\n        },\n        {\n            \"Year\": \"1992\",\n            \"Population\": \"5,456,405,468\",\n            \"Annual growth rate (%)\": \"1.49\",\n            \"Population change\": \"82,021,956\"\n        },\n        {\n            \"Year\": \"1993\",\n            \"Population\": \"5,538,427,424\",\n            \"Annual growth rate (%)\": \"1.44\",\n            \"Population change\": \"80,603,671\"\n        },\n        {\n            \"Year\": \"1994\",\n            \"Population\": \"5,619,031,095\",\n            \"Annual growth rate (%)\": \"1.43\",\n            \"Population change\": \"80,882,232\"\n        },\n        {\n            \"Year\": \"1995\",\n            \"Population\": \"5,699,913,327\",\n            \"Annual growth rate (%)\": \"1.4\",\n            \"Population change\": \"80,077,441\"\n        },\n        {\n            \"Year\": \"1996\",\n            \"Population\": \"5,779,990,768\",\n            \"Annual growth rate (%)\": \"1.35\",\n            \"Population change\": \"78,382,248\"\n        },\n        {\n            \"Year\": \"1997\",\n            \"Population\": \"5,858,373,016\",\n            \"Annual growth rate (%)\": \"1.31\",\n            \"Population change\": \"77,368,308\"\n        },\n        {\n            \"Year\": \"1998\",\n            \"Population\": \"5,935,741,324\",\n            \"Annual growth rate (%)\": \"1.28\",\n            \"Population change\": \"76,699,424\"\n        },\n        {\n            \"Year\": \"1999\",\n            \"Population\": \"6,012,440,748\",\n            \"Annual growth rate (%)\": \"1.26\",\n            \"Population change\": \"76,242,806\"\n        },\n        {\n            \"Year\": \"2000\",\n            \"Population\": \"6,088,683,554\",\n            \"Annual growth rate (%)\": \"1.25\",\n            \"Population change\": \"76,640,086\"\n        },\n        {\n            \"Year\": \"2001\",\n            \"Population\": \"6,165,323,640\",\n            \"Annual growth rate (%)\": \"1.23\",\n            \"Population change\": \"76,394,040\"\n        },\n        {\n            \"Year\": \"2002\",\n            \"Population\": \"6,241,717,680\",\n            \"Annual growth rate (%)\": \"1.21\",\n            \"Population change\": \"75,708,715\"\n        },\n        {\n            \"Year\": \"2003\",\n            \"Population\": \"6,317,426,395\",\n            \"Annual growth rate (%)\": \"1.19\",\n            \"Population change\": \"75,694,545\"\n        },\n        {\n            \"Year\": \"2004\",\n            \"Population\": \"6,393,120,940\",\n            \"Annual growth rate (%)\": \"1.18\",\n            \"Population change\": \"76,008,796\"\n        },\n        {\n            \"Year\": \"2005\",\n            \"Population\": \"6,469,129,736\",\n            \"Annual growth rate (%)\": \"1.18\",\n            \"Population change\": \"76,754,703\"\n        },\n        {\n            \"Year\": \"2006\",\n            \"Population\": \"6,545,884,439\",\n            \"Annual growth rate (%)\": \"1.18\",\n            \"Population change\": \"77,687,516\"\n        },\n        {\n            \"Year\": \"2007\",\n            \"Population\": \"6,623,571,955\",\n            \"Annual growth rate (%)\": \"1.16\",\n            \"Population change\": \"77,193,924\"\n        },\n        {\n            \"Year\": \"2008\",\n            \"Population\": \"6,700,765,879\",\n            \"Annual growth rate (%)\": \"1.13\",\n            \"Population change\": \"76,151,586\"\n        },\n        {\n            \"Year\": \"2009\",\n            \"Population\": \"6,776,917,465\",\n            \"Annual growth rate (%)\": \"1.12\",\n            \"Population change\": \"76,101,949\"\n        },\n        {\n            \"Year\": \"2010\",\n            \"Population\": \"6,853,019,414\",\n            \"Annual growth rate (%)\": \"1.1\",\n            \"Population change\": \"76,078,737\"\n        },\n        {\n            \"Year\": \"2011\",\n            \"Population\": \"6,929,098,151\",\n            \"Annual growth rate (%)\": \"1.09\",\n            \"Population change\": \"75,690,177\"\n        },\n        {\n            \"Year\": \"2012\",\n            \"Population\": \"7,004,788,328\",\n            \"Annual growth rate (%)\": \"1.07\",\n            \"Population change\": \"75,387,222\"\n        },\n        {\n            \"Year\": \"2013\",\n            \"Population\": \"7,080,175,550\",\n            \"Annual growth rate (%)\": \"1.06\",\n            \"Population change\": \"75,338,512\"\n        },\n        {\n            \"Year\": \"2014\",\n            \"Population\": \"7,155,514,062\",\n            \"Annual growth rate (%)\": \"1.04\",\n            \"Population change\": \"75,049,628\"\n        },\n        {\n            \"Year\": \"2015\",\n            \"Population\": \"7,230,563,690\",\n            \"Annual growth rate (%)\": \"1.03\",\n            \"Population change\": \"74,655,713\"\n        },\n        {\n            \"Year\": \"2016\",\n            \"Population\": \"7,305,219,403\",\n            \"Annual growth rate (%)\": \"1.01\",\n            \"Population change\": \"74,180,657\"\n        },\n        {\n            \"Year\": \"2017\",\n            \"Population\": \"7,379,400,060\",\n            \"Annual growth rate (%)\": \"0.99\",\n            \"Population change\": \"73,486,592\"\n        },\n        {\n            \"Year\": \"2018\",\n            \"Population\": \"7,452,886,652\",\n            \"Annual growth rate (%)\": \"0.97\",\n            \"Population change\": \"72,652,993\"\n        },\n        {\n            \"Year\": \"2019\",\n            \"Population\": \"7,525,539,645\",\n            \"Annual growth rate (%)\": \"0.95\",\n            \"Population change\": \"71,699,093\"\n        },\n        {\n            \"Year\": \"2020\",\n            \"Population\": \"7,597,238,738\",\n            \"Annual growth rate (%)\": \"0.93\",\n            \"Population change\": \"70,803,837\"\n        },\n        {\n            \"Year\": \"2021\",\n            \"Population\": \"7,668,042,575\",\n            \"Annual growth rate (%)\": \"0.91\",\n            \"Population change\": \"69,932,250\"\n        },\n        {\n            \"Year\": \"2022\",\n            \"Population\": \"7,737,974,825\",\n            \"Annual growth rate (%)\": \"0.89\",\n            \"Population change\": \"68,927,398\"\n        },\n        {\n            \"Year\": \"2023\",\n            \"Population\": \"7,806,902,223\",\n            \"Annual growth rate (%)\": \"0.87\",\n            \"Population change\": \"67,841,959\"\n        },\n        {\n            \"Year\": \"2024\",\n            \"Population\": \"7,874,744,182\",\n            \"Annual growth rate (%)\": \"0.84\",\n            \"Population change\": \"66,699,289\"\n        },\n        {\n            \"Year\": \"2025\",\n            \"Population\": \"7,941,443,471\",\n            \"Annual growth rate (%)\": \"0.82\",\n            \"Population change\": \"65,627,670\"\n        },\n        {\n            \"Year\": \"2026\",\n            \"Population\": \"8,007,071,141\",\n            \"Annual growth rate (%)\": \"0.8\",\n            \"Population change\": \"64,618,718\"\n        },\n        {\n            \"Year\": \"2027\",\n            \"Population\": \"8,071,689,859\",\n            \"Annual growth rate (%)\": \"0.78\",\n            \"Population change\": \"63,569,367\"\n        },\n        {\n            \"Year\": \"2028\",\n            \"Population\": \"8,135,259,226\",\n            \"Annual growth rate (%)\": \"0.77\",\n            \"Population change\": \"62,498,636\"\n        },\n        {\n            \"Year\": \"2029\",\n            \"Population\": \"8,197,757,862\",\n            \"Annual growth rate (%)\": \"0.75\",\n            \"Population change\": \"61,409,243\"\n        },\n        {\n            \"Year\": \"2030\",\n            \"Population\": \"8,259,167,105\",\n            \"Annual growth rate (%)\": \"0.73\",\n            \"Population change\": \"60,387,312\"\n        },\n        {\n            \"Year\": \"2031\",\n            \"Population\": \"8,319,554,417\",\n            \"Annual growth rate (%)\": \"0.71\",\n            \"Population change\": \"59,434,876\"\n        },\n        {\n            \"Year\": \"2032\",\n            \"Population\": \"8,378,989,293\",\n            \"Annual growth rate (%)\": \"0.7\",\n            \"Population change\": \"58,473,280\"\n        },\n        {\n            \"Year\": \"2033\",\n            \"Population\": \"8,437,462,573\",\n            \"Annual growth rate (%)\": \"0.68\",\n            \"Population change\": \"57,495,609\"\n        },\n        {\n            \"Year\": \"2034\",\n            \"Population\": \"8,494,958,182\",\n            \"Annual growth rate (%)\": \"0.66\",\n            \"Population change\": \"56,487,279\"\n        },\n        {\n            \"Year\": \"2035\",\n            \"Population\": \"8,551,445,461\",\n            \"Annual growth rate (%)\": \"0.65\",\n            \"Population change\": \"55,520,922\"\n        },\n        {\n            \"Year\": \"2036\",\n            \"Population\": \"8,606,966,383\",\n            \"Annual growth rate (%)\": \"0.63\",\n            \"Population change\": \"54,605,240\"\n        },\n        {\n            \"Year\": \"2037\",\n            \"Population\": \"8,661,571,623\",\n            \"Annual growth rate (%)\": \"0.62\",\n            \"Population change\": \"53,671,305\"\n        },\n        {\n            \"Year\": \"2038\",\n            \"Population\": \"8,715,242,928\",\n            \"Annual growth rate (%)\": \"0.6\",\n            \"Population change\": \"52,712,536\"\n        },\n        {\n            \"Year\": \"2039\",\n            \"Population\": \"8,767,955,464\",\n            \"Annual growth rate (%)\": \"0.59\",\n            \"Population change\": \"51,724,342\"\n        },\n        {\n            \"Year\": \"2040\",\n            \"Population\": \"8,819,679,806\",\n            \"Annual growth rate (%)\": \"0.57\",\n            \"Population change\": \"50,774,182\"\n        },\n        {\n            \"Year\": \"2041\",\n            \"Population\": \"8,870,453,988\",\n            \"Annual growth rate (%)\": \"0.56\",\n            \"Population change\": \"49,865,285\"\n        },\n        {\n            \"Year\": \"2042\",\n            \"Population\": \"8,920,319,273\",\n            \"Annual growth rate (%)\": \"0.55\",\n            \"Population change\": \"48,921,986\"\n        },\n        {\n            \"Year\": \"2043\",\n            \"Population\": \"8,969,241,259\",\n            \"Annual growth rate (%)\": \"0.53\",\n            \"Population change\": \"47,940,235\"\n        },\n        {\n            \"Year\": \"2044\",\n            \"Population\": \"9,017,181,494\",\n            \"Annual growth rate (%)\": \"0.52\",\n            \"Population change\": \"46,926,143\"\n        },\n        {\n            \"Year\": \"2045\",\n            \"Population\": \"9,064,107,637\",\n            \"Annual growth rate (%)\": \"0.51\",\n            \"Population change\": \"45,941,983\"\n        },\n        {\n            \"Year\": \"2046\",\n            \"Population\": \"9,110,049,620\",\n            \"Annual growth rate (%)\": \"0.49\",\n            \"Population change\": \"44,990,101\"\n        },\n        {\n            \"Year\": \"2047\",\n            \"Population\": \"9,155,039,721\",\n            \"Annual growth rate (%)\": \"0.48\",\n            \"Population change\": \"44,017,110\"\n        },\n        {\n            \"Year\": \"2048\",\n            \"Population\": \"9,199,056,831\",\n            \"Annual growth rate (%)\": \"0.47\",\n            \"Population change\": \"43,026,715\"\n        },\n        {\n            \"Year\": \"2049\",\n            \"Population\": \"9,242,083,546\",\n            \"Annual growth rate (%)\": \"0.45\",\n            \"Population change\": \"42,023,878\"\n        }\n    ];\n\n    var results,\n        data = [],\n        chart,\n        bars,\n        margin = 100,\n        w = 8,\n        h = 500,\n        x, y,\n        xAxis, yAxis;\n\n    results = d3.map( json );\n    results.forEach( function( key, val ) {\n        var result = {};\n        result.year = new Date(parseInt( val.Year, 10 ), 1, 1);\n        result.population = parseInt( val.Population.replace( /,/g, '' ), 10 );\n        data.push( result );\n    } );\n\n    chart = d3.select( 'body' ).append( 'svg' )\n        .attr( 'class', 'chart' )\n        .attr( 'width', 1100 )\n        .attr( 'height', h )\n        .append('g');\n\n    d3.select('svg g')\n        .attr('transform', 'translate(50, 50)');\n\n    x = d3.time.scale()\n        .domain( [data[0].year, data[data.length - 1].year] )\n        .range( [0, (w * data.length) - (margin + w)] );\n\n    y = d3.scale.linear()\n        .domain( [0, d3.max( data, function( d ) { return d.population; } )] )\n        .rangeRound( [0, h - margin] );\n\n    // Bars\n    bars = chart.append('g')\n        .attr('class', 'bars');\n\n    bars.selectAll( 'rect' )\n        .data( data )\n      .enter().append( 'rect' )\n        .attr( 'x', function( d, i ) { return x( d.year ) - .5; } )\n        .attr( 'y', function( d ) { return (h - margin) - y( d.population ) } )\n        .attr( 'width', w )\n        .attr( 'height', function( d ) { return y( d.population ) } )\n        .append('g');\n\n    // Axis\n    xAxis = d3.svg.axis()\n        .scale(x)\n        .ticks(20)\n        .tickSize(6, 3, 1);\n\n    yAxis = d3.svg.axis()\n        .scale(d3.scale.linear().domain( [0, d3.max( data, function( d ) { return d.population; } )] ).rangeRound( [h - margin, 0] ))\n        .ticks(4)\n        .tickSize(6, 3, 1)\n        .orient('right');\n\n    chart.append('g')\n        .attr('class', 'x axis')\n        .attr('transform', 'translate(0, ' + (h - margin) + ')')\n        .call(xAxis);\n\n    chart.append('g')\n        .attr('class', 'y axis')\n        .attr('transform', 'translate(' + (x(data[data.length - 1].year) + w) + ',0)')\n        .call(yAxis);\n\n} );\n",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 400,
+      "raw_url": "https://gist.github.com/raw/2289263/29d9f0b2fda835b91fa0ab00a466c65e55249ff7/index.html",
+      "content": "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"utf-8\">\n    <title>Population Projection</title>\n\n    <link rel=\"stylesheet\" href=\"main.css\">\n\n</head>\n\n<body>\n\n    <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js\"></script>\n    <script src=\"https://raw.github.com/mbostock/d3/master/d3.v2.min.js\"></script>\n    <script src=\"script.js\"></script>\n\n</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:2289263.git",
+  "updated_at": "2012-04-03T04:13:37Z",
+  "url": "https://api.github.com/gists/2289263",
+  "id": "2289263"
+}

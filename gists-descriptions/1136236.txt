@@ -1,0 +1,59 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 111,
+        "additions": 111,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-10T06:11:58Z",
+      "version": "4226f8e1c3bc8ecd69e93591cba2ecc4aac6991e",
+      "url": "https://api.github.com/gists/1136236/4226f8e1c3bc8ecd69e93591cba2ecc4aac6991e"
+    }
+  ],
+  "description": "Spermatozoa",
+  "html_url": "https://gist.github.com/1136236",
+  "comments": 0,
+  "created_at": "2011-08-10T06:11:58Z",
+  "git_pull_url": "git://gist.github.com/1136236.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1136236/c3821f77853d68bc159e43ca01a839f39b213768/index.html",
+      "size": 2295,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.29.1\"></script>\n    <style type=\"text/css\">\n\nbody {\n  background: #000;\n}\n\nellipse {\n  fill: #fff;\n}\n\npath {\n  fill: none;\n  stroke: #fff;\n  stroke-linecap: round;\n}\n\n.mid {\n  stroke-width: 4px;\n}\n\n.tail {\n  stroke-width: 2px;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    n = 100,\n    m = 12,\n    degrees = 180 / Math.PI;\n\nvar spermatozoa = d3.range(n).map(function() {\n  var x = Math.random() * w, y = Math.random() * h;\n  return {\n    vx: Math.random() * 2 - 1,\n    vy: Math.random() * 2 - 1,\n    path: d3.range(m).map(function() { return [x, y]; }),\n    count: 0\n  };\n});\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvar g = svg.selectAll(\"g\")\n    .data(spermatozoa)\n  .enter().append(\"svg:g\");\n\nvar head = g.append(\"svg:ellipse\")\n    .attr(\"rx\", 6.5)\n    .attr(\"ry\", 4);\n\ng.append(\"svg:path\")\n    .map(function(d) { return d.path.slice(0, 3); })\n    .attr(\"class\", \"mid\");\n\ng.append(\"svg:path\")\n    .map(function(d) { return d.path; })\n    .attr(\"class\", \"tail\");\n\nvar tail = g.selectAll(\"path\");\n\nd3.timer(function() {\n  for (var i = -1; ++i < n;) {\n    var spermatozoon = spermatozoa[i],\n        path = spermatozoon.path,\n        dx = spermatozoon.vx,\n        dy = spermatozoon.vy,\n        x = path[0][0] += dx,\n        y = path[0][1] += dy,\n        speed = Math.sqrt(dx * dx + dy * dy),\n        count = speed * 10,\n        k1 = -5 - speed / 3;\n\n    // Bounce off the walls.\n    if (x < 0 || x > w) spermatozoon.vx *= -1;\n    if (y < 0 || y > h) spermatozoon.vy *= -1;\n\n    // Swim!\n    for (var j = 0; ++j < m;) {\n      var vx = x - path[j][0],\n          vy = y - path[j][1],\n          k2 = Math.sin(((spermatozoon.count += count) + j * 3) / 300) / speed;\n      path[j][0] = (x += dx / speed * k1) - dy * k2;\n      path[j][1] = (y += dy / speed * k1) + dx * k2;\n      speed = Math.sqrt((dx = vx) * dx + (dy = vy) * dy);\n    }\n  }\n\n  head.attr(\"transform\", function(d) {\n    return \"translate(\" + d.path[0] + \")rotate(\" + Math.atan2(d.vy, d.vx) * degrees + \")\";\n  });\n\n  tail.attr(\"d\", function(d) {\n    return \"M\" + d.join(\"L\");\n  });\n});\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/1136236/195d75581bf8537e0086ee324c781d069c1cb870/readme.md",
+      "size": 260,
+      "content": "Inspired by the Paper.js [\"tadpoles\" example](http://paperjs.org/examples/tadpoles/). Built with [D3.js](http://mbostock.github.com/d3/). Feeling inspired? Fork this example and incorporate the [Boids flocking](http://www.jasondavies.com/voroboids/) algorithm.",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1136236.git",
+  "updated_at": "2011-08-10T06:11:58Z",
+  "url": "https://api.github.com/gists/1136236",
+  "id": "1136236"
+}

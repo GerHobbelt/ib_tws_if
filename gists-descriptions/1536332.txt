@@ -1,0 +1,179 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "97c3a8eea9b7eaa9e1e93ea3cd47399f",
+    "login": "Caged",
+    "url": "https://api.github.com/users/Caged",
+    "avatar_url": "https://secure.gravatar.com/avatar/97c3a8eea9b7eaa9e1e93ea3cd47399f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 25
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "97c3a8eea9b7eaa9e1e93ea3cd47399f",
+        "login": "Caged",
+        "url": "https://api.github.com/users/Caged",
+        "avatar_url": "https://secure.gravatar.com/avatar/97c3a8eea9b7eaa9e1e93ea3cd47399f?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 25
+      },
+      "change_status": {
+        "total": 88,
+        "additions": 44,
+        "deletions": 44
+      },
+      "version": "d8342ee597deb2b87d338e2c43b05e318301d7a4",
+      "committed_at": "2011-12-29T22:20:42Z",
+      "url": "https://api.github.com/gists/1536332/d8342ee597deb2b87d338e2c43b05e318301d7a4"
+    },
+    {
+      "user": {
+        "gravatar_id": "d0864f53f25176591136413426989c3c",
+        "login": "michaelaguiar",
+        "url": "https://api.github.com/users/michaelaguiar",
+        "avatar_url": "https://secure.gravatar.com/avatar/d0864f53f25176591136413426989c3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 138890
+      },
+      "change_status": {
+        "total": 96,
+        "additions": 45,
+        "deletions": 51
+      },
+      "version": "37c01b7f50df184e68640b844df38c5af1493704",
+      "committed_at": "2011-12-29T21:31:14Z",
+      "url": "https://api.github.com/gists/1536332/37c01b7f50df184e68640b844df38c5af1493704"
+    },
+    {
+      "user": {
+        "gravatar_id": "d0864f53f25176591136413426989c3c",
+        "login": "michaelaguiar",
+        "url": "https://api.github.com/users/michaelaguiar",
+        "avatar_url": "https://secure.gravatar.com/avatar/d0864f53f25176591136413426989c3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 138890
+      },
+      "change_status": {
+        "total": 22,
+        "additions": 3,
+        "deletions": 19
+      },
+      "version": "0f9306c2ba0f627f4df50670f2815eff2e70126a",
+      "committed_at": "2011-12-29T20:28:48Z",
+      "url": "https://api.github.com/gists/1536332/0f9306c2ba0f627f4df50670f2815eff2e70126a"
+    },
+    {
+      "user": {
+        "gravatar_id": "d0864f53f25176591136413426989c3c",
+        "login": "michaelaguiar",
+        "url": "https://api.github.com/users/michaelaguiar",
+        "avatar_url": "https://secure.gravatar.com/avatar/d0864f53f25176591136413426989c3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 138890
+      },
+      "change_status": {
+        "total": 10,
+        "additions": 3,
+        "deletions": 7
+      },
+      "version": "87ea3e71e71cf297c34723c8dd36512113f9115f",
+      "committed_at": "2011-12-29T20:24:43Z",
+      "url": "https://api.github.com/gists/1536332/87ea3e71e71cf297c34723c8dd36512113f9115f"
+    },
+    {
+      "user": {
+        "gravatar_id": "d0864f53f25176591136413426989c3c",
+        "login": "michaelaguiar",
+        "url": "https://api.github.com/users/michaelaguiar",
+        "avatar_url": "https://secure.gravatar.com/avatar/d0864f53f25176591136413426989c3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 138890
+      },
+      "change_status": {
+        "total": 42,
+        "additions": 42,
+        "deletions": 0
+      },
+      "version": "23c581d8c2b431597e5e1790b04ef2d34af9c655",
+      "committed_at": "2011-12-29T19:55:50Z",
+      "url": "https://api.github.com/gists/1536332/23c581d8c2b431597e5e1790b04ef2d34af9c655"
+    },
+    {
+      "user": {
+        "gravatar_id": "d0864f53f25176591136413426989c3c",
+        "login": "michaelaguiar",
+        "url": "https://api.github.com/users/michaelaguiar",
+        "avatar_url": "https://secure.gravatar.com/avatar/d0864f53f25176591136413426989c3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 138890
+      },
+      "change_status": {
+        "total": 73,
+        "additions": 73,
+        "deletions": 0
+      },
+      "version": "49ec5dc7fd0a4e84cf60559d03bd61fac7a73e2d",
+      "committed_at": "2011-12-29T19:54:45Z",
+      "url": "https://api.github.com/gists/1536332/49ec5dc7fd0a4e84cf60559d03bd61fac7a73e2d"
+    }
+  ],
+  "description": "D3.js Line Chart Test",
+  "comments": 1,
+  "created_at": "2011-12-29T21:38:36Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1536332",
+  "git_pull_url": "git://gist.github.com/1536332.git",
+  "files": {
+    "line.html": {
+      "type": "text/html",
+      "filename": "line.html",
+      "size": 793,
+      "raw_url": "https://gist.github.com/raw/1536332/d9021ea55a6cfde83ffdc2d6c323573b3681e351/line.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Line Chart</title>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"line.css\"/>\n    <script type=\"text/javascript\" src=\"../../d3.js\"></script>\n    <script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-1.7.1.min.js\"></script>\n  </head>\n  <body>\n  <style>\n  \ttext {\n  \t  fill: #ccc;\n  \t}\n  \t\n  \tpath {\n  \t  stroke-width: 2px;\n  \t  stroke: #fcaf30;\n  \t}\n  \t\n  \t.tickx line,\n  \t.ticky line {\n  \t  stroke-width: 1px;\n  \t  stroke: #b2b2b2;\n  \t  stroke-opacity: 0.4;\n  \t  shape-rendering: crispedges;\n  \t}\n  \t\n  \t.tickx text,\n  \t.ticky text {\n  \t  fill: #ccc;\n  \t  font-size: 10px;\n  \t}\n  \t\n  \t.point {\n  \t  fill: #fcaf30;\n  \t  \n  \t}\n\n  </style>\n    <div id=\"chart\"><script type=\"text/javascript\" src=\"line.js\"></script></div>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "d3_line.js": {
+      "type": "application/javascript",
+      "filename": "d3_line.js",
+      "size": 2316,
+      "raw_url": "https://gist.github.com/raw/1536332/97204844fed45ddff6b3f93d955e0a9fefa450ee/d3_line.js",
+      "content": "(function() {\n  $(function() {\n    var data, h, max, paths, pb, pl, pr, pt, ticks, version, vis, w, x, y, _ref;\n    version = Number(document.location.hash.replace('#', ''));\n    data = [[3, 7, 9, 1, 4, 6, 8, 2, 5], [5, 2, 3, 4, 9, 6, 4, 6, 8]];\n    _ref = [20, 20, 20, 20], pt = _ref[0], pl = _ref[1], pr = _ref[2], pb = _ref[3];\n    w = 800 - (pl + pr);\n    h = 300 - (pt + pb);\n    max = d3.max(data, function(d) {\n      return d3.max(d);\n    });\n    x = d3.scale.linear().domain([0, data[0].length - 1]).range([0, w]);\n    y = d3.scale.linear().domain([0, max]).range([h, 0]);\n    vis = d3.select('#chart').style('margin', '20px auto').style('width', \"\" + w + \"px\").append('svg:svg').attr('width', w + (pl + pr)).attr('height', h + pt + pb).attr('class', 'viz').append('svg:g').attr('transform', \"translate(\" + pl + \",\" + pt + \")\");\n    paths = vis.selectAll('path.line').data(data).enter().append(\"svg:g\");\n    paths.append('svg:path').attr(\"d\", d3.svg.line().x(function(d, i) {\n      return x(i);\n    }).y(y));\n    ticks = vis.selectAll('.ticky').data(y.ticks(7)).enter().append('svg:g').attr('transform', function(d) {\n      return \"translate(0, \" + (y(d)) + \")\";\n    }).attr('class', 'ticky');\n    ticks.append('svg:line').attr('y1', 0).attr('y2', 0).attr('x1', 0).attr('x2', w);\n    ticks.append('svg:text').text(function(d) {\n      return d;\n    }).attr('text-anchor', 'end').attr('dy', 2).attr('dx', -4);\n    ticks = vis.selectAll('.tickx').data(x.ticks(data[0].length)).enter().append('svg:g').attr('transform', function(d, i) {\n      return \"translate(\" + (x(i)) + \", 0)\";\n    }).attr('class', 'tickx');\n    ticks.append('svg:line').attr('y1', h).attr('y2', 0).attr('x1', 0).attr('x2', 0);\n    ticks.append('svg:text').text(function(d, i) {\n      return i;\n    }).attr('y', h).attr('dy', 15).attr('dx', -2);\n    return paths.selectAll('.point').data(function(d) {\n      return d;\n    }).enter().append(\"svg:circle\").attr(\"class\", 'point').attr(\"r\", 4).attr(\"cx\", function(d, i) {\n      return x(i);\n    }).attr(\"cy\", function(d) {\n      return y(d);\n    }).on('mouseover', function() {\n      return d3.select(this).attr('r', 8);\n    }).on('mouseout', function() {\n      return d3.select(this).attr('r', 4);\n    }).on('click', function(d, i) {\n      return console.log(d, i);\n    });\n  });\n}).call(this);",
+      "language": "JavaScript"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1536332.git",
+  "updated_at": "2011-12-29T21:38:36Z",
+  "url": "https://api.github.com/gists/1536332",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "d0864f53f25176591136413426989c3c",
+      "login": "michaelaguiar",
+      "url": "https://api.github.com/users/michaelaguiar",
+      "avatar_url": "https://secure.gravatar.com/avatar/d0864f53f25176591136413426989c3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "id": 138890
+    },
+    "description": "D3.js Line Chart Test",
+    "comments": 3,
+    "created_at": "2011-12-29T19:54:45Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1535916",
+    "git_pull_url": "git://gist.github.com/1535916.git",
+    "files": {
+      "line.html": {
+        "type": "text/html",
+        "filename": "line.html",
+        "size": 793,
+        "raw_url": "https://gist.github.com/raw/1535916/d9021ea55a6cfde83ffdc2d6c323573b3681e351/line.html",
+        "language": "HTML"
+      },
+      "d3_line.js": {
+        "type": "application/javascript",
+        "filename": "d3_line.js",
+        "size": 2357,
+        "raw_url": "https://gist.github.com/raw/1535916/f18557af92b400b0fa5266a3d8bb1bd5d2aa8ab8/d3_line.js",
+        "language": "JavaScript"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1535916.git",
+    "updated_at": "2011-12-29T19:54:45Z",
+    "url": "https://api.github.com/gists/1535916",
+    "id": "1535916"
+  },
+  "id": "1536332"
+}

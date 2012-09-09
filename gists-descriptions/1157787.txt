@@ -1,0 +1,152 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-19T20:28:31Z",
+      "version": "815a8207177fbd69adff01a92e215f782732923a",
+      "url": "https://api.github.com/gists/1157787/815a8207177fbd69adff01a92e215f782732923a",
+      "change_status": {
+        "total": 1,
+        "additions": 0,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-19T19:51:07Z",
+      "version": "f2ca7c7c7ba04f80389c8ba41ded890ed3d5c812",
+      "url": "https://api.github.com/gists/1157787/f2ca7c7c7ba04f80389c8ba41ded890ed3d5c812",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-19T19:42:04Z",
+      "version": "6ffcc0d39a36c0a9870236cc86ef2888a64b6235",
+      "url": "https://api.github.com/gists/1157787/6ffcc0d39a36c0a9870236cc86ef2888a64b6235",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-19T19:40:05Z",
+      "version": "faab4fed22ff9fad6edff039efa5ad24048c8d9a",
+      "url": "https://api.github.com/gists/1157787/faab4fed22ff9fad6edff039efa5ad24048c8d9a",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-19T19:39:42Z",
+      "version": "a392c5af6fe0e1d96d9298966df4f9a446f1ce48",
+      "url": "https://api.github.com/gists/1157787/a392c5af6fe0e1d96d9298966df4f9a446f1ce48",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-19T19:39:00Z",
+      "version": "e337c817d21d2cc76592b4ab7280561489f2c719",
+      "url": "https://api.github.com/gists/1157787/e337c817d21d2cc76592b4ab7280561489f2c719",
+      "change_status": {
+        "total": 918,
+        "additions": 918,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Small Multiples",
+  "comments": 0,
+  "created_at": "2011-08-19T19:39:00Z",
+  "git_pull_url": "git://gist.github.com/1157787.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1157787",
+  "git_push_url": "git@gist.github.com:1157787.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1157787/de223fc95316a5deac90391ccd6a808e18cd6133/index.html",
+      "size": 2929,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.29.6\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.csv.js?1.29.6\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.time.js?1.29.6\"></script>\n    <style type=\"text/css\">\n\nbody {\n  font: 10px sans-serif;\n  margin: 0;\n}\n\npath.line {\n  fill: none;\n  stroke: #666;\n  stroke-width: 1.5px;\n}\n\npath.area {\n  fill: #e7e7e7;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar m = [8, 10, 2, 10],\n    w = 960 - m[1] - m[3],\n    h = 69 - m[0] - m[2],\n    parse = d3.time.format(\"%b %Y\").parse;\n\n// Scales. Note the inverted domain for the y-scale: bigger is up!\nvar x = d3.time.scale().range([0, w]),\n    y = d3.scale.linear().range([h, 0]);\n\n// An area generator, for the light fill.\nvar area = d3.svg.area()\n    .interpolate(\"monotone\")\n    .x(function(d) { return x(d.date); })\n    .y0(h)\n    .y1(function(d) { return y(d.price); });\n\n// A line generator, for the dark stroke.\nvar line = d3.svg.line()\n    .interpolate(\"monotone\")\n    .x(function(d) { return x(d.date); })\n    .y(function(d) { return y(d.price); });\n\nd3.csv(\"stocks.csv\", function(data) {\n\n  // Nest values by symbol.\n  var symbols = d3.nest()\n      .key(function(d) { return d.symbol; })\n      .entries(data);\n\n  // Parse dates and numbers. We assume values are sorted by date.\n  // Also compute the maximum price per symbol, needed for the y-domain.\n  symbols.forEach(function(s) {\n    s.values.forEach(function(d) { d.date = parse(d.date); d.price = +d.price; });\n    s.maxPrice = d3.max(s.values, function(d) { return d.price; });\n  });\n\n  // Compute the minimum and maximum date across symbols.\n  x.domain([\n    d3.min(symbols, function(s) { return s.values[0].date; }),\n    d3.max(symbols, function(s) { return s.values[s.values.length - 1].date; })\n  ]);\n\n  // Add an SVG element for each symbol, with the desired dimensions and margin.\n  var svg = d3.select(\"body\").selectAll(\"svg\")\n      .data(symbols)\n    .enter().append(\"svg:svg\")\n      .attr(\"width\", w + m[1] + m[3])\n      .attr(\"height\", h + m[0] + m[2])\n    .append(\"svg:g\")\n      .attr(\"transform\", \"translate(\" + m[3] + \",\" + m[0] + \")\");\n\n  // Add the area path elements. Note: the y-domain is set per element.\n  svg.append(\"svg:path\")\n      .attr(\"class\", \"area\")\n      .attr(\"d\", function(d) { y.domain([0, d.maxPrice]); return area(d.values); });\n\n  // Add the line path elements. Note: the y-domain is set per element.\n  svg.append(\"svg:path\")\n      .attr(\"class\", \"line\")\n      .attr(\"d\", function(d) { y.domain([0, d.maxPrice]); return line(d.values); });\n\n  // Add a small label for the symbol name.\n  svg.append(\"svg:text\")\n      .attr(\"x\", w - 6)\n      .attr(\"y\", h - 6)\n      .attr(\"text-anchor\", \"end\")\n      .text(function(d) { return d.key; });\n});\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/1157787/c0c0fb1e520e0f370bd17590181be6319d6373b8/readme.md",
+      "size": 847,
+      "content": "This example shows a few interesting techniques with [D3.js](http://mbostock.github.com/d3/):\n\n* Stock prices in [CSV format](https://github.com/mbostock/d3/wiki/CSV) are loaded asynchronously.\n* Stock prices are [nested](https://github.com/mbostock/d3/wiki/Arrays#wiki-d3_nest) by symbol.\n* The x-scale is the minimum and maximum across symbols. (Note Google's IPO.)\n* The y-scale is local to each symbol; the domain is set per multiple.\n* [Area](https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-area) and [line](https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-line) shapes are used to fill and stroke separately.\n* Cubic monotone interpolation gives a smooth line without misleading wiggles.\n\nThis example is also missing reference lines for the x- and y-axis. That's because I'll be extending this example to use the new axis component!\n",
+      "language": "Markdown"
+    },
+    "stocks.csv": {
+      "type": "text/csv",
+      "filename": "stocks.csv",
+      "raw_url": "https://gist.github.com/raw/1157787/aae08f3aef3b339dbb50bee2eb9fc2f9914a6017/stocks.csv",
+      "size": 17714,
+      "content": "symbol,date,price\nS&P 500,Jan 2000,1394.46\nS&P 500,Feb 2000,1366.42\nS&P 500,Mar 2000,1498.58\nS&P 500,Apr 2000,1452.43\nS&P 500,May 2000,1420.6\nS&P 500,Jun 2000,1454.6\nS&P 500,Jul 2000,1430.83\nS&P 500,Aug 2000,1517.68\nS&P 500,Sep 2000,1436.51\nS&P 500,Oct 2000,1429.4\nS&P 500,Nov 2000,1314.95\nS&P 500,Dec 2000,1320.28\nS&P 500,Jan 2001,1366.01\nS&P 500,Feb 2001,1239.94\nS&P 500,Mar 2001,1160.33\nS&P 500,Apr 2001,1249.46\nS&P 500,May 2001,1255.82\nS&P 500,Jun 2001,1224.38\nS&P 500,Jul 2001,1211.23\nS&P 500,Aug 2001,1133.58\nS&P 500,Sep 2001,1040.94\nS&P 500,Oct 2001,1059.78\nS&P 500,Nov 2001,1139.45\nS&P 500,Dec 2001,1148.08\nS&P 500,Jan 2002,1130.2\nS&P 500,Feb 2002,1106.73\nS&P 500,Mar 2002,1147.39\nS&P 500,Apr 2002,1076.92\nS&P 500,May 2002,1067.14\nS&P 500,Jun 2002,989.82\nS&P 500,Jul 2002,911.62\nS&P 500,Aug 2002,916.07\nS&P 500,Sep 2002,815.28\nS&P 500,Oct 2002,885.76\nS&P 500,Nov 2002,936.31\nS&P 500,Dec 2002,879.82\nS&P 500,Jan 2003,855.7\nS&P 500,Feb 2003,841.15\nS&P 500,Mar 2003,848.18\nS&P 500,Apr 2003,916.92\nS&P 500,May 2003,963.59\nS&P 500,Jun 2003,974.5\nS&P 500,Jul 2003,990.31\nS&P 500,Aug 2003,1008.01\nS&P 500,Sep 2003,995.97\nS&P 500,Oct 2003,1050.71\nS&P 500,Nov 2003,1058.2\nS&P 500,Dec 2003,1111.92\nS&P 500,Jan 2004,1131.13\nS&P 500,Feb 2004,1144.94\nS&P 500,Mar 2004,1126.21\nS&P 500,Apr 2004,1107.3\nS&P 500,May 2004,1120.68\nS&P 500,Jun 2004,1140.84\nS&P 500,Jul 2004,1101.72\nS&P 500,Aug 2004,1104.24\nS&P 500,Sep 2004,1114.58\nS&P 500,Oct 2004,1130.2\nS&P 500,Nov 2004,1173.82\nS&P 500,Dec 2004,1211.92\nS&P 500,Jan 2005,1181.27\nS&P 500,Feb 2005,1203.6\nS&P 500,Mar 2005,1180.59\nS&P 500,Apr 2005,1156.85\nS&P 500,May 2005,1191.5\nS&P 500,Jun 2005,1191.33\nS&P 500,Jul 2005,1234.18\nS&P 500,Aug 2005,1220.33\nS&P 500,Sep 2005,1228.81\nS&P 500,Oct 2005,1207.01\nS&P 500,Nov 2005,1249.48\nS&P 500,Dec 2005,1248.29\nS&P 500,Jan 2006,1280.08\nS&P 500,Feb 2006,1280.66\nS&P 500,Mar 2006,1294.87\nS&P 500,Apr 2006,1310.61\nS&P 500,May 2006,1270.09\nS&P 500,Jun 2006,1270.2\nS&P 500,Jul 2006,1276.66\nS&P 500,Aug 2006,1303.82\nS&P 500,Sep 2006,1335.85\nS&P 500,Oct 2006,1377.94\nS&P 500,Nov 2006,1400.63\nS&P 500,Dec 2006,1418.3\nS&P 500,Jan 2007,1438.24\nS&P 500,Feb 2007,1406.82\nS&P 500,Mar 2007,1420.86\nS&P 500,Apr 2007,1482.37\nS&P 500,May 2007,1530.62\nS&P 500,Jun 2007,1503.35\nS&P 500,Jul 2007,1455.27\nS&P 500,Aug 2007,1473.99\nS&P 500,Sep 2007,1526.75\nS&P 500,Oct 2007,1549.38\nS&P 500,Nov 2007,1481.14\nS&P 500,Dec 2007,1468.36\nS&P 500,Jan 2008,1378.55\nS&P 500,Feb 2008,1330.63\nS&P 500,Mar 2008,1322.7\nS&P 500,Apr 2008,1385.59\nS&P 500,May 2008,1400.38\nS&P 500,Jun 2008,1280\nS&P 500,Jul 2008,1267.38\nS&P 500,Aug 2008,1282.83\nS&P 500,Sep 2008,1166.36\nS&P 500,Oct 2008,968.75\nS&P 500,Nov 2008,896.24\nS&P 500,Dec 2008,903.25\nS&P 500,Jan 2009,825.88\nS&P 500,Feb 2009,735.09\nS&P 500,Mar 2009,797.87\nS&P 500,Apr 2009,872.81\nS&P 500,May 2009,919.14\nS&P 500,Jun 2009,919.32\nS&P 500,Jul 2009,987.48\nS&P 500,Aug 2009,1020.62\nS&P 500,Sep 2009,1057.08\nS&P 500,Oct 2009,1036.19\nS&P 500,Nov 2009,1095.63\nS&P 500,Dec 2009,1115.1\nS&P 500,Jan 2010,1073.87\nS&P 500,Feb 2010,1104.49\nS&P 500,Mar 2010,1140.45\nMSFT,Jan 2000,39.81\nMSFT,Feb 2000,36.35\nMSFT,Mar 2000,43.22\nMSFT,Apr 2000,28.37\nMSFT,May 2000,25.45\nMSFT,Jun 2000,32.54\nMSFT,Jul 2000,28.4\nMSFT,Aug 2000,28.4\nMSFT,Sep 2000,24.53\nMSFT,Oct 2000,28.02\nMSFT,Nov 2000,23.34\nMSFT,Dec 2000,17.65\nMSFT,Jan 2001,24.84\nMSFT,Feb 2001,24\nMSFT,Mar 2001,22.25\nMSFT,Apr 2001,27.56\nMSFT,May 2001,28.14\nMSFT,Jun 2001,29.7\nMSFT,Jul 2001,26.93\nMSFT,Aug 2001,23.21\nMSFT,Sep 2001,20.82\nMSFT,Oct 2001,23.65\nMSFT,Nov 2001,26.12\nMSFT,Dec 2001,26.95\nMSFT,Jan 2002,25.92\nMSFT,Feb 2002,23.73\nMSFT,Mar 2002,24.53\nMSFT,Apr 2002,21.26\nMSFT,May 2002,20.71\nMSFT,Jun 2002,22.25\nMSFT,Jul 2002,19.52\nMSFT,Aug 2002,19.97\nMSFT,Sep 2002,17.79\nMSFT,Oct 2002,21.75\nMSFT,Nov 2002,23.46\nMSFT,Dec 2002,21.03\nMSFT,Jan 2003,19.31\nMSFT,Feb 2003,19.34\nMSFT,Mar 2003,19.76\nMSFT,Apr 2003,20.87\nMSFT,May 2003,20.09\nMSFT,Jun 2003,20.93\nMSFT,Jul 2003,21.56\nMSFT,Aug 2003,21.65\nMSFT,Sep 2003,22.69\nMSFT,Oct 2003,21.45\nMSFT,Nov 2003,21.1\nMSFT,Dec 2003,22.46\nMSFT,Jan 2004,22.69\nMSFT,Feb 2004,21.77\nMSFT,Mar 2004,20.46\nMSFT,Apr 2004,21.45\nMSFT,May 2004,21.53\nMSFT,Jun 2004,23.44\nMSFT,Jul 2004,23.38\nMSFT,Aug 2004,22.47\nMSFT,Sep 2004,22.76\nMSFT,Oct 2004,23.02\nMSFT,Nov 2004,24.6\nMSFT,Dec 2004,24.52\nMSFT,Jan 2005,24.11\nMSFT,Feb 2005,23.15\nMSFT,Mar 2005,22.24\nMSFT,Apr 2005,23.28\nMSFT,May 2005,23.82\nMSFT,Jun 2005,22.93\nMSFT,Jul 2005,23.64\nMSFT,Aug 2005,25.35\nMSFT,Sep 2005,23.83\nMSFT,Oct 2005,23.8\nMSFT,Nov 2005,25.71\nMSFT,Dec 2005,24.29\nMSFT,Jan 2006,26.14\nMSFT,Feb 2006,25.04\nMSFT,Mar 2006,25.36\nMSFT,Apr 2006,22.5\nMSFT,May 2006,21.19\nMSFT,Jun 2006,21.8\nMSFT,Jul 2006,22.51\nMSFT,Aug 2006,24.13\nMSFT,Sep 2006,25.68\nMSFT,Oct 2006,26.96\nMSFT,Nov 2006,27.66\nMSFT,Dec 2006,28.13\nMSFT,Jan 2007,29.07\nMSFT,Feb 2007,26.63\nMSFT,Mar 2007,26.35\nMSFT,Apr 2007,28.3\nMSFT,May 2007,29.11\nMSFT,Jun 2007,27.95\nMSFT,Jul 2007,27.5\nMSFT,Aug 2007,27.34\nMSFT,Sep 2007,28.04\nMSFT,Oct 2007,35.03\nMSFT,Nov 2007,32.09\nMSFT,Dec 2007,34\nMSFT,Jan 2008,31.13\nMSFT,Feb 2008,26.07\nMSFT,Mar 2008,27.21\nMSFT,Apr 2008,27.34\nMSFT,May 2008,27.25\nMSFT,Jun 2008,26.47\nMSFT,Jul 2008,24.75\nMSFT,Aug 2008,26.36\nMSFT,Sep 2008,25.78\nMSFT,Oct 2008,21.57\nMSFT,Nov 2008,19.66\nMSFT,Dec 2008,18.91\nMSFT,Jan 2009,16.63\nMSFT,Feb 2009,15.81\nMSFT,Mar 2009,17.99\nMSFT,Apr 2009,19.84\nMSFT,May 2009,20.59\nMSFT,Jun 2009,23.42\nMSFT,Jul 2009,23.18\nMSFT,Aug 2009,24.43\nMSFT,Sep 2009,25.49\nMSFT,Oct 2009,27.48\nMSFT,Nov 2009,29.27\nMSFT,Dec 2009,30.34\nMSFT,Jan 2010,28.05\nMSFT,Feb 2010,28.67\nMSFT,Mar 2010,28.8\nAMZN,Jan 2000,64.56\nAMZN,Feb 2000,68.87\nAMZN,Mar 2000,67\nAMZN,Apr 2000,55.19\nAMZN,May 2000,48.31\nAMZN,Jun 2000,36.31\nAMZN,Jul 2000,30.12\nAMZN,Aug 2000,41.5\nAMZN,Sep 2000,38.44\nAMZN,Oct 2000,36.62\nAMZN,Nov 2000,24.69\nAMZN,Dec 2000,15.56\nAMZN,Jan 2001,17.31\nAMZN,Feb 2001,10.19\nAMZN,Mar 2001,10.23\nAMZN,Apr 2001,15.78\nAMZN,May 2001,16.69\nAMZN,Jun 2001,14.15\nAMZN,Jul 2001,12.49\nAMZN,Aug 2001,8.94\nAMZN,Sep 2001,5.97\nAMZN,Oct 2001,6.98\nAMZN,Nov 2001,11.32\nAMZN,Dec 2001,10.82\nAMZN,Jan 2002,14.19\nAMZN,Feb 2002,14.1\nAMZN,Mar 2002,14.3\nAMZN,Apr 2002,16.69\nAMZN,May 2002,18.23\nAMZN,Jun 2002,16.25\nAMZN,Jul 2002,14.45\nAMZN,Aug 2002,14.94\nAMZN,Sep 2002,15.93\nAMZN,Oct 2002,19.36\nAMZN,Nov 2002,23.35\nAMZN,Dec 2002,18.89\nAMZN,Jan 2003,21.85\nAMZN,Feb 2003,22.01\nAMZN,Mar 2003,26.03\nAMZN,Apr 2003,28.69\nAMZN,May 2003,35.89\nAMZN,Jun 2003,36.32\nAMZN,Jul 2003,41.64\nAMZN,Aug 2003,46.32\nAMZN,Sep 2003,48.43\nAMZN,Oct 2003,54.43\nAMZN,Nov 2003,53.97\nAMZN,Dec 2003,52.62\nAMZN,Jan 2004,50.4\nAMZN,Feb 2004,43.01\nAMZN,Mar 2004,43.28\nAMZN,Apr 2004,43.6\nAMZN,May 2004,48.5\nAMZN,Jun 2004,54.4\nAMZN,Jul 2004,38.92\nAMZN,Aug 2004,38.14\nAMZN,Sep 2004,40.86\nAMZN,Oct 2004,34.13\nAMZN,Nov 2004,39.68\nAMZN,Dec 2004,44.29\nAMZN,Jan 2005,43.22\nAMZN,Feb 2005,35.18\nAMZN,Mar 2005,34.27\nAMZN,Apr 2005,32.36\nAMZN,May 2005,35.51\nAMZN,Jun 2005,33.09\nAMZN,Jul 2005,45.15\nAMZN,Aug 2005,42.7\nAMZN,Sep 2005,45.3\nAMZN,Oct 2005,39.86\nAMZN,Nov 2005,48.46\nAMZN,Dec 2005,47.15\nAMZN,Jan 2006,44.82\nAMZN,Feb 2006,37.44\nAMZN,Mar 2006,36.53\nAMZN,Apr 2006,35.21\nAMZN,May 2006,34.61\nAMZN,Jun 2006,38.68\nAMZN,Jul 2006,26.89\nAMZN,Aug 2006,30.83\nAMZN,Sep 2006,32.12\nAMZN,Oct 2006,38.09\nAMZN,Nov 2006,40.34\nAMZN,Dec 2006,39.46\nAMZN,Jan 2007,37.67\nAMZN,Feb 2007,39.14\nAMZN,Mar 2007,39.79\nAMZN,Apr 2007,61.33\nAMZN,May 2007,69.14\nAMZN,Jun 2007,68.41\nAMZN,Jul 2007,78.54\nAMZN,Aug 2007,79.91\nAMZN,Sep 2007,93.15\nAMZN,Oct 2007,89.15\nAMZN,Nov 2007,90.56\nAMZN,Dec 2007,92.64\nAMZN,Jan 2008,77.7\nAMZN,Feb 2008,64.47\nAMZN,Mar 2008,71.3\nAMZN,Apr 2008,78.63\nAMZN,May 2008,81.62\nAMZN,Jun 2008,73.33\nAMZN,Jul 2008,76.34\nAMZN,Aug 2008,80.81\nAMZN,Sep 2008,72.76\nAMZN,Oct 2008,57.24\nAMZN,Nov 2008,42.7\nAMZN,Dec 2008,51.28\nAMZN,Jan 2009,58.82\nAMZN,Feb 2009,64.79\nAMZN,Mar 2009,73.44\nAMZN,Apr 2009,80.52\nAMZN,May 2009,77.99\nAMZN,Jun 2009,83.66\nAMZN,Jul 2009,85.76\nAMZN,Aug 2009,81.19\nAMZN,Sep 2009,93.36\nAMZN,Oct 2009,118.81\nAMZN,Nov 2009,135.91\nAMZN,Dec 2009,134.52\nAMZN,Jan 2010,125.41\nAMZN,Feb 2010,118.4\nAMZN,Mar 2010,128.82\nIBM,Jan 2000,100.52\nIBM,Feb 2000,92.11\nIBM,Mar 2000,106.11\nIBM,Apr 2000,99.95\nIBM,May 2000,96.31\nIBM,Jun 2000,98.33\nIBM,Jul 2000,100.74\nIBM,Aug 2000,118.62\nIBM,Sep 2000,101.19\nIBM,Oct 2000,88.5\nIBM,Nov 2000,84.12\nIBM,Dec 2000,76.47\nIBM,Jan 2001,100.76\nIBM,Feb 2001,89.98\nIBM,Mar 2001,86.63\nIBM,Apr 2001,103.7\nIBM,May 2001,100.82\nIBM,Jun 2001,102.35\nIBM,Jul 2001,94.87\nIBM,Aug 2001,90.25\nIBM,Sep 2001,82.82\nIBM,Oct 2001,97.58\nIBM,Nov 2001,104.5\nIBM,Dec 2001,109.36\nIBM,Jan 2002,97.54\nIBM,Feb 2002,88.82\nIBM,Mar 2002,94.15\nIBM,Apr 2002,75.82\nIBM,May 2002,72.97\nIBM,Jun 2002,65.31\nIBM,Jul 2002,63.86\nIBM,Aug 2002,68.52\nIBM,Sep 2002,53.01\nIBM,Oct 2002,71.76\nIBM,Nov 2002,79.16\nIBM,Dec 2002,70.58\nIBM,Jan 2003,71.22\nIBM,Feb 2003,71.13\nIBM,Mar 2003,71.57\nIBM,Apr 2003,77.47\nIBM,May 2003,80.48\nIBM,Jun 2003,75.42\nIBM,Jul 2003,74.28\nIBM,Aug 2003,75.12\nIBM,Sep 2003,80.91\nIBM,Oct 2003,81.96\nIBM,Nov 2003,83.08\nIBM,Dec 2003,85.05\nIBM,Jan 2004,91.06\nIBM,Feb 2004,88.7\nIBM,Mar 2004,84.41\nIBM,Apr 2004,81.04\nIBM,May 2004,81.59\nIBM,Jun 2004,81.19\nIBM,Jul 2004,80.19\nIBM,Aug 2004,78.17\nIBM,Sep 2004,79.13\nIBM,Oct 2004,82.84\nIBM,Nov 2004,87.15\nIBM,Dec 2004,91.16\nIBM,Jan 2005,86.39\nIBM,Feb 2005,85.78\nIBM,Mar 2005,84.66\nIBM,Apr 2005,70.77\nIBM,May 2005,70.18\nIBM,Jun 2005,68.93\nIBM,Jul 2005,77.53\nIBM,Aug 2005,75.07\nIBM,Sep 2005,74.7\nIBM,Oct 2005,76.25\nIBM,Nov 2005,82.98\nIBM,Dec 2005,76.73\nIBM,Jan 2006,75.89\nIBM,Feb 2006,75.09\nIBM,Mar 2006,77.17\nIBM,Apr 2006,77.05\nIBM,May 2006,75.04\nIBM,Jun 2006,72.15\nIBM,Jul 2006,72.7\nIBM,Aug 2006,76.35\nIBM,Sep 2006,77.26\nIBM,Oct 2006,87.06\nIBM,Nov 2006,86.95\nIBM,Dec 2006,91.9\nIBM,Jan 2007,93.79\nIBM,Feb 2007,88.18\nIBM,Mar 2007,89.44\nIBM,Apr 2007,96.98\nIBM,May 2007,101.54\nIBM,Jun 2007,100.25\nIBM,Jul 2007,105.4\nIBM,Aug 2007,111.54\nIBM,Sep 2007,112.6\nIBM,Oct 2007,111\nIBM,Nov 2007,100.9\nIBM,Dec 2007,103.7\nIBM,Jan 2008,102.75\nIBM,Feb 2008,109.64\nIBM,Mar 2008,110.87\nIBM,Apr 2008,116.23\nIBM,May 2008,125.14\nIBM,Jun 2008,114.6\nIBM,Jul 2008,123.74\nIBM,Aug 2008,118.16\nIBM,Sep 2008,113.53\nIBM,Oct 2008,90.24\nIBM,Nov 2008,79.65\nIBM,Dec 2008,82.15\nIBM,Jan 2009,89.46\nIBM,Feb 2009,90.32\nIBM,Mar 2009,95.09\nIBM,Apr 2009,101.29\nIBM,May 2009,104.85\nIBM,Jun 2009,103.01\nIBM,Jul 2009,116.34\nIBM,Aug 2009,117\nIBM,Sep 2009,118.55\nIBM,Oct 2009,119.54\nIBM,Nov 2009,125.79\nIBM,Dec 2009,130.32\nIBM,Jan 2010,121.85\nIBM,Feb 2010,127.16\nIBM,Mar 2010,125.55\nGOOG,Aug 2004,102.37\nGOOG,Sep 2004,129.6\nGOOG,Oct 2004,190.64\nGOOG,Nov 2004,181.98\nGOOG,Dec 2004,192.79\nGOOG,Jan 2005,195.62\nGOOG,Feb 2005,187.99\nGOOG,Mar 2005,180.51\nGOOG,Apr 2005,220\nGOOG,May 2005,277.27\nGOOG,Jun 2005,294.15\nGOOG,Jul 2005,287.76\nGOOG,Aug 2005,286\nGOOG,Sep 2005,316.46\nGOOG,Oct 2005,372.14\nGOOG,Nov 2005,404.91\nGOOG,Dec 2005,414.86\nGOOG,Jan 2006,432.66\nGOOG,Feb 2006,362.62\nGOOG,Mar 2006,390\nGOOG,Apr 2006,417.94\nGOOG,May 2006,371.82\nGOOG,Jun 2006,419.33\nGOOG,Jul 2006,386.6\nGOOG,Aug 2006,378.53\nGOOG,Sep 2006,401.9\nGOOG,Oct 2006,476.39\nGOOG,Nov 2006,484.81\nGOOG,Dec 2006,460.48\nGOOG,Jan 2007,501.5\nGOOG,Feb 2007,449.45\nGOOG,Mar 2007,458.16\nGOOG,Apr 2007,471.38\nGOOG,May 2007,497.91\nGOOG,Jun 2007,522.7\nGOOG,Jul 2007,510\nGOOG,Aug 2007,515.25\nGOOG,Sep 2007,567.27\nGOOG,Oct 2007,707\nGOOG,Nov 2007,693\nGOOG,Dec 2007,691.48\nGOOG,Jan 2008,564.3\nGOOG,Feb 2008,471.18\nGOOG,Mar 2008,440.47\nGOOG,Apr 2008,574.29\nGOOG,May 2008,585.8\nGOOG,Jun 2008,526.42\nGOOG,Jul 2008,473.75\nGOOG,Aug 2008,463.29\nGOOG,Sep 2008,400.52\nGOOG,Oct 2008,359.36\nGOOG,Nov 2008,292.96\nGOOG,Dec 2008,307.65\nGOOG,Jan 2009,338.53\nGOOG,Feb 2009,337.99\nGOOG,Mar 2009,348.06\nGOOG,Apr 2009,395.97\nGOOG,May 2009,417.23\nGOOG,Jun 2009,421.59\nGOOG,Jul 2009,443.05\nGOOG,Aug 2009,461.67\nGOOG,Sep 2009,495.85\nGOOG,Oct 2009,536.12\nGOOG,Nov 2009,583\nGOOG,Dec 2009,619.98\nGOOG,Jan 2010,529.94\nGOOG,Feb 2010,526.8\nGOOG,Mar 2010,560.19\n10 Year T-Note,Jan 2000,6.67\n10 Year T-Note,Feb 2000,6.41\n10 Year T-Note,Mar 2000,6.02\n10 Year T-Note,Apr 2000,6.21\n10 Year T-Note,May 2000,6.28\n10 Year T-Note,Jun 2000,6.02\n10 Year T-Note,Jul 2000,6.03\n10 Year T-Note,Aug 2000,5.73\n10 Year T-Note,Sep 2000,5.78\n10 Year T-Note,Oct 2000,5.76\n10 Year T-Note,Nov 2000,5.44\n10 Year T-Note,Dec 2000,5.11\n10 Year T-Note,Jan 2001,5.18\n10 Year T-Note,Feb 2001,4.91\n10 Year T-Note,Mar 2001,4.91\n10 Year T-Note,Apr 2001,5.34\n10 Year T-Note,May 2001,5.41\n10 Year T-Note,Jun 2001,5.39\n10 Year T-Note,Jul 2001,5.04\n10 Year T-Note,Aug 2001,4.82\n10 Year T-Note,Sep 2001,4.57\n10 Year T-Note,Oct 2001,4.26\n10 Year T-Note,Nov 2001,4.74\n10 Year T-Note,Dec 2001,5.03\n10 Year T-Note,Jan 2002,5.03\n10 Year T-Note,Feb 2002,4.86\n10 Year T-Note,Mar 2002,5.41\n10 Year T-Note,Apr 2002,5.09\n10 Year T-Note,May 2002,5.04\n10 Year T-Note,Jun 2002,4.82\n10 Year T-Note,Jul 2002,4.47\n10 Year T-Note,Aug 2002,4.14\n10 Year T-Note,Sep 2002,3.61\n10 Year T-Note,Oct 2002,3.91\n10 Year T-Note,Nov 2002,4.21\n10 Year T-Note,Dec 2002,3.82\n10 Year T-Note,Jan 2003,3.97\n10 Year T-Note,Feb 2003,3.7\n10 Year T-Note,Mar 2003,3.82\n10 Year T-Note,Apr 2003,3.86\n10 Year T-Note,May 2003,3.35\n10 Year T-Note,Jun 2003,3.53\n10 Year T-Note,Jul 2003,4.47\n10 Year T-Note,Aug 2003,4.45\n10 Year T-Note,Sep 2003,3.94\n10 Year T-Note,Oct 2003,4.3\n10 Year T-Note,Nov 2003,4.32\n10 Year T-Note,Dec 2003,4.26\n10 Year T-Note,Jan 2004,4.14\n10 Year T-Note,Feb 2004,3.98\n10 Year T-Note,Mar 2004,3.84\n10 Year T-Note,Apr 2004,4.5\n10 Year T-Note,May 2004,4.66\n10 Year T-Note,Jun 2004,4.62\n10 Year T-Note,Jul 2004,4.47\n10 Year T-Note,Aug 2004,4.13\n10 Year T-Note,Sep 2004,4.12\n10 Year T-Note,Oct 2004,4.03\n10 Year T-Note,Nov 2004,4.36\n10 Year T-Note,Dec 2004,4.22\n10 Year T-Note,Jan 2005,4.13\n10 Year T-Note,Feb 2005,4.36\n10 Year T-Note,Mar 2005,4.5\n10 Year T-Note,Apr 2005,4.2\n10 Year T-Note,May 2005,4.01\n10 Year T-Note,Jun 2005,3.94\n10 Year T-Note,Jul 2005,4.29\n10 Year T-Note,Aug 2005,4.02\n10 Year T-Note,Sep 2005,4.33\n10 Year T-Note,Oct 2005,4.56\n10 Year T-Note,Nov 2005,4.5\n10 Year T-Note,Dec 2005,4.39\n10 Year T-Note,Jan 2006,4.53\n10 Year T-Note,Feb 2006,4.55\n10 Year T-Note,Mar 2006,4.85\n10 Year T-Note,Apr 2006,5.07\n10 Year T-Note,May 2006,5.11\n10 Year T-Note,Jun 2006,5.14\n10 Year T-Note,Jul 2006,4.99\n10 Year T-Note,Aug 2006,4.73\n10 Year T-Note,Sep 2006,4.63\n10 Year T-Note,Oct 2006,4.61\n10 Year T-Note,Nov 2006,4.46\n10 Year T-Note,Dec 2006,4.71\n10 Year T-Note,Jan 2007,4.83\n10 Year T-Note,Feb 2007,4.55\n10 Year T-Note,Mar 2007,4.65\n10 Year T-Note,Apr 2007,4.63\n10 Year T-Note,May 2007,4.89\n10 Year T-Note,Jun 2007,5.03\n10 Year T-Note,Jul 2007,4.77\n10 Year T-Note,Aug 2007,4.54\n10 Year T-Note,Sep 2007,4.58\n10 Year T-Note,Oct 2007,4.47\n10 Year T-Note,Nov 2007,3.97\n10 Year T-Note,Dec 2007,4.03\n10 Year T-Note,Jan 2008,3.64\n10 Year T-Note,Feb 2008,3.53\n10 Year T-Note,Mar 2008,3.43\n10 Year T-Note,Apr 2008,3.76\n10 Year T-Note,May 2008,4.05\n10 Year T-Note,Jun 2008,3.98\n10 Year T-Note,Jul 2008,3.98\n10 Year T-Note,Aug 2008,3.81\n10 Year T-Note,Sep 2008,3.83\n10 Year T-Note,Oct 2008,3.97\n10 Year T-Note,Nov 2008,2.96\n10 Year T-Note,Dec 2008,2.24\n10 Year T-Note,Jan 2009,2.84\n10 Year T-Note,Feb 2009,3.04\n10 Year T-Note,Mar 2009,2.68\n10 Year T-Note,Apr 2009,3.12\n10 Year T-Note,May 2009,3.46\n10 Year T-Note,Jun 2009,3.52\n10 Year T-Note,Jul 2009,3.5\n10 Year T-Note,Aug 2009,3.4\n10 Year T-Note,Sep 2009,3.31\n10 Year T-Note,Oct 2009,3.39\n10 Year T-Note,Nov 2009,3.2\n10 Year T-Note,Dec 2009,3.84\n10 Year T-Note,Jan 2010,3.61\n10 Year T-Note,Feb 2010,3.6\n10 Year T-Note,Mar 2010,3.7\nAAPL,Jan 2000,25.94\nAAPL,Feb 2000,28.66\nAAPL,Mar 2000,33.95\nAAPL,Apr 2000,31.01\nAAPL,May 2000,21\nAAPL,Jun 2000,26.19\nAAPL,Jul 2000,25.41\nAAPL,Aug 2000,30.47\nAAPL,Sep 2000,12.88\nAAPL,Oct 2000,9.78\nAAPL,Nov 2000,8.25\nAAPL,Dec 2000,7.44\nAAPL,Jan 2001,10.81\nAAPL,Feb 2001,9.12\nAAPL,Mar 2001,11.03\nAAPL,Apr 2001,12.74\nAAPL,May 2001,9.98\nAAPL,Jun 2001,11.62\nAAPL,Jul 2001,9.4\nAAPL,Aug 2001,9.27\nAAPL,Sep 2001,7.76\nAAPL,Oct 2001,8.78\nAAPL,Nov 2001,10.65\nAAPL,Dec 2001,10.95\nAAPL,Jan 2002,12.36\nAAPL,Feb 2002,10.85\nAAPL,Mar 2002,11.84\nAAPL,Apr 2002,12.14\nAAPL,May 2002,11.65\nAAPL,Jun 2002,8.86\nAAPL,Jul 2002,7.63\nAAPL,Aug 2002,7.38\nAAPL,Sep 2002,7.25\nAAPL,Oct 2002,8.03\nAAPL,Nov 2002,7.75\nAAPL,Dec 2002,7.16\nAAPL,Jan 2003,7.18\nAAPL,Feb 2003,7.51\nAAPL,Mar 2003,7.07\nAAPL,Apr 2003,7.11\nAAPL,May 2003,8.98\nAAPL,Jun 2003,9.53\nAAPL,Jul 2003,10.54\nAAPL,Aug 2003,11.31\nAAPL,Sep 2003,10.36\nAAPL,Oct 2003,11.44\nAAPL,Nov 2003,10.45\nAAPL,Dec 2003,10.69\nAAPL,Jan 2004,11.28\nAAPL,Feb 2004,11.96\nAAPL,Mar 2004,13.52\nAAPL,Apr 2004,12.89\nAAPL,May 2004,14.03\nAAPL,Jun 2004,16.27\nAAPL,Jul 2004,16.17\nAAPL,Aug 2004,17.25\nAAPL,Sep 2004,19.38\nAAPL,Oct 2004,26.2\nAAPL,Nov 2004,33.53\nAAPL,Dec 2004,32.2\nAAPL,Jan 2005,38.45\nAAPL,Feb 2005,44.86\nAAPL,Mar 2005,41.67\nAAPL,Apr 2005,36.06\nAAPL,May 2005,39.76\nAAPL,Jun 2005,36.81\nAAPL,Jul 2005,42.65\nAAPL,Aug 2005,46.89\nAAPL,Sep 2005,53.61\nAAPL,Oct 2005,57.59\nAAPL,Nov 2005,67.82\nAAPL,Dec 2005,71.89\nAAPL,Jan 2006,75.51\nAAPL,Feb 2006,68.49\nAAPL,Mar 2006,62.72\nAAPL,Apr 2006,70.39\nAAPL,May 2006,59.77\nAAPL,Jun 2006,57.27\nAAPL,Jul 2006,67.96\nAAPL,Aug 2006,67.85\nAAPL,Sep 2006,76.98\nAAPL,Oct 2006,81.08\nAAPL,Nov 2006,91.66\nAAPL,Dec 2006,84.84\nAAPL,Jan 2007,85.73\nAAPL,Feb 2007,84.61\nAAPL,Mar 2007,92.91\nAAPL,Apr 2007,99.8\nAAPL,May 2007,121.19\nAAPL,Jun 2007,122.04\nAAPL,Jul 2007,131.76\nAAPL,Aug 2007,138.48\nAAPL,Sep 2007,153.47\nAAPL,Oct 2007,189.95\nAAPL,Nov 2007,182.22\nAAPL,Dec 2007,198.08\nAAPL,Jan 2008,135.36\nAAPL,Feb 2008,125.02\nAAPL,Mar 2008,143.5\nAAPL,Apr 2008,173.95\nAAPL,May 2008,188.75\nAAPL,Jun 2008,167.44\nAAPL,Jul 2008,158.95\nAAPL,Aug 2008,169.53\nAAPL,Sep 2008,113.66\nAAPL,Oct 2008,107.59\nAAPL,Nov 2008,92.67\nAAPL,Dec 2008,85.35\nAAPL,Jan 2009,90.13\nAAPL,Feb 2009,89.31\nAAPL,Mar 2009,105.12\nAAPL,Apr 2009,125.83\nAAPL,May 2009,135.81\nAAPL,Jun 2009,142.43\nAAPL,Jul 2009,163.39\nAAPL,Aug 2009,168.21\nAAPL,Sep 2009,185.35\nAAPL,Oct 2009,188.5\nAAPL,Nov 2009,199.91\nAAPL,Dec 2009,210.73\nAAPL,Jan 2010,192.06\nAAPL,Feb 2010,204.62\nAAPL,Mar 2010,223.02\n",
+      "language": null
+    }
+  },
+  "updated_at": "2011-08-19T19:39:00Z",
+  "url": "https://api.github.com/gists/1157787",
+  "id": "1157787"
+}

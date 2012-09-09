@@ -1,0 +1,118 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "2fe7ef02588bd8ac22b964541a9adbce",
+        "login": "slide064",
+        "avatar_url": "https://secure.gravatar.com/avatar/2fe7ef02588bd8ac22b964541a9adbce?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/slide064",
+        "id": 1318991
+      },
+      "created_at": "2012-01-10T16:33:44Z",
+      "updated_at": "2012-01-10T16:33:44Z",
+      "url": "https://api.github.com/gists/1589901",
+      "id": "1589901"
+    },
+    {
+      "user": {
+        "gravatar_id": "5daf79134c95a64ccdbf2bd477e52392",
+        "login": "wbzyl",
+        "avatar_url": "https://secure.gravatar.com/avatar/5daf79134c95a64ccdbf2bd477e52392?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/wbzyl",
+        "id": 8049
+      },
+      "created_at": "2012-06-25T19:17:42Z",
+      "updated_at": "2012-06-25T19:19:58Z",
+      "url": "https://api.github.com/gists/2990659",
+      "id": "2990659"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 6,
+        "additions": 1,
+        "deletions": 5
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-04T18:51:20Z",
+      "version": "e7b2a5de6bc6f1a8841b51452a65826b840bacd7",
+      "url": "https://api.github.com/gists/1123639/e7b2a5de6bc6f1a8841b51452a65826b840bacd7"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-03T21:17:05Z",
+      "version": "431f3f472b58aa067b3ff332a77eae1c5d07daed",
+      "url": "https://api.github.com/gists/1123639/431f3f472b58aa067b3ff332a77eae1c5d07daed"
+    },
+    {
+      "change_status": {
+        "total": 56,
+        "additions": 56,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2011-08-03T20:10:34Z",
+      "version": "5c167189d8955aa82da7339a9a694602a353e94a",
+      "url": "https://api.github.com/gists/1123639/5c167189d8955aa82da7339a9a694602a353e94a"
+    }
+  ],
+  "description": "Rounded Rectangles (D3.js)",
+  "html_url": "https://gist.github.com/1123639",
+  "comments": 2,
+  "created_at": "2011-08-03T20:10:33Z",
+  "git_pull_url": "git://gist.github.com/1123639.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1123639/a311f4765c7bcb556b7a7c44a5bb244016ef856e/index.html",
+      "size": 1198,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.29.1\"></script>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar mouse = [480, 250],\n    count = 0;\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", 960)\n    .attr(\"height\", 500);\n\nvar g = svg.selectAll(\"g\")\n    .data(d3.range(25))\n  .enter().append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + mouse + \")\");\n\ng.append(\"svg:rect\")\n    .attr(\"rx\", 6)\n    .attr(\"ry\", 6)\n    .attr(\"x\", -12.5)\n    .attr(\"y\", -12.5)\n    .attr(\"width\", 25)\n    .attr(\"height\", 25)\n    .attr(\"transform\", function(d, i) { return \"scale(\" + (1 - d / 25) * 20 + \")\"; })\n    .style(\"fill\", d3.scale.category20c());\n\ng.map(function(d) {\n  return {center: [0, 0], angle: 0};\n});\n\nsvg.on(\"mousemove\", function() {\n  mouse = d3.svg.mouse(this);\n});\n\nd3.timer(function() {\n  count++;\n  g.attr(\"transform\", function(d, i) {\n    d.center[0] += (mouse[0] - d.center[0]) / (i + 5);\n    d.center[1] += (mouse[1] - d.center[1]) / (i + 5);\n    d.angle += Math.sin((count + i) / 10) * 7;\n    return \"translate(\" + d.center + \")rotate(\" + d.angle + \")\";\n  });\n});\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/1123639/a358be4497ee657d78ef54fafe0465ead981049d/readme.md",
+      "size": 437,
+      "content": "Inspired by this [Paper.js](http://paperjs.org/examples/rounded-rectangles/) example, this demonstrates animated rounded rectangles (`svg:rect` elements with \"rx\" and \"ry\" attributes). The data associated with each rectangle is its center position and rotation angle in degrees. Each tick of the animation, the rectangles drift towards the mouse location and rotate slightly. Built with [D3.js](http://mbostock.github.com/d3/) using SVG.",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1123639.git",
+  "updated_at": "2011-08-03T20:10:33Z",
+  "url": "https://api.github.com/gists/1123639",
+  "id": "1123639"
+}

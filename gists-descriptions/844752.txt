@@ -1,0 +1,105 @@
+{
+  "git_push_url": "git@gist.github.com:844752.git",
+  "forks": [
+    {
+      "updated_at": "2012-08-03T19:31:50Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/ab45fd54f3a388fd2e35ea39e7c4426e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "ab45fd54f3a388fd2e35ea39e7c4426e",
+        "url": "https://api.github.com/users/ppong",
+        "login": "ppong",
+        "id": 1063140
+      },
+      "url": "https://api.github.com/gists/3250711",
+      "id": "3250711",
+      "created_at": "2012-08-03T19:31:50Z"
+    }
+  ],
+  "updated_at": "2011-02-28T17:23:58Z",
+  "public": true,
+  "html_url": "https://gist.github.com/844752",
+  "files": {
+    "sample.json": {
+      "type": "application/json",
+      "filename": "sample.json",
+      "language": "JSON",
+      "raw_url": "https://gist.github.com/raw/844752/b47d617dcc3df1ecc7eea51ccd3416659e2e8e4e/sample.json",
+      "content": "[\n{\"Country\": \"France\", \"Aspect\": \"Cost_of_Living\", \"Value\": 55},\n{\"Country\": \"France\", \"Aspect\": \"Leisure_&_Culture\", \"Value\": 81},\n{\"Country\": \"France\", \"Aspect\": \"Economy\", \"Value\": 69},\n{\"Country\": \"France\", \"Aspect\": \"Environment\", \"Value\": 72},\n{\"Country\": \"France\", \"Aspect\": \"Freedom\", \"Value\": 100},\n{\"Country\": \"France\", \"Aspect\": \"Health\", \"Value\": 100},\n{\"Country\": \"France\", \"Aspect\": \"Infrastructure\", \"Value\": 92},\n{\"Country\": \"France\", \"Aspect\": \"Risk_&_Safety\", \"Value\": 100},\n{\"Country\": \"France\", \"Aspect\": \"Climate\", \"Value\": 87},\n{\"Country\": \"France\", \"Aspect\": \"Final\", \"Value\": 82},\n{\"Country\": \"Australia\", \"Aspect\": \"Cost_of_Living\", \"Value\": 56},\n{\"Country\": \"Australia\", \"Aspect\": \"Leisure_&_Culture\", \"Value\": 82},\n{\"Country\": \"Australia\", \"Aspect\": \"Economy\", \"Value\": 71},\n{\"Country\": \"Australia\", \"Aspect\": \"Environment\", \"Value\": 76},\n{\"Country\": \"Australia\", \"Aspect\": \"Freedom\", \"Value\": 100},\n{\"Country\": \"Australia\", \"Aspect\": \"Health\", \"Value\": 87},\n{\"Country\": \"Australia\", \"Aspect\": \"Infrastructure\", \"Value\": 92},\n{\"Country\": \"Australia\", \"Aspect\": \"Risk_&_Safety\", \"Value\": 100},\n{\"Country\": \"Australia\", \"Aspect\": \"Climate\", \"Value\": 87},\n{\"Country\": \"Australia\", \"Aspect\": \"Final\", \"Value\": 81},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Cost_of_Living\", \"Value\": 41},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Leisure_&_Culture\", \"Value\": 86},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Economy\", \"Value\": 79},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Environment\", \"Value\": 78},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Freedom\", \"Value\": 100},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Health\", \"Value\": 95},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Infrastructure\", \"Value\": 96},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Risk_&_Safety\", \"Value\": 100},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Climate\", \"Value\": 77},\n{\"Country\": \"Switzerland\", \"Aspect\": \"Final\", \"Value\": 81}\n]\n",
+      "size": 1893
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "raw_url": "https://gist.github.com/raw/844752/89817167e2e92c3eab46fdbf6af2694ce90cc674/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"https://github.com/mbostock/d3/raw/v1.2.1/d3.js\"></script>\n  </head>\n  <body>\n    <table id=\"countries\">\n    </table>\n    <script type=\"text/javascript\">\n\nd3.json(\"sample.json\", function(json) {\n  var data = d3.nest()\n      .key(function(d) { return d.Country.toLowerCase(); })\n      .sortKeys(d3.ascending)\n      .map(json);\n\n  var tr = d3.select(\"#countries\")\n    .selectAll(\"tr\")\n      .data(d3.entries(data))\n    .enter().append(\"tr\");\n\n  tr.append(\"th\")\n      .text(function(d) { return d.key; });\n\n  tr.selectAll(\"td\")\n      .data(function(d) { return d.value; })\n    .enter().append(\"td\")\n      .text(function(d) { return d.Aspect + \":  \" + d.Value; });\n});\n\n    </script>\n  </body>\n</html>\n",
+      "size": 770
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "url": "https://api.github.com/users/mbostock",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "version": "03bd391f8ca2e81bd13f6eaf19245c7f74166c99",
+      "change_status": {
+        "total": 3,
+        "deletions": 1,
+        "additions": 2
+      },
+      "committed_at": "2011-02-28T17:23:58Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/844752/03bd391f8ca2e81bd13f6eaf19245c7f74166c99"
+    },
+    {
+      "version": "46a78d144609d59368e2e9fdc1cd571fe730a612",
+      "change_status": {
+        "total": 12,
+        "deletions": 4,
+        "additions": 8
+      },
+      "committed_at": "2011-02-26T00:14:32Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/844752/46a78d144609d59368e2e9fdc1cd571fe730a612"
+    },
+    {
+      "version": "420cc52eb4910fe8fa2bec9e13daab18b6230503",
+      "change_status": {
+        "total": 60,
+        "deletions": 0,
+        "additions": 60
+      },
+      "committed_at": "2011-02-26T00:13:22Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/844752/420cc52eb4910fe8fa2bec9e13daab18b6230503"
+    }
+  ],
+  "url": "https://api.github.com/gists/844752",
+  "description": "d3.nest",
+  "git_pull_url": "git://gist.github.com/844752.git",
+  "id": "844752",
+  "comments": 0,
+  "created_at": "2011-02-26T00:13:22Z"
+}

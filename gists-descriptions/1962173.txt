@@ -1,0 +1,244 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "1202c95dec14eee416717e8c0add0f0c",
+        "login": "pangloss",
+        "avatar_url": "https://secure.gravatar.com/avatar/1202c95dec14eee416717e8c0add0f0c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/pangloss",
+        "id": 10115
+      },
+      "created_at": "2012-03-04T02:35:06Z",
+      "updated_at": "2012-03-04T02:35:06Z",
+      "url": "https://api.github.com/gists/1970123",
+      "id": "1970123"
+    },
+    {
+      "user": {
+        "gravatar_id": "af7b8c09ff7b1a4da10e0286be5b4120",
+        "login": "amundo",
+        "avatar_url": "https://secure.gravatar.com/avatar/af7b8c09ff7b1a4da10e0286be5b4120?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/amundo",
+        "id": 30924
+      },
+      "created_at": "2012-04-02T06:03:44Z",
+      "updated_at": "2012-04-02T06:03:44Z",
+      "url": "https://api.github.com/gists/2281130",
+      "id": "2281130"
+    },
+    {
+      "user": {
+        "gravatar_id": "35b36c47ff059af5bed627902411e320",
+        "login": "TobiTonner",
+        "avatar_url": "https://secure.gravatar.com/avatar/35b36c47ff059af5bed627902411e320?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/TobiTonner",
+        "id": 694994
+      },
+      "created_at": "2012-04-18T13:12:57Z",
+      "updated_at": "2012-04-18T13:12:57Z",
+      "url": "https://api.github.com/gists/2413466",
+      "id": "2413466"
+    },
+    {
+      "user": {
+        "gravatar_id": "684986541ffbb035225dce636b167f7a",
+        "login": "slojo404",
+        "avatar_url": "https://secure.gravatar.com/avatar/684986541ffbb035225dce636b167f7a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/slojo404",
+        "id": 924190
+      },
+      "created_at": "2012-04-18T20:22:06Z",
+      "updated_at": "2012-04-18T20:22:06Z",
+      "url": "https://api.github.com/gists/2416304",
+      "id": "2416304"
+    },
+    {
+      "user": {
+        "gravatar_id": "6b28fb96658c8aa5a98d814d5fec203e",
+        "login": "adieyal",
+        "avatar_url": "https://secure.gravatar.com/avatar/6b28fb96658c8aa5a98d814d5fec203e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/adieyal",
+        "id": 420786
+      },
+      "created_at": "2012-05-09T23:36:38Z",
+      "updated_at": "2012-05-09T23:36:38Z",
+      "url": "https://api.github.com/gists/2649775",
+      "id": "2649775"
+    },
+    {
+      "user": {
+        "gravatar_id": "a839a1dce92696539e7e9475604ef310",
+        "login": "jmgimeno",
+        "avatar_url": "https://secure.gravatar.com/avatar/a839a1dce92696539e7e9475604ef310?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/jmgimeno",
+        "id": 718396
+      },
+      "created_at": "2012-06-15T10:49:37Z",
+      "updated_at": "2012-06-15T10:49:37Z",
+      "url": "https://api.github.com/gists/2935828",
+      "id": "2935828"
+    },
+    {
+      "user": {
+        "gravatar_id": "adb9d09a6808e6f9a24b2c7bec15c109",
+        "login": "nakedgremlin",
+        "avatar_url": "https://secure.gravatar.com/avatar/adb9d09a6808e6f9a24b2c7bec15c109?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/nakedgremlin",
+        "id": 41279
+      },
+      "created_at": "2012-08-08T06:37:11Z",
+      "updated_at": "2012-08-08T06:37:11Z",
+      "url": "https://api.github.com/gists/3292850",
+      "id": "3292850"
+    }
+  ],
+  "user": {
+    "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+    "login": "bunkat",
+    "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/bunkat",
+    "id": 665885
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "22f324df5b05ce757518d044759365971c8bd351",
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1962173/22f324df5b05ce757518d044759365971c8bd351",
+      "committed_at": "2012-03-02T23:29:37Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "550bd9bbcdf3505cc82568c8cc70f5b815590842",
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1962173/550bd9bbcdf3505cc82568c8cc70f5b815590842",
+      "committed_at": "2012-03-02T23:27:21Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "de1345cb65a5774d5e3cb9229a1c1cb7a9cb6764",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1962173/de1345cb65a5774d5e3cb9229a1c1cb7a9cb6764",
+      "committed_at": "2012-03-02T23:19:22Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "5499052972547e3f2939a2d15df29b1c91d48ec9",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1962173/5499052972547e3f2939a2d15df29b1c91d48ec9",
+      "committed_at": "2012-03-02T23:14:21Z"
+    },
+    {
+      "user": null,
+      "version": "5b591f619fd9bef01455092bb924bad9426aac30",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1962173/5b591f619fd9bef01455092bb924bad9426aac30",
+      "committed_at": "2012-03-02T23:13:00Z"
+    },
+    {
+      "user": null,
+      "version": "2392c14faa8dd9b8499afe61be88a6f7100b838a",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1962173/2392c14faa8dd9b8499afe61be88a6f7100b838a",
+      "committed_at": "2012-03-02T23:12:08Z"
+    },
+    {
+      "user": null,
+      "version": "3c8a65d80cee874786c18a8e0983d498e5008b70",
+      "change_status": {
+        "total": 10,
+        "additions": 4,
+        "deletions": 6
+      },
+      "url": "https://api.github.com/gists/1962173/3c8a65d80cee874786c18a8e0983d498e5008b70",
+      "committed_at": "2012-03-02T23:11:29Z"
+    },
+    {
+      "user": null,
+      "version": "71dfec87da0c59a60ec052e7f7b54c46b61ed7cf",
+      "change_status": {
+        "total": 479,
+        "additions": 479,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1962173/71dfec87da0c59a60ec052e7f7b54c46b61ed7cf",
+      "committed_at": "2012-03-02T23:07:48Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1962173.git",
+  "description": "Swimlane Chart using d3.js",
+  "html_url": "https://gist.github.com/1962173",
+  "comments": 0,
+  "created_at": "2012-03-02T23:07:47Z",
+  "public": true,
+  "files": {
+    "randomData.js": {
+      "type": "application/javascript",
+      "filename": "randomData.js",
+      "raw_url": "https://gist.github.com/raw/1962173/7b671d4d81225fdc34a8ff2dff2b1b3d5a5533c3/randomData.js",
+      "size": 3291,
+      "content": "(function() {\n\n    \"use strict\";\n\n\tvar RandomData = function() {\n\n\t\tvar addToLane = function (chart, item) {\n\t\t    var name = item.lane;\n\n\t\t    if (!chart.lanes[name])\n\t\t        chart.lanes[name] = [];\n\n\t\t    var lane = chart.lanes[name];\n\t\t    \n\t\t    var sublane = 0;\n\t\t    while(isOverlapping(item, lane[sublane]))\n\t\t    \tsublane++;\n\n\t\t    if (!lane[sublane]) {\n\t\t    \tlane[sublane] = [];\n\t\t\t}\n\t\t    \n\t\t    lane[sublane].push(item);\t\n\t\t};\n\n\t\tvar isOverlapping = function(item, lane) {\n\t\t\tif (lane) {\n\t\t        for (var i = 0; i < lane.length; i++) {\n\t\t            var t = lane[i];\n\t\t            if (item.start < t.end && item.end > t.start) {\n\t\t                return true;                      \n\t\t            }\n\t\t        }\n\t\t\t}\n\t\t    return false;\n\t\t};\n\n        var parseData = function (data) {\n            var i = 0, length = data.length, node;\n            chart = { lanes: {} };\n            \n            for (i; i < length; i++) {\n                var item = data[i];\n\n                addToLane(chart, item);\n\n\n            }\n\n            return collapseLanes(chart);\n        };\n\n        var collapseLanes = function (chart) {\n        \tvar lanes = [], items = [], laneId = 0;\n        \tvar now = new Date();\n\n        \tfor (var laneName in chart.lanes) {\n        \t\tvar lane = chart.lanes[laneName];\n\n        \t\tfor (var i = 0; i < lane.length; i++) {\n        \t\t\tvar subLane = lane[i];\n\n        \t\t\tlanes.push({\n\t        \t\t\tid: laneId, \n\t        \t\t\tlabel: i === 0 ? laneName : ''\n\t        \t\t});\n\n\t        \t\tfor (var j = 0; j < subLane.length; j++) {\n\t        \t\t\tvar item = subLane[j];\n\n\t        \t\t\titems.push({\n\t        \t\t\t\tid: item.id,\n\t        \t\t\t\tlane: laneId,\n\t        \t\t\t\tstart: item.start,\n\t        \t\t\t\tend: item.end,\n\t        \t\t\t\tclass: item.end > now ? 'future' : 'past',\n\t        \t\t\t\tdesc: item.desc\n\t        \t\t\t});\n\t        \t\t}\n\n\t        \t\tlaneId++;\n        \t\t}\n        \t}\n\n        \treturn {lanes: lanes, items: items};\n        }\n\n\t\tvar randomNumber = function(min, max) {\n\t\t\treturn Math.floor(Math.random(0, 1) * (max - min)) + min;\n\t\t};\n\n\t\tvar generateRandomWorkItems = function () {\n\t\t\tvar data = [];\n\t\t\tvar laneCount = randomNumber(5,7)\n\t\t\t  , totalWorkItems = randomNumber(20,30)\n\t\t\t  , startMonth = randomNumber(0,1)\n\t\t\t  , startDay = randomNumber(1,28)\n\t\t\t  , totalMonths = randomNumber(4,10);\n\n\t\t\tfor (var i = 0; i < laneCount; i++) {\n\t\t\t\tvar dt = new Date(2012, startMonth, startDay);\n\t\t\t\tfor (var j = 0; j < totalWorkItems; j++) {\n\t\t\t\t\t\n\t\t\t\t\tvar dtS = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate() + randomNumber(1,5), randomNumber(8, 16), 0, 0);\n\n\t\t\t\t\tvar dateOffset =  randomNumber(0,7);\n\t\t\t\t\tvar dt = new Date(dtS.getFullYear(), dtS.getMonth(), dtS.getDate() + dateOffset, randomNumber(dateOffset === 0 ? dtS.getHours() + 2 : 8, 18), 0, 0);\n\n\t\t\t\t\tvar workItem = {\n\t\t\t\t\t\tid: i * totalWorkItems + j,\n\t\t\t\t\t\tname: 'work item ' + j,\n\t\t\t\t\t\tlane: 'lane ' + i,\n\t\t\t\t\t\tstart: dtS,\n\t\t\t\t\t\tend: dt,\n\t\t\t\t\t\tdesc: 'This is a description.'\n\t\t\t\t\t};\n\n\t\t\t\t\tdata.push(workItem);\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn data;\n\t\t};\n\n\t\treturn parseData(generateRandomWorkItems());\n\t};\n\n    /**\n    * Allow library to be used within both the browser and node.js\n    */\n    var root = typeof exports !== \"undefined\" && exports !== null ? exports : window;\n    root.randomData = RandomData;\n\n}).call(this);",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1962173/a95a3b780afea008ec62d2bb3a46ef1d2fb5fc56/index.html",
+      "size": 9157,
+      "content": "<html>\n<head>\n<title>Swimlane using d3.js</title>\n<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.v2.js\"></script>\n<script type=\"text/javascript\" src=\"randomData.js\"></script>\n<style>\n.chart {\n\tshape-rendering: crispEdges;\n}\n\n.mini text {\n\tfont: 9px sans-serif;\t\n}\n\n.main text {\n\tfont: 12px sans-serif;\t\n}\n\n.month text {\n\ttext-anchor: start;\n}\n\n.todayLine {\n\tstroke: blue;\n\tstroke-width: 1.5;\n}\n\n.axis line, .axis path {\n\tstroke: black;\n}\n\n.miniItem {\n\tstroke-width: 6;\t\n}\n\n.future {\n\tstroke: gray;\n\tfill: #ddd;\n}\n\n.past {\n\tstroke: green;\n\tfill: lightgreen;\n}\n\n.brush .extent {\n\tstroke: gray;\n\tfill: blue;\n\tfill-opacity: .165;\n}\n</style>\n</head>\n<body>\n\n<script type=\"text/javascript\">\n\nvar data = randomData()\n  , lanes = data.lanes\n  , items = data.items\n  , now = new Date();\n\nvar margin = {top: 20, right: 15, bottom: 15, left: 60}\n  , width = 960 - margin.left - margin.right\n  , height = 500 - margin.top - margin.bottom\n  , miniHeight = lanes.length * 12 + 50\n  , mainHeight = height - miniHeight - 50;\n\nvar x = d3.time.scale()\n\t.domain([d3.time.sunday(d3.min(items, function(d) { return d.start; })),\n\t\t\t d3.max(items, function(d) { return d.end; })])\n\t.range([0, width]);\nvar x1 = d3.time.scale().range([0, width]);\n\nvar ext = d3.extent(lanes, function(d) { return d.id; });\nvar y1 = d3.scale.linear().domain([ext[0], ext[1] + 1]).range([0, mainHeight]);\nvar y2 = d3.scale.linear().domain([ext[0], ext[1] + 1]).range([0, miniHeight]);\n\nvar chart = d3.select('body')\n\t.append('svg:svg')\n\t.attr('width', width + margin.right + margin.left)\n\t.attr('height', height + margin.top + margin.bottom)\n\t.attr('class', 'chart');\n\nchart.append('defs').append('clipPath')\n\t.attr('id', 'clip')\n\t.append('rect')\n\t\t.attr('width', width)\n\t\t.attr('height', mainHeight);\n\nvar main = chart.append('g')\n\t.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')\n\t.attr('width', width)\n\t.attr('height', mainHeight)\n\t.attr('class', 'main');\n\nvar mini = chart.append('g')\n\t.attr('transform', 'translate(' + margin.left + ',' + (mainHeight + 60) + ')')\n\t.attr('width', width)\n\t.attr('height', miniHeight)\n\t.attr('class', 'mini');\n\n// draw the lanes for the main chart\nmain.append('g').selectAll('.laneLines')\n\t.data(lanes)\n\t.enter().append('line')\n\t.attr('x1', 0)\n\t.attr('y1', function(d) { return d3.round(y1(d.id)) + 0.5; })\n\t.attr('x2', width)\n\t.attr('y2', function(d) { return d3.round(y1(d.id)) + 0.5; })\n\t.attr('stroke', function(d) { return d.label === '' ? 'white' : 'lightgray' });\n\nmain.append('g').selectAll('.laneText')\n\t.data(lanes)\n\t.enter().append('text')\n\t.text(function(d) { return d.label; })\n\t.attr('x', -10)\n\t.attr('y', function(d) { return y1(d.id + .5); })\n\t.attr('dy', '0.5ex')\n\t.attr('text-anchor', 'end')\n\t.attr('class', 'laneText');\n\n// draw the lanes for the mini chart\nmini.append('g').selectAll('.laneLines')\n\t.data(lanes)\n\t.enter().append('line')\n\t.attr('x1', 0)\n\t.attr('y1', function(d) { return d3.round(y2(d.id)) + 0.5; })\n\t.attr('x2', width)\n\t.attr('y2', function(d) { return d3.round(y2(d.id)) + 0.5; })\n\t.attr('stroke', function(d) { return d.label === '' ? 'white' : 'lightgray' });\n\nmini.append('g').selectAll('.laneText')\n\t.data(lanes)\n\t.enter().append('text')\n\t.text(function(d) { return d.label; })\n\t.attr('x', -10)\n\t.attr('y', function(d) { return y2(d.id + .5); })\n\t.attr('dy', '0.5ex')\n\t.attr('text-anchor', 'end')\n\t.attr('class', 'laneText');\n\n// draw the x axis\nvar xDateAxis = d3.svg.axis()\n\t.scale(x)\n\t.orient('bottom')\n\t.ticks(d3.time.mondays, (x.domain()[1] - x.domain()[0]) > 15552e6 ? 2 : 1)\n\t.tickFormat(d3.time.format('%d'))\n\t.tickSize(6, 0, 0);\n\nvar x1DateAxis = d3.svg.axis()\n\t.scale(x1)\n\t.orient('bottom')\n\t.ticks(d3.time.days, 1)\n\t.tickFormat(d3.time.format('%a %d'))\n\t.tickSize(6, 0, 0);\n\nvar xMonthAxis = d3.svg.axis()\n\t.scale(x)\n\t.orient('top')\n\t.ticks(d3.time.months, 1)\n\t.tickFormat(d3.time.format('%b %Y'))\n\t.tickSize(15, 0, 0);\n\nvar x1MonthAxis = d3.svg.axis()\n\t.scale(x1)\n\t.orient('top')\n\t.ticks(d3.time.mondays, 1)\n\t.tickFormat(d3.time.format('%b - Week %W'))\n\t.tickSize(15, 0, 0);\n\nmain.append('g')\n\t.attr('transform', 'translate(0,' + mainHeight + ')')\n\t.attr('class', 'main axis date')\n\t.call(x1DateAxis);\n\nmain.append('g')\n\t.attr('transform', 'translate(0,0.5)')\n\t.attr('class', 'main axis month')\n\t.call(x1MonthAxis)\n\t.selectAll('text')\n\t\t.attr('dx', 5)\n\t\t.attr('dy', 12);\n\nmini.append('g')\n\t.attr('transform', 'translate(0,' + miniHeight + ')')\n\t.attr('class', 'axis date')\n\t.call(xDateAxis);\n\nmini.append('g')\n\t.attr('transform', 'translate(0,0.5)')\n\t.attr('class', 'axis month')\n\t.call(xMonthAxis)\n\t.selectAll('text')\n\t\t.attr('dx', 5)\n\t\t.attr('dy', 12);\n\n// draw a line representing today's date\nmain.append('line')\n\t.attr('y1', 0)\n\t.attr('y2', mainHeight)\n\t.attr('class', 'main todayLine')\n\t.attr('clip-path', 'url(#clip)');\n\t\nmini.append('line')\n\t.attr('x1', x(now) + 0.5)\n\t.attr('y1', 0)\n\t.attr('x2', x(now) + 0.5)\n\t.attr('y2', miniHeight)\n\t.attr('class', 'todayLine');\n\n// draw the items\nvar itemRects = main.append('g')\n\t.attr('clip-path', 'url(#clip)');\n\nmini.append('g').selectAll('miniItems')\n\t.data(getPaths(items))\n\t.enter().append('path')\n\t.attr('class', function(d) { return 'miniItem ' + d.class; })\n\t.attr('d', function(d) { return d.path; });\n\n// invisible hit area to move around the selection window\nmini.append('rect')\n\t.attr('pointer-events', 'painted')\n\t.attr('width', width)\n\t.attr('height', miniHeight)\n\t.attr('visibility', 'hidden')\n\t.on('mouseup', moveBrush);\n\n// draw the selection area\nvar brush = d3.svg.brush()\n\t.x(x)\n\t.extent([d3.time.monday(now),d3.time.saturday.ceil(now)])\n\t.on(\"brush\", display);\n\nmini.append('g')\n\t.attr('class', 'x brush')\n\t.call(brush)\n\t.selectAll('rect')\n\t\t.attr('y', 1)\n\t\t.attr('height', miniHeight - 1);\n\nmini.selectAll('rect.background').remove();\ndisplay();\n\nfunction display () {\n\n\tvar rects, labels\n\t  , minExtent = d3.time.day(brush.extent()[0])\n\t  , maxExtent = d3.time.day(brush.extent()[1])\n\t  , visItems = items.filter(function (d) { return d.start < maxExtent && d.end > minExtent});\n\n\tmini.select('.brush').call(brush.extent([minExtent, maxExtent]));\t\t\n\n\tx1.domain([minExtent, maxExtent]);\n\n\tif ((maxExtent - minExtent) > 1468800000) {\n\t\tx1DateAxis.ticks(d3.time.mondays, 1).tickFormat(d3.time.format('%a %d'))\n\t\tx1MonthAxis.ticks(d3.time.mondays, 1).tickFormat(d3.time.format('%b - Week %W'))\t\t\n\t}\n\telse if ((maxExtent - minExtent) > 172800000) {\n\t\tx1DateAxis.ticks(d3.time.days, 1).tickFormat(d3.time.format('%a %d'))\n\t\tx1MonthAxis.ticks(d3.time.mondays, 1).tickFormat(d3.time.format('%b - Week %W'))\n\t}\n\telse {\n\t\tx1DateAxis.ticks(d3.time.hours, 4).tickFormat(d3.time.format('%I %p'))\n\t\tx1MonthAxis.ticks(d3.time.days, 1).tickFormat(d3.time.format('%b %e'))\n\t}\n\n\n\t//x1Offset.range([0, x1(d3.time.day.ceil(now) - x1(d3.time.day.floor(now)))]);\n\n\t// shift the today line\n\tmain.select('.main.todayLine')\n\t\t.attr('x1', x1(now) + 0.5)\n\t\t.attr('x2', x1(now) + 0.5);\n\n\t// update the axis\n\tmain.select('.main.axis.date').call(x1DateAxis);\n\tmain.select('.main.axis.month').call(x1MonthAxis)\n\t\t.selectAll('text')\n\t\t\t.attr('dx', 5)\n\t\t\t.attr('dy', 12);\n\n\t// upate the item rects\n\trects = itemRects.selectAll('rect')\n\t\t.data(visItems, function (d) { return d.id; })\n\t\t.attr('x', function(d) { return x1(d.start); })\n\t\t.attr('width', function(d) { return x1(d.end) - x1(d.start); });\n\n\trects.enter().append('rect')\n\t\t.attr('x', function(d) { return x1(d.start); })\n\t\t.attr('y', function(d) { return y1(d.lane) + .1 * y1(1) + 0.5; })\n\t\t.attr('width', function(d) { return x1(d.end) - x1(d.start); })\n\t\t.attr('height', function(d) { return .8 * y1(1); })\n\t\t.attr('class', function(d) { return 'mainItem ' + d.class; });\n\n\trects.exit().remove();\n\n\t// update the item labels\n\tlabels = itemRects.selectAll('text')\n\t\t.data(visItems, function (d) { return d.id; })\n\t\t.attr('x', function(d) { return x1(Math.max(d.start, minExtent)) + 2; });\n\t\t\t\t\n\tlabels.enter().append('text')\n\t\t.text(function (d) { return 'Item\\n\\n\\n\\n Id: ' + d.id; })\n\t\t.attr('x', function(d) { return x1(Math.max(d.start, minExtent)) + 2; })\n\t\t.attr('y', function(d) { return y1(d.lane) + .4 * y1(1) + 0.5; })\n\t\t.attr('text-anchor', 'start')\n\t\t.attr('class', 'itemLabel');\n\n\tlabels.exit().remove();\n}\n\nfunction moveBrush () {\n\tvar origin = d3.mouse(this)\n\t  , point = x.invert(origin[0])\n\t  , halfExtent = (brush.extent()[1].getTime() - brush.extent()[0].getTime()) / 2\n\t  , start = new Date(point.getTime() - halfExtent)\n\t  , end = new Date(point.getTime() + halfExtent);\n\n\tbrush.extent([start,end]);\n\tdisplay();\n}\n\n// generates a single path for each item class in the mini display\n// ugly - but draws mini 2x faster than append lines or line generator\n// is there a better way to do a bunch of lines as a single path with d3?\nfunction getPaths(items) {\n\tvar paths = {}, d, offset = .5 * y2(1) + 0.5, result = [];\n\tfor (var i = 0; i < items.length; i++) {\n\t\td = items[i];\n\t\tif (!paths[d.class]) paths[d.class] = '';\t\n\t\tpaths[d.class] += ['M',x(d.start),(y2(d.lane) + offset),'H',x(d.end)].join(' ');\n\t}\n\n\tfor (var className in paths) {\n\t\tresult.push({class: className, path: paths[className]});\n\t}\n\n\treturn result;\n}\n\n</script>\n</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2012-03-02T23:13:25Z",
+  "url": "https://api.github.com/gists/1962173",
+  "id": "1962173",
+  "git_pull_url": "git://gist.github.com/1962173.git"
+}

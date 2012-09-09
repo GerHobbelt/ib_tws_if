@@ -1,0 +1,255 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "GerHobbelt",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "git_pull_url": "git://gist.github.com/3331545.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "edef4a9940424c653d8a6201f40b2c885e6b9a8e",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/3331545/edef4a9940424c653d8a6201f40b2c885e6b9a8e",
+      "committed_at": "2012-09-09T08:44:36Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "f5942bf61e56fc237cc77f964f634eb1bb98b3fc",
+      "change_status": {
+        "total": 8,
+        "additions": 5,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/3331545/f5942bf61e56fc237cc77f964f634eb1bb98b3fc",
+      "committed_at": "2012-08-12T14:07:43Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "5d7d4f7faf3ecd1c17ebb070abc701ec743b1362",
+      "change_status": {
+        "total": 15,
+        "additions": 14,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/3331545/5d7d4f7faf3ecd1c17ebb070abc701ec743b1362",
+      "committed_at": "2012-08-12T12:42:10Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "stepheneb",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "9897e1bddb2f9fb046e35eb36a1990adad50a03b",
+      "change_status": {
+        "total": 49,
+        "additions": 25,
+        "deletions": 24
+      },
+      "url": "https://api.github.com/gists/3331545/9897e1bddb2f9fb046e35eb36a1990adad50a03b",
+      "committed_at": "2011-10-19T21:16:58Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "stepheneb",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "df8e65f3fcc2f0d72b764c1a6df96c27665b93e3",
+      "change_status": {
+        "total": 51,
+        "additions": 25,
+        "deletions": 26
+      },
+      "url": "https://api.github.com/gists/3331545/df8e65f3fcc2f0d72b764c1a6df96c27665b93e3",
+      "committed_at": "2011-10-19T21:15:54Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "stepheneb",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "afff34bc58c290ec07ef1978c793eab29db8fcc3",
+      "change_status": {
+        "total": 194,
+        "additions": 55,
+        "deletions": 139
+      },
+      "url": "https://api.github.com/gists/3331545/afff34bc58c290ec07ef1978c793eab29db8fcc3",
+      "committed_at": "2011-10-19T21:09:02Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "stepheneb",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "35ffd64acebe8a3015b2c04acce6a9c8a3027c1d",
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/3331545/35ffd64acebe8a3015b2c04acce6a9c8a3027c1d",
+      "committed_at": "2011-10-19T21:08:19Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "stepheneb",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "d2e024f3be8e7ef68104abecd961bc4bc8275c6a",
+      "change_status": {
+        "total": 194,
+        "additions": 139,
+        "deletions": 55
+      },
+      "url": "https://api.github.com/gists/3331545/d2e024f3be8e7ef68104abecd961bc4bc8275c6a",
+      "committed_at": "2011-10-19T21:07:23Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "stepheneb",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "1ace0fb546cfb98ac18a2fa7e37f7242ba6d678f",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/3331545/1ace0fb546cfb98ac18a2fa7e37f7242ba6d678f",
+      "committed_at": "2011-10-19T05:12:03Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "stepheneb",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "cf518780d208aa9f675d519f70ba2f61b3e3d112",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/3331545/cf518780d208aa9f675d519f70ba2f61b3e3d112",
+      "committed_at": "2011-10-19T05:07:00Z"
+    }
+  ],
+  "description": "HTML5 Canvas path benchmark (various composition modes)",
+  "html_url": "https://gist.github.com/3331545",
+  "git_push_url": "git@gist.github.com:3331545.git",
+  "comments": 0,
+  "created_at": "2012-08-12T11:53:43Z",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+      "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "login": "stepheneb",
+      "url": "https://api.github.com/users/stepheneb",
+      "id": 7188
+    },
+    "git_pull_url": "git://gist.github.com/1297383.git",
+    "description": "",
+    "html_url": "https://gist.github.com/1297383",
+    "git_push_url": "git@gist.github.com:1297383.git",
+    "comments": 0,
+    "created_at": "2011-10-19T02:59:51Z",
+    "public": true,
+    "files": {
+      "readme.md": {
+        "type": "text/plain",
+        "filename": "readme.md",
+        "size": 635,
+        "raw_url": "https://gist.github.com/raw/1297383/966dd3e7e02ea5c7c8fb6a4f70f4cb48c81c0591/readme.md",
+        "language": "Markdown"
+      },
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 4547,
+        "raw_url": "https://gist.github.com/raw/1297383/5f07d5bbdfafdc29216f3d3a47d06d385de11d9e/index.html",
+        "language": "HTML"
+      }
+    },
+    "updated_at": "2011-10-19T02:59:51Z",
+    "url": "https://api.github.com/gists/1297383",
+    "id": "1297383"
+  },
+  "public": true,
+  "files": {
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "size": 581,
+      "content": "### Canvas Path Benchmark\n\n[This example](http://bl.ocks.org/3331545) benchmarks the time taken to draw a line consisting of 5000 separate segments into an HTML5 Canvas, using any of the composition modes.\n\nWatch the 'Time of Last Set' numbers to see the difference between the various composition modes while the benchmark progresses to plot 5000 line segments.\n\nThis benchmark accompanies [this Canvas benchmark](http://bl.ocks.org/3331937), which uses the 'source-over' default composition mode.\n\n*source: [gist.github.com/gists/3331545](https://gist.github.com/gists/3331545)*\n",
+      "raw_url": "https://gist.github.com/raw/3331545/2811c596dd00015f69d3b751cb9deb619d7eec7b/readme.md",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 5187,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Canvas Path Benchmark</title>\n    <style type=\"text/css\">\n      body { margin: 0px 10px; }\n      h1 { font-size: 1.3em; line-height: 1.0em; }\n      table { font-size: 0.8em; margin: 0px 10px; padding: 2px }\n      th { text-align: center; font-weight: bold; padding: 0px  10px 0px 10px; }\n      td { text-align: center; font-weight: normal; padding: 0px  10px 0px 10px; }\n      ul.hlist { display: inline-block; list-style-type: none; margin: 0px; padding-left: 15px; }\n      ul.hlist li { display: inline-table; vertical-align: top; list-style-type: none }\n      #canvas { width: 400px; height: 400px; padding:0px;\n        background-color: #eeeeee; color:gray; border: solid 1px #cccccc }\n    </style>\n    <script type=\"text/javascript\">\n      window.requestAnimFrame = (function() {\n        return window.requestAnimationFrame ||\n               window.webkitRequestAnimationFrame ||\n               window.mozRequestAnimationFrame ||\n               window.oRequestAnimationFrame ||\n               window.msRequestAnimationFrame ||\n               function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {\n                 return window.setTimeout(callback, 1000/60);\n               };\n      })();\n      window.cancelRequestAnimFrame = (function() {\n        return window.cancelCancelRequestAnimationFrame ||\n               window.webkitCancelRequestAnimationFrame ||\n               window.mozCancelRequestAnimationFrame ||\n               window.oCancelRequestAnimationFrame ||\n               window.msCancelRequestAnimationFrame ||\n               window.clearTimeout;\n      })();\n    </script>\n</head>\n<body>\n  <h1>Canvas Path Benchmark</h1>\n  <p id=\"user-agent\"></p>\n  <ul class=\"hlist\">\n    <li><canvas id=\"canvas\"></canvas></li>\n    <li>\n      <table>\n        <thead>\n          <th>Line Segments</td>\n          <th>Elapsed Time</td>\n          <th>Time of Last Set</td>\n        </thead>\n        <tbody id=\"results\"></tbody>\n      </table>\n    </li>\n  </ul>\n  <script type=\"text/javascript\">\n    window.onload=function() {\n      \n      var user_agent = document.getElementById(\"user-agent\");\n      user_agent.innerHTML = navigator.userAgent;\n\n      var canvas = document.getElementById(\"canvas\");\n      canvas.width = canvas.clientWidth;\n      canvas.height = canvas.clientHeight;\n\n      var half_width  = canvas.width / 2;\n      var half_height = canvas.height / 2;\n\n      var xpos = half_width;\n      var ypos = half_height;\n\n      var ctx = canvas.getContext('2d');\n\t\t\tvar composites = [ 'source-atop', 'source-in', 'source-out', 'source-over', 'destination-atop', 'destination-in', 'destination-out', 'destination-over', 'lighter', 'copy', 'xor' ];\n\t\t\tvar composite_idx = 3;\n\t\t\t\n      ctx.globalCompositeOperation = composites[composite_idx];\n      ctx.lineWidth = 1;\n      ctx.strokeStyle = \"rgba(255,65,0, 1.0)\";\n\n      var i, j;\n\n      var factor = 15;\n      var factor_div_2 = factor / 2;\n      var correction = 0.0035;\n      \n      function addLineSegments(num) {\n        for (i=0; i < num; i++) {\n          ctx.beginPath();\n          ctx.moveTo(xpos, ypos);\n          xpos += (factor * Math.random() - factor_div_2) + (half_width  - xpos) * correction;\n          ypos += (factor * Math.random() - factor_div_2) + (half_height - ypos) * correction;\n          ctx.lineTo(xpos, ypos);\n          ctx.closePath();\n          ctx.stroke();\n        }\n      };\n\n      var results = document.getElementById(\"results\");\n      var table_row, table_data;\n      \n      function addToResults(samples, elapsed_time, sample_time) {\n        table_row = document.createElement('tr');\n        table_data = document.createElement('td');\n        table_data.innerHTML = samples;\n        table_row.appendChild(table_data);\n        table_data = document.createElement('td');\n        table_data.innerHTML = elapsed_time;\n        table_row.appendChild(table_data);\n        table_data = document.createElement('td');\n        table_data.innerHTML = sample_time;\n        table_row.appendChild(table_data);\n        table_data = document.createElement('td');\n        table_data.innerHTML = composites[composite_idx];\n        table_row.appendChild(table_data);\n        results.appendChild(table_row);\n      };\n\n      var increment = 250;\n      var count = 0;\n\t\t\tvar composite_count = Math.floor(4500 / composites.length);\n      var elapsed_time = 0;\n      var sample_time, sample_start, sample_end;\n\n      function runSet() {\n        sample_start = +new Date();\n        addLineSegments(increment);\n        sample_end = +new Date();\n        sample_time = sample_end-sample_start;\n        elapsed_time += sample_time;\n        count += increment;\n\t\t\t\tcomposite_count -= increment;\n        addToResults(count, elapsed_time, sample_time);\n\t\t\t\tif (composite_count <= 0) {\n\t\t\t\t  composite_idx++;\n\t\t\t\t\tcomposite_idx %= composites.length;\n\t\t\t\t\tctx.globalCompositeOperation = composites[composite_idx];\n\t\t\t\t}\n      }\n        \n      function benchmark(){\n        if (count < 5000) {\n          requestAnimFrame(benchmark, canvas);\n          runSet();\n        }\n      };\n      requestAnimFrame(benchmark, canvas);\n    };\n  </script>\n</body>\n</html>",
+      "raw_url": "https://gist.github.com/raw/3331545/7f9db02faecb0d159841e2a037ae087875d101da/index.html",
+      "language": "HTML"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "raw_url": "https://gist.github.com/raw/3331545/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "language": null
+    }
+  },
+  "updated_at": "2012-09-09T08:59:23Z",
+  "url": "https://api.github.com/gists/3331545",
+  "id": "3331545"
+}

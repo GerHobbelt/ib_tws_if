@@ -1,0 +1,85 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "bc672977e25053137ef47e4e64126b42",
+    "avatar_url": "https://secure.gravatar.com/avatar/bc672977e25053137ef47e4e64126b42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "steadicat",
+    "url": "https://api.github.com/users/steadicat",
+    "id": 6031
+  },
+  "git_pull_url": "git://gist.github.com/940838.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "bc672977e25053137ef47e4e64126b42",
+        "avatar_url": "https://secure.gravatar.com/avatar/bc672977e25053137ef47e4e64126b42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "steadicat",
+        "url": "https://api.github.com/users/steadicat",
+        "id": 6031
+      },
+      "version": "7079c156b4cdeba801da12e5e7add4ce9dc234fa",
+      "change_status": {
+        "total": 22,
+        "additions": 13,
+        "deletions": 9
+      },
+      "url": "https://api.github.com/gists/940838/7079c156b4cdeba801da12e5e7add4ce9dc234fa",
+      "committed_at": "2011-04-25T18:58:48Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "bc672977e25053137ef47e4e64126b42",
+        "avatar_url": "https://secure.gravatar.com/avatar/bc672977e25053137ef47e4e64126b42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "steadicat",
+        "url": "https://api.github.com/users/steadicat",
+        "id": 6031
+      },
+      "version": "c2fc5493fcca421747d1011a745b610662903cae",
+      "change_status": {
+        "total": 4,
+        "additions": 1,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/940838/c2fc5493fcca421747d1011a745b610662903cae",
+      "committed_at": "2011-04-25T17:11:40Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "bc672977e25053137ef47e4e64126b42",
+        "avatar_url": "https://secure.gravatar.com/avatar/bc672977e25053137ef47e4e64126b42?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "steadicat",
+        "url": "https://api.github.com/users/steadicat",
+        "id": 6031
+      },
+      "version": "a2e1d24b61f26e9b7b3c2409ff3fa21755c88565",
+      "change_status": {
+        "total": 23,
+        "additions": 23,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/940838/a2e1d24b61f26e9b7b3c2409ff3fa21755c88565",
+      "committed_at": "2011-04-25T17:11:25Z"
+    }
+  ],
+  "description": "D3 data update not working",
+  "html_url": "https://gist.github.com/940838",
+  "git_push_url": "git@gist.github.com:940838.git",
+  "comments": 0,
+  "created_at": "2011-04-25T17:11:25Z",
+  "public": true,
+  "files": {
+    "d3-update.js": {
+      "type": "application/javascript",
+      "filename": "d3-update.js",
+      "size": 889,
+      "content": "var chart = d3.select('body')\n    .append('svg:svg').attr('width', 800).attr('height', 200)\n\nchart.selectAll('rect')\n    .data([13,8,2,0,23,29,100])\n    .enter()\n    .append('svg:rect').attr('fill', 'steelblue')\n    .attr('width', 20)\n    .attr('height', function(d) { return d })\n    .attr('x', function(d,i) { return 20*i })\n    .attr('y', function(d) { return 200 - d })\n\nsetTimeout(function() {\n    chart.selectAll('rect')\n        .data([2,13,7,8,4,2,0,23,29,100,38,10,30,12])\n        .attr('height', function(d) { return d })\n        .attr('x', function(d,i) { return 20*i })\n        .attr('y', function(d) { return 200 - d })\n        .enter()\n        .append('svg:rect').attr('fill', 'steelblue')\n        .attr('width', 20)\n        .attr('height', function(d) { return d })\n        .attr('x', function(d,i) { return 20*i })\n        .attr('y', function(d) { return 200 - d })\n}, 2000)",
+      "raw_url": "https://gist.github.com/raw/940838/3f66a2be8afabe2f3f337cfae95332400cd1dac1/d3-update.js",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-04-25T17:11:40Z",
+  "url": "https://api.github.com/gists/940838",
+  "id": "940838"
+}

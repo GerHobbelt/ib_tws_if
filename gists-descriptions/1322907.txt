@@ -1,0 +1,110 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 26,
+        "additions": 18,
+        "deletions": 8
+      },
+      "version": "1d73d0819ea58fb265d596eb7c5974af58f4c74d",
+      "committed_at": "2011-10-28T18:16:07Z",
+      "url": "https://api.github.com/gists/1322907/1d73d0819ea58fb265d596eb7c5974af58f4c74d"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "version": "bd6c19b4f102882655f4e3aba0afd66b6bee9e68",
+      "committed_at": "2011-10-28T18:00:24Z",
+      "url": "https://api.github.com/gists/1322907/bd6c19b4f102882655f4e3aba0afd66b6bee9e68"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "d0041662d8bb666b0ef4205f17d2ebfcdb3a3e33",
+      "committed_at": "2011-10-28T18:00:00Z",
+      "url": "https://api.github.com/gists/1322907/d0041662d8bb666b0ef4205f17d2ebfcdb3a3e33"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 230541
+      },
+      "change_status": {
+        "total": 30,
+        "additions": 30,
+        "deletions": 0
+      },
+      "version": "1676ce88381e8687c95e7ce26da3ecb9f72b69d4",
+      "committed_at": "2011-10-28T17:59:26Z",
+      "url": "https://api.github.com/gists/1322907/1676ce88381e8687c95e7ce26da3ecb9f72b69d4"
+    }
+  ],
+  "description": "Poor Anti-Aliasing in SVG, #1",
+  "comments": 0,
+  "created_at": "2011-10-28T17:59:26Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1322907",
+  "git_pull_url": "git://gist.github.com/1322907.git",
+  "files": {
+    "gistfile1.txt": {
+      "type": "text/plain",
+      "filename": "gistfile1.txt",
+      "size": 124,
+      "raw_url": "https://gist.github.com/raw/1322907/c601654a3f2bdf34f9080aa68a9b1709d76217e7/gistfile1.txt",
+      "content": "1,920 contiguous opaque <tt>svg:rect</tt> elements, each .5-pixel wide. The text underneath the rects should not be visible.",
+      "language": null
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 750,
+      "raw_url": "https://gist.github.com/raw/1322907/94be22906bb989f3bc4ab7494082b80a6a91ec00/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.4.6\"></script>\n    <style type=\"text/css\">\n\nrect {\n  fill: steelblue;\n}\n\ntext {\n  font: 300 48px \"Helvetica Neue\";\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", 960)\n    .attr(\"height\", 500);\n\nsvg.append(\"svg:text\")\n    .attr(\"x\", 480)\n    .attr(\"y\", 250)\n    .attr(\"text-anchor\", \"middle\")\n    .attr(\"dy\", \".35em\")\n    .text(\"TEST FAILED\");\n\nsvg.selectAll(\"rect\")\n    .data(d3.range(1920))\n  .enter().append(\"svg:rect\")\n    .attr(\"x\", function(d) { return d / 2; })\n    .attr(\"width\", .5)\n    .attr(\"height\", 500);\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1322907.git",
+  "updated_at": "2011-10-28T17:59:26Z",
+  "url": "https://api.github.com/gists/1322907",
+  "id": "1322907"
+}

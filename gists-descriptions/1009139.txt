@@ -1,0 +1,88 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "d5a959d7e57daa5433fcb9f8da40be4b",
+        "avatar_url": "https://secure.gravatar.com/avatar/d5a959d7e57daa5433fcb9f8da40be4b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "michael",
+        "url": "https://api.github.com/users/michael",
+        "id": 2931
+      },
+      "created_at": "2011-06-05T17:32:27Z",
+      "updated_at": "2011-06-05T17:32:55Z",
+      "url": "https://api.github.com/gists/1009200",
+      "id": "1009200"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1009139.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "07941f308f1d63ff15674cb2681a73a4fd6afa38",
+      "change_status": {
+        "total": 5,
+        "additions": 4,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1009139/07941f308f1d63ff15674cb2681a73a4fd6afa38",
+      "committed_at": "2011-06-05T16:45:25Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "df23b9c4c8ce9b2393276a407cc385bf0bae214e",
+      "change_status": {
+        "total": 146,
+        "additions": 146,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1009139/df23b9c4c8ce9b2393276a407cc385bf0bae214e",
+      "committed_at": "2011-06-05T16:43:44Z"
+    }
+  ],
+  "description": "Matrix Layout (Michael Aufreiter)",
+  "html_url": "https://gist.github.com/1009139",
+  "git_push_url": "git@gist.github.com:1009139.git",
+  "comments": 0,
+  "created_at": "2011-06-05T16:43:44Z",
+  "public": true,
+  "files": {
+    "matrix.js": {
+      "type": "application/javascript",
+      "filename": "matrix.js",
+      "size": 2625,
+      "content": "var w = 960,\n    h = 500;\n\n// Matrix Layout\n// ------------\n\nvar Matrix = function() {\n  var width = 1,\n      height = 1,\n      cols = 4;\n\n  // Simple matrix layout algorithm\n  // Computes a suitable column count to fit the matrix\n  // dimensions (width x height)\n  function computeCols(n, width, height) {\n    var cols = 1, // number of cols\n        a, // edge length\n        rows; // number of rows\n\n    while(true) {\n      a = width / cols;\n      rows = Math.ceil(n/cols);\n      if (rows*a <= height && n*a*a <= width*height)\n        return cols;\n      else {\n        cols += 1;\n      }\n    }\n  }\n\n  function matrix(data, i) {\n    var cols = computeCols(data.length, width, height);\n    var size = Math.floor(width / cols);\n    data.forEach(function(d, i) {\n      d.x = parseInt((i % cols)*size, 10);\n      d.y = Math.floor(i / cols)*size;\n      d.dx = size;\n      d.dy = size;\n    });\n    return data;\n  }\n\n  matrix.size = function(w, h) {\n    width = w;\n    height = h;\n    return matrix;\n  };\n\n  return matrix;\n};\n\n\n// Matrix Plot\n// ------------\n\nvar MatrixPlot = function(el, options) {\n  var vis, matrix, cells, collection;\n  var initialized = false;\n\n  function init() {\n    vis = d3.select(\"#canvas\")\n      .append(\"svg:svg\")\n        .attr(\"width\", w)\n        .attr(\"height\", h);\n\n    matrix = Matrix()\n        .size(700, 500);\n    initialized = true;\n  }\n\n  function cell() {\n    this\n      .attr(\"x\", function(d) { return d.x; })\n      .attr(\"y\", function(d) { return d.y; })\n      .attr(\"width\", function(d) { return d.dx-5; })\n      .attr(\"height\", function(d) { return d.dy-5; });\n  }\n\n  function update(options) {\n    collection = options.collection;\n    if (!initialized) init();\n\n    cells = vis.data([collection.items()]).selectAll(\"rect\")\n      .data(matrix);\n\n    // Transition of new (arriving cells)\n    cells.enter().append(\"svg:rect\")\n        .attr(\"x\", function(d) { return 0; })\n        .attr(\"y\", function(d) { return 0; })\n        .attr(\"width\", function(d) { return 0; })\n        .attr(\"height\", function(d) { return 0; })\n      .transition()\n        .delay(function(d, i) { return i * 20; })\n        .duration(1500)\n        .call(cell);\n\n    // Transition of existing cells\n    cells.transition()\n      .delay(function(d, i) { return i * 20; })\n      .duration(1500)\n      .call(cell);\n\n    // Exit transition\n    cells.exit().transition()\n      .delay(function(d, i) { return i * 20; })\n      .duration(1500)\n      .attr(\"x\", function(d, i) { return -400; })\n      .attr(\"y\", function(d, i) { return -400; })\n      .remove();\n\n  }\n\n  // Expose Public API\n  return {\n    update: update\n  }\n};\n",
+      "raw_url": "https://gist.github.com/raw/1009139/d91e83a1556c4008b048b7699d2005f6e85e3827/matrix.js",
+      "language": "JavaScript"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 594,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <script type=\"text/javascript\" src=\"matrix.js\"></script>\n    <style type=\"text/css\">\n\nrect {\n  fill: steelblue;\n  fill-opacity: .8;\n  stroke: white;\n}\n\n    </style>\n  </head>\n  <body>\n    <div id=\"canvas\"></div>\n    <script type=\"text/javascript\">\n\nvar plot = MatrixPlot();\n\nsetInterval(function() {\n  plot.update({\n    collection: {\n      items: function() { return d3.zip(d3.range(10 + ~~(Math.random() * 50))); }\n    }\n  });\n}, 2500);\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1009139/fa83bde9defc526d339124837fbab9e281cc3362/index.html",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-06-05T16:44:19Z",
+  "url": "https://api.github.com/gists/1009139",
+  "id": "1009139"
+}

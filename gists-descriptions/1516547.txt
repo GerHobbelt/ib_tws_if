@@ -1,0 +1,162 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "f9dd9f4c2b8d081b67fe34769e24808e",
+        "login": "jasondavies",
+        "url": "https://api.github.com/users/jasondavies",
+        "avatar_url": "https://secure.gravatar.com/avatar/f9dd9f4c2b8d081b67fe34769e24808e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 31223
+      },
+      "created_at": "2012-02-12T14:36:10Z",
+      "updated_at": "2012-02-12T14:36:10Z",
+      "url": "https://api.github.com/gists/1808856",
+      "id": "1808856"
+    },
+    {
+      "user": {
+        "gravatar_id": "8a82bd9a5878beb1ac242c7878968f93",
+        "login": "olegarch",
+        "url": "https://api.github.com/users/olegarch",
+        "avatar_url": "https://secure.gravatar.com/avatar/8a82bd9a5878beb1ac242c7878968f93?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1417018
+      },
+      "created_at": "2012-03-15T08:07:31Z",
+      "updated_at": "2012-03-15T08:10:14Z",
+      "url": "https://api.github.com/gists/2042865",
+      "id": "2042865"
+    }
+  ],
+  "user": {
+    "gravatar_id": "9c47baddc490bf70f0043272b03b5b54",
+    "login": "bmajz",
+    "url": "https://api.github.com/users/bmajz",
+    "avatar_url": "https://secure.gravatar.com/avatar/9c47baddc490bf70f0043272b03b5b54?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 1115263
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "9c47baddc490bf70f0043272b03b5b54",
+        "login": "bmajz",
+        "url": "https://api.github.com/users/bmajz",
+        "avatar_url": "https://secure.gravatar.com/avatar/9c47baddc490bf70f0043272b03b5b54?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1115263
+      },
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "version": "6ffb8f2f4a5cb1b898b309bcff6bb0b91242b397",
+      "committed_at": "2011-12-24T06:34:15Z",
+      "url": "https://api.github.com/gists/1516547/6ffb8f2f4a5cb1b898b309bcff6bb0b91242b397"
+    },
+    {
+      "user": {
+        "gravatar_id": "9c47baddc490bf70f0043272b03b5b54",
+        "login": "bmajz",
+        "url": "https://api.github.com/users/bmajz",
+        "avatar_url": "https://secure.gravatar.com/avatar/9c47baddc490bf70f0043272b03b5b54?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1115263
+      },
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "version": "817f3d45617e17e759ff3c8e4785ffb17b4dc940",
+      "committed_at": "2011-12-24T06:34:01Z",
+      "url": "https://api.github.com/gists/1516547/817f3d45617e17e759ff3c8e4785ffb17b4dc940"
+    },
+    {
+      "user": {
+        "gravatar_id": "9c47baddc490bf70f0043272b03b5b54",
+        "login": "bmajz",
+        "url": "https://api.github.com/users/bmajz",
+        "avatar_url": "https://secure.gravatar.com/avatar/9c47baddc490bf70f0043272b03b5b54?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1115263
+      },
+      "change_status": {
+        "total": 34,
+        "additions": 11,
+        "deletions": 23
+      },
+      "version": "66dc54a696de73f5897303583fe432ad2451056e",
+      "committed_at": "2011-12-24T06:27:12Z",
+      "url": "https://api.github.com/gists/1516547/66dc54a696de73f5897303583fe432ad2451056e"
+    },
+    {
+      "user": {
+        "gravatar_id": "9c47baddc490bf70f0043272b03b5b54",
+        "login": "bmajz",
+        "url": "https://api.github.com/users/bmajz",
+        "avatar_url": "https://secure.gravatar.com/avatar/9c47baddc490bf70f0043272b03b5b54?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1115263
+      },
+      "change_status": {
+        "total": 40,
+        "additions": 40,
+        "deletions": 0
+      },
+      "version": "46e9e1094870a8edeb4e054ba6ca86560641801c",
+      "committed_at": "2011-12-24T06:24:21Z",
+      "url": "https://api.github.com/gists/1516547/46e9e1094870a8edeb4e054ba6ca86560641801c"
+    },
+    {
+      "user": null,
+      "change_status": {
+        "total": 484,
+        "additions": 484,
+        "deletions": 0
+      },
+      "version": "3159a78e71d99512648da602288fc2417c098f9c",
+      "committed_at": "2011-12-24T06:22:01Z",
+      "url": "https://api.github.com/gists/1516547/3159a78e71d99512648da602288fc2417c098f9c"
+    }
+  ],
+  "description": "d3 Treemap with resizing problems",
+  "comments": 0,
+  "created_at": "2011-12-24T06:22:01Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1516547",
+  "git_pull_url": "git://gist.github.com/1516547.git",
+  "files": {
+    "d3.js ~ Treemap.htm": {
+      "type": "text/html",
+      "filename": "d3.js ~ Treemap.htm",
+      "size": 1695,
+      "raw_url": "https://gist.github.com/raw/1516547/331c64acfb82b7a070836e3bc7832b6efe900cf0/d3.js ~ Treemap.htm",
+      "content": "\n<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n    <title>d3.js ~ Treemap</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://mbostock.github.com/d3/style.css?1.10.0\");\n\n    </style>\n  </head>\n  <body>\n    <div class=\"body\">\n      <div class=\"content\">\n        <div class=\"topbar\">\n          <a href=\"../\">Overview</a>\n          <b><a href=\"../ex/\">Examples</a></b>\n          <a href=\"../api/\">Documentation</a>\n          <a href=\"http://github.com/mbostock/d3/archives/master\">Download</a>\n        </div>\n        <div class=\"sidebar\">\n          <h1>d3.js</h1>\n        </div>\n\n<h1 id='treemap'>Treemap</h1>\n<div class='gallery' id='chart'>\n  <button class='first active' id='size'>\n    Size\n  </button><button class='last' id='count'>\n    Count\n  </button><p />\n</div><link href='http://mbostock.github.com/d3/ex/button.css' rel='stylesheet' type='text/css' /><link href='http://mbostock.github.com/d3/ex/treemap.css' rel='stylesheet' type='text/css' /><script src='http://mbostock.github.com/d3/d3.layout.js' type='text/javascript'> </script><script src='treemap.js' type='text/javascript'> </script>\n<p>Treemap design invented by <a href='http://www.cs.umd.edu/~ben/'>Ben Shneiderman</a>. Squarified algorithm by <a href='http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.36.6685'>Bruls, Huizing and van Wijk</a>. Data courtesy <a href='http://flare.prefuse.org/'>Jeff Heer</a>.</p>\n      </div>\n      <div class=\"foot\">Copyright &copy; 2011 <a href=\"http://bost.ocks.org/mike\">Mike Bostock</a></div>\n    </div>\n  </div>\n  </body>\n</html>",
+      "language": "HTML"
+    },
+    "test.json": {
+      "type": "application/json",
+      "filename": "test.json",
+      "size": 15458,
+      "raw_url": "https://gist.github.com/raw/1516547/e0c31475d413085736c37570420337a95db27b9f/test.json",
+      "content": "{\n    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\",\n    \"children\": [\n        {\n            \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\",\n            \"children\": [\n                {\n                    \"size\": \"37\", \n                    \"other_size\": \"97\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"229\", \n                    \"other_size\": \"112\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"618\", \n                    \"other_size\": \"49\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"174\", \n                    \"other_size\": \"32\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"59\", \n                    \"other_size\": \"46\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"118\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"2499\", \n                    \"other_size\": \"6\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"156\", \n                    \"other_size\": \"92\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"87\", \n                    \"other_size\": \"51\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1\", \n                    \"other_size\": \"23\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }\n            ]\n        }, \n        {\n            \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\",\n            \"children\": [\n                {\n                    \"size\": \"293\", \n                    \"other_size\": \"1232\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"381\", \n                    \"other_size\": \"1097\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"269\", \n                    \"other_size\": \"517\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"153\", \n                    \"other_size\": \"94\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"825\", \n                    \"other_size\": \"82\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1434\", \n                    \"other_size\": \"73\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"427\", \n                    \"other_size\": \"196\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"891\", \n                    \"other_size\": \"178\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"100\", \n                    \"other_size\": \"495\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"2098\", \n                    \"other_size\": \"373\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }\n            ]\n        }, \n        {\n            \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\",\n            \"children\": [\n                {\n                    \"size\": \"12341\", \n                    \"other_size\": \"159\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"164\", \n                    \"other_size\": \"45\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"3573\", \n                    \"other_size\": \"33\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"418\", \n                    \"other_size\": \"42\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"644\", \n                    \"other_size\": \"47\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"411\", \n                    \"other_size\": \"13\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"417\", \n                    \"other_size\": \"24\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"206\", \n                    \"other_size\": \"138\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"555\", \n                    \"other_size\": \"331\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"500\", \n                    \"other_size\": \"916\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }\n            ]\n        }, \n        {\n            \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\",\n            \"children\": [\n                {\n                    \"size\": \"143\", \n                    \"other_size\": \"216\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"534\", \n                    \"other_size\": \"273\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1049\", \n                    \"other_size\": \"87\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"317\", \n                    \"other_size\": \"63\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"677\", \n                    \"other_size\": \"44\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"268\", \n                    \"other_size\": \"21\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1729\", \n                    \"other_size\": \"18\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"450\", \n                    \"other_size\": \"118\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1607\", \n                    \"other_size\": \"38\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"519\", \n                    \"other_size\": \"24\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }\n            ]\n        }, \n        {\n            \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\",\n            \"children\": [\n                {\n                    \"size\": \"24\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"2926\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"401\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"64\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1294\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"55\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"14\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"21\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"2231\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"801\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }\n            ]\n        }, \n        {\n            \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\",\n            \"children\": [\n                {\n                    \"size\": \"940\", \n                    \"other_size\": \"31\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"3865\", \n                    \"other_size\": \"83\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"525\", \n                    \"other_size\": \"67\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1841\", \n                    \"other_size\": \"144\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1598\", \n                    \"other_size\": \"214\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1157\", \n                    \"other_size\": \"171\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"5397\", \n                    \"other_size\": \"175\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1018\", \n                    \"other_size\": \"306\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"2046\", \n                    \"other_size\": \"36\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"1295\", \n                    \"other_size\": \"392\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }\n            ]\n        }, \n        {\n            \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\",\n            \"children\": [\n                {\n                    \"size\": \"64\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"377\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"550\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"106\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"30\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"71\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"162\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"87\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"114\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }, \n                {\n                    \"size\": \"140\", \n                    \"other_size\": \"0\", \n                    \"name\": \"Test Item/Test Item/Test Item/Test Item/Test Item/Test Item\"\n                }\n            ]\n        }\n    ]\n}",
+      "language": "JSON"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 944,
+      "raw_url": "https://gist.github.com/raw/1516547/6fb3ea898dfb86f9722c54763f0c436a6a6bac01/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n    <title>d3.js ~ Treemap</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://mbostock.github.com/d3/style.css?1.10.0\");\n\n    </style>\n  </head>\n  <body>\n    <div class=\"body\">\n      <div class=\"content\">\n\t\t<div class='gallery' id='chart'>\n\t\t\t<button class='first active' id='size'>\n\t\t\t\tOriginal Size\n\t\t\t</button>\n\t\t\t<button class='last' id='count'>\n\t\t\t\tOther Size\n\t\t\t</button><p />\n\t\t</div>\n\t<link href='http://mbostock.github.com/d3/ex/button.css' rel='stylesheet' type='text/css' />\n\t<link href='http://mbostock.github.com/d3/ex/treemap.css' rel='stylesheet' type='text/css' />\n\t<script src='http://mbostock.github.com/d3/d3.layout.js' type='text/javascript'> </script><script src='treemap.js' type='text/javascript'> </script>\n  </body>\n</html>",
+      "language": "HTML"
+    },
+    "treemap.js": {
+      "type": "application/javascript",
+      "filename": "treemap.js",
+      "size": 1531,
+      "raw_url": "https://gist.github.com/raw/1516547/a6872f68d6450a84f53c251089255841c8415959/treemap.js",
+      "content": "var w = 960,\n    h = 500,\n    color = d3.scale.category20c();\n\nvar treemap = d3.layout.treemap()\n    .size([w, h])\n    .sticky(true)\n    .value(function(d) { return d.size; });\n\nvar div = d3.select(\"#chart\").append(\"div\")\n    .style(\"position\", \"relative\")\n    .style(\"width\", w + \"px\")\n    .style(\"height\", h + \"px\");\n\nd3.json(\"test.json\", function(json) {\n  div.data([json]).selectAll(\"div\")\n      .data(treemap.nodes)\n    .enter().append(\"div\")\n      .attr(\"class\", \"cell\")\n      .style(\"background\", function(d) { return d.children ? color(d.name) : null; })\n      .call(cell)\n      .text(function(d) { return d.children ? null : d.name; });\n\n  d3.select(\"#size\").on(\"click\", function() {\n    div.selectAll(\"div\")\n        .data(treemap.value(function(d) { return d.size; }))\n      .transition()\n        .duration(1500)\n        .call(cell);\n\n    d3.select(\"#size\").classed(\"active\", true);\n    d3.select(\"#count\").classed(\"active\", false);\n  });\n\n  d3.select(\"#count\").on(\"click\", function() {\n    div.selectAll(\"div\")\n        .data(treemap.value(function(d) { return d.other_size; }))\n      .transition()\n        .duration(1500)\n        .call(cell);\n\n    d3.select(\"#size\").classed(\"active\", false);\n    d3.select(\"#count\").classed(\"active\", true);\n  });\n});\n\nfunction cell() {\n  this\n      .style(\"left\", function(d) { return d.x + \"px\"; })\n      .style(\"top\", function(d) { return d.y + \"px\"; })\n      .style(\"width\", function(d) { return d.dx - 1 + \"px\"; })\n      .style(\"height\", function(d) { return d.dy - 1 + \"px\"; });\n}",
+      "language": "JavaScript"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1516547.git",
+  "updated_at": "2011-12-24T06:22:12Z",
+  "url": "https://api.github.com/gists/1516547",
+  "id": "1516547"
+}

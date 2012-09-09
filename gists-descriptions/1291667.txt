@@ -1,0 +1,165 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "ff899e470fdee20169ba9b9edbd3b6f2",
+        "login": "sressler",
+        "url": "https://api.github.com/users/sressler",
+        "avatar_url": "https://secure.gravatar.com/avatar/ff899e470fdee20169ba9b9edbd3b6f2?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1065068
+      },
+      "created_at": "2012-07-20T17:26:09Z",
+      "updated_at": "2012-07-20T17:26:09Z",
+      "url": "https://api.github.com/gists/3152017",
+      "id": "3152017"
+    }
+  ],
+  "user": {
+    "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+    "login": "ZJONSSON",
+    "url": "https://api.github.com/users/ZJONSSON",
+    "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 1082488
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1082488
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "65a4ee67e41d14368f6c8007ff571b2f642c332a",
+      "committed_at": "2011-10-17T05:21:07Z",
+      "url": "https://api.github.com/gists/1291667/65a4ee67e41d14368f6c8007ff571b2f642c332a"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1082488
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "035ee868ead430c0f7d24db56d3c24c925cd78c1",
+      "committed_at": "2011-10-17T05:20:27Z",
+      "url": "https://api.github.com/gists/1291667/035ee868ead430c0f7d24db56d3c24c925cd78c1"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1082488
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "77e55e86a7ca284aa231398b2846298b17779340",
+      "committed_at": "2011-10-17T05:19:07Z",
+      "url": "https://api.github.com/gists/1291667/77e55e86a7ca284aa231398b2846298b17779340"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1082488
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "7d1f89ce7142ba97d86572184f50ac789d448adc",
+      "committed_at": "2011-10-17T00:53:12Z",
+      "url": "https://api.github.com/gists/1291667/7d1f89ce7142ba97d86572184f50ac789d448adc"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1082488
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "ebd467e6fa0a617ac78ffbe3330ddc84713d3d4c",
+      "committed_at": "2011-10-17T00:52:40Z",
+      "url": "https://api.github.com/gists/1291667/ebd467e6fa0a617ac78ffbe3330ddc84713d3d4c"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1082488
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "version": "11994a03ffcd4db934989733ce71a6b32293a81a",
+      "committed_at": "2011-10-17T00:52:19Z",
+      "url": "https://api.github.com/gists/1291667/11994a03ffcd4db934989733ce71a6b32293a81a"
+    },
+    {
+      "user": {
+        "gravatar_id": "e9e274502986eac7cb201f95d2986004",
+        "login": "ZJONSSON",
+        "url": "https://api.github.com/users/ZJONSSON",
+        "avatar_url": "https://secure.gravatar.com/avatar/e9e274502986eac7cb201f95d2986004?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 1082488
+      },
+      "change_status": {
+        "total": 89,
+        "additions": 89,
+        "deletions": 0
+      },
+      "version": "bbea836ceccbee6dc62b3b438c0a950d30b09ce3",
+      "committed_at": "2011-10-17T00:51:42Z",
+      "url": "https://api.github.com/gists/1291667/bbea836ceccbee6dc62b3b438c0a950d30b09ce3"
+    }
+  ],
+  "description": "Using D3 to create and animate X3D - with x3dom",
+  "comments": 0,
+  "created_at": "2011-10-17T00:51:42Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1291667",
+  "git_pull_url": "git://gist.github.com/1291667.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 2864,
+      "raw_url": "https://gist.github.com/raw/1291667/b9dcb693f8ec149aed17d9d419865e2fb4616bdc/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n<script type=\"text/javascript\" src=\"http://x3dom.org/x3dom/example/x3dom.js\"></script>\n</head>\n\n<body>\n</body>\n    \n<script type=\"text/javascript\">\n\nfunction plotAxis(scale,location,size,numTicks) {\n    // the axis line\n    scene.append(\"x3d:transform\")\n        .attr(\"translation\",location.replace(\"D\",(scale.range()[0]+scale.range()[1])/2))\n        .append(\"x3d:shape\")\n            .append(\"x3d:box\")\n            .attr(\"size\",location.replace(/0/g,size).replace(\"D\",scale.range()[1]))\n    \n    // ticks along the axis\n    ticks=scene.selectAll(\"abcd\").data(scale.ticks(numTicks))\n        .enter()\n        .append(\"x3d:transform\")\n            .attr(\"translation\", function(d) { return location.replace(\"D\",scale(d))})\n            \n        ticks\n            .append(\"x3d:shape\")\n                .append(\"x3d:box\")\n                    .attr(\"size\",size*3+\" \"+size*3+\" \"+size*3);\n        ticks\n            .append(\"x3d:billboard\").append(\"x3d:shape\")\n                .append(\"x3d:text\")\n                    .attr(\"string\",scale.tickFormat(10))\n                    .attr(\"solid\",\"true\")\n                    .append(\"x3d:fontstyle\").attr(\"size\",25).attr(\"justify\",\"MIDDLE\" )\n                    \n}\n\n\nfunction plotData() {\n    datapoints=datapoints.data(d3.range(50).map(function() { return {x:Math.random()*100,y:Math.random()*100,z:Math.random()*100}}))\n        \n    datapoints.exit().remove()  // Remove any excess datapoints, if needed\n    \n    datapoints.enter()          // Draw a box for each new datapoint\n        .append(\"x3d:transform\")\n            .attr(\"class\",\"datapoints\")\n            .append(\"x3d:shape\").attr(\"diffuseColor\",function() { return Math.random()+\" \"+Math.random()+\" \"+Math.random();})\n                .append(\"x3d:box\")\n                    .attr(\"size\",\"0.2 0.2 0.2\")\n                    \n        \n    datapoints.transition()  // Move each box to the right point location\n        .duration(2000)\n        .attr(\"translation\",function(d) { return x(d.x)+\" \"+y(d.y)+\" \"+z(d.z)})\n        \n}\n\n// Create the x3d scene\nd3.ns.prefix.x3da=\"http://www.web3d.org/specifications/x3d-namespace\"\nx3d = d3.select(\"body\")\n    .append(\"x3d:x3d\")\n    .attr(\"height\",\"500px\")\n    .attr(\"width\",\"100%\");\nscene = x3d.append(\"x3d:scene\")\n\n\n// set up the axes\nvar x = d3.scale.linear().domain([0, 100]).range([0, 10]),\n    y = d3.scale.linear().domain([0, 100]).range([0, 10]),\n    z = d3.scale.linear().domain([0, 100]).range([0, 10]);\n\nplotAxis(x,\"D 0 0\",0.01,10)\nplotAxis(y,\"0 D 0\",0.01,10)\nplotAxis(z,\"0 0 D\",0.01,10)\n\n\n// and plot random data every 2500 ms\n\nvar datapoints=scene.selectAll(\".datapoints\");\nplotData();\nsetInterval(plotData,2500);\n\n\n// zoom out the viewport\nsetTimeout(function() {x3d[0][0].runtime.showAll()},50);\n</SCRIPT>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1291667.git",
+  "updated_at": "2011-10-17T00:51:42Z",
+  "url": "https://api.github.com/gists/1291667",
+  "id": "1291667"
+}

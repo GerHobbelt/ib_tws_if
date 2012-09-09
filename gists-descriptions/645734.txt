@@ -1,0 +1,136 @@
+{
+  "git_pull_url": "git://gist.github.com/645734.git",
+  "forks": [
+
+  ],
+  "git_push_url": "git@gist.github.com:645734.git",
+  "updated_at": "2010-10-25T20:55:14Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/polymaps.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/lib/raphaeljs/icons.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/lib/crimespotting/crimespotting.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/simplegeo/polymaps/raw/v2.3.0/examples/example.css\");\n\nhtml, body {\n  height: 100%;\n  background: #E6E6E6;\n}\n\nsvg {\n  display: block;\n}\n\n.layer path {\n  stroke: #fff;\n  fill: #999;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar po = org.polymaps;\n\nvar map = po.map()\n    .container(document.body.appendChild(po.svg(\"svg\")))\n    .center({lat: 37.787, lon: -122.228})\n    .zoomRange([10, 16])\n    .add(po.interact());\n\nmap.add(po.image()\n    .url(po.url(\"http://{S}tile.cloudmade.com\"\n    + \"/1a1b06b230af4efdbb989ea99e9841af\" // http://cloudmade.com/register\n    + \"/998/256/{Z}/{X}/{Y}.png\")\n    .hosts([\"a.\", \"b.\", \"c.\", \"\"])));\n\nmap.add(po.geoJson()\n    .url(crimespotting(\"http://oakland.crimespotting.org\"\n        + \"/crime-data\"\n        + \"?count=100\"\n        + \"&format=json\"\n        + \"&bbox={B}\"\n        + \"&dstart=2010-04-01\"\n        + \"&dend=2010-04-01\"))\n    .on(\"load\", load)\n    .clip(false)\n    .scale(\"fixed\")\n    .zoom(12));\n\n/* Post-process the GeoJSON points and replace them with markers! */\nfunction load(e) {\n  for (var i = 0; i < e.features.length; i++) {\n    var f = e.features[i],\n        c = f.element,\n        g = f.element = po.svg(\"g\");\n    g.appendChild(icons.marker());\n    g.setAttribute(\"transform\", c.getAttribute(\"transform\"));\n    c.parentNode.replaceChild(g, c);\n  }\n}\n\n    </script>\n    <span id=\"copy\">\n      &copy; 2010\n      <a href=\"http://www.cloudmade.com/\">CloudMade</a>,\n      <a href=\"http://www.openstreetmap.org/\">OpenStreetMap</a> contributors,\n      <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CCBYSA</a>.\n    </span>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/645734/fecb67402476e84fc2ddec77dabd3cb46e5fedee/index.html",
+      "size": 2091
+    }
+  },
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "url": "https://api.github.com/users/mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "version": "bc4a093a9cd527c6258e7df458d5544f4571518a",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/645734/bc4a093a9cd527c6258e7df458d5544f4571518a",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-10-25T20:55:14Z"
+    },
+    {
+      "version": "d1fc2aaca14ce8963198cc9b06e024fe00894361",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/645734/d1fc2aaca14ce8963198cc9b06e024fe00894361",
+      "change_status": {
+        "total": 5,
+        "deletions": 2,
+        "additions": 3
+      },
+      "committed_at": "2010-10-25T20:54:47Z"
+    },
+    {
+      "version": "c31512f9408bd8776fe5b58407f17a8be00919cc",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/645734/c31512f9408bd8776fe5b58407f17a8be00919cc",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-10-25T20:52:15Z"
+    },
+    {
+      "version": "5bab616865f8e4a87d5951319e5eb23293b21ff0",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/645734/5bab616865f8e4a87d5951319e5eb23293b21ff0",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-10-25T20:51:54Z"
+    },
+    {
+      "version": "392c623404f144ee00412950ba0b286cf9f370e3",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/645734/392c623404f144ee00412950ba0b286cf9f370e3",
+      "change_status": {
+        "total": 2,
+        "deletions": 1,
+        "additions": 1
+      },
+      "committed_at": "2010-10-25T20:49:58Z"
+    },
+    {
+      "version": "a9858880f10d6f63fa5dee4a80bac4da71624fea",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "url": "https://api.github.com/users/mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/645734/a9858880f10d6f63fa5dee4a80bac4da71624fea",
+      "change_status": {
+        "total": 76,
+        "deletions": 0,
+        "additions": 76
+      },
+      "committed_at": "2010-10-25T20:49:15Z"
+    }
+  ],
+  "html_url": "https://gist.github.com/645734",
+  "url": "https://api.github.com/gists/645734",
+  "description": "Fancy Markers (No Gradient)",
+  "id": "645734",
+  "comments": 0,
+  "created_at": "2010-10-25T20:49:15Z"
+}

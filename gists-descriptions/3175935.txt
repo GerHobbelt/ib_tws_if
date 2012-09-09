@@ -1,0 +1,240 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-09-09T08:44:35Z",
+      "version": "41991b28556ec28aa187923fd697a6a8f2e7070a",
+      "url": "https://api.github.com/gists/3175935/41991b28556ec28aa187923fd697a6a8f2e7070a"
+    },
+    {
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-07-25T13:03:19Z",
+      "version": "e9abd323663646fad92325b46e5182dd9731f7a4",
+      "url": "https://api.github.com/gists/3175935/e9abd323663646fad92325b46e5182dd9731f7a4"
+    },
+    {
+      "change_status": {
+        "total": 409,
+        "additions": 206,
+        "deletions": 203
+      },
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "committed_at": "2012-07-25T13:02:06Z",
+      "version": "d2899b5bbe6ec6ee5e42307722dc1fa15124e9e6",
+      "url": "https://api.github.com/gists/3175935/d2899b5bbe6ec6ee5e42307722dc1fa15124e9e6"
+    },
+    {
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-07-25T11:41:12Z",
+      "version": "76432fdecfa472767043cc5b4d79d4805de58e5c",
+      "url": "https://api.github.com/gists/3175935/76432fdecfa472767043cc5b4d79d4805de58e5c"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-07-25T11:27:35Z",
+      "version": "e23a75be370b69feb419d156fc1f3f63bbbd7146",
+      "url": "https://api.github.com/gists/3175935/e23a75be370b69feb419d156fc1f3f63bbbd7146"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-07-25T11:27:06Z",
+      "version": "97d8df17c006ef3f5bc098c7bcab2ef3394c7e6a",
+      "url": "https://api.github.com/gists/3175935/97d8df17c006ef3f5bc098c7bcab2ef3394c7e6a"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-07-24T17:13:40Z",
+      "version": "511a844d84d884b77258afef0911ed327fb9eccc",
+      "url": "https://api.github.com/gists/3175935/511a844d84d884b77258afef0911ed327fb9eccc"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-07-24T17:12:37Z",
+      "version": "1d8d4d34c97e827bc5dcb0f61272b27049c1f36d",
+      "url": "https://api.github.com/gists/3175935/1d8d4d34c97e827bc5dcb0f61272b27049c1f36d"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-07-24T17:11:06Z",
+      "version": "0e22742e6f83bbb364d8982531a0fbe1def58f67",
+      "url": "https://api.github.com/gists/3175935/0e22742e6f83bbb364d8982531a0fbe1def58f67"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "committed_at": "2012-07-24T17:10:00Z",
+      "version": "d6105f3a3964733d455da31089ef24b94aef9ac8",
+      "url": "https://api.github.com/gists/3175935/d6105f3a3964733d455da31089ef24b94aef9ac8"
+    }
+  ],
+  "description": "D3 Radial Hub and Spoke Chart Mixed in With HTML Layout Constructs",
+  "html_url": "https://gist.github.com/3175935",
+  "comments": 0,
+  "created_at": "2012-07-25T12:34:57Z",
+  "git_pull_url": "git://gist.github.com/3175935.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/3175935/b651f63823d208b53e97d51617b6adddebea560e/index.html",
+      "size": 21828,
+      "content": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n\n<html  xmlns=\"http://www.w3.org/1999/xhtml\"\n       xml:lang=\"en-US\"\n       lang=\"en-US\">\n  <head profile=\"http://www.w3.org/2005/10/profile\">\n    <title>IF4IT Sample Charts Web Page</title>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\" />\n    <meta name=\"Description\" content=\"This page tries to mix charts with html formatting and layout constructs.\" />\n    <meta http-equiv=\"pragma\" content=\"no-cache\" />\n    <meta http-equiv=\"cache-control\" content=\"no-cache\" />\n    <meta http-equiv=\"expires\" content=\"-l\" />\n\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.4.5\"></script>\n\n\n    <script type=\"text/javascript\">\n\n      // This example draws a Radial Hub and Spoke Graph on a page with multiple\n      // HTML layout constructs.\n      // Created by Frank Guerino : \"http://www.guerino.net\"\n\n      // Data Used for this example...\n\n      var focalNode = [\n        {id: \"N1\", name: \"Node 1\", type: \"Type 1\", hlink: \"http://www.if4it.com\"}\n      ];\n\n      var nodeSet = [\n        //{id: \"N1\", name: \"Node 1\", type: \"Type 1\", hlink: \"http://www.if4it.com\"},\n        {id: \"N2\", name: \"Node 2\", type: \"Type 3\", relName: \"Relationship 1\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N3\", name: \"Node 3\", type: \"Type 4\", relName: \"Relationship 2\", hlink: \"http://www.if4it.com/resources.html\"},\n        {id: \"N4\", name: \"Node 4\", type: \"Type 5\", relName: \"Relationship 3\", hlink: \"http://www.if4it.com/taxonomy.html\"},\n        {id: \"N5\", name: \"Node 5\", type: \"Type 1\", relName: \"Relationship 4\", hlink: \"http://www.if4it.com/disciplines.html\"},\n        {id: \"N6\", name: \"Node 6\", type: \"Type 2\", relName: \"Relationship 5\", hlink: \"http://www.if4it.com\"},\n        {id: \"N7\", name: \"Node 7\", type: \"Type 3\", relName: \"Relationship 6\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N8\", name: \"Node 8\", type: \"Type 4\", relName: \"Relationship 7\", hlink: \"http://www.if4it.com/resources.html\"},\n        {id: \"N9\", name: \"Node 9\", type: \"Type 5\", relName: \"Relationship 8\", hlink: \"http://www.if4it.com/taxonomy.html\"},\n        {id: \"N10\", name: \"Node 10\", type: \"Type 1\", relName: \"Relationship 9\", hlink: \"http://www.if4it.com/disciplines.html\"},\n        {id: \"N11\", name: \"Node 11\", type: \"Type 2\", relName: \"Relationship 10\", hlink: \"http://www.if4it.com\"},\n        {id: \"N12\", name: \"Node 12\", type: \"Type 3\", relName: \"Relationship 11\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N13\", name: \"Node 13\", type: \"Type 4\", relName: \"Relationship 12\", hlink: \"http://www.if4it.com/resources.html\"},\n        {id: \"N14\", name: \"Node 14\", type: \"Type 5\", relName: \"Relationship 13\", hlink: \"http://www.if4it.com/taxonomy.html\"},\n        {id: \"N15\", name: \"Node 15\", type: \"Type 1\", relName: \"Relationship 14\", hlink: \"http://www.if4it.com/disciplines.html\"},\n        {id: \"N16\", name: \"Node 16\", type: \"Type 3\", relName: \"Relationship 15\", hlink: \"http://www.if4it.com\"},\n        {id: \"N17\", name: \"Node 17\", type: \"Type 1\", relName: \"Relationship 16\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N18\", name: \"Node 18\", type: \"Type 1\", relName: \"Relationship 17\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N19\", name: \"Node 19\", type: \"Type 4\", relName: \"Relationship 18\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N20\", name: \"Node 20\", type: \"Type 4\", relName: \"Relationship 19\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N21\", name: \"Node 21\", type: \"Type 4\", relName: \"Relationship 20\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N22\", name: \"Node 22\", type: \"Type 1\", relName: \"Relationship 21\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N23\", name: \"Node 23\", type: \"Type 5\", relName: \"Relationship 22\", hlink: \"http://www.if4it.com/glossary.html\"},\n        {id: \"N24\", name: \"Node 24\", type: \"Type 5\", relName: \"Relationship 23\", hlink: \"http://www.if4it.com/glossary.html\"}\n      ];\n\n\n      function drawRadialHubAndSpoke( drawingName, focalNode, nodeSet, selectString, colors, margin, outerRadius, innerRadius, sortArcs ) {\n\n  // drawingName => A unique drawing identifier that has no spaces, no \".\" and no \"#\" characters.\n  // focalNode => Primary Node of Context.\n  // nodeSet => Set of nodes and their relevant data.\n  // selectString => String that allows you to pass in\n  //           a D3 select string.\n  // colors => String to set color scale.  Values can be...\n  //           => \"colorScale10\"\n  //           => \"colorScale20\"\n  //           => \"colorScale20b\"\n  //           => \"colorScale20c\"\n  // margin => Integer margin offset value.\n  // outerRadius => Integer outer radius value.\n  // innerRadius => Integer inner radius value.\n  // sortArcs => Controls sorting of Arcs by value.\n  //              0 = No Sort.  Maintain original order.\n  //              1 = Sort by arc value size.\n\n  // Color Scale Handling...\n        var colorScale = d3.scale.category20c();\n        switch (colors)\n        {\n          case \"colorScale10\":\n            colorScale = d3.scale.category10();\n            break;\n          case \"colorScale20\":\n            colorScale = d3.scale.category20();\n            break;\n          case \"colorScale20b\":\n            colorScale = d3.scale.category20b();\n            break;\n          case \"colorScale20c\":\n            colorScale = d3.scale.category20c();\n            break;\n          default:\n            colorScale = d3.scale.category20c();\n        };\n\n  var width = 900;\n  var height = 700;\n  var centerNodeSize = 100;\n  var nodeSize = 10;\n\n  //var node_hash = [];\n\n  // Create a hash that allows access to each node by its ID...\n  //nodeSet.forEach(function(d, i) {\n    //node_hash[d.id] = d;\n        //});\n\n  var color_hash = [];\n\n  // Create a hash that maps colors to types...\n  nodeSet.forEach(function(d, i) {\n    color_hash[d.type] = d.type;\n    //document.writeln(color_hash[d.type]);\n        });\n\n        function keys(obj)\n          {\n            var keys = [];\n\n            for(var key in obj)\n            {\n              if(obj.hasOwnProperty(key))\n              {\n                keys.push(key);\n              }\n            }\n          return keys;\n        }\n\n  var sortedKeys = keys(color_hash).sort();\n\n  sortedKeys.forEach(function(d, i) {\n    color_hash[d] = colorScale(i);\n          //document.writeln(color_hash[d]);\n  });\n\n  // Add colors to nodes...\n  nodeSet.forEach(function(d,i) {\n    d.color = color_hash[d.type];\n    //document.writeln(d.type);\n  });\n\n  var svgCanvas = d3.select(selectString)\n    .append(\"svg:svg\")\n      .data([nodeSet])\n      .attr(\"width\", width)\n      .attr(\"height\", height)\n          .append(\"svg:g\")\n            .attr(\"class\", \"focalNode\")\n      .attr(\"transform\", \"translate(\" + width/2 + \",\" + height/2 + \")\")\n\n  // Add focalNode text...\n        svgCanvas.selectAll(\"#focalNode\")\n            .data(focalNode).enter().append(\"svg:a\")\n    .append(\"text\")\n            .attr(\"class\", focalNode)\n            .attr(\"x\", 0)\n            .attr(\"y\", 0)\n            .attr(\"dx\", 2)\n            .attr(\"dy\", 7)\n            .style(\"fill\", \"Black\")\n            .style(\"font\", \"bold 16px Arial\")\n            .attr(\"text-anchor\",\"middle\")\n            .text(function(d) { return d.name; });\n\n  var arc1 = d3.svg.arc()\n      .innerRadius(height/8 - 20)\n      .outerRadius(height/8);\n\n  var pie1 = d3.layout.pie()\n    .value(function(d) { return 1; } );\n\n  var arcs1 = svgCanvas.selectAll(\"g.slice1\")\n      .data(pie1)\n          .enter().append(\"svg:g\")\n      .attr(\"class\", \"slice1\");\n\n  arcs1.append(\"svg:path\")\n      .attr(\"fill\", function(d) {return d.data.color; } )\n      .style(\"stroke\", \"White\")\n      .attr(\"stroke-width\", \"2\")\n      .attr(\"d\", arc1);\n\n  var arc2 = d3.svg.arc()\n      .innerRadius(height/8 + 10)\n      .outerRadius(height/2.25 - 40);\n\n  var pie2 = d3.layout.pie()\n    .value(function(d) { return 1; } );\n\n  var arcs2 = svgCanvas.selectAll(\"g.slice2\")\n      .data(pie2)\n          .enter().append(\"svg:g\")\n      .attr(\"class\", \"slice2\");\n\n  arcs2.append(\"svg:path\")\n      .attr(\"fill\", function(d) {return d.data.color; } )\n      .style(\"fill-opacity\", .25)\n      .style(\"stroke\", \"White\")\n      .attr(\"stroke-width\", \"2\")\n      .attr(\"d\", arc2);\n\n  var arc3 = d3.svg.arc()\n      .innerRadius(height/2.25 - 30)\n      .outerRadius(height/2.25 - 10);\n\n  var pie3 = d3.layout.pie()\n    .value(function(d) { return 1; } );\n\n  var arcs3 = svgCanvas.selectAll(\"g.slice3\")\n      .data(pie3)\n          .enter().append(\"svg:g\")\n      .attr(\"class\", \"slice3\");\n\n  arcs3.append(\"svg:path\")\n      .attr(\"fill\", function(d) {return d.data.color; } )\n      .attr(\"stroke-width\", \"2\")\n      .style(\"stroke\", \"White\")\n      .attr(\"d\", arc3);\n\n        // Add link names to the arcs, translated to the arc centroid and rotated.\n  arcs2.filter(function(d) {\n    return d.endAngle - d.startAngle > .2; }).append(\"svg:text\")\n            .attr(\"dy\", \".35em\")\n            .attr(\"text-anchor\", \"middle\")\n            .attr(\"transform\", function(d) { //set text's origin to the centroid\n              //we have to make sure to set these before calling arc.centroid\n              d.innerRadius = (height/5 + 10); // Set Inner Coordinate\n              d.outerRadius = (height/2 - 40); // Set Outer Coordinate\n              return \"translate(\" + arc2.centroid(d) + \")rotate(\" + angle(d, -90, 90) + \")\";\n            })\n            .style(\"fill\", \"Black\")\n            .style(\"font\", \"normal 10px Arial\")\n            .text(function(d) { return d.data.relName /* + \" \" + Math.round(angle(d, -90, 90)) */ ; });\n\n        // Add node names to the arcs, translated to the arc centroid and rotated.\n  arcs3.filter(function(d) {\n    return d.endAngle - d.startAngle > .2; }).append(\"svg:text\")\n            .attr(\"dy\", \"5px\")\n            .attr(\"angle\", function(d) { return angle(d, -90, 90); })\n            .attr(\"text-anchor\", function(d) {\n              var a = angle(d, 0, 0);\n              return a < 0 ? \"start\" : \"end\";\n            })\n            .attr(\"transform\", function(d) { //set text's origin to the centroid\n               // Make sure to set these before calling arc.centroid\n               d.innerRadius = (height/2); // Set Inner Coordinate\n               d.outerRadius = (height/2); // Set Outer Coordinate\n               return \"translate(\" + arc3.centroid(d) + \")rotate(\" + angle(d, -90, 90) + \")\";\n             })\n            .style(\"fill\", \"Black\")\n            .style(\"font\", \"normal 12px Arial\")\n            .text(function(d) { return d.data.name /* + \" \" + Math.round(angle(d, 0, 0)) */ ; });\n\n        // Computes the angle of an arc, converting from radians to degrees.\n        function angle(d, offset, threshold) {\n          var a = (d.startAngle + d.endAngle) * 90 / Math.PI + offset;\n          return a > threshold ? a - 180 : a;\n        }\n\n        // Plot the bullet circles...\n        svgCanvas.selectAll(\"circle\")\n            .data(sortedKeys).enter().append(\"svg:circle\") // Append circle elements\n            .attr(\"cx\", width/2-150)\n            .attr(\"cy\", function(d, i) { return (i*20-height/7*3); } )\n            .attr(\"stroke-width\", \".5\")\n            .style(\"fill\", function(d, i) { return color_hash[d]; })\n            .attr(\"r\", 5)\n            .attr(\"color_value\", function(d, i) { return color_hash[d]; })\n            .attr(\"index_value\", function(d, i) { return \"index-\" + i; })\n            .attr(\"class\", function(d, i) { return \"drawing-\" + drawingName + \"-legendBullet-index-\" + i; });\n            //.on('mouseover', synchronizedMouseOver)\n            //.on(\"mouseout\", synchronizedMouseOut);\n\n        // Plot the center node circle...\n  // Note: Issue w/ selecting circles requires this circle to be drawn after legend bullet circles\n        svgCanvas.selectAll(\"#focalNode\")\n            .data(focalNode).enter().append(\"svg:circle\") // Append circle element\n            .attr(\"x\", width/2)\n            .attr(\"y\", height/2)\n            .attr(\"stroke-width\", \"8\")\n            .style(\"stroke\", function(d, i) { return color_hash[d.type]; })\n            .style(\"fill\", function(d, i) { return color_hash[d.type]; })\n      .style(\"fill-opacity\", .25)\n            .attr(\"r\", height/8-30)\n            .attr(\"color_value\", function(d, i) { return color_hash[d.type]; })\n            .attr(\"class\", function(d, i) { return \"drawing-\" + drawingName + \"-focalNode-index-\" + i; });\n             //.on('mouseover', synchronizedMouseOver)\n             //.on(\"mouseout\", synchronizedMouseOut);\n\n        // Create legend text at right that acts as label key...\n        svgCanvas.selectAll(\"a.legend_link\")\n            .data(sortedKeys) // Instruct to bind dataSet to text elements\n          .enter().append(\"svg:a\") // Append legend elements\n            //.attr(\"xlink:href\", function(d) { return d.link; })\n            .append(\"text\")\n              .attr(\"text-anchor\", \"center\")\n              .attr(\"x\", width/2-150 + 10)\n              //.attr(\"y\", function(d, i) { return i*textVerticalSpace - legendVerticalOffset; } )\n              .attr(\"y\", function(d, i) { return (i*20-height/7*3); } )\n              .attr(\"dx\", 0)\n              .attr(\"dy\", \"4px\") // Controls padding to place text in alignment with bullets\n        .text(function(d) { return d;})\n              .attr(\"color_value\", function(d, i) { return color_hash[d]; }) // Bar fill color...\n              .attr(\"index_value\", function(d, i) { return \"index-\" + i; })\n              .attr(\"class\", function(d, i) { return \"drawing-\" + drawingName + \"-legendText-index-\" + i; })\n              .style(\"fill\", \"Black\")\n              .style(\"font\", \"normal 1.2em Arial\");\n              //.on('mouseover', synchronizedMouseOver)\n              //.on(\"mouseout\", synchronizedMouseOut);\n\n      };\n\n    </script>\n\n    <style type=\"text/css\">\n      svg {\n        font: 10px sans-serif;\n        display: block;\n      }\n    </style>\n\n\n\n    <STYLE type=\"text/css\">\n      div.div_Header {\n  width: 100%;\n  border:2px solid White;\n  border-radius:7px;\n  background: WhiteSmoke;\n  font: bold 14px Arial;\n  font-family:Arial, Helvetica, sans-serif;\n  color:WhiteSmoke;\n  text-align:center;\n      }\n      h1.h1_BodyHeader {\n  text-align:center;\n  font: bold 1.5em Arial;\n      }\n      h2.h2_LeftMenuHeader {\n  text-align:center;\n  font: bold 1.2em Arial;\n      }\n      h3.h3_Body {\n        text-align:center;\n      }\n      p.p_Red {\n        color:Red;\n      }\n      table.table_Header {\n  width: 100%;\n  text-align:center;\n      }\n      td.td_HeaderLeft {\n  text-align:left;\n      }\n      td.td_HeaderRight {\n  text-align:right;\n      }\n      div.div_Menu {\n  width: 100%;\n  border:2px solid White;\n  border-radius:7px;\n  background: MidnightBlue;\n  font: bold 14px Arial;\n  font-family:Arial, Helvetica, sans-serif;\n  color:White;\n  text-align:center;\n      }\n      p.p_Left {\n        font-family:Arial, Helvetica, sans-serif;\n        color:Black;\n        text-align:left;\n        padding-left: 5px;\n        font: normal 14px Arial;\n      }\n      table.table_Body {\n  width: 100%;\n  height: 100%;\n  padding: 0;\n      }\n      td.td_BodyLeft {\n  width: 250px;\n  height: 100%;\n  padding: 0;\n      }\n      li.li_LeftMenu {\n  text-align:left;\n  font: normal 14px Arial;\n      }\n      a.a_LeftMenuNoUnderLine {\n  text-decoration:  none;\n      }\n      div.div_Body {\n  height: 100%;\n  width: 100%;\n  position: relative;\n  border:2px solid White;\n  border-radius:7px;\n  background: WhiteSmoke;\n  font: bold 14px Arial;\n  font-family:Arial, Helvetica, sans-serif;\n  color:Black;\n  text-align:center;\n      }\n      div.div_Footer {\n  width: 100%;\n  border:2px solid White;\n  border-radius:7px;\n  background: MidnightBlue;\n  font: bold 14px Arial;\n  font-family:Arial, Helvetica, sans-serif;\n  color:White;\n  text-align:center;\n      }\n      p.p_if4itMessage {\n  width: 100%;\n  background: White;\n  font: bold .75em Arial;\n  font-family:Arial, Helvetica, sans-serif;\n  color:GoldenRod;\n  text-align:center;\n      }\n      .menuButton{\n        background-color: MidnightBlue;\n      }\n      .menuButton li{\n  height: 100%;\n  list-style: none;\n  display: inline;\n      }\n      .menuButton li a{\n  height: 100%;\n  padding: 3px 0.5em;\n  text-decoration: none;\n  color: White;\n  background-color: MidnightBlue;\n  border: 2px solid MidnightBlue;\n      }\n      .menuButton li a:hover{\n  height: 100%;\n  color: MidnightBlue;\n  background-color: White;\n  border-style: outset;\n  background-color: White;\n      }\n      .menuButton li a:active{\n        height: 100%;\n        border-style: inset;\n        color: MidnightBlue;\n        background-color: White;\n      }\n      .menuButton li a.disabled{\n        height: 100%;\n        padding: 3px 0.5em;\n        text-decoration: none;\n        color: MidnightBlue;\n        background-color: White;\n        border: 2px solid MidnightBlue;\n        border-style: inset;\n        border-color: White;\n      }\n    </STYLE>\n\n    <STYLE type=\"text/css\">\n      div.div_RootBody {\n  position: relative;\n  border:2px solid White;\n  border-radius:7px;\n  background: WhiteSmoke;\n  font: normal 14px Arial;\n  font-family:Arial, Helvetica, sans-serif;\n  color:Black;\n  padding: 0px 1em;\n  text-align:left;\n      }\n    </STYLE>\n    <!--[if gt IE 7]>\n      <style>body { overflow-y:scroll; } </style>\n    <![endif]-->\n  </head>\n\n  <body>\n\n      <div>\n  <h1 style=\"text-align:center; font: bold 1.7em Arial;\"><a href=\"http://www.if4it.com\">The International Foundation for Information Technology (IF4IT)</a></h1>\n      </div>\n\n      <div class=\"div_Menu\">\n        <ul class=\"menuButton\">\n          <li><a href=\"http://www.if4it.com\">HOME</a></li>\n          <li><a href=\"http://www.if4it.com/resources.html\">RESOURCES</a></li>\n          <li><a href=\"http://www.if4it.com\">PRODUCTS</a></li>\n          <li><a href=\"http://www.if4it.com\">SERVICES</a></li>\n          <li><a href=\"http://www.if4it.com\">SUPPORT</a></li>\n          <li><a href=\"http://www.if4it.com\">HELP</a></li>\n        </ul>\n      </div>\n      <table class=\"table_Body\">\n        <tr>\n          <td class=\"td_BodyLeft\">\n            <div class=\"div_Body\">\n              <h2 class=\"h2_LeftMenuHeader\">Sample Left Menu Links</h2>\n              <ul>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com\">IF4IT Home</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/disciplines.html\">IF4IT Disciplines</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/glossary.html\">IF4IT Glossary</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/taxonomy.html\">IF4IT Taxonomies</a></li>\n              </ul>\n        <p class=\"p_Left\">This is dummy paragraph 1 text that would go in this section of the page.</p>\n        <p class=\"p_Left\">This is dummy paragraph 2 text that would go in this section of the page.</p>\n        <p class=\"p_Left\">This is dummy paragraph 3 text that would go in this section of the page.</p>\n        <p class=\"p_Left\">This is dummy paragraph 4 text that would go in this section of the page.</p>\n        <p class=\"p_Left\">This is dummy paragraph 5 text that would go in this section of the page.</p>\n              <ul>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com\">IF4IT Home</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/disciplines.html\">IF4IT Disciplines</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/glossary.html\">IF4IT Glossary</a></li>\n                <li class=\"li_LeftMenu\"><a class=\"a_LeftMenuNoUnderLine\" href=\"http://www.if4it.com/taxonomy.html\">IF4IT Taxonomies</a></li>\n              </ul>\n        <p class=\"p_Left\">This is dummy paragraph 1 text that would go in this section of the page.</p>\n        <p class=\"p_Left\">This is dummy paragraph 2 text that would go in this section of the page.</p>\n        <p class=\"p_Left\">This is dummy paragraph 3 text that would go in this section of the page.</p>\n        <p class=\"p_Left\">This is dummy paragraph 4 text that would go in this section of the page.</p>\n        <p class=\"p_Left\">This is dummy paragraph 5 text that would go in this section of the page.</p>\n            </div>\n          </td>\n          <td>\n            <div class=\"div_RootBody\">\n              <h1 style=\"text-align:center; font: bold 1.5em Arial;\">D3 Based Radial Hub and Spoke Chart in an HTML Page</h1>\n            </div>\n            <div class=\"div_RootBody\">\n        <h3 class=\"h3_Body\">Example Description</h3>\n              <p class=\"p_Red\">This example shows how to draw a radial hub and spoke drawing in an HTML page that has multiple HTML layout constructs.  Cut, paste, and run the code into your own index.html file to see it run locally.</p>\n            </div>\n            <div class=\"div_RootBody\" id=\"radial_chart\">\n              <h3 class=\"h3_Body\">Radial Hub and Spoke Chart</h3>\n              <div class=\"chart\"></div>\n            </div>\n          </td>\n        </tr>\n      </table>\n\n      <div class=\"div_Footer\"><p><p>This is the IF4IT Footer Message for this web page.</p></p></div>\n\n      <div><p class=\"p_if4itMessage\">This Site Has Been Created and Published by The International Foundation for Information Technology (IF4IT).</p></div>\n\n      <script type=\"text/javascript\">\n  d3.select(self.frameElement).style(\"height\", \"1200px\");\n  d3.select(self.frameElement).style(\"width\", \"1200px\");\n        drawRadialHubAndSpoke(\"Drawing 1\", focalNode, nodeSet, \"#radial_chart .chart\", \"colorScale20\", 10, 100, 5, 0);\n      </script>\n\n    </body>\n\n</html>",
+      "language": "HTML"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/3175935/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    }
+  },
+  "git_push_url": "git@gist.github.com:3175935.git",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+      "login": "Guerino1",
+      "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/Guerino1",
+      "id": 1558275
+    },
+    "description": "D3 Radial Wheel With HTML",
+    "html_url": "https://gist.github.com/3169420",
+    "comments": 0,
+    "created_at": "2012-07-24T11:11:42Z",
+    "git_pull_url": "git://gist.github.com/3169420.git",
+    "public": true,
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/3169420/0717b507cf73c0185f4628400be29202c8caefc0/index.html",
+        "size": 35617,
+        "language": "HTML"
+      }
+    },
+    "git_push_url": "git@gist.github.com:3169420.git",
+    "updated_at": "2012-07-27T16:15:21Z",
+    "url": "https://api.github.com/gists/3169420",
+    "id": "3169420"
+  },
+  "updated_at": "2012-09-09T08:58:12Z",
+  "url": "https://api.github.com/gists/3175935",
+  "id": "3175935"
+}

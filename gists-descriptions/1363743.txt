@@ -1,0 +1,220 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+    "login": "biovisualize",
+    "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/biovisualize",
+    "id": 824534
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 351,
+        "additions": 228,
+        "deletions": 123
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-18T19:42:42Z",
+      "version": "0cc6a49fb72840f5b7f2eaba5fc6541d4d7db2b2",
+      "url": "https://api.github.com/gists/1363743/0cc6a49fb72840f5b7f2eaba5fc6541d4d7db2b2"
+    },
+    {
+      "change_status": {
+        "total": 7,
+        "additions": 7,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-16T21:45:40Z",
+      "version": "7c7e422c027e53203adecaab3f4e4575c8c1cd4b",
+      "url": "https://api.github.com/gists/1363743/7c7e422c027e53203adecaab3f4e4575c8c1cd4b"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-16T21:39:12Z",
+      "version": "0e12cf16c2c351bcbb91f164c3cf6a49a519bf16",
+      "url": "https://api.github.com/gists/1363743/0e12cf16c2c351bcbb91f164c3cf6a49a519bf16"
+    },
+    {
+      "change_status": {
+        "total": 6,
+        "additions": 4,
+        "deletions": 2
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-16T16:36:14Z",
+      "version": "d973692e78f6d13350f4db92d40b477fb48a2f9b",
+      "url": "https://api.github.com/gists/1363743/d973692e78f6d13350f4db92d40b477fb48a2f9b"
+    },
+    {
+      "change_status": {
+        "total": 52,
+        "additions": 43,
+        "deletions": 9
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-16T16:20:37Z",
+      "version": "2579339d795243968e7ee43468a93a16645980b2",
+      "url": "https://api.github.com/gists/1363743/2579339d795243968e7ee43468a93a16645980b2"
+    },
+    {
+      "change_status": {
+        "total": 88,
+        "additions": 71,
+        "deletions": 17
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-16T06:01:48Z",
+      "version": "6106b7e4a06a442b842c9c9a61efe7de8c388f97",
+      "url": "https://api.github.com/gists/1363743/6106b7e4a06a442b842c9c9a61efe7de8c388f97"
+    },
+    {
+      "change_status": {
+        "total": 6,
+        "additions": 1,
+        "deletions": 5
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-16T02:22:52Z",
+      "version": "95c33dceb3c20f3fb5313dad052ced8e684f7722",
+      "url": "https://api.github.com/gists/1363743/95c33dceb3c20f3fb5313dad052ced8e684f7722"
+    },
+    {
+      "change_status": {
+        "total": 3,
+        "additions": 2,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-15T14:34:49Z",
+      "version": "3f94b1cea71b38a2d3ae7afd50ac1cfb15e2f988",
+      "url": "https://api.github.com/gists/1363743/3f94b1cea71b38a2d3ae7afd50ac1cfb15e2f988"
+    },
+    {
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-15T02:56:30Z",
+      "version": "79a41312851effe3eb30b668c81d00a981390bf3",
+      "url": "https://api.github.com/gists/1363743/79a41312851effe3eb30b668c81d00a981390bf3"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+        "login": "biovisualize",
+        "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/biovisualize",
+        "id": 824534
+      },
+      "committed_at": "2011-11-15T02:53:34Z",
+      "version": "9c0799c0b2a0ffbfae7813a8676606c2131866bf",
+      "url": "https://api.github.com/gists/1363743/9c0799c0b2a0ffbfae7813a8676606c2131866bf"
+    }
+  ],
+  "description": "D3 chart plugin template",
+  "html_url": "https://gist.github.com/1363743",
+  "comments": 0,
+  "created_at": "2011-11-14T11:08:04Z",
+  "git_pull_url": "git://gist.github.com/1363743.git",
+  "public": true,
+  "files": {
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/1363743/a279ef25418fc11f294185af68a2fd32873700c1/README.md",
+      "size": 843,
+      "content": "A **template example** to write simple chart plugins on top of D3. It is a base for discussion, so your are much welcome to modify it and comment it. The requirements are discussed on the [wiki](https://github.com/mbostock/d3/wiki/Chart-Templates).\n\nThis implementation provides: div or svg parent, variants (bars or stacked bars), position, relative position (after or under another chart of the same svg parent), margins, gap between bars (in %), transition duration, separated data and labels (to discuss), uses axis component (to complete), chart size taken from the parent and will resize with it, all items accessible from CSS for styling, most options optional, automatic redraw on setting change and zero argument returns the value. \n\nIn this example, the first bar chart data updates periodically and a mouse click changes chart type.",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1363743/f57e87ba8e57d8892d6449aad31871aed1db6f19/index.html",
+      "size": 2640,
+      "content": "<head>\n    <title></title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n <style type=\"text/css\">\n        body{\n            margin: 0;\n        }\n        #viz1{\n            width: 400px;\n            height: 400px;\n            position: absolute;\n            left: 0;\n            border: solid silver 1px;\n        }\n        .panel{\n            fill: aliceblue;\n        }\n        #group1 .mark{\n            fill: skyblue;\n            stroke: steelblue;\n        }\n        #group2 .mark{\n            fill: orange;\n            stroke: orangered;\n        }\n        #group3 .mark{\n            fill: yellowgreen;\n            stroke: olivedrab;\n        }\n        #group4 .mark{\n            fill: pink;\n            stroke: orchid;\n        }\n        .domain{\n            display: none;\n         }\n        .axis line {\n          stroke: silver;\n        }\n    </style>\n</head>\n<body>\n    <div id=\"viz1\"></div>\n    <script type=\"text/javascript\" src=\"./chart_template.js\"></script>\n    <script type=\"text/javascript\">\n var barchart1 = d3.bio.barchart()\n    .parent(\"#viz1\")\n    .margin([10, 10, 20, 10])\n    .gap(30)\n    .size([200, 200])\n    .data([1, 2, 5]);\n    \nvar barchart2 = d3.bio.barchart()\n    .parent(barchart1.parent())\n    .margin([10, 10, 20, 10])\n    .gap(30)\n    .size(barchart1.size())\n    .position(\"after\", barchart1)\n    .data([10, 4, 6]);\n    \nvar barchart3 = d3.bio.barchart()\n    .parent(barchart1.parent())\n    .margin([10, 10, 20, 10])\n    .gap(30)\n    .size(barchart1.size())\n    .position(\"under\", barchart1)\n    .data([15, 25, 12]);\n    \nvar barchart4 = d3.bio.barchart()\n    .parent(barchart1.parent())\n    .margin([10, 10, 20, 10])\n    .gap(30)\n    .size(barchart3.size())\n    .position(\"after\", barchart3)\n    .data([1, 40, 15]);\n\nvar toggle = true; \n    d3.select(\"body\").on(\"mousedown\", function(){\n        if(event.button == 2) return false;\n        toggle = !toggle;\n        if(toggle){\n            barchart1.variant(\"standard\")\n            barchart2.variant(\"standard\")\n            barchart3.variant(\"standard\")\n            barchart4.variant(\"standard\")\n        }else{\n            barchart1.variant(\"stacked\")\n            barchart2.variant(\"stacked\")\n            barchart3.variant(\"stacked\")\n            barchart4.variant(\"stacked\")\n        }\n    });\n    \n    \nsetInterval(function() {\n    var data = [];\n    var label = [];\n    var len = ~~(Math.random()*10)+4;\n    for(var i=0; i<len; i++) data.push(~~(Math.random()*100));\n    for(i=0; i<data.length; i++) label.push(\"bar\"+(i+1));\n    barchart1.data(data)\n       //.label(label)\n     ;\n}, 1500);\n    </script>\n</body>\n</html>",
+      "language": "HTML"
+    },
+    "chart_template.js": {
+      "type": "application/javascript",
+      "filename": "chart_template.js",
+      "raw_url": "https://gist.github.com/raw/1363743/0503b3d0aad15f11c2dcc37400d69e9c4aab6352/chart_template.js",
+      "size": 5522,
+      "content": "if (typeof d3.bio != \"object\") d3.bio = {};\n\nd3.bio.barchart = function (){\n\n    var barchart = {},\n    data= [],\n    label= [],\n    parent,\n    group,\n    w, h,\n    x, y,\n    chartW, chartH,\n    duration = 1000,\n    margin = [20, 20, 20, 20],\n    gap = 30\n    variant = \"standard\";\n\n    barchart.parent = function(p){\n        if (!arguments.length) return parent.node();       \n        parent = d3.select(p);\n        w = parent.node().clientWidth;\n        h = parent.node().clientHeight;\n        x = 0;\n        y = 0;\n        if(d3.ns.prefix.xhtml == parent.node().namespaceURI){\n            parent = parent.append(\"svg:svg\")\n                .attr(\"viewBox\", \"0 0 \"+w+\" \"+h)\n                .attr(\"preserveAspectRatio\", \"none\");                      \n        }\n        group = parent.append(\"svg:g\")\n            .attr(\"class\", \"group\")\n            .attr(\"id\", \"group\"+parent.node().childElementCount);\n        group.append(\"svg:rect\")\n            .attr(\"class\", \"panel\")\n            .call(resize);\n        return barchart;\n    };\n    \n    barchart.margin = function(m){\n        if (!arguments.length) return margin;\n        margin = m;\n        group.select(\"rect.panel\")\n            .call(resize);\n        return redraw();\n    };\n    \n    barchart.size = function(s){\n        if (!arguments.length) return [w, h];\n        w = s[0];\n        h = s[1];\n        group.select(\"rect.panel\")\n            .call(resize);\n        return redraw();\n    };\n    \n    barchart.position = function(p, other){\n        if (!arguments.length) return [x, y];\n        if(typeof p == \"string\"){\n            var otherPos = other.position();\n            var otherSize = other.size();    \n            if(p == \"after\"){\n                x = otherPos[0]+otherSize[0];\n                y = otherPos[1]+otherSize[1]-h;\n            }else if(p == \"under\"){\n                x = otherPos[0];\n                y = otherPos[1]+otherSize[1];\n            }\n        }else{\n            x = p[0];\n            y = p[1];\n        }\n        group.select(\"rect.panel\")\n            .call(resize);\n        return redraw();\n    };\n    \n    barchart.transition = function(d){\n        if (!arguments.length) return duration;\n        duration = d;\n        return redraw();\n    };\n    \n    barchart.data = function(d){\n        if (!arguments.length) return data;\n        data = d;\n        return redraw();\n    };\n   \n    barchart.gap = function(g){\n        if (!arguments.length) return gap;\n        gap = g;\n        return redraw();\n    };\n    \n    barchart.variant = function(v){\n        if (!arguments.length) return variant;\n        variant = v;\n        return redraw();\n    };\n    \n    function resize(){\n        chartW = w - margin[1] - margin[3];\n        chartH = h - margin[0] - margin[2];\n        this.attr(\"width\", chartW)\n            .attr(\"height\", chartH)\n            .attr(\"x\", x+margin[3])\n            .attr(\"y\", y+margin[0]);\n        return barchart;\n    }\n\n    function redraw(){\n        if(variant == \"stacked\") barchart.toStackedBarchart();  \n        else barchart.toBarchart();          \n        return barchart;\n    };\n    \n    barchart.toPCP = function(){\n        var yScale = d3.scale.linear().domain([0, d3.max(data)+h/100]).range([chartH, 0]);\n        \n        var markX = x+margin[3];\n        var markY = function(d, i){return y+yScale(d)+margin[0];};\n        var markW = 5;\n        var markH = 5;\n        drawSVG(markX, markY, markW, markH);\n        return barchart;\n    };\n    \n    barchart.toBarchart = function(){\n        var yScale = d3.scale.linear().domain([0, d3.max(data)+h/100]).range([chartH, 0]);\n        var xScale = d3.scale.linear().domain([0, data.length]).range([0, chartW]);\n        var gapW = chartW/data.length*(gap/100);\n        \n        var markX = function(d, i){return x+xScale(i)+margin[3]+gapW/2;};\n        var markY = function(d, i){return y+yScale(d)+margin[0];};\n        var markW = chartW/data.length-gapW;\n        var markH = function(d, i){return chartH-yScale(d);};\n        drawSVG(markX, markY, markW, markH);\n        return barchart;\n    };\n    \n    barchart.toStackedBarchart = function(){\n        var yScale = d3.scale.linear().domain([0, d3.sum(data)+h/100]).range([chartH, 0]);        \n        var stackH = [];\n        var stackTopH = 0;\n        for(var i=0; i<data.length; i++){\n            stackTopH += chartH-yScale(data[i]);\n            stackH.push(stackTopH)\n        }\n        var gapW = chartW*(gap/100);\n        \n        var markX = x+margin[3]+gapW/2;\n        var markY = function(d, i){return y+h-stackH[i]-margin[2];};\n        var markW = chartW-gapW;\n        var markH = function(d, i){return chartH-yScale(d);};\n        drawSVG(markX, markY, markW, markH);\n        return barchart;\n    };\n    \n    function drawSVG(markX, markY, markW, markH){\n        var marks = group.selectAll(\"rect.mark\")\n            .data(data);\n            \n            marks.enter().append(\"svg:rect\")\n                .attr(\"class\", \"mark\")\n                .attr(\"x\", chartW)\n                .attr(\"y\", markY)\n                .attr(\"width\", 0)\n                .attr(\"height\", markH)\n                 .attr(\"opacity\", 1);\n                \n            marks.transition()           \n                .attr(\"x\", markX)\n                .attr(\"y\", markY)\n                .attr(\"width\", markW)\n                .attr(\"height\", markH);\n                \n            marks.exit()\n                .transition()\n                .duration(duration/5)\n                .attr(\"opacity\", 0)\n                .remove();\n    }\n\nreturn barchart;\n};",
+      "language": "JavaScript"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1363743.git",
+  "updated_at": "2011-11-14T11:08:04Z",
+  "url": "https://api.github.com/gists/1363743",
+  "id": "1363743"
+}

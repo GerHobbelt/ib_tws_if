@@ -1,0 +1,168 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "git_push_url": "git@gist.github.com:1965462.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "07b53ee2af96e99556970487b3078caf12b206ea",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "committed_at": "2012-09-09T08:44:24Z",
+      "url": "https://api.github.com/gists/1965462/07b53ee2af96e99556970487b3078caf12b206ea"
+    },
+    {
+      "user": {
+        "gravatar_id": "6592686863246192c7fd1ff54773fd3c",
+        "login": "lgrammel",
+        "avatar_url": "https://secure.gravatar.com/avatar/6592686863246192c7fd1ff54773fd3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/lgrammel",
+        "id": 205036
+      },
+      "version": "8e8d06348bd0f54a917ef7c5f5603329a63c613e",
+      "change_status": {
+        "total": 4,
+        "additions": 1,
+        "deletions": 3
+      },
+      "committed_at": "2012-03-03T02:54:45Z",
+      "url": "https://api.github.com/gists/1965462/8e8d06348bd0f54a917ef7c5f5603329a63c613e"
+    },
+    {
+      "user": {
+        "gravatar_id": "6592686863246192c7fd1ff54773fd3c",
+        "login": "lgrammel",
+        "avatar_url": "https://secure.gravatar.com/avatar/6592686863246192c7fd1ff54773fd3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/lgrammel",
+        "id": 205036
+      },
+      "version": "d38bd7fe708045f56961441d9ef9e4f4bd70a11e",
+      "change_status": {
+        "total": 112,
+        "additions": 56,
+        "deletions": 56
+      },
+      "committed_at": "2012-03-03T02:52:56Z",
+      "url": "https://api.github.com/gists/1965462/d38bd7fe708045f56961441d9ef9e4f4bd70a11e"
+    },
+    {
+      "user": {
+        "gravatar_id": "6592686863246192c7fd1ff54773fd3c",
+        "login": "lgrammel",
+        "avatar_url": "https://secure.gravatar.com/avatar/6592686863246192c7fd1ff54773fd3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/lgrammel",
+        "id": 205036
+      },
+      "version": "aed486b20a2fd0be62bd66d343a2703570457c65",
+      "change_status": {
+        "total": 187,
+        "additions": 187,
+        "deletions": 0
+      },
+      "committed_at": "2012-03-03T02:51:19Z",
+      "url": "https://api.github.com/gists/1965462/aed486b20a2fd0be62bd66d343a2703570457c65"
+    }
+  ],
+  "fork_of": {
+    "user": {
+      "gravatar_id": "6592686863246192c7fd1ff54773fd3c",
+      "login": "lgrammel",
+      "avatar_url": "https://secure.gravatar.com/avatar/6592686863246192c7fd1ff54773fd3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/lgrammel",
+      "id": 205036
+    },
+    "git_push_url": "git@gist.github.com:1963983.git",
+    "description": "Interactive Streamgraph D3",
+    "comments": 0,
+    "created_at": "2012-03-03T02:51:19Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1963983",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/1963983/ed2be5ec4b094fd90b7425013ebc61529d53c417/index.html",
+        "size": 1803,
+        "language": "HTML"
+      },
+      "stream-chart.js": {
+        "type": "application/javascript",
+        "filename": "stream-chart.js",
+        "raw_url": "https://gist.github.com/raw/1963983/275cc2d11e88ad5442231f588d555138636f4b9f/stream-chart.js",
+        "size": 3375,
+        "language": "JavaScript"
+      },
+      "stream_layers.js": {
+        "type": "application/javascript",
+        "filename": "stream_layers.js",
+        "raw_url": "https://gist.github.com/raw/1963983/7b1f2f3ee15bc2cf9722361ffaf9b92a23c5b693/stream_layers.js",
+        "size": 636,
+        "language": "JavaScript"
+      }
+    },
+    "updated_at": "2012-03-03T02:51:19Z",
+    "url": "https://api.github.com/gists/1963983",
+    "git_pull_url": "git://gist.github.com/1963983.git",
+    "id": "1963983"
+  },
+  "description": "Interactive Streamgraph D3",
+  "comments": 0,
+  "created_at": "2012-03-03T10:38:10Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1965462",
+  "files": {
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/1965462/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1965462/6bf1fce4ef7e3027c219920d2b577350795baf52/index.html",
+      "size": 1797,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Streamgraph</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.v2.js?2.8.0\"></script>\n    <script type=\"text/javascript\" src=\"stream_layers.js\"></script>\n    <script type=\"text/javascript\" src=\"stream-chart.js\"></script>\n</head>\n<body>\n    <div id=\"chart\">\n        <button class=\"first last\" onclick=\"transition()\">\n            Update\n        </button><p>\n    </div>\n    <script>\n        var n = 20, // number of layers\n            m = 200; // number of samples per layer\n\n        var data1 = stream_layers(n, m);\n        var data0 = stream_layers(n, m);\n        var colors = d3.range(n).map(function() { return d3.interpolateRgb(\"#aad\", \"#556\")(Math.random()); });\n\n        var streamgraph = streamgraphChart()\n            .margin({top: 10, right: 10, bottom: 10, left: 10})\n            .color(function(d, i) { return colors[i]; }) // use same colors for both data sets\n            .transitionDuration(1500)\n            .on(\"mouseover\", fade(.2))\n            .on(\"mouseout\", fade(1));\n\n        d3.select(\"#chart\")\n            .datum(data0)\n            .call(streamgraph);\n\n        function transition() {\n            d3.select(\"#chart\")\n                    .datum(function() {\n                        var d = data1;\n                        data1 = data0;\n                        return data0 = d;\n                    })\n                    .call(streamgraph);\n        }\n\n        function fade(opacity) {\n            return function(g, i) {\n                streamgraph.layers()\n                    .filter(function(h, j) {\n                        return j != i;\n                    })\n                    .transition(1000)\n                      .style(\"opacity\", opacity);\n            }\n        }\n    </script>\n</body>\n</html>",
+      "language": "HTML"
+    },
+    "stream-chart.js": {
+      "type": "application/javascript",
+      "filename": "stream-chart.js",
+      "raw_url": "https://gist.github.com/raw/1965462/7190636a83e43bb4649f448ed99eca959ed470df/stream-chart.js",
+      "size": 3191,
+      "content": "function streamgraphChart() {\n\n    var margin = {top: 0, right: 0, bottom: 0, left: 0},\n        width = 960,\n        height = 500,\n        transitionDuration = 1000,\n        color = function() { return d3.interpolateRgb(\"#aad\", \"#556\")(Math.random()); },\n        eventHandlers = [],\n        layers = undefined;\n\n    var streamgraph =  d3.layout.stack().offset(\"wiggle\");\n\n    function chart(selection) {\n        selection.each(function(data) {\n\n            // Compute the streamgraph.\n            data = streamgraph(data);\n\n            var mx = data[0].length - 1, // assumes that all layers have same # of samples & that there is at least one layer\n                my = d3.max(data, function(d) {\n                    return d3.max(d, function(d) {\n                        return d.y0 + d.y;\n                    });\n                });\n\n            // Select the svg element, if it exists.\n            var svg = d3.select(this).selectAll(\"svg\").data([data]);\n\n            // Otherwise, create the skeletal chart.\n            var gEnter = svg.enter().append(\"svg\").append(\"g\");\n\n            // Update the outer dimensions.\n            svg .attr(\"width\", width)\n                .attr(\"height\", height);\n\n            // Update the inner dimensions.\n            var g = svg.select(\"g\")\n                .attr(\"transform\", \"translate(\" + margin.left + \",\" + margin.top + \")\");\n\n            // Update the streamgraph\n            var availableWidth = width - margin.left - margin.right,\n                availableHeight = height - margin.top - margin.bottom;\n\n            var area = d3.svg.area()\n                .x(function(d) { return d.x * availableWidth / mx; })\n                .y0(function(d) { return availableHeight - d.y0 * availableHeight / my; })\n                .y1(function(d) { return availableHeight - (d.y + d.y0) * availableHeight / my; });\n\n            layers = g.selectAll(\"path\").data(data);\n\n            var enterPath = layers.enter().append(\"path\");\n            eventHandlers.forEach(function(d){\n                enterPath.on(d.type, d.handler);\n            });\n\n            layers.exit().remove();\n            layers.style(\"fill\", color).transition().duration(transitionDuration).attr(\"d\", area);\n        });\n    }\n\n    chart.on = function(_) {\n        // TODO needs further work\n        eventHandlers.push({\n            \"type\": arguments[0],\n            \"handler\": arguments[1]\n        });\n\n        return chart;\n    }\n\n    chart.color = function(_) {\n        if (!arguments.length) return color;\n        color = _;\n        return chart;\n    };\n\n    chart.transitionDuration = function(_) {\n        if (!arguments.length) return transitionDuration;\n        transitionDuration = _;\n        return chart;\n    };\n\n    chart.layers = function() {\n        return layers;\n    }\n\n    chart.margin = function(_) {\n        if (!arguments.length) return margin;\n        margin = _;\n        return chart;\n    };\n\n    chart.width = function(_) {\n        if (!arguments.length) return width;\n        width = _;\n        return chart;\n    };\n\n    chart.height = function(_) {\n        if (!arguments.length) return height;\n        height = _;\n        return chart;\n    };\n\n    return chart;\n}",
+      "language": "JavaScript"
+    },
+    "stream_layers.js": {
+      "type": "application/javascript",
+      "filename": "stream_layers.js",
+      "raw_url": "https://gist.github.com/raw/1965462/7b1f2f3ee15bc2cf9722361ffaf9b92a23c5b693/stream_layers.js",
+      "size": 636,
+      "content": "/* Inspired by Lee Byron's test data generator. */\nfunction stream_layers(n, m, o) {\n  if (arguments.length < 3) o = 0;\n  function bump(a) {\n    var x = 1 / (.1 + Math.random()),\n        y = 2 * Math.random() - .5,\n        z = 10 / (.1 + Math.random());\n    for (var i = 0; i < m; i++) {\n      var w = (i / m - y) * z;\n      a[i] += x * Math.exp(-w * w);\n    }\n  }\n  return d3.range(n).map(function() {\n      var a = [], i;\n      for (i = 0; i < m; i++) a[i] = o + o * Math.random();\n      for (i = 0; i < 5; i++) bump(a);\n      return a.map(stream_index);\n    });\n}\n\nfunction stream_index(d, i) {\n  return {x: i, y: Math.max(0, d)};\n}\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2012-09-09T08:48:39Z",
+  "url": "https://api.github.com/gists/1965462",
+  "git_pull_url": "git://gist.github.com/1965462.git",
+  "id": "1965462"
+}

@@ -1,0 +1,203 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/600164.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "3bd8c9095d4fe23e65aee94434cdd13388db2293",
+      "change_status": {
+        "total": 114,
+        "additions": 17,
+        "deletions": 97
+      },
+      "url": "https://api.github.com/gists/600164/3bd8c9095d4fe23e65aee94434cdd13388db2293",
+      "committed_at": "2010-10-27T16:51:56Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "b3f0b3d50bad49d86faf22ff581f853dce9110ce",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/600164/b3f0b3d50bad49d86faf22ff581f853dce9110ce",
+      "committed_at": "2010-10-27T16:48:31Z"
+    },
+    {
+      "user": null,
+      "version": "60f1e4ef1fc05bfa38099647473aaec6b1c4f727",
+      "change_status": {
+        "total": 5,
+        "additions": 3,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/600164/60f1e4ef1fc05bfa38099647473aaec6b1c4f727",
+      "committed_at": "2010-09-28T00:28:22Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "dbb396e9c94badcda552f91c5d3e39235926b206",
+      "change_status": {
+        "total": 5,
+        "additions": 5,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/600164/dbb396e9c94badcda552f91c5d3e39235926b206",
+      "committed_at": "2010-09-28T00:13:34Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "08ef47bb67888046a4726a578ad0a842408bb118",
+      "change_status": {
+        "total": 66,
+        "additions": 64,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/600164/08ef47bb67888046a4726a578ad0a842408bb118",
+      "committed_at": "2010-09-28T00:12:58Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+        "login": "RandomEtc",
+        "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/RandomEtc",
+        "id": 39635
+      },
+      "version": "dee417b1b5b71c9c031bc2f1a027689c5b0515a4",
+      "change_status": {
+        "total": 322,
+        "additions": 322,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/600164/dee417b1b5b71c9c031bc2f1a027689c5b0515a4",
+      "committed_at": "2010-09-28T00:11:25Z"
+    }
+  ],
+  "description": "Van Wijk & Nuij Zooming",
+  "html_url": "https://gist.github.com/600164",
+  "git_push_url": "git@gist.github.com:600164.git",
+  "comments": 2,
+  "created_at": "2010-09-28T00:27:09Z",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "8eb29630732aecd29eb0d4de23023e12",
+      "login": "RandomEtc",
+      "avatar_url": "https://secure.gravatar.com/avatar/8eb29630732aecd29eb0d4de23023e12?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/RandomEtc",
+      "id": 39635
+    },
+    "git_pull_url": "git://gist.github.com/600144.git",
+    "description": "smooth panning and zooming for polymaps",
+    "html_url": "https://gist.github.com/600144",
+    "git_push_url": "git@gist.github.com:600144.git",
+    "comments": 1,
+    "created_at": "2010-09-28T00:11:25Z",
+    "public": true,
+    "files": {
+      "README.mkd": {
+        "raw_url": "https://gist.github.com/raw/600144/418d6949d8cbb6ef09a1381ca5d2e8ceda226cbf/README.mkd",
+        "type": "text/plain",
+        "filename": "README.mkd",
+        "size": 233,
+        "language": "Markdown"
+      },
+      "map.js": {
+        "raw_url": "https://gist.github.com/raw/600144/82ca754b0016ef2c7b2b11d429b04148ddf285c8/map.js",
+        "type": "application/javascript",
+        "filename": "map.js",
+        "size": 4270,
+        "language": "JavaScript"
+      },
+      "fly.js": {
+        "raw_url": "https://gist.github.com/raw/600144/8f1fd28e9e7414c54002d6339ecb556bff5c42de/fly.js",
+        "type": "application/javascript",
+        "filename": "fly.js",
+        "size": 3905,
+        "language": "JavaScript"
+      },
+      "index.html": {
+        "raw_url": "https://gist.github.com/raw/600144/401fa3710d9ea18eaa998f268f652ff974e14b0a/index.html",
+        "type": "text/html",
+        "filename": "index.html",
+        "size": 1788,
+        "language": "HTML"
+      }
+    },
+    "updated_at": "2010-09-28T01:07:07Z",
+    "url": "https://api.github.com/gists/600144",
+    "id": "600144"
+  },
+  "public": true,
+  "files": {
+    "map.js": {
+      "raw_url": "https://gist.github.com/raw/600164/f3b19f34b02bac9d52f81507840d657e78671bc9/map.js",
+      "type": "application/javascript",
+      "filename": "map.js",
+      "size": 3940,
+      "content": "var po = org.polymaps;\n\nvar map = po.map()\n    .container(document.getElementById(\"map\").appendChild(po.svg(\"svg\")));\n\n/*\n * Load the \"AerialWithLabels\" metadata. \"Aerial\" and \"Road\" also work. For more\n * information about the Imagery Metadata service, see\n * http://msdn.microsoft.com/en-us/library/ff701716.aspx\n * You should register for your own key at https://www.bingmapsportal.com/.\n */\nvar script = document.createElement(\"script\");\nscript.setAttribute(\"type\", \"text/javascript\");\nscript.setAttribute(\"src\", \"http://dev.virtualearth.net\"\n    + \"/REST/V1/Imagery/Metadata/AerialWithLabels\"\n    + \"?key=AmT-ZC3HPevQq5IBJ7v8qiDUxrojNaqbW1zBsKF0oMNEs53p7Nk5RlAuAmwSG7bg\"\n    + \"&jsonp=imageryCallback\");\ndocument.body.appendChild(script);\n\nfunction imageryCallback(data) {\n\n  /* Display each resource as an image layer. */\n  var resourceSets = data.resourceSets;\n  for (var i = 0; i < resourceSets.length; i++) {\n    var resources = data.resourceSets[i].resources;\n    for (var j = 0; j < resources.length; j++) {\n      var resource = resources[j];\n      map.add(po.image()\n          .url(template(resource.imageUrl, resource.imageUrlSubdomains)))\n          .tileSize({x: resource.imageWidth, y: resource.imageHeight});\n    }\n  }\n\n  setUpSearch();\n}\n\n/** Returns a Bing URL template given a string and a list of subdomains. */\nfunction template(url, subdomains) {\n  var n = subdomains.length,\n      salt = ~~(Math.random() * n); // per-session salt\n\n  /** Returns the given coordinate formatted as a 'quadkey'. */\n  function quad(column, row, zoom) {\n    var key = \"\";\n    for (var i = 1; i <= zoom; i++) {\n      key += (((row >> zoom - i) & 1) << 1) | ((column >> zoom - i) & 1);\n    }\n    return key;\n  }\n\n  return function(c) {\n    var quadKey = quad(c.column, c.row, c.zoom),\n        server = Math.abs(salt + c.column + c.row + c.zoom) % n;\n    return url\n        .replace(\"{quadkey}\", quadKey)\n        .replace(\"{subdomain}\", subdomains[server]);\n  };\n}\n\n/////////////////////// search...\n\nfunction setUpSearch() {\n    var search = document.getElementById('search');\n    search.q.disabled = null;\n    search.submit.disabled = null;\n    \n    search.onsubmit = function() {\n        if (search.q.value && search.q.value.length > 0) {        \n            search.q.disabled = 'true';\n            search.submit.disabled = 'true';   \n            doSearch(search.q.value);\n        }\n        return false;\n    }\n}\n\nfunction doSearch(q) {\n    var script = document.createElement(\"script\");\n    script.setAttribute(\"type\", \"text/javascript\");\n    script.setAttribute(\"src\", \"http://dev.virtualearth.net\"\n        + \"/REST/V1/Locations\"\n        + \"?key=AmT-ZC3HPevQq5IBJ7v8qiDUxrojNaqbW1zBsKF0oMNEs53p7Nk5RlAuAmwSG7bg\"\n        + \"&query=\" + encodeURIComponent(q)\n        + \"&jsonp=searchCallback\");\n    document.body.appendChild(script);\n}\n\nfunction searchCallback(rsp) {\n    try {\n        // console.log(rsp);\n    \n        var bbox = rsp.resourceSets[0].resources[0].bbox; // [s,w,n,e]\n\n        // TODO: don't just use the first one, see if there's one nearby to where we're already looking\n\n        // compute the extent in points, scale factor, and center\n        // -- borrowed from map.extent(), thanks Mike\n        var bl = map.locationPoint({ lat: bbox[0], lon: bbox[1] }),\n            tr = map.locationPoint({ lat: bbox[2], lon: bbox[3] }),\n            sizeActual = map.size(),\n            k = Math.max((tr.x - bl.x) / sizeActual.x, (bl.y - tr.y) / sizeActual.y),\n            l = map.pointLocation({x: (bl.x + tr.x) / 2, y: (bl.y + tr.y) / 2});\n    \n        // update the zoom level\n        var z = map.zoom() - Math.log(k) / Math.log(2);\n        \n        animateCenterZoom(map, l, z);\n    }\n    catch(e) {    \n        console.error(e);\n        // TODO: what? reset map position/zoom, perhaps? show error?\n    }\n    var search = document.getElementById('search');    \n    search.q.disabled = null;\n    search.submit.disabled = null;\n}\n",
+      "language": "JavaScript"
+    },
+    "fly.js": {
+      "raw_url": "https://gist.github.com/raw/600164/4dd2285b77014c47527d129d2bf7df1c9f990db4/fly.js",
+      "type": "application/javascript",
+      "filename": "fly.js",
+      "size": 3816,
+      "content": "var interval;\n\nfunction animateCenterZoom(map, l1, z1) {\n\n    var start = po.map.locationCoordinate(map.center()),\n        end   = po.map.locationCoordinate(l1);\n        \n    var c0 = { x: start.column, y: start.row },\n        c1 = { x: end.column, y: end.row };\n\n    // how much world can we see at zoom 0?\n    var w0 = visibleWorld(map);\n\n    // z1 is ds times bigger than this zoom:\n    var ds = Math.pow(2, z1 - map.zoom());\n    \n    // so how much world at zoom z1?\n    var w1 = w0 / ds;\n    \n    if (interval) {\n        clearInterval(interval);\n        interval = 0;\n    }\n    \n    // GO!\n    animateStep(map, c0, w0, c1, w1);\n\n}\n\nfunction visibleWorld(map) {\n    // how much world can we see at zoom 0?\n    var tileCenter = po.map.locationCoordinate(map.center());\n    var topLeft = map.pointCoordinate(tileCenter, { x:0, y:0 });\n    var bottomRight = map.pointCoordinate(tileCenter, map.size())\n    var correction = Math.pow(2, topLeft.zoom);\n    topLeft.column /= correction;\n    bottomRight.column /= correction;\n    topLeft.row /= correction;\n    bottomRight.row /= correction;\n    topLeft.zoom = bottomRight.zoom = 0;\n    return Math.max(bottomRight.column-topLeft.column, bottomRight.row-topLeft.row);\n}\n\n/*\n\n    From \"Smooth and efficient zooming and panning\"\n    by Jarke J. van Wijk and Wim A.A. Nuij\n\n    You only need to understand section 3 (equations 1 through 5) \n    and then you can skip to equation 9, implemented below:\n\n*/\n\nfunction sq(n) { return n*n; }\nfunction dist(a,b) { return Math.sqrt(sq(b.x-a.x)+sq(b.y-a.y)); }\nfunction lerp1(a,b,p) { return a + ((b-a) * p) }\nfunction lerp2(a,b,p) { return { x: lerp1(a.x,b.x,p), y: lerp1(a.y,b.y,p) }; }\nfunction cosh(x) { return (Math.exp(x) + Math.exp(-x)) / 2; }\nfunction sinh(x) { return (Math.exp(x) - Math.exp(-x)) / 2; }\nfunction tanh(x) { return sinh(x) / cosh(x); }\n\nfunction animateStep(map,c0,w0,c1,w1,V,rho) {\n\n    // see section 6 for user testing to derive these values (they can be tuned)\n    if (V === undefined) V = 0.9;\n    if (rho === undefined) rho = 1.42\n\n    // simple interpolation of positions will be fine:\n    var u0 = 0,\n        u1 = dist(c0,c1);\n\n    // i = 0 or 1\n    function b(i) {\n        var n = sq(w1) - sq(w0) + ((i ? -1 : 1) * Math.pow(rho,4) * sq(u1-u0));\n        var d = 2 * (i ? w1 : w0) * sq(rho) * (u1-u0);\n        return n / d;\n    }\n    \n    // give this a b(0) or b(1)\n    function r(b) {\n        return Math.log(-b + Math.sqrt(sq(b)+1));\n    }\n    \n    var r0 = r(b(0)),\n        r1 = r(b(1)),\n        S = (r1-r0) / rho; // \"distance\"\n    \n    function u(s) {\n        var a = w0/sq(rho),\n            b = a * cosh(r0) * tanh(rho*s + r0),\n            c = a * sinh(r0);\n        return b - c + u0;\n    }\n    \n    function w(s) {\n        return w0 * cosh(r0) / cosh(rho*s + r0);\n    }\n\n    // special case\n    if (Math.abs(u0-u1) < 0.000001) {\n        if (Math.abs(w0-w1) < 0.000001) return;\n    \n        var k = w1 < w0 ? -1 : 1;\n        S = Math.abs(Math.log(w1/w0)) / rho;\n        u = function(s) { \n            return u0;\n        }\n        w = function(s) { \n            return w0 * Math.exp(k * rho * s);\n        }\n    }\n\n    var t0 = Date.now();\n    interval = setInterval(function() {\n        var t1 = Date.now();\n        var t = (t1 - t0) / 10000.0;\n        var s = V * t;\n        if (s > S) {\n            s = S;\n            clearInterval(interval);\n            interval = 0;\n        }\n        var us = u(s);\n        var pos = lerp2(c0,c1,(us-u0)/(u1-u0));\n        applyPos(map, pos, w(s));\n    }, 40);\n\n}\n\nfunction applyPos(map,pos,w) {\n\n    var l = po.map.coordinateLocation({ row: pos.y, column: pos.x, zoom: 0 }),\n        x = map.size();\n\n    // how much world can we see at zoom 0?\n    var w0 = visibleWorld(map);\n    \n    map.zoomBy(Math.log(w0/w) / Math.LN2, {x: x.x / 2, y: x.y / 2}, l);\n}\n",
+      "language": "JavaScript"
+    },
+    "README": {
+      "raw_url": "https://gist.github.com/raw/600164/8432826ed9115cfbfc9a88e3c80f5962bafd4750/README",
+      "type": "text/plain",
+      "filename": "README",
+      "size": 74,
+      "content": "Implementation of http://www.win.tue.nl/~vanwijk/zoompan.pdf for Polymaps.",
+      "language": null
+    },
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/600164/338fdf66edb4f3bc08a1bbca456884ef5ae7b40c/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 903,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://github.com/simplegeo/polymaps/raw/v2.3.0/polymaps.js\"></script>\n    <script type=\"text/javascript\" src=\"fly.js\"></script>    \n    <style type=\"text/css\">\n\nhtml, body {\n  width: 100%;\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n  background: #000;\n}\n\nsvg {\n  display: block;\n  overflow: hidden;\n  width: 100%;\n  height: 100%;\n}\n\n#copy {\n  display: none;\n}\n\n#logo {\n  display: none;\n}\n\ninput {\n  position: absolute;\n  right: 60px;\n  top: 10px;\n}\n\nbutton {\n  position: absolute;\n  right: 10px;\n  width: 45px;\n  top: 10px;\n}\n\n    </style>\n  </head>\n  <body id=\"map\">\n    <script type=\"text/javascript\" src=\"map.js\"></script>\n    <div id=\"copy\"></div>\n    <img id=\"logo\"/>\n    <form id=\"search\"><input type=\"search\" size=\"32\" name=\"q\" value=\"London\"/><button type=\"submit\" name=\"submit\" disabled>Go!</button></form>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2010-10-29T00:29:07Z",
+  "url": "https://api.github.com/gists/600164",
+  "id": "600164"
+}

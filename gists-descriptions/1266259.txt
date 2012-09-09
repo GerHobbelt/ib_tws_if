@@ -1,0 +1,75 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+    "login": "biovisualize",
+    "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/biovisualize",
+    "id": 824534
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "user": null,
+      "committed_at": "2011-10-06T02:21:55Z",
+      "version": "80fb9a7cded06a6744191bf7e643e21bf9af3ac0",
+      "url": "https://api.github.com/gists/1266259/80fb9a7cded06a6744191bf7e643e21bf9af3ac0"
+    },
+    {
+      "change_status": {
+        "total": 7,
+        "additions": 4,
+        "deletions": 3
+      },
+      "user": null,
+      "committed_at": "2011-10-06T01:59:10Z",
+      "version": "f2b514882fa78ce7835c66132b5af4c5f8be7aa1",
+      "url": "https://api.github.com/gists/1266259/f2b514882fa78ce7835c66132b5af4c5f8be7aa1"
+    },
+    {
+      "change_status": {
+        "total": 226,
+        "additions": 226,
+        "deletions": 0
+      },
+      "user": null,
+      "committed_at": "2011-10-06T01:35:34Z",
+      "version": "429c58cf3d3618ce37b1d6a81551194003286a1d",
+      "url": "https://api.github.com/gists/1266259/429c58cf3d3618ce37b1d6a81551194003286a1d"
+    }
+  ],
+  "description": "Inkscape d3 tutorial",
+  "html_url": "https://gist.github.com/1266259",
+  "comments": 0,
+  "created_at": "2011-10-06T01:35:34Z",
+  "git_pull_url": "git://gist.github.com/1266259.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1266259/7bd0a5548096d9fba0edd5940a38bdce8e7e0fc4/index.html",
+      "size": 2138,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n<title>D3-Inkscscape tutorial</title>\n</head>\n<body>\n<div id=\"viz\"></div>\n<a href=\"#\" id=\"download\">Download</a>\n<script type=\"text/javascript\">\n\nd3.xml(\"tuto3.svg\", \"image/svg+xml\", function(xml) {\n    var importedNode = document.importNode(xml.documentElement, true);\n    d3.select(\"#viz\").node().appendChild(importedNode);\n    \n    var dataMax = 100;\n    function generateData(num){\n        var randomArray = [];\n        for(var i=0; i<num; i++)randomArray.push(Math.random()*dataMax);\n        return randomArray;\n    }\n    var data = generateData(5);\n    \n    d3.select(\"#button_panel\")\n        .on(\"mousedown\", function(d, i){\n            data = generateData(5);\n            d3.selectAll(\"rect.bar\")\n                .data(data)\n                .transition()\n                .call(setBarHeight);\n        });\n    \n    var barW = 40;\n    var panelSVG = d3.select(\"#chart_panel\");\n    var panelX = ~~panelSVG.attr(\"x\");\n    var panelY = ~~panelSVG.attr(\"y\");\n    var panelW = ~~panelSVG.attr(\"width\");\n    var panelH = ~~panelSVG.attr(\"height\");\n    d3.select(\"#layer1\")\n        .selectAll(\"rect.bar\")\n        .data(data)\n        .enter().append(\"svg:rect\")\n        .attr(\"class\", \"bar\")\n        .attr(\"width\", barW)\n        .attr(\"fill\", \"#5599FF\")        \n        .attr(\"stroke\", \"black\")\n        .attr(\"x\", function(d, i){return panelX+i*panelW/data.length+10;})\n        .call(setBarHeight);\n    function setBarHeight(){        \n        this.attr(\"height\", function(d, i){return d/dataMax*panelH;})        \n        .attr(\"y\", function(d, i){return panelY+panelH-(d/dataMax*panelH);})\n    }\n    \n    d3.select(\"#download\")\n     .on(\"mouseover\", function(){\n        var html = d3.select(\"svg\")\n            .attr(\"version\", 1.1)\n            .attr(\"xmlns\", \"http://www.w3.org/2000/svg\")\n            .node().parentNode.innerHTML;\n        \n        d3.select(this)\n            .attr(\"href-lang\", \"image/svg+xml\")\n            .attr(\"href\", \"data:image/svg+xml;base64,\\n\" + btoa(html));\n    });\n    \n});\n\n</script>\n</body>\n</html>",
+      "language": "HTML"
+    },
+    "tuto3.svg": {
+      "type": "image/svg+xml",
+      "filename": "tuto3.svg",
+      "raw_url": "https://gist.github.com/raw/1266259/c87dcf68e2144c09527dc1ca6f8600e3e868d450/tuto3.svg",
+      "size": 7062,
+      "content": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<!-- Created with Inkscape (http://www.inkscape.org/) -->\n\n<svg\n   xmlns:dc=\"http://purl.org/dc/elements/1.1/\"\n   xmlns:cc=\"http://creativecommons.org/ns#\"\n   xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\n   xmlns:svg=\"http://www.w3.org/2000/svg\"\n   xmlns=\"http://www.w3.org/2000/svg\"\n   xmlns:sodipodi=\"http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd\"\n   xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\"\n   width=\"600\"\n   height=\"480\"\n   viewBox=\"0 0 800 640\"\n   id=\"svg2\"\n   version=\"1.1\"\n   inkscape:version=\"0.48.1 r9760\"\n   sodipodi:docname=\"tuto3.svg\">\n  <defs\n     id=\"defs4\" />\n  <sodipodi:namedview\n     id=\"base\"\n     pagecolor=\"#ffffff\"\n     bordercolor=\"#666666\"\n     borderopacity=\"1.0\"\n     inkscape:pageopacity=\"0.0\"\n     inkscape:pageshadow=\"2\"\n     inkscape:zoom=\"4.8402771\"\n     inkscape:cx=\"470.46413\"\n     inkscape:cy=\"77.479015\"\n     inkscape:document-units=\"px\"\n     inkscape:current-layer=\"layer1\"\n     showgrid=\"false\"\n     inkscape:window-width=\"1280\"\n     inkscape:window-height=\"753\"\n     inkscape:window-x=\"0\"\n     inkscape:window-y=\"1\"\n     inkscape:window-maximized=\"1\"\n     showguides=\"true\"\n     inkscape:guide-bbox=\"true\" />\n  <metadata\n     id=\"metadata7\">\n    <rdf:RDF>\n      <cc:Work\n         rdf:about=\"\">\n        <dc:format>image/svg+xml</dc:format>\n        <dc:type\n           rdf:resource=\"http://purl.org/dc/dcmitype/StillImage\" />\n        <dc:title></dc:title>\n      </cc:Work>\n    </rdf:RDF>\n  </metadata>\n  <g\n     inkscape:groupmode=\"layer\"\n     id=\"layer1\"\n     inkscape:label=\"layer1\">\n    <rect\n       style=\"color:#000000;fill:#d5e5ff;stroke:#2c5aa0;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate\"\n       id=\"rect3765-1-7\"\n       width=\"150\"\n       height=\"50\"\n       x=\"0\"\n       y=\"0\" />\n    <rect\n       style=\"color:#000000;fill:#d5e5ff;stroke:#2c5aa0;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate\"\n       id=\"rect3765-1-7-4\"\n       width=\"150\"\n       height=\"50\"\n       x=\"0\"\n       y=\"320\" />\n    <rect\n       style=\"color:#000000;fill:#f0f6ff;fill-opacity:1;stroke:#2c5aa0;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate\"\n       id=\"list1\"\n       width=\"150\"\n       height=\"270\"\n       x=\"0\"\n       y=\"50\"\n       inkscape:label=\"list1\" />\n    <rect\n       style=\"color:#000000;fill:#f0f6ff;stroke:#2c5aa0;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1\"\n       id=\"list2\"\n       width=\"150\"\n       height=\"270\"\n       x=\"0\"\n       y=\"370\"\n       inkscape:label=\"list2\" />\n    <rect\n       inkscape:label=\"chart_panel\"\n       y=\"140\"\n       x=\"240\"\n       height=\"300\"\n       width=\"80\"\n       id=\"chart_panel-4\"\n       style=\"color:#000000;fill:#f0f6ff;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1\" />\n    <rect\n       inkscape:label=\"chart_panel\"\n       y=\"140\"\n       x=\"620\"\n       height=\"300\"\n       width=\"80\"\n       id=\"chart_panel-4-8\"\n       style=\"color:#000000;fill:#f0f6ff;stroke:none;stroke-width:0.99999994000000003;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1\" />\n    <rect\n       inkscape:label=\"chart_panel\"\n       y=\"60\"\n       x=\"320\"\n       height=\"80\"\n       width=\"300\"\n       id=\"chart_panel-8\"\n       style=\"color:#000000;fill:#f0f6ff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1\" />\n    <rect\n       inkscape:label=\"chart_panel\"\n       y=\"440\"\n       x=\"320\"\n       height=\"80\"\n       width=\"300\"\n       id=\"chart_panel-8-2\"\n       style=\"color:#000000;fill:#f0f6ff;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1\" />\n    <rect\n       inkscape:label=\"button_panel\"\n       y=\"537\"\n       x=\"430\"\n       height=\"32\"\n       width=\"70\"\n       id=\"button_panel\"\n       style=\"color:#000000;fill:#5599ff;stroke:#2c5aa0;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;fill-opacity:1\" />\n    <text\n       xml:space=\"preserve\"\n       style=\"font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans\"\n       x=\"436.29581\"\n       y=\"559.00488\"\n       id=\"text4084\"\n       sodipodi:linespacing=\"125%\"\n       pointer-events=\"none\"><tspan\n         style=\"font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Tahoma;-inkscape-font-specification:Tahoma\"\n         id=\"tspan4114\">Update</tspan></text>\n    <rect\n       style=\"color:#000000;fill:#d5e5ff;stroke:#2c5aa0;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate\"\n       id=\"chart_panel\"\n       width=\"300\"\n       height=\"300\"\n       x=\"320\"\n       y=\"140\"\n       inkscape:label=\"chart_panel\" />\n    <rect\n       style=\"color:#000000;fill:none;stroke:#2c5aa0;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate\"\n       id=\"rect3765-1\"\n       width=\"149.99995\"\n       height=\"640\"\n       x=\"0\"\n       y=\"0\" />\n    <path\n       style=\"color:#000000;fill:#d5e5ff;stroke:#2c5aa0;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate\"\n       d=\"M 0 0 L 0 640 L 800 640 L 800 0 L 0 0 z M 8.1875 8.1875 L 791.8125 8.1875 L 791.8125 631.8125 L 8.1875 631.8125 L 8.1875 8.1875 z \"\n       id=\"rect3765\" />\n  </g>\n</svg>\n",
+      "language": "XML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1266259.git",
+  "updated_at": "2011-10-06T01:35:34Z",
+  "url": "https://api.github.com/gists/1266259",
+  "id": "1266259"
+}

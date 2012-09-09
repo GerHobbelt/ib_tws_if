@@ -1,0 +1,51 @@
+{
+  "git_push_url": "git@gist.github.com:1488680.git",
+  "forks": [
+
+  ],
+  "updated_at": "2011-12-17T00:37:18Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1488680",
+  "files": {
+    "d3donut.js": {
+      "type": "application/javascript",
+      "filename": "d3donut.js",
+      "language": "JavaScript",
+      "raw_url": "https://gist.github.com/raw/1488680/5a6df889040c422b86cb39b98193490825c944e1/d3donut.js",
+      "content": "var donutVal = 85;\n    \n    \n    var donutFull = 100 - donutVal;\n    var d3_category_socialmedia = [\"#0054a6\", \"#dbdbdb\"];\n    \n    \n    if(donutVal < 50) {\n    \tdonutVal = -donutVal;\n    \tdonutFull = -donutFull;\n    }\n    \n\t\nvar w = 400,\n    h = 400,\n    r = Math.min(w, h) / 2,\n    data = [donutVal, donutFull];//d3.range(10).map(Math.random).sort(d3.descending),\n    color = d3.scale.ordinal().range(d3_category_socialmedia),\n    arc = d3.svg.arc().outerRadius(r),\n    donut = d3.layout.pie();\n    \nvar vis = d3.select(\"body\").append(\"svg\")\n    .data([data])\n    .attr('class', 'somechart')\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvis.append(\"g\").attr(\"class\", \"chartBG\").attr(\"transform\", \"translate(\" + r + \",\" + r + \")\").append(\"path\")\n\t.attr(\"fill\", \"#dbdbdb\")\n\t.attr(\"d\", 'M0,200A200,200 0 1,1 0,-200A200,200 0 1,1 0,200M0,120A120,120 0 1,0 0,-120A120,120 0 1,0 0,120Z');\n\n\nvar arcs = vis.selectAll(\"g.arc\")\n    .data(donut)\n  .enter().append(\"g\")\n    .attr(\"class\", \"arc\")\n    .attr(\"transform\", \"translate(\" + r + \",\" + r + \")\");\n    \n\n\n\nvar paths = arcs.append(\"path\")\n    .attr(\"fill\", function(d, i) {return color(i); });\n\n\n\n\npaths.transition()\n    .duration(1000)\n    .attrTween(\"d\", tweenPie);\n\nfunction tweenPie(b) {\n  b.innerRadius = r * .6;\n  var i = d3.interpolate({startAngle: 0, endAngle: -0}, b);\n  return function(t) {\n    return arc(i(t));\n  };\n}\n\n\n\n// Labels\nvar center_group = vis.append(\"svg:g\")\n  .attr(\"class\", \"center_group\")\n  .attr(\"transform\", \"translate(\" + (w/2) + \",\" + (h/2) + \")\");\n\nvar totalLabel = center_group.append(\"svg:text\")\n  .attr(\"class\", \"label\")\n  .attr(\"dy\", -15)\n  .attr(\"text-anchor\", \"middle\") // text-align: right\n  .text(\"TOTAL\");\n\n//TOTAL TRAFFIC VALUE\nvar totalValue = center_group.append(\"svg:text\")\n  .attr(\"class\", \"total\")\n  .attr(\"dy\", 7)\n  .attr(\"text-anchor\", \"middle\") // text-align: right\n  .text(\"Waiting...\");\n\n//UNITS LABEL\nvar totalUnits = center_group.append(\"svg:text\")\n  .attr(\"class\", \"units\")\n  .attr(\"dy\", 21)\n  .attr(\"text-anchor\", \"middle\") // text-align: right\n  .text(\"kb\");\n\n\ntotalValue.text(function(){return '50';});\ntotalUnits.text(function(){return '%';});",
+      "size": 2149
+    }
+  },
+  "user": {
+    "avatar_url": "https://secure.gravatar.com/avatar/d0864f53f25176591136413426989c3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "gravatar_id": "d0864f53f25176591136413426989c3c",
+    "url": "https://api.github.com/users/michaelaguiar",
+    "login": "michaelaguiar",
+    "id": 138890
+  },
+  "history": [
+    {
+      "version": "c665356ce62ddbc0a34f6179829a558012e54ec1",
+      "change_status": {
+        "total": 89,
+        "deletions": 0,
+        "additions": 89
+      },
+      "committed_at": "2011-12-17T00:37:18Z",
+      "user": {
+        "avatar_url": "https://secure.gravatar.com/avatar/d0864f53f25176591136413426989c3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "gravatar_id": "d0864f53f25176591136413426989c3c",
+        "url": "https://api.github.com/users/michaelaguiar",
+        "login": "michaelaguiar",
+        "id": 138890
+      },
+      "url": "https://api.github.com/gists/1488680/c665356ce62ddbc0a34f6179829a558012e54ec1"
+    }
+  ],
+  "url": "https://api.github.com/gists/1488680",
+  "description": "d3.js donut chart test",
+  "git_pull_url": "git://gist.github.com/1488680.git",
+  "id": "1488680",
+  "comments": 0,
+  "created_at": "2011-12-17T00:37:18Z"
+}

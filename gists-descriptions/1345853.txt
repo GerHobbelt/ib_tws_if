@@ -1,0 +1,161 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "d7d59404376a800cdb6607556a0d2e03f6c80144",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1345853/d7d59404376a800cdb6607556a0d2e03f6c80144",
+      "committed_at": "2012-08-10T14:45:38Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "6547eb7fda7af16250fb5c993432eb826ff5f324",
+      "change_status": {
+        "total": 5,
+        "additions": 4,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1345853/6547eb7fda7af16250fb5c993432eb826ff5f324",
+      "committed_at": "2012-08-10T14:45:03Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "0056481048e0bd90af9e64ba3053789ce0a9a83e",
+      "change_status": {
+        "total": 25,
+        "additions": 11,
+        "deletions": 14
+      },
+      "url": "https://api.github.com/gists/1345853/0056481048e0bd90af9e64ba3053789ce0a9a83e",
+      "committed_at": "2012-08-10T14:42:59Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "6062353d5bb6e9ad1fc142525ed1c22fad3ae20a",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1345853/6062353d5bb6e9ad1fc142525ed1c22fad3ae20a",
+      "committed_at": "2011-11-07T19:20:06Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "ad82459607c0a0ce3cf68a6150175ad18698d3a4",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1345853/ad82459607c0a0ce3cf68a6150175ad18698d3a4",
+      "committed_at": "2011-11-07T19:15:08Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "b3bb32a3b0d04af406b0429b37a7e7516fe07ad4",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1345853/b3bb32a3b0d04af406b0429b37a7e7516fe07ad4",
+      "committed_at": "2011-11-07T19:14:50Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "d61240009636d3a979d24f336309b5a1c09b3026",
+      "change_status": {
+        "total": 60,
+        "additions": 60,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1345853/d61240009636d3a979d24f336309b5a1c09b3026",
+      "committed_at": "2011-11-07T19:13:54Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:1345853.git",
+  "description": "Transform Transitions",
+  "html_url": "https://gist.github.com/1345853",
+  "comments": 0,
+  "created_at": "2011-11-07T19:13:54Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1345853/c767b86d9e1cce0a0d99bd490d4675a88b2a78ac/index.html",
+      "size": 1182,
+      "content": "<!DOCTYPE html>\n<meta charset=\"utf-8\">\n<title>Transform Transitions</title>\n<script src=\"http://d3js.org/d3.v2.min.js?2.10.0\"></script>\n<style>\n\nbody {\n  margin: 0;\n}\n\nrect {\n  stroke: #fff;\n  stroke-width: .1px;\n}\n\n</style>\n<body>\n<script>\n\nvar w = 960,\n    h = 500,\n    z = 20,\n    x = w / z,\n    y = h / z;\n\nvar svg = d3.select(\"body\").append(\"svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nsvg.selectAll(\"rect\")\n    .data(d3.range(x * y))\n  .enter().append(\"rect\")\n    .attr(\"transform\", translate)\n    .attr(\"width\", z)\n    .attr(\"height\", z)\n    .style(\"fill\", function(d) { return d3.hsl(d % x / x * 360, 1, Math.floor(d / x) / y); })\n    .on(\"mouseover\", mouseover);\n\nfunction translate(d) {\n  return \"translate(\" + (d % x) * z + \",\" + Math.floor(d / x) * z + \")\";\n}\n\nfunction mouseover(d) {\n  this.parentNode.appendChild(this);\n\n  d3.select(this)\n      .style(\"pointer-events\", \"none\")\n    .transition()\n      .duration(750)\n      .attr(\"transform\", \"translate(480,480)scale(23)rotate(180)\")\n    .transition()\n      .delay(1500)\n      .attr(\"transform\", \"translate(240,240)scale(0)\")\n      .style(\"fill-opacity\", 0)\n      .remove();\n}\n\n    </script>\n  </body>\n</html>",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/1345853/3c1b6e4bde10cbaa7eaac6fb14f73ae5decccddd/README.md",
+      "size": 554,
+      "content": "[D3 2.5.0](http://mbostock.github.com/d3/) supports [matrix decomposition for animating](http://dev.w3.org/csswg/css3-2d-transforms/#matrix-decomposition) 2D transforms. Any SVG transform attribute is decomposed into a canonical representation of translate, rotate, scale and skew. This allows two arbitrary transforms of different types to be transitioned smoothly—say from a simple translate to a scale plus rotate. These features are supported automatically by your browser for CSS3 transitions, but now you can have them in JavaScript for SVG, too!",
+      "language": "Markdown"
+    }
+  },
+  "updated_at": "2011-11-07T19:13:54Z",
+  "url": "https://api.github.com/gists/1345853",
+  "id": "1345853",
+  "git_pull_url": "git://gist.github.com/1345853.git"
+}

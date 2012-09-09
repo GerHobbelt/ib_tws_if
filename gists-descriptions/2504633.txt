@@ -1,0 +1,285 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "940f8a630f1f0928c25cc4cbcfce761357d47fca",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/2504633/940f8a630f1f0928c25cc4cbcfce761357d47fca",
+      "committed_at": "2012-09-09T08:44:26Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "b383fe64d6ceda7908d5e5ba847cf4a4cf6255b5",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/2504633/b383fe64d6ceda7908d5e5ba847cf4a4cf6255b5",
+      "committed_at": "2012-04-27T02:14:10Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "3fa78966c429f8be785e6b2c81098674e468d97a",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/2504633/3fa78966c429f8be785e6b2c81098674e468d97a",
+      "committed_at": "2012-04-27T02:10:45Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "81bd101f4a38b5295327ff4029570593e0cb9a79",
+      "change_status": {
+        "total": 16,
+        "additions": 13,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/2504633/81bd101f4a38b5295327ff4029570593e0cb9a79",
+      "committed_at": "2012-04-27T02:07:03Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "902b63c397ae4b903de5f95d6c7a63fed775d5a0",
+      "change_status": {
+        "total": 14,
+        "additions": 11,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/2504633/902b63c397ae4b903de5f95d6c7a63fed775d5a0",
+      "committed_at": "2012-04-27T01:51:15Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "ddeb972d5a365165d69e7a7aff7f3dd21578ecd4",
+      "change_status": {
+        "total": 10,
+        "additions": 8,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/2504633/ddeb972d5a365165d69e7a7aff7f3dd21578ecd4",
+      "committed_at": "2012-04-27T01:45:47Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "fdf1d609196af97b880274264f5e18d2fd1e5f85",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/2504633/fdf1d609196af97b880274264f5e18d2fd1e5f85",
+      "committed_at": "2012-04-27T01:39:11Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "c17dca0d52c2d2c9781d6b8200b646a8d929e2a3",
+      "change_status": {
+        "total": 13,
+        "additions": 13,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/2504633/c17dca0d52c2d2c9781d6b8200b646a8d929e2a3",
+      "committed_at": "2012-04-27T01:35:40Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "49da3263e00ed2163baf4f18bbdbb7f0e422262f",
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "url": "https://api.github.com/gists/2504633/49da3263e00ed2163baf4f18bbdbb7f0e422262f",
+      "committed_at": "2012-04-27T00:49:14Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "997cccb99a3cf0fd54927aecea256e333fe578c4",
+      "change_status": {
+        "total": 9,
+        "additions": 6,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/2504633/997cccb99a3cf0fd54927aecea256e333fe578c4",
+      "committed_at": "2012-04-27T00:39:28Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:2504633.git",
+  "description": "D3 PJAX (& execute JS loaded through the d3.html() request as well)",
+  "html_url": "https://gist.github.com/2504633",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+      "login": "mbostock",
+      "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/mbostock",
+      "id": 230541
+    },
+    "git_push_url": "git@gist.github.com:1367999.git",
+    "description": "D3 PJAX",
+    "html_url": "https://gist.github.com/1367999",
+    "comments": 0,
+    "created_at": "2011-11-15T19:07:58Z",
+    "public": true,
+    "files": {
+      "c.html": {
+        "type": "text/html",
+        "filename": "c.html",
+        "raw_url": "https://gist.github.com/raw/1367999/13f7610a4ff524525321f5c524b208be4f31de78/c.html",
+        "size": 440,
+        "language": "HTML"
+      },
+      "a.html": {
+        "type": "text/html",
+        "filename": "a.html",
+        "raw_url": "https://gist.github.com/raw/1367999/e40baf8786d88a051fc4188609678e74e7771ccb/a.html",
+        "size": 560,
+        "language": "HTML"
+      },
+      "b.html": {
+        "type": "text/html",
+        "filename": "b.html",
+        "raw_url": "https://gist.github.com/raw/1367999/cb5448af3061215d5bda101aed5ab51dff073a0e/b.html",
+        "size": 714,
+        "language": "HTML"
+      },
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/1367999/d1d5a63f5adae76eb53daa512c6aa0596737dfc8/index.html",
+        "size": 1089,
+        "language": "HTML"
+      }
+    },
+    "updated_at": "2011-11-15T19:07:58Z",
+    "url": "https://api.github.com/gists/1367999",
+    "id": "1367999",
+    "git_pull_url": "git://gist.github.com/1367999.git"
+  },
+  "comments": 0,
+  "created_at": "2012-04-27T00:35:32Z",
+  "public": true,
+  "files": {
+    "c.html": {
+      "type": "text/html",
+      "filename": "c.html",
+      "raw_url": "https://gist.github.com/raw/2504633/707a69a5b2a4dfe66ea5251510204698dbb6a19e/c.html",
+      "size": 689,
+      "content": "<!DOCTYPE html>\n<html>\n  <body>\n    <div id=\"main\">\n      <ul>\n        <li><a href=\"a.html\">Anteater</a></li>\n        <li><a href=\"b.html\">Baobao</a></li>\n        <li><b>Cuttlefish</b></li>\n      </ul>\n      <p>This section was generated at <script type=\"text/javascript\" id=\"c1\"> \n        /* document.write(\"[C]: \" + new Date()); */ \n        d3.select('#c1').replaceWtext(\"[C]: \" + new Date()); \n        console.log(\"C\");\n      </script>.</p>\n      <p>Cuttlefish are marine animals of the order Sepiida. They belong to the class Cephalopoda (which also includes squid, octopuses, and nautiluses). Despite their name, cuttlefish are not fish but molluscs.</p>\n    </div>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/2504633/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "a.html": {
+      "type": "text/html",
+      "filename": "a.html",
+      "raw_url": "https://gist.github.com/raw/2504633/375086833d16c5922ac0bb77df95545d58fdfe58/a.html",
+      "size": 809,
+      "content": "<!DOCTYPE html>\n<html>\n  <body>\n    <div id=\"main\">\n      <ul>\n        <li><b>Anteater</b></li>\n        <li><a href=\"b.html\">Baobao</a></li>\n        <li><a href=\"c.html\">Cuttlefish</a></li>\n      </ul>\n      <p>This section was generated at <script type=\"text/javascript\" id=\"a1\"> \n        /* document.write(\"[A]: \" + new Date()); */ \n        d3.select('#a1').replaceWtext(\"[A]: \" + new Date()); \n        console.log(\"A\");\n      </script>.</p>\n      <p>Anteaters, also known as antbear, are the four mammal species of the suborder Vermilingua (meaning \"worm tongue\") commonly known for eating ants and termites. Together with the sloths, they compose the order Pilosa. The name \"anteater\" is also colloquially applied to the unrelated aardvark, numbat, echidna, and pangolin.</p>\n    </div>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "b.html": {
+      "type": "text/html",
+      "filename": "b.html",
+      "raw_url": "https://gist.github.com/raw/2504633/a5792db0820960b4e8245a0c5e35fa5d979f7367/b.html",
+      "size": 963,
+      "content": "<!DOCTYPE html>\n<html>\n  <body>\n    <div id=\"main\">\n      <ul>\n        <li><a href=\"a.html\">Anteater</a></li>\n        <li><b>Baobab</b></li>\n        <li><a href=\"c.html\">Cuttlefish</a></li>\n      </ul>\n      <p>This section was generated at <script type=\"text/javascript\" id=\"b1\"> \n        /* document.write(\"[B]: \" + new Date()); */ \n        d3.select('#b1').replaceWtext(\"[B]: \" + new Date()); \n        console.log(\"B\");\n      </script>.</p>\n      <p>Adansonia is a genus of eight species of tree, six native to Madagascar, one native to mainland Africa and the Arabian Peninsula and one to Australia. The mainland African species also occurs on Madagascar, but it is not a native of that island. A typical common name is baobab. Other common names include boab, boaboa, bottle tree, upside-down tree, and monkey bread tree. The generic name honours Michel Adanson, the French naturalist and explorer who described A. digitata.</p>\n    </div>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/2504633/c1bd9d2baa561ca0da95bb5293133225e8a556fd/index.html",
+      "size": 1923,
+      "content": "<!DOCTYPE html>\n<html>\n  <body>\n    This page was generated at <script type=\"text/javascript\">document.write(new Date()); console.log(\"main\");</script>.\n    <div id=\"main\">\n      <ul>\n        <li><a href=\"a.html\">Anteater</a></li>\n        <li><a href=\"b.html\">Baobao</a></li>\n        <li><a href=\"c.html\">Cuttlefish</a></li>\n      </ul>\n      Hello, PJAX!\n    </div>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.5.0\"></script>\n    <script type=\"text/javascript\">\n\npjax(\"ul li a\", \"#main\");\n\nfunction pjax(links, content) {\n  d3.selectAll(links).on(\"click\", function() {\n    history.pushState(this.href, this.textContent, this.href);\n    load(this.href);\n    d3.event.preventDefault();\n  });\n\n  function load(href) {\n    d3.html(href, function(fragment) {\n      var target = d3.select(content).node();\n      target.parentNode.replaceChild(d3.select(fragment).select(content).node(), target);\n      d3.select(content).selectAll('script').each(function() {\n        evalScript(this);\n      });\n      pjax(links, content); // reapply\n    });\n  }\n\n  d3.select(window).on(\"popstate\", function() {\n    if (d3.event.state) load(d3.event.state);\n  });\n}\n\nvar evalScript = function(node){\n  var p, f, id, n = document.createElement(\"script\");\n  n.type = \"text/javascript\";\n  n.text = node.innerText;\n  f = node.getAttribute('src');\n  if (f) n.setAttribute('src', f);\n  id = node.getAttribute('id');\n  if (id) n.setAttribute('id', id);\n  p = node.parentNode;\n  p.replaceChild(n, node);\n};\n\n// Hacky Becky to fake/replace document.write() which will screw you over when you're doing it in XHR loaded+eval()ed code.\nd3.selection.prototype.replaceWtext = function(txt) {\n  var o = this.node(), p, id, n = document.createElement(\"span\");\n  n.textContent = txt;\n  id = o.getAttribute('id');\n  if (id) n.setAttribute('id', id);\n  p = o.parentNode;\n  p.replaceChild(n, o);\n};\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2012-09-09T08:49:46Z",
+  "url": "https://api.github.com/gists/2504633",
+  "id": "2504633",
+  "git_pull_url": "git://gist.github.com/2504633.git"
+}

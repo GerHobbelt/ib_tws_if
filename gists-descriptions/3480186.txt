@@ -1,0 +1,270 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "git_push_url": "git@gist.github.com:3480186.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "0a84eb98b5f7b31f8f4615b0d725d1fde16788ff",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "committed_at": "2012-09-09T08:44:36Z",
+      "url": "https://api.github.com/gists/3480186/0a84eb98b5f7b31f8f4615b0d725d1fde16788ff"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "43cdaf58dac504c88880e98693b422b3c4f529df",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-08-27T10:47:18Z",
+      "url": "https://api.github.com/gists/3480186/43cdaf58dac504c88880e98693b422b3c4f529df"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "84bea8aacb5fd1f9b8807cd207ce64ad4e1d7e4c",
+      "change_status": {
+        "total": 14,
+        "additions": 12,
+        "deletions": 2
+      },
+      "committed_at": "2012-08-27T10:46:21Z",
+      "url": "https://api.github.com/gists/3480186/84bea8aacb5fd1f9b8807cd207ce64ad4e1d7e4c"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "f7e66d476b71f12df5bf64cb3fc1d4afdb088ac2",
+      "change_status": {
+        "total": 18,
+        "additions": 18,
+        "deletions": 0
+      },
+      "committed_at": "2012-08-27T10:36:02Z",
+      "url": "https://api.github.com/gists/3480186/f7e66d476b71f12df5bf64cb3fc1d4afdb088ac2"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "95cff48cb12ada894af6c9e45c0a818361570634",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "committed_at": "2012-08-27T10:16:38Z",
+      "url": "https://api.github.com/gists/3480186/95cff48cb12ada894af6c9e45c0a818361570634"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "07ab002a4b365a19712e5aa7857e1c886dc11aea",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-08-27T10:14:31Z",
+      "url": "https://api.github.com/gists/3480186/07ab002a4b365a19712e5aa7857e1c886dc11aea"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "c2e5dfe9a66f072c80627d59cc6501a9fec7fd37",
+      "change_status": {
+        "total": 952,
+        "additions": 476,
+        "deletions": 476
+      },
+      "committed_at": "2012-08-27T10:12:36Z",
+      "url": "https://api.github.com/gists/3480186/c2e5dfe9a66f072c80627d59cc6501a9fec7fd37"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "c625e9e552b291b1f861a1c96104093d14ea76f6",
+      "change_status": {
+        "total": 6,
+        "additions": 3,
+        "deletions": 3
+      },
+      "committed_at": "2012-08-27T10:11:03Z",
+      "url": "https://api.github.com/gists/3480186/c625e9e552b291b1f861a1c96104093d14ea76f6"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "f46ff69452ac17d0597ea6b74317dded5aced4d7",
+      "change_status": {
+        "total": 173,
+        "additions": 128,
+        "deletions": 45
+      },
+      "committed_at": "2012-08-27T10:10:43Z",
+      "url": "https://api.github.com/gists/3480186/f46ff69452ac17d0597ea6b74317dded5aced4d7"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "75ef2567c728e4f41630b7a7b7cb1497fd25944a",
+      "change_status": {
+        "total": 141,
+        "additions": 103,
+        "deletions": 38
+      },
+      "committed_at": "2012-08-27T07:27:13Z",
+      "url": "https://api.github.com/gists/3480186/75ef2567c728e4f41630b7a7b7cb1497fd25944a"
+    }
+  ],
+  "fork_of": {
+    "user": {
+      "gravatar_id": "6592686863246192c7fd1ff54773fd3c",
+      "login": "lgrammel",
+      "avatar_url": "https://secure.gravatar.com/avatar/6592686863246192c7fd1ff54773fd3c?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/lgrammel",
+      "id": 205036
+    },
+    "git_push_url": "git@gist.github.com:1963983.git",
+    "description": "Interactive Streamgraph D3",
+    "comments": 0,
+    "created_at": "2012-03-03T02:51:19Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1963983",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/1963983/ed2be5ec4b094fd90b7425013ebc61529d53c417/index.html",
+        "size": 1803,
+        "language": "HTML"
+      },
+      "stream-chart.js": {
+        "type": "application/javascript",
+        "filename": "stream-chart.js",
+        "raw_url": "https://gist.github.com/raw/1963983/275cc2d11e88ad5442231f588d555138636f4b9f/stream-chart.js",
+        "size": 3375,
+        "language": "JavaScript"
+      },
+      "stream_layers.js": {
+        "type": "application/javascript",
+        "filename": "stream_layers.js",
+        "raw_url": "https://gist.github.com/raw/1963983/7b1f2f3ee15bc2cf9722361ffaf9b92a23c5b693/stream_layers.js",
+        "size": 636,
+        "language": "JavaScript"
+      }
+    },
+    "updated_at": "2012-03-03T02:51:19Z",
+    "url": "https://api.github.com/gists/1963983",
+    "git_pull_url": "git://gist.github.com/1963983.git",
+    "id": "1963983"
+  },
+  "description": "Interactive Streamgraph D3",
+  "comments": 0,
+  "created_at": "2012-08-26T14:27:58Z",
+  "public": true,
+  "html_url": "https://gist.github.com/3480186",
+  "files": {
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "raw_url": "https://gist.github.com/raw/3480186/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/3480186/7db8a3032b23f431f73833e103ce809e3fe6a426/index.html",
+      "size": 21034,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>Streamgraph</title>\n    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700,400|Rock+Salt' rel='stylesheet' type='text/css'>\n    <script type=\"text/javascript\" src=\"http://d3js.org/d3.v2.js\"></script>\n    <script type=\"text/javascript\" src=\"stream_layers.js\"></script>\n    <style>\n  #chart {\n    font: 12px/18px 'Rock Salt',sans-serif;\n    /*\nfont-family: 'Pt Sans Narrow' !important;\nfont-style: normal;\nfont-weight: 400;\n    */\n  }\n\n  button {\n    font: 14px 'Rock Salt',sans-serif;\n    background-color: #222;\n    background-image: -moz-linear-gradient(top, rgba(255,255,255,.25), rgba(255,255,255,.11));\n    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba(255,255,255,.25)),color-stop(1, rgba(255,255,255,.11)));\n    background-image: -webkit-linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.11));\n    color: #fff;\n    text-rendering: optimizeLegibility;\n    text-shadow: 0 -1px 1px #222;\n    padding: 3px 10px 3px 10px;\n    border: 0;\n    border-radius: 0;\n    border-bottom: 1px solid #222;\n    margin: 0;\n    -moz-box-shadow: 0 1px 3px #999;\n    -webkit-box-shadow: 0 1px 3px #999;\n\n    display: inline-block;\n  }\n\n  button.first {\n    border-top-left-radius: 5px;\n    border-bottom-left-radius: 5px;\n  }\n\n  button.last {\n    border-top-right-radius: 5px;\n    border-bottom-right-radius: 5px;\n  }\n\n  button.active {\n    background-color: rgb(65,102,133);\n  }\n\n  button:hover {\n    background-color: steelblue;\n  }\n\n  /* SVG styles */\n  rect.wrapper\n  {\n    fill: none;\n  }\n  .hover rect.wrapper\n  {\n    fill: rgba(255, 102, 0, 0.3);\n  }\n  text\n  {\n    /* font: 12px 'PT Sans Narrow',sans-serif; */\n    fill: black;\n  }\n  text.bbox_hack\n  {\n    font: 24px 'Rock Salt',sans-serif;\n  }\n  .tags_in_stream text\n  {\n    fill: white;\n    /* fill: red;      -- use this while debugging the graphic placement of the in-stream tags */\n  }\n  svg\n  {\n    font: 14px 'PT Sans Narrow',sans-serif;\n  }\n\n    </style>\n</head>\n<body>\n    <div id=\"chart\">\n        <h2>Known issues:</h2>\n        <ul>\n        <li>WebKit, FF and the rest suffer from <a href=\"http://paulirish.com/2009/fighting-the-font-face-fout/\">FOUT</a>; we cope with it by hiding and monitoring the SVG <code>.getBBox()</code> call return values as those are what's important to us: see the WARNING comments in the code.\n        <li>Mouseover any stream strip when you just updated and the update transition will halt, so that you're still stuck with the 'old' data. Click 'update' twice more, not moving the mouse outside the button, to recover. (Yes, all streamgraph examples in github / gist suffer from this AFAICT. Haven't investigated a fix, yet.)\n        </ul>\n        <h2>Use / Play</h2>\n        <p>Hover over the stream strips, the legenda and see the fades; click on either of 'em to highlight one or more streams. Hit the\n        <button class=\"first last\" onclick=\"transition(); return false;\">\n            Update\n        </button>\n        button to switch between the two datasets.\n\n    </div>\n    <script>\nvar n = 15, // number of layers\n    m = 10, // number of samples per layer\n    datagen = stream_layers,\n    raw_data0 = datagen(n, m),\n    raw_data1 = datagen(n, m),\n    data0 = d3.layout.stack().offset(\"wiggle\")(raw_data0),\n    data1 = d3.layout.stack().offset(\"wiggle\")(raw_data1),\n    tags,\n    color = d3.interpolateRgb(\"#aad\", \"#556\"),\n    strip_toggled = [];\n\nvar w = 960,\n    h = 200,\n    top_height = 40,  /* WARNING: can't use the name 'top' here as that will break in Chrome20, which has that naem reserved for an internal, non-overridable function! So we name this one top_height */\n    mx = m - 1,\n    my = d3.max(data0.concat(data1), function(d) {\n      return d3.max(d, function(d) {\n        return d.y0 + d.y;\n      });\n    }),\n    // convert values to pixels:\n    y = function(v) {\n      return v * (h - top_height) / my;\n    },\n    x = function(v) {\n      return v * w / mx;\n    };\n\nvar area = d3.svg.area()\n    .x(function(d) { return x(d.x); })\n    .y0(function(d) { return h - y(d.y0); })\n    .y1(function(d) { return h - y(d.y + d.y0); })\n    .interpolate('linear');\n\nvar graph = d3.select(\"#chart\")\n  .append(\"svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvar header = graph\n  .append(\"g\")\n  .attr(\"class\", \"topside\")\n  .style(\"visibility\", \"hidden\"); // flicker fix for the d3.timer+getBBox further below.\n\n// print the tags at the top:\nvar topside_sel = header.selectAll(\"g\")\n    .data(tags = names_gen(n))   // w and h are used by names_gen() but are not defined at the time tags var is declared above, so we init tags here!\n  .enter()\n    .append(\"g\")\n    .attr(\"class\", \"tag_top\")\n    .on('click', function(d, i){\n      var c;\n      // undefined is treated as if it was 'false'\n      strip_toggled[i] = !strip_toggled[i];\n      // set/reset the color:\n      c = (strip_toggled[i] ? '#ff6600' : color(i / n));\n\n      // tweak the top_tag rect:\n      //d3.select(this).select(\"rect\") -- needs class or id to pick the right one; less coding work to copy&paste:\n      top_marker_rects\n        .each(function(d, idx) {\n          if (idx == i)\n            d3.select(this).style(\"fill\", c);\n        });\n\n      // also tweak the stream strip:\n      stream_strips\n        .each(function(d, idx) {\n          if (idx == i)\n            d3.select(this).style(\"fill\", c);\n        });\n    })\n    // set opacity up right now so on transition it'll start at 1.0:\n    .attr(\"opacity\", 1)\n    .on(\"mouseover\", function(d, i) {\n      // you'll get a slightly different animation when hovering here, rather than over the strips themselves.\n      // Here we only 'fade' the strips, but highlight the tag, instead of fade out the others.\n      stream_strips\n        .transition()\n          .duration(1000)\n          .attr(\"opacity\", function(d, j) {\n            return j != i ? 0.2 : 1;\n          });\n      d3.select(this)\n        .classed(\"hover\", true);\n    })\n    .on(\"mouseout\", function(d, i) {\n      stream_strips\n        .transition()\n          .duration(1000)\n          .attr(\"opacity\", 1);\n      d3.select(this)\n        .classed(\"hover\", false);\n    });\n\nvar top_wrappers = topside_sel\n  .append(\"rect\")\n  .attr(\"x\", 0)\n  .attr(\"y\", 0)\n  .classed(\"wrapper\", true);\n\nvar top_marker_rects = topside_sel\n  .append(\"rect\")\n  .style(\"fill\", function(d, i) {\n    return color(i / n);\n  })\n  .attr(\"width\", 10)\n  .attr(\"height\", 10)\n  .attr(\"x\", 1)\n  .attr(\"y\", 0);\n\nvar top_marker_texts = topside_sel\n  .append(\"text\")\n  .text(function(d, i) {\n    return d.name;\n  })\n  .attr(\"x\", 15)\n  .attr(\"y\", 10);\n\n/*\nWARNING: this is nasty hack to make sure the top texts get rendered, before we call\n         .getBBox() in correct_tags_topside_positioning() for those nodes: as per\n         spec getBBox only takes the actual CSS-styled font metrics into account\n         once the node has been rendered.\n\n         Not only do we have (minimal) risk of observing screen flicker now, but it\n         also means that we can only search for suitably large areas in the stream strips\n         and place the tags there ONLY ONCE this timer has fired, or that code would\n         fail by using the wrong (guestimated) textbox width/height values!\n\n         Anti-flicker through style=\"visibility: hidden;\"\n\nWARNING: using a very short delay, e.g. 1 or 10, will FAIL TO DELIVER on Safari/Win at least:\n         for some insane reason you must delay longer, I guess they want one VBL at least,\n         but this sort of 'guess my timeout, buster!' behaviour gives me the Willies.\n\n         Tested to FAIL on Safari 5/Win for delays up to 50 msec!\n\n         As 100 msecs isn't always going to cut it, we do the HACK thing and place a text\n         outside the view, then check its BBox results for a change to detect when bloody\n         Safari has finally updated its internal SVG state.\n\n         Turns out it's all due to the WebFonts in use here.\n\n         https://developers.google.com/webfonts/faq#While_Loading\n         http://paulirish.com/2009/fighting-the-font-face-fout/\n\n         Keep in mind to DISABLE THE TIMER-BASED HACK when you change the styles to use local\n         fonts!!\n*/\nvar bbox_hack = graph\n  .append(\"text\")\n  .attr(\"class\", \"bbox_hack\")\n  .text(\"blurbyblurboblurbixbloodySafari!\")\n  .attr(\"x\", 15)\n  .attr(\"y\", 100)\n  .style(\"visibility\", \"hidden\");\nbbox_hack.__bbox__ = bbox_hack.node().getBBox();\nvar getBBox_will_be_correct = false;\n\nd3.timer(function(elapsed) {\n  var hack = bbox_hack.node().getBBox();\n  if (hack.width == bbox_hack.__bbox__.width && elapsed < 2000)\n    return false;\n  console.log(\"Safari fires BBox @ \", elapsed);\n  getBBox_will_be_correct = true;\n\n  header\n    .style(\"visibility\", \"visible\");\n  correct_tags_topside_positioning(n);\n  update_instream_tags();\n  return true; // only invoke this one ONCE, i.e. be done with it.\n}, 100);\n\n// --- end of hacked invocation of correct_tags_topside_positioning(n) ---\n\n\n// the actual graphing work: draw the stream graph:\nvar vis = graph.append(\"g\");\n\nvar stream_strips = vis.selectAll(\"path\")\n    .data(data0)\n  .enter().append(\"path\")\n    .style(\"fill\", function(d, i) {\n      return color(i / n);\n    })\n    .attr(\"d\", area)\n    .on('click', function(d, i){\n      d3.select(this).style(\"fill\", function() {\n        var c;\n        // undefined is treated as if it was 'false'\n        strip_toggled[i] = !strip_toggled[i];\n        // set/reset the color:\n        c = (strip_toggled[i] ? '#ff6600' : color(i / n));\n\n        // also tweak the top_tag rect:\n        top_marker_rects\n          .each(function(d, idx) {\n            if (idx == i)\n              d3.select(this).style(\"fill\", c);\n          });\n\n        return c;\n      });\n    })\n    // set opacity up right now so on transition it'll start at 1.0:\n    .attr(\"opacity\", 1)\n    .on(\"mouseover\", function(d, i) {\n      stream_strips\n        .transition()\n          .duration(1000)\n          .attr(\"opacity\", function(d, j) {\n            return j != i ? 0.2 : 1;\n          });\n      topside_sel\n        .transition()\n          .duration(1000)\n          .attr(\"opacity\", function(d, j) {\n            return j != i ? 0.2 : 1;\n          });\n    })\n    .on(\"mouseout\", function(d, i) {\n      stream_strips\n        .transition()\n          .duration(1000)\n          .attr(\"opacity\", 1);\n      topside_sel\n        .transition()\n          .duration(1000)\n          .attr(\"opacity\", 1);\n    });\n\n\n// and set up the SVG nodes for the tags-in-stream:\nvar tags_instream = graph.append(\"g\")\n  .attr(\"class\", \"tags_in_stream\");\n\nvar tags_instream_sel = tags_instream.selectAll(\"text\")\n    .data(tags)\n  .enter()\n    .append(\"text\")\n    .style(\"pointer-events\", \"none\")\n    .text(function(d, i) {\n      return d.name;\n    })\n    .attr(\"x\", w / 2)\n    .attr(\"y\", h / 2)\n    //.style(\"visibility\", \"hidden\")\n    .attr(\"opacity\", 0);\n\n\n\nfunction transition() {\n  d3.selectAll(\"path\")\n      .data(function() {\n        var d = data1;\n        data1 = data0;\n        return data0 = d;\n      })\n    .transition()\n      .duration(2500)\n      .attr(\"d\", area)\n      // hide at start of animation, then show new ones at end of transition:\n      .each(\"start\", function() {\n        tags_instream_sel\n          //.style(\"visibility\", \"hidden\")\n          .transition()\n            .attr(\"opacity\", 0);\n      })\n      .each(\"end\", function() {\n        // and update the instream tags; only do so iff the getBBox fix already fired\n        if (getBBox_will_be_correct) {\n          update_instream_tags();\n        }\n      });\n}\n\n\n\n// generate semi-random tags to go with the points dataset\nfunction names_gen(n) {\n  var a = [];\n  var o = {};\n  var snip = [\"aero\", \"blu\", \"foo\", \"bar\", \"nal\", \"skip\", \"sky\", \"jam\", \"poon\", \"tang\", \"ploo\", \"ker\", \"hum\", \"di\", \"com\", \"tan\", \"te\", \"pu\", \"ter\"];\n  var i, l, c, s;\n\n  for (i = 0; i < n; i++) {\n    s = \"\";\n    for (l = Math.max(0, Math.log(Math.random() * 11)); l >= 0; l--) {\n      c = Math.floor(Math.random() * snip.length);\n      s += snip[c];\n    }\n    if (s.length < 3 || o[s]) {\n      // too short for our taste or just a dupe\n      i--;\n      continue;\n    }\n    o[s] = 1;\n    a.push({\n      name: s,\n      // just a random starting point for the in-stream tags:\n      x: Math.random() * w,\n      y: Math.random() * h\n    });\n  }\n  // Now roughly estimate position for 'topside' plotting of the texts, based on the length of the strings.\n  // This is blatantly negigent of proportional fonts! but we use it anyway as a starting heuristic to get 'good'\n  // placing; as good placement is dependent on the actual BBoxes, we 'adjust' the positioning once we got\n  // set plotted and have access to their BBoxes.\n  l = 0;\n  for (i = 0; i < n; i++) {\n    l += a[i].name.length;\n  }\n  c = (w - n * 20) / l;\n  l = 0;\n  for (i = 0; i < n; i++) {\n    a[i].top_x = Math.round(i * 20 + l * c);\n    l += a[i].name.length;\n  }\n  return a;\n}\n\nfunction correct_tags_topside_positioning(n) {\n  var i, l, v, c, top_sel;\n\n  top_marker_texts\n    .each(function(d, i) {\n      // and get the actual pixel width of the text node, we'll need it for placing it in the streamgraph proper:\n      var bbox = this.getBBox();\n      d.text_bbox = bbox;\n    });\n\n  l = 0;\n  v = 0;\n  for (i = 0; i < n; i++) {\n    l += tags[i].text_bbox.width;\n    v = Math.max(v, tags[i].text_bbox.height);\n  }\n  c = (w - n * 20) / l;\n  l = 0;\n  for (i = 0; i < n; i++) {\n    tags[i].top_x = Math.round(i * 20 + l * c);\n    l += tags[i].text_bbox.width;\n  }\n\n  // adjust the tags printed at the top:\n  //top_sel = header.selectAll(\"g.tag_top\")... but reusing the vars is faster:\n  topside_sel\n    // .data(tags) -- no need, we're only updating and the changes are accessible already as the tags elems are refenced by the svg nodes!\n    .attr(\"transform\", function(d, i) {\n      return \"translate(\" + d.top_x + \",20)\";\n    });\n\n  top_wrappers\n    .attr(\"width\", function(d, i) {\n      return 20 + d.text_bbox.width;\n    })\n    .attr(\"height\", v);\n\n  top_marker_rects\n    .attr(\"y\", /* center vertically */ (v - 10) / 2);\n\n  top_marker_texts\n    .attr(\"y\", function(d, i) {\n      return 10 - d.text_bbox.y;\n    });\n}\n\nfunction update_instream_tags() {\n  // now that we got all that, it's time to see if and where to put the tags inside the stream strips:\n  tags_instream_sel\n    .each(function(d, i) {\n      d.tag_opt_place = find_instream_tag_print_position_optimum(i);\n      if (!d.tag_opt_place) {\n        d3.select(this)\n          //.style(\"visibility\", \"hidden\")\n          .transition()\n            .attr(\"opacity\", 0);\n      } else {\n        d3.select(this)\n          //.style(\"visibility\", \"visible\")\n          .style(\"font-size\", Math.floor(d.tag_opt_place.scale * 100) + \"%\")\n          // scaling fonts isn't what I'ld expect, so center the text horizontally:\n          .style(\"text-align\", \"center\")\n          .attr(\"x\", function() {\n            return x(d.tag_opt_place.x);\n          })\n          .attr(\"y\", function() {\n            return h - y(d.tag_opt_place.y) +\n              // lift baseline accordingly:\n              Math.min(0, d.tag_opt_place.bbox.y * d.tag_opt_place.scale);\n          })\n          .transition()\n            .attr(\"opacity\", 1);\n\n        // visual debug aids:\n        if (0) {\n          tags_instream\n            .append(\"rect\")\n              .attr(\"fill\", \"none\")\n              .attr(\"stroke\", \"green\")\n              .attr(\"width\", function() {\n                return x(Math.max(0.02, d.tag_opt_place.x1 - d.tag_opt_place.x0));\n              })\n              .attr(\"height\", function() {\n                return y(d.tag_opt_place.y_max - d.tag_opt_place.y_min);\n              })\n              .attr(\"x\", function() {\n                return x(d.tag_opt_place.x0);\n              })\n              .attr(\"y\", function() {\n                return h - y(d.tag_opt_place.y_max);\n              });\n          tags_instream\n            .append(\"circle\")\n              .attr(\"fill\", \"red\")\n              .attr(\"r\", 5)\n              .attr(\"cx\", function() {\n                return x(d.tag_opt_place.x);\n              })\n              .attr(\"cy\", function() {\n                return h - y(d.tag_opt_place.y);\n              });\n        }\n      }\n    });\n}\n\n\n/*\nNaive approach to find the largest inscribed rectangle in a polygon.\n\nI didn't research the algorithms available, but tried here what I came up with myself,\nwhich can surely be improved upon.\n\nThe approach is simply to scan from left to right through the (x,y0,y) set for a\nstream strip (~ polygon) and seek the longest horizontal 'scanline' which allows\nfor a minimum rectangle height equal to the height of the tag text at the top:\nthis is chosen as a 'sane minimum size' as we assume that any smaller text inside\nthe stream will be ridiculous from a viewability POV.\nBigger of course is better, but we can only do that when the horizontal scanline\nlength is larger than the required mimum for displaying the text at minimum scale.\n\nTo speed up the worst-case O(n^2) scan process we skip and 'stop' the scan at any\nx where the height (y) is less than the required minimum height.\n*/\nfunction find_instream_tag_print_position_optimum(i) {\n  // we assume that we already have the BBox w+h for the tag:\n  var poly = data0[i];\n  var tinfo = tags[i];\n  var reqd_y = tinfo.text_bbox.height / y(1); // convert to *data* units: inverse of screen px transforms\n  var reqd_x = tinfo.text_bbox.width / x(1);\n  var optimum;\n  /*\n  improvement #1: slower but more accurate for low point counts: interpolate between [x] points to produce more opportunities to\n  find a suitable space using the 'lazy' scan, which assumes there's points enough to not bother with polygon & scanline algos.\n  */\n  var step_x = Math.min(1, 1 / x(1));\n  /*\n  improvement #2: for better visual palatability, stay away from the left and right edge by 'padding' pixels, so that the tag texts\n  don't end up smack against the side, left or right.\n  */\n  var x_padding = (0.02 * w) / x(1); // padding: 2% of graph width\n  var x_end = m - 1 - x_padding;\n\n  function v(i) {\n    var i0 = Math.floor(i);\n    var i_delta = i - i0;\n    var v0 = poly[i0];\n    if (i0 + 1 < m && i_delta >= step_x)  {\n      var v1 = poly[i0 + 1];\n      return {\n        x: i,\n        y0: v0.y0 + (v1.y0 - v0.y0) * i_delta,\n        y: v0.y + (v1.y - v0.y) * i_delta\n      };\n    }\n    return v0;\n  }\n\n  for (var i = x_padding; i <= x_end; i += step_x) {\n    var v1 = v(i);\n    if (v1.y < reqd_y)\n      continue;\n    // speed up: scan forward to see if we have any chance at getting the minimum reqd width:\n    if (i + reqd_x > x_end)\n      continue;\n    var y_min = v1.y0, y_max = y_min + v1.y;\n    var scale = 0;\n    for (var j = step_x; i + j <= x_end; j += step_x) {\n      var v2 = v(i + j);\n      if (v2.y < reqd_y)\n        break;\n      // cut off by rise from below?\n      if (v2.y0 > y_max - reqd_y)\n        break;\n      // cut off by drop from above?\n      if (v2.y0 + v2.y < y_min + reqd_y)\n        break;\n      var y_min1, y_max1;\n      y_min1 = Math.max(v2.y0, y_min);\n      y_max1 = Math.min(v2.y0 + v2.y, y_max);\n      var scale_new = Math.min(j / reqd_x, (y_max1 - y_min1) / reqd_y);\n      if (scale_new < scale)\n        break;\n      scale = scale_new;\n      y_min = y_min1;\n      y_max = y_max1;\n    }\n    // allow edge case where reqd_x = 1 would fit in a rhombus --> j = 1 here (and so on for higher reqd_x)\n    if (j < reqd_x)\n      continue;\n    /*\n    Here we get VERY lazy: instead of a proper double scanline algorithm, which can find\n    inscribed rectangle at non-integer x positions, we try the lazy route by looking at\n    whether we can drop a rectangle in the space delineated by the x points themselves\n    */\n    // simplified search: we have a minimum width at least, how high can we go?\n    var scale = Math.min(j / reqd_x, (y_max - y_min) / reqd_y);\n    if (scale >= 1) {\n      if (!optimum || optimum.scale < scale) {\n        var x_offset = scale * reqd_x;\n        x_offset = (j - x_offset) / 2;\n        var y_offset = scale * reqd_y;\n        y_offset = (y_max + y_min - y_offset) / 2;\n        optimum = {\n          scale: scale,\n          x: i /* + x_offset */,\n          y: y_offset,\n          reqd_x: reqd_x,\n          reqd_y: reqd_y,\n          y_min: y_min,\n          y_max: y_max,\n          x0: i,\n          x1: i + j - step_x,\n          bbox: tinfo.text_bbox\n        };\n        continue;\n      }\n    }\n    /*\n    TODO:\n\n    Use a double scanline approach where we determine the interpolated X start\n    position where we can deliver a left edge of the minimum required height,\n    then scan forward to find the right-most interpolated X where the right edge\n    of the inscribed rect will be.\n\n    After that, or at the same time, the task is to also see if anything larger\n    is possible, i.e. find the biggest inscribed rect, where the text scale\n    determines the optimum (which is not strictly speaking identical to finding\n    the biggest inscribed rect in terms of surface area!)\n    */\n  }\n\n  return optimum; // WARNING: MAY be falsey!\n}\n\n    </script>\n</body>\n</html>",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/3480186/b24f9e8ab48f1c94fdc1ff09a61eadabfbf05b49/readme.md",
+      "size": 3632,
+      "content": "## A little blurb to settle the nerves.\n\nThis demo expands on the standard streamgraph demo in several ways: \n\n- generates a (bogus) set of tags, one for each series shown in the streamgraph.\n- these 'tags' are printed at the top of the graph as a legenda: the layout logic exploys SVG `node.getBBox()` to determine the exact pixel cost (width/height) of each tag and distributes them evenly across the horizontal expanse.\n- mixes the above with [Google] WebFonts. <font color=\"red\">That got me a nasty surprise, which I fixed with a timer-delayed action  and since Safari's behaviour raised a few hairs I arrived at the FOUT pages ('flash/flicker of unstyled content') and good cause to further enhance my timer-based hack; I added the timeout after looking at Paul Irish's blog page. Unless someone can prove me wrong, I think I got the bugger nailed. (Nasty polling way to check for font loaded and rendered, though...)</font>\n- hover and click event in legenda animate = fade the streams, and vice versa.\n\n### Positioning tags in the streams\n\nAnd then there's the important bit of course: one way to find the 'proper spot' in each stream to print the tag, as big as possible.\nAs can be seen in the code (bottom section of index.hmtl) this was a quest; I didn't commit all the iterations into git, but the 'improvement #x' comments are indicative of what came after I finally got the basic approach nailed - which only worked for a large enough data set as every 'tag' had to span multiple [x] data points to allow this simplistic algorithm to deliver something near usable.\n\nThe improvements now allow for small datasets as they are sliced/interpolated at a 1px step to produce (interpolated) data points to make the tag placement algorithm work as desired.\n\n### How I got here\n\nThe general idea was to scan each stream polygon from left to right and see where we might find a horizontal-enough section that could fit the tag, in its smallest form or maybe bigger. Then continue with the scan in order to find the 'best' location by picking the top 1 from the candidate set.\n\nThis started out as code which located the first ('left-most') [x] datapoint which was 'high enough' (.y value!) to make a chance of containing the tag text bbox. Then the code would interpolate the left-most x position for which the .y was exactly the minimum required, and from there the code went to scan to the right to find when we'd hit a right edge, either a downwards upper edge (.y0 + .y) or a upwards going lower edge (.y0). This still lacked the 'growing' code which is needed to find out how big we can scale the text vertically, but somewhere in there I screwed up and got eaten by bugs. \n\nSo I ditched that part of the code and went for the 'lazy method' as you see now, which was intended as a speed optimization for that original approach: if you'ld have enough data points, the interpolation tacics wouldn't be required as with sufficient data points, every pixel would be covered by an explicit datapoint anyhow.\nAfter a bit of testing and headscratching due to yet another off-by-one mistake of mine I got where I am today (seek out the `if(0)` in the code to see the visual debugging of red point indicating text x,y and green box indicating the detected largest rectangle fitting the given stream).\n\nThen a bit of pondering led to the decision to keep the 'lazy method' as the only method (so that `TODO` comment at the bottom is now practically bogus) and just 'tweak' small datasets into becomes virtually large datasets by altering the stepsize in the scan loop to a non-integer, minimal step size. And the rest is history...\n\n\n",
+      "language": "Markdown"
+    },
+    "stream_layers.js": {
+      "type": "application/javascript",
+      "filename": "stream_layers.js",
+      "raw_url": "https://gist.github.com/raw/3480186/13cacdb141247414d72a9264bfcccbaf48e71357/stream_layers.js",
+      "size": 920,
+      "content": "/* Inspired by Lee Byron's test data generator. */\nfunction stream_layers(n, m, o) {\n  if (arguments.length < 3) o = 0;\n  function bump(a) {\n    var x = 1 / (.1 + Math.random()),\n        y = 2 * Math.random() - .5,\n        z = 10 / (.1 + Math.random());\n    for (var i = 0; i < m; i++) {\n      var w = (i / m - y) * z;\n      a[i] += x * Math.exp(-w * w);\n    }\n  }\n  return d3.range(n).map(function() {\n      var a = [], i;\n      for (i = 0; i < m; i++) a[i] = o + o * Math.random();\n      for (i = 0; i < 5; i++) bump(a);\n      return a.map(stream_index);\n    });\n}\n\n/* Another layer generator using gamma distributions. */\nfunction stream_waves(n, m) {\n  return d3.range(n).map(function(i) {\n    return d3.range(m).map(function(j) {\n        var x = 20 * j / m - i / 3;\n        return 2 * x * Math.exp(-.5 * x);\n      }).map(stream_index);\n    });\n}\n\nfunction stream_index(d, i) {\n  return {x: i, y: Math.max(0, d)};\n}\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2012-09-09T09:00:16Z",
+  "url": "https://api.github.com/gists/3480186",
+  "git_pull_url": "git://gist.github.com/3480186.git",
+  "id": "3480186"
+}

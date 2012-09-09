@@ -1,0 +1,122 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "580e00312773d30472c21660f69eb0da",
+        "avatar_url": "https://secure.gravatar.com/avatar/580e00312773d30472c21660f69eb0da?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "johan",
+        "url": "https://api.github.com/users/johan",
+        "id": 2459
+      },
+      "created_at": "2011-10-22T16:05:18Z",
+      "updated_at": "2011-10-22T16:05:18Z",
+      "url": "https://api.github.com/gists/1306143",
+      "id": "1306143"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1305347.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "357eb891ade16f6addfbf0563d5f1bc08fee43ff",
+      "change_status": {
+        "total": 3,
+        "additions": 0,
+        "deletions": 3
+      },
+      "url": "https://api.github.com/gists/1305347/357eb891ade16f6addfbf0563d5f1bc08fee43ff",
+      "committed_at": "2011-10-22T00:34:21Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "6e0719642278fe4cabf149ebdead604eab116360",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1305347/6e0719642278fe4cabf149ebdead604eab116360",
+      "committed_at": "2011-10-22T00:33:24Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "d6661f72d2c4fb49d36a24212e627d771fe2357c",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1305347/d6661f72d2c4fb49d36a24212e627d771fe2357c",
+      "committed_at": "2011-10-22T00:32:32Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "ce5e6ea9f60d2a7866cae6ee5ae25936465f4878",
+      "change_status": {
+        "total": 12,
+        "additions": 12,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1305347/ce5e6ea9f60d2a7866cae6ee5ae25936465f4878",
+      "committed_at": "2011-10-22T00:31:59Z"
+    }
+  ],
+  "description": "Autoforking",
+  "html_url": "https://gist.github.com/1305347",
+  "git_push_url": "git@gist.github.com:1305347.git",
+  "comments": 0,
+  "created_at": "2011-10-22T00:31:59Z",
+  "public": true,
+  "files": {
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "size": 91,
+      "content": "Paste this into your JavaScript console to fork your own gists! No fork button? No problem!",
+      "raw_url": "https://gist.github.com/raw/1305347/84c5a78aab8009c6f999e04c71349f8fc9113cdd/readme.md",
+      "language": "Markdown"
+    },
+    "autofork.js": {
+      "type": "application/javascript",
+      "filename": "autofork.js",
+      "size": 305,
+      "content": "var f = document.createElement(\"form\");\nf.method = \"POST\";\nf.action = \"/fork\" + location.pathname;\nvar s = document.createElement(\"input\");\ns.setAttribute(\"name\", \"authenticity_token\");\ns.setAttribute(\"value\", document.querySelector(\"input[name=authenticity_token]\").value);\nf.appendChild(s);\nf.submit();\n",
+      "raw_url": "https://gist.github.com/raw/1305347/f3630d82ab06af0a2d92d29304794c178a6f9d98/autofork.js",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2011-10-22T00:31:59Z",
+  "url": "https://api.github.com/gists/1305347",
+  "id": "1305347"
+}

@@ -1,0 +1,254 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "ecff5a3cee4fad6c1a442aa97c88e57b",
+    "login": "bewest",
+    "avatar_url": "https://secure.gravatar.com/avatar/ecff5a3cee4fad6c1a442aa97c88e57b?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/bewest",
+    "id": 394179
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T12:54:42Z",
+      "version": "f8c06d64ab56d028285286a1862e7efc4cebcb85",
+      "url": "https://api.github.com/gists/1187808/f8c06d64ab56d028285286a1862e7efc4cebcb85"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T12:53:42Z",
+      "version": "589bd31e4ea5e4bd79e901648159478d6f87a560",
+      "url": "https://api.github.com/gists/1187808/589bd31e4ea5e4bd79e901648159478d6f87a560"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T12:51:37Z",
+      "version": "273a19e4b4965910a41812f67049270d886a711d",
+      "url": "https://api.github.com/gists/1187808/273a19e4b4965910a41812f67049270d886a711d"
+    },
+    {
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T12:50:51Z",
+      "version": "be4191366e746420ac3d658f7ec6e41c9135abb9",
+      "url": "https://api.github.com/gists/1187808/be4191366e746420ac3d658f7ec6e41c9135abb9"
+    },
+    {
+      "change_status": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T12:50:13Z",
+      "version": "4eca4c5158ed872a78c43657f12d946f9e8da137",
+      "url": "https://api.github.com/gists/1187808/4eca4c5158ed872a78c43657f12d946f9e8da137"
+    },
+    {
+      "change_status": {
+        "total": 31,
+        "additions": 30,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T12:48:38Z",
+      "version": "a6961613457a38a6d3defdd1e6d57888cdadfc80",
+      "url": "https://api.github.com/gists/1187808/a6961613457a38a6d3defdd1e6d57888cdadfc80"
+    },
+    {
+      "change_status": {
+        "total": 17,
+        "additions": 11,
+        "deletions": 6
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T06:48:33Z",
+      "version": "608cebabd65fb98c7bfc9fccb8686d8eb8cc7c52",
+      "url": "https://api.github.com/gists/1187808/608cebabd65fb98c7bfc9fccb8686d8eb8cc7c52"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T06:36:35Z",
+      "version": "5d9391301d14c63a91acea7e47285c76bdb95d77",
+      "url": "https://api.github.com/gists/1187808/5d9391301d14c63a91acea7e47285c76bdb95d77"
+    },
+    {
+      "change_status": {
+        "total": 42,
+        "additions": 22,
+        "deletions": 20
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T06:34:50Z",
+      "version": "b2089bc35197afb47dd2fcc6d81d6f8d302592c0",
+      "url": "https://api.github.com/gists/1187808/b2089bc35197afb47dd2fcc6d81d6f8d302592c0"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "committed_at": "2011-08-31T06:11:59Z",
+      "version": "641d2d34032e4a56c6c7c300f7a3f9311c8fec48",
+      "url": "https://api.github.com/gists/1187808/641d2d34032e4a56c6c7c300f7a3f9311c8fec48"
+    }
+  ],
+  "description": "D3 Example: spline, zoom and pan",
+  "html_url": "https://gist.github.com/1187808",
+  "comments": 0,
+  "created_at": "2011-09-02T02:30:08Z",
+  "git_pull_url": "git://gist.github.com/1187808.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1187808/03472c7f31c44ab2d2c505da0c97be40f2a10320/index.html",
+      "size": 8826,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Spline + Pan</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <style type=\"text/css\">\nbody {\n  font: 13px sans-serif;\n}\n\nrect {\n  fill: #fff;\n}\n\n#chart {\n    background-color: #F7F2C5;\n    width: 960px;\n    height: 500px;\n}\n\ncircle, .line {\n  fill: none;\n  stroke: steelblue;\n  stroke-width: 1.5px;\n}\n\ncircle {\n  fill: #fff;\n  fill-opacity: .2;\n  cursor: move;\n}\n\ncircle.selected {\n  fill: #ff7f0e;\n  stroke: #ff7f0e;\n}\n\n    </style>\n  </head>\n  <body>\n    <div id=\"chart\"></div>\n    <label for=\"interpolate\">Interpolate:</label>\n    <select id=\"interpolate\"></select>\n    <script type=\"text/javascript\">\n\nvar size = [890, 450],\n    padding = [20, 30, 20, 40], // top right bottom left\n    mw = size[0] - padding[1] - padding[3],\n    mh = size[1] - padding[0] - padding[2],\n    tx = function(d) { return \"translate(\" + x(d) + \",0)\"; },\n    ty = function(d) { return \"translate(0,\" + y(d) + \")\"; },\n    stroke = function(d) { return d ? \"#ccc\" : \"#666\"; },\n    points = d3.range(1, 10).map(function(i) { \n        return {x: i * size[0] / 5, y:  50 + Math.random() * (size[1] - 100)}; \n    }),\n    // x-scale\n    x = d3.scale.linear()\n        .domain([d3.min(points, function(d) { return d.x; }), d3.max(points, function(d) { return d.x; })])\n        .nice()\n        .range([0, mw])\n        .nice(),\n    // drag x-axis logic\n    downscalex = x.copy(),\n    downx = Math.NaN,\n    // y-scale (inverted domain)\n    y = d3.scale.linear()\n        .domain([d3.max(points, function(d) { return d.y; }), d3.min(points, function(d) { return d.y; })])\n        .nice()\n        .range([0, mh])\n        .nice(),\n    line = d3.svg.line()\n        .x(function(d, i) { return x(points[i].x); })\n        .y(function(d, i) { return y(points[i].y); }),\n    // drag x-axis logic\n    downscaley = y.copy(),\n    downy = Math.NaN,\n    dragged = null,\n    selected = points[0];\n\nvar vis = d3.select(\"#chart\").append(\"svg:svg\")\n    .attr(\"width\", size[0] + padding[3] + padding[1])\n    .attr(\"height\", size[1] + padding[0] + padding[2])\n    // .style(\"background-fill\", \"#FFEEB6\")\n    .append(\"svg:g\")\n      .attr(\"transform\", \"translate(\" + padding[3] + \",\" + padding[0] + \")\");\n\nvar graph = vis.append(\"svg:rect\")\n    .attr(\"width\", size[0])\n    .attr(\"height\", size[1])\n    // .attr(\"stroke\", \"none\")\n    .style(\"fill\", \"#EEEEEE\")\n    .attr(\"pointer-events\", \"all\")\n    .call(d3.behavior.zoom().on(\"zoom\", redraw))\n    .on(\"mousedown\", function() {\n      if (d3.event.altKey) {\n          points.push(selected = dragged = d3.svg.mouse(vis.node()));\n          update();\n          d3.event.preventDefault();\n          d3.event.stopPropagation();\n      }\n    });\n\nvis.append(\"svg:path\")\n    .attr(\"class\", \"line\")\n    .attr(\"d\", line(points));\n\nd3.select(window)\n    .on(\"mousemove\", mousemove)\n    .on(\"mouseup\", mouseup)\n    .on(\"keydown\", keydown);\n\n// Add interpolator dropdown\nd3.select(\"#interpolate\")\n    .on(\"change\", function() {\n      line.interpolate(this.value);\n      update();\n    })\n  .selectAll(\"option\")\n    .data([\n      \"linear\",\n      \"step-before\",\n      \"step-after\",\n      \"basis\",\n      \"basis-open\",\n      \"basis-closed\",\n      \"cardinal\",\n      \"cardinal-open\",\n      \"cardinal-closed\",\n      \"monotone\"\n    ])\n  .enter().append(\"option\")\n    .attr(\"value\", String)\n    .text(String);\n\nfunction update() {\n  var lines = vis.select(\"path\").attr(\"d\", line(points));\n        \n  var circle = vis.selectAll(\"circle\")\n      .data(points, function(d) { return d; });\n\n  circle.enter().append(\"svg:circle\")\n      .attr(\"class\", function(d) { return d === selected ? \"selected\" : null; })\n      .attr(\"cx\",    function(d) { return x(d.x); })\n      .attr(\"cy\",    function(d) { return y(d.y); })\n      .attr(\"r\", 4.0)\n      .on(\"mousedown\", function(d) {\n        selected = dragged = d;\n        update();\n      })\n    .transition()\n      .duration(300)\n      .ease(\"elastic\")\n      .attr(\"r\", 8.0);\n\n  circle\n      .attr(\"class\", function(d) { return d === selected ? \"selected\" : null; })\n      .attr(\"cx\",    function(d) { return x(d.x); })\n      .attr(\"cy\",    function(d) { return y(d.y); });\n\n  circle.exit().remove();\n\n  if (d3.event && d3.event.keyCode) {\n    d3.event.preventDefault();\n    d3.event.stopPropagation();\n  }\n}\n\n\nfunction mousemove() {\n  if (!dragged) return;\n  var m = d3.svg.mouse(vis.node());\n  dragged.x = x.invert(Math.max(0, Math.min(size[0], m[0])));\n  dragged.y = y.invert(Math.max(0, Math.min(size[1], m[1])));\n  update();\n}\n\nfunction mouseup() {\n  if (!dragged) return;\n  mousemove();\n  dragged = null;\n}\n\nfunction keydown() {\n  if (!selected) return;\n  switch (d3.event.keyCode) {\n    case 8: // backspace\n    case 46: { // delete\n      var i = points.indexOf(selected);\n      points.splice(i, 1);\n      selected = points.length ? points[i > 0 ? i - 1 : 0] : null;\n      update();\n      break;\n    }\n  }\n}\n\nredraw();\n\nfunction redraw() {\n  if (d3.event && d3.event.transform && isNaN(downx) && isNaN(downy)) {\n      d3.event.transform(x, y);\n  };\n\n  var fx = x.tickFormat(10),\n      fy = y.tickFormat(10);\n\n  // Regenerate x-ticks…\n  var gx = vis.selectAll(\"g.x\")\n      .data(x.ticks(10), String)\n      .attr(\"transform\", tx);\n\n  gx.select(\"text\")\n      .text(fx);\n\n  var gxe = gx.enter().insert(\"svg:g\", \"a\")\n      .attr(\"class\", \"x\")\n      .attr(\"transform\", tx);\n\n  gxe.append(\"svg:line\")\n      .attr(\"stroke\", stroke)\n      .attr(\"y1\", 0)\n      .attr(\"y2\", size[1]);\n\n   gxe.append(\"svg:text\")\n       .attr(\"y\", size[1])\n       .attr(\"dy\", \"1em\")\n       .attr(\"text-anchor\", \"middle\")\n       .text(fx)\n       .on(\"mouseover\", function(d) { d3.select(this).style(\"font-weight\", \"bold\");})\n       .on(\"mouseout\",  function(d) { d3.select(this).style(\"font-weight\", \"normal\");})\n       .on(\"mousedown\", function(d) {\n            var p = d3.svg.mouse(vis[0][0]);\n            downx = x.invert(p[0]);\n            downscalex = null;\n            downscalex = x.copy();\n            // d3.behavior.zoom().off(\"zoom\", redraw);\n       });\n      \n\n  gx.exit().remove();\n\n  // Regenerate y-ticks…\n  var gy = vis.selectAll(\"g.y\")\n      .data(y.ticks(10), String)\n      .attr(\"transform\", ty);\n\n  gy.select(\"text\")\n      .text(fy);\n\n  var gye = gy.enter().insert(\"svg:g\", \"a\")\n      .attr(\"class\", \"y\")\n      .attr(\"transform\", ty)\n      .attr(\"background-fill\", \"#FFEEB6\");\n\n  gye.append(\"svg:line\")\n      .attr(\"stroke\", stroke)\n      .attr(\"x1\", 0)\n      .attr(\"x2\", size[0]);\n\n  gye.append(\"svg:text\")\n      .attr(\"x\", -3)\n      .attr(\"dy\", \".35em\")\n      .attr(\"text-anchor\", \"end\")\n      .text(fy)\n      .on(\"mouseover\", function(d) { d3.select(this).style(\"font-weight\", \"bold\");})\n      .on(\"mouseout\",  function(d) { d3.select(this).style(\"font-weight\", \"normal\");})\n      .on(\"mousedown\", function(d) {\n           var p = d3.svg.mouse(vis[0][0]);\n           downy = y.invert(p[1]);\n           downscaley = y.copy();\n           // d3.behavior.zoom().off(\"zoom\", redraw);\n      });\n      \n\n  gy.exit().remove();\n  update();\n\n}\n\n// attach the mousemove and mouseup to the body\n// in case one wonders off the axis line\n\nd3.select('body')\n  .on(\"mousemove\", function(d) {\n    var p = d3.svg.mouse(vis[0][0]);\n    if (!isNaN(downx)) {\n      var rupx = downscalex.invert(p[0]),\n        xaxis1 = downscalex.domain()[0],\n        xaxis2 = downscalex.domain()[1],\n        xextent = xaxis2 - xaxis1;\n      if (rupx != 0) {\n          var changex, new_domain;\n          changex = downx / rupx;\n          new_domain = [xaxis1, xaxis1 + (xextent * changex)];\n          x.domain(new_domain);\n          redraw();\n      }\n      d3.event.preventDefault();\n      d3.event.stopPropagation();\n    };\n    if (!isNaN(downy)) {\n        rupy = downscaley.invert(p[1]),\n        yaxis1 = downscaley.domain()[1],\n        yaxis2 = downscaley.domain()[0],\n        yextent = yaxis2 - yaxis1;\n      if (rupy != 0) {\n          var changey, new_domain;\n          changey = downy / rupy;\n          new_domain = [yaxis1 + (yextent * changey), yaxis1];\n          y.domain(new_domain);\n          redraw();\n      }\n      d3.event.preventDefault();\n      d3.event.stopPropagation();\n    }\n  })\n  .on(\"mouseup\", function(d) {\n      if (!isNaN(downx)) {\n          redraw();\n          downx = Math.NaN;\n          d3.event.preventDefault();\n          d3.event.stopPropagation();\n          // graph.call(d3.behavior.zoom().on(\"zoom\", redraw));\n      };\n      if (!isNaN(downy)) {\n          redraw();\n          downy = Math.NaN;\n          d3.event.preventDefault();\n          d3.event.stopPropagation();\n          // graph.call(d3.behavior.zoom().on(\"zoom\", redraw));\n      };\n      // d3.event.preventDefault();\n      // d3.event.stopPropagation();\n  });\n\n    </script>\n\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/1187808/cb738dbbc24e495d6f243d3fb37ad781f6193bdf/readme.md",
+      "size": 2273,
+      "content": "[This example](http://bl.ocks.org/1182434) is a mashup of the [D3](https://github.com/mbostock/d3) **Spline** and **Zoom-Pan** examples along with [Ricardo Marimon's example of X-axis re-scaling by dragging](http://bl.ocks.org/1179647).\n\n* Drag on the canvas to translate/pan the graph.\n* double-click on the canvas to zoom in\n* shift-double-click on the canvas to zoom out\n* Drag on one of the X or Y axis numeric labels to re-scale that axis\n* click on a data point to select it\n* drag a selected data point to change it's value\n* enter the delete or backspace key to delete a selected data point\n* drag a selected data point to change it's value\n* hold the ALT/Option key down and click an empty area of the graph to add a data point\n\n*source: [gist.github.com/1182434](https://gist.github.com/1182434)*\n\nThere's still a bug where if you scale an axis once, you can then translate/pan around but if you scale the same axis a second time when you next try and translate/pan the result of the first axis re-scale will re-appear. This bug also appears if you re-scale the axes and then add a new data point.\n\n### D3 References:\n\n* [repository](https://github.com/mbostock/d3)\n* [wiki](http://mbostock.github.com/d3/)\n* [examples](http://mbostock.github.com/d3/ex/)\n* [API](https://github.com/mbostock/d3/wiki/API-Reference)\n* [Quantitative Scales](https://github.com/mbostock/d3/wiki/Quantitative-Scales)\n\n### D3 Tutorials:\n\n* [Three Little Circles](http://mbostock.github.com/d3/tutorial/circle.html)\n* [A Bar Chart, Part 1](http://mbostock.github.com/d3/tutorial/bar-1.html)\n* [A Bar Chart, Part 2](http://mbostock.github.com/d3/tutorial/bar-2.html)\n\n### External D3 Tutorials\n\n* [Try D3 Now](http://christopheviau.com/d3_tutorial/)\n* [Array Basics](http://www.janwillemtulp.com/2011/03/31/tutorialthe-basics-working-with-arrays-in-d3/)\n* [Line Interpolations](http://www.janwillemtulp.com/2011/03/23/tutorial-line-interpolations-in-d3/)\n* [Line Chart](http://www.janwillemtulp.com/2011/04/01/tutorial-line-chart-in-d3/)\n* [Conway's Game of Life](http://www.janwillemtulp.com/2011/03/22/tutorial-conways-game-of-life-in-d3/)\n* [Introudction](http://www.janwillemtulp.com/2011/03/20/tutorial-introduction-to-d3/)\n\n### SVG Graphics\n\n* [standard](http://www.w3.org/TR/SVG/)\n",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1187808.git",
+  "fork_of": {
+    "user": {
+      "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+      "login": "stepheneb",
+      "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/stepheneb",
+      "id": 7188
+    },
+    "description": "D3 Example: zoom, pan, and axis rescale",
+    "html_url": "https://gist.github.com/1182434",
+    "comments": 0,
+    "created_at": "2011-08-30T23:52:21Z",
+    "git_pull_url": "git://gist.github.com/1182434.git",
+    "public": true,
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/1182434/342669078e1c65284e1565b7085112a81d0c8353/index.html",
+        "size": 1538,
+        "language": "HTML"
+      },
+      "readme.md": {
+        "type": "text/plain",
+        "filename": "readme.md",
+        "raw_url": "https://gist.github.com/raw/1182434/4ca32ca42b7c6dd564fe888bae06f91670767c70/readme.md",
+        "size": 2011,
+        "language": "Markdown"
+      },
+      "simple-graph.js": {
+        "type": "application/javascript",
+        "filename": "simple-graph.js",
+        "raw_url": "https://gist.github.com/raw/1182434/1e21263d38584abab8c8036a084a482d514ce271/simple-graph.js",
+        "size": 11160,
+        "language": "JavaScript"
+      }
+    },
+    "git_push_url": "git@gist.github.com:1182434.git",
+    "updated_at": "2012-02-23T05:00:09Z",
+    "url": "https://api.github.com/gists/1182434",
+    "id": "1182434"
+  },
+  "updated_at": "2011-09-02T02:30:08Z",
+  "url": "https://api.github.com/gists/1187808",
+  "id": "1187808"
+}

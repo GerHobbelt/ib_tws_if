@@ -1,0 +1,96 @@
+{
+  "forks": [
+    {
+      "updated_at": "2011-07-07T16:22:09Z",
+      "user": {
+        "gravatar_id": "3dfe581ced82b6ab7d10429bc60541e1",
+        "avatar_url": "https://secure.gravatar.com/avatar/3dfe581ced82b6ab7d10429bc60541e1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/fod",
+        "login": "fod",
+        "id": 163355
+      },
+      "url": "https://api.github.com/gists/1069888",
+      "id": "1069888",
+      "created_at": "2011-07-07T16:22:09Z"
+    }
+  ],
+  "updated_at": "2011-06-02T19:17:40Z",
+  "public": true,
+  "files": {
+    "marimekko.json": {
+      "type": "application/json",
+      "filename": "marimekko.json",
+      "language": "JSON",
+      "content": "[\n{\"market\": \"Auburn, AL\", \"segment\": \"Almond lovers\", \"value\": 3840},\n{\"market\": \"Auburn, AL\", \"segment\": \"Berry buyers\", \"value\": 1920},\n{\"market\": \"Auburn, AL\", \"segment\": \"Carrots-n-more\", \"value\": 960},\n{\"market\": \"Auburn, AL\", \"segment\": \"Delicious-n-new\", \"value\": 400},\n{\"market\": \"Birmingham, AL\", \"segment\": \"Almond lovers\", \"value\": 1600},\n{\"market\": \"Birmingham, AL\", \"segment\": \"Berry buyers\", \"value\": 1440},\n{\"market\": \"Birmingham, AL\", \"segment\": \"Carrots-n-more\", \"value\": 960},\n{\"market\": \"Birmingham, AL\", \"segment\": \"Delicious-n-new\", \"value\": 400},\n{\"market\": \"Gainesville, FL\", \"segment\": \"Almond lovers\", \"value\": 640},\n{\"market\": \"Gainesville, FL\", \"segment\": \"Berry buyers\", \"value\": 960},\n{\"market\": \"Gainesville, FL\", \"segment\": \"Carrots-n-more\", \"value\": 640},\n{\"market\": \"Gainesville, FL\", \"segment\": \"Delicious-n-new\", \"value\": 400},\n{\"market\": \"Durham, NC\", \"segment\": \"Almond lovers\", \"value\": 320},\n{\"market\": \"Durham, NC\", \"segment\": \"Berry buyers\", \"value\": 480},\n{\"market\": \"Durham, NC\", \"segment\": \"Carrots-n-more\", \"value\": 640},\n{\"market\": \"Durham, NC\", \"segment\": \"Delicious-n-new\", \"value\": 400}\n]\n",
+      "raw_url": "https://gist.github.com/raw/1005090/113eb86f8d52c83f8c17abf6dceed982b3208bb7/marimekko.json",
+      "size": 1139
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "language": "HTML",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Marimekko Chart</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.19.1\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?1.19.1\"></script>\n    <style type=\"text/css\">\n\nbody {\n  font: 10px sans-serif;\n}\n\nrect {\n  stroke: #000;\n}\n\nsvg {\n  shape-rendering: crispEdges;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    m = 20,\n    x = d3.scale.linear().range([0, w - 3 * m]),\n    y = d3.scale.linear().range([0, h - 2 * m]),\n    z = d3.scale.category10(),\n    n = d3.format(\",d\"),\n    p = d3.format(\"%\");\n\nvar svg = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n  .append(\"svg:g\")\n    .attr(\"transform\", \"translate(\" + 2 * m + \",\" + m + \")\");\n\nd3.json(\"marimekko.json\", function(data) {\n  var offset = 0;\n\n  // Nest values by segment. We assume each segment+market is unique.\n  var segments = d3.nest()\n      .key(function(d) { return d.segment; })\n      .entries(data);\n\n  // Compute the total sum, the per-segment sum, and the per-market offset.\n  // You can use reduce rather than reduceRight to reverse the ordering.\n  // We also record a reference to the parent segment for each market.\n  var sum = segments.reduce(function(v, p) {\n    return (p.offset = v) + (p.sum = p.values.reduceRight(function(v, d) {\n      d.parent = p;\n      return (d.offset = v) + d.value;\n    }, 0));\n  }, 0);\n\n  // Add x-axis ticks.\n  var xtick = svg.selectAll(\".x\")\n      .data(x.ticks(10))\n    .enter().append(\"svg:g\")\n      .attr(\"class\", \"x\")\n      .attr(\"transform\", function(d) { return \"translate(\" + x(d) + \",\" + y(1) + \")\"; });\n\n  xtick.append(\"svg:line\")\n      .attr(\"y2\", 6)\n      .style(\"stroke\", \"#000\");\n\n  xtick.append(\"svg:text\")\n      .attr(\"y\", 8)\n      .attr(\"text-anchor\", \"middle\")\n      .attr(\"dy\", \".71em\")\n      .text(p);\n\n  // Add y-axis ticks.\n  var ytick = svg.selectAll(\".y\")\n      .data(y.ticks(10))\n    .enter().append(\"svg:g\")\n      .attr(\"class\", \"y\")\n      .attr(\"transform\", function(d) { return \"translate(0,\" + y(1 - d) + \")\"; });\n\n  ytick.append(\"svg:line\")\n      .attr(\"x1\", -6)\n      .style(\"stroke\", \"#000\");\n\n  ytick.append(\"svg:text\")\n      .attr(\"x\", -8)\n      .attr(\"text-anchor\", \"end\")\n      .attr(\"dy\", \".35em\")\n      .text(p);\n\n  // Add a group for each segment.\n  var segments = svg.selectAll(\".segment\")\n      .data(segments)\n    .enter().append(\"svg:g\")\n      .attr(\"class\", \"segment\")\n      .attr(\"xlink:title\", function(d) { return d.key; })\n      .attr(\"transform\", function(d) { return \"translate(\" + x(d.offset / sum) + \")\"; });\n\n  // Add a rect for each market.\n  var markets = segments.selectAll(\".market\")\n      .data(function(d) { return d.values; })\n    .enter().append(\"svg:a\")\n      .attr(\"class\", \"market\")\n      .attr(\"xlink:title\", function(d) { return d.market + \" \" + d.parent.key + \": \" + n(d.value); })\n    .append(\"svg:rect\")\n      .attr(\"y\", function(d) { return y(d.offset / d.parent.sum); })\n      .attr(\"height\", function(d) { return y(d.value / d.parent.sum); })\n      .attr(\"width\", function(d) { return x(d.parent.sum / sum); })\n      .style(\"fill\", function(d) { return z(d.market); });\n});\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1005090/f7e1a832653b3f4aeb4ab8dfd0cb8af452df3cfe/index.html",
+      "size": 3293
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "language": "Markdown",
+      "content": "A [Marimekko Chart](http://www.perceptualedge.com/example13.php), inspired by [Freakalytics](http://www.freakalytics.com/2011/05/14/marimekko-charts-and-an-interactive-alternative/). Thanks to [Noah Iliinsky](https://twitter.com/#!/noahi/status/76334894648791040) for the suggestion.",
+      "raw_url": "https://gist.github.com/raw/1005090/aeea39268de47822b09601cf575841e6af7e8d99/readme.md",
+      "size": 283
+    }
+  },
+  "git_pull_url": "git://gist.github.com/1005090.git",
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "login": "mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 4,
+        "deletions": 2,
+        "additions": 2
+      },
+      "version": "3ebf7d4e8380e87b16f7d56ff8eeb8ffad454c82",
+      "committed_at": "2011-06-02T19:22:05Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1005090/3ebf7d4e8380e87b16f7d56ff8eeb8ffad454c82"
+    },
+    {
+      "change_status": {
+        "total": 135,
+        "deletions": 0,
+        "additions": 135
+      },
+      "version": "54ca871f57766194470befaa777fc120e7874ec2",
+      "committed_at": "2011-06-02T19:16:52Z",
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "login": "mbostock",
+        "id": 230541
+      },
+      "url": "https://api.github.com/gists/1005090/54ca871f57766194470befaa777fc120e7874ec2"
+    }
+  ],
+  "html_url": "https://gist.github.com/1005090",
+  "git_push_url": "git@gist.github.com:1005090.git",
+  "url": "https://api.github.com/gists/1005090",
+  "description": "Marimekko Chart",
+  "id": "1005090",
+  "comments": 0,
+  "created_at": "2011-06-02T19:16:52Z"
+}

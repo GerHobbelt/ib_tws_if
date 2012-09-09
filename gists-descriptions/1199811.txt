@@ -1,0 +1,85 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "mbostock",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_pull_url": "git://gist.github.com/1199811.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "45d2d38c97e6791829ddaaceaed4773959efd358",
+      "change_status": {
+        "total": 14,
+        "additions": 7,
+        "deletions": 7
+      },
+      "url": "https://api.github.com/gists/1199811/45d2d38c97e6791829ddaaceaed4773959efd358",
+      "committed_at": "2011-09-07T05:10:33Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "ec034673679ffbd51bca4032514852fdf153d8c2",
+      "change_status": {
+        "total": 8,
+        "additions": 1,
+        "deletions": 7
+      },
+      "url": "https://api.github.com/gists/1199811/ec034673679ffbd51bca4032514852fdf153d8c2",
+      "committed_at": "2011-09-07T05:09:38Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "mbostock",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "834eaf66ee3d0e41d4af01e56ec682a141deb7ad",
+      "change_status": {
+        "total": 93,
+        "additions": 93,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1199811/834eaf66ee3d0e41d4af01e56ec682a141deb7ad",
+      "committed_at": "2011-09-07T05:03:11Z"
+    }
+  ],
+  "description": "Force Layout from Adjacency List",
+  "html_url": "https://gist.github.com/1199811",
+  "git_push_url": "git@gist.github.com:1199811.git",
+  "comments": 0,
+  "created_at": "2011-09-07T05:03:11Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 1870,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.1.3\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js?2.1.3\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.geom.js?2.1.3\"></script>\n    <style type=\"text/css\">\n\nline {\n  stroke: #ccc;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar adjacencyList = {\n  1: [7,2,6],\n  2: [8,3,1],\n  3: [4,2,9],\n  4: [10,3,5],\n  5: [6,4,11],\n  6: [1,5,12],\n  7: [1,20,13],\n  8: [2,14,21],\n  9: [3,22,15],\n  10: [4,16,23],\n  11: [5,17,24],\n  12: [6,19,18],\n  13: [7,19],\n  14: [20,8],\n  15: [21,9],\n  16: [22,10],\n  17: [23, 11],\n  18: [24, 12],\n  19: [12, 13],\n  20: [14,7],\n  21: [8, 15],\n  22: [9,16],\n  23: [10, 17],\n  24: [11, 18]\n};\n\nvar nodes = d3.values(adjacencyList),\n    links = d3.merge(nodes.map(function(source) {\n      return source.map(function(target) {\n        return {source: source, target: adjacencyList[target]};\n      });\n    }));\n\nvar w = 960,\n    h = 500;\n\nvar vis = d3.select(\"body\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvar force = d3.layout.force()\n    .nodes(nodes)\n    .links(links)\n    .size([w, h])\n    .start();\n\nvar link = vis.selectAll(\"line.link\")\n    .data(links)\n  .enter().append(\"svg:line\");\n\nvar node = vis.selectAll(\"circle.node\")\n    .data(nodes)\n  .enter().append(\"svg:circle\")\n    .attr(\"r\", 5)\n    .call(force.drag);\n\nforce.on(\"tick\", function() {\n  link.attr(\"x1\", function(d) { return d.source.x; })\n      .attr(\"y1\", function(d) { return d.source.y; })\n      .attr(\"x2\", function(d) { return d.target.x; })\n      .attr(\"y2\", function(d) { return d.target.y; });\n\n  node.attr(\"cx\", function(d) { return d.x; })\n      .attr(\"cy\", function(d) { return d.y; });\n});\n\n    </script>\n  </body>\n</html>\n",
+      "raw_url": "https://gist.github.com/raw/1199811/0c9aabbf8e1b00cb1ab558a19ff8681d77c24329/index.html",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-09-07T05:03:11Z",
+  "url": "https://api.github.com/gists/1199811",
+  "id": "1199811"
+}

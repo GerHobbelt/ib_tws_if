@@ -1,0 +1,102 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+    "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "login": "benjchristensen",
+    "url": "https://api.github.com/users/benjchristensen",
+    "id": 813492
+  },
+  "git_pull_url": "git://gist.github.com/1473535.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "benjchristensen",
+        "url": "https://api.github.com/users/benjchristensen",
+        "id": 813492
+      },
+      "version": "c47832454362124343c57bf718c4457908384653",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "url": "https://api.github.com/gists/1473535/c47832454362124343c57bf718c4457908384653",
+      "committed_at": "2012-04-02T16:38:38Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "benjchristensen",
+        "url": "https://api.github.com/users/benjchristensen",
+        "id": 813492
+      },
+      "version": "4b53a1df3e1f17adf11ad13008060021d9b31b14",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1473535/4b53a1df3e1f17adf11ad13008060021d9b31b14",
+      "committed_at": "2011-12-13T20:52:29Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "benjchristensen",
+        "url": "https://api.github.com/users/benjchristensen",
+        "id": 813492
+      },
+      "version": "4a6859e57a0ff0c82d9fd6fc8d9c1e846471c4a9",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "url": "https://api.github.com/gists/1473535/4a6859e57a0ff0c82d9fd6fc8d9c1e846471c4a9",
+      "committed_at": "2011-12-13T19:41:28Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "25a69d1e333ff36b77cf01b84b764182",
+        "avatar_url": "https://secure.gravatar.com/avatar/25a69d1e333ff36b77cf01b84b764182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "login": "benjchristensen",
+        "url": "https://api.github.com/users/benjchristensen",
+        "id": 813492
+      },
+      "version": "1f807fae42153f759f3349bef8db37dd219d6cf5",
+      "change_status": {
+        "total": 113,
+        "additions": 113,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1473535/1f807fae42153f759f3349bef8db37dd219d6cf5",
+      "committed_at": "2011-12-13T19:34:48Z"
+    }
+  ],
+  "description": "Animated Circle using d3.js",
+  "html_url": "https://gist.github.com/1473535",
+  "git_push_url": "git@gist.github.com:1473535.git",
+  "comments": 2,
+  "created_at": "2011-12-13T19:34:47Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 4880,
+      "content": "<html>\n\t<head>\n\t\t<title>Animated Circle Using d3.js</title>\n\t\t<script src=\"http://mbostock.github.com/d3/d3.v2.js\"></script>\n\t</head>\n\t<body>\n\n\t<table>\n\t<tr>\n\t\t<td>\n\t\t\t<b>Starting Value:</b> 100  &nbsp;&nbsp;<b>Starting Percentage:</b> 0  &nbsp;&nbsp;<b>Animation:</b> false\n\t\t\t<div id=\"circle1a\" class=\"aCircle\" style=\"width:180px; height:180px;\"></div>\n\t\t</td>\n\t\t<td>\n\t\t\t<b>Starting Value:</b> 200  &nbsp;&nbsp;<b>Starting Percentage:</b> 50  &nbsp;&nbsp;<b>Animation:</b> false\n\t\t\t<div id=\"circle1b\" class=\"aCircle\" style=\"width:180px; height:180px;\"></div>\n\t\t</td>\n\t<tr>\n\t\t<td>\n\t\t\t<b>Starting Value:</b> 100  &nbsp;&nbsp;<b>Starting Percentage:</b> 0  &nbsp;&nbsp;<b>Animation:</b> true\n\t\t\t<br>\n\t\t\t<b>Transition:</b> 1000ms &nbsp;&nbsp;<b>Update Frequency:</b> 1000ms\n\t\t\t<div id=\"circle2\" class=\"aCircle\" style=\"width:350px; height:350px;\"></div>\n\t\t</td>\n\t\t<td>\n\t\t\t<b>Starting Value:</b> 100  &nbsp;&nbsp;<b>Starting Percentage:</b> 0  &nbsp;&nbsp;<b>Animation:</b> true \n\t\t\t<br>\n\t\t\t<b>Transition:</b> 400ms &nbsp;&nbsp;<b>Update Frequency:</b> 400ms\n\t\t\t<div id=\"circle3\" class=\"aCircle\" style=\"width:350px; height:350px;\"></div>\n\t\t</td>\n\t</tr>\n\t<tr>\n\t\t<td>\n\t\t\t<b>Starting Value:</b> 60  &nbsp;&nbsp;<b>Starting Percentage:</b> 45  &nbsp;&nbsp;<b>Animation:</b> false\n\t\t\t<div id=\"circle4\" class=\"aCircle\" style=\"width:350px; height:120px;\"></div>\n\t\t</td>\n\t\t<td>\n\t\t\t<b>Starting Value:</b> 250  &nbsp;&nbsp;<b>Starting Percentage:</b> 75  &nbsp;&nbsp;<b>Animation:</b> false\n\t\t\t<div id=\"circle5\" class=\"aCircle\" style=\"width:350px; height:120px;\"></div>\t\t\t\n\t\t</td>\n\t<tr>\n\t</table>\n\n\n\t<script>\n\n\tfunction displayCircleExample(id, startingSizeDataPoint, startingColorPercentage, animate, updateDelay, transitionDelay) {\n\t\t/* circle visualization settings that use a data point between 0-400 to determine x, y and radius */\n\t\tvar circleRadius = d3.scale.linear().domain([0, 400]).range([\"5\", 125]);\n\t\t// radius can also be done using pow() instead of linear()\n\t\t//var circleRadius = d3.scale.pow().exponent(0.5).domain([0, 400]).range([\"5\", maxRadiusForCircle]);\n\t\t\n\t\t/* \n\t\t * X and Y axis are set to dynamically change so when it animates the circle slightly moves up/down, left/right \n\t\t * so that as the radius changes the location moves to fit better\n\t\t */\n\t\tvar circleYaxis = d3.scale.linear().domain([0, 400]).range([\"30%\", \"50%\"]);\n\t\tvar circleXaxis = d3.scale.linear().domain([0, 400]).range([\"30%\", \"50%\"]);\n\n\t\t/* \"stop light\" color range for circle from green through yellow, orange and red using 0-100 as the range */\n\t\tvar circleColorRange = d3.scale.linear().domain([0,33,67,100]).range([\"green\", \"#FFCC00\", \"#FF9900\", \"red\"]);\n\n\t\t// create an SVG element inside the #graph div that fills 100% of the div\n\t\tvar vis = d3.select(id).append(\"svg:svg\").attr(\"width\", \"100%\").attr(\"height\", \"100%\");\n\t\t/* add a circle -- we don't use the data point, as we will set it manually to animate it, so just passing in [1] */\n\t\tvar circle = vis.selectAll(\"circle\").data([1]).enter().append(\"svg:circle\");\n\t\t/* setup the initial styling and sizing of the circle */\n\t\tcircle\n\t\t\t.style(\"fill\", circleColorRange(startingColorPercentage))\n\t\t\t.attr(\"cx\", circleXaxis(startingSizeDataPoint))\n\t\t\t.attr(\"cy\", circleYaxis(startingSizeDataPoint))\n\t\t\t.attr(\"r\", circleRadius(startingSizeDataPoint));\n\n\t\t// create a simple data array \n\t\tvar dataA = [80, 100, 105, 95, 130, 150, 170, 160, 250, 275, 255, 275, 320, 350, 320, 350, 310, 280, 310, 305, 315, 295, 275, 265, 240];\n\t\tvar dataB = [0, 3, 6, 2, 7, 9, 3, 5, 8, 14, 16, 26, 36, 45, 40, 38, 52, 67, 58, 78, 85, 88, 76, 89, 98, 97, 92, 86, 75, 34, 25, 18, 12, 6, 3, 0, 0];\n\t\n\n\t\tfunction redraw(dataValue, colorPercentage) {\n\t\t\t// update the circle\n\t\t\td3.selectAll(id).selectAll(\"circle\")\n\t\t\t\t.transition()\n\t\t\t\t.duration(transitionDelay)\n\t\t\t\t.attr(\"cy\", circleYaxis(dataValue))\n\t\t\t\t.attr(\"cx\", circleXaxis(dataValue))\n\t\t\t\t.attr(\"r\", circleRadius(dataValue))\n\t\t\t\t.style(\"fill\", circleColorRange(colorPercentage));\n\t\t}\n\n\n\t\tif(animate) {\n\t\t\tsetInterval(function() {\n\t\t\t   var vA = dataA.shift(); // remove the first element of the array\n\t\t\t   dataA.push(vA); // add a new element to the array (we're just taking the number we just shifted off the front and appending to the end)\n\t\t\t   var vB = dataB.shift(); // remove the first element of the array\n\t\t\t   dataB.push(vB); // add a new element to the array (we're just taking the number we just shifted off the front and appending to the end)\n\n\t\t\t   redraw(vA, vB);\n\t\t\t}, updateDelay);\n\t\t}\n\t}\n\n\tdisplayCircleExample(\"#circle1a\", 100, 0, false, 1000, 1000);\n\tdisplayCircleExample(\"#circle1b\", 200, 50, false, 1000, 1000);\n\tdisplayCircleExample(\"#circle2\", 100, 0, true, 1000, 1000);\n\tdisplayCircleExample(\"#circle3\", 100, 0, true, 400, 400);\n\tdisplayCircleExample(\"#circle4\", 60, 45, false, 1000, 1000);\n\tdisplayCircleExample(\"#circle5\", 250, 75, false, 1000, 1000);\n\t\t\n\t</script>\n\n\t</body>\n</html>",
+      "raw_url": "https://gist.github.com/raw/1473535/d0b67f7d63d6eeaec559cb8f4a1b532116e1548d/index.html",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-12-13T19:34:47Z",
+  "url": "https://api.github.com/gists/1473535",
+  "id": "1473535"
+}

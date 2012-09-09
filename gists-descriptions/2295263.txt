@@ -1,0 +1,68 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+    "login": "Guerino1",
+    "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/Guerino1",
+    "id": 1558275
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "version": "1ed1d0d5ffd635a25c0e8c8839feaab2ca1315c9",
+      "change_status": {
+        "total": 0,
+        "additions": 0,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/2295263/1ed1d0d5ffd635a25c0e8c8839feaab2ca1315c9",
+      "committed_at": "2012-04-05T19:48:43Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "6c21f0e53df4859b624864dabbb496c8",
+        "login": "Guerino1",
+        "avatar_url": "https://secure.gravatar.com/avatar/6c21f0e53df4859b624864dabbb496c8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/Guerino1",
+        "id": 1558275
+      },
+      "version": "854fdb5268fe95760158651b27d5b86e3ad0c51c",
+      "change_status": {
+        "total": 107,
+        "additions": 107,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/2295263/854fdb5268fe95760158651b27d5b86e3ad0c51c",
+      "committed_at": "2012-04-03T20:24:42Z"
+    }
+  ],
+  "git_push_url": "git@gist.github.com:2295263.git",
+  "description": "Simple D3 Pie Chart with Magnitudes in Arcs and Legends Outside and Along Arcs",
+  "html_url": "https://gist.github.com/2295263",
+  "comments": 0,
+  "created_at": "2012-04-03T20:24:42Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/2295263/cbb206a3f3ed492b421e7a18bc6d4435d10c37e4/index.html",
+      "size": 4652,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>    \n    <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\">\n    <title>Testing Pie Chart</title>\n\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?2.4.5\"></script>\n\n    <!-- Source for example located at: http://bl.ocks.org/1203641 -->\n\n    <style type=\"text/css\">\n        .slice text {\n            font-size: 16pt;\n            font-family: Arial;\n        }   \n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\n    var canvasWidth = 300, //width\n      canvasHeight = 300,   //height\n      outerRadius = 100,   //radius\n      color = d3.scale.category20(); //builtin range of colors\n\n    var dataSet = [\n      {\"legendLabel\":\"One\", \"magnitude\":20}, \n      {\"legendLabel\":\"Two\", \"magnitude\":40}, \n      {\"legendLabel\":\"Three\", \"magnitude\":50}, \n      {\"legendLabel\":\"Four\", \"magnitude\":16}, \n      {\"legendLabel\":\"Five\", \"magnitude\":50}, \n      {\"legendLabel\":\"Six\", \"magnitude\":8}, \n      {\"legendLabel\":\"Seven\", \"magnitude\":30}];\n    \n    var vis = d3.select(\"body\")\n      .append(\"svg:svg\") //create the SVG element inside the <body>\n        .data([dataSet]) //associate our data with the document\n        .attr(\"width\", canvasWidth) //set the width of the canvas\n        .attr(\"height\", canvasHeight) //set the height of the canvas\n        .append(\"svg:g\") //make a group to hold our pie chart\n          .attr(\"transform\", \"translate(\" + 1.5*outerRadius + \",\" + 1.5*outerRadius + \")\") // relocate center of pie to 'outerRadius,outerRadius'\n\n    // This will create <path> elements for us using arc data...\n    var arc = d3.svg.arc()\n      .outerRadius(outerRadius);\n\n    var pie = d3.layout.pie() //this will create arc data for us given a list of values\n      .value(function(d) { return d.magnitude; }) // Binding each value to the pie\n      .sort( function(d) { return null; } );\n\n    // Select all <g> elements with class slice (there aren't any yet)\n    var arcs = vis.selectAll(\"g.slice\")\n      // Associate the generated pie data (an array of arcs, each having startAngle,\n      // endAngle and value properties) \n      .data(pie)\n      // This will create <g> elements for every \"extra\" data element that should be associated\n      // with a selection. The result is creating a <g> for every object in the data array\n      .enter()\n      // Create a group to hold each slice (we will have a <path> and a <text>\n      // element associated with each slice)\n      .append(\"svg:g\")\n      .attr(\"class\", \"slice\");    //allow us to style things in the slices (like text)\n\n    arcs.append(\"svg:path\")\n      //set the color for each slice to be chosen from the color function defined above\n      .attr(\"fill\", function(d, i) { return color(i); } )\n      //this creates the actual SVG path using the associated data (pie) with the arc drawing function\n      .attr(\"d\", arc);\n\n    // Add a legendLabel to each arc slice...\n    arcs.append(\"svg:text\")\n      .attr(\"transform\", function(d) { //set the label's origin to the center of the arc\n        //we have to make sure to set these before calling arc.centroid\n        d.outerRadius = outerRadius + 50; // Set Outer Coordinate\n        d.innerRadius = outerRadius + 45; // Set Inner Coordinate\n        return \"translate(\" + arc.centroid(d) + \")\";\n      })\n      .attr(\"text-anchor\", \"middle\") //center the text on it's origin\n      .style(\"fill\", \"Purple\")\n      .style(\"font\", \"bold 12px Arial\")\n      .text(function(d, i) { return dataSet[i].legendLabel; }); //get the label from our original data array\n\n    // Add a magnitude value to the larger arcs, translated to the arc centroid and rotated.\n    arcs.filter(function(d) { return d.endAngle - d.startAngle > .2; }).append(\"svg:text\")\n      .attr(\"dy\", \".35em\")\n      .attr(\"text-anchor\", \"middle\")\n      //.attr(\"transform\", function(d) { return \"translate(\" + arc.centroid(d) + \")rotate(\" + angle(d) + \")\"; })\n      .attr(\"transform\", function(d) { //set the label's origin to the center of the arc\n        //we have to make sure to set these before calling arc.centroid\n        d.outerRadius = outerRadius; // Set Outer Coordinate\n        d.innerRadius = outerRadius/2; // Set Inner Coordinate\n        return \"translate(\" + arc.centroid(d) + \")rotate(\" + angle(d) + \")\";\n      })\n      .style(\"fill\", \"White\")\n      .style(\"font\", \"bold 12px Arial\")\n      .text(function(d) { return d.data.magnitude; });\n\n    // Computes the angle of an arc, converting from radians to degrees.\n    function angle(d) {\n      var a = (d.startAngle + d.endAngle) * 90 / Math.PI - 90;\n      return a > 90 ? a - 180 : a;\n    }\n\n        \n    </script>\n  </body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2012-04-05T19:48:43Z",
+  "url": "https://api.github.com/gists/2295263",
+  "id": "2295263",
+  "git_pull_url": "git://gist.github.com/2295263.git"
+}

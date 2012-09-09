@@ -1,0 +1,170 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "16e5fbbbf50f94ccab392bbe0b5417e5",
+    "login": "notmatt",
+    "avatar_url": "https://secure.gravatar.com/avatar/16e5fbbbf50f94ccab392bbe0b5417e5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/notmatt",
+    "id": 92480
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 7,
+        "additions": 4,
+        "deletions": 3
+      },
+      "user": {
+        "gravatar_id": "16e5fbbbf50f94ccab392bbe0b5417e5",
+        "login": "notmatt",
+        "avatar_url": "https://secure.gravatar.com/avatar/16e5fbbbf50f94ccab392bbe0b5417e5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/notmatt",
+        "id": 92480
+      },
+      "committed_at": "2011-07-15T00:29:42Z",
+      "version": "afdb10b1c1265a9aaacf8db8be984ae7c33c8d8f",
+      "url": "https://api.github.com/gists/1083732/afdb10b1c1265a9aaacf8db8be984ae7c33c8d8f"
+    },
+    {
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "user": {
+        "gravatar_id": "16e5fbbbf50f94ccab392bbe0b5417e5",
+        "login": "notmatt",
+        "avatar_url": "https://secure.gravatar.com/avatar/16e5fbbbf50f94ccab392bbe0b5417e5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/notmatt",
+        "id": 92480
+      },
+      "committed_at": "2011-07-14T23:48:46Z",
+      "version": "43d5480b05f2ac7c7af901b2992c28518039b4e0",
+      "url": "https://api.github.com/gists/1083732/43d5480b05f2ac7c7af901b2992c28518039b4e0"
+    },
+    {
+      "change_status": {
+        "total": 6,
+        "additions": 6,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "16e5fbbbf50f94ccab392bbe0b5417e5",
+        "login": "notmatt",
+        "avatar_url": "https://secure.gravatar.com/avatar/16e5fbbbf50f94ccab392bbe0b5417e5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/notmatt",
+        "id": 92480
+      },
+      "committed_at": "2011-07-14T23:47:36Z",
+      "version": "074057398cba24db54f40f5e0dd590d36f679f1b",
+      "url": "https://api.github.com/gists/1083732/074057398cba24db54f40f5e0dd590d36f679f1b"
+    },
+    {
+      "change_status": {
+        "total": 11,
+        "additions": 11,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "16e5fbbbf50f94ccab392bbe0b5417e5",
+        "login": "notmatt",
+        "avatar_url": "https://secure.gravatar.com/avatar/16e5fbbbf50f94ccab392bbe0b5417e5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/notmatt",
+        "id": 92480
+      },
+      "committed_at": "2011-07-14T23:46:34Z",
+      "version": "1cd6230c25dd8fe15b82cb553acabf68f4555f20",
+      "url": "https://api.github.com/gists/1083732/1cd6230c25dd8fe15b82cb553acabf68f4555f20"
+    },
+    {
+      "change_status": {
+        "total": 4,
+        "additions": 3,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "16e5fbbbf50f94ccab392bbe0b5417e5",
+        "login": "notmatt",
+        "avatar_url": "https://secure.gravatar.com/avatar/16e5fbbbf50f94ccab392bbe0b5417e5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/notmatt",
+        "id": 92480
+      },
+      "committed_at": "2011-07-14T23:45:47Z",
+      "version": "ddf83926420612239185d41ff96d3ffaed599b19",
+      "url": "https://api.github.com/gists/1083732/ddf83926420612239185d41ff96d3ffaed599b19"
+    },
+    {
+      "change_status": {
+        "total": 11,
+        "additions": 11,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "16e5fbbbf50f94ccab392bbe0b5417e5",
+        "login": "notmatt",
+        "avatar_url": "https://secure.gravatar.com/avatar/16e5fbbbf50f94ccab392bbe0b5417e5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/notmatt",
+        "id": 92480
+      },
+      "committed_at": "2011-07-14T23:44:26Z",
+      "version": "88f64a794df0c3b3c9685b2da8243e3d3c5fcc19",
+      "url": "https://api.github.com/gists/1083732/88f64a794df0c3b3c9685b2da8243e3d3c5fcc19"
+    },
+    {
+      "change_status": {
+        "total": 88,
+        "additions": 47,
+        "deletions": 41
+      },
+      "user": {
+        "gravatar_id": "16e5fbbbf50f94ccab392bbe0b5417e5",
+        "login": "notmatt",
+        "avatar_url": "https://secure.gravatar.com/avatar/16e5fbbbf50f94ccab392bbe0b5417e5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/notmatt",
+        "id": 92480
+      },
+      "committed_at": "2011-07-14T23:43:12Z",
+      "version": "e7751cf321e4b2bc516f07763698ea2517c53d9c",
+      "url": "https://api.github.com/gists/1083732/e7751cf321e4b2bc516f07763698ea2517c53d9c"
+    },
+    {
+      "change_status": {
+        "total": 41,
+        "additions": 41,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "16e5fbbbf50f94ccab392bbe0b5417e5",
+        "login": "notmatt",
+        "avatar_url": "https://secure.gravatar.com/avatar/16e5fbbbf50f94ccab392bbe0b5417e5?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/notmatt",
+        "id": 92480
+      },
+      "committed_at": "2011-07-14T23:40:00Z",
+      "version": "71122cc026f7d2435de13e227fdd6083a173fc2f",
+      "url": "https://api.github.com/gists/1083732/71122cc026f7d2435de13e227fdd6083a173fc2f"
+    }
+  ],
+  "description": "d3 bar graph leak test.",
+  "html_url": "https://gist.github.com/1083732",
+  "comments": 0,
+  "created_at": "2011-07-14T23:40:00Z",
+  "git_pull_url": "git://gist.github.com/1083732.git",
+  "public": true,
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1083732/c999e2603d3c803a1ac9751da5bd05e763e8b73e/index.html",
+      "size": 1654,
+      "content": "<html>\n<head><title>Test</title>\n<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js?1.26.0\"></script>\n</head>\n<body>\n<div class=\"content\"></div>\n<script>\nvar t = 1297110663,\n    v = 70,\n    data = d3.range(33).map(next);\n\nvar w = 20,\n    h = 80;\n\nvar x = d3.scale.linear()\n    .domain([0, 1])\n    .range([0, w]);\n\nvar y = d3.scale.linear()\n    .domain([0, 100])\n    .rangeRound([0, h]);\n\nfunction next() {\n  return {\n    time: ++t,\n    value: v = ~~Math.max(10, Math.min(90, v + 10 * (Math.random() - .5)))\n  };\n}\n\nvar chart3 = d3.select(\".content\")\n  .append(\"svg:svg\")\n    .attr(\"class\", \"chart\")\n    .attr(\"width\", w * data.length - 1)\n    .attr(\"height\", h);\n\nchart3.append(\"svg:line\")\n    .attr(\"x1\", 0)\n    .attr(\"x2\", w * data.length)\n    .attr(\"y1\", h - .5)\n    .attr(\"y2\", h - .5)\n    .attr(\"stroke\", \"#000\");\n\nredraw3();\n\nfunction redraw3() {\n\n  var rect = chart3.selectAll(\"rect\")\n      .data(data, function(d) { return d.time; });\n\n  rect.enter().insert(\"svg:rect\", \"line\")\n      .attr(\"x\", function(d, i) { return x(i + 1) - .5; })\n      .attr(\"y\", function(d) { return h - y(d.value) - .5; })\n      .attr(\"width\", w)\n      .attr(\"height\", function(d) { return y(d.value); })\n    .transition()\n      .duration(150)\n      .attr(\"x\", function(d, i) { return x(i) - .5; });\n\n  rect.transition()\n      .duration(150)\n      .attr(\"x\", function(d, i) { return x(i) - .5; });\n\n  rect.exit()\n//      .transition()\n//      .duration(150)\n//      .attr(\"x\", function(d, i) { return x(i - 1) - .5; })\n      .remove();\n\n}\n\nsetInterval(function() {\n  data.shift();\n  data.push(next());\n  redraw3();\n}, 300);\n</script>\n</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:1083732.git",
+  "updated_at": "2011-07-14T23:40:00Z",
+  "url": "https://api.github.com/gists/1083732",
+  "id": "1083732"
+}

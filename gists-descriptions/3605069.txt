@@ -1,0 +1,203 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "id": 402462
+  },
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "version": "b59b967d045acfc6ffaff92d57a241135533581e",
+      "committed_at": "2012-09-09T08:44:36Z",
+      "url": "https://api.github.com/gists/3605069/b59b967d045acfc6ffaff92d57a241135533581e"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 5,
+        "additions": 2,
+        "deletions": 3
+      },
+      "version": "9396ea6826db190dd8be2b26b31f0318dad1bee9",
+      "committed_at": "2012-09-05T14:30:02Z",
+      "url": "https://api.github.com/gists/3605069/9396ea6826db190dd8be2b26b31f0318dad1bee9"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 2,
+        "additions": 2,
+        "deletions": 0
+      },
+      "version": "73555e8a8648319ea6d84211344c89d13afb5f29",
+      "committed_at": "2012-09-05T14:27:26Z",
+      "url": "https://api.github.com/gists/3605069/73555e8a8648319ea6d84211344c89d13afb5f29"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 74,
+        "additions": 37,
+        "deletions": 37
+      },
+      "version": "63ea06d1112c960d4c20be85903a7aeba62fa4ad",
+      "committed_at": "2012-09-02T23:50:00Z",
+      "url": "https://api.github.com/gists/3605069/63ea06d1112c960d4c20be85903a7aeba62fa4ad"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      },
+      "version": "954258f92b54d815fa177736fd419e94229eec00",
+      "committed_at": "2012-09-02T23:45:25Z",
+      "url": "https://api.github.com/gists/3605069/954258f92b54d815fa177736fd419e94229eec00"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 10,
+        "additions": 9,
+        "deletions": 1
+      },
+      "version": "35578fea3b20e1e0928535288bd4b8a6fa4c68c1",
+      "committed_at": "2012-09-02T23:43:29Z",
+      "url": "https://api.github.com/gists/3605069/35578fea3b20e1e0928535288bd4b8a6fa4c68c1"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 93,
+        "additions": 82,
+        "deletions": 11
+      },
+      "version": "9205af59f3c7a7ce179400fa7022e8d21df9f18b",
+      "committed_at": "2012-09-02T23:14:29Z",
+      "url": "https://api.github.com/gists/3605069/9205af59f3c7a7ce179400fa7022e8d21df9f18b"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 576,
+        "additions": 576,
+        "deletions": 0
+      },
+      "version": "a93e99aa49e41070340b982facd3f88bbdb9146c",
+      "committed_at": "2012-09-02T22:14:00Z",
+      "url": "https://api.github.com/gists/3605069/a93e99aa49e41070340b982facd3f88bbdb9146c"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "id": 402462
+      },
+      "change_status": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "version": "5496bf6db13fe4d095bdfe9626068c84db0214a9",
+      "committed_at": "2012-09-02T22:09:18Z",
+      "url": "https://api.github.com/gists/3605069/5496bf6db13fe4d095bdfe9626068c84db0214a9"
+    }
+  ],
+  "description": "d3.js [vanilla/mbostock]: axes examples",
+  "comments": 0,
+  "created_at": "2012-09-02T22:09:18Z",
+  "public": true,
+  "html_url": "https://gist.github.com/3605069",
+  "git_pull_url": "git://gist.github.com/3605069.git",
+  "files": {
+    ".gitignore": {
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "size": 623,
+      "raw_url": "https://gist.github.com/raw/3605069/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 21630,
+      "raw_url": "https://gist.github.com/raw/3605069/37e5328ee83f3ae6bb70a2d16360a93b8888531a/index.html",
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>Classical Scales</title>\n    <script type=\"text/javascript\" src=\"http://d3js.org/d3.v2.js\"></script>\n    <style type=\"text/css\">\n\nbody {\n  font: 10px sans-serif;\n}\n\n.error {\n  fill: red;\n  font-size: 200%;\n}\n\nline, path {\n  fill: none;\n  stroke: #000;\n  shape-rendering: crispEdges;\n}\n\n/*\n.minor :not(.minor) {\n  display: none;\n}\n*/\n\n    </style>\n  </head>\n  <body>\n    <svg>\n      <g>\n        <filter id=\"glow\">\n          <feColorMatrix type=\"matrix\"\n              values=\n                  \"0 0 0 0.98  0\n                   0 0 0 0.98  0\n                   0 0 0 0.98  0\n                   0 0 0 1     0\"\n          />\n          <feGaussianBlur stdDeviation=\"3.5\" result=\"coloredBlur\"/>\n          <feMerge>\n              <feMergeNode in=\"coloredBlur\"/>\n              <feMergeNode in=\"SourceGraphic\"/>\n          </feMerge>\n        </filter>\n      </g>\n    </svg>\n<script type=\"text/javascript\" src=\"http://gerhobbelt.github.com/bl.ocks.org-hack/fixit.js\" ></script>\n\n    <script type=\"text/javascript\">\n\n/*\nCorrect bl.ocks.org IFRAME, Iff we're shown in an iframe!\n*/\nd3.select(window.frameElement)\n  .style(\"height\", \"1500px\");\n\n\n\nvar margin = {top: 0, right: 20, bottom: 20, left: 20},\n    width = 960 - margin.right - margin.left,\n    height = 1500 - margin.top - margin.bottom;\n    hstep = Math.floor(height / 32);\n\nvar x = d3.scale.linear()\n    .domain([.05, .95])\n    .range([0, width]);\n\nvar log_x = d3.scale.log()\n    .domain([.05, 95])\n    .range([0, width]);\n\nvar log_x_v2 = d3.scale.log()\n    .domain([.05, 9500])\n    .range([0, width]);\n\nvar log_x_v3 = d3.scale.log()\n    .domain([.05, .95])\n    .range([0, width]);\n\nvar pow_x_2 = d3.scale.pow()\n    .exponent(2)\n    .domain([.05, 9.5])\n    .range([0, width]);\n\nvar pow_x_2_v2 = d3.scale.pow()\n    .exponent(2)\n    .domain([.05, 9500])\n    .range([0, width]);\n\nvar pow_x_2_v3 = d3.scale.pow()\n    .exponent(2)\n    .domain([0, 2])\n    .range([0, width]);\n\nvar pow_x_4 = d3.scale.pow()\n    .exponent(2)\n    .domain([0, 9.5])\n    .range([0, width]);\n\nvar pow_x_f5 = d3.scale.pow()\n    .exponent(1 / 5)\n    .domain([0, 9.5])\n    .range([0, width]);\n\nvar pow_x_m3 = d3.scale.pow()\n    .exponent(-3)\n    .domain([0, 9.5])\n    .range([0, width]);\n\nvar sqrt_x = d3.scale.sqrt()\n    .domain([0, 9.5])\n    .range([0, width]);\n\nvar quantile_x = d3.scale.quantile()\n    .domain([.05, .1, .11, .12, .13, .15, .2, .25, .4, .55, .7, 1, 2, 3, 4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 6.3, 6.7, 6.8, 7, 8.4, 8.5, 8.6, 8.7, 9.5])\n    .range([0, width / 8, width / 4, width / 2, width * 3 / 4, width]);\n\nvar quantize_x = d3.scale.quantize()\n    .domain([.05, 9.5])\n    .range([0, width / 8, width / 4, width / 2, width * 3 / 4, width]);\n\n// d3.scale.threshold ASSUMPTION: domain.length == range.length - 1\nvar threshold_x = d3.scale.threshold()\n    .domain([50, 140, 201, 605])\n    .range([0, width / 4, width / 2, width * 3 / 4, width]);\n\nvar identity_x = d3.scale.identity()\n    .domain([0, width]);\n\nvar svg = d3.select(\"svg\")\n    .attr(\"width\", width + margin.right + margin.left)\n    .attr(\"height\", height + margin.top + margin.bottom)\n  .append(\"g\")\n    .attr(\"transform\", \"translate(\" + margin.left + \",\" + margin.top + \")\");\n\nvar axis_y = hstep;\nvar descr = function(txt) {\n  return function() {\n    this.insert(\"text\", \"g\")\n      .text(txt)\n      .attr(\"class\", \"description\")\n      .attr(\"x\", width / 2)\n      .attr(\"y\", 0)\n      .attr(\"dy\", \"-1em\")\n      .attr(\"text-anchor\", \"middle\");\n  };\n};\n\nsvg.append(\"g\")\n    .attr(\"class\", \"x axis\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(x))\n    .call(descr(\"regular, linear axis (range = [0.05 - 0.95])\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(x).tickSubdivide(false))\n    .call(descr(\"regular, with .tickSubdivide(false)\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(x).tickSubdivide(true))\n    .call(descr(\"regular, with .tickSubdivide(true)\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(x).tickSubdivide(9))\n    .call(descr(\"regular, with 10 subticks per tick\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(x).tickSubdivide(\"9\"))\n    .call(descr('regular, with 10 subticks per tick, using non-numeric .tickSubdivide(\"9\")'));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(x).tickSubdivide(9).tickSize(6, 3, 10))\n    .call(descr(\"regular, with 10 (smaller) subticks and longer start/end ticks\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(x).tickSubdivide(9).tickSize(8, function(d, i) {\n      return (d.subindex == 5 ? 5 : 3);\n    }, -10))\n    .call(descr(\"classical, with 10 (smaller) subticks, emphasis on the fifth, and longer start/end ticks, inverted\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(x).tickSubdivide(16 - 1).tickSize(10, function(d, i) {\n      return (d.subindex == 8 ? 8 : d.subindex % 2 == 0 ? 5 : 2);\n    }, -4))\n    .call(descr(\"classical, with 16 subticks, emphasis on the even and half-way ticks a la classical inches scale, start/end ticks inverted\"));\n\n\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical log_x\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(log_x).tickSubdivide(9).tickSize(8, function(d, i) {\n      return (d.subindex == 5 ? 5 : 3);\n    }, -10))\n    .call(descr(\"classical logarithmic, with 10 (smaller) subticks, emphasis on the fifth, and longer start/end ticks, inverted\"));\n\n// returns function suitable for axis.tickSubdivision():\nfunction example_subdiv_A(scale) {\n  return function(subticks, ticks, i, n, extent) {\n    var t0, t1, s, v;\n    var min_subwidth = 4;\n\n    function nice_modulus(m) {\n      if (m >= 20) return 20;\n      if (m >= 10) return 10;\n      if (m >= 5) return 5;\n      if (m >= 2) return 2;\n      return 0;\n    }\n\n    function fill_subticks(base, idx, m) {\n      var v0, v1, v05, j, modulus, delta;\n\n      v0 = scale(t0.value);\n      v1 = scale(t1.value);\n      // test if this tick range is thresholded/quantized in any way:\n      v05 = scale((t1.value + t0.value) / 2);\n      if (v05 == v1 || v05 == v0)\n        return;\n      modulus = nice_modulus((v1 - v0) / min_subwidth);\n      if (modulus <= 0)\n        return;\n\n      delta = (t1.value - t0.value) / modulus;\n      for (j = modulus; j-- > 1; ) {\n        v = base.value + m * j * delta;\n        if (v > extent[0] && v < extent[1]) {\n          subticks.push({\n            value: v,\n            index: idx,\n            base: base,\n            subindex: m * j,\n            modulus: modulus,\n            majors: ticks\n          });\n        }\n      }\n    }\n\n    if (i == 0) {\n      t0 = ticks[0];\n      t1 = ticks[1];\n      fill_subticks(t0, -1, -1);\n    } else if (i == n) {\n      t0 = ticks[n - 2];\n      t1 = ticks[n - 1];\n      fill_subticks(t1, n - 1, 1);\n    } else {\n      t0 = ticks[i - 1];\n      t1 = ticks[i];\n      fill_subticks(t0, i - 1, 1);\n    }\n    return subticks;\n  };\n}\n\n\n\nfunction b0rk_prevention(svg, f) {\n  var s;\n  try {\n    s = f();\n  } catch (e) {\n    s = svg.append(\"g\")\n        .attr(\"class\", \"b0rk\")\n        .attr(\"transform\", \"translate(0,\" + axis_y + \")\");\n\n    s.append(\"text\")\n      .text(\"B0rk B0rk B0rk!\")\n      .attr(\"class\", \"error\")\n      .attr(\"style\", \"stroke: white; stroke-width: 10;\")\n      .attr(\"x\", 40)\n      .attr(\"y\", 10)\n      .attr(\"text-anchor\", \"left\");\n\n    s.append(\"text\")\n      .text(\"B0rk B0rk B0rk!\")\n      .attr(\"class\", \"error\")\n      .attr(\"style\", \"filter: url(#glow);\")\n      .attr(\"x\", 40)\n      .attr(\"y\", 10)\n      .attr(\"text-anchor\", \"left\");\n  }\n  return s;\n}\n\n\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical log_x\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(log_x).tickSubdivide(example_subdiv_A(log_x))\n      .tickSize(12, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 8 :\n                ((5 * d.subindex == d.modulus) && (d.modulus >= 10) ? 6 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 5 :\n                  (d.modulus > 10 ? 2 : 4))));\n      }, -10))\n    .call(descr(\"classical logarithmic, with output-dependent # of subticks, emphasis on the 2nd and other even (but only when we have 10+ subticks!) and .5 subdiv, and longer start/end ticks\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical log_x_v2\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(log_x_v2).tickSubdivide(example_subdiv_A(log_x_v2))\n      .tickSize(12, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 8 :\n                ((5 * d.subindex == d.modulus) && (d.modulus >= 10) ? 6 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 5 :\n                  (d.modulus > 10 ? 2 : 4))));\n      }, -10))\n    .call(descr(\"classical logarithmic as above, but for a much larger range\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical log_x_v2\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(log_x_v3).tickSubdivide(example_subdiv_A(log_x_v3))\n      .tickSize(12, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 9 :\n                ((5 * d.subindex == d.modulus) && (d.modulus >= 10) ? 6 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 5 :\n                  (d.modulus > 10 ? 2 : 4))));\n      }, -10))\n    .call(descr(\"classical logarithmic as above, but for a much smaller range\"));\n\n\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_2).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical square power, with 10 (smaller) subticks, emphasis on the even (for modulo >= 10) and fifth, and longer start/end ticks, inverted\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_2).tickSubdivide(example_subdiv_A(pow_x_2))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical square power, adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_2_v2).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical square power, with 10 (smaller) subticks, etc., for larger range\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_2_v2).tickSubdivide(example_subdiv_A(pow_x_2_v2))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical square power, adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_2_v3).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical square power, with 10 (smaller) subticks, etc., for smaller range\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_2_v3).tickSubdivide(example_subdiv_A(pow_x_2_v3))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical square power, adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_4).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical power(4), with 10 (smaller) subticks, emphasis on the even (for modulo >= 10) and fifth, and longer start/end ticks, inverted\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_4).tickSubdivide(example_subdiv_A(pow_x_4))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical power(4), adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_f5).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical power(1/5), with 10 (smaller) subticks, emphasis on the even (for modulo >= 10) and fifth, and longer start/end ticks, inverted\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_f5).tickSubdivide(example_subdiv_A(pow_x_f5))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical power(1/5), adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_m3).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical power(-3), with 10 (smaller) subticks, etc.\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(pow_x_m3).tickSubdivide(example_subdiv_A(pow_x_m3))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical power(-3), adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(sqrt_x).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical square root, with 10 (smaller) subticks, etc.\"));\n\naxis_y += hstep;\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(sqrt_x).tickSubdivide(example_subdiv_A(sqrt_x))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n    .call(descr(\"classical square root, adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nb0rk_prevention(svg, function() {\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(quantile_x).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n}).call(descr(\"classical quantile, with 10 (smaller) subticks, etc.\"));\n\naxis_y += hstep;\nb0rk_prevention(svg, function() {\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(quantile_x).tickSubdivide(example_subdiv_A(quantile_x))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n}).call(descr(\"classical quantile, adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nb0rk_prevention(svg, function() {\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(quantize_x).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n}).call(descr(\"classical quantized, with 10 (smaller) subticks, etc.\"));\n\naxis_y += hstep;\nb0rk_prevention(svg, function() {\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(quantize_x).tickSubdivide(example_subdiv_A(quantize_x))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n}).call(descr(\"classical quantized, adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nb0rk_prevention(svg, function() {\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(threshold_x).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n}).call(descr(\"classical threshold, with 10 (smaller) subticks, etc.\"));\n\naxis_y += hstep;\nb0rk_prevention(svg, function() {\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(threshold_x).tickSubdivide(example_subdiv_A(threshold_x))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n}).call(descr(\"classical threshold, adaptive subticks, etc.\"));\n\n\n\naxis_y += hstep;\nb0rk_prevention(svg, function() {\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(identity_x).tickSubdivide(9)\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n}).call(descr(\"classical identity, with 10 (smaller) subticks, etc.\"));\n\naxis_y += hstep;\nb0rk_prevention(svg, function() {\nsvg.append(\"g\")\n    .attr(\"class\", \"x minor endticks classical\")\n    .attr(\"transform\", \"translate(0,\" + axis_y + \")\")\n    .call(d3.svg.axis().scale(identity_x).tickSubdivide(example_subdiv_A(identity_x))\n      .tickSize(10, function(d, i) {\n        return (2 * d.subindex == d.modulus ? 7 :\n                 ((d.subindex % 2 == 0) && (d.modulus > 10) ? 4 :\n                  (d.modulus > 10 ? 2 : 4)));\n      }, -10))\n}).call(descr(\"classical identity, adaptive subticks, etc.\"));\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 892,
+      "raw_url": "https://gist.github.com/raw/3605069/d1cd9b64dd3ccf9687afb5060ffba0de6585d1b2/README.md",
+      "content": "# D3.js Axes …… <a href=\"http://bl.ocks.org/3605069\" title=\"view this gist via bl.ocks.org\">∆</a> <a href=\"http://bl.ocks.org/GerHobbelt\" title=\"view a list of all my gists at bl.ocks.org\">∞</a>\n\nThis gist accompanies [this gist](http://bl.ocks.org/3605124) which showcases the augmented axes component: here we see these axes rendered (if at all possible) using the mbostock d3 master head, i.e. 'vanilla d3'.\n\n\n## Related gists\n\n- [gist 3605035](http://bl.ocks.org/3605035): a series of linear axes with varying degress of sophistication, using the advanced d3.axis component\n- [gist 3605069](http://bl.ocks.org/3605069): same code, with crash protection wrappers, for vanilla D3.js (use to see how many of these vanilla D3.js supports today)\n- [gist 3605124](http://bl.ocks.org/3605124): reduced code suitable for use with vanilla D3.js v2.10 as is, with crash protection wrappers\n",
+      "language": "Markdown"
+    }
+  },
+  "git_push_url": "git@gist.github.com:3605069.git",
+  "updated_at": "2012-09-09T09:00:50Z",
+  "url": "https://api.github.com/gists/3605069",
+  "id": "3605069"
+}

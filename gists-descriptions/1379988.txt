@@ -1,0 +1,63 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "created_at": "2011-11-22T18:26:46Z",
+      "updated_at": "2011-11-22T19:05:16Z",
+      "url": "https://api.github.com/gists/1386444",
+      "id": "1386444"
+    }
+  ],
+  "user": {
+    "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+    "login": "enjalot",
+    "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/enjalot",
+    "id": 96189
+  },
+  "git_pull_url": "git://gist.github.com/1379988.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "89db4f3e0cfa7752306bede98888b898",
+        "login": "enjalot",
+        "avatar_url": "https://secure.gravatar.com/avatar/89db4f3e0cfa7752306bede98888b898?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/enjalot",
+        "id": 96189
+      },
+      "version": "471009558817d18d9f567e1626e414ca21902600",
+      "change_status": {
+        "total": 173,
+        "additions": 173,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/1379988/471009558817d18d9f567e1626e414ca21902600",
+      "committed_at": "2011-11-20T08:29:18Z"
+    }
+  ],
+  "description": "4 circles rotating with d3.js",
+  "html_url": "https://gist.github.com/1379988",
+  "git_push_url": "git@gist.github.com:1379988.git",
+  "comments": 0,
+  "created_at": "2011-11-20T08:29:18Z",
+  "public": true,
+  "files": {
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/1379988/20f66d6b07af4b1b50bc8c4515175db8ffb0f71b/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 4438,
+      "content": "<!DOCTYPE html>\n<html>\n <head>\n   <title>Spiral</title>\n   <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n   <style type=\"text/css\">\n\nbody {\n font: 10px sans-serif;\n}\n\n   </style>\n </head>\n <body>\n   <p>Click the spiral to pause</p>\n   <script type=\"text/javascript\">\n\n    var w = 500;\n    var h = 500;\n\n    var r1 = 90;\n    var r2 = 150;\n    var r3 = 220;\n    var r4 = 280;\n    var r5 = 340;\n    var r6 = 410;\n\n    \n    var size = 20\n\n    var click = function()\n    {\n        running = !running\n        if(running)\n            setTimeout(update_circles, 80);\n\n    }\n\n    //setup svg canvas\n    svg = d3.select(\"body\")\n        .append(\"svg:svg\")\n            .attr(\"width\", w)\n            .attr(\"height\", h)\n            //.attr(\"transform\", \"scale(.5 .5)\")\n            .attr(\"id\", \"spiral\")\n            .on(\"click\", click)\n    svg.append(\"svg:rect\")\n        .attr(\"class\", \"background_rect\")\n        .attr(\"width\", \"100%\")\n        .attr(\"height\", \"100%\")\n        .attr(\"stroke\", \"#000\")\n        .attr(\"stroke-width\", 1)\n        .attr(\"fill\", \"#888\")\n\n    chart = svg.append(\"svg:g\")\n        .attr(\"class\", \"base_group\")\n        .attr(\"transform\", \"translate(\" + [w/2,h/2] + \")scale(.5 .5)\");\n\n    var make_circle = function(r,n,offset, step)\n    {\n        data = []\n        for(i = 0; i < n; i++)\n        {\n            theta = offset + i * 2 * Math.PI / n\n            sz = Math.abs(size/4 * Math.sin(i*Math.PI)) + size\n            //sz = Math.abs(size/2 * Math.sin(theta)) + size\n            data.push({x: r * Math.cos(theta), y: r * Math.sin(theta), angle: theta, index: i, size: sz })\n        }\n        return data\n    }\n\n    var circle_factory = function(name, data, offset)\n    {\n\n        var boxes = chart.selectAll(\"g.\" + name)\n            .data(data, function(d) { return d.index })\n\n        boxes.enter().append(\"svg:g\")\n            .attr(\"class\", name)\n        .append(\"svg:rect\")\n        /*\n            .attr(\"width\", function(d,i) { return d.size})\n            .attr(\"height\", function(d,i) { return d.size})\n            .attr(\"stroke\", function(d,i){\n                if(d.index % 2 == 1) {\n                   return \"#fff\"\n                }\n                return \"#000\"\n            })\n            .attr(\"stroke-width\", 2)\n            .attr(\"fill\", \"none\")\n            .attr(\"transform\", function(d,i) {\n                a = offset + step * d.index;\n                return \"translate(\" + [d.x ,d.y] + \")rotate(\" + [a, d.size/2, d.size/2] + \")\"\n            })\n            */\n\n        boxes.selectAll(\"rect\")\n            .data(data, function(d) { return d.index })\n            .attr(\"width\", function(d,i) { return d.size})\n            .attr(\"height\", function(d,i) { return d.size})\n            .attr(\"stroke\", function(d,i){\n                if(d.index % 2 == 1) {\n                   return \"#fff\"\n                }\n                return \"#000\"\n            })\n            .attr(\"stroke-width\", 3)\n            .attr(\"fill\", \"none\")\n            .attr(\"transform\", function(d,i) {\n                a = offset + step * d.index;\n                //console.log(\"a,d\",a,d);\n                return \"translate(\" + [d.x ,d.y] + \")rotate(\" + [a, d.size/2, d.size/2] + \")\"\n            })\n\n    }\n\n    rot = 0\n\n    var update_circles = function() {\n        rot += Math.PI / 24\n        //console.log(rot)\n        n = 18\n        data1 = make_circle(r1, n, rot)\n        step = 20 \n        offset = 15;\n        circle_factory(\"one\", data1, offset, step)\n        //console.log(data)\n\n        n = 30 \n        data2 = make_circle(r2, n, rot)\n        step = 12\n        offset = -15\n        circle_factory(\"two\", data2, offset, step)\n\n        n = 44\n        data3 = make_circle(r3, n, rot)\n        step = 8 \n        offset = 15;\n        circle_factory(\"three\", data3, offset, step)\n\n        n = 60 \n        data4 = make_circle(r4, n, rot)\n        step =  6\n        offset = -15;\n        circle_factory(\"four\", data4, offset, step)\n\n        n = 80 \n        data5 = make_circle(r5, n, rot)\n        step =  4\n        offset = 15;\n        circle_factory(\"five\", data5, offset, step)\n\n        n = 90 \n        data6 = make_circle(r6, n, rot)\n        step =  4\n        offset = -15;\n        circle_factory(\"six\", data6, offset, step)\n\n        if(running)\n            setTimeout(update_circles, 100);\n    }\n\n\n    running = true\n    update_circles();\n\n    //setTimeout(update_circles, 100);\n\n   \n   </script>\n </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-11-20T08:29:18Z",
+  "url": "https://api.github.com/gists/1379988",
+  "id": "1379988"
+}

@@ -1,0 +1,169 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "0dd0a4dc8421598da4a1b009f4077d38",
+        "login": "devangmundhra",
+        "avatar_url": "https://secure.gravatar.com/avatar/0dd0a4dc8421598da4a1b009f4077d38?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/devangmundhra",
+        "id": 490236
+      },
+      "created_at": "2011-06-03T18:48:58Z",
+      "updated_at": "2011-06-03T18:49:06Z",
+      "url": "https://api.github.com/gists/1006920",
+      "id": "1006920"
+    },
+    {
+      "user": {
+        "gravatar_id": "3dfe581ced82b6ab7d10429bc60541e1",
+        "login": "fod",
+        "avatar_url": "https://secure.gravatar.com/avatar/3dfe581ced82b6ab7d10429bc60541e1?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/fod",
+        "id": 163355
+      },
+      "created_at": "2011-07-05T20:34:32Z",
+      "updated_at": "2011-07-05T20:34:32Z",
+      "url": "https://api.github.com/gists/1065853",
+      "id": "1065853"
+    },
+    {
+      "user": {
+        "gravatar_id": "4a86bc21c7714392d795cff4ffcef364",
+        "login": "jacksonhenry3",
+        "avatar_url": "https://secure.gravatar.com/avatar/4a86bc21c7714392d795cff4ffcef364?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/jacksonhenry3",
+        "id": 1857496
+      },
+      "created_at": "2012-07-10T18:31:52Z",
+      "updated_at": "2012-07-10T18:31:52Z",
+      "url": "https://api.github.com/gists/3085360",
+      "id": "3085360"
+    },
+    {
+      "user": {
+        "gravatar_id": "4a86bc21c7714392d795cff4ffcef364",
+        "login": "jacksonhenry3",
+        "avatar_url": "https://secure.gravatar.com/avatar/4a86bc21c7714392d795cff4ffcef364?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/jacksonhenry3",
+        "id": 1857496
+      },
+      "created_at": "2012-07-10T19:31:17Z",
+      "updated_at": "2012-07-10T19:31:17Z",
+      "url": "https://api.github.com/gists/3085694",
+      "id": "3085694"
+    }
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "git_push_url": "git@gist.github.com:1005873.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "cde2313afa648120308a8bb57503b1cca3a07e54",
+      "change_status": {
+        "total": 7,
+        "additions": 1,
+        "deletions": 6
+      },
+      "committed_at": "2011-06-03T05:26:18Z",
+      "url": "https://api.github.com/gists/1005873/cde2313afa648120308a8bb57503b1cca3a07e54"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "cc0e2634d0b1247a89f8d66cc123b42b10970230",
+      "change_status": {
+        "total": 1,
+        "additions": 1,
+        "deletions": 0
+      },
+      "committed_at": "2011-06-03T04:35:33Z",
+      "url": "https://api.github.com/gists/1005873/cc0e2634d0b1247a89f8d66cc123b42b10970230"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "cb34f1f355a81d089adb9109d89e477f5dc65239",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-06-03T04:34:39Z",
+      "url": "https://api.github.com/gists/1005873/cb34f1f355a81d089adb9109d89e477f5dc65239"
+    },
+    {
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "version": "3ab064c47c5d25fb86c56d2c244645071144da88",
+      "change_status": {
+        "total": 351,
+        "additions": 351,
+        "deletions": 0
+      },
+      "committed_at": "2011-06-03T04:34:05Z",
+      "url": "https://api.github.com/gists/1005873/3ab064c47c5d25fb86c56d2c244645071144da88"
+    }
+  ],
+  "description": "Zoomable Icicle",
+  "comments": 0,
+  "created_at": "2011-06-03T04:34:05Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1005873",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1005873/a7d42837c86ea2c111b2c8731ebf8e8b762de77c/index.html",
+      "size": 1782,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Partition - Icicle</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.layout.js\"></script>\n    <style type=\"text/css\">\n\nrect {\n  stroke: #fff;\n}\n\n    </style>\n  </head>\n  <body>\n    <div id=\"chart\"></div>\n    <script type=\"text/javascript\">\n\nvar w = 960,\n    h = 500,\n    x = d3.scale.linear().range([0, w]),\n    y = d3.scale.linear().range([0, h]),\n    color = d3.scale.category20c();\n\nvar vis = d3.select(\"#chart\").append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h);\n\nvar partition = d3.layout.partition()\n    .children(function(d) { return isNaN(d.value) ? d3.entries(d.value) : null; })\n    .value(function(d) { return d.value; });\n\nd3.json(\"readme.json\", function(json) {\n  var rect = vis.selectAll(\"rect\")\n      .data(partition(d3.entries(json)[0]))\n    .enter().append(\"svg:rect\")\n      .attr(\"x\", function(d) { return x(d.x); })\n      .attr(\"y\", function(d) { return y(d.y); })\n      .attr(\"width\", function(d) { return x(d.dx); })\n      .attr(\"height\", function(d) { return y(d.dy); })\n      .attr(\"fill\", function(d) { return color((d.children ? d : d.parent).data.key); })\n      .on(\"click\", click);\n\n  function click(d) {\n    x.domain([d.x, d.x + d.dx]);\n    y.domain([d.y, 1]).range([d.y ? 20 : 0, h]);\n\n    rect.transition()\n      .duration(750)\n      .attr(\"x\", function(d) { return x(d.x); })\n      .attr(\"y\", function(d) { return y(d.y); })\n      .attr(\"width\", function(d) { return x(d.x + d.dx) - x(d.x); })\n      .attr(\"height\", function(d) { return y(d.y + d.dy) - y(d.y); });\n  }\n});\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/1005873/f66c2f67ec8b8f1a09db677da54421e0d5bc87aa/readme.md",
+      "size": 112,
+      "content": "Click anywhere to zoom in! Click on the top bar to zoom out. Built with [D3.js](http://mbostock.github.com/d3/).",
+      "language": "Markdown"
+    },
+    "readme.json": {
+      "type": "application/json",
+      "filename": "readme.json",
+      "raw_url": "https://gist.github.com/raw/1005873/ec93c038e829cb40c2b6576c0cdc4b92ceb00a0f/readme.json",
+      "size": 6814,
+      "content": "{\n  \"flare\": {\n    \"analytics\": {\n      \"cluster\": {\n        \"AgglomerativeCluster\": 3938,\n        \"CommunityStructure\": 3812,\n        \"HierarchicalCluster\": 6714,\n        \"MergeEdge\": 743\n      },\n      \"graph\": {\n        \"BetweennessCentrality\": 3534,\n        \"LinkDistance\": 5731,\n        \"MaxFlowMinCut\": 7840,\n        \"ShortestPaths\": 5914,\n        \"SpanningTree\": 3416\n      },\n      \"optimization\": {\n        \"AspectRatioBanker\": 7074\n      }\n    },\n    \"animate\": {\n      \"Easing\": 17010,\n      \"FunctionSequence\": 5842,\n      \"interpolate\": {\n        \"ArrayInterpolator\": 1983,\n        \"ColorInterpolator\": 2047,\n        \"DateInterpolator\": 1375,\n        \"Interpolator\": 8746,\n        \"MatrixInterpolator\": 2202,\n        \"NumberInterpolator\": 1382,\n        \"ObjectInterpolator\": 1629,\n        \"PointInterpolator\": 1675,\n        \"RectangleInterpolator\": 2042\n      },\n      \"ISchedulable\": 1041,\n      \"Parallel\": 5176,\n      \"Pause\": 449,\n      \"Scheduler\": 5593,\n      \"Sequence\": 5534,\n      \"Transition\": 9201,\n      \"Transitioner\": 19975,\n      \"TransitionEvent\": 1116,\n      \"Tween\": 6006\n    },\n    \"data\": {\n      \"converters\": {\n        \"Converters\": 721,\n        \"DelimitedTextConverter\": 4294,\n        \"GraphMLConverter\": 9800,\n        \"IDataConverter\": 1314,\n        \"JSONConverter\": 2220\n      },\n      \"DataField\": 1759,\n      \"DataSchema\": 2165,\n      \"DataSet\": 586,\n      \"DataSource\": 3331,\n      \"DataTable\": 772,\n      \"DataUtil\": 3322\n    },\n    \"display\": {\n      \"DirtySprite\": 8833,\n      \"LineSprite\": 1732,\n      \"RectSprite\": 3623,\n      \"TextSprite\": 10066\n    },\n    \"flex\": {\n      \"FlareVis\": 4116\n    },\n    \"physics\": {\n      \"DragForce\": 1082,\n      \"GravityForce\": 1336,\n      \"IForce\": 319,\n      \"NBodyForce\": 10498,\n      \"Particle\": 2822,\n      \"Simulation\": 9983,\n      \"Spring\": 2213,\n      \"SpringForce\": 1681\n    },\n    \"query\": {\n      \"AggregateExpression\": 1616,\n      \"And\": 1027,\n      \"Arithmetic\": 3891,\n      \"Average\": 891,\n      \"BinaryExpression\": 2893,\n      \"Comparison\": 5103,\n      \"CompositeExpression\": 3677,\n      \"Count\": 781,\n      \"DateUtil\": 4141,\n      \"Distinct\": 933,\n      \"Expression\": 5130,\n      \"ExpressionIterator\": 3617,\n      \"Fn\": 3240,\n      \"If\": 2732,\n      \"IsA\": 2039,\n      \"Literal\": 1214,\n      \"Match\": 3748,\n      \"Maximum\": 843,\n      \"methods\": {\n        \"add\": 593,\n        \"and\": 330,\n        \"average\": 287,\n        \"count\": 277,\n        \"distinct\": 292,\n        \"div\": 595,\n        \"eq\": 594,\n        \"fn\": 460,\n        \"gt\": 603,\n        \"gte\": 625,\n        \"iff\": 748,\n        \"isa\": 461,\n        \"lt\": 597,\n        \"lte\": 619,\n        \"max\": 283,\n        \"min\": 283,\n        \"mod\": 591,\n        \"mul\": 603,\n        \"neq\": 599,\n        \"not\": 386,\n        \"or\": 323,\n        \"orderby\": 307,\n        \"range\": 772,\n        \"select\": 296,\n        \"stddev\": 363,\n        \"sub\": 600,\n        \"sum\": 280,\n        \"update\": 307,\n        \"variance\": 335,\n        \"where\": 299,\n        \"xor\": 354,\n        \"_\": 264\n      },\n      \"Minimum\": 843,\n      \"Not\": 1554,\n      \"Or\": 970,\n      \"Query\": 13896,\n      \"Range\": 1594,\n      \"StringUtil\": 4130,\n      \"Sum\": 791,\n      \"Variable\": 1124,\n      \"Variance\": 1876,\n      \"Xor\": 1101\n    },\n    \"scale\": {\n      \"IScaleMap\": 2105,\n      \"LinearScale\": 1316,\n      \"LogScale\": 3151,\n      \"OrdinalScale\": 3770,\n      \"QuantileScale\": 2435,\n      \"QuantitativeScale\": 4839,\n      \"RootScale\": 1756,\n      \"Scale\": 4268,\n      \"ScaleType\": 1821,\n      \"TimeScale\": 5833\n    },\n    \"util\": {\n      \"Arrays\": 8258,\n      \"Colors\": 10001,\n      \"Dates\": 8217,\n      \"Displays\": 12555,\n      \"Filter\": 2324,\n      \"Geometry\": 10993,\n      \"heap\": {\n        \"FibonacciHeap\": 9354,\n        \"HeapNode\": 1233\n      },\n      \"IEvaluable\": 335,\n      \"IPredicate\": 383,\n      \"IValueProxy\": 874,\n      \"math\": {\n        \"DenseMatrix\": 3165,\n        \"IMatrix\": 2815,\n        \"SparseMatrix\": 3366\n      },\n      \"Maths\": 17705,\n      \"Orientation\": 1486,\n      \"palette\": {\n        \"ColorPalette\": 6367,\n        \"Palette\": 1229,\n        \"ShapePalette\": 2059,\n        \"SizePalette\": 2291\n      },\n      \"Property\": 5559,\n      \"Shapes\": 19118,\n      \"Sort\": 6887,\n      \"Stats\": 6557,\n      \"Strings\": 22026\n    },\n    \"vis\": {\n      \"axis\": {\n        \"Axes\": 1302,\n        \"Axis\": 24593,\n        \"AxisGridLine\": 652,\n        \"AxisLabel\": 636,\n        \"CartesianAxes\": 6703\n      },\n      \"controls\": {\n        \"AnchorControl\": 2138,\n        \"ClickControl\": 3824,\n        \"Control\": 1353,\n        \"ControlList\": 4665,\n        \"DragControl\": 2649,\n        \"ExpandControl\": 2832,\n        \"HoverControl\": 4896,\n        \"IControl\": 763,\n        \"PanZoomControl\": 5222,\n        \"SelectionControl\": 7862,\n        \"TooltipControl\": 8435\n      },\n      \"data\": {\n        \"Data\": 20544,\n        \"DataList\": 19788,\n        \"DataSprite\": 10349,\n        \"EdgeSprite\": 3301,\n        \"NodeSprite\": 19382,\n        \"render\": {\n          \"ArrowType\": 698,\n          \"EdgeRenderer\": 5569,\n          \"IRenderer\": 353,\n          \"ShapeRenderer\": 2247\n        },\n        \"ScaleBinding\": 11275,\n        \"Tree\": 7147,\n        \"TreeBuilder\": 9930\n      },\n      \"events\": {\n        \"DataEvent\": 2313,\n        \"SelectionEvent\": 1880,\n        \"TooltipEvent\": 1701,\n        \"VisualizationEvent\": 1117\n      },\n      \"legend\": {\n        \"Legend\": 20859,\n        \"LegendItem\": 4614,\n        \"LegendRange\": 10530\n      },\n      \"operator\": {\n        \"distortion\": {\n          \"BifocalDistortion\": 4461,\n          \"Distortion\": 6314,\n          \"FisheyeDistortion\": 3444\n        },\n        \"encoder\": {\n          \"ColorEncoder\": 3179,\n          \"Encoder\": 4060,\n          \"PropertyEncoder\": 4138,\n          \"ShapeEncoder\": 1690,\n          \"SizeEncoder\": 1830\n        },\n        \"filter\": {\n          \"FisheyeTreeFilter\": 5219,\n          \"GraphDistanceFilter\": 3165,\n          \"VisibilityFilter\": 3509\n        },\n        \"IOperator\": 1286,\n        \"label\": {\n          \"Labeler\": 9956,\n          \"RadialLabeler\": 3899,\n          \"StackedAreaLabeler\": 3202\n        },\n        \"layout\": {\n          \"AxisLayout\": 6725,\n          \"BundledEdgeRouter\": 3727,\n          \"CircleLayout\": 9317,\n          \"CirclePackingLayout\": 12003,\n          \"DendrogramLayout\": 4853,\n          \"ForceDirectedLayout\": 8411,\n          \"IcicleTreeLayout\": 4864,\n          \"IndentedTreeLayout\": 3174,\n          \"Layout\": 7881,\n          \"NodeLinkTreeLayout\": 12870,\n          \"PieLayout\": 2728,\n          \"RadialTreeLayout\": 12348,\n          \"RandomLayout\": 870,\n          \"StackedAreaLayout\": 9121,\n          \"TreeMapLayout\": 9191\n        },\n        \"Operator\": 2490,\n        \"OperatorList\": 5248,\n        \"OperatorSequence\": 4190,\n        \"OperatorSwitch\": 2581,\n        \"SortOperator\": 2023\n      },\n      \"Visualization\": 16540\n    }\n  }\n}\n",
+      "language": "JSON"
+    }
+  },
+  "updated_at": "2011-06-03T04:34:11Z",
+  "url": "https://api.github.com/gists/1005873",
+  "git_pull_url": "git://gist.github.com/1005873.git",
+  "id": "1005873"
+}

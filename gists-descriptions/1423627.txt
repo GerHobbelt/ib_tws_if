@@ -1,0 +1,85 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "765ae5774629702824b383da3777cde8",
+    "login": "mxfh",
+    "avatar_url": "https://secure.gravatar.com/avatar/765ae5774629702824b383da3777cde8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mxfh",
+    "id": 690920
+  },
+  "git_push_url": "git@gist.github.com:1423627.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "765ae5774629702824b383da3777cde8",
+        "login": "mxfh",
+        "avatar_url": "https://secure.gravatar.com/avatar/765ae5774629702824b383da3777cde8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mxfh",
+        "id": 690920
+      },
+      "version": "6e03d8f304e1d5db9d49c5f031b2415628df6900",
+      "change_status": {
+        "total": 4,
+        "additions": 2,
+        "deletions": 2
+      },
+      "committed_at": "2011-12-02T15:27:12Z",
+      "url": "https://api.github.com/gists/1423627/6e03d8f304e1d5db9d49c5f031b2415628df6900"
+    },
+    {
+      "user": {
+        "gravatar_id": "765ae5774629702824b383da3777cde8",
+        "login": "mxfh",
+        "avatar_url": "https://secure.gravatar.com/avatar/765ae5774629702824b383da3777cde8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mxfh",
+        "id": 690920
+      },
+      "version": "9e281bd1a6565b6b7279983443127f850458fe29",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2011-12-02T15:26:16Z",
+      "url": "https://api.github.com/gists/1423627/9e281bd1a6565b6b7279983443127f850458fe29"
+    },
+    {
+      "user": {
+        "gravatar_id": "765ae5774629702824b383da3777cde8",
+        "login": "mxfh",
+        "avatar_url": "https://secure.gravatar.com/avatar/765ae5774629702824b383da3777cde8?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mxfh",
+        "id": 690920
+      },
+      "version": "e8383ac22ec110245ab45eab4ea5f4a377e6f586",
+      "change_status": {
+        "total": 76,
+        "additions": 76,
+        "deletions": 0
+      },
+      "committed_at": "2011-12-02T15:24:40Z",
+      "url": "https://api.github.com/gists/1423627/e8383ac22ec110245ab45eab4ea5f4a377e6f586"
+    }
+  ],
+  "description": "d3 SVG - Download",
+  "comments": 0,
+  "created_at": "2011-12-02T15:24:40Z",
+  "public": true,
+  "html_url": "https://gist.github.com/1423627",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1423627/bd0f9eae6db1e04f05c0a9c5ba9a53c214b9c0fb/index.html",
+      "size": 1912,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n<title>Download SVG</title>\n<style type=\"text/css\">\n    a{\n        cursor: pointer;\n        text-decoration: underline;\n        color: black;\n    }\n    #download{\n        border: 1px solid silver;\n        position: absolute;\n        opacity: 0;\n    }\n</style>\n</head>\n<body>\n\n<div id=\"viz\"></div>\n<a href=\"#\" id=\"generate\">Generate download preview</a>\n\n<script type=\"text/javascript\">\n\n// test fork from http://bl.ocks.org/1209499 biovisualize\n// Modified from https://groups.google.com/d/msg/d3-js/aQSWnEDFxIc/k0m0-q-3h1wJ\n\nd3.select(\"#viz\")\n    .append(\"svg:svg\")\n    .attr(\"width\", 300)\n    .attr(\"height\", 200)\n    .style(\"background-color\", \"WhiteSmoke\")\n    .append(\"svg:rect\")\n    .attr(\"fill\", \"aliceblue\")\n    .attr(\"stroke\", \"cadetblue\")\n    .attr(\"width\", 60)\n    .attr(\"height\", 40)\n    .attr(\"x\", 50)\n    .attr(\"y\", 50);\n\nd3.select(\"#generate\")\n    .on(\"click\", writeDownloadLink);\n\nfunction writeDownloadLink(){\n    var html = d3.select(\"svg\")\n        .attr(\"title\", \"test2\")\n        .attr(\"version\", 1.1)\n        .attr(\"xmlns\", \"http://www.w3.org/2000/svg\")\n        .node().parentNode.innerHTML;\n\n    d3.select(\"body\").append(\"div\")\n        .attr(\"id\", \"download\")\n        .style(\"top\", event.clientY+15+\"px\")\n        .style(\"left\", event.clientX-20+\"px\")\n        .html(\"Right-click on this preview and choose Save as<br />Left-Click to dismiss<br />\")\n        .append(\"img\")\n        .attr(\"src\", \"data:image/svg+xml;base64,\"+ btoa(html));\n\n    d3.select(\"#download\")\n        .on(\"click\", function(){\n            if(event.button == 0){\n                d3.select(this).transition()\n                    .style(\"opacity\", 0)\n                    .remove();\n            }\n        })\n        .transition()\n        .duration(500)\n        .style(\"opacity\", 1);\n};\n\n</script>\n\n</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-12-02T15:24:40Z",
+  "url": "https://api.github.com/gists/1423627",
+  "git_pull_url": "git://gist.github.com/1423627.git",
+  "id": "1423627"
+}

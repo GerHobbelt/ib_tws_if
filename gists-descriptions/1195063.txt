@@ -1,0 +1,133 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "515039dd0ec88f65596e544dc5a28e74",
+    "login": "biovisualize",
+    "avatar_url": "https://secure.gravatar.com/avatar/515039dd0ec88f65596e544dc5a28e74?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/biovisualize",
+    "id": 824534
+  },
+  "history": [
+    {
+      "user": null,
+      "committed_at": "2011-09-05T17:48:55Z",
+      "version": "4c717161cbf4123654e460d8434c97a35d8f4444",
+      "url": "https://api.github.com/gists/1195063/4c717161cbf4123654e460d8434c97a35d8f4444",
+      "change_status": {
+        "total": 10,
+        "additions": 5,
+        "deletions": 5
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-09-05T17:46:13Z",
+      "version": "7826ed42a3a9f09082d8ab0063d459f838a352a6",
+      "url": "https://api.github.com/gists/1195063/7826ed42a3a9f09082d8ab0063d459f838a352a6",
+      "change_status": {
+        "total": 20,
+        "additions": 14,
+        "deletions": 6
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-09-05T17:39:41Z",
+      "version": "7f5952553034ffcd87295dbe2ddd309a509a9040",
+      "url": "https://api.github.com/gists/1195063/7f5952553034ffcd87295dbe2ddd309a509a9040",
+      "change_status": {
+        "total": 54,
+        "additions": 31,
+        "deletions": 23
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-09-05T14:18:11Z",
+      "version": "a4f52b9ce83775e2f10a160ba89530021e3d048e",
+      "url": "https://api.github.com/gists/1195063/a4f52b9ce83775e2f10a160ba89530021e3d048e",
+      "change_status": {
+        "total": 8,
+        "additions": 4,
+        "deletions": 4
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-09-05T14:13:57Z",
+      "version": "6527ba5c351423830c463ca40f5ef858946e85d4",
+      "url": "https://api.github.com/gists/1195063/6527ba5c351423830c463ca40f5ef858946e85d4",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-09-05T14:13:34Z",
+      "version": "1caa21250f90f0fc3aec793b920de796f7ed2399",
+      "url": "https://api.github.com/gists/1195063/1caa21250f90f0fc3aec793b920de796f7ed2399",
+      "change_status": {
+        "total": 13,
+        "additions": 7,
+        "deletions": 6
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-09-05T14:05:17Z",
+      "version": "9f6f952bc81065a1c15609cd957c023277f2e605",
+      "url": "https://api.github.com/gists/1195063/9f6f952bc81065a1c15609cd957c023277f2e605",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-09-05T14:04:37Z",
+      "version": "d29c39fb4c036bb879b64bcc6c66d54d2cc1f500",
+      "url": "https://api.github.com/gists/1195063/d29c39fb4c036bb879b64bcc6c66d54d2cc1f500",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      }
+    },
+    {
+      "user": null,
+      "committed_at": "2011-09-05T14:03:01Z",
+      "version": "d2c0bd4109f3c9fc0f067c37b1b011fa524c8e98",
+      "url": "https://api.github.com/gists/1195063/d2c0bd4109f3c9fc0f067c37b1b011fa524c8e98",
+      "change_status": {
+        "total": 79,
+        "additions": 79,
+        "deletions": 0
+      }
+    }
+  ],
+  "description": "Custom drag and drop with D3",
+  "comments": 0,
+  "created_at": "2011-09-05T14:03:00Z",
+  "git_pull_url": "git://gist.github.com/1195063.git",
+  "public": true,
+  "html_url": "https://gist.github.com/1195063",
+  "git_push_url": "git@gist.github.com:1195063.git",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/1195063/bbe9144d08b55e96a558fafe7cb583a4e3bb1556/index.html",
+      "size": 2571,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n<script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.js\"></script>\n<title>Drag And Drop</title>\n</head>\n<body>  \n\n<div id=\"viz\"></div>\n\n<script type=\"text/javascript\">\n\n//-------------------------------------------------\n// Functional draft of a dragAll plugin \n//-------------------------------------------------\n\n(function(){d3.experiments = {};\n\nd3.experiments.dragAll = function() {\n    this.on(\"mousedown\", function(){grab(this, event)})\n        .on(\"mousemove\", function(){drag(this, event)})\n        .on(\"mouseup\", function(){drop(this, event)});\n};\n\nvar trueCoordX = null,\n    trueCoordY = null,\n    grabPointX = null,\n    grabPointY = null,\n    dragTarget = null;\n\nfunction grab(element, event){\n    dragTarget = event.target;\n    //// send the grabbed element to top\n    dragTarget.parentNode.appendChild( dragTarget );\n    d3.select(dragTarget).attr(\"pointer-events\", \"none\");\n    //// find the coordinates\n    var transMatrix = dragTarget.getCTM();\n    grabPointX = trueCoordX - Number(transMatrix.e);\n    grabPointY = trueCoordY - Number(transMatrix.f);\n};\n\nfunction drag(element, event){\n    var newScale = vizSVG.node().currentScale;\n    var translation = vizSVG.node().currentTranslate;\n    trueCoordX = (event.clientX - translation.x)/newScale;\n    trueCoordY = (event.clientY - translation.y)/newScale;\n    if (dragTarget){\n        var newX = trueCoordX - grabPointX;\n        var newY = trueCoordY - grabPointY;\n        d3.select(dragTarget).attr(\"transform\", \"translate(\" + newX + \",\" + newY + \")\");\n    }\n};\n\nfunction drop(element, event){\n    if (dragTarget){\n        d3.select(dragTarget).attr(\"pointer-events\", \"all\");\n        var targetElement = event.target;\n        if(targetElement != vizSVG.node()){\n            console.log(dragTarget.id + ' has been dropped on top of ' + targetElement.id);\n        }\n        dragTarget = null;\n    }\n};\n})();\n\n\n//-------------------------------------------------\n// Example of use \n//-------------------------------------------------\n\n//// bind event to the root SVG\nvar vizSVG = d3.select(\"#viz\")\n    .append(\"svg:svg\")\n    .attr(\"width\", 400)\n    .attr(\"height\", 300)\n    .call(d3.experiments.dragAll);\n    \nvizSVG.append(\"svg:circle\")\n    .attr(\"id\", \"blueCircle\")\n    .attr(\"cx\", 50)\n    .attr(\"cy\", 140)\n    .attr(\"r\", 40)\n    .attr(\"fill\", \"blue\");\n    \nvizSVG.append(\"svg:rect\")\n    .attr(\"id\", \"redRectangle\")\n    .attr(\"x\", 100)\n    .attr(\"y\", 100)\n    .attr(\"width\", 100)\n    .attr(\"height\", 80)\n    .attr(\"fill\", \"red\");\n\n</script>\n   \n</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2011-09-06T14:42:06Z",
+  "url": "https://api.github.com/gists/1195063",
+  "id": "1195063"
+}

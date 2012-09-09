@@ -1,0 +1,93 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+    "login": "mbostock",
+    "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/mbostock",
+    "id": 230541
+  },
+  "history": [
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-11-07T03:11:20Z",
+      "version": "e7717e2c19a2408ab609cb2c0781a97322bf207f",
+      "url": "https://api.github.com/gists/665906/e7717e2c19a2408ab609cb2c0781a97322bf207f"
+    },
+    {
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-11-07T02:17:26Z",
+      "version": "c71ac60713c8ca992cbfd7d2ca980051fb191cc6",
+      "url": "https://api.github.com/gists/665906/c71ac60713c8ca992cbfd7d2ca980051fb191cc6"
+    },
+    {
+      "change_status": {
+        "total": 64,
+        "additions": 64,
+        "deletions": 0
+      },
+      "user": {
+        "gravatar_id": "005a27e09fe946ebef64bf4d134efc0a",
+        "login": "mbostock",
+        "avatar_url": "https://secure.gravatar.com/avatar/005a27e09fe946ebef64bf4d134efc0a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/mbostock",
+        "id": 230541
+      },
+      "committed_at": "2010-11-07T02:16:14Z",
+      "version": "4051802f104ae8d416ddde248ac2c1c59801692b",
+      "url": "https://api.github.com/gists/665906/4051802f104ae8d416ddde248ac2c1c59801692b"
+    }
+  ],
+  "description": "Voronoi Tessellation",
+  "html_url": "https://gist.github.com/665906",
+  "comments": 0,
+  "created_at": "2010-11-07T02:16:14Z",
+  "git_pull_url": "git://gist.github.com/665906.git",
+  "public": true,
+  "files": {
+    "README.md": {
+      "type": "text/plain",
+      "filename": "README.md",
+      "raw_url": "https://gist.github.com/raw/665906/e7696e8077fabf9ad6c44dea6fbc7dcf7d4ce18c/README.md",
+      "size": 302,
+      "content": "Voronoi tessellation of 500 random points using Steven Fortune's *sweep line* algorithm, as implemented by [Nicolas Garcia Belmonte](http://blog.thejit.org/2010/02/12/voronoi-tessellation/). Rendered in SVG using [D3](http://github.com/mbostock/d3). Colors by [Cynthia Brewer](http://colorbrewer.org/).",
+      "language": "Markdown"
+    },
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/665906/cb52b1d2bdd83ed1744cc95155eef2e85590ca35/index.html",
+      "size": 1478,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>Voronoi Tesselation</title>\n    <script type=\"text/javascript\" src=\"http://github.com/mbostock/d3/raw/56ef531a7977211fd5eb08e0800946b399ecb491/d3.min.js\"></script>\n    <script type=\"text/javascript\" src=\"http://github.com/mbostock/d3/raw/56ef531a7977211fd5eb08e0800946b399ecb491/lib/jit/voronoi.js\"></script>\n    <style type=\"text/css\">\n\n@import url(\"http://github.com/mbostock/d3/raw/56ef531a7977211fd5eb08e0800946b399ecb491/lib/colorbrewer/colorbrewer.css\");\n\nsvg {\n  display: block;\n  border: solid 1px #666;\n}\n\npath {\n  stroke: #000;\n  stroke-width: .5px;\n}\n\npath:hover {\n  fill: yellow !important;\n}\n\ncircle {\n  fill: #ccc;\n  stroke: #000;\n}\n\n    </style>\n  </head>\n  <body>\n    <script type=\"text/javascript\">\n\nvar w = 958,\n    h = 498;\n\nvar vertices = d3.range(500).map(function(d) {\n  return [Math.random() * w, Math.random() * h];\n});\n\nvar svg = d3.select(\"body\")\n  .append(\"svg:svg\")\n    .attr(\"width\", w)\n    .attr(\"height\", h)\n    .attr(\"class\", \"PiYG\");\n\nsvg.selectAll(\"path\")\n    .data(voronoi(vertices))\n  .enter(\"svg:path\")\n    .attr(\"class\", function(d, i) { return \"q\" + (i % 9) + \"-9\"; })\n    .attr(\"d\", function(d) { return \"M\" + d.join(\"L\") + \"Z\"; });\n\nsvg.selectAll(\"circle\")\n    .data(vertices)\n  .enter(\"svg:circle\")\n    .attr(\"transform\", function(d) { return \"translate(\" + d + \")\"; })\n    .attr(\"r\", 2);\n\n    </script>\n  </body>\n</html>\n",
+      "language": "HTML"
+    }
+  },
+  "git_push_url": "git@gist.github.com:665906.git",
+  "updated_at": "2010-11-07T03:11:20Z",
+  "url": "https://api.github.com/gists/665906",
+  "id": "665906"
+}

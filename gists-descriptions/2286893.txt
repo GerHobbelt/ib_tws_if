@@ -1,0 +1,92 @@
+{
+  "forks": [
+
+  ],
+  "user": {
+    "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+    "login": "GerHobbelt",
+    "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/GerHobbelt",
+    "id": 402462
+  },
+  "git_pull_url": "git://gist.github.com/2286893.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "33a351ef230871d70e13f391a8e4e2b1dfed034d",
+      "change_status": {
+        "total": 46,
+        "additions": 46,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/2286893/33a351ef230871d70e13f391a8e4e2b1dfed034d",
+      "committed_at": "2012-09-09T08:44:25Z"
+    },
+    {
+      "user": {
+        "gravatar_id": "96cd1af3aefe14ff4f803a7ef582d182",
+        "login": "GerHobbelt",
+        "avatar_url": "https://secure.gravatar.com/avatar/96cd1af3aefe14ff4f803a7ef582d182?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/GerHobbelt",
+        "id": 402462
+      },
+      "version": "f69d3eab7deb9e3d781fcc4ff4d299825fc603cd",
+      "change_status": {
+        "total": 15,
+        "additions": 15,
+        "deletions": 0
+      },
+      "url": "https://api.github.com/gists/2286893/f69d3eab7deb9e3d781fcc4ff4d299825fc603cd",
+      "committed_at": "2012-04-02T20:10:36Z"
+    }
+  ],
+  "description": "show XML and JSON error handling in D3",
+  "html_url": "https://gist.github.com/2286893",
+  "git_push_url": "git@gist.github.com:2286893.git",
+  "comments": 0,
+  "created_at": "2012-04-02T20:10:36Z",
+  "public": true,
+  "files": {
+    "data-load.js": {
+      "raw_url": "https://gist.github.com/raw/2286893/0901abeca587c84c3515c2c2c04dc8720f4254ad/data-load.js",
+      "type": "application/javascript",
+      "filename": "data-load.js",
+      "size": 124,
+      "content": "/*\nLoad various data files and show their contents in the HTML page...\n\nAlso test error paths and report those as well...\n*/",
+      "language": "JavaScript"
+    },
+    "README.md": {
+      "raw_url": "https://gist.github.com/raw/2286893/21def2dd555d578318b034890dfef7e1d861b816/README.md",
+      "type": "text/plain",
+      "filename": "README.md",
+      "size": 100,
+      "content": "Shows/tests D3.JS error reporting behaviour for same-domain and cross-domain JSON and XML requests.\n",
+      "language": "Markdown"
+    },
+    ".gitignore": {
+      "raw_url": "https://gist.github.com/raw/2286893/86ddb2374d1fac25691f714c9aa949986b8fecf9/.gitignore",
+      "type": "text/plain",
+      "filename": ".gitignore",
+      "size": 623,
+      "content": "*.bak\n*~\n*.exe\n*.o\n*.a\n*.depend\n*.layout\n*.res\n*.user\n*.ncb\n\nmongoose-hg/*\nmongoose-tmp/\ngerhobbelt-github-mongoose/\n\ngerhobbelt-mongoose-issue-360/\nmongoose-issue360/\ngerhobbelt-issue349/\nmongoose-issue349/\n\nbuild/msvc2010/bin/\nbuild/msvc2010/obj/\nbuild/msvc2010/ipch/\n\nbuild/msvc2008/bin/\nbuild/msvc2008/obj/\nbuild/msvc2008/ipch/\n\n*.suo\n*.sdf\n*.opensdf\n\nhtml/contact/images/_vti_cnf\nhtml/contact/_vti_cnf\nhtml/dev/_vti_cnf\nhtml/faking_it/_vti_cnf\nhtml/images/_vti_cnf\nhtml/overview/images/_vti_cnf\nhtml/overview/_vti_cnf\nhtml/styles/_vti_cnf\nhtml/trading/_vti_cnf\nhtml/_vti_cnf\nhtml/_vti_pvt\nhtml/mongoose/_vti_cnf\n\nlog/\n",
+      "language": null
+    },
+    "index.html": {
+      "raw_url": "https://gist.github.com/raw/2286893/55bc0e5ba654ae572f31a5d5cc970b96c3378591/index.html",
+      "type": "text/html",
+      "filename": "index.html",
+      "size": 118,
+      "content": "<!DOCTYPE html>\n<html>\n<head>\n</head>\n<body>\n<h1>Testing D3 data loading:</h1>\n<div id=\"report\"></div>\n</body>\n</html>",
+      "language": "HTML"
+    }
+  },
+  "updated_at": "2012-09-09T08:49:12Z",
+  "url": "https://api.github.com/gists/2286893",
+  "id": "2286893"
+}
