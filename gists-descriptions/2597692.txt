@@ -1,0 +1,274 @@
+{
+  "forks": [
+    {
+      "user": {
+        "gravatar_id": "6b28fb96658c8aa5a98d814d5fec203e",
+        "login": "adieyal",
+        "avatar_url": "https://secure.gravatar.com/avatar/6b28fb96658c8aa5a98d814d5fec203e?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/adieyal",
+        "id": 420786
+      },
+      "created_at": "2012-05-09T23:44:27Z",
+      "updated_at": "2012-05-09T23:44:27Z",
+      "url": "https://api.github.com/gists/2649809",
+      "id": "2649809"
+    }
+  ],
+  "user": {
+    "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+    "login": "bunkat",
+    "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+    "url": "https://api.github.com/users/bunkat",
+    "id": 665885
+  },
+  "git_push_url": "git@gist.github.com:2597692.git",
+  "history": [
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "ff178961666162cd9e78d2732732184858e0772f",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-05-04T21:11:23Z",
+      "url": "https://api.github.com/gists/2597692/ff178961666162cd9e78d2732732184858e0772f"
+    },
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "4cd1ddc762db30dee6383ae1befb94575fc2ddd0",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-05-04T21:09:35Z",
+      "url": "https://api.github.com/gists/2597692/4cd1ddc762db30dee6383ae1befb94575fc2ddd0"
+    },
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "25ee2ca3bf787ca749fecde7b9a469993210b34a",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-05-04T21:07:48Z",
+      "url": "https://api.github.com/gists/2597692/25ee2ca3bf787ca749fecde7b9a469993210b34a"
+    },
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "aeed2792a169cc39f387744fe15439ee231936ba",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-05-04T21:05:40Z",
+      "url": "https://api.github.com/gists/2597692/aeed2792a169cc39f387744fe15439ee231936ba"
+    },
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "a08e9b337af213f43aae8408466f78d0629f57ea",
+      "change_status": {
+        "total": 2,
+        "additions": 1,
+        "deletions": 1
+      },
+      "committed_at": "2012-05-04T21:04:35Z",
+      "url": "https://api.github.com/gists/2597692/a08e9b337af213f43aae8408466f78d0629f57ea"
+    },
+    {
+      "user": {
+        "gravatar_id": "1cbacb8172d6300a2e20ef5dd183525a",
+        "login": "bunkat",
+        "avatar_url": "https://secure.gravatar.com/avatar/1cbacb8172d6300a2e20ef5dd183525a?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/bunkat",
+        "id": 665885
+      },
+      "version": "2755270354aa356e3cbcae45c9412d2e5fbf31a6",
+      "change_status": {
+        "total": 3,
+        "additions": 3,
+        "deletions": 0
+      },
+      "committed_at": "2012-05-04T21:01:36Z",
+      "url": "https://api.github.com/gists/2597692/2755270354aa356e3cbcae45c9412d2e5fbf31a6"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "56001c031d17f99c5b37788cf53936f98919eeac",
+      "change_status": {
+        "total": 861,
+        "additions": 422,
+        "deletions": 439
+      },
+      "committed_at": "2012-02-27T15:15:46Z",
+      "url": "https://api.github.com/gists/2597692/56001c031d17f99c5b37788cf53936f98919eeac"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "bc9b942f9770f407e513b8a5e5faf5d2a13b8440",
+      "change_status": {
+        "total": 17,
+        "additions": 5,
+        "deletions": 12
+      },
+      "committed_at": "2012-02-27T07:27:39Z",
+      "url": "https://api.github.com/gists/2597692/bc9b942f9770f407e513b8a5e5faf5d2a13b8440"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "1455982dbec050727c3b4d56589b63d51e98ebf8",
+      "change_status": {
+        "total": 16,
+        "additions": 9,
+        "deletions": 7
+      },
+      "committed_at": "2012-02-27T06:50:35Z",
+      "url": "https://api.github.com/gists/2597692/1455982dbec050727c3b4d56589b63d51e98ebf8"
+    },
+    {
+      "user": {
+        "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+        "login": "stepheneb",
+        "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+        "url": "https://api.github.com/users/stepheneb",
+        "id": 7188
+      },
+      "version": "5558087fd8c7f27b84b4b363437076eea9be80a2",
+      "change_status": {
+        "total": 246,
+        "additions": 122,
+        "deletions": 124
+      },
+      "committed_at": "2012-02-27T05:04:16Z",
+      "url": "https://api.github.com/gists/2597692/5558087fd8c7f27b84b4b363437076eea9be80a2"
+    }
+  ],
+  "fork_of": {
+    "user": {
+      "gravatar_id": "5810a1b7743eb2186ca0ea1d0a3469a0",
+      "login": "stepheneb",
+      "avatar_url": "https://secure.gravatar.com/avatar/5810a1b7743eb2186ca0ea1d0a3469a0?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png",
+      "url": "https://api.github.com/users/stepheneb",
+      "id": 7188
+    },
+    "git_push_url": "git@gist.github.com:1182434.git",
+    "description": "D3 Example: zoom, pan, and axis rescale",
+    "comments": 0,
+    "created_at": "2011-08-30T23:52:21Z",
+    "public": true,
+    "html_url": "https://gist.github.com/1182434",
+    "files": {
+      "index.html": {
+        "type": "text/html",
+        "filename": "index.html",
+        "raw_url": "https://gist.github.com/raw/1182434/342669078e1c65284e1565b7085112a81d0c8353/index.html",
+        "size": 1538,
+        "language": "HTML"
+      },
+      "readme.md": {
+        "type": "text/plain",
+        "filename": "readme.md",
+        "raw_url": "https://gist.github.com/raw/1182434/4ca32ca42b7c6dd564fe888bae06f91670767c70/readme.md",
+        "size": 2011,
+        "language": "Markdown"
+      },
+      "simple-graph.js": {
+        "type": "application/javascript",
+        "filename": "simple-graph.js",
+        "raw_url": "https://gist.github.com/raw/1182434/1e21263d38584abab8c8036a084a482d514ce271/simple-graph.js",
+        "size": 11160,
+        "language": "JavaScript"
+      }
+    },
+    "updated_at": "2012-02-23T05:00:09Z",
+    "url": "https://api.github.com/gists/1182434",
+    "git_pull_url": "git://gist.github.com/1182434.git",
+    "id": "1182434"
+  },
+  "description": "D3 Example: zoom, pan, and axis rescale",
+  "comments": 0,
+  "created_at": "2012-05-04T20:58:59Z",
+  "public": true,
+  "html_url": "https://gist.github.com/2597692",
+  "files": {
+    "index.html": {
+      "type": "text/html",
+      "filename": "index.html",
+      "raw_url": "https://gist.github.com/raw/2597692/342669078e1c65284e1565b7085112a81d0c8353/index.html",
+      "size": 1538,
+      "content": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">\n    <title>One Graph</title>\n    <script type=\"text/javascript\" src=\"http://mbostock.github.com/d3/d3.v2.js\"></script>\n    <script type=\"text/javascript\" src=\"simple-graph.js\"></script>\n    <style type=\"text/css\">\n      body { font: 13px sans-serif; }\n      rect { fill: #fff; }\n      ul {\n        list-style-type: none;\n        margin: 0.5em 0em 0.5em 0em;\n        width: 100%; }\n        ul li {\n          display: table-cell;\n          vertical-align: middle;\n          margin: 0em;\n          padding: 0em 1em; }\n      .axis { font-size: 1.5em; }\n      .chart {\n        background-color: #F7F2C5;\n        width: 960px;\n        height: 500px; }\n      circle, .line {\n        fill: none;\n        stroke: steelblue;\n        stroke-width: 2px; }\n      circle {\n        fill: white;\n        fill-opacity: 0.2;\n        cursor: move; }\n        circle.selected {\n          fill: #ff7f0e;\n          stroke: #ff7f0e; }\n        circle:hover {\n          fill: #ff7f0e;\n          stroke: #707f0e; }\n        circle.selected:hover {\n          fill: #ff7f0e;\n          stroke: #ff7f0e; }\n    </style>\n  </head>\n  <body>\n    <div id=\"chart1\" class=\"chart\"></div>\n    <script type=\"text/javascript\">\n      graph = new SimpleGraph(\"chart1\", {\n          \"xmax\": 60, \"xmin\": 0,\n          \"ymax\": 40, \"ymin\": 0, \n          \"title\": \"Simple Graph1\",\n          \"xlabel\": \"X Axis\",\n          \"ylabel\": \"Y Axis\"  \n        });\n    </script>\n  </body>\n</html>\n\n",
+      "language": "HTML"
+    },
+    "readme.md": {
+      "type": "text/plain",
+      "filename": "readme.md",
+      "raw_url": "https://gist.github.com/raw/2597692/4ca32ca42b7c6dd564fe888bae06f91670767c70/readme.md",
+      "size": 2011,
+      "content": "[This example](http://bl.ocks.org/1182434) is a mashup of the [D3](https://github.com/mbostock/d3) **Zoom-Pan** example along with [Ricardo Marimon's example of X-axis re-scaling by dragging](http://bl.ocks.org/1179647).\n\n* Drag on the canvas to translate/pan the graph.\n* double-click on the canvas to zoom in\n* shift-double-click on the canvas to zoom out\n* Drag on one of the X or Y axis numeric labels to re-scale that axis\n* click on a data point to select it\n* drag a selected data point up or down to change it's Y value\n* enter the delete or backspace key to delete a selected data point\n* hold the ALT/Option key down and click an empty area of the graph to add a data point\n\nMost of the UI should also work with the touch events generated by a tablet or SmartPhone.\n\n*source: [gist.github.com/1182434](https://gist.github.com/1182434)*\n\n### D3 References:\n\n* [repository](https://github.com/mbostock/d3)\n* [wiki](http://mbostock.github.com/d3/)\n* [examples](http://mbostock.github.com/d3/ex/)\n* [API](https://github.com/mbostock/d3/wiki/API-Reference)\n* [Quantitative Scales](https://github.com/mbostock/d3/wiki/Quantitative-Scales)\n\n### D3 Tutorials:\n\n* [Three Little Circles](http://mbostock.github.com/d3/tutorial/circle.html)\n* [A Bar Chart, Part 1](http://mbostock.github.com/d3/tutorial/bar-1.html)\n* [A Bar Chart, Part 2](http://mbostock.github.com/d3/tutorial/bar-2.html)\n\n### External D3 Tutorials\n\n* [Try D3 Now](http://christopheviau.com/d3_tutorial/)\n* [Array Basics](http://www.janwillemtulp.com/2011/03/31/tutorialthe-basics-working-with-arrays-in-d3/)\n* [Line Interpolations](http://www.janwillemtulp.com/2011/03/23/tutorial-line-interpolations-in-d3/)\n* [Line Chart](http://www.janwillemtulp.com/2011/04/01/tutorial-line-chart-in-d3/)\n* [Conway's Game of Life](http://www.janwillemtulp.com/2011/03/22/tutorial-conways-game-of-life-in-d3/)\n* [Introudction](http://www.janwillemtulp.com/2011/03/20/tutorial-introduction-to-d3/)\n\n### SVG Graphics\n\n* [standard](http://www.w3.org/TR/SVG/)\n",
+      "language": "Markdown"
+    },
+    "simple-graph.js": {
+      "type": "application/javascript",
+      "filename": "simple-graph.js",
+      "raw_url": "https://gist.github.com/raw/2597692/a4770f8a5d3681e8b73029258bae3910c9eca240/simple-graph.js",
+      "size": 11281,
+      "content": "registerKeyboardHandler = function(callback) {\n  var callback = callback;\n  d3.select(window).on(\"keydown\", callback);  \n};\n\nSimpleGraph = function(elemid, options) {\n  var self = this;\n  this.chart = document.getElementById(elemid);\n  this.cx = this.chart.clientWidth;\n  this.cy = this.chart.clientHeight;\n  this.options = options || {};\n  this.options.xmax = options.xmax || 30;\n  this.options.xmin = options.xmin || 0;\n  this.options.ymax = options.ymax || 10;\n  this.options.ymin = options.ymin || 0;\n\n  this.padding = {\n     \"top\":    this.options.title  ? 40 : 20,\n     \"right\":                 30,\n     \"bottom\": this.options.xlabel ? 60 : 10,\n     \"left\":   this.options.ylabel ? 70 : 45\n  };\n\n  this.size = {\n    \"width\":  this.cx - this.padding.left - this.padding.right,\n    \"height\": this.cy - this.padding.top  - this.padding.bottom\n  };\n\n  // x-scale\n  this.x = d3.scale.linear()\n      .domain([this.options.xmin, this.options.xmax])\n      .range([0, this.size.width]);\n\n  // drag x-axis logic\n  this.downx = Math.NaN;\n\n  // y-scale (inverted domain)\n  this.y = d3.scale.linear()\n      .domain([this.options.ymax, this.options.ymin])\n      .nice()\n      .range([0, this.size.height])\n      .nice();\n\n  // drag y-axis logic\n  this.downy = Math.NaN;\n\n  this.dragged = this.selected = null;\n\n  this.line = d3.svg.line()\n      .x(function(d, i) { return this.x(this.points[i].x); })\n      .y(function(d, i) { return this.y(this.points[i].y); });\n\n  var xrange =  (this.options.xmax - this.options.xmin),\n      yrange2 = (this.options.ymax - this.options.ymin) / 2,\n      yrange4 = yrange2 / 2,\n      datacount = this.size.width/30;\n\n  this.points = d3.range(datacount).map(function(i) { \n    return { x: i * xrange / datacount, y: this.options.ymin + yrange4 + Math.random() * yrange2 }; \n  }, self);\n\n  this.vis = d3.select(this.chart).append(\"svg\")\n      .attr(\"width\",  this.cx)\n      .attr(\"height\", this.cy)\n      .append(\"g\")\n        .attr(\"transform\", \"translate(\" + this.padding.left + \",\" + this.padding.top + \")\");\n\n  this.plot = this.vis.append(\"rect\")\n      .attr(\"width\", this.size.width)\n      .attr(\"height\", this.size.height)\n      .style(\"fill\", \"#EEEEEE\")\n      .attr(\"pointer-events\", \"all\")\n      .on(\"mousedown.drag\", self.plot_drag())\n      .on(\"touchstart.drag\", self.plot_drag())\n      this.plot.call(d3.behavior.zoom().x(this.x).y(this.y).on(\"zoom\", this.redraw()));\n\n  this.vis.append(\"svg\")\n      .attr(\"top\", 0)\n      .attr(\"left\", 0)\n      .attr(\"width\", this.size.width)\n      .attr(\"height\", this.size.height)\n      .attr(\"viewBox\", \"0 0 \"+this.size.width+\" \"+this.size.height)\n      .attr(\"class\", \"line\")\n      .append(\"path\")\n          .attr(\"class\", \"line\")\n          .attr(\"d\", this.line(this.points));\n\n  // add Chart Title\n  if (this.options.title) {\n    this.vis.append(\"text\")\n        .attr(\"class\", \"axis\")\n        .text(this.options.title)\n        .attr(\"x\", this.size.width/2)\n        .attr(\"dy\",\"-0.8em\")\n        .style(\"text-anchor\",\"middle\");\n  }\n\n  // Add the x-axis label\n  if (this.options.xlabel) {\n    this.vis.append(\"text\")\n        .attr(\"class\", \"axis\")\n        .text(this.options.xlabel)\n        .attr(\"x\", this.size.width/2)\n        .attr(\"y\", this.size.height)\n        .attr(\"dy\",\"2.4em\")\n        .style(\"text-anchor\",\"middle\");\n  }\n\n  // add y-axis label\n  if (this.options.ylabel) {\n    this.vis.append(\"g\").append(\"text\")\n        .attr(\"class\", \"axis\")\n        .text(this.options.ylabel)\n        .style(\"text-anchor\",\"middle\")\n        .attr(\"transform\",\"translate(\" + -40 + \" \" + this.size.height/2+\") rotate(-90)\");\n  }\n\n  d3.select(this.chart)\n      .on(\"mousemove.drag\", self.mousemove())\n      .on(\"touchmove.drag\", self.mousemove())\n      .on(\"mouseup.drag\",   self.mouseup())\n      .on(\"touchend.drag\",  self.mouseup());\n\n  this.redraw()();\n};\n  \n//\n// SimpleGraph methods\n//\n\nSimpleGraph.prototype.plot_drag = function() {\n  var self = this;\n  return function() {\n    registerKeyboardHandler(self.keydown());\n    d3.select('body').style(\"cursor\", \"move\");\n    if (d3.event.altKey) {\n      var p = d3.svg.mouse(self.vis.node());\n      var newpoint = {};\n      newpoint.x = self.x.invert(Math.max(0, Math.min(self.size.width,  p[0])));\n      newpoint.y = self.y.invert(Math.max(0, Math.min(self.size.height, p[1])));\n      self.points.push(newpoint);\n      self.points.sort(function(a, b) {\n        if (a.x < b.x) { return -1 };\n        if (a.x > b.x) { return  1 };\n        return 0\n      });\n      self.selected = newpoint;\n      self.update();\n      d3.event.preventDefault();\n      d3.event.stopPropagation();\n    }    \n  }\n};\n\nSimpleGraph.prototype.update = function() {\n  var self = this;\n  var lines = this.vis.select(\"path\").attr(\"d\", this.line(this.points));\n        \n  var circle = this.vis.select(\"svg\").selectAll(\"circle\")\n      .data(this.points, function(d) { return d; });\n\n  circle.enter().append(\"circle\")\n      .attr(\"class\", function(d) { return d === self.selected ? \"selected\" : null; })\n      .attr(\"cx\",    function(d) { return self.x(d.x); })\n      .attr(\"cy\",    function(d) { return self.y(d.y); })\n      .attr(\"r\", 10.0)\n      .style(\"cursor\", \"ns-resize\")\n      .on(\"mousedown.drag\",  self.datapoint_drag())\n      .on(\"touchstart.drag\", self.datapoint_drag());\n\n  circle\n      .attr(\"class\", function(d) { return d === self.selected ? \"selected\" : null; })\n      .attr(\"cx\",    function(d) { \n        return self.x(d.x); })\n      .attr(\"cy\",    function(d) { return self.y(d.y); });\n\n  circle.exit().remove();\n\n  if (d3.event && d3.event.keyCode) {\n    d3.event.preventDefault();\n    d3.event.stopPropagation();\n  }\n}\n\nSimpleGraph.prototype.datapoint_drag = function() {\n  var self = this;\n  return function(d) {\n    registerKeyboardHandler(self.keydown());\n    document.onselectstart = function() { return false; };\n    self.selected = self.dragged = d;\n    self.update();\n    \n  }\n};\n\nSimpleGraph.prototype.mousemove = function() {\n  var self = this;\n  return function() {\n    var p = d3.svg.mouse(self.vis[0][0]),\n        t = d3.event.changedTouches;\n    \n    if (self.dragged) {\n      self.dragged.y = self.y.invert(Math.max(0, Math.min(self.size.height, p[1])));\n      self.update();\n    };\n    if (!isNaN(self.downx)) {\n      d3.select('body').style(\"cursor\", \"ew-resize\");\n      var rupx = self.x.invert(p[0]),\n          xaxis1 = self.x.domain()[0],\n          xaxis2 = self.x.domain()[1],\n          xextent = xaxis2 - xaxis1;\n      if (rupx != 0) {\n        var changex, new_domain;\n        changex = self.downx / rupx;\n        new_domain = [xaxis1, xaxis1 + (xextent * changex)];\n        self.x.domain(new_domain);\n        self.redraw()();\n      }\n      d3.event.preventDefault();\n      d3.event.stopPropagation();\n    };\n    if (!isNaN(self.downy)) {\n      d3.select('body').style(\"cursor\", \"ns-resize\");\n      var rupy = self.y.invert(p[1]),\n          yaxis1 = self.y.domain()[1],\n          yaxis2 = self.y.domain()[0],\n          yextent = yaxis2 - yaxis1;\n      if (rupy != 0) {\n        var changey, new_domain;\n        changey = self.downy / rupy;\n        new_domain = [yaxis1 + (yextent * changey), yaxis1];\n        self.y.domain(new_domain);\n        self.redraw()();\n      }\n      d3.event.preventDefault();\n      d3.event.stopPropagation();\n    }\n  }\n};\n\nSimpleGraph.prototype.mouseup = function() {\n  var self = this;\n  return function() {\n    document.onselectstart = function() { return true; };\n    d3.select('body').style(\"cursor\", \"auto\");\n    d3.select('body').style(\"cursor\", \"auto\");\n    if (!isNaN(self.downx)) {\n      self.redraw()();\n      self.downx = Math.NaN;\n      d3.event.preventDefault();\n      d3.event.stopPropagation();\n    };\n    if (!isNaN(self.downy)) {\n      self.redraw()();\n      self.downy = Math.NaN;\n      d3.event.preventDefault();\n      d3.event.stopPropagation();\n    }\n    if (self.dragged) { \n      self.dragged = null \n    }\n  }\n}\n\nSimpleGraph.prototype.keydown = function() {\n  var self = this;\n  return function() {\n    if (!self.selected) return;\n    switch (d3.event.keyCode) {\n      case 8: // backspace\n      case 46: { // delete\n        var i = self.points.indexOf(self.selected);\n        self.points.splice(i, 1);\n        self.selected = self.points.length ? self.points[i > 0 ? i - 1 : 0] : null;\n        self.update();\n        break;\n      }\n    }\n  }\n};\n\nSimpleGraph.prototype.redraw = function() {\n  var self = this;\n  return function() {\n\n    self.x.domain([Math.max(self.x.domain()[0], self.options.xmin), Math.min(self.x.domain()[1], self.options.xmax)]);\n\n    var tx = function(d) { \n      return \"translate(\" + self.x(d) + \",0)\"; \n    },\n    ty = function(d) { \n      return \"translate(0,\" + self.y(d) + \")\";\n    },\n    stroke = function(d) { \n      return d ? \"#ccc\" : \"#666\"; \n    },\n    fx = self.x.tickFormat(10),\n    fy = self.y.tickFormat(10);\n\n    // Regenerate x-ticks…\n    var gx = self.vis.selectAll(\"g.x\")\n        .data(self.x.ticks(10), String)\n        .attr(\"transform\", tx);\n\n    gx.select(\"text\")\n        .text(fx);\n\n    var gxe = gx.enter().insert(\"g\", \"a\")\n        .attr(\"class\", \"x\")\n        .attr(\"transform\", tx);\n\n    gxe.append(\"line\")\n        .attr(\"stroke\", stroke)\n        .attr(\"y1\", 0)\n        .attr(\"y2\", self.size.height);\n\n    gxe.append(\"text\")\n        .attr(\"class\", \"axis\")\n        .attr(\"y\", self.size.height)\n        .attr(\"dy\", \"1em\")\n        .attr(\"text-anchor\", \"middle\")\n        .text(fx)\n        .style(\"cursor\", \"ew-resize\")\n        .on(\"mouseover\", function(d) { d3.select(this).style(\"font-weight\", \"bold\");})\n        .on(\"mouseout\",  function(d) { d3.select(this).style(\"font-weight\", \"normal\");})\n        .on(\"mousedown.drag\",  self.xaxis_drag())\n        .on(\"touchstart.drag\", self.xaxis_drag());\n\n    gx.exit().remove();\n\n    // Regenerate y-ticks…\n    var gy = self.vis.selectAll(\"g.y\")\n        .data(self.y.ticks(10), String)\n        .attr(\"transform\", ty);\n\n    gy.select(\"text\")\n        .text(fy);\n\n    var gye = gy.enter().insert(\"g\", \"a\")\n        .attr(\"class\", \"y\")\n        .attr(\"transform\", ty)\n        .attr(\"background-fill\", \"#FFEEB6\");\n\n    gye.append(\"line\")\n        .attr(\"stroke\", stroke)\n        .attr(\"x1\", 0)\n        .attr(\"x2\", self.size.width);\n\n    gye.append(\"text\")\n        .attr(\"class\", \"axis\")\n        .attr(\"x\", -3)\n        .attr(\"dy\", \".35em\")\n        .attr(\"text-anchor\", \"end\")\n        .text(fy)\n        .style(\"cursor\", \"ns-resize\")\n        .on(\"mouseover\", function(d) { d3.select(this).style(\"font-weight\", \"bold\");})\n        .on(\"mouseout\",  function(d) { d3.select(this).style(\"font-weight\", \"normal\");})\n        .on(\"mousedown.drag\",  self.yaxis_drag())\n        .on(\"touchstart.drag\", self.yaxis_drag());\n\n    gy.exit().remove();\n    self.plot.call(d3.behavior.zoom().x(self.x).y(self.y).on(\"zoom\", self.redraw()));\n    self.update();    \n  }  \n}\n\nSimpleGraph.prototype.xaxis_drag = function() {\n  var self = this;\n  return function(d) {\n    document.onselectstart = function() { return false; };\n    var p = d3.svg.mouse(self.vis[0][0]);\n    self.downx = self.x.invert(p[0]);\n  }\n};\n\nSimpleGraph.prototype.yaxis_drag = function(d) {\n  var self = this;\n  return function(d) {\n    document.onselectstart = function() { return false; };\n    var p = d3.svg.mouse(self.vis[0][0]);\n    self.downy = self.y.invert(p[1]);\n  }\n};\n",
+      "language": "JavaScript"
+    }
+  },
+  "updated_at": "2012-05-04T20:58:59Z",
+  "url": "https://api.github.com/gists/2597692",
+  "git_pull_url": "git://gist.github.com/2597692.git",
+  "id": "2597692"
+}

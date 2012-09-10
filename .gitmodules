@@ -106,3 +106,12 @@
 [submodule "html/js/d3-cloud"]
 	path = html/js/d3-cloud
 	url = git@github.com:GerHobbelt/d3-cloud.git
+[submodule "html/js/Tempus"]
+	path = html/js/Tempus
+	url = git@github.com:GerHobbelt/Tempus.git
+[submodule "html/js/jwerty"]
+	path = html/js/jwerty
+	url = git@github.com:GerHobbelt/jwerty.git
+[submodule "html/js/lodash"]
+	path = html/js/lodash
+	url = git@github.com:GerHobbelt/lodash.git
