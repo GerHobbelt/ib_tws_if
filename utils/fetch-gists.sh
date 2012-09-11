@@ -13,7 +13,9 @@
 
 pushd $(dirname $0)       2> /dev/null
 cd ..
-mkdir gists-descriptions
+mkdir gists
+cd gists
+mkdir \!descriptions
 
 echo "<html><body>" > gists.html
 
@@ -264,11 +266,11 @@ for f in \
 	git pull --all
 	popd
 	echo "<dt>$f (View: <a href='http://bl.ocks.org/$f'>bl.ocks.org</a> / <a href='./gist-$f/'>local</a>)</dt>" >> gists.html
-	if ! test -f gists-descriptions/$f.txt ; then
-		curl -o gists-descriptions/$f.txt https://api.github.com/gists/$f 
+	if ! test -f \!descriptions/$f.txt ; then
+		curl -o \!descriptions/$f.txt https://api.github.com/gists/$f 
 	fi
 	echo "<dd>" >> gists.html
-	grep '"description"' gists-descriptions/$f.txt >> gists.html
+	grep '"description"' \!descriptions/$f.txt >> gists.html
 	echo "</dd>" >> gists.html
 done
 
@@ -340,9 +342,10 @@ for f in \
 		3671592 \
 		3683278 \
 		3683489 \
+		3695277 \
 		; do
-	if ! test -d gist-$f ; then
-		git clone git@gist.github.com:$f.git gist-$f
+	if ! test -d gist-$f-mine ; then
+		git clone git@gist.github.com:$f.git gist-$f-mine
 	fi
 	pushd .
 	cd gist-$f
@@ -350,8 +353,8 @@ for f in \
 	git push --all
 	popd
 	echo "<dt>$f (View: <a href='http://bl.ocks.org/$f'>bl.ocks.org</a> / <a href='./gist-$f/'>local</a></dt>" >> gists.html
-	if ! test -f gists-descriptions/$f.txt ; then
-		curl -o gists-descriptions/$f.txt https://api.github.com/gists/$f 
+	if ! test -f descriptions/$f.txt ; then
+		curl -o descriptions/$f.txt https://api.github.com/gists/$f 
 	fi
 	echo "<dd>" >> gists.html
 	grep '"description"' gists-descriptions/$f.txt >> gists.html
