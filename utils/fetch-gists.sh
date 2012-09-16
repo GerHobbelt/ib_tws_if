@@ -343,12 +343,14 @@ for f in \
 		3683278 \
 		3683489 \
 		3695277 \
+		3732612 \
+		3732893 \
 		; do
 	if ! test -d gist-$f-mine ; then
 		git clone git@gist.github.com:$f.git gist-$f-mine
 	fi
 	pushd .
-	cd gist-$f
+	cd gist-$f-mine
 	git pull --all
 	git push --all
 	popd
