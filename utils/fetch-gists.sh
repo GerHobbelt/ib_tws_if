@@ -345,6 +345,7 @@ for f in \
 		3695277 \
 		3732612 \
 		3732893 \
+		3772069 \
 		; do
 	if ! test -d gist-$f-mine ; then
 		git clone git@gist.github.com:$f.git gist-$f-mine

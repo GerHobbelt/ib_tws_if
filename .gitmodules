@@ -115,3 +115,6 @@
 [submodule "html/js/lodash"]
 	path = html/js/lodash
 	url = git@github.com:GerHobbelt/lodash.git
+[submodule "html/js/html5slider"]
+	path = html/js/html5slider
+	url = git@github.com:GerHobbelt/html5slider.git
